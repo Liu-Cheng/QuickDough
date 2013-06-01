@@ -1,0 +1,40 @@
+
+			 CGRA Scheduling
+	(C) E.E.E Department, The University of Hong Kong
+
+Load ./config/Random.s
+Load ./config/Random.init
+DFG Parameters
+vertex_num: 1365
+input_vertex_num: 165
+output_vertex_num: 324
+edge_num: 3600
+max vertex priority: 81
+min vertex priority: 0
+average vertex priority: 10.9128
+vertex priority distribution: 0 324 648 84 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 2 4 3 4 
+max output degree: 10
+min output degree: 0
+average output degree: 2.34432
+operation output degree distribution: 324 800 0 0 0 0 0 0 0 0 240 
+max input degree: 3
+min intput degree: 0
+average input degree: 2.63736
+operation input degree distribution: 165 0 0 1200 
+Scheduling kernel starts!
+Scheduling kernel is completed!
+Scheduling performance= 5620
+Minimum instruction memory requirements= 1124
+PE    output port    memory read    memory write    dsp pipeline      
+0     0.1119         0.7304         0.2731          0.09431           
+1     0.04137        0.8069         0.5605          0.1228            
+2     0.06005        0.5276         0.2785          0.1183            
+3     0.0476         0.548          0.2909          0.1219            
+4     0.04893        0.532          0.3167          0.121             
+5     0.03536        0.5053         0.3052          0.1228            
+6     0.04359        0.54           0.2989          0.1219            
+7     0.04649        0.5214         0.3274          0.1228            
+8     0.03692        0.5125         0.298           0.1219            
+96 72 66 68 65 77 75 69 64 
+Total compiling time= 7.28
+Scheduling kernel finishes!

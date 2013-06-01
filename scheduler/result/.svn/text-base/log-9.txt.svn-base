@@ -1,0 +1,40 @@
+
+			 CGRA Scheduling
+	(C) E.E.E Department, The University of Hong Kong
+
+Load ./config/Random.s
+Load ./config/Random.init
+DFG Parameters
+vertex_num: 6805
+input_vertex_num: 805
+output_vertex_num: 1604
+edge_num: 18000
+max vertex priority: 401
+min vertex priority: 0
+average vertex priority: 48.5549
+vertex priority distribution: 0 1604 3208 404 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 2 4 3 4 
+max output degree: 10
+min output degree: 0
+average output degree: 2.35121
+operation output degree distribution: 1604 4000 0 0 0 0 0 0 0 0 1200 
+max input degree: 3
+min intput degree: 0
+average input degree: 2.64511
+operation input degree distribution: 805 0 0 6000 
+Scheduling kernel starts!
+Scheduling kernel is completed!
+Scheduling performance= 5621
+Minimum instruction memory requirements= 5621
+PE    output port    memory read    memory write    dsp pipeline      
+0     0.1098         0.7203         0.2806          0.09376           
+1     0.0403         0.7947         0.5474          0.1217            
+2     0.06574        0.5558         0.298           0.1215            
+3     0.04701        0.5426         0.2914          0.1217            
+4     0.04728        0.5223         0.3131          0.1219            
+5     0.03589        0.5045         0.2994          0.1219            
+6     0.04568        0.5463         0.2889          0.1217            
+7     0.04519        0.5197         0.3158          0.1217            
+8     0.03696        0.5101         0.3049          0.1217            
+482 357 354 357 294 347 357 318 334 
+Total compiling time= 37.55
+Scheduling kernel finishes!

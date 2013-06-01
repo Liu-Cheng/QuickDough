@@ -1,0 +1,76 @@
+#!/usr/bin/perl -w
+
+my $path="/home/liucheng/project/scheduler";
+# unrolling factor
+@unrolling_factor=(1,2,4,5,10,20,40,50,100,200);
+my $total_loop=200;
+
+#my $output_operation_num=5;
+#my $input_operation_num=5;
+#my $dep_level1_num=1;
+#my $dep_level2_num=0;
+#my $dep_level3_num=0;
+
+for(my $i=0; $i<10; $i=$i+1){
+    open(OUTFILE, ">".$path."/config/configure.txt");
+    open(INFILE, "<".$path."/config/template_config.txt");
+    my $ln=0;
+    while(my $line=<INFILE>){
+        chomp($line);
+        if($line=~/\#\#/){
+            #if($ln==0){
+            #    print OUTFILE "output_operation_num ".$output_operation_num."\n";
+            #}
+            #elsif($ln==1){
+            #    print OUTFILE "input_operation_num ".$input_operation_num."\n";
+            #}
+            #elsif($ln==2){
+            #    print OUTFILE "kernel_repeat_num ".$unrolling_factor[$i]."\n";
+            #}
+            #elsif($ln==3){
+            #    print OUTFILE "dep_level1_num ".$dep_level1_num."\n";
+            #}
+            #elsif($ln==4){
+            #    print OUTFILE "dep_level2_num ".$dep_level2_num."\n";
+            #}
+            #elsif($ln==5){
+            #    print OUTFILE "dep_level3_num ".$dep_level3_num."\n";
+            #}
+            if($ln==0){
+                print OUTFILE "kernel_repeat_num ".$unrolling_factor[$i]."\n";
+            }
+            $ln=$ln+1;
+        }
+        else{
+            print OUTFILE $line."\n";
+        }
+    }
+    close INFILE;
+    close OUTFILE;
+
+    #Run the CGRA scheduler
+    system($path."/cgracompiler >" .$path."/result/log.txt");
+    rename($path."/result/log.txt", $path."/result/log-".$i.".txt");
+}
+
+#Result collection
+system($path."/util/sumlog");
+#open(OUTFILE, ">".$path."/result/logsum.txt");
+#for(my $i=0; $i<10; $i++){
+#    open(INFILE, "<".$path."/result/log-".$i.".txt");
+#    while(my $line=<INFILE>){
+#        chomp($line);
+#        if(split(/requirements= /,$line)){
+#            print OUTFILE $1;
+#        }
+#        elsif(split/performance= /, $line){
+#            print OUTFILE $1;
+#        }
+#        elsif(split/time= /, $line){
+#            print OUTFILE $1;
+#        }
+#    }
+#    print OUTFILE "\n";
+#    close INFILE;
+#}
+#close OUTFILE;

@@ -1,0 +1,22 @@
+// ====================================================================================================================
+// Fucnction Description:
+// Directional graph implemented with adjacency list
+//
+// Version:
+// 0.1      Nov 23th 2011
+//
+// Author:
+// Cheng Liu
+// st.liucheng@gmail.com
+// E.E.E department, The University of Hong Kong
+//
+// ====================================================================================================================
+#ifndef _TEMPLATE_H_
+#define _TEMPLATE_H_
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#endif
