@@ -1,9 +1,10 @@
 // ============================================================================
 // Fucnction Description:
-// Main function of the CGRA mapping and scheduling
+// CGRA mapping and scheduling.
 //
 // Version:
 // 0.1      Nov 25th 2011
+// 0.3      June 30th 2013
 //
 // Author:
 // Cheng Liu
@@ -22,7 +23,7 @@ using namespace std;
 
 void LoadParameter();
 int main(){
-    cout<< endl <<"\t\t\t CGRA Scheduling"<< endl;
+    cout << endl << "\t\t\t CGRA Scheduling" << endl;
     cout << "\t(C) E.E.E Department, The University of Hong Kong"<< endl << endl;
     
     LoadParameter();
@@ -72,9 +73,11 @@ void LoadParameter(){
         else if(configure_item_key=="maximum_operation_num"){
             configure_file_handle >> GLvar::maximum_operation_num;
         }
+
         else if(configure_item_key=="maximum_simulation_time"){
             configure_file_handle >> GLvar::maximum_simulation_time;
         }
+
         else if(configure_item_key=="random_seed"){
             configure_file_handle >> GLvar::random_seed;
         }
@@ -90,12 +93,15 @@ void LoadParameter(){
         else if(configure_item_key=="inst_memory_delay"){
             configure_file_handle >> GLvar::inst_memory_delay;
         }
+
         else if(configure_item_key=="dfg_degree_adapter"){
             configure_file_handle >> GLvar::dfg_degree_adapter;
         }
+
         else if(configure_item_key=="maximum_data_memory_addr_width"){
             configure_file_handle >> GLvar::maximum_data_memory_addr_width;
         }
+
         else if(configure_item_key=="load_balance_factor"){
             configure_file_handle >> GLvar::load_balance_factor;
         }

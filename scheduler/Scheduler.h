@@ -61,11 +61,12 @@ class Scheduler{
         int SchedulingStat();
         bool SchedulingIsCompleted();
         void InstructionDumpMif(int final_execution_time);
-        void InstructionDumpMem(int final_execution_time);
+        void InstructionMif2Mem(int final_execution_time);
+        void OutsideAddrMemoryDumpMif(int final_execution_time);
         void DataMemoryAnalysis();
         void DataMemoryDumpMem();
         void SchedulingResultDump();
-        void DataMemoryInit(map<int, int> &opToAddr, const int &PE_id, const int &memory_capacity); 
+        void DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const int &memory_capacity); 
         int LoadDataFromOutMem(const int &operation_id, const ExecutionMode &mode);
         void StoreDataInOutMem(const int &operation_id);
         void FromDSTToOutMem(const int &operation_id, const int &start_time);

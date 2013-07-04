@@ -59,11 +59,10 @@ class DataFlowGraph{
         void DFGConstruct();
         bool IsVertexInDFG(const int &operation_id);
         bool IsEdgeInDFG(const int &src, const int &dst);
-        void DFGScaleRefresh();
+        void DFGStatistic();
         void AverageDegree();
-        void DFGGen();
         void RandomInstGen();
-        void MatrixMultiplyInstGen(int m, int n, int p);
+        void MMInstGen(int m, int n, int p);
         void VertexPriorityAllocation();
         void VertexPriorityAnalysis();
         void OutputDegreeAnalysis();

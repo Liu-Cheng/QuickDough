@@ -11,6 +11,7 @@ ADD_DEP	config/dfg_interface/DFG_generation_mmm.cpp	13;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_rand.cpp	21;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_vd.cpp	13;"	d	file:
 AES	GlobalDef.h	/^    FFT, Random, MM, VD, CONV, AES$/;"	e	enum:DFGType
+ARRAY_NUM	config/OpInfoGen/main.cpp	11;"	d	file:
 ActivePEFilter	Scheduler.cpp	/^void Scheduler::ActivePEFilter(list<int> &candidates){$/;"	f	class:Scheduler
 ActivityCheck	CoarseGrainReconArch.cpp	/^bool CoarseGrainReconArch::ActivityCheck(){$/;"	f	class:CoarseGrainReconArch
 AddLink	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::AddLink(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
@@ -20,8 +21,10 @@ AtBreakPoint	GlobalDef.h	/^    BeforeBreakPoint, AtBreakPoint, AfterBreakPoint$/
 AttachHistory	Vertex.h	/^struct AttachHistory{$/;"	s
 AverageDegree	DataFlowGraph.cpp	/^void DataFlowGraph::AverageDegree(){$/;"	f	class:DataFlowGraph
 BeforeBreakPoint	GlobalDef.h	/^    BeforeBreakPoint, AtBreakPoint, AfterBreakPoint$/;"	e	enum:VertexType2
+CC	config/OpInfoGen/makefile	/^CC = g++$/;"	m
 CC	config/dfg_interface/makefile	/^CC = g++$/;"	m
 CC	makefile	/^CC = g++$/;"	m
+CFLAGS	config/OpInfoGen/makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
 CFLAGS	config/dfg_interface/makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
 CFLAGS	makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
 CGRA	Scheduler.h	/^        CoarseGrainReconArch* CGRA;$/;"	m	class:Scheduler
@@ -45,9 +48,8 @@ DEBUG3	GlobalDef.h	47;"	d
 DFG	Scheduler.h	/^        DataFlowGraph* DFG;$/;"	m	class:Scheduler
 DFGCalculation	DataFlowGraph.cpp	/^void DataFlowGraph::DFGCalculation(vector<int> &operation_result){$/;"	f	class:DataFlowGraph
 DFGConstruct	DataFlowGraph.cpp	/^void DataFlowGraph::DFGConstruct(){$/;"	f	class:DataFlowGraph
-DFGExpand	DataFlowGraph.cpp	/^int DataFlowGraph::DFGExpand(string &DFG_inst_file, const int &kernel_size, const int &kernel_op_num){$/;"	f	class:DataFlowGraph
-DFGGen	DataFlowGraph.cpp	/^void DataFlowGraph::DFGGen(){$/;"	f	class:DataFlowGraph
-DFGScaleRefresh	DataFlowGraph.cpp	/^void DataFlowGraph::DFGScaleRefresh(){$/;"	f	class:DataFlowGraph
+DFGExpand	DataFlowGraph.cpp	/^int DataFlowGraph::DFGExpand(string &DFG_Inst_File, const int &kernel_size, const int &kernel_op_num){$/;"	f	class:DataFlowGraph
+DFGStatistic	DataFlowGraph.cpp	/^void DataFlowGraph::DFGStatistic(){$/;"	f	class:DataFlowGraph
 DFGType	GlobalDef.h	/^enum DFGType {$/;"	g
 DFG_edge	DataFlowGraph.h	/^        vector<Edge*> DFG_edge;$/;"	m	class:DataFlowGraph
 DFG_generation_aes	config/dfg_interface/DFG_generation_aes.cpp	/^void DFG_generation_aes ()$/;"	f
@@ -69,7 +71,7 @@ DataFlowGraph	DataFlowGraph.h	/^class DataFlowGraph{$/;"	c
 DataInOutMem	GlobalDef.h	/^    DataInOutMem, DataUnavail, DataAvail$/;"	e	enum:VertexState
 DataMemoryAnalysis	Scheduler.cpp	/^void Scheduler::DataMemoryAnalysis(){$/;"	f	class:Scheduler
 DataMemoryDumpMem	Scheduler.cpp	/^void Scheduler::DataMemoryDumpMem(){$/;"	f	class:Scheduler
-DataMemoryInit	Scheduler.cpp	/^void Scheduler::DataMemoryInit(map<int, int> &opToAddr, const int &PE_id, const int &memory_capacity){$/;"	f	class:Scheduler
+DataMemoryInit	Scheduler.cpp	/^void Scheduler::DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const int &memory_capacity){$/;"	f	class:Scheduler
 DataUnavail	GlobalDef.h	/^    DataInOutMem, DataUnavail, DataAvail$/;"	e	enum:VertexState
 DijkstraPath	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::DijkstraPath(const int &src, const int &dst, list<int> &routing_path){$/;"	f	class:CoarseGrainReconArch
 DistCal	Scheduler.cpp	/^int Scheduler::DistCal(const int &src_op, const int &dst_op){$/;"	f	class:Scheduler
@@ -92,6 +94,7 @@ GetOpcodeValue	GlobalDef.cpp	/^int GetOpcodeValue(const string &opcode_name){$/;
 GetParentID	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::GetParentID(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
 GetParentPEID	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::GetParentPEID(const int &PE_id, const int &mux_input){$/;"	f	class:CoarseGrainReconArch
 INF	GlobalDef.h	32;"	d
+INPUT_BASE_ADDR	config/OpInfoGen/main.cpp	13;"	d	file:
 INSTR_OP_NUM	GlobalDef.h	38;"	d
 IOstoring	GlobalDef.h	/^    IOstoring, RandomlySpreading, OutMemModeling, MultipleCopying$/;"	e	enum:OutMemDataScheduling
 Implementation	GlobalDef.h	/^    Simulation, Implementation, PartialImplementation$/;"	e	enum:ExecutionMode
@@ -102,8 +105,8 @@ InputDegreeAnalysis	DataFlowGraph.cpp	/^void DataFlowGraph::InputDegreeAnalysis(
 InputOperationScheduling	Scheduler.cpp	/^void Scheduler::InputOperationScheduling(){$/;"	f	class:Scheduler
 InputPortUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
 InstFormat	DataFlowGraph.cpp	/^void DataFlowGraph::InstFormat(){$/;"	f	class:DataFlowGraph
-InstructionDumpMem	Scheduler.cpp	/^void Scheduler::InstructionDumpMem(int finalExecutionTime){$/;"	f	class:Scheduler
 InstructionDumpMif	Scheduler.cpp	/^void Scheduler::InstructionDumpMif(int finalExecutionTime){$/;"	f	class:Scheduler
+InstructionMif2Mem	Scheduler.cpp	/^void Scheduler::InstructionMif2Mem(int finalExecutionTime){$/;"	f	class:Scheduler
 IntermediateData	GlobalDef.h	/^    InputData, IntermediateData, OutputData$/;"	e	enum:VertexType
 IsEdgeInDFG	DataFlowGraph.cpp	/^bool DataFlowGraph::IsEdgeInDFG(const int &src, const int &dst){$/;"	f	class:DataFlowGraph
 IsLinkExisted	CoarseGrainReconArch.cpp	/^bool CoarseGrainReconArch::IsLinkExisted(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
@@ -132,7 +135,6 @@ LoadParameter	PE.cpp	/^void PE::LoadParameter(){}$/;"	f	class:PE
 LoadParameter	Scheduler.cpp	/^void Scheduler::LoadParameter(){$/;"	f	class:Scheduler
 LoadParameter	Vertex.cpp	/^void Vertex::LoadParameter(){}$/;"	f	class:Vertex
 LoadParameter	main.cpp	/^void LoadParameter(){$/;"	f
-LoadParameter	result/main.cpp	/^void LoadParameter(){$/;"	f
 LoadParameter	util/logcollect.cpp	/^void LoadParameter(){$/;"	f
 LoadParameter	util/main.cpp	/^void LoadParameter(){$/;"	f
 MATRIX_M	GlobalDef.h	42;"	d
@@ -142,7 +144,7 @@ MAX_DFG_DEGREE	GlobalDef.h	39;"	d
 MAX_PE_NEIGHBOR	GlobalDef.h	40;"	d
 MAX_SEARCH_GAP	GlobalDef.h	34;"	d
 MM	GlobalDef.h	/^    FFT, Random, MM, VD, CONV, AES$/;"	e	enum:DFGType
-MatrixMultiplyInstGen	DataFlowGraph.cpp	/^void DataFlowGraph::MatrixMultiplyInstGen(int m, int n, int p){$/;"	f	class:DataFlowGraph
+MMInstGen	DataFlowGraph.cpp	/^void DataFlowGraph::MMInstGen(int m, int n, int p){$/;"	f	class:DataFlowGraph
 MemoryUtilization	PE.cpp	/^float PE::MemoryUtilization(const int &begin_time, const int &end_time){$/;"	f	class:PE
 MemoryUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
 MeshGen	config/main.cpp	/^void MeshGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
@@ -154,10 +156,12 @@ NOTE	util/bmmGen.pl	/^NOTE: XDL and DATA2MEM must be installed and in the user's
 NaN	GlobalDef.h	31;"	d
 NearestAttachedPE	Scheduler.cpp	/^int Scheduler::NearestAttachedPE(const int &src_operation_id, const int &dst_PE_id, int &src_start_time){$/;"	f	class:Scheduler
 NetGraph	util/main.cpp	/^void NetGraph(const int &N){$/;"	f
+OBJS	config/OpInfoGen/makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
 OBJS	config/dfg_interface/makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
 OBJS	makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
 OPReadySetInitialization	Scheduler.cpp	/^void Scheduler::OPReadySetInitialization(list<int> &op_ready_set){$/;"	f	class:Scheduler
 OPReadySetUpdate	Scheduler.cpp	/^void Scheduler::OPReadySetUpdate(list<int> &op_ready_set, const int &selected_op_id){$/;"	f	class:Scheduler
+OUTPUT_BASE_ADDR	config/OpInfoGen/main.cpp	14;"	d	file:
 OperationExecution	Scheduler.cpp	/^int Scheduler::OperationExecution(const int &target_operation_id, const vector<int> &src_operation_ids, const int &target_PE_id, const vector<int> &arrival_time, const ExecutionMode &mode){$/;"	f	class:Scheduler
 OperationMigrationTime	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::OperationMigrationTime(const int &start_time, const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
 OperationResultCheck	Scheduler.cpp	/^bool Scheduler::OperationResultCheck(){$/;"	f	class:Scheduler
@@ -168,6 +172,7 @@ OutputData	GlobalDef.h	/^    InputData, IntermediateData, OutputData$/;"	e	enum:
 OutputDegreeAnalysis	DataFlowGraph.cpp	/^void DataFlowGraph::OutputDegreeAnalysis(){$/;"	f	class:DataFlowGraph
 OutputPortUtilization	PE.cpp	/^float PE::OutputPortUtilization(const int &begin_time, const int &end_time){$/;"	f	class:PE
 OutputPortUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
+OutsideAddrMemoryDumpMif	Scheduler.cpp	/^void Scheduler::OutsideAddrMemoryDumpMif(int final_execution_time){$/;"	f	class:Scheduler
 PE	PE.cpp	/^PE::PE(int _PE_id){$/;"	f	class:PE
 PE	PE.h	/^class PE{$/;"	c
 PEOPPairSelection	Scheduler.cpp	/^void Scheduler::PEOPPairSelection(int &selected_PE_id, int &selected_op_id, const list<int> &candidates, const list<int> &op_ready_set){$/;"	f	class:Scheduler
@@ -179,7 +184,7 @@ PE_array	CoarseGrainReconArch.h	/^        vector<PE*> PE_array;$/;"	m	class:Coar
 PE_bypass_mux	ComponentActivity.h	/^        int PE_bypass_mux; \/\/0->W, 1->N, 2->E, 3->S$/;"	m	class:ComponentActivity
 PE_bypass_reserved	ComponentReserved.h	/^        bool PE_bypass_reserved;$/;"	m	class:ComponentReserved
 PE_id	PE.h	/^        int PE_id;$/;"	m	class:PE
-PE_input_mux	ComponentActivity.h	/^        int PE_input_mux; \/\/0->W 1->N, 2->E, 3->S$/;"	m	class:ComponentActivity
+PE_input_mux	ComponentActivity.h	/^        int PE_input_mux;  \/\/0->W 1->N, 2->E, 3->S$/;"	m	class:ComponentActivity
 PE_input_reserved	ComponentReserved.h	/^        bool PE_input_reserved;$/;"	m	class:ComponentReserved
 PE_output_mux	ComponentActivity.h	/^        int PE_output_mux[4]; $/;"	m	class:ComponentActivity
 PE_output_reserved	ComponentReserved.h	/^        bool PE_output_reserved[4];$/;"	m	class:ComponentReserved
@@ -200,6 +205,7 @@ ReadPathFile	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::ReadPathFile(
 RemoveLink	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::RemoveLink(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
 RingGen	config/main.cpp	/^void RingGen(int N, vector<vector<int> > &link_matrix){$/;"	f
 RoutingAlgorithm	GlobalDef.h	/^enum RoutingAlgorithm{$/;"	g
+SRCS	config/OpInfoGen/makefile	/^SRCS = main.cpp $/;"	m
 SRCS	config/dfg_interface/makefile	/^SRCS = DFG_generation_aes.cpp \\$/;"	m
 SRCS	makefile	/^SRCS = GlobalDef.cpp \\$/;"	m
 Scheduler	Scheduler.cpp	/^Scheduler::Scheduler(DataFlowGraph * init_DFG, CoarseGrainReconArch* init_CGRA){$/;"	f	class:Scheduler
@@ -222,8 +228,10 @@ SimulationPath	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::SimulationP
 SpecifiedPath	GlobalDef.h	/^    FullySearch, SpecifiedPath, SimplifiedSearch, SimulatedSearch $/;"	e	enum:RoutingAlgorithm
 StaticOperationSelection	Scheduler.cpp	/^int Scheduler::StaticOperationSelection(){$/;"	f	class:Scheduler
 StoreDataInOutMem	Scheduler.cpp	/^void Scheduler::StoreDataInOutMem(const int &operation_id){$/;"	f	class:Scheduler
+TARGET	config/OpInfoGen/makefile	/^TARGET = iogen$/;"	m
 TARGET	config/dfg_interface/makefile	/^TARGET = DFGGen$/;"	m
 TARGET	makefile	/^TARGET = cgracompiler$/;"	m
+TOTAL_OP_NUM	config/OpInfoGen/main.cpp	12;"	d	file:
 TargetOperationRefresh	Scheduler.cpp	/^void Scheduler::TargetOperationRefresh(const vector<int> &src_operation_ids, const int &target_operation_id, const int &target_PE_id, const int &execution_time){$/;"	f	class:Scheduler
 TargetPERefresh	Scheduler.cpp	/^void Scheduler::TargetPERefresh(const vector<int> &src_operation_ids, const int &target_operation_id, const int &start_time, const int &target_PE_id){$/;"	f	class:Scheduler
 TorusGen	config/main.cpp	/^void TorusGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
@@ -351,13 +359,13 @@ load_PE_id	GlobalDef.cpp	/^int GLvar::load_PE_id=0;$/;"	m	class:GLvar	file:
 load_PE_id	GlobalDef.h	/^    static int load_PE_id;$/;"	m	struct:GLvar
 load_balance_factor	GlobalDef.cpp	/^float GLvar::load_balance_factor=1;$/;"	m	class:GLvar	file:
 load_balance_factor	GlobalDef.h	/^    static float load_balance_factor;$/;"	m	struct:GLvar
-load_mux	ComponentActivity.h	/^        int load_mux;  \/\/0->PE input 1->out memory load$/;"	m	class:ComponentActivity
+load_mux	ComponentActivity.h	/^        int load_mux;      \/\/0->PE input 1->out memory load$/;"	m	class:ComponentActivity
 load_op	ComponentActivity.h	/^        int load_op;$/;"	m	class:ComponentActivity
 load_path_reserved	ComponentReserved.h	/^        bool load_path_reserved;$/;"	m	class:ComponentReserved
+main	config/OpInfoGen/main.cpp	/^int main(){$/;"	f
 main	config/dfg_interface/main.cpp	/^int main ()$/;"	f
 main	config/main.cpp	/^int main(){$/;"	f
 main	main.cpp	/^int main(){$/;"	f
-main	result/main.cpp	/^int main(){$/;"	f
 main	util/logcollect.cpp	/^int main(){$/;"	f
 main	util/main.cpp	/^int main(){$/;"	f
 matrix_rank	config/dfg_interface/main.cpp	/^int matrix_rank;$/;"	v
@@ -428,6 +436,7 @@ scheduling_type	GlobalDef.h	/^    static SchedulingType scheduling_type;$/;"	m	s
 scheduling_type	Scheduler.h	/^        SchedulingType scheduling_type;$/;"	m	class:Scheduler
 store_PE_id	GlobalDef.cpp	/^int GLvar::store_PE_id=15;$/;"	m	class:GLvar	file:
 store_PE_id	GlobalDef.h	/^    static int store_PE_id;$/;"	m	struct:GLvar
+store_mux	ComponentActivity.h	/^        int store_mux;$/;"	m	class:ComponentActivity
 store_op	ComponentActivity.h	/^        int store_op;$/;"	m	class:ComponentActivity
 store_path_reserved	ComponentReserved.h	/^        bool store_path_reserved;$/;"	m	class:ComponentReserved
 succ	config/dfg_interface/simplist.h	/^	SimpleList* succ;$/;"	m	class:VNode
@@ -439,6 +448,8 @@ vd_size	config/dfg_interface/main.cpp	/^int vd_size;$/;"	v
 verification_level	GlobalDef.cpp	/^int GLvar::verification_level=0;$/;"	m	class:GLvar	file:
 verification_level	GlobalDef.h	/^    static int verification_level;$/;"	m	struct:GLvar
 vertex_attribute	Vertex.h	/^        VertexAttribute vertex_attribute;$/;"	m	struct:Vertex
+vertex_bram_addr	Vertex.h	/^        unsigned int vertex_bram_addr;$/;"	m	struct:Vertex
+vertex_bram_id	Vertex.h	/^        unsigned int vertex_bram_id;$/;"	m	struct:Vertex
 vertex_cost	Vertex.h	/^    int vertex_cost;$/;"	m	struct:VertexAttribute
 vertex_id	Vertex.h	/^        int vertex_id;$/;"	m	struct:Vertex
 vertex_num	DataFlowGraph.h	/^        int vertex_num;$/;"	m	class:DataFlowGraph

@@ -48,10 +48,22 @@ SchedulingType scheduling_type=ListScheduling;
 
 int GetOpcodeValue(const string &opcode_name){
     if(opcode_name=="MulAdd"){
+        return 1;
+    }
+    else if(opcode_name=="MulSub"){
         return 0;
     }
-    else if(opcode_name=="Mul"){
-        return 1;
+    else if(opcode_name=="AddAdd"){
+      return 2;
+    }
+    else if(opcode_name=="AddSub"){
+      return 3;
+    }
+    else if(opcode_name=="SubSub"){
+      return 4;
+    }
+    else if(opcode_name=="Branch"){
+      return 5;
     }
     else{
         return -1;
@@ -60,12 +72,25 @@ int GetOpcodeValue(const string &opcode_name){
 
 void GetOpcodeName(const int &opcode, string &opcode_name){
     if(opcode==0){
-        opcode_name="MulAdd";
+        opcode_name="MulSub";
     }
     else if(opcode==1){
-        opcode_name="Mul";
+        opcode_name="MulAdd";
+    }
+    else if(opcode==2){
+      opcode_name="AddAdd";
+    }
+    else if(opcode==3){
+      opcode_name="AddSub";
+    }
+    else if(opcode==4){
+      opcode_name="SubSub";
+    }
+    else if(opcode==5){
+      opcode_name="Branch";
     }
     else{
         opcode_name=" ";
     }
 }
+

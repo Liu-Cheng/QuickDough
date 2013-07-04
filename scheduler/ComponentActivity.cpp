@@ -21,6 +21,7 @@ ComponentActivity::ComponentActivity(){
     PE_bypass_mux=0;
     dsp_opcode=0;
     load_mux=0;
+    store_mux=0;
 
     for(int i=0; i<2; i++){
         memory_wr_ena[i]=0;
@@ -32,8 +33,9 @@ ComponentActivity::ComponentActivity(){
     }
 
     for(int i=0; i<4; i++){
-        PE_output_mux[i]=3;
+        PE_output_mux[i]=0;
     }
+
     load_op=NaN;
     store_op=NaN;
 }

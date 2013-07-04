@@ -37,6 +37,8 @@ struct Vertex{
     public:
         int vertex_id;
         int vertex_value;
+        unsigned int vertex_bram_addr;
+        unsigned int vertex_bram_id;
         list<Edge*> in_edge;
         list<Edge*> out_edge;
         list<Vertex*> parents;

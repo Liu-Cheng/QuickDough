@@ -19,6 +19,8 @@ using namespace std;
 Vertex::Vertex(int _vertex_id){
     vertex_id=_vertex_id;
     vertex_value=NaN;
+    vertex_bram_addr=NaN;
+    vertex_bram_id=NaN;
     vertex_type=InputData;
     vertex_type2=BeforeBreakPoint;
     vertex_attribute.vertex_cost=1;

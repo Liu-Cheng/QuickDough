@@ -1,8 +1,8 @@
-print_level 11
-report_level 120
+print_level 1
+report_level 20
 verification_level 0
 CGRA_scale 9
-DFG_type Random
+DFG_type MM
 maximum_operation_num 50
 maximum_simulation_time 10000
 topology_type Specified

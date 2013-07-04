@@ -39,9 +39,9 @@ using namespace std;
 #define MAX_DFG_DEGREE 1000
 #define MAX_PE_NEIGHBOR 4
 #define DSP_PIPELINE_DEPTH 1
-#define MATRIX_M 40
-#define MATRIX_N 40
-#define MATRIX_P 40
+#define MATRIX_M 5
+#define MATRIX_N 5
+#define MATRIX_P 5
 #define DEBUG1(FMT, ARG...) do {fprintf(stderr,"File=%s, Line=%d: "FMT" \n",__FILE__, __LINE__,##ARG); exit(1);} while(0)
 #define DEBUG2(FMT, ARG...) do {fprintf(stdout,"File=%s, Line=%d  "FMT" \n",__FILE__, __LINE__,##ARG);} while(0)
 #define DEBUG3(FMT, ARG...) do {fprintf(stdout,FMT"/n",##ARG);} while(0)
