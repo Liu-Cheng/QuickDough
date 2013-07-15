@@ -48,6 +48,7 @@ void CoarseGrainReconArch::LoadParameter(){
     while(!configure_file_handle.eof()){
         string configure_item_key;
         configure_file_handle >> configure_item_key;
+        
         if(configure_item_key=="routing_algorithm"){
             string configure_item_value;
             configure_file_handle >> configure_item_value;
@@ -67,6 +68,13 @@ void CoarseGrainReconArch::LoadParameter(){
                 DEBUG1("Unrecongnized routing algorithm in configure.txt!");
             }
         }
+        else if(configure_item_key=="row"){
+            configure_file_handle >> row;
+        }
+        else if(configure_item_key=="col"){
+            configure_file_handle >> col;
+        }
+
     }
     configure_file_handle.close();
 
@@ -386,6 +394,56 @@ bool CoarseGrainReconArch::IsLinkExisted(const int &src, const int &dst){
 
 int CoarseGrainReconArch::GetChildID(const int &src, const int &dst){
     int child_id=0;
+    int src_row=src/col;
+    int src_col=src%col;
+    int dst_row=dst/col;
+    int dst_col=dst%col;
+    if((src_col-dst_col==1 && src_row==dst_row) || (src_col-dst_col==col-1 && src_row==dst_row)){
+        child_id=0;
+    }
+    else if((src_col-dst_col==-1 && src_row==dst_row) || (src_col-dst_col==1-col && src_row==dst_row)){
+        child_id=2;
+    }
+    else if((src_row-dst_row==1 && src_col==dst_col) || (src_row-dst_row==1-row && src_col==dst_col)){
+        child_id=1;
+    }
+    else if((src_row-dst_row==-1 && src_col==dst_col) || (src_row-dst_row==row-1 && src_col==dst_col)){
+        child_id=3;
+    }
+    else
+        child_id=NaN;
+
+    return child_id;
+}
+
+int CoarseGrainReconArch::GetParentID(const int &src, const int &dst){
+    int parent_id=0;
+    int src_row=src/col;
+    int src_col=src%col;
+    int dst_row=dst/col;
+    int dst_col=dst%col;
+    if((src_col-dst_col==1 && src_row==dst_row) || (src_col-dst_col==col-1 && src_row==dst_row)){
+        parent_id=2;
+    }
+    else if((src_col-dst_col==-1 && src_row==dst_row) || (src_col-dst_col==1-col && src_row==dst_row)){
+        parent_id=0;
+    }
+    else if((src_row-dst_row==1 && src_col==dst_col) || (src_row-dst_row==1-row && src_col==dst_col)){
+        parent_id=3;
+    }
+    else if((src_row-dst_row==-1 && src_col==dst_col) || (src_row-dst_row==row-1 && src_col==dst_col)){
+        parent_id=1;
+    }
+    else
+        parent_id=NaN;
+
+    return parent_id;
+}
+//It is able to handle arbitrary topology, however, the limitation is
+//that only a single Link is allowed between two PEs. 
+/*
+int CoarseGrainReconArch::GetChildID(const int &src, const int &dst){
+    int child_id=0;
     for(int i=0; i<GLvar::CGRA_scale; i++){
         bool link_exist=IsLinkExisted(src,i);
         if(link_exist==true){
@@ -399,7 +457,9 @@ int CoarseGrainReconArch::GetChildID(const int &src, const int &dst){
     }
     return child_id;
 }
+*/
 
+/*
 int CoarseGrainReconArch::GetParentID(const int &src, const int &dst){
     int parent_id=0;
     for(int i=0; i<GLvar::CGRA_scale; i++){
@@ -415,6 +475,7 @@ int CoarseGrainReconArch::GetParentID(const int &src, const int &dst){
     }
     return parent_id;
 }
+*/
 
 int CoarseGrainReconArch::GetParentPEID(const int &PE_id, const int &mux_input){
     int parent_PE_id=NaN;

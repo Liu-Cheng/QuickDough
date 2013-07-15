@@ -22,6 +22,7 @@
 #include "GlobalDef.h"
 #include <cstdlib>
 #include <map>
+#include <sstream>
 
 using namespace std;
 
@@ -68,6 +69,7 @@ class DataFlowGraph{
         void OutputDegreeAnalysis();
         void InputDegreeAnalysis();
         int DFGExpand(string &DFG_inst_file, const int &kernel_size, const int &kernel_op_num);
+        void OutsideDataMemoryDumpCoe(int max_bram_id, map<int, int> &op_to_value, map<int, int> &op_to_bram_addr, map<int, int> &op_to_bram_id);
 };
 
 #endif

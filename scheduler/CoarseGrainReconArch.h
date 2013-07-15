@@ -27,6 +27,8 @@ class CoarseGrainReconArch{
         vector<PE*> PE_array;
         vector<vector<int> > PE_pair_distance;
         vector<vector<list<int> > > PE_pair_path;
+        int row;
+        int col;
 
         CoarseGrainReconArch();
         int AverageDegree();

@@ -41,10 +41,10 @@ int main(){
     for(int j=0; j<ArraySize[i]; j++){
       OpId++;
       if(OpId<=InputOpNum){
-        fHandle << OpId << "  " << INPUT_BASE_ADDR+OpId << "  " << rand()%100 << "  " << 0 << "  " << 0 << "  " << "\n";
+        fHandle << OpId << "  " << INPUT_BASE_ADDR+OpId-1 << "  " << rand()%10 << "  " << 0 << "  " << 0 << "  " << "\n";
       }
       else{
-        fHandle << OpId << "  " << OUTPUT_BASE_ADDR+(OpId-InputOpNum) << "  " << 0 << "  " << 1 << "  " << 1 << "  " << "\n";
+        fHandle << OpId << "  " << OUTPUT_BASE_ADDR+(OpId-1-InputOpNum) << "  " << 0 << "  " << 1 << "  " << 1 << "  " << "\n";
       }
     }
   }

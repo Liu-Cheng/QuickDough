@@ -3,7 +3,7 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ADD_DEP	config/dfg_interface/DFG_generation_aes.cpp	13;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_conv.cpp	13;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_fft.cpp	14;"	d	file:
@@ -105,8 +105,8 @@ InputDegreeAnalysis	DataFlowGraph.cpp	/^void DataFlowGraph::InputDegreeAnalysis(
 InputOperationScheduling	Scheduler.cpp	/^void Scheduler::InputOperationScheduling(){$/;"	f	class:Scheduler
 InputPortUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
 InstFormat	DataFlowGraph.cpp	/^void DataFlowGraph::InstFormat(){$/;"	f	class:DataFlowGraph
-InstructionDumpMif	Scheduler.cpp	/^void Scheduler::InstructionDumpMif(int finalExecutionTime){$/;"	f	class:Scheduler
-InstructionMif2Mem	Scheduler.cpp	/^void Scheduler::InstructionMif2Mem(int finalExecutionTime){$/;"	f	class:Scheduler
+InstructionDumpCoe	Scheduler.cpp	/^void Scheduler::InstructionDumpCoe(int final_execution_time){$/;"	f	class:Scheduler
+InstructionMif2Mem	Scheduler.cpp	/^void Scheduler::InstructionMif2Mem(int final_execution_time){$/;"	f	class:Scheduler
 IntermediateData	GlobalDef.h	/^    InputData, IntermediateData, OutputData$/;"	e	enum:VertexType
 IsEdgeInDFG	DataFlowGraph.cpp	/^bool DataFlowGraph::IsEdgeInDFG(const int &src, const int &dst){$/;"	f	class:DataFlowGraph
 IsLinkExisted	CoarseGrainReconArch.cpp	/^bool CoarseGrainReconArch::IsLinkExisted(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
@@ -172,7 +172,8 @@ OutputData	GlobalDef.h	/^    InputData, IntermediateData, OutputData$/;"	e	enum:
 OutputDegreeAnalysis	DataFlowGraph.cpp	/^void DataFlowGraph::OutputDegreeAnalysis(){$/;"	f	class:DataFlowGraph
 OutputPortUtilization	PE.cpp	/^float PE::OutputPortUtilization(const int &begin_time, const int &end_time){$/;"	f	class:PE
 OutputPortUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
-OutsideAddrMemoryDumpMif	Scheduler.cpp	/^void Scheduler::OutsideAddrMemoryDumpMif(int final_execution_time){$/;"	f	class:Scheduler
+OutsideAddrMemoryDumpCoe	Scheduler.cpp	/^void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){$/;"	f	class:Scheduler
+OutsideDataMemoryDumpCoe	DataFlowGraph.cpp	/^void DataFlowGraph::OutsideDataMemoryDumpCoe(int max_bram_id, map<int, int> &op_to_value, map<int, int> &op_to_bram_addr, map<int, int> &op_to_bram_id){$/;"	f	class:DataFlowGraph
 PE	PE.cpp	/^PE::PE(int _PE_id){$/;"	f	class:PE
 PE	PE.h	/^class PE{$/;"	c
 PEOPPairSelection	Scheduler.cpp	/^void Scheduler::PEOPPairSelection(int &selected_PE_id, int &selected_op_id, const list<int> &candidates, const list<int> &op_ready_set){$/;"	f	class:Scheduler

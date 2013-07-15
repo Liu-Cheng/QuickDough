@@ -284,9 +284,9 @@ void Scheduler::ListSchedulingAlgorithmPEOPTogether(){
 
   DataMemoryAnalysis();
   //DataMemoryDumpMem();
-  InstructionDumpMif(final_execution_time);
+  InstructionDumpCoe(final_execution_time);
   //InstructionDumpMem(final_execution_time);
-  //SchedulingResultDump();
+  SchedulingResultDump();
 }
 
 void Scheduler::LoadBalancePEFilter(list<int> &candidates, const vector<int> &executed_op_num){
@@ -446,10 +446,10 @@ void Scheduler::ListSchedulingAlgorithmPEFirst(){
 
   DataMemoryAnalysis();
   //DataMemoryDumpMem();
-  InstructionDumpMif(last_op_store_time+1);
+  InstructionDumpCoe(last_op_store_time+1);
   //InstructionMif2Mem(final_execution_time);
-  //SchedulingResultDump();
-  OutsideAddrMemoryDumpMif(last_op_store_time+1);
+  SchedulingResultDump();
+  OutsideAddrMemoryDumpCoe(last_op_store_time+1);
 
   t2=clock();
   cout<<"Total compiling time= "<<(double)(1.0*(t2-t1)/CLOCKS_PER_SEC)<<endl;
@@ -988,16 +988,23 @@ void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[0]=true;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[0]=operation_id;
-      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+3]->component_activity->store_op=operation_id;
+      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=0;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
+
+      //Dump the trace
+      if(GLvar::report_level>10){
+          //Time when data is store in outside memory.
+          fTrace<<"Store "<<operation_id<<" in outside memory "<<" at time "<<op_avail_time+3<<endl;
+      }
+
       break;
     }
     else if(write0_avail && read1_avail && store_path_avail){
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[0]=true;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[0]=operation_id;
-      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+3]->component_activity->store_op=operation_id;
+      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=1;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
       break;
@@ -1006,7 +1013,7 @@ void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[0]=true;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[0]=operation_id;
-      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+3]->component_activity->store_op=operation_id;
+      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=2;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
       break;
@@ -1338,12 +1345,12 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
           //If the data needs to be stored, there must be no resource confliction and we simply reserve the corresponding resources.
           if(mode==Implementation){
             CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->PE_input_reserved=true;
+            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
             if(current_PE_id==GLvar::load_PE_id || current_PE_id==GLvar::store_PE_id){
               CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_reserved->load_path_reserved=true;
               CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_activity->load_mux=1;
             }
             CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_reserved->memory_write_reserved[1]=true;
-            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
             CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_wr_ena[1]=1;
             CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[3]=src_operation_id;
             CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[4]=src_operation_id;
@@ -1423,15 +1430,13 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
       //Arrive in last PE data memory
       else{
         if(mode==Implementation){
-          CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time]->component_reserved->PE_input_reserved=true;
-
+          CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->PE_input_reserved=true;
+          CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
           if(current_PE_id==GLvar::load_PE_id || current_PE_id==GLvar::store_PE_id){
             CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_reserved->load_path_reserved=true;
             CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_activity->load_mux=1;
           }
           CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_reserved->memory_write_reserved[1]=true;
-          CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->PE_input_reserved=true;
-          CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
           CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_wr_ena[1]=1;
           CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[3]=src_operation_id;
           CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[4]=src_operation_id;
@@ -2109,6 +2114,19 @@ void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_ti
         }
       }
     }
+ 
+    /*
+    bool rd_reserve3=CGRA->PE_array[PE_id]->component_trace[i]->component_reserved->memory_read_reserved[3];
+    int rd_op3=CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_port_op[3];
+    bool rd_reserve4=CGRA->PE_array[PE_id]->component_trace[i]->component_reserved->memory_read_reserved[4];
+    int rd_op4=CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_port_op[4];
+    bool rd_reserve5=CGRA->PE_array[PE_id]->component_trace[i]->component_reserved->memory_read_reserved[5];
+    int rd_op5=CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_port_op[5];
+    bool wr_reserve1=CGRA->PE_array[PE_id]->component_trace[i]->component_reserved->memory_write_reserved[1];
+    if(PE_id==0 && wr_reserve1==0 && rd_reserve3 && rd_reserve4 && rd_reserve5) {
+        cout << "time="<< i << "," << " port 3,4,5 op="<<rd_op3<<" "<<rd_op4<<" "<<rd_op5<<" ";
+        cout << "addr=" << OpToAddr[rd_op3] << " " << OpToAddr[rd_op4] << " " << OpToAddr[rd_op5] <<endl;
+    }*/
 
     list<int> op_to_release;
     list<int>::iterator it;
@@ -2120,12 +2138,14 @@ void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_ti
       //there must be something wrong in the address allocatio part.
       if(rd_reserve){
         if(OpToAddr.count(rd_op)==0){
+          //if(rd_op==28 && PE_id==0){
           cout<<"op="<<rd_op<<endl;
           cout<<"executed at PE "<<DFG->DFG_vertex[rd_op]->vertex_attribute.execution_PE_id<<endl;
           cout<<"current PE is "<<PE_id<<endl;
           cout<<"execution time="<<DFG->DFG_vertex[rd_op]->vertex_attribute.operation_avail_time<<endl;
           cout<<"current time="<<i<<endl;
           cout<<"port number="<<p<<endl;
+          cout<<"Bram addr="<<OpToAddr[rd_op]<<endl;
           DEBUG1("The operation has never been stored at all!");
         }
 
@@ -2196,19 +2216,21 @@ bool Scheduler::OperationResultCheck(){
   return all_right;
 }
 
-void Scheduler::InstructionDumpMif(int final_execution_time){
+void Scheduler::InstructionDumpCoe(int final_execution_time){
 
   for(int i=0; i<GLvar::CGRA_scale; i++){
 
     ostringstream os;
-    os<<"./result/PE-"<<"inst-"<<i<<".mif";
+    os<<"./result/PE-"<<"inst-"<<i<<".coe";
     string fName=os.str();
     ofstream fHandle;
     fHandle.open(fName.c_str());
     if(!fHandle.is_open()){
-      DEBUG1("Fail to create the PE-inst-.mif");
+      DEBUG1("Fail to create the PE-inst-.coe");
     }
 
+    fHandle << "memory_initialization_radix=2;" << endl;
+    fHandle << "memory_initialization_vector=" << endl;
     list<int> bitList;
     list<int>::reverse_iterator it;
     int dec_data;
@@ -2216,14 +2238,14 @@ void Scheduler::InstructionDumpMif(int final_execution_time){
     for(int j=0; j<final_execution_time; j++){
 
       //The highest 4 bits are reserved for future extension and they keep 0 at the moment.
-      fHandle << "0000 ";
+      fHandle << "0000";
 
       //load-mux, 1->input from neighboring PEs. 0->input from outside memory.
       if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
-        fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->load_mux << " ";
+        fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->load_mux;
       }
       else{
-        fHandle << "0 ";
+        fHandle << "0";
       }
 
       //PE input mux
@@ -2245,7 +2267,6 @@ void Scheduler::InstructionDumpMif(int final_execution_time){
           DEBUG1("Unexpected PE_input_mux value!");
           break;
       }
-      fHandle << " ";
 
       //PE bypass mux
       dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_bypass_mux;
@@ -2266,11 +2287,10 @@ void Scheduler::InstructionDumpMif(int final_execution_time){
           DEBUG1("unexpected PE_bypass_mux value!");
           break;
       }
-      fHandle << " ";
      
       //Memory ena
-      fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[1] << " ";
-      fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[0] << " ";
+      fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[1];
+      fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[0];
 
       //Memory addr
       int port[6]={3,4,5,0,1,2}; 
@@ -2296,7 +2316,6 @@ void Scheduler::InstructionDumpMif(int final_execution_time){
           fHandle << (*it);
         }
         bitList.clear();
-        fHandle << " ";
       }
 
       //dsp_opcode
@@ -2325,7 +2344,6 @@ void Scheduler::InstructionDumpMif(int final_execution_time){
       else{
         DEBUG1("Undefined opcode!");
       }
-      fHandle << " ";
 
       //Store mux
       if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
@@ -2347,10 +2365,9 @@ void Scheduler::InstructionDumpMif(int final_execution_time){
             DEBUG1("unexpected store_mux value!");
             break;
         }
-        fHandle << " ";
       }
       else{
-        fHandle << "00 ";
+        fHandle << "00";
       }
 
       //PE output mux
@@ -2373,7 +2390,6 @@ void Scheduler::InstructionDumpMif(int final_execution_time){
             DEBUG1("Unexpected PE_output_mux value!");
             break;
         }
-        fHandle << " ";
       }
       
       fHandle<<endl;
@@ -2407,12 +2423,12 @@ void Scheduler::InstructionMif2Mem(int final_execution_time){
     fMemHandle << hexAddr <<endl;
 
     ostringstream os;
-    os<<"./result/PE-"<<"inst-"<<i<<".mif";
+    os<<"./result/PE-"<<"inst-"<<i<<".mem";
     string fName=os.str();
     ifstream fHandle;
     fHandle.open(fName.c_str());
     if(!fHandle.is_open()){
-      DEBUG1("Failed to open the PE.mif");
+      DEBUG1("Failed to open the PE.mem");
     }
 
     while(fHandle.getline(vec,instMemWidth)){
@@ -2520,12 +2536,12 @@ void Scheduler::DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const 
 
   //Open a file to store initialized data of the data memory
   ostringstream os;
-  os<<"./result/PE-"<<"mem-"<<PE_id<<".mif";
+  os<<"./result/PE-"<<"mem-"<<PE_id<<".coe";
   string fName=os.str();
   ofstream fHandle;
   fHandle.open(fName.c_str());
   if(!fHandle.is_open()){
-    DEBUG1("Fail to create the PE-mem.mif");
+    DEBUG1("Fail to create the PE-mem.coe");
   }
 
   //Transform the decimal data to be binary data and store them in the file.
@@ -2581,12 +2597,12 @@ void Scheduler::DataMemoryDumpMem(){
     fMemHandle << hexAddr <<endl;
 
     ostringstream os;
-    os<<"./result/PE-"<<"mem-"<<i<<".mif";
+    os<<"./result/PE-"<<"mem-"<<i<<".coe";
     string fName=os.str();
     ifstream fHandle;
     fHandle.open(fName.c_str());
     if(!fHandle.is_open()){
-      DEBUG1("Fail to open the PE-mem.mif");
+      DEBUG1("Fail to open the PE-mem.coe");
     }
 
     while(fHandle.getline(vec,readWidth)){
@@ -2666,34 +2682,36 @@ void Scheduler::SchedulingResultDump(){
   }
 
   for(int i=0; i<GLvar::maximum_operation_num; i++){
-    if(DFG->DFG_vertex[i]->vertex_type==OutputData){
+    //if(DFG->DFG_vertex[i]->vertex_type==OutputData){
       fHandle<<DFG->DFG_vertex[i]->vertex_id<<" ";
       fHandle<<DFG->DFG_vertex[i]->vertex_value<<" ";
       fHandle<<DFG->DFG_vertex[i]->vertex_attribute.execution_PE_id<<" ";
       fHandle<<endl;
-    }
+    //}
   }
 
   fHandle.close();
 }
 
-void Scheduler::OutsideAddrMemoryDumpMif(int final_execution_time){
+void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
   int outside_bram_num=2;
   int IO_PE[2]={0,1};
   for(int i=0; i<outside_bram_num; i++){
 
     ostringstream os;
-    os<<"./result/outside-"<<"bram-addr-"<<i<<".mif";
+    os<<"./result/outside-"<<"bram-addr-"<<i<<".coe";
     string fName=os.str();
     ofstream fHandle;
     fHandle.open(fName.c_str());
     if(!fHandle.is_open()){
-      DEBUG1("Fail to create the outside-bram-addr-.mif");
+      DEBUG1("Fail to create the outside-bram-addr-.coe");
     }
 
+    fHandle << "memory_initialization_radix=2;" <<endl;
+    fHandle << "memory_initialization_vector=" <<endl;
     int IO_PE_id=IO_PE[i];
     vector<unsigned int> bram_addr;
-    bram_addr.resize(final_execution_time+1);
+    bram_addr.resize(final_execution_time+2);
     vector<int> load_store_idle; //0->load, 1->store, 2->idle
     load_store_idle.resize(final_execution_time+1);
     for(int j=0; j<final_execution_time+1; j++){
@@ -2716,12 +2734,12 @@ void Scheduler::OutsideAddrMemoryDumpMif(int final_execution_time){
       }
 
       if(store_active){
-        if(load_store_idle[j+1]==0){
+        if(load_store_idle[j]==0){
           DEBUG1("Unexpected store state!\n");
         }
-        load_store_idle[j+1]=1;
-        int stored_op = CGRA->PE_array[IO_PE_id]->component_trace[j+1]->component_activity->store_op;
-        bram_addr[j+1] = DFG->DFG_vertex[stored_op]->vertex_bram_addr;
+        load_store_idle[j+2]=1;
+        int stored_op = CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->store_op;
+        bram_addr[j+2] = DFG->DFG_vertex[stored_op]->vertex_bram_addr;
       }
 
     }

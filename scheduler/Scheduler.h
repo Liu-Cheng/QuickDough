@@ -60,9 +60,9 @@ class Scheduler{
         void AddrGen(const vector<int> &birth_time, const vector<int> &die_time, const int &memCapacity, const int &PE_id);
         int SchedulingStat();
         bool SchedulingIsCompleted();
-        void InstructionDumpMif(int final_execution_time);
+        void InstructionDumpCoe(int final_execution_time);
         void InstructionMif2Mem(int final_execution_time);
-        void OutsideAddrMemoryDumpMif(int final_execution_time);
+        void OutsideAddrMemoryDumpCoe(int final_execution_time);
         void DataMemoryAnalysis();
         void DataMemoryDumpMem();
         void SchedulingResultDump();
