@@ -21,6 +21,7 @@ AtBreakPoint	GlobalDef.h	/^    BeforeBreakPoint, AtBreakPoint, AfterBreakPoint$/
 AttachHistory	Vertex.h	/^struct AttachHistory{$/;"	s
 AverageDegree	DataFlowGraph.cpp	/^void DataFlowGraph::AverageDegree(){$/;"	f	class:DataFlowGraph
 BeforeBreakPoint	GlobalDef.h	/^    BeforeBreakPoint, AtBreakPoint, AfterBreakPoint$/;"	e	enum:VertexType2
+Bin2Hex	Scheduler.cpp	/^void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName){$/;"	f	class:Scheduler
 CC	config/OpInfoGen/makefile	/^CC = g++$/;"	m
 CC	config/dfg_interface/makefile	/^CC = g++$/;"	m
 CC	makefile	/^CC = g++$/;"	m
@@ -291,6 +292,7 @@ break_point_num	GlobalDef.h	/^    static int break_point_num;$/;"	m	struct:GLvar
 break_point_store_time	Scheduler.h	/^        int break_point_store_time;$/;"	m	class:Scheduler
 cand_dod	config/dfg_interface/DFG_generation_rand.cpp	/^int *cand_dod;$/;"	v
 children	Vertex.h	/^        list<Vertex*> children;$/;"	m	struct:Vertex
+col	CoarseGrainReconArch.h	/^        int col;$/;"	m	class:CoarseGrainReconArch
 component_activity	ComponentState.h	/^        ComponentActivity* component_activity;$/;"	m	class:ComponentState
 component_reserved	ComponentState.h	/^        ComponentReserved* component_reserved;$/;"	m	class:ComponentState
 component_trace	PE.h	/^        vector<ComponentState*> component_trace; $/;"	m	class:PE
@@ -431,6 +433,7 @@ read_equation	config/dfg_interface/read_equation.cpp	/^void read_equation ()$/;"
 report_level	GlobalDef.cpp	/^int GLvar::report_level=0;$/;"	m	class:GLvar	file:
 report_level	GlobalDef.h	/^    static int report_level;$/;"	m	struct:GLvar
 routing_algorithm	CoarseGrainReconArch.h	/^        RoutingAlgorithm routing_algorithm;$/;"	m	class:CoarseGrainReconArch
+row	CoarseGrainReconArch.h	/^        int row;$/;"	m	class:CoarseGrainReconArch
 scheduling_priority	Vertex.h	/^    int scheduling_priority;$/;"	m	struct:VertexAttribute
 scheduling_type	GlobalDef.cpp	/^SchedulingType scheduling_type=ListScheduling;$/;"	v
 scheduling_type	GlobalDef.h	/^    static SchedulingType scheduling_type;$/;"	m	struct:GLvar

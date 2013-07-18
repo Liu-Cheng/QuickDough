@@ -81,6 +81,7 @@ class Scheduler{
         void LoadBalancePEFilter(list<int> &candidates, const vector<int> &executed_op_num);
         void ActivePEFilter(list<int> &candidates);
         int LeastReadyOpAttachedPESelection(const list<int> &candidates, const list<int> &op_ready_set);
+        void Bin2Hex(const string &BinFileName, const string &HexFileName);
 };
 
 #endif

@@ -2398,6 +2398,90 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
   }
 }
 
+void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName){
+    const int DataNum=256;
+    const int DataWidth=32;
+
+    ifstream BinFileHandle;
+    BinFileHandle.open(BinFileName.c_str());
+    if(!BinFileHandle.is_open()){
+        DEBUG1("Failed to open %s\n", BinFileName.c_str());  
+    }
+
+    ofstream HexFileHandle;
+    HexFileHandle.open(HexFileName.c_str());
+    if(!HexFileHandle.is_open()){
+        DEBUG1("Failed to create %s\n", HexFileName.c_str());
+    }
+
+    char BinVec[100];
+    int LineNum=0;
+    while(BinFileHandle.getline(BinVec,100)){
+        LineNum++;
+
+        //Ignore the first two lines due to coe file format.
+        if(LineNum<3){
+            continue;
+        }
+
+        HexFileHandle << "0x";
+        for(int k=0; k<DataWidth/4; k++){
+            int id=k*4;
+            if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HexFileHandle << '0';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HexFileHandle << '1';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HexFileHandle << '2';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                HexFileHandle << '3';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HexFileHandle << '4';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HexFileHandle << '5';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HexFileHandle << '6';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                HexFileHandle << '7';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HexFileHandle << '8';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HexFileHandle << '9';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HexFileHandle << 'A';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                HexFileHandle << 'B';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HexFileHandle << 'C';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HexFileHandle << 'D';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HexFileHandle << 'E';
+            }
+            else{
+                HexFileHandle << 'F';
+            }
+        }
+        HexFileHandle<<endl;
+    }
+    HexFileHandle.close();
+    BinFileHandle.close();
+}
+
 void Scheduler::InstructionMif2Mem(int final_execution_time){
   const int instMemDepth=4096;
   const int instMemWidth=72;
@@ -2791,6 +2875,10 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
     fHandle.close();
 
   }
+  Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mem");
+  Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mem");
+  Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mem");
+  Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mem");
 
 }
 
