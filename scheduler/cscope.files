@@ -28,6 +28,14 @@ GlobalDef.h
 main.cpp
 PE.cpp
 PE.h
+result/initialized_result.h
+result/initialized_src.h
+result/mm10x10/initialized_result.h
+result/mm10x10/initialized_src.h
+result/mm10x10/result_ctrl_words.h
+result/mm10x10/src_ctrl_words.h
+result/result_ctrl_words.h
+result/src_ctrl_words.h
 Scheduler.cpp
 Scheduler.h
 util/logcollect.cpp

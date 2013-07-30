@@ -2398,10 +2398,7 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
   }
 }
 
-void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName){
-    const int DataNum=256;
-    const int DataWidth=32;
-
+void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth){
     ifstream BinFileHandle;
     BinFileHandle.open(BinFileName.c_str());
     if(!BinFileHandle.is_open()){
@@ -2797,7 +2794,7 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
     vector<unsigned int> bram_addr;
     bram_addr.resize(final_execution_time+2);
     vector<int> load_store_idle; //0->load, 1->store, 2->idle
-    load_store_idle.resize(final_execution_time+1);
+    load_store_idle.resize(final_execution_time+2);
     for(int j=0; j<final_execution_time+1; j++){
       bram_addr[j]=0;
       load_store_idle[j]=2;
@@ -2832,7 +2829,7 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
     list<int>::reverse_iterator it;
     int dec_data;
     int width; 
-    for(int j=0; j<final_execution_time+1; j++){
+    for(int j=0; j<final_execution_time+2; j++){
 
       //The highest bit indicates the enable signal of the bram and the 
       //following 4bits represent the byte wena signals.
@@ -2875,10 +2872,126 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
     fHandle.close();
 
   }
-  Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mem");
-  Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mem");
-  Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mem");
-  Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mem");
+  Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mem", 32);
+  Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mem", 32);
+  Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mem", 32);
+  Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mem", 32);
+  Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/src_ctrl_words.h", "SrcMemCtrlWords", 32);
+  Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/result_ctrl_words.h", "ResultMemCtrlWords", 32);
+  Bin2HeadFile("./result/outside-data-memory-0.coe", "./result/initialized_src.h", "Src", 32);
+  Bin2HeadFile("./result/outside-data-memory-1.coe", "./result/initialized_result.h", "Result", 32);
 
+}
+
+void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth){
+
+    int DataNum=FileLineCount(BinFileName)-2;
+    ifstream BinFileHandle;
+    BinFileHandle.open(BinFileName.c_str());
+    if(!BinFileHandle.is_open()){
+        DEBUG1("Failed to open %s\n", BinFileName.c_str());  
+    }
+
+    ofstream HeadFileHandle;
+    HeadFileHandle.open(HeadFileName.c_str());
+    if(!HeadFileHandle.is_open()){
+        DEBUG1("Failed to create %s\n", HeadFileName.c_str());
+    }
+
+    char BinVec[100];
+    int LineNum=0;
+    HeadFileHandle << "unsigned int " << ArrayName << "[" << DataNum <<"]={";
+    while(BinFileHandle.getline(BinVec,100)){
+        LineNum++;
+
+        //Ignore the first two lines due to coe file format.
+        if(LineNum<3){
+            continue;
+        }
+
+        HeadFileHandle << "0x";
+        for(int k=0; k<DataWidth/4; k++){
+            int id=k*4;
+            if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HeadFileHandle << '0';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HeadFileHandle << '1';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HeadFileHandle << '2';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                HeadFileHandle << '3';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HeadFileHandle << '4';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HeadFileHandle << '5';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HeadFileHandle << '6';
+            }
+            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                HeadFileHandle << '7';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HeadFileHandle << '8';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HeadFileHandle << '9';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HeadFileHandle << 'A';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                HeadFileHandle << 'B';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                HeadFileHandle << 'C';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                HeadFileHandle << 'D';
+            }
+            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                HeadFileHandle << 'E';
+            }
+            else{
+                HeadFileHandle << 'F';
+            }
+        }
+        if(LineNum==DataNum+2){
+            HeadFileHandle << " };";
+        }
+        else{
+            HeadFileHandle << ", ";
+        }
+    }
+    for(int i=LineNum+1; i<=DataNum+2; i++){
+        if(i==DataNum+2){
+            HeadFileHandle << "0x00000000 };";
+        }
+        else{
+            HeadFileHandle << "0x00000000, ";
+        }
+    }
+    HeadFileHandle.close();
+    BinFileHandle.close();
+
+}
+
+int Scheduler::FileLineCount(const string &FileName){
+    int LineCnt=0;
+    ifstream FileHandle;
+    FileHandle.open(FileName.c_str());
+    if(!FileHandle.is_open()){
+        DEBUG1("File open failed!\n");
+    }
+    char LineVec[200];
+    while(FileHandle.getline(LineVec, 200)){
+        LineCnt++;
+    }
+    return LineCnt;
 }
 
