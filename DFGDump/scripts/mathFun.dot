@@ -1,0 +1,9 @@
+/* Data Flow Graph */
+digraph dfg{
+size="6.6";
+node[color=lightblue1, style=filled];
+"1"->"fpext0"
+"fpext0"->"call2"
+"3"->"call2"
+"call2"->"fptrunc4"
+}

@@ -1,0 +1,13 @@
+/* Data Flow Graph */
+digraph dfg{
+size="6.6";
+node[color=lightblue1, style=filled];
+"1"->"icmp0"
+"2"->"icmp0"
+"4"->"mul3"
+"5"->"mul3"
+"icmp0"->"phi6"
+"Const7"->"phi6"
+"mul3"->"phi6"
+"phi6"->"ret8"
+}

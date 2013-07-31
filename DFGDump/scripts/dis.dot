@@ -1,0 +1,20 @@
+/* Data Flow Graph */
+digraph dfg{
+size="6.6";
+node[color=lightblue1, style=filled];
+"1"->"sub0"
+"2"->"sub0"
+"1"->"sub3"
+"2"->"sub3"
+"sub0"->"mul4"
+"sub3"->"mul4"
+"6"->"sub5"
+"7"->"sub5"
+"6"->"sub8"
+"7"->"sub8"
+"sub5"->"mul9"
+"sub8"->"mul9"
+"mul4"->"add10"
+"mul9"->"add10"
+"add10"->"ret11"
+}
