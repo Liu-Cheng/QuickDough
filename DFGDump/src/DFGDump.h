@@ -21,19 +21,6 @@
 #include <sstream>
 
 namespace llvm{
-    struct OPNode{
-        unsigned int OriginalID;
-        unsigned int NewID;
-        std::string NodeName;
-        std::list<OPNode*> NodePred;
-        bool Accessed;
-        bool ShowInDFG;
-        bool IsConst;
-        bool IsInput;
-        bool IsResult;
-        std::string OriginalName; //Name in original program
-    };
-
     /// Keeps all the details of an element.
     /// Maximum dimension of the array is 2.
     /// When it is a vector, ydim=-1;
@@ -55,6 +42,22 @@ namespace llvm{
                 ydim=-1;
             }
     };
+
+    struct OPNode{
+        unsigned int OriginalID;
+        unsigned int NewID;
+        std::string NodeName;
+        std::list<OPNode*> NodePred;
+        bool Accessed;
+        bool ShowInDFG;
+        bool IsConst;
+        bool IsInput;
+        bool IsResult;
+        bool IsOutput;
+        std::string Opcode;
+        std::string OriginalName; //Name in original program
+    };
+
 
 }
 
