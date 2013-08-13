@@ -1,0 +1,131 @@
+Arg Number::4
+Argument Name is:  a, Pointer is 67326112, TypeID=14, it has 0 elements.
+Argument Name is:  b, Pointer is 67326192, TypeID=14, it has 0 elements.
+Argument Name is:  init, Pointer is 67326272, TypeID=10, it is neither an array nor a vector.
+Argument Name is:  c, Pointer is 67326352, TypeID=14, it has 0 elements.
+
+
+--Alias information 
+c[1][-1]
+c[1][-1]
+a[1][-1]
+a[1][-1]
+a[1][-1]
+a[1][-1]
+a[0][0]
+a[0][1]
+a[0][1]
+a[1][1]
+a[1][1]
+a[1][0]
+a[0][0]
+a[1][0]
+b[1][-1]
+b[1][-1]
+b[1][-1]
+b[1][-1]
+b[0][0]
+b[1][0]
+b[1][1]
+b[1][1]
+b[1][0]
+b[0][0]
+b[0][1]
+b[0][1]
+c[1][-1]
+c[1][-1]
+c[1][-1]
+c[1][-1]
+c[0][0]
+c[0][0]
+c[0][1]
+c[1][1]
+c[1][0]
+c[0][1]
+c[1][1]
+c[1][0]
+c[0][0]
+c[0][1]
+c[1][1]
+c[1][0]
+
+
+--LoadPointer2ElementInfo
+a[0][1]
+a[1][0]
+b[0][1]
+c[0][1]
+a[1][0]
+b[0][0]
+c[1][0]
+a[1][1]
+b[1][0]
+c[1][0]
+c[1][1]
+a[1][1]
+b[1][1]
+c[1][1]
+a[0][0]
+b[0][0]
+c[0][0]
+a[0][1]
+b[1][1]
+b[1][0]
+c[0][0]
+a[0][0]
+b[0][1]
+c[0][1]
+
+
+--strElement2Pointer 
+a 0 0
+a 0 1
+a 1 0
+a 1 1
+b 0 0
+b 0 1
+b 1 0
+b 1 1
+c 0 0
+c 0 1
+c 1 0
+c 1 1
+
+
+--OutputStrElement2Pointer
+c 0 0
+c 0 1
+c 1 0
+c 1 1
+scalar input operand, Original id=67326272, orignal name=
+
+
+--IOPointer2ElementInfo
+c[0][1]
+a[1][0]
+a[1][1]
+c[1][0]
+c[1][1]
+a[0][0]
+b[0][0]
+a[0][1]
+b[1][1]
+b[1][0]
+c[0][0]
+b[0][1]
+
+
+ IO list
+a[1][0] 3
+a[1][1] 4
+a[0][0] 1
+a[0][1] 2
+b[0][0] 5
+b[1][1] 8
+b[1][0] 7
+b[0][1] 6
+init 9
+c[0][1] 11
+c[1][0] 12
+c[1][1] 13
+c[0][0] 10
