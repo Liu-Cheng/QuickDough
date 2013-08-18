@@ -19,7 +19,7 @@ using namespace std;
 
 DataFlowGraph::DataFlowGraph(){
     LoadParameter();
-    MMInstGen(MATRIX_M,MATRIX_N,MATRIX_P);
+    //MMInstGen(MATRIX_M,MATRIX_N,MATRIX_P);
     DFGConstruct();
     DFGStatistic();
     /*

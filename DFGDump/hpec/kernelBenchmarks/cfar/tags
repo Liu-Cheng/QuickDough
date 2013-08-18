@@ -1,0 +1,51 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALL	Makefile	/^ALL = cfar cfarVerify$/;"	m
+CC	Makefile	/^CC  = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS   = -ansi -x c -I$(INCLUDE) -Wall$/;"	m
+CXX	Makefile	/^CXX = $(CC)$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(CFLAGS)$/;"	m
+C_in	cfar.c	/^  struct PcaCArrayFloat C_in; \/* data cube *\/$/;"	m	struct:__anon2	typeref:struct:__anon2::PcaCArrayFloat	file:
+CfarState	cfar.c	/^} CfarState;$/;"	t	typeref:struct:__anon2	file:
+CfarTarget	targetlist.h	/^typedef struct CfarTargetStruct CfarTarget;$/;"	t	typeref:struct:CfarTargetStruct
+CfarTargetList	targetlist.h	/^} CfarTargetList;$/;"	t	typeref:struct:__anon1
+CfarTargetList_add	targetlist.h	/^void CfarTargetList_add(CfarTargetList* p_list, uint bm, uint dop, uint rg) $/;"	f
+CfarTargetList_clean	targetlist.h	/^void CfarTargetList_clean(CfarTargetList* p_list)$/;"	f
+CfarTargetList_init	targetlist.h	/^void CfarTargetList_init(CfarTargetList* p_list) $/;"	f
+CfarTargetList_output	targetlist.h	/^void CfarTargetList_output(const char* filename, CfarTargetList* p_list)$/;"	f
+CfarTargetStruct	targetlist.h	/^struct CfarTargetStruct$/;"	s
+INCLUDE	Makefile	/^INCLUDE = ..\/include$/;"	m
+NUM_MM_BLOCKS	cfar.c	32;"	d	file:
+OBJ	Makefile	/^OBJ = cfar.o $(INCLUDE)\/PcaCMemMgr.o$/;"	m
+_TARGETLIST_H_	targetlist.h	17;"	d
+bm	targetlist.h	/^  uint bm, rg, dop;$/;"	m	struct:CfarTargetStruct
+cfar	cfar.c	/^void cfar(CfarState* p_cfar, CfarTargetList* p_targetlist)$/;"	f
+cfarGenerator	cfarGenerator.m	/^function cfarGenerator(id, Nbm, Ndop, Nrg, G, Ncfar, mu, Ntgts)$/;"	f
+cfarLatency	cfarLatency.m	/^function l = cfarLatency(id)$/;"	f
+cfarThroughput	cfarThroughput.m	/^function t = cfarThroughput(id)$/;"	f
+cfarWorkload	cfarWorkload.m	/^function w = cfarWorkload(id)$/;"	f
+cfar_mm	targetlist.h	/^MemManager cfar_mm;$/;"	v
+dop	targetlist.h	/^  uint bm, rg, dop;$/;"	m	struct:CfarTargetStruct
+gcl	cfar.c	/^  uint gcl;   \/* number of guard cells (not part of noise estimate) *\/$/;"	m	struct:__anon2	file:
+initCfar	cfar.c	/^void initCfar(CfarState* p_cfar, const char* m_paramfile, $/;"	f
+length	targetlist.h	/^  uint length;$/;"	m	struct:__anon1
+main	cfar.c	/^int main(int argc, char** argv)$/;"	f
+main	cfarVerify.c	/^int main(int argc, char** argv)$/;"	f
+mm_clean	targetlist.h	41;"	d
+mm_free	targetlist.h	43;"	d
+mm_init	targetlist.h	40;"	d
+mm_malloc	targetlist.h	42;"	d
+mu	cfar.c	/^  uint mu;    \/* threshold for a target *\/$/;"	m	struct:__anon2	file:
+nbm	cfar.c	/^  uint nbm;   \/* number of beams (dimension of the data cube) *\/$/;"	m	struct:__anon2	file:
+ncfar	cfar.c	/^  uint ncfar; \/* number of adjacent cells to use in noise estimate *\/$/;"	m	struct:__anon2	file:
+ndop	cfar.c	/^  uint ndop;  \/* number of dopplers (dimension of the data cube) *\/$/;"	m	struct:__anon2	file:
+nrg	cfar.c	/^  uint nrg;   \/* number of range gates (dimension of the data cube) *\/$/;"	m	struct:__anon2	file:
+p_head	targetlist.h	/^  CfarTarget* p_head;$/;"	m	struct:__anon1
+p_next	targetlist.h	/^  struct CfarTargetStruct* p_next;$/;"	m	struct:CfarTargetStruct	typeref:struct:CfarTargetStruct::CfarTargetStruct
+p_tail	targetlist.h	/^  CfarTarget* p_tail;$/;"	m	struct:__anon1
+rg	targetlist.h	/^  uint bm, rg, dop;$/;"	m	struct:CfarTargetStruct
+uint	cfarVerify.c	/^typedef unsigned int uint;$/;"	t	file:

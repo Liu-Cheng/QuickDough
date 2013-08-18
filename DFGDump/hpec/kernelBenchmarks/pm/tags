@@ -1,0 +1,45 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = gcc$/;"	m
+CCFLAGS	Makefile	/^CCFLAGS = -xc -ansi$/;"	m
+INC	Makefile	/^INC = -I..\/include$/;"	m
+LIBS	Makefile	/^LIBS = -lm$/;"	m
+LOG10	pm.c	37;"	d	file:
+MIN_NOISE	pm.c	38;"	d	file:
+MSE_scores	pm.c	/^  float *MSE_scores;           \/* the likelihood of the matching between a $/;"	m	struct:__anon1	file:
+PmData	pm.c	/^} PmData;$/;"	t	typeref:struct:__anon1	file:
+all_shifted_test_db	pm.c	/^  float *all_shifted_test_db;  \/* contains the shiftings of the test pattern *\/$/;"	m	struct:__anon1	file:
+clean	pm.c	/^void clean(PmData *pmdata)$/;"	f
+elsize	pm.c	/^  int   elsize;                \/* the size of a single fp number *\/$/;"	m	struct:__anon1	file:
+init	pm.c	/^void init(PmData *pmdata, PcaCArrayFloat *lib, PcaCArrayFloat *pattern)$/;"	f
+log10fpm	pm.c	/^float log10fpm (float exp)$/;"	f
+log_coeff	pm.c	/^float log_coeff[16];$/;"	v
+mag_shift_scores	pm.c	/^  float *mag_shift_scores;     \/* the likelihood of the matching between a $/;"	m	struct:__anon1	file:
+main	pm.c	/^int main(int argc, char **argv)$/;"	f
+main	pmVerify.c	/^int main(int argc, char **argv)$/;"	f
+minimum_MSE_score	pm.c	/^  float *minimum_MSE_score;    \/* the likelihood of the matching between the$/;"	m	struct:__anon1	file:
+num_templates	pm.c	/^  int   num_templates;         \/* the number of library templates *\/$/;"	m	struct:__anon1	file:
+pm	pm.c	/^int pm(PmData *pmdata)$/;"	f
+pmGenerator	pmGenerator.m	/^function pmGenerator(DataSetNum, NoiseLevel, SigLevel1, SigLevel2, RandLevel, PatternLength, LibPatterns)$/;"	f
+pmLatency	pmLatency.m	/^function l = pmLatency (DataSetNum)$/;"	f
+pmThroughput	pmThroughput.m	/^function Throughput = pmThroughput (DataSetNum)$/;"	f
+pmWorkload	pmWorkload.m	/^function w = pmWorkload(DataSetNum)$/;"	f
+pow10fpm	pm.c	/^float pow10fpm (float exp)$/;"	f
+pow_coeff	pm.c	/^float pow_coeff[19];$/;"	v
+profile_size	pm.c	/^  int   profile_size;          \/* the length of the pattern *\/$/;"	m	struct:__anon1	file:
+setcoeff	pm.c	/^void setcoeff()$/;"	f
+shift_ratio	pm.c	/^  float shift_ratio;           \/* determines the number of range shifts *\/$/;"	m	struct:__anon1	file:
+shift_size	pm.c	/^  int   shift_size;            \/* the actual number of range shifts *\/$/;"	m	struct:__anon1	file:
+template_copy	pm.c	/^  float *template_copy;        \/* temporary storage for a template *\/$/;"	m	struct:__anon1	file:
+template_exceed	pm.c	/^  uchar *template_exceed;      \/* marking where a library template $/;"	m	struct:__anon1	file:
+template_profiles_db	pm.c	/^  float *template_profiles_db; \/* the library of patterns *\/$/;"	m	struct:__anon1	file:
+test_exceed_means	pm.c	/^  float *test_exceed_means;    \/* pixels where test pattern exceeds twice $/;"	m	struct:__anon1	file:
+test_noise_db_array	pm.c	/^  float *test_noise_db_array;  \/* copies of test noise in an array for $/;"	m	struct:__anon1	file:
+test_profile_db	pm.c	/^  float *test_profile_db;      \/* the test pattern *\/$/;"	m	struct:__anon1	file:
+uchar	pm.c	/^typedef unsigned char uchar;$/;"	t	file:
+uint	pm.c	/^typedef unsigned int  uint;$/;"	t	file:
+verify	pmVerify.c	/^int verify(PcaCArrayInt *origpatnum, PcaCArrayInt* patnum)$/;"	f
