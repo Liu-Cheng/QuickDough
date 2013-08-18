@@ -1780,7 +1780,38 @@ void Scheduler::TargetOperationRefresh(const vector<int> &src_operation_ids, con
   int srcA=DFG->DFG_vertex[src_operation_ids[0]]->vertex_value;
   int srcB=DFG->DFG_vertex[src_operation_ids[1]]->vertex_value;
   int srcC=DFG->DFG_vertex[src_operation_ids[2]]->vertex_value;
-  DFG->DFG_vertex[target_operation_id]->vertex_value=srcA*srcB+srcC;
+  int Opcode=DFG->DFG_vertex[target_operation_id]->vertex_attribute.opcode;
+  int Result;
+  if(Opcode==0){
+      Result=srcA*srcB-srcC;
+  }
+  else if(Opcode==1){
+      Result=srcA*srcB+srcC;
+  }
+  else if(Opcode==2){
+      Result=srcA+srcB+srcC;
+  }
+  else if(Opcode==3){
+      Result=srcA+srcB-srcC;
+  }
+  else if(Opcode==4){
+      Result=srcA-srcB+srcC;
+  }
+  else if(Opcode==5){
+      Result=srcA-srcB-srcC;
+  }
+  else if(Opcode==6){
+      if(srcA){
+          Result=srcB;
+      }
+      else{
+          Result=srcC;
+      }
+  }
+  else{
+      Result=srcA*srcB+srcC;
+  }
+  DFG->DFG_vertex[target_operation_id]->vertex_value=Result;
 
   AttachHistory attach_point;
   attach_point.attached_time=execution_time;
