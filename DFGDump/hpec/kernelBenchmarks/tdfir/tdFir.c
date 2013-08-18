@@ -19,17 +19,17 @@
 #include "./tdFir.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/PcaCTimer.h"
+/*#include "../include/PcaCTimer.h"*/
 
+#define LEN 1024
 
-
-int main(int argc, char **argv)
+int flag=0;
+int main()
 {
-  tdFirVars.arguments = argc;
-  tdFirVars.dataSet = argv[1];
+  tdFirVars.arguments = 2; /*argc;*/
+  tdFirVars.dataSet = "1"; /*argv[1];*/
 
-
-
+  /*printf("argc=%d, tdFirVars.dataSet=%s\n", tdFirVars.arguments, tdFirVars.dataSet);*/
 
   /*
     I need to declare some variables:
@@ -42,10 +42,6 @@ int main(int argc, char **argv)
     struct tdFirVaribles tdFirVars;
   */
   
-
-  
-
-
   /*
     In tdFirSetup, I want to perform tasks that I do NOT want to include
     in my timing.  For example:
@@ -58,23 +54,12 @@ int main(int argc, char **argv)
   */
   tdFirSetup(&tdFirVars);
 
-
-
-
-
-
   /*
     In tdFir, I want to perform tdFirolution.
     The declaration for tdFir() can be found in tdFir.h, while
     the definition of tdFir() can be found in tdFir.c.
   */
   tdFir(&tdFirVars);
-
-
-
-
-
-
 
   /*
     In tdFirComplete(), I first want to output my result to output.dat.  
@@ -83,10 +68,6 @@ int main(int argc, char **argv)
     the definition of tdFirComplete() can be found in tdFir.c.
   */
   tdFirComplete(&tdFirVars);
-
-
-
-
 
   return 0;
 }
@@ -171,9 +152,8 @@ void tdFir(struct tdFirVariables *tdFirVars)
   int  filterLength = tdFirVars->filterLength;
   int  inputLength  = tdFirVars->inputLength;  
   int  resultLength = filterLength + inputLength - 1;
-  pca_timer_t t;
-  t = startTimer();
-
+  /*pca_timer_t t;
+  t = startTimer();*/
 
 
 
@@ -220,22 +200,31 @@ void tdFir(struct tdFirVariables *tdFirVars)
     total time in Seconds it took to do the TDFIR.
   */
 
-  tdFirVars->time.data[0] = stopTimer(t);
+  /*
+   tdFirVars->time.data[0] = stopTimer(t);
 
   printf("Done.  Latency: %f s.\n", tdFirVars->time.data[0]);
+  */
+  printf("Done\n");
 
 }
 
 
 
-
-
+/*This function can be implemented on FPGA*/
 void elCplxMul(float *dataPtr, float *filterPtr, float *resultPtr, int inputLength)
 {
   int index;
   float filterReal = *filterPtr; 
   float filterImag = *(filterPtr+1);
 
+  /*
+  if(flag<3){
+      flag++;
+      printf("Get into the function for the: %d times, In CplxMul function: ", flag);
+      printf("inputLength=%d\n", inputLength);
+  }
+  */
   for(index = 0; index < inputLength; index++)
     {
       /*      COMPLEX MULTIPLY   */

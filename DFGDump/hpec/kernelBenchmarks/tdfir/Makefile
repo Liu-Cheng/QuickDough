@@ -11,9 +11,9 @@
 
 
 CC = gcc
-CCFLAGS = -xc -ansi -lm
-CCDEBUGFLAGS = -g -xc -ansi -lm
-INC = -I../include
+CCFLAGS = -xc -Incurses -ansi
+CCDEBUGFLAGS = -g -xc -ansi
+INC = -I../include -lm 
 
 default:
 	$(CC) $(CCFLAGS) tdFir.c -o tdFir $(INC)

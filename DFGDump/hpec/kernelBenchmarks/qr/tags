@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = gcc$/;"	m
+CCFLAGS	Makefile	/^CCFLAGS = -xc -ansi -Wall$/;"	m
+INC	Makefile	/^INC = -I..\/include$/;"	m
+LIBS	Makefile	/^LIBS = -lm$/;"	m
+compute_allowable_error	qrVerify.c	/^float compute_allowable_error(int rows, int cols, ComplexFloat * A)$/;"	f
+hermitian	qrVerify.c	/^void hermitian(int m, int n, ComplexFloat * X_herm, ComplexFloat * X)$/;"	f
+initialize_I	qrVerify.c	/^void initialize_I(int m, int n, ComplexFloat * I)$/;"	f
+initialize_matrices	qr.c	/^void initialize_matrices(struct PcaCArrayFloat * M, struct PcaCArrayFloat * D)$/;"	f
+main	qr.c	/^int main(int argc, char **argv)$/;"	f
+main	qrVerify.c	/^int main(int argc, char **argv)$/;"	f
+matrix_multiply	qrVerify.c	/^void matrix_multiply(int m, int n, int p, ComplexFloat *Z, ComplexFloat *X,$/;"	f
+qr	qr.c	/^void qr(int rows, int cols, ComplexFloat *A, ComplexFloat *M, $/;"	f
+qrGenerator	qrGenerator.m	/^function qrGenerator(DataSetNum, NumRows, NumCols)$/;"	f
+qrLatency	qrLatency.m	/^function latency = qrLatency(DataSetNum)$/;"	f
+qrThroughput	qrThroughput.m	/^function throughput = qrThroughput(DataSetNum)$/;"	f
+qrWorkload	qrWorkload.m	/^function workload = qrWorkload(DataSetNum)$/;"	f
+verify	qrVerify.c	/^int verify(int rows, int cols, float allowable_error,$/;"	f

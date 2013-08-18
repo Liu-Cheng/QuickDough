@@ -1,0 +1,53 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = gcc$/;"	m
+CCDEBUGFLAGS	Makefile	/^CCDEBUGFLAGS = -g -xc -ansi -lm$/;"	m
+CCFLAGS	Makefile	/^CCFLAGS = -xc -ansi -lm$/;"	m
+CPLX_MUL	fdFir.h	62;"	d
+EPS	fdFirVerify.c	19;"	d	file:
+FDFIR_FREQ_H_	fdFir.h	17;"	d
+INC	Makefile	/^INC = -I..\/include$/;"	m
+PI	fdFir.h	26;"	d
+RADIX	fdFir.h	25;"	d
+arguments	fdFir.h	/^  int   arguments;$/;"	m	struct:fdFirVariables
+bit_reverse	bit_reverse.m	/^function a = bit_reverse(b)$/;"	f
+butterflies	fdFir.h	/^  int   butterflies;$/;"	m	struct:fdFirVariables
+computeNumPhases	fdFir.c	/^int computeNumPhases(int inputLength)$/;"	f
+createFftTwiddles	fdFir.c	/^void createFftTwiddles(float *twiddlePtr, int inputLength)$/;"	f
+createFreqFilter	fdFir.c	/^void createFreqFilter(struct fdFirVariables *fdFirVars)$/;"	f
+createTwiddles	fdFir.c	/^void createTwiddles(float *twiddlePtr, float * twiddleConjPtr, int inputLength)$/;"	f
+currentFilter	fdFir.h	/^  int   currentFilter;$/;"	m	struct:fdFirVariables
+dataSet	fdFir.h	/^  char  *dataSet;$/;"	m	struct:fdFirVariables
+elDiv	elWise.c	/^void elDiv(float *dataPtr, int inputLength)$/;"	f
+elMul	elWise.c	/^void elMul(float *dataPtr, float *filterPtr, int inputLength)$/;"	f
+fdFir	fdFir.c	/^void fdFir(struct fdFirVariables *fdFirVars)$/;"	f
+fdFirComplete	fdFir.c	/^void fdFirComplete(struct fdFirVariables *fdFirVars)$/;"	f
+fdFirComplete	fdFirVerify.c	/^void fdFirComplete(struct fdFirVariables *fdFirVars)$/;"	f
+fdFirGenerator	fdFirGenerator.m	/^function fdFirGenerator(dataSet, inputSize, filterSize, numFilters)$/;"	f
+fdFirLatency	fdFirLatency.m	/^function l = fdFirLatency(dataSet)$/;"	f
+fdFirSetup	fdFir.c	/^void fdFirSetup(struct fdFirVariables *fdFirVars)$/;"	f
+fdFirThroughput	fdFirThroughput.m	/^function flopssec = fdFirThroughput(dataSet)$/;"	f
+fdFirVariables	fdFir.h	/^struct fdFirVariables{$/;"	s
+fdFirVars	fdFir.h	/^}fdFirVars; $/;"	v	typeref:struct:fdFirVariables
+fdFirVerify	fdFirVerify.c	/^void fdFirVerify(struct fdFirVariables *fdFirVars)$/;"	f
+fdFirWorkload	fdFirWorkload.m	/^function workload = fdFirWorkload(dataSet)$/;"	f
+fft	fft.c	/^void fft(int filter, int inputLength, int phases,$/;"	f
+filter	fdFir.h	/^  PcaCArrayFloat filter;$/;"	m	struct:fdFirVariables
+filterLength	fdFir.h	/^  int   filterLength;$/;"	m	struct:fdFirVariables
+freqFilterPtr	fdFir.h	/^  float *freqFilterPtr;$/;"	m	struct:fdFirVariables
+ifft	ifft.c	/^void ifft(struct fdFirVariables *fdFirVars)$/;"	f
+input	fdFir.h	/^  PcaCArrayFloat input;$/;"	m	struct:fdFirVariables
+inputLength	fdFir.h	/^  int   inputLength;$/;"	m	struct:fdFirVariables
+main	fdFir.c	/^int main(int argc, char **argv)$/;"	f
+main	fdFirVerify.c	/^int main(int argc, char **argv)$/;"	f
+numFilters	fdFir.h	/^  int   numFilters;$/;"	m	struct:fdFirVariables
+phases	fdFir.h	/^  int   phases;$/;"	m	struct:fdFirVariables
+stride	fdFir.h	/^  int   stride;$/;"	m	struct:fdFirVariables
+time	fdFir.h	/^  PcaCArrayFloat time;$/;"	m	struct:fdFirVariables
+twiddleConjPtr	fdFir.h	/^  float *twiddleConjPtr;$/;"	m	struct:fdFirVariables
+twiddlePtr	fdFir.h	/^  float *twiddlePtr;$/;"	m	struct:fdFirVariables
+verifyLength	fdFir.c	/^int verifyLength(int inputLength)$/;"	f
