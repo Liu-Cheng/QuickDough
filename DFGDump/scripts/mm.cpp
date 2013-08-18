@@ -1,4 +1,4 @@
-const int N=4;
+const int N=2;
 int c[N][N];
 void mm(int a[N][N], int b[N][N]){
     for (int i=0; i<N; i++){
