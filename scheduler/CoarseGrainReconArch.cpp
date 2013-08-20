@@ -539,8 +539,8 @@ void CoarseGrainReconArch::LinkUtilizationAnalysis(const int &begin_time, const 
     //Delete less important links
     float minimum_link_utilization=1;
     float maximum_link_utilization=0;
-    float link_utilization_standard;
-    float exist_standard=LINK_FILTER_STANDARD; //link can exist when its utilization is among the highest 90%.
+    //float link_utilization_standard;
+    //float exist_standard=LINK_FILTER_STANDARD; //link can exist when its utilization is among the highest 90%.
     for(int i=0; i<GLvar::CGRA_scale; i++){
         for(int j=0; j<GLvar::CGRA_scale; j++){
             if(link_utilization[i][j]>0){//link with zero utilization is excluded from the following analysis
@@ -553,7 +553,7 @@ void CoarseGrainReconArch::LinkUtilizationAnalysis(const int &begin_time, const 
             }
         }
     }
-    link_utilization_standard=minimum_link_utilization+(maximum_link_utilization-minimum_link_utilization)*(1-exist_standard);
+    //link_utilization_standard=minimum_link_utilization+(maximum_link_utilization-minimum_link_utilization)*(1-exist_standard);
 
     int current_link_num=0;
     for(int i=0; i<GLvar::CGRA_scale; i++){

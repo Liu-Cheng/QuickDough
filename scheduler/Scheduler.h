@@ -61,7 +61,7 @@ class Scheduler{
         int SchedulingStat();
         bool SchedulingIsCompleted();
         void InstructionDumpCoe(int final_execution_time);
-        void InstructionMif2Mem(int final_execution_time);
+        void InstructionDumpMem(int final_execution_time);
         void OutsideAddrMemoryDumpCoe(int final_execution_time);
         void DataMemoryAnalysis();
         void DataMemoryDumpMem();

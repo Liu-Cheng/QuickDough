@@ -42,6 +42,7 @@ using namespace std;
 #define MATRIX_M 7
 #define MATRIX_N 7
 #define MATRIX_P 7
+#define INST_MEM_DEPTH 1024
 #define DEBUG1(FMT, ARG...) do {fprintf(stderr,"File=%s, Line=%d: "FMT" \n",__FILE__, __LINE__,##ARG); exit(1);} while(0)
 #define DEBUG2(FMT, ARG...) do {fprintf(stdout,"File=%s, Line=%d  "FMT" \n",__FILE__, __LINE__,##ARG);} while(0)
 #define DEBUG3(FMT, ARG...) do {fprintf(stdout,FMT"/n",##ARG);} while(0)
