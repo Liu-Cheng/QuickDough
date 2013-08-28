@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-const int N=2;
-int c[N][N];
-void mm(int a[N][N], int b[N][N]){
-=======
 //-------------------------------------------------------------------------
 //
 // 1) Initialization must be done out of the function.
@@ -21,9 +16,9 @@ void mm(int a[N][N], int b[N][N]){
 //
 //--------------------------------------------------------------------------
 
-const int N=2;
+const int N=7;
+int c[N][N];
 void mm(int a[N][N], int b[N][N], int init, int c[N][N]){
->>>>>>> b77a82a4117ed444deb3eaa6c90f04a352a08da1
     for (int i=0; i<N; i++){
         for(int j=0; j<N; j++){
             c[i][j]=init;

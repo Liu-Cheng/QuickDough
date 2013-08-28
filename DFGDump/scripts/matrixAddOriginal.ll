@@ -1,25 +1,24 @@
 ; ModuleID = 'matrixAdd.cpp'
-target datalayout = "e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:32:64-f32:32:32-f64:32:64-v64:64:64-v128:128:128-a0:0:64-f80:32:32-n8:16:32-S128"
-target triple = "i386-pc-linux-gnu"
+target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
 
-define i32 @_Z9matrixAddPA10_iS0_([10 x i32]* %a, [10 x i32]* %b) nounwind {
+define void @_Z9matrixAddPA10_iS0_S0_([10 x i32]* %a, [10 x i32]* %b, [10 x i32]* %c) nounwind uwtable {
 entry:
-  %a.addr = alloca [10 x i32]*, align 4
-  %b.addr = alloca [10 x i32]*, align 4
-  %c = alloca [10 x [10 x i32]], align 4
-  %s = alloca i32, align 4
+  %a.addr = alloca [10 x i32]*, align 8
+  %b.addr = alloca [10 x i32]*, align 8
+  %c.addr = alloca [10 x i32]*, align 8
   %i = alloca i32, align 4
   %j = alloca i32, align 4
-  store [10 x i32]* %a, [10 x i32]** %a.addr, align 4
-  store [10 x i32]* %b, [10 x i32]** %b.addr, align 4
-  store i32 0, i32* %s, align 4
+  store [10 x i32]* %a, [10 x i32]** %a.addr, align 8
+  store [10 x i32]* %b, [10 x i32]** %b.addr, align 8
+  store [10 x i32]* %c, [10 x i32]** %c.addr, align 8
   store i32 0, i32* %i, align 4
   br label %for.cond
 
-for.cond:                                         ; preds = %for.inc12, %entry
+for.cond:                                         ; preds = %for.inc14, %entry
   %0 = load i32* %i, align 4
   %cmp = icmp slt i32 %0, 10
-  br i1 %cmp, label %for.body, label %for.end14
+  br i1 %cmp, label %for.body, label %for.end16
 
 for.body:                                         ; preds = %for.cond
   store i32 0, i32* %j, align 4
@@ -32,49 +31,47 @@ for.cond1:                                        ; preds = %for.inc, %for.body
 
 for.body3:                                        ; preds = %for.cond1
   %2 = load i32* %j, align 4
+  %idxprom = sext i32 %2 to i64
   %3 = load i32* %i, align 4
-  %4 = load [10 x i32]** %a.addr, align 4
-  %arrayidx = getelementptr inbounds [10 x i32]* %4, i32 %3
-  %arrayidx4 = getelementptr inbounds [10 x i32]* %arrayidx, i32 0, i32 %2
-  %5 = load i32* %arrayidx4, align 4
+  %idxprom4 = sext i32 %3 to i64
+  %4 = load [10 x i32]** %a.addr, align 8
+  %arrayidx = getelementptr inbounds [10 x i32]* %4, i64 %idxprom4
+  %arrayidx5 = getelementptr inbounds [10 x i32]* %arrayidx, i32 0, i64 %idxprom
+  %5 = load i32* %arrayidx5, align 4
   %6 = load i32* %j, align 4
+  %idxprom6 = sext i32 %6 to i64
   %7 = load i32* %i, align 4
-  %8 = load [10 x i32]** %b.addr, align 4
-  %arrayidx5 = getelementptr inbounds [10 x i32]* %8, i32 %7
-  %arrayidx6 = getelementptr inbounds [10 x i32]* %arrayidx5, i32 0, i32 %6
-  %9 = load i32* %arrayidx6, align 4
+  %idxprom7 = sext i32 %7 to i64
+  %8 = load [10 x i32]** %b.addr, align 8
+  %arrayidx8 = getelementptr inbounds [10 x i32]* %8, i64 %idxprom7
+  %arrayidx9 = getelementptr inbounds [10 x i32]* %arrayidx8, i32 0, i64 %idxprom6
+  %9 = load i32* %arrayidx9, align 4
   %add = add nsw i32 %5, %9
   %10 = load i32* %j, align 4
+  %idxprom10 = sext i32 %10 to i64
   %11 = load i32* %i, align 4
-  %arrayidx7 = getelementptr inbounds [10 x [10 x i32]]* %c, i32 0, i32 %11
-  %arrayidx8 = getelementptr inbounds [10 x i32]* %arrayidx7, i32 0, i32 %10
-  store i32 %add, i32* %arrayidx8, align 4
-  %12 = load i32* %j, align 4
-  %13 = load i32* %i, align 4
-  %arrayidx9 = getelementptr inbounds [10 x [10 x i32]]* %c, i32 0, i32 %13
-  %arrayidx10 = getelementptr inbounds [10 x i32]* %arrayidx9, i32 0, i32 %12
-  %14 = load i32* %arrayidx10, align 4
-  %15 = load i32* %s, align 4
-  %add11 = add nsw i32 %15, %14
-  store i32 %add11, i32* %s, align 4
+  %idxprom11 = sext i32 %11 to i64
+  %12 = load [10 x i32]** %c.addr, align 8
+  %arrayidx12 = getelementptr inbounds [10 x i32]* %12, i64 %idxprom11
+  %arrayidx13 = getelementptr inbounds [10 x i32]* %arrayidx12, i32 0, i64 %idxprom10
+  store i32 %add, i32* %arrayidx13, align 4
   br label %for.inc
 
 for.inc:                                          ; preds = %for.body3
-  %16 = load i32* %j, align 4
-  %inc = add nsw i32 %16, 1
+  %13 = load i32* %j, align 4
+  %inc = add nsw i32 %13, 1
   store i32 %inc, i32* %j, align 4
   br label %for.cond1
 
 for.end:                                          ; preds = %for.cond1
-  br label %for.inc12
+  br label %for.inc14
 
-for.inc12:                                        ; preds = %for.end
-  %17 = load i32* %i, align 4
-  %inc13 = add nsw i32 %17, 1
-  store i32 %inc13, i32* %i, align 4
+for.inc14:                                        ; preds = %for.end
+  %14 = load i32* %i, align 4
+  %inc15 = add nsw i32 %14, 1
+  store i32 %inc15, i32* %i, align 4
   br label %for.cond
 
-for.end14:                                        ; preds = %for.cond
-  %18 = load i32* %s, align 4
-  ret i32 %18
+for.end16:                                        ; preds = %for.cond
+  ret void
 }

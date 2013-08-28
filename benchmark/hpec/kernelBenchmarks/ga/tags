@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALL	Makefile	/^ALL = genalg genalgVerify$/;"	m
+CC	Makefile	/^CC  = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS   = -ansi -x c -I$(INCLUDE) -Wall$/;"	m
+CXX	Makefile	/^CXX = $(CC)$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(CFLAGS)$/;"	m
+GenAlgState	genalg.c	/^} GenAlgState;$/;"	t	typeref:struct:__anon1	file:
+INCLUDE	Makefile	/^INCLUDE = ..\/include$/;"	m
+SEED	genalg.c	34;"	d	file:
+best_idx	genalg.c	/^  uint best_idx;           \/* the index of the best chromosome *\/$/;"	m	struct:__anon1	file:
+cleanupGA	genalg.c	/^void cleanupGA(GenAlgState* p_genalg)$/;"	f
+evaluate	genalg.c	/^void evaluate(GenAlgState* p_genalg)$/;"	f
+genalg	genalg.c	/^void genalg(GenAlgState* p_genalg) $/;"	f
+genalgGenerator	genalgGenerator.m	/^function genalgGenerator(id, Codes, Genes, MaxElite, MaxGen, PopSize, ...$/;"	f
+genalgLatency	genalgLatency.m	/^function l = genalgLatency(id)$/;"	f
+genalgThroughput	genalgThroughput.m	/^function t = genalgThroughput(id)$/;"	f
+genalgWorkload	genalgWorkload.m	/^function w = genalgWorkload(id)$/;"	f
+initGA	genalg.c	/^void initGA(GenAlgState* p_genalg, const char* p_file, const char* s_file)$/;"	f
+m_curpool	genalg.c	/^  uint* m_curpool;         \/* the entire current population *\/$/;"	m	struct:__anon1	file:
+m_fitness	genalg.c	/^  float* m_fitness;        \/* the score of each chromosome *\/$/;"	m	struct:__anon1	file:
+m_newpool	genalg.c	/^  uint* m_newpool;         \/* the entire next population *\/$/;"	m	struct:__anon1	file:
+main	genalg.c	/^int main(int argc, char** argv)$/;"	f
+main	genalgVerify.c	/^int main(int argc, char** argv)$/;"	f
+max_elite	genalg.c	/^  uint max_elite;          \/* termination criteria; terminate the genetic$/;"	m	struct:__anon1	file:
+max_gen	genalg.c	/^  uint max_gen;            \/* termination criteria; terminate the genetic $/;"	m	struct:__anon1	file:
+max_score	genalg.c	/^  float max_score;         \/* the score of the best chromosome *\/$/;"	m	struct:__anon1	file:
+num_chromo	genalg.c	/^  uint num_chromo;         \/* number of chromosomes in the population *\/$/;"	m	struct:__anon1	file:
+num_codes	genalg.c	/^  uint num_codes;          \/* number of possible values for each gene *\/$/;"	m	struct:__anon1	file:
+num_elite	genalg.c	/^  uint num_elite;          \/* counter for the above termination criteria *\/$/;"	m	struct:__anon1	file:
+num_gen	genalg.c	/^  uint num_gen;            \/* counter for the above termination criteria *\/$/;"	m	struct:__anon1	file:
+num_genes	genalg.c	/^  uint num_genes;          \/* number of positions in a chromosome *\/$/;"	m	struct:__anon1	file:
+outputEliteChromosome	genalg.c	/^void outputEliteChromosome(const char* filename, GenAlgState* p_genalg)$/;"	f
+pool_score	genalg.c	/^  float pool_score;        \/* total score of the population *\/$/;"	m	struct:__anon1	file:
+pr_crossover	genalg.c	/^  float pr_crossover;      \/* probability that crossover will occur for$/;"	m	struct:__anon1	file:
+pr_mutation	genalg.c	/^  float pr_mutation;       \/* probability of mutation for any $/;"	m	struct:__anon1	file:
+score_in	genalg.c	/^  PcaCArrayFloat score_in; \/* the score matrix used to score chromosomes *\/$/;"	m	struct:__anon1	file:
+try_mutate	genalg.c	38;"	d	file:
+uint	genalg.c	/^typedef unsigned int uint;$/;"	t	file:
+uint	genalgVerify.c	/^typedef unsigned int uint;$/;"	t	file:

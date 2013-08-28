@@ -175,6 +175,7 @@ void Scheduler::Scheduling(){
     }
   } 
   cout<<"Operation scheduling starts!"<<endl;
+
   if(scheduling_type==ListScheduling){
     //ListSchedulingAlgorithmOPFirst();
     ListSchedulingAlgorithmPEFirst();
@@ -187,7 +188,6 @@ void Scheduler::Scheduling(){
     DEBUG1("Scheduling Type is not defined!!!");
   }
   cout<<"Scheduling kernel finishes!"<<endl;
-
   if(GLvar::report_level>10){
     fTrace.close();
   }

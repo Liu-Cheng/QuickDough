@@ -44,9 +44,9 @@ ComponentReserved	ComponentReserved.h	/^class ComponentReserved {$/;"	c
 ComponentState	ComponentState.cpp	/^ComponentState::ComponentState(){$/;"	f	class:ComponentState
 ComponentState	ComponentState.h	/^class ComponentState{$/;"	c
 ConfigurantionInstrReport	PE.cpp	/^void PE::ConfigurantionInstrReport(const int &report_level){}$/;"	f	class:PE
-DEBUG1	GlobalDef.h	45;"	d
-DEBUG2	GlobalDef.h	46;"	d
-DEBUG3	GlobalDef.h	47;"	d
+DEBUG1	GlobalDef.h	46;"	d
+DEBUG2	GlobalDef.h	47;"	d
+DEBUG3	GlobalDef.h	48;"	d
 DFG	Scheduler.h	/^        DataFlowGraph* DFG;$/;"	m	class:Scheduler
 DFGCalculation	DataFlowGraph.cpp	/^void DataFlowGraph::DFGCalculation(vector<int> &operation_result){$/;"	f	class:DataFlowGraph
 DFGConstruct	DataFlowGraph.cpp	/^void DataFlowGraph::DFGConstruct(){$/;"	f	class:DataFlowGraph
@@ -99,6 +99,7 @@ GetParentPEID	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::GetParentPEID
 INF	GlobalDef.h	32;"	d
 INPUT_BASE_ADDR	config/OpInfoGen/main.cpp	14;"	d	file:
 INSTR_OP_NUM	GlobalDef.h	38;"	d
+INST_MEM_DEPTH	GlobalDef.h	45;"	d
 IOstoring	GlobalDef.h	/^    IOstoring, RandomlySpreading, OutMemModeling, MultipleCopying$/;"	e	enum:OutMemDataScheduling
 Implementation	GlobalDef.h	/^    Simulation, Implementation, PartialImplementation$/;"	e	enum:ExecutionMode
 InoutDegreeRefresh	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::InoutDegreeRefresh(){$/;"	f	class:CoarseGrainReconArch

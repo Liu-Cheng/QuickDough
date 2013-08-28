@@ -1,5 +1,0 @@
-Version 1.0 (2006.07.01):
-  - Initial release of software.
-  - Contains ANSI C kernel-level benchmark implementations.
-  - SAR benchmark can be downloaded from HPCS site.
-    - See SSCA #3 v1.0 under http://www.highproductivity.org/SSCABmks.htm.

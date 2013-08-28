@@ -876,7 +876,7 @@ namespace {
                     output_bram_addr++;
                     Out << rand()%10 << " ";
                     Out << 1 << " ";
-                    Out << 0 << " ";
+                    Out << 1 << " ";
                     Out << "\n";
                 }
             }
@@ -885,7 +885,13 @@ namespace {
             Out.close();
             input_init.close();
 
-            //Dump dot file of the data flow graph
+
+            /**************************************************************************************
+             * Dump dot file of the data flow graph. 
+             * Both input and output operands use array/vector as well as the index as node name.
+             * While the rest operands use the opcode added with its node id as the node name.
+             *
+            **************************************************************************************/
             std::list<OPNode*>::iterator OPPtr;
             Out.open("dfg.dot");
             Out<<"/* Data Flow Graph */"<<"\n";
@@ -895,31 +901,28 @@ namespace {
             for(OPPtr=DFG.begin(); OPPtr!=DFG.end(); OPPtr++){
                 std::list<OPNode*>::iterator PredIt;
                 for(PredIt=(*OPPtr)->NodePred.begin(); PredIt!=(*OPPtr)->NodePred.end(); PredIt++){
-                    //if((*PredIt)->ShowInDFG){
-                        //Out<<"\""<<(*PredIt)->NodeName<<"\""<<"->"<<"\""<<(*OPPtr)->NodeName<<"\""<<"\n";
                     Out<<"\""<<(*PredIt)->NodeName<<"\""<<"->"<<"\""<<(*OPPtr)->NodeName<<"\""<<"\n";
-                    //}
                 }
             }
             Out<<"}"<<"\n";
             Out.close();
 
-            // ------------------------------------------------------------------------------------
-            // Dump simple instruction fomrat file for the SCGRA scheduler
-            //
-            // Instruction format: 
-            // Op-id, opcode, src-op0, src-op1, src-op2
-            //
-            // Opcode:
-            // 0 mul-sub
-            // 1 mul-add
-            // 2 add-add
-            // 3 add-sub
-            // 4 sub-add
-            // 5 sub-sub
-            // 6 Phi
-            //
-            // ------------------------------------------------------------------------------------
+
+            /**************************************************************************************
+             * Dump simple instruction fomrat file for the SCGRA scheduler
+             *
+             * Instruction format: 
+             * Op-id, opcode, src-op0, src-op1, src-op2    
+             * Opcode:
+             * 0 mul-sub
+             * 1 mul-add
+             * 2 add-add
+             * 3 add-sub
+             * 4 sub-add
+             * 5 sub-sub
+             * 6 Phi
+             *
+            **************************************************************************************/
             Out.open("dfg.s"); 
             for(OPPtr=DFG.begin(); OPPtr!=DFG.end(); OPPtr++){
                 if((*OPPtr)->NodePred.size()>0){
@@ -934,11 +937,11 @@ namespace {
                         Out << 0 << " ";
                     }
                     else if((*OPPtr)->Opcode=="add"){
-                        Out << 1 << " ";
-                        Out << 1 << " ";
+                        Out << 2 << " ";
                         for(PredIt=(*OPPtr)->NodePred.begin(); PredIt!=(*OPPtr)->NodePred.end(); PredIt++){
                             Out << (*PredIt)->NewID <<" ";
                         }
+                        Out << 0 << " ";
                     }
                     else if((*OPPtr)->Opcode=="phi"){
                         Out << 6 << " ";

@@ -225,18 +225,19 @@ void DataFlowGraph::DFGConstruct(){
     map<int, int> op_to_value;
     map<int, int> op_to_bram_addr;
     map<int, int> op_to_bram_id;
+    map<int, int> op_to_is_output;
     int max_bram_id=0;
     while(!DFG_IO_Handle.eof()){
         int op_id;
         int op_bram_addr;
         int op_value;
         int op_bram_id;
-        int useless;
+        int is_output;
         DFG_IO_Handle >> op_id;
         DFG_IO_Handle >> op_bram_addr;
         DFG_IO_Handle >> op_value;
         DFG_IO_Handle >> op_bram_id;
-        DFG_IO_Handle >> useless;
+        DFG_IO_Handle >> is_output;
 
         if(DFG_IO_Handle.fail()){
             break;
@@ -248,6 +249,7 @@ void DataFlowGraph::DFGConstruct(){
         op_to_value[op_id] = op_value;
         op_to_bram_addr[op_id]=op_bram_addr;
         op_to_bram_id[op_id]=op_bram_id;
+        op_to_is_output[op_id]=is_output;
     }
     DFG_IO_Handle.close();
     OutsideDataMemoryDumpCoe(max_bram_id, op_to_value, op_to_bram_addr, op_to_bram_id);
@@ -350,12 +352,22 @@ void DataFlowGraph::DFGConstruct(){
     vector<Vertex*>::iterator vertex_iter;
     for(vertex_iter=DFG_vertex.begin(); vertex_iter!=DFG_vertex.end(); vertex_iter++){
 
+        // The operand with both processors and scuccessors usually should be intermediate nodes
+        // However, it actually can also be output based on the io loaded info in txt file.
         int vID=(*vertex_iter)->vertex_id;
         if((*vertex_iter)->parents.size()>0 && (*vertex_iter)->children.size()>0){
-            (*vertex_iter)->vertex_type=IntermediateData;
-            (*vertex_iter)->vertex_attribute.vertex_state=DataUnavail;
-            (*vertex_iter)->vertex_bram_addr=NaN;
-            (*vertex_iter)->vertex_bram_id=NaN;
+            if(op_to_is_output[vID]){
+                (*vertex_iter)->vertex_type=OutputData;
+                (*vertex_iter)->vertex_attribute.vertex_state=DataUnavail;
+                (*vertex_iter)->vertex_bram_addr=op_to_bram_addr[vID];
+                (*vertex_iter)->vertex_bram_id=op_to_bram_id[vID];
+            }
+            else{
+                (*vertex_iter)->vertex_type=IntermediateData;
+                (*vertex_iter)->vertex_attribute.vertex_state=DataUnavail;
+                (*vertex_iter)->vertex_bram_addr=NaN;
+                (*vertex_iter)->vertex_bram_id=NaN;
+            }
         }
         else if((*vertex_iter)->parents.size()==0 && (*vertex_iter)->children.size()>0){
             (*vertex_iter)->vertex_type=InputData;
