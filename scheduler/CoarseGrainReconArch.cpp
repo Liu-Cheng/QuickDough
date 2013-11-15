@@ -398,10 +398,10 @@ int CoarseGrainReconArch::GetChildID(const int &src, const int &dst){
     int src_col=src%col;
     int dst_row=dst/col;
     int dst_col=dst%col;
-    if((src_col-dst_col==1 && src_row==dst_row) || (src_col-dst_col==col-1 && src_row==dst_row)){
+    if((src_col-dst_col==1 && src_row==dst_row) || (src_col-dst_col==1-col && src_row==dst_row)){
         child_id=0;
     }
-    else if((src_col-dst_col==-1 && src_row==dst_row) || (src_col-dst_col==1-col && src_row==dst_row)){
+    else if((src_col-dst_col==-1 && src_row==dst_row) || (src_col-dst_col==col-1 && src_row==dst_row)){
         child_id=2;
     }
     else if((src_row-dst_row==1 && src_col==dst_col) || (src_row-dst_row==1-row && src_col==dst_col)){
@@ -422,10 +422,10 @@ int CoarseGrainReconArch::GetParentID(const int &src, const int &dst){
     int src_col=src%col;
     int dst_row=dst/col;
     int dst_col=dst%col;
-    if((src_col-dst_col==1 && src_row==dst_row) || (src_col-dst_col==col-1 && src_row==dst_row)){
+    if((src_col-dst_col==1 && src_row==dst_row) || (src_col-dst_col==1-col && src_row==dst_row)){
         parent_id=2;
     }
-    else if((src_col-dst_col==-1 && src_row==dst_row) || (src_col-dst_col==1-col && src_row==dst_row)){
+    else if((src_col-dst_col==-1 && src_row==dst_row) || (src_col-dst_col==col-1 && src_row==dst_row)){
         parent_id=0;
     }
     else if((src_row-dst_row==1 && src_col==dst_col) || (src_row-dst_row==1-row && src_col==dst_col)){

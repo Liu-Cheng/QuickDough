@@ -1454,13 +1454,11 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
           attach_point.attached_PE_id=current_PE_id;
           DFG->DFG_vertex[src_operation_id]->attach_history.push_back(attach_point);
 
-          //int tmp_op=CGRA->PE_array[1]->component_trace[670]->component_activity->memory_port_op[0];
-          //if(tmp_op==1221){
-          //cout<<"checkpoint 6: right!"<<endl;
-          //}
-          //else{
-          //cout<<"checkpoint 6: wrong! tmp_op="<<tmp_op<<endl;
-          //}
+          /*
+          if(src_operation_id==3 && current_PE_id==2 && last_PE_id==0){
+              cout<<"PE_input_mux["<<transmission_progress_time+1<<"]="<<last_parent_id<<endl;
+              cout<<"PE_load_mux["<<transmission_progress_time+2<<"]="<<1<<endl;
+          }*/
 
         }
         i++;
@@ -2271,7 +2269,7 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
     for(int j=0; j<final_execution_time; j++){
 
       //The highest 4 bits are reserved for future extension and they keep 0 at the moment.
-      fHandle << "0000";
+      fHandle << "1000";
 
       //load-mux, 1->input from neighboring PEs. 0->input from outside memory.
       if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){

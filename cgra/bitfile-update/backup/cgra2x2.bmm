@@ -1,0 +1,22 @@
+ADDRESS_SPACE PE_inst_mem RAMB36 [0x00000:0x0008FFF]
+    BUS_BLOCK
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE00/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [35:0] PLACED = X3Y20;
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE00/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [71:36] PLACED = X2Y22;
+    END_BUS_BLOCK;
+
+    BUS_BLOCK
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE01/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [35:0] PLACED = X5Y28;
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE01/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [71:36] PLACED = X5Y27;
+    END_BUS_BLOCK;
+
+    BUS_BLOCK
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE10/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [35:0] PLACED = X5Y26;
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE10/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [71:36] PLACED = X5Y25;
+    END_BUS_BLOCK;
+
+    BUS_BLOCK
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE11/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [35:0] PLACED = X5Y13;
+    base_system_i/cgra2x2_0/cgra2x2_0/torus2x2/PE11/Inst_Mem/rom1024/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [71:36] PLACED = X5Y14;
+    END_BUS_BLOCK;
+
+END_ADDRESS_SPACE;

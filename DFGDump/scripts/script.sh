@@ -1,7 +1,11 @@
 #!/bin/bash
 
+#Get the system time
+#T="$(date +%N)"
+T="$(date +%s)"
+
 # Target function
-fName="mm"
+fName="mm30x30"
 
 # IR without any optimization
 clang $fName".cpp" -emit-llvm -S -o fun1.ll
@@ -22,7 +26,7 @@ llvm-dis fun2.bc -o fun2.ll
 opt -load $PASS/DFGDump.so -DFGDump <fun3.ll> /dev/null
 
 # Transfor dot to ps
-dot -Tps dfg.dot -o dfg.ps
+#dot -Tps dfg.dot -o dfg.ps
 
 # Rename the files
 mv fun3.ll $fName".ll"
@@ -33,8 +37,12 @@ mv dfg.s   $fName".s"
 mv in.h    $fName"-in.h"
 mv io.txt  $fName".txt"
 mv dfg.dot $fName".dot"
-mv dfg.ps $fName".ps"
-ps2pdf $fName".ps" $fName".pdf"
+#mv dfg.ps $fName".ps"
+#ps2pdf $fName".ps" $fName".pdf"
 rm fun2.bc
 rm fun3.bc
+#T="$(($(date +%N)-T))"
+T="$(($(date +%s)-T))"
 
+#T=$[T/1000000]
+echo "DFG generation time: ${T} s"
