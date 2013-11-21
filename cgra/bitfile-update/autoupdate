@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Make sure that both the configure.txt and the link.txt are updated
+# before executing this script.
+home_dir="/home/liucheng/gitrepo/project/cgra/bitfile-update"
+mem_dir="/home/liucheng/gitrepo/project/scheduler/result"
+
+cgra_array="3x3"
+max=10
+i=2
+for ((i=2; i<max+1; i++)) do
+
+    # matrix size 
+    matrix_array=$i"x"$i
+
+    # Switch to bitfile update directory 
+    cd $home_dir
+    rm top.*
+    cp "cgra"$cgra_array".bit" top.bit
+    cp "cgra"$cgra_array".bmm" top.bmm
+    cp "cgra"$cgra_array".xdl" top.xdl
+    cp "cgra"$cgra_array".ncd" top.ncd
+    cp $mem_dir"/cgra"$cgra_array"/mm"$matrix_array"/inst.mem" .
+    ./inst1k-bat-update
+    mv newtop.bit "/home/liucheng/vmshare/system_mm"$matrix_array".bit"
+
+    cd $home_dir
+
+done
