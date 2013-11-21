@@ -1505,7 +1505,7 @@ Move operation 656 First: from  PE 0 to  PE 1 at time 354
 Move operation 656 last: from  PE 0 to PE 1 at time 357
 Operation 657 starts execution on  PE 1 at time 383
 Move operation 810 First: from  PE 2 to  PE 3 at time 372
-Store operation 810 from PE 0 in  PE 3 at time 375
+Store operation 810 from PE 2 in  PE 3 at time 375
  Move operation 810 forward: from  PE 3 to  PE 1 at time 379
 Move operation 810 bypass: from PE 1 to  PE 0 at time 383
 Move operation 810 last: from  PE 1 to PE 0 at time 384
@@ -2031,7 +2031,7 @@ Move operation 1059 First: from  PE 1 to  PE 3 at time 454
 Move operation 1059 last: from  PE 1 to PE 3 at time 457
 Operation 1060 starts execution on  PE 3 at time 474
 Move operation 702 First: from  PE 2 to  PE 3 at time 456
-Store operation 702 from PE 0 in  PE 3 at time 459
+Store operation 702 from PE 2 in  PE 3 at time 459
  Move operation 702 forward: from  PE 3 to  PE 1 at time 464
 Move operation 702 bypass: from PE 1 to  PE 0 at time 468
 Move operation 702 last: from  PE 1 to PE 0 at time 469

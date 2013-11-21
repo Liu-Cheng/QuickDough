@@ -91,7 +91,7 @@ Operation 64 starts execution on  PE 0 at time 28
 Move operation 7 First: from  PE 1 to  PE 3 at time 36
 Move operation 7 last: from  PE 1 to PE 3 at time 39
 Move operation 12 First: from  PE 0 to  PE 1 at time 19
-Store operation 12 from PE 0 in  PE 1 at time 22
+Store operation 12 from PE 2 in  PE 1 at time 22
  Move operation 12 forward: from  PE 1 to  PE 3 at time 28
 Move operation 12 last: from  PE 1 to PE 3 at time 30
 Operation 69 starts execution on  PE 3 at time 44

@@ -259,7 +259,7 @@ Operation 209 starts execution on  PE 1 at time 91
 Move operation 10 First: from  PE 2 to  PE 3 at time 88
 Move operation 10 last: from  PE 2 to PE 3 at time 91
 Move operation 57 First: from  PE 0 to  PE 1 at time 43
-Store operation 57 from PE 0 in  PE 1 at time 46
+Store operation 57 from PE 2 in  PE 1 at time 46
  Move operation 57 forward: from  PE 1 to  PE 3 at time 57
 Move operation 57 last: from  PE 1 to PE 3 at time 59
 Operation 204 starts execution on  PE 3 at time 96
@@ -271,7 +271,7 @@ Move operation 41 last: from  PE 0 to PE 1 at time 67
 Operation 220 starts execution on  PE 1 at time 92
 Operation 197 starts execution on  PE 0 at time 88
 Move operation 59 First: from  PE 0 to  PE 1 at time 65
-Store operation 59 from PE 0 in  PE 1 at time 68
+Store operation 59 from PE 2 in  PE 1 at time 68
  Move operation 59 forward: from  PE 1 to  PE 3 at time 77
 Move operation 59 last: from  PE 1 to PE 3 at time 79
 Operation 226 starts execution on  PE 3 at time 97
@@ -376,7 +376,7 @@ Operation 424 starts execution on  PE 1 at time 123
 Operation 274 starts execution on  PE 0 at time 111
 Load 31 through 0 at time 106
 Move operation 31 First: from  PE 0 to  PE 1 at time 116
-Store operation 31 from PE 0 in  PE 1 at time 119
+Store operation 31 from PE 2 in  PE 1 at time 119
  Move operation 31 forward: from  PE 1 to  PE 3 at time 124
 Move operation 31 last: from  PE 1 to PE 3 at time 126
 Operation 451 starts execution on  PE 3 at time 131
@@ -806,7 +806,7 @@ Move operation 439 First: from  PE 0 to  PE 2 at time 163
 Move operation 439 last: from  PE 0 to PE 2 at time 166
 Operation 103 starts execution on  PE 2 at time 196
 Move operation 103 First: from  PE 2 to  PE 3 at time 202
-Store operation 103 from PE 0 in  PE 3 at time 205
+Store operation 103 from PE 2 in  PE 3 at time 205
  Move operation 103 forward: from  PE 3 to  PE 1 at time 209
 Move operation 103 last: from  PE 3 to PE 1 at time 211
 Store 103 in outside memory  at time 218
@@ -1101,7 +1101,7 @@ Move operation 338 First: from  PE 2 to  PE 3 at time 264
 Move operation 338 last: from  PE 2 to PE 3 at time 267
 Operation 339 starts execution on  PE 3 at time 273
 Move operation 417 First: from  PE 0 to  PE 1 at time 237
-Store operation 417 from PE 0 in  PE 1 at time 240
+Store operation 417 from PE 2 in  PE 1 at time 240
  Move operation 417 forward: from  PE 1 to  PE 3 at time 268
 Move operation 417 last: from  PE 1 to PE 3 at time 270
 Operation 101 starts execution on  PE 3 at time 275
@@ -1119,7 +1119,7 @@ Move operation 483 last: from  PE 0 to PE 1 at time 242
 Operation 107 starts execution on  PE 1 at time 279
 Store 107 in outside memory  at time 288
 Move operation 217 First: from  PE 0 to  PE 1 at time 246
-Store operation 217 from PE 0 in  PE 1 at time 249
+Store operation 217 from PE 2 in  PE 1 at time 249
  Move operation 217 forward: from  PE 1 to  PE 3 at time 270
 Move operation 217 last: from  PE 1 to PE 3 at time 272
 Operation 218 starts execution on  PE 3 at time 277
@@ -1171,7 +1171,7 @@ Move operation 79 bypass: from PE 3 to  PE 1 at time 307
 Move operation 79 last: from  PE 3 to PE 1 at time 308
 Store 79 in outside memory  at time 315
 Move operation 219 First: from  PE 0 to  PE 1 at time 249
-Store operation 219 from PE 0 in  PE 1 at time 252
+Store operation 219 from PE 2 in  PE 1 at time 252
  Move operation 219 forward: from  PE 1 to  PE 3 at time 272
 Move operation 219 last: from  PE 1 to PE 3 at time 274
 Operation 83 starts execution on  PE 3 at time 284

@@ -413,7 +413,7 @@ Move operation 270 First: from  PE 2 to  PE 3 at time 86
 Move operation 270 last: from  PE 2 to PE 3 at time 89
 Operation 271 starts execution on  PE 3 at time 122
 Move operation 126 First: from  PE 2 to  PE 3 at time 80
-Store operation 126 from PE 0 in  PE 3 at time 83
+Store operation 126 from PE 2 in  PE 3 at time 83
  Move operation 126 forward: from  PE 3 to  PE 1 at time 111
 Move operation 126 last: from  PE 3 to PE 1 at time 113
 Operation 127 starts execution on  PE 1 at time 119
@@ -673,7 +673,7 @@ Move operation 289 First: from  PE 3 to  PE 2 at time 180
 Move operation 289 last: from  PE 3 to PE 2 at time 183
 Operation 291 starts execution on  PE 2 at time 188
 Move operation 92 First: from  PE 0 to  PE 1 at time 37
-Store operation 92 from PE 0 in  PE 1 at time 40
+Store operation 92 from PE 2 in  PE 1 at time 40
  Move operation 92 forward: from  PE 1 to  PE 3 at time 45
 Move operation 92 last: from  PE 1 to PE 3 at time 47
 Operation 93 starts execution on  PE 3 at time 177

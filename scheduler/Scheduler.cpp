@@ -994,6 +994,10 @@ void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=0;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
 
+      /*
+      if(operation_id==153){
+          cout << "Operation 153 goes out from data memory port 0!\n" <<endl;
+      }*/
       //Dump the trace
       if(GLvar::report_level>10){
           //Time when data is store in outside memory.
@@ -1003,21 +1007,46 @@ void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){
       break;
     }
     else if(write0_avail && read1_avail && store_path_avail){
-      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[0]=true;
+      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[1]=true;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
-      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[0]=operation_id;
+      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[1]=operation_id;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=1;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
+
+      /*
+      if(operation_id==153){
+          cout << "Operation 153 goes out from data memory port 1!\n" <<endl;
+      }*/
+
+      //Dump the trace
+      if(GLvar::report_level>10){
+          //Time when data is store in outside memory.
+          fTrace<<"Store "<<operation_id<<" in outside memory "<<" at time "<<op_avail_time+3<<endl;
+      }
+
       break;
     }
     else if(write0_avail && read2_avail && store_path_avail){
-      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[0]=true;
+      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[2]=true;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
-      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[0]=operation_id;
+      CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[2]=operation_id;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=2;
       CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
+
+      /*
+      if(operation_id==153){
+          cout << "Operation 153 goes out from data memory port 2!\n" <<endl;
+      }
+      */
+
+      //Dump the trace
+      if(GLvar::report_level>10){
+          //Time when data is store in outside memory.
+          fTrace<<"Store "<<operation_id<<" in outside memory "<<" at time "<<op_avail_time+3<<endl;
+      }
+
       break;
     }
     else{

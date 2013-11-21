@@ -1,23 +1,32 @@
 #!/bin/bash
 
+# Make sure that both the configure.txt and the link.txt are updated
+# before executing this script.
+home_dir="/home/liucheng/gitrepo/project/scheduler"
+cgra_array="6x6"
+max=10
+i=2
+for ((i=2; i<max+1; i++)) do
 
-# Target function
-matrix_array="4x4"
-cgra_array="3x3"
+    # matrix size 
+    matrix_array=$i"x"$i
 
-# Switch to config directory, and then change the target DFG
-cd ../config
-rm MM.*
-cp "mm"$matrix_array".txt" MM.txt
-cp "mm"$matrix_array".s" MM.s
+    # Switch to config directory, and then change the target DFG
+    cd $home_dir"/config"
+    rm MM.*
+    cp "mm"$matrix_array".txt" MM.txt
+    cp "mm"$matrix_array".s" MM.s
 
-# Switch to the work directory and start the cgra compiler
-cd ..
-./cgracompiler
+    # Switch to the work directory and start the cgra compiler
+    cd $home_dir
+    ./cgracompiler
 
-# Switch to the result directory and backup the result
-cd result/"cgra"$cgra_array/"mm"$matrix_array
-mv ../../*.* .
+    # Switch to the result directory and backup the result
+    cd $home_dir"/result/cgra"$cgra_array"/mm"$matrix_array
+    rm *.*
+    cd $home_dir"/result/" .
+    mv *.* $home_dir"/result/cgra"$cgra_array"/mm"$matrix_array
 
-cd ../../../util
+    cd $home_dir"/util"
 
+done
