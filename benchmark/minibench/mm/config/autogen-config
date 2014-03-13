@@ -1,0 +1,3 @@
+original-loop-structure 10 10 10
+work-item-unroll-factor 1 1 1
+kernel-unroll-factor 1 1 2

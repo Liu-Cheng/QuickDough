@@ -1,0 +1,1220 @@
+cscope 15 $HOME/gitrepo/project/benchmark/minibench/mm/autogen               0000005570
+	@Instruction.h
+
+1 #iâdeà
+__INSTRUCTION_H__
+
+
+2 
+	#__INSTRUCTION_H__
+
+
+	)
+
+4 
+	sIn¡ruùiÚ
+{
+
+5 
+	mpublic
+:
+
+6 
+d¡_İ
+;
+
+7 
+OPCODE
+ 
+	mš¡_İcode
+;
+
+8 
+	m¤c_İ0
+;
+
+9 
+	m¤c_İ1
+;
+
+10 
+	m¤c_İ2
+;
+
+	@Operand.cpp
+
+1 
+	~"İ”ªd.h
+"
+
+3 
+	gO³¿nd
+::
+	$O³¿nd
+(){
+
+4 
+İ_id
+=
+gl_id
+;
+
+5 
+gl_id
+++;
+
+6 
+İ_b¿m_addr
+=-1;
+
+7 
+İ_v®ue
+=-1;
+
+8 
+İ_b¿m_id
+=-1;
+
+9 
+İ_ty³
+=
+IM
+;
+
+10 
+	}
+}
+
+	@Operand.h
+
+1 #iâdeà
+__OPERAND_H__
+
+
+2 
+	#__OPERAND_H__
+
+
+	)
+
+4 
+	~"commÚ.h
+"
+
+6 
+	sO³¿nd
+{
+
+7 
+	mpublic
+:
+
+8 
+İ_id
+;
+
+9 
+	mİ_v®ue
+;
+
+10 
+	mİ_b¿m_id
+;
+
+11 
+	mİ_b¿m_addr
+;
+
+12 
+OPTYPE
+ 
+	mİ_ty³
+;
+
+14 
+O³¿nd
+();
+
+15 
+	m´iv©e
+:
+
+16 
+gl_id
+;
+
+19 
+	gO³¿nd
+::
+gl_id
+=0;
+
+	@common.h
+
+1 #iâdeà
+__COMMON_H__
+
+
+2 
+	#__COMMON_H__
+
+
+	)
+
+4 
+	#N
+ 10
+
+	)
+
+6 
+	eOPCODE
+ {
+
+7 
+	mMULSUB
+, 
+	mMULADD
+, 
+	mADDADD
+, 
+	mADDSUB
+, 
+	mSUBADD
+, 
+	mSUBSUB
+, 
+	mPHI
+
+
+10 
+	eOPTYPE
+ {
+
+11 
+	mINCONST
+, 
+	mINVAR
+, 
+	mUNUSED
+, 
+	mOUTVAR
+, 
+	mIM
+
+
+	@dfg-gen.cpp
+
+48 
+	~<veùÜ
+>
+
+49 
+	~<m­
+>
+
+50 
+	~"commÚ.h
+"
+
+51 
+	~"O³¿nd.h
+"
+
+53 
+	gsub_š
+[2*
+N
+][N]={
+
+54 
+	~"š_a_sm®l.txt
+",
+
+55 
+	~"š_b_sm®l.txt
+"
+
+58 
+	gsub_out
+[
+N
+][N]={
+
+59 
+	~"out_c_sm®l.txt
+"
+
+62 
+¡ršg
+ 
+	gdfg_Çme
+="mm";
+
+64 
+	gveùÜ
+<
+	gO³¿nd
+*> 
+	gİ_¬¿y
+;
+
+65 
+	gveùÜ
+<
+	gIn¡ruùiÚ
+*> 
+	gš¡_¬¿y
+;
+
+66 
+	gm­
+<, 
+	gO³¿nd
+*> 
+	gid2İ
+;
+
+68 
+İ_id_š™Ÿliz©iÚ
+();
+
+69 
+š¡_g’”©iÚ
+();
+
+70 
+boŞ
+ 
+dfg_v”ifiÿtiÚ
+();
+
+71 
+d©a2id
+(cÚ¡ &
+x
+, cÚ¡ &
+y
+, cÚ¡ 
+OPTYPE
+ &
+İ_ty³
+);
+
+72 
+d©a2id
+(cÚ¡ &
+cÚs_v®
+, cÚ¡ 
+OPTYPE
+ &
+İ_ty³
+);
+
+73 
+dfg_dump
+(cÚ¡ 
+¡ršg
+ &
+dfg_Çme
+);
+
+74 
+	$maš
+(){
+
+76 
+	`İ_id_š™Ÿliz©iÚ
+();
+
+78 
+	`š¡_g’”©iÚ
+();
+
+80 
+	`dfg_dump
+(
+dfg_Çme
+);
+
+82 
+boŞ
+ 
+is_cÜ»ù
+=
+	`dfg_v”ifiÿtiÚ
+();
+
+83 if(
+is_cÜ»ù
+){
+
+84 
+	`´štf
+("The generated data flow graph…assedhe computationest!\n");
+
+87 
+	`´štf
+("The generated data flow graph failedhe computationest!\n");
+
+90 
+	}
+}
+
+97 
+	$İ_id_š™Ÿliz©iÚ
+(){
+
+100 
+O³¿ndi
+* 
+İ
+=
+Ãw
+ 
+	`O³¿nd
+();
+
+101 
+İ
+.
+İ_b¿m_addr
+=-1;
+
+102 
+İ
+.
+İ_v®ue
+=0;
+
+103 
+İ
+.
+İ_b¿m_id
+=-1;
+
+104 
+İ
+.
+İ_ty³
+=
+INCONS
+;
+
+105 
+İ_¬¿y
+.
+	`push_back
+(
+İ
+);
+
+108 
+š_addr
+=0;
+
+109 
+i
+=0; i<2*
+N
+; i++){
+
+110 
+j
+=0; j<
+N
+; j++){
+
+111 
+İ
+=
+Ãw
+ 
+	`O³¿nd
+();
+
+112 
+İ
+.
+İ_b¿m_addr
+=
+š_addr
+;
+
+113 
+š_addr
+++;
+
+114 
+İ
+.
+İ_v®ue
+=
+sub_š
+[
+i
+][
+j
+];
+
+115 
+İ
+.
+İ_b¿m_id
+=0;
+
+116 
+İ
+.
+İ_ty³
+=
+INVAR
+;
+
+117 
+İ_¬¿y
+.
+	`push_back
+(
+İ
+);
+
+122 
+out_addr
+=0;
+
+123 
+i
+=0; i<
+N
+; i++){
+
+124 
+j
+=0; j<
+N
+; j++){
+
+125 
+İ
+=
+Ãw
+ 
+	`O³¿nd
+();
+
+126 
+İ
+.
+İ_b¿m_addr
+=
+out_addr
+;
+
+127 
+out_addr
+++;
+
+128 
+İ
+.
+İ_b¿m_id
+=1;
+
+129 
+İ
+.
+İ_ty³
+=
+OUTVAR
+;
+
+132 
+	}
+}
+
+134 
+	$d©a2id
+(
+x
+, 
+y
+, 
+OPTYPE
+ 
+İ_ty³
+){
+
+135 
+cÚs_num
+=1;
+
+136 
+šv¬_num
+=2*
+N
+*N;
+
+137 
+outv¬_num
+=
+N
+*N;
+
+138 if(
+İ_ty³
+==
+INVAR
+){
+
+139  (
+cÚs_num
++
+x
+*
+N
++
+y
+);
+
+141 if(
+İ_ty³
+==
+OUTVAR
+){
+
+142  (
+cÚs_num
++
+šv¬_num
++
+x
+*
+N
++
+y
+);
+
+147 
+	}
+}
+
+149 
+	$d©a2id
+(
+cÚs_v®
+, 
+OPTYPE
+ 
+İ_ty³
+){
+
+150 if(
+İ_ty³
+==
+INCONS
+){
+
+151 if(
+cÚs_v®
+==0){
+
+158 
+	}
+}
+
+160 
+	$š¡_g’”©iÚ
+(){
+
+162 
+i
+=0; i<
+N
+; i++){
+
+164 
+j
+=0; j<
+N
+; j++){
+
+166 
+Ï¡_İ_id
+ = -1;
+
+167 
+cu¼_İ_id
+ = -1;
+
+168 
+k
+=0; k<
+N
+; k++){
+
+169 
+In¡ruùiÚ
+* 
+š¡_±r
+=
+Ãw
+ 
+	`In¡ruùiÚ
+();
+
+170 
+Ï¡_İ_id
+=
+cu¼_İ_id
+;
+
+171 if(
+k
+==0){
+
+172 
+O³¿nd
+* 
+İ
+=
+Ãw
+ 
+	`O³¿nd
+();
+
+173 
+cu¼_İ_id
+=
+İ
+->
+İ_id
+;
+
+174 
+İ
+->
+İ_ty³
+=
+IM
+;
+
+175 
+İ_¬¿y
+.
+	`push_back
+(
+İ
+);
+
+177 
+š¡_±r
+->
+d¡_İ
+=
+İ
+->
+İ_id
+;
+
+178 
+š¡_±r
+->
+š¡_İcode
+=
+MULADD
+;
+
+179 
+š¡_±r
+->
+¤c_İ0
+=
+	`d©a2id
+(
+i
+, 
+k
+, 
+INVAR
+);
+
+180 
+š¡_±r
+->
+¤c_İ1
+=
+	`d©a2id
+(
+k
++
+N
+, 
+j
+, 
+INVAR
+);
+
+181 
+š¡_±r
+->
+¤c_İ2
+=
+	`d©a2id
+(0, 
+INCONS
+);
+
+182 
+š¡_¬¿y
+.
+	`push_back
+(
+š¡_±r
+);
+
+184 if(
+k
+==
+N
+-1){
+
+186 
+š¡_±r
+->
+d¡_İ
+=
+	`d©a2id
+(
+i
+, 
+j
+, 
+OUTVAR
+);
+
+187 
+š¡_±r
+->
+š¡_İcode
+=
+MULADD
+;
+
+188 
+š¡_±r
+->
+¤c_İ0
+=
+	`d©a2id
+(
+i
+, 
+k
+, 
+INVAR
+);
+
+189 
+š¡_±r
+->
+¤c_İ1
+=
+	`d©a2id
+(
+k
++
+N
+, 
+j
+, 
+INVAR
+);
+
+190 
+š¡_±r
+->
+¤c_İ2
+=
+Ï¡_İ_id
+;
+
+191 
+š¡_¬¿y
+.
+	`push_back
+(
+š¡_±r
+);
+
+194 
+O³¿nd
+* 
+İ
+=
+Ãw
+ 
+	`O³¿nd
+();
+
+195 
+cu¼_İ_id
+=
+İ
+->
+İ_id
+;
+
+196 
+İ
+->
+İ_ty³
+=
+IM
+;
+
+197 
+İ_¬¿y
+.
+	`push_back
+(
+İ
+);
+
+199 
+š¡_±r
+->
+d¡_İ
+=
+İ
+->
+İ_id
+;
+
+200 
+š¡_±r
+->
+š¡_İcode
+=
+MULADD
+;
+
+201 
+š¡_±r
+->
+¤c_İ0
+=
+	`d©a2id
+(
+i
+, 
+k
+, 
+INVAR
+);
+
+202 
+š¡_±r
+->
+¤c_İ1
+=
+	`d©a2id
+(
+k
++
+N
+, 
+j
+, 
+INVAR
+);
+
+203 
+š¡_±r
+->
+¤c_İ2
+=
+Ï¡_İ_id
+;
+
+204 
+š¡_¬¿y
+.
+	`push_back
+(
+š¡_±r
+);
+
+210 
+	}
+}
+
+212 
+	$dfg_dump
+(cÚ¡ 
+¡ršg
+ &
+dfg_Çme
+){
+
+213 
+of¡»am
+ 
+š¡_fhªdË
+;
+
+214 
+of¡»am
+ 
+İ_fhªdË
+;
+
+215 
+o¡ršg¡»am
+ 
+oss
+;
+
+216 
+oss
+ << 
+dfg_Çme
+ <<".s";
+
+217 
+š¡_fhªdË
+.
+	`İ’
+(
+oss
+.
+	`c_¡r
+());
+
+218 if(!
+š¡_fhªdË
+.
+	`is_İ’
+()){
+
+219 
+	`´štf
+("Couldn'ˆİ’ % .s\n", 
+dfg_Çme
+);
+
+221 
+oss
+ << 
+dfg_Çme
+ <<".txt";
+
+222 
+İ_fhªdË
+.
+	`İ’
+(
+oss
+.
+	`c_¡r
+());
+
+223 if(!
+İ_fhªdË
+.
+	`is_İ’
+()){
+
+224 
+	`´štf
+("Couldn'ˆİ’ % .txt\n", 
+dfg_Çme
+);
+
+227 
+veùÜ
+<
+In¡ruùiÚ
+*>::
+™”©Ü
+ 
+š¡_™
+;
+
+228 
+š¡_™
+=
+š¡_¬¿y
+.
+	`begš
+(); in¡_™!=š¡_¬¿y.
+	`’d
+(); inst_it++){
+
+229 
+š¡_fhªdË
+ << (*
+š¡_™
+)->
+d¡_İ
+ << " ";
+
+230 
+š¡_fhªdË
+ << (*
+š¡_™
+)->
+OPCODE
+ << " ";
+
+231 
+š¡_fhªdË
+ << (*
+š¡_™
+)->
+¤c_İ0
+ << " ";
+
+232 
+š¡_fhªdË
+ << (*
+š¡_™
+)->
+¤c_İ1
+ << " ";
+
+233 
+š¡_fhªdË
+ << (*
+š¡_™
+)->
+¤c_İ2
+ << 
+¡d
+::
+’dl
+;
+
+236 
+veùÜ
+<
+O³¿nd
+*>::
+™”©Ü
+ 
+İ_™
+;
+
+237 
+İ_™
+=
+İ_¬¿y
+.
+	`begš
+(); op_™!=İ_¬¿y.
+	`’d
+(); op_it++){
+
+238 
+İ_fhªdË
+ << (*
+İ_™
+)->
+İ_id
+ << " ";
+
+239 
+İ_fhªdË
+ << (*
+İ_™
+)->
+İ_v®ue
+ << " ";
+
+240 
+İ_fhªdË
+ << (*
+İ_™
+)->
+İ_b¿m_id
+ << " ";
+
+241 
+İ_fhªdË
+ << (*
+İ_™
+)->
+İ_b¿m_addr
+ << " ";
+
+242 
+İ_fhªdË
+ << (*
+İ_™
+)->
+İ_ty³
+ << 
+¡d
+:
+’dl
+;
+
+244 
+	}
+}
+
+246 
+boŞ
+ 
+	$dfg_v”ifiÿtiÚ
+(){
+
+247 
+veùÜ
+<
+In¡ruùiÚ
+*>::
+™”©Ü
+ 
+š¡_™
+;
+
+248 
+š¡_™
+=
+š¡_¬¿y
+.
+	`begš
+(); in¡_™!=š¡_¬¿y.
+	`’d
+(); inst_it++){
+
+249 
+f
+
+
+251 
+	}
+}
+
+	@in_a_small.txt
+
+	@in_b_small.txt
+
+	@out_c_small.txt
+
+	@
+1
+.
+1
+/usr/include
+8
+103
+Instruction.h
+Operand.cpp
+Operand.h
+common.h
+dfg-gen.cpp
+in_a_small.txt
+in_b_small.txt
+out_c_small.txt

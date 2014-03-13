@@ -68,10 +68,6 @@ enum VertexState {
     DataInOutMem, DataUnavail, DataAvail
 };
 
-enum DFGType {
-    FFT, Random, MM, VD, CONV, AES
-};
-
 enum SchedulingType {
     ListScheduling, ModuloScheduling
 };

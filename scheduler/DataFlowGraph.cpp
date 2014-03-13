@@ -19,17 +19,8 @@ using namespace std;
 
 DataFlowGraph::DataFlowGraph(){
     LoadParameter();
-    //MMInstGen(MATRIX_M,MATRIX_N,MATRIX_P);
     DFGConstruct();
     DFGStatistic();
-    /*
-       if(GLvar::print_level==11){
-       VertexPriorityAllocation();
-       VertexPriorityAnalysis();
-       OutputDegreeAnalysis();
-       InputDegreeAnalysis();
-       }
-       */
 }
 
 void DataFlowGraph::LoadParameter(){
@@ -44,30 +35,8 @@ void DataFlowGraph::LoadParameter(){
     while(!configure_file_handle.eof()){
         string configure_item_key;
         configure_file_handle >> configure_item_key;
-        if(configure_item_key=="DFG_type"){
-            string configure_item_value;
-            configure_file_handle >> configure_item_value;
-            if(configure_item_value=="FFT"){
-                DFG_type=FFT;
-            }
-            else if(configure_item_value=="Random"){
-                DFG_type=Random;
-            }
-            else if(configure_item_value=="CONV"){
-                DFG_type=CONV;
-            }
-            else if(configure_item_value=="VD"){
-                DFG_type=VD;
-            }
-            else if(configure_item_value=="AES"){
-                DFG_type=AES;
-            }
-            else if(configure_item_value=="MM"){
-                DFG_type=MM;
-            }
-            else{
-                DEBUG1("Unknown DFG_type!");
-            }
+        if(configure_item_key=="DFG_name"){
+            configure_file_handle >> DFG_name;
         }
 
         else if(configure_item_key=="maximum_operation_cost"){
@@ -186,35 +155,14 @@ void DataFlowGraph::DFGConstruct(){
     string DFG_Inst_File;
     string DFG_IO_File;
 
-    if(DFG_type==FFT){
-        DFG_Inst_File="./config/FFT.s";
-        DFG_IO_File="./config/FFT.txt";
-    }
-    else if(DFG_type==VD){
-        DFG_Inst_File="./config/VD.s";
-        DFG_IO_File="./config/VD.txt";
-    }
-    else if(DFG_type==CONV){
-        DFG_Inst_File="./config/CONV.s";
-        DFG_IO_File="./config/CONV.txt";
-    }
-    else if(DFG_type==Random){
-        DFG_Inst_File="./config/Random.s";
-        DFG_IO_File="./config/Random.txt";
-    }
-    else if(DFG_type==AES){
-        DFG_Inst_File="./config/AES.s";
-        DFG_IO_File="./config/AES.txt";
-    }
-    else if(DFG_type==MM){
-        DFG_Inst_File="./config/MM.s";
-        DFG_IO_File="./config/MM.txt";
-    }
-    else {
-        DEBUG1("DFG type error!");
-    }
-    cout<<"Load "<<DFG_Inst_File<<endl;
-    cout<<"Load "<<DFG_IO_File<<endl;
+    ostringstream oss;
+    oss << "./config/" << DFG_name << ".s";
+    DFG_Inst_File = oss.str();
+    oss << "./config/" << DFG_name << ".txt";
+    DFG_IO_File = oss.str();
+
+    cout << "Load " << DFG_Inst_File << endl;
+    cout << "Load " << DFG_IO_File << endl;
 
     ifstream DFG_IO_Handle;
     DFG_IO_Handle.open(DFG_IO_File.c_str());

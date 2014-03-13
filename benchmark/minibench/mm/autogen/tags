@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADDADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI$/;"	e	enum:OPCODE
+ADDSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI$/;"	e	enum:OPCODE
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
+IM	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+INCONST	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+INVAR	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+Instruction	Instruction.h	/^struct Instruction{$/;"	s
+MULADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI$/;"	e	enum:OPCODE
+MULSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI$/;"	e	enum:OPCODE
+N	common.h	4;"	d
+OBJS	Makefile	/^OBJS = $(SRCS:.c=.o)$/;"	m
+OPCODE	common.h	/^enum OPCODE {$/;"	g
+OPTYPE	common.h	/^enum OPTYPE {$/;"	g
+OUTVAR	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+Operand	Operand.cpp	/^Operand::Operand(){$/;"	f	class:Operand
+Operand	Operand.h	/^struct Operand{$/;"	s
+PHI	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI$/;"	e	enum:OPCODE
+SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
+SUBADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI$/;"	e	enum:OPCODE
+SUBSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI$/;"	e	enum:OPCODE
+TARGET	Makefile	/^TARGET = dfg-gen$/;"	m
+UNUSED	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+__COMMON_H__	common.h	2;"	d
+__INSTRUCTION_H__	Instruction.h	2;"	d
+__OPERAND_H__	Operand.h	2;"	d
+data2id	dfg-gen.cpp	/^int data2id(int cons_val, OPTYPE op_type){$/;"	f
+data2id	dfg-gen.cpp	/^int data2id(int x, int y, OPTYPE op_type){$/;"	f
+dfg_dump	dfg-gen.cpp	/^void dfg_dump(const string &dfg_name){$/;"	f
+dfg_name	dfg-gen.cpp	/^string dfg_name="mm";$/;"	v
+dfg_verification	dfg-gen.cpp	/^bool dfg_verification(){$/;"	f
+dst_op	Instruction.h	/^        int dst_op;$/;"	m	struct:Instruction
+gl_id	Operand.h	/^        static int gl_id;$/;"	m	struct:Operand
+gl_id	Operand.h	/^int Operand::gl_id=0;$/;"	m	class:Operand
+id2op	dfg-gen.cpp	/^map<int, Operand*> id2op;$/;"	v
+inst_array	dfg-gen.cpp	/^vector<Instruction*> inst_array;$/;"	v
+inst_generation	dfg-gen.cpp	/^void inst_generation(){$/;"	f
+inst_opcode	Instruction.h	/^        OPCODE inst_opcode;$/;"	m	struct:Instruction
+main	dfg-gen.cpp	/^int main(){$/;"	f
+op_array	dfg-gen.cpp	/^vector<Operand*> op_array;$/;"	v
+op_bram_addr	Operand.h	/^        int op_bram_addr;$/;"	m	struct:Operand
+op_bram_id	Operand.h	/^        int op_bram_id;$/;"	m	struct:Operand
+op_id	Operand.h	/^        int op_id;$/;"	m	struct:Operand
+op_id_initialization	dfg-gen.cpp	/^void op_id_initialization(){$/;"	f
+op_type	Operand.h	/^        OPTYPE op_type;$/;"	m	struct:Operand
+op_value	Operand.h	/^        int op_value;$/;"	m	struct:Operand
+src_op0	Instruction.h	/^        int src_op0;$/;"	m	struct:Instruction
+src_op1	Instruction.h	/^        int src_op1;$/;"	m	struct:Instruction
+src_op2	Instruction.h	/^        int src_op2;$/;"	m	struct:Instruction
+sub_in	dfg-gen.cpp	/^int sub_in[2*N][N]={$/;"	v
+sub_out	dfg-gen.cpp	/^int sub_out[N][N]={$/;"	v

@@ -46,7 +46,7 @@ class DataFlowGraph{
         int max_vertex_priority;
         float average_vertex_priority;
 
-        DFGType DFG_type;
+        string DFG_name;
         vector<Vertex*> DFG_vertex;
         vector<Edge*> DFG_edge;
 
@@ -68,7 +68,7 @@ class DataFlowGraph{
         void VertexPriorityAnalysis();
         void OutputDegreeAnalysis();
         void InputDegreeAnalysis();
-        int DFGExpand(string &DFG_inst_file, const int &kernel_size, const int &kernel_op_num);
+        int  DFGExpand(string &DFG_inst_file, const int &kernel_size, const int &kernel_op_num);
         void OutsideDataMemoryDumpCoe(int max_bram_id, map<int, int> &op_to_value, map<int, int> &op_to_bram_addr, map<int, int> &op_to_bram_id);
 };
 

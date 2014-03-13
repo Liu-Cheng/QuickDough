@@ -1,9 +1,9 @@
 print_level 1
 report_level 20
 verification_level 0
-CGRA_scale 9
-row 3
-col 3
+CGRA_scale 4
+row 2
+col 2
 DFG_type MM
 maximum_operation_num 30000
 maximum_simulation_time 10000
