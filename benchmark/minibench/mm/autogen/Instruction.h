@@ -8,6 +8,8 @@ struct Instruction{
         int src_op0;
         int src_op1;
         int src_op2;
+
+        Instruction();
 };
 
 #endif

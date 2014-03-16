@@ -5,7 +5,6 @@
 
 struct Operand{
     public:
-        static int gl_id;
         int op_id;
         int op_value;
         int op_bram_id;
@@ -13,8 +12,10 @@ struct Operand{
         OPTYPE op_type;
 
         Operand();
-};
 
-int Operand::gl_id=0;
+    private:    
+        static int gl_id;
+        static int self_increase();
+};
 
 #endif
