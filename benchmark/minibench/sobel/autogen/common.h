@@ -3,10 +3,11 @@
 
 #include <iostream>
 
-#define N 10
+#define R 32
+#define C 32
 
 enum OPCODE {
-    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI
+    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT
 };
 
 enum OPTYPE {

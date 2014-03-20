@@ -1,4 +1,4 @@
-cscope 15 $HOME/gitrepo/project/benchmark/minibench/mm/autogen               0000101376
+cscope 15 $HOME/gitrepo/project/benchmark/minibench/sobel/autogen               0000103188
 	@Instruction.cpp
 
 1 
@@ -219,6 +219,164 @@ gl_id
 £lf_šü—£
 ();
 
+	@common.cpp
+
+1 
+	~"commÚ.h
+"
+
+3 
+	g¡d
+::
+o¡»am
+& 
+Ý”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+OPCODE
+ 
+	gš¡_Ýcode
+){
+
+4 
+	gš¡_Ýcode
+){
+
+5 
+	gMULSUB
+:
+
+6 
+os
+ << "MULSUB";
+
+8 
+	gMULADD
+:
+
+9 
+os
+ << "MULADD";
+
+11 
+	gADDADD
+:
+
+12 
+os
+ << "ADDADD";
+
+14 
+	gADDSUB
+:
+
+15 
+os
+ << "ADDSUB";
+
+17 
+	gSUBADD
+:
+
+18 
+os
+ << "SUBADD";
+
+20 
+	gSUBSUB
+:
+
+21 
+os
+ << "SUBSUB";
+
+23 
+	gPHI
+:
+
+24 
+os
+ << "PHI";
+
+27 
+os
+ << "UNDEFINED";
+
+30  
+	gos
+;
+
+33 
+	g¡d
+::
+o¡»am
+& 
+Ý”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+OPTYPE
+ 
+	gÝ_ty³
+){
+
+34 
+	gÝ_ty³
+){
+
+35 
+	gINCONST
+:
+
+36 
+os
+ << "INCONST";
+
+38 
+	gINVAR
+:
+
+39 
+os
+ << "INVAR";
+
+41 
+	gUNUSED
+:
+
+42 
+os
+ << "UNUSED";
+
+44 
+	gOUTVAR
+:
+
+45 
+os
+ << "OUTVAR";
+
+47 
+	gIM
+:
+
+48 
+os
+ << "IM";
+
+51 
+os
+ << "UNDEFINED";
+
+54  
+	gos
+;
+
 	@common.h
 
 1 #iâdeà
@@ -231,17 +389,27 @@ __COMMON_H__
 
 	)
 
-4 
-	#N
- 10
+4 
+	~<io¡»am
+>
+
+6 
+	#R
+ 32
 
 	)
 
-6 
+7 
+	#C
+ 32
+
+	)
+
+9 
 	eOPCODE
  {
 
-7 
+10 
 	mMULSUB
 , 
 	mMULADD
@@ -255,13 +423,21 @@ __COMMON_H__
 	mSUBSUB
 , 
 	mPHI
+, 
+	mRSFAND
+, 
+	mLSFADD
+, 
+	mABS
+, 
+	mGT
 
 
-10 
+13 
 	eOPTYPE
  {
 
-11 
+14 
 	mINCONST
 , 
 	mINVAR
@@ -273,18 +449,50 @@ __COMMON_H__
 	mIM
 
 
+17 
+	g¡d
+::
+o¡»am
+& 
+Ý”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+OPCODE
+ 
+	gš¡_Ýcode
+);
+
+18 
+	g¡d
+::
+o¡»am
+& 
+Ý”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+OPTYPE
+ 
+	gÝ_ty³
+);
+
 	@dfg-gen.cpp
 
 1 
-	~<io¡»am
->
-
-2 
 	~<veùÜ
 >
 
-3 
+2 
 	~<m­
+>
+
+3 
+	~<f¡»am
 >
 
 4 
@@ -292,40 +500,38 @@ __COMMON_H__
 >
 
 5 
-	~<f¡»am
->
-
-6 
 	~<¡dio.h
 >
 
-7 
+6 
 	~<¡dlib.h
 >
 
-8 
+7 
 	~"commÚ.h
 "
 
-9 
+8 
 	~"O³¿nd.h
 "
 
-10 
+9 
 	~"In¡ruùiÚ.h
 "
 
-12 
+11 
 io_š™
 (
 sub_š
-[2*
-N
-][N], 
+[
+R
+*
+C
+/4+18], 
 sub_out
-[N][N]);
+[R*C/4]);
 
-13 
+12 
 Ý_¬¿y_š™
 (
 ¡d
@@ -337,16 +543,32 @@ O³¿nd
 Ý_¬¿y
 , 
 sub_š
-[2*
-N
-][N], 
+[
+R
+*
+C
+/4+18], 
 sub_out
-[N][N], 
-cÚ¡_š
-[1]);
+[R*C/4]);
+
+13 
+k”Ãl_to_dfg
+(
+¡d
+::
+veùÜ
+<
+O³¿nd
+*> &
+Ý_¬¿y
+, std::veùÜ<
+In¡ruùiÚ
+*> &
+š¡_¬¿y
+);
 
 14 
-k”Ãl_to_dfg
+dfg_compu‹
 (
 ¡d
 ::
@@ -362,22 +584,6 @@ In¡ruùiÚ
 );
 
 15 
-dfg_compu‹
-(
-¡d
-::
-veùÜ
-<
-O³¿nd
-*> &
-Ý_¬¿y
-, std::veùÜ<
-In¡ruùiÚ
-*> &
-š¡_¬¿y
-);
-
-16 
 v”ify
 (cÚ¡ 
 ¡d
@@ -390,10 +596,12 @@ O³¿nd
 , 
 sub_out
 [
-N
-][N]);
+R
+*
+C
+/4]);
 
-17 
+16 
 dfg_dump
 (cÚ¡ 
 ¡d
@@ -413,7 +621,7 @@ In¡ruùiÚ
 š¡_¬¿y
 );
 
-18 
+17 
 d©a_to_id
 (
 idx
@@ -425,21 +633,29 @@ OPTYPE
 Ý_ty³
 );
 
-19 
+18 
 d©a_to_id
 (
 cÚ¡_v®ue
 );
 
-21 
+20 
 	gb¿m0_addr
 =0;
 
-22 
+21 
 	gb¿m1_addr
 =0;
 
-23 
+22 
+	gcÚ¡_š
+[5]={0, 8, 16, 24, 255};
+
+23 cÚ¡ 
+	gcÚ¡_num
+=5;
+
+25 
 	g¡d
 ::
 m­
@@ -449,27 +665,27 @@ m­
 	gid_to_Ý
 ;
 
-25 
+27 
 	$maš
 (){
 
-27 
-cÚ¡_š
-[1]={0};
-
-28 
-sub_š
-[2*
-N
-][N];
-
 29 
+sub_š
+[
+R
+*
+C
+/4+18];
+
+30 
 sub_out
 [
-N
-][N];
+R
+*
+C
+/4];
 
-31 
+32 
 ¡d
 ::
 veùÜ
@@ -479,7 +695,7 @@ O³¿nd
 Ý_¬¿y
 ;
 
-32 
+33 
 ¡d
 ::
 veùÜ
@@ -489,15 +705,15 @@ In¡ruùiÚ
 š¡_¬¿y
 ;
 
-33 
+34 
 ¡d
 ::
 ¡ršg
  
 dfg_Çme
-="mm";
+="sobel";
 
-35 
+36 
 	`io_š™
 (
 sub_š
@@ -505,7 +721,7 @@ sub_š
 sub_out
 );
 
-36 
+37 
 	`Ý_¬¿y_š™
 (
 Ý_¬¿y
@@ -517,7 +733,7 @@ sub_out
 cÚ¡_š
 );
 
-37 
+38 
 	`k”Ãl_to_dfg
 (
 Ý_¬¿y
@@ -525,53 +741,7 @@ cÚ¡_š
 š¡_¬¿y
 );
 
-38 
-¡d
-::
-m­
-<, 
-O³¿nd
-*>::
-™”©Ü
- 
-m­_™
-;
-
-39 
-tmp
-=0;
-
-40 
-m­_™
-=
-id_to_Ý
-.
-	`begš
-(); m­_™!=
-id_to_m­
-.
-	`’d
-(); map_it++){
-
-41 
-	`´štf
-("%d: op_id=%d, op_v®ue=%d\n", 
-tmp
-, 
-m­_™
-->
-fœ¡
-, (m­_™->
-£cÚd
-)->
-Ý_v®ue
-);
-
-42 
-tmp
-++;
-
-44 
+39 
 	`dfg_compu‹
 (
 Ý_¬¿y
@@ -579,7 +749,7 @@ tmp
 š¡_¬¿y
 );
 
-45 
+40 
 	`v”ify
 (
 Ý_¬¿y
@@ -587,7 +757,7 @@ tmp
 sub_out
 );
 
-46 
+41 
 	`dfg_dump
 (
 dfg_Çme
@@ -597,99 +767,273 @@ dfg_Çme
 š¡_¬¿y
 );
 
-47 
+43 
 	}
 }
 
-49 
-	$io_š™
+45 
+io_š™
 (
 sub_š
-[2*
-N
-][N], 
-sub_out
-[N][N]){
-
-50 
-a
 [
-N
-][N]={
+R
+*
+C
+/4+18], 
+sub_out
+[R*C/4]){
+
+46 
+	gfig_š
+[
+R
+][
+C
+]={
+
+47 
+	~"fig_š_sm®l.txt
+"
+
+50 
+	gfig_out
+[
+R
+][
+C
+]={
 
 51 
-	~"š_a_sm®l.txt
+	~"fig_out_sm®l.txt
 "
 
-53 
-b
-[
-N
-][N]={
+54 
+	ggx
+[3][3]={
 
-54 
-	~"š_b_sm®l.txt
-"
+60 
+	ggy
+[3][3]={
 
-56 
-c
-[
-N
-][N]={
+66 
+	gid
+=0;
 
-57 
-	~"out_c_sm®l.txt
-"
-
-60 
-i
+67 
+	gi
 =0; i<
-N
+	gR
 ; i++){
 
-61 
-j
+68 
+	gj
 =0; j<
-N
+	gC
+; j=
+j
++4){
+
+69 
+pixl0
+, 
+pixl1
+, 
+pixl2
+, 
+pixl3
+;
+
+70 
+	gpixl0
+=()
+fig_š
+[
+i
+][
+j
+];
+
+71 
+	gpixl1
+=()
+fig_š
+[
+i
+][
+j
++1]<<8;
+
+72 
+	gpixl2
+=()
+fig_š
+[
+i
+][
+j
++2]<<16;
+
+73 
+	gpixl3
+=()
+fig_š
+[
+i
+][
+j
++3]<<24;
+
+74 
+	gsub_š
+[
+id
+]=
+pixl0
++
+pixl1
++
+pixl2
++
+pixl3
+;
+
+75 
+	gid
+++;
+
+79 
+	gi
+=0; i<3; i++){
+
+80 
+	gj
+=0; j<3; j++){
+
+81 
+	gsub_š
+[
+id
+]=
+gx
+[
+i
+][
+j
+];
+
+82 
+	gid
+++;
+
+86 
+	gi
+=0; i<3; i++){
+
+87 
+	gj
+=0; j<3; j++){
+
+88 
+	gsub_š
+[
+id
+]=
+gy
+[
+i
+][
+j
+];
+
+89 
+	gid
+++;
+
+93 
+	gid
+=0;
+
+94 
+	gi
+=0; i<
+	gR
+; i++){
+
+95 
+	gj
+=0; j<
+	gC
 ; j++){
 
-62 
-sub_š
+96 
+	gpixl0
+, 
+	gpixl1
+, 
+	gpixl2
+, 
+	gpixl3
+;
+
+97 
+	gpixl0
+=()
+fig_out
 [
 i
 ][
 j
-]=
-a
-[i][j];
+];
 
-63 
-sub_š
+98 
+	gpixl1
+=()
+fig_out
 [
 i
+][
+j
++1]<<8;
+
+99 
+	gpixl2
+=()
+fig_out
+[
+i
+][
+j
++2]<<16;
+
+100 
+	gpixl3
+=()
+fig_out
+[
+i
+][
+j
++3]<<24;
+
+101 
+	gsub_out
+[
+id
+]=
+pixl0
 +
-N
-][
-j
-]=
-b
-[i][j];
+pixl1
++
+pixl2
++
+pixl3
+;
 
-64 
-sub_out
-[
-i
-][
-j
-]=
-c
-[i][j];
+102 
+	gid
+++;
 
-67 
-	}
-}
-
-69 
+107 
 Ý_¬¿y_š™
 (
 ¡d
@@ -701,15 +1045,21 @@ O³¿nd
 Ý_¬¿y
 , 
 sub_š
-[2*
-N
-][N], 
+[
+R
+*
+C
+/4+18], 
 sub_out
-[N][N], 
-cÚ¡_š
-[1]){
+[R*C/4]){
 
-71 
+109 
+	gi
+=0; i<
+	gcÚ¡_num
+; i++){
+
+110 
 O³¿nd
 * 
 	gÝ_±r
@@ -717,15 +1067,17 @@ O³¿nd
 Ãw
  Operand();
 
-72 
+111 
 	gÝ_±r
 ->
 	gÝ_v®ue
 =
 cÚ¡_š
-[0];
+[
+i
+];
 
-73 
+112 
 	gÝ_±r
 ->
 	gÝ_ty³
@@ -733,13 +1085,13 @@ cÚ¡_š
 INCONST
 ;
 
-74 
+113 
 	gÝ_±r
 ->
 	gÝ_b¿m_id
 =0;
 
-75 
+114 
 	gÝ_±r
 ->
 	gÝ_b¿m_addr
@@ -747,11 +1099,11 @@ INCONST
 b¿m0_addr
 ;
 
-76 
+115 
 	gb¿m0_addr
 ++;
 
-77 
+116 
 	gÝ_¬¿y
 .
 push_back
@@ -759,7 +1111,7 @@ push_back
 Ý_±r
 );
 
-78 
+117 
 	gid_to_Ý
 [
 Ý_±r
@@ -767,19 +1119,15 @@ push_back
 Ý_id
 ]=op_ptr;
 
-81 
+121 
 	gi
-=0; i<2*
-	gN
-; i++){
+=0; i<
+R
+*
+	gC
+/4+18; i++){
 
-82 
-	gj
-=0; j<
-	gN
-; j++){
-
-83 
+122 
 	gÝ_±r
 =
 Ãw
@@ -787,7 +1135,7 @@ push_back
 O³¿nd
 ();
 
-84 
+123 
 	gÝ_±r
 ->
 	gÝ_v®ue
@@ -795,17 +1143,15 @@ O³¿nd
 sub_š
 [
 i
-][
-j
 ];
 
-85 
+124 
 	gÝ_±r
 ->
 	gÝ_b¿m_id
 =0;
 
-86 
+125 
 	gÝ_±r
 ->
 	gÝ_b¿m_addr
@@ -813,11 +1159,11 @@ j
 b¿m0_addr
 ;
 
-87 
+126 
 	gb¿m0_addr
 ++;
 
-88 
+127 
 	gÝ_±r
 ->
 	gÝ_ty³
@@ -825,7 +1171,7 @@ b¿m0_addr
 INVAR
 ;
 
-89 
+128 
 	gÝ_¬¿y
 .
 push_back
@@ -833,7 +1179,7 @@ push_back
 Ý_±r
 );
 
-90 
+129 
 	gid_to_Ý
 [
 Ý_±r
@@ -841,19 +1187,15 @@ push_back
 Ý_id
 ]=op_ptr;
 
-95 
+133 
 	gi
 =0; i<
-	gN
-; i++){
+R
+*
+	gC
+/4; i++){
 
-96 
-	gj
-=0; j<
-	gN
-; j++){
-
-97 
+134 
 	gÝ_±r
 =
 Ãw
@@ -861,13 +1203,13 @@ push_back
 O³¿nd
 ();
 
-98 
+135 
 	gÝ_±r
 ->
 	gÝ_b¿m_id
 =1;
 
-99 
+136 
 	gÝ_±r
 ->
 	gÝ_b¿m_addr
@@ -875,11 +1217,11 @@ O³¿nd
 b¿m1_addr
 ;
 
-100 
+137 
 	gb¿m1_addr
 ++;
 
-101 
+138 
 	gÝ_±r
 ->
 	gÝ_ty³
@@ -887,7 +1229,7 @@ b¿m1_addr
 OUTVAR
 ;
 
-102 
+139 
 	gÝ_¬¿y
 .
 push_back
@@ -895,7 +1237,15 @@ push_back
 Ý_±r
 );
 
-107 
+140 
+	gid_to_Ý
+[
+Ý_±r
+->
+Ý_id
+]=op_ptr;
+
+144 
 	$d©a_to_id
 (
 idx
@@ -907,69 +1257,87 @@ OPTYPE
 Ý_ty³
 ){
 
-108 
-cÚ¡_sum
-=1;
+145 
+šv¬_num
+=
+R
+*
+C
+/4+18;
 
-109 
-šv¬_sum
-=2*
-N
-*N;
-
-110 if(
+146 if(
 Ý_ty³
 ==
 INVAR
 ){
 
-111  (
+147  (
 idx
-*
-N
 +
-idy
-+
-cÚ¡_sum
+cÚ¡_num
 );
 
-113 if(
+149 if(
 Ý_ty³
 ==
 OUTVAR
 ){
 
-114  (
+150  (
 idx
-*
-N
 +
-idy
+cÚ¡_num
 +
-cÚ¡_sum
-+
-šv¬_sum
+šv¬_num
 );
 
-117 
+153 
 	`´štf
 ("Unknown IO operands! \n");
 
-120 
+156 
 	}
 }
 
-122 
+158 
 	$d©a_to_id
 (
 cÚ¡_v®
 ){
 
-124 
+159 
+i
+=0; i<
+cÚ¡_num
+; i++){
+
+160 if(
+cÚ¡_v®
+==
+cÚ¡_š
+[
+i
+]){
+
+161  
+i
+;
+
+164 
+	`´štf
+("Couldn't findhe specifiedhe constant!\n");
+
+165 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+166 
 	}
 }
 
-126 
+168 
 k”Ãl_to_dfg
 (
 ¡d
@@ -985,7 +1353,7 @@ In¡ruùiÚ
 š¡_¬¿y
 ){
 
-127 
+169 
 i
 =0; 
 	gi
@@ -993,27 +1361,27 @@ i
 	gN
 ; i++){
 
-128 
+170 
 	gj
 =0; j<
 	gN
 ; j++){
 
-130 
+172 
 	gÏ¡_Ý_id
 ;
 
-131 
+173 
 	gcu¼_Ý_id
 ;
 
-132 
+174 
 	gk
 =0; k<
 	gN
 ; k++){
 
-133 
+175 
 In¡ruùiÚ
 * 
 	gš¡_±r
@@ -1021,11 +1389,11 @@ In¡ruùiÚ
 Ãw
  Instruction();
 
-134 if(
+176 if(
 	gk
 ==0){
 
-135 
+177 
 O³¿nd
 * 
 d¡_±r
@@ -1033,7 +1401,7 @@ d¡_±r
 Ãw
  Operand();
 
-136 
+178 
 	gid_to_Ý
 [
 d¡_±r
@@ -1041,7 +1409,7 @@ d¡_±r
 Ý_id
 ]=dst_ptr;
 
-137 
+179 
 	gÝ_¬¿y
 .
 push_back
@@ -1049,7 +1417,7 @@ push_back
 d¡_±r
 );
 
-139 
+181 
 	gš¡_±r
 ->
 	gd¡_Ý
@@ -1059,7 +1427,7 @@ d¡_±r
 Ý_id
 ;
 
-140 
+182 
 	gš¡_±r
 ->
 	gš¡_Ýcode
@@ -1067,7 +1435,7 @@ d¡_±r
 MULADD
 ;
 
-141 
+183 
 	gš¡_±r
 ->
 	g¤c_Ý0
@@ -1081,7 +1449,7 @@ k
 INVAR
 );
 
-142 
+184 
 	gš¡_±r
 ->
 	g¤c_Ý1
@@ -1097,7 +1465,7 @@ j
 INVAR
 );
 
-143 
+185 
 	gš¡_±r
 ->
 	g¤c_Ý2
@@ -1105,7 +1473,7 @@ INVAR
 d©a_to_id
 (0);
 
-144 
+186 
 	gš¡_¬¿y
 .
 push_back
@@ -1113,7 +1481,7 @@ push_back
 š¡_±r
 );
 
-146 
+188 
 	gcu¼_Ý_id
 =
 d¡_±r
@@ -1121,19 +1489,19 @@ d¡_±r
 Ý_id
 ;
 
-147 
+189 
 	gÏ¡_Ý_id
 =
 cu¼_Ý_id
 ;
 
-149 if(
+191 if(
 	gk
 <
 	gN
 -1){
 
-150 
+192 
 O³¿nd
 * 
 	gd¡_±r
@@ -1141,7 +1509,7 @@ O³¿nd
 Ãw
  Operand();
 
-151 
+193 
 	gid_to_Ý
 [
 d¡_±r
@@ -1149,7 +1517,7 @@ d¡_±r
 Ý_id
 ]=dst_ptr;
 
-152 
+194 
 	gÝ_¬¿y
 .
 push_back
@@ -1157,7 +1525,7 @@ push_back
 d¡_±r
 );
 
-154 
+196 
 	gš¡_±r
 ->
 	gd¡_Ý
@@ -1167,7 +1535,7 @@ d¡_±r
 Ý_id
 ;
 
-155 
+197 
 	gš¡_±r
 ->
 	gš¡_Ýcode
@@ -1175,7 +1543,7 @@ d¡_±r
 MULADD
 ;
 
-156 
+198 
 	gš¡_±r
 ->
 	g¤c_Ý0
@@ -1189,7 +1557,7 @@ k
 INVAR
 );
 
-157 
+199 
 	gš¡_±r
 ->
 	g¤c_Ý1
@@ -1205,7 +1573,7 @@ j
 INVAR
 );
 
-158 
+200 
 	gš¡_±r
 ->
 	g¤c_Ý2
@@ -1213,7 +1581,7 @@ INVAR
 Ï¡_Ý_id
 ;
 
-159 
+201 
 	gš¡_¬¿y
 .
 push_back
@@ -1221,7 +1589,7 @@ push_back
 š¡_±r
 );
 
-161 
+203 
 	gcu¼_Ý_id
 =
 d¡_±r
@@ -1229,13 +1597,13 @@ d¡_±r
 Ý_id
 ;
 
-162 
+204 
 	gÏ¡_Ý_id
 =
 cu¼_Ý_id
 ;
 
-165 
+207 
 	gš¡_±r
 ->
 	gd¡_Ý
@@ -1249,7 +1617,7 @@ j
 OUTVAR
 );
 
-166 
+208 
 	gš¡_±r
 ->
 	gš¡_Ýcode
@@ -1257,7 +1625,7 @@ OUTVAR
 MULADD
 ;
 
-167 
+209 
 	gš¡_±r
 ->
 	g¤c_Ý0
@@ -1271,7 +1639,7 @@ k
 INVAR
 );
 
-168 
+210 
 	gš¡_±r
 ->
 	g¤c_Ý1
@@ -1287,7 +1655,7 @@ j
 INVAR
 );
 
-169 
+211 
 	gš¡_±r
 ->
 	g¤c_Ý2
@@ -1295,7 +1663,7 @@ INVAR
 Ï¡_Ý_id
 ;
 
-170 
+212 
 	gš¡_¬¿y
 .
 push_back
@@ -1303,7 +1671,7 @@ push_back
 š¡_±r
 );
 
-177 
+219 
 dfg_compu‹
 (
 ¡d
@@ -1319,7 +1687,7 @@ In¡ruùiÚ
 š¡_¬¿y
 ){
 
-178 
+220 
 ¡d
 ::
 veùÜ
@@ -1331,7 +1699,7 @@ In¡ruùiÚ
 š¡_™
 ;
 
-179 
+221 
 	gš¡_™
 =
 š¡_¬¿y
@@ -1341,7 +1709,7 @@ begš
 ’d
 (); inst_it++){
 
-180 
+222 
 	g¤c_v®0
 =
 id_to_Ý
@@ -1353,7 +1721,7 @@ id_to_Ý
 Ý_v®ue
 ;
 
-181 
+223 
 	g¤c_v®1
 =
 id_to_Ý
@@ -1365,7 +1733,7 @@ id_to_Ý
 Ý_v®ue
 ;
 
-182 
+224 
 	g¤c_v®2
 =
 id_to_Ý
@@ -1377,11 +1745,11 @@ id_to_Ý
 Ý_v®ue
 ;
 
-183 
+225 
 	gd¡_v®
 ;
 
-184 if((*
+226 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -1389,7 +1757,7 @@ id_to_Ý
 MULSUB
 ){
 
-185 
+227 
 d¡_v®
 =
 ¤c_v®0
@@ -1399,7 +1767,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-187 if((*
+229 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -1407,7 +1775,7 @@ d¡_v®
 MULADD
 ){
 
-188 
+230 
 d¡_v®
 =
 ¤c_v®0
@@ -1417,7 +1785,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-190 if((*
+232 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -1425,7 +1793,7 @@ d¡_v®
 ADDADD
 ){
 
-191 
+233 
 d¡_v®
 =
 ¤c_v®0
@@ -1435,7 +1803,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-193 if((*
+235 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -1443,7 +1811,7 @@ d¡_v®
 ADDSUB
 ){
 
-194 
+236 
 d¡_v®
 =
 ¤c_v®0
@@ -1453,7 +1821,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-196 if((*
+238 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -1461,7 +1829,7 @@ d¡_v®
 SUBADD
 ){
 
-197 
+239 
 d¡_v®
 =
 ¤c_v®0
@@ -1471,7 +1839,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-199 if((*
+241 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -1479,7 +1847,7 @@ d¡_v®
 SUBSUB
 ){
 
-200 
+242 
 d¡_v®
 =
 ¤c_v®0
@@ -1489,7 +1857,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-202 if((*
+244 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -1497,7 +1865,7 @@ d¡_v®
 PHI
 ){
 
-203 
+245 
 d¡_v®
 =(
 ¤c_v®0
@@ -1507,11 +1875,11 @@ d¡_v®
 ¤c_v®2
 ;
 
-206 
+248 
 ´štf
 ("Unexpected opcode! \n");
 
-209 
+251 
 	gid_to_Ý
 [(*
 š¡_™
@@ -1523,7 +1891,7 @@ d¡_Ý
 d¡_v®
 ;
 
-214 
+256 
 v”ify
 (cÚ¡ 
 ¡d
@@ -1539,19 +1907,19 @@ sub_out
 N
 ][N]){
 
-215 
+257 
 	gi
 =0; i<
 	gN
 ; i++){
 
-216 
+258 
 	gj
 =0; j<
 	gN
 ; j++){
 
-217 
+259 
 	gÝ_id
 =
 d©a_to_id
@@ -1563,7 +1931,7 @@ j
 OUTVAR
 );
 
-218 if(
+260 if(
 	gid_to_Ý
 [
 Ý_id
@@ -1577,11 +1945,11 @@ i
 j
 ]){
 
-219 
+261 
 ´štf
 ("DFG computation is wrong!\n");
 
-220 
+262 
 ´štf
 ("ex³ùed[%d][%d]=%d, compu‹d„esuÉ=%d \n", 
 i
@@ -1597,17 +1965,17 @@ id_to_Ý
 Ý_v®ue
 );
 
-221 
+263 
 ex™
 (
 EXIT_FAILURE
 );
 
-226 
+268 
 ´štf
 ("Verification…assed!\n");
 
-231 
+273 
 dfg_dump
 (cÚ¡ 
 ¡d
@@ -1627,7 +1995,7 @@ In¡ruùiÚ
 š¡_¬¿y
 ){
 
-232 
+274 
 ¡d
 ::
 o¡ršg¡»am
@@ -1635,13 +2003,13 @@ o¡ršg¡»am
 oss
 ;
 
-233 
+275 
 	goss
  << 
 	gdfg_Çme
  << ".txt";
 
-234 
+276 
 	g¡d
 ::
 of¡»am
@@ -1649,7 +2017,7 @@ of¡»am
 Ý_fhªdË
 ;
 
-235 
+277 
 	gÝ_fhªdË
 .
 Ý’
@@ -1661,13 +2029,13 @@ oss
 c_¡r
 ());
 
-236 if(
+278 if(!
 	gÝ_fhªdË
 .
 is_Ý’
 ()){
 
-237 
+279 
 	g¡d
 ::
 cout
@@ -1677,19 +2045,31 @@ oss
 ¡r
 () << "\n";
 
-238 
+280 
 ex™
 (
 EXIT_FAILURE
 );
 
-241 
+283 
+	goss
+.
+þ—r
+();
+
+284 
+	goss
+.
+¡r
+("");
+
+285 
 	goss
  << 
 	gdfg_Çme
  << ".s";
 
-242 
+286 
 	g¡d
 ::
 of¡»am
@@ -1697,13 +2077,25 @@ of¡»am
 š¡_fhªdË
 ;
 
-243 if(
+287 
+	gš¡_fhªdË
+.
+Ý’
+(
+oss
+.
+¡r
+().
+c_¡r
+());
+
+288 if(!
 	gš¡_fhªdË
 .
 is_Ý’
 ()){
 
-244 
+289 
 	g¡d
 ::
 cout
@@ -1713,11 +2105,13 @@ oss
 ¡r
 () << "\n";
 
-245 
+290 
 ex™
-(1);
+(
+EXIT_FAILURE
+);
 
-249 
+294 
 	g¡d
 ::
 veùÜ
@@ -1729,7 +2123,7 @@ cÚ¡_™”©Ü
 Ý_™
 ;
 
-250 
+295 
 	gÝ_™
 =
 Ý_¬¿y
@@ -1739,7 +2133,7 @@ begš
 ’d
 (); op_it++){
 
-251 
+296 
 	gÝ_fhªdË
  << (*
 	gÝ_™
@@ -1747,37 +2141,37 @@ begš
 	gÝ_id
  << " " \
 
-252 << (*
+297 << (*
 	gÝ_™
 )->
 	gÝ_b¿m_addr
  << " " \
 
-253 << (*
+298 << (*
 	gÝ_™
 )->
 	gÝ_v®ue
  << " " \
 
-254 << (*
+299 << (*
 	gÝ_™
 )->
 	gÝ_b¿m_id
  << " " \
 
-255 << (*
+300 << (*
 	gÝ_™
 )->
 	gÝ_ty³
  << "\n";
 
-257 
+302 
 	gÝ_fhªdË
 .
 þo£
 ();
 
-260 
+305 
 	g¡d
 ::
 veùÜ
@@ -1789,7 +2183,7 @@ cÚ¡_™”©Ü
 š¡_™
 ;
 
-261 
+306 
 	gš¡_™
 =
 š¡_¬¿y
@@ -1799,7 +2193,7 @@ begš
 ’d
 (); inst_it++){
 
-262 
+307 
 	gš¡_fhªdË
  << (*
 	gš¡_™
@@ -1807,31 +2201,31 @@ begš
 	gd¡_Ý
  << " " \
 
-263 << (*
+308 << (*
 	gš¡_™
 )->
 	gš¡_Ýcode
  << " " \
 
-264 << (*
+309 << (*
 	gš¡_™
 )->
 	g¤c_Ý0
  << " " \
 
-265 << (*
+310 << (*
 	gš¡_™
 )->
 	g¤c_Ý1
  << " " \
 
-266 << (*
+311 << (*
 	gš¡_™
 )->
 	g¤c_Ý2
  << "\n";
 
-268 
+313 
 	gš¡_fhªdË
 .
 þo£
@@ -8235,11 +8629,9 @@ __Ãed_m®loc_ªd_ÿÎoc
 __END_DECLS
 
 
-	@in_a_small.txt
+	@fig_in_small.txt
 
-	@in_b_small.txt
-
-	@out_c_small.txt
+	@fig_out_small.txt
 
 	@/usr/include/alloca.h
 
@@ -18816,13 +19208,13 @@ Instruction.cpp
 Instruction.h
 Operand.cpp
 Operand.h
+common.cpp
 common.h
 dfg-gen.cpp
 /usr/include/stdio.h
 /usr/include/stdlib.h
-in_a_small.txt
-in_b_small.txt
-out_c_small.txt
+fig_in_small.txt
+fig_out_small.txt
 /usr/include/alloca.h
 /usr/include/features.h
 /usr/include/getopt.h

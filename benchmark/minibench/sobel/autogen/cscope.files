@@ -1,3 +1,4 @@
+common.cpp
 common.h
 dfg-gen.cpp
 Instruction.cpp

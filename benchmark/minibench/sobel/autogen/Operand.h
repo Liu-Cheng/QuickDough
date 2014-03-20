@@ -12,7 +12,7 @@ struct Operand{
         OPTYPE op_type;
 
         Operand();
-        void Set_Operand(int _op_value, int _op_bram_id, int _op_bram_addr, OPTYPE _op_type);
+        Set_Operand(int _op_value, int _op_bram_id, int _op_bram_addr, OPTYPE _op_type);
 
     private:    
         static int gl_id;
