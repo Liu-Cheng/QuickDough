@@ -22,8 +22,6 @@ int bram1_addr=0; //Output buffer address
 int const_in[5]={0, 8, 16, 24, 255}; //The constant array is put here to make id search easier.
 const int const_num=5;
 
-std::map<int, Operand*> id_to_op;
-
 int main(){
 
     int sub_in[R*C/4+18];
@@ -34,7 +32,7 @@ int main(){
     std::string dfg_name="sobel";
 
     io_init(sub_in, sub_out);
-    op_array_init(op_array, sub_in, sub_out, const_in);
+    op_array_init(op_array, sub_in, sub_out);
     kernel_to_dfg(op_array, inst_array);
     dfg_compute(op_array, inst_array);
     verify(op_array, sub_out);
@@ -84,7 +82,7 @@ void io_init(int sub_in[R*C/4+18], int sub_out[R*C/4]){
     }
 
     for(int i=0; i<3; i++){
-        for(j=0; j<3; j++){
+        for(int j=0; j<3; j++){
             sub_in[id]=gy[i][j];
             id++;
         }
@@ -114,30 +112,27 @@ void op_array_init(std::vector<Operand*> &op_array, int sub_in[R*C/4+18], int su
         op_ptr->op_bram_addr=bram0_addr; 
         bram0_addr++;
         op_array.push_back(op_ptr);
-        id_to_op[op_ptr->op_id]=op_ptr;
     }
 
     /* map input data to op_array */
     for(int i=0; i<R*C/4+18; i++){
-        op_ptr=new Operand();
+        Operand* op_ptr=new Operand();
         op_ptr->op_value=sub_in[i];
         op_ptr->op_bram_id=0;
         op_ptr->op_bram_addr=bram0_addr;
         bram0_addr++;
         op_ptr->op_type=INVAR;
         op_array.push_back(op_ptr);
-        id_to_op[op_ptr->op_id]=op_ptr;
     }
 
     /* map output data to op_array */
     for(int i=0; i<R*C/4; i++){
-        op_ptr=new Operand();
+        Operand* op_ptr=new Operand();
         op_ptr->op_bram_id=1;
         op_ptr->op_bram_addr=bram1_addr;
         bram1_addr++;
         op_ptr->op_type=OUTVAR;
         op_array.push_back(op_ptr);
-        id_to_op[op_ptr->op_id]=op_ptr;
     }
 }
 
@@ -170,237 +165,160 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
     for(int i=1; i<R-1; i++){
         for(int j=4; j<C-4; j=j+4){
 
-            /* Operands for the first pixl computation */
-            Operand* opx0=new Operand();
-            op_array.push_back(opx0);
-            id_to_op[opx0->op_id]=opx0;
-
-            Operand* opy0=new Operand();
-            op_array.push_back(opy0);
-            id_to_op[opy0->op_id]=opy0;
-
-            Operand* op0=new Operand();
-            op_array.push_back(op0);
-            id_to_op[op0->op_id]=op0;
-
-            /* Operands for the second pixl computation */
-            Operator* opx1=new Operand();
-            op_array.push_back(opx1);
-            id_to_op[opx1->op_id]=opx1;
-
-            Operator* opy1=new Operand();
-            op_array.push_back(opy1);
-            id_to_op[opy1->op_id]=opy1;
-
-            Operator* op1=new Operand();
-            op_array.push_back(op1);
-            id_to_op[op1->op_id]=op1;
-
-            /* Operand for the third pixl computation */
-            Operand* opx2=new Operand();
-            op_array.push_back(opx2);
-            id_to_op[opx2->op_id]=opx2;
-
-            Operand* opy2=new Operand();
-            op_array.push_back(opy2);
-            id_to_op[opy2->op_id]=opy2;
-
-            Operand* op2=new Operand();
-            op_array.push_back(op2);
-            id_to_op[op2->op_id]=op2;
-
-            /* Operands for the fourth pixl computation */
-            Operator* opx3=new Operand();
-            op_array.push_back(opx3);
-            id_to_op[opx3->op_id]=opx3;
-
-            Operator* opy3=new Operand();
-            op_array.push_back(opy3);
-            id_to_op[opy3->op_id]=opy3;
-
-            Operator* op3=new Operand();
-            op_array.push_back(op3);
-            id_to_op[op3->op_id]=op3;
+            /* Operands for the pixl computation */
+            Operand* opx[4];
+            Operand* opy[4];
+            Operand* op[4];
+            for(int k=0; k<4; k++){
+                opx[k]=new Operand();
+                opy[k]=new Operand();
+                op[k]=new Operand();
+                op_array.push_back(opx[k]);
+                op_array.push_back(opy[k]);
+                op_array.push_back(op[k]);
+            }
 
             for(int p=-1; p<=1; p++){
                 for(int q=-1; q<=1; q++){
                     int byte_id, word_id, byte_lid;
-                    int gx_id, gy_id, gx, gy;
-                    int curr_idx0, curr_idx1, curr_idx2, curr_idx3;
-                    int curr_idy0, curr_idy1, curr_idy2, curr_idy3;
-                    int last_idx0, last_idx1, last_idx2, last_idx3;
-                    int last_idy0, last_idy1, last_idy2, last_idy3;
-
-
-                    Operand* pixl1=new Operand();
-                    op_array.push_back(pixl1);
-                    id_to_op[pixl1->op_id]=pixl1;
-
-                    Operand* pixl2=new Operand();
-                    op_array.push_back(pixl2);
-                    id_to_op[pixl2->op_id]=pixl2;
-
-                    Operand* pixl3=new Operand();
-                    op_array.push_back(pixl3);
-                    id_to_op[pixl3->op_id]=pixl3;
-
+                    int gx_id, gy_id;
+                    int src_id0[4];
+                    int src_id1[4];
+                    int src_id2[4];
+                    int last_idx[4];
+                    int last_idy[4];
+                    Operand* pixl[4];
                     gx_id=R*C/4+(p+1)*3+(q+1);
                     gy_id=R*C/4+9+(p+1)*3+(q+1);
-                    gx=sub_in[gx_id];
-                    gy=sub_in[gy_id];
 
-                    byte_id=(i+p)*R+j+q;
-                    word_id=byte_id/4;
-                    byte_lid=byte_id%4;
+                    /* Note that pixl0, pixl1, pixl2 and pixl3 in different loop iterations may actually
+                     * be the same, but we just ignore this and create new operand for all of them. Hopefully
+                     * this will be fixed in future.*/
 
+                    for(int k=0; k<4; k++){
 
-                    Operand* pixl0=new Operand();
-                    op_array.push_back(pixl0);
-                    id_to_op[pixl0->op_id]=pixl0;
+                        /* Pixl[k] calculation */
+                        byte_id=(i+p)*R+j+q+k;
+                        word_id=byte_id/4;
+                        byte_lid=byte_id%4;
+                        pixl[k]=new Operand();
+                        op_array.push_back(pixl[k]);
+                        Instruction* inst0=new Instruction();
+                        inst_array.push_back(inst0);
+                        src_id0[k]=data_to_id(word_id, INVAR);
+                        src_id1[k]=data_to_id(byte_lid*8); //This operand is a constant (0, 8, 16, 24)
+                        src_id2[k]=data_to_id(0xff);
+                        inst0->Set_Instruction(pixl[k]->op_id, RSFAND, src_id0[k], src_id1[k], src_id2[k]);
 
-                    Instruction* inst0=new Instruction();
-                    inst0->dst_op=pixl0->op_id;
-                    inst0->inst_opcode=
-                    inst0->data_to_id(word_id, INVAR);
+                        if(p==-1 && q==-1){
+                            Operand* curr_op=new Operand();
+                            op_array.push_back(curr_op);
+                            Instruction* curr_inst=new Instruction();
+                            inst_array.push_back(curr_inst);
+                            src_id0[k]=pixl[k]->op_id;
+                            src_id1[k]=data_to_id(gx_id, INVAR);
+                            src_id2[k]=data_to_id(0);
+                            curr_inst->Set_Instruction(curr_op->op_id, MULADD, src_id0[k], src_id1[k], src_id2[k]);
+                            last_idx[k]=curr_op->op_id;
 
-                    pixl0=sub_in[word_id]>>byte_lid*8 & 0xff;
-                    if(p==-1 && q==-1){
-                        curr_idx0=pixl0*gx+0;
-                        curr_idy0=pixl0*gy+0;
-                        last_idx0=curr_idx0;
-                        last_idy0=curr_idy0;
-                    }
-                    else if(p==1 && q==1){
-                        sumx0=pixl0*gx+last_idx0;
-                        sumy0=pixl0*gy+last_idy0;
-                    }
-                    else{
-                        curr_idx0=pixl0*gx+last_idx0;
-                        curr_idy0=pixl0*gy+last_idy0;
-                        last_idx0=curr_idx0;
-                        last_idy0=curr_idy0;
-                    }
+                            curr_op=new Operand();
+                            op_array.push_back(curr_op);
+                            curr_inst=new Instruction();
+                            inst_array.push_back(curr_inst);
+                            src_id1[k]=data_to_id(gy_id, INVAR);
+                            curr_inst->Set_Instruction(curr_op->op_id, MULADD, src_id0[k], src_id1[k], src_id2[k]);
+                            last_idy[k]=curr_op->op_id;
+                        }
+                        else if(p==1 && q==1){
+                            Instruction* curr_inst=new Instruction();
+                            inst_array.push_back(curr_inst);
+                            src_id0[k]=pixl[k]->op_id;
+                            src_id1[k]=data_to_id(gx_id, INVAR);
+                            src_id2[k]=last_idx[k];
+                            curr_inst->Set_Instruction(opx[k]->op_id, MULADD, src_id0[k], src_id1[k], src_id2[k]);
 
-                    byte_id=(i+p)*R+j+q+1;
-                    word_id=byte_id/4;
-                    byte_lid=byte_id%4;
-                    pixl1=sub_in[word_id]>>byte_lid*8 & 0xff;
-                    if(p==-1 && q==-1){
-                        curr_idx1=pixl1*gx+0;
-                        curr_idy1=pixl1*gy+0;
-                        last_idx1=curr_idx1;
-                        last_idy1=curr_idy1;
-                    }
-                    else if(p==1 && q==1){
-                        sumx1=pixl1*gx+last_idx1;
-                        sumy1=pixl1*gy+last_idy1;
-                    }
-                    else{
-                        curr_idx1=pixl1*gx+last_idx1;
-                        curr_idy1=pixl1*gy+last_idy1;
-                        last_idx1=curr_idx1;
-                        last_idy1=curr_idy1;
-                    }
-                    
-                    byte_id=(i+p)*R+j+q+2;
-                    word_id=byte_id/4;
-                    byte_lid=byte%4;
-                    pixl2=sub_in[word_id]>>byte_lid*8 & 0xff;
-                    if(p==-1 && q==-1){
-                        curr_idx2=pixl2*gx+0;
-                        curr_idy2=pixl2*gy+0;
-                        last_idx2=curr_idx2;
-                        last_idy2=curr_idy2;
-                    }
-                    else if(p==1 && q==1){
-                        sumx2=pixl2*gx+last_idx2;
-                        sumy2=pixl2*gy+last_idy2;
-                    }
-                    else{
-                        curr_idx2=pixl2*gx+last_idx2;
-                        curr_idy2=pixl2*gy+last_idy2;
-                        last_idx2=curr_idx2;
-                        last_idy2=curr_idy2;
-                    }    
+                            curr_inst=new Instruction();
+                            inst_array.push_back(curr_inst);
+                            src_id1[k]=data_to_id(gy_id, INVAR);
+                            src_id2[k]=last_idy[k];
+                            curr_inst->Set_Instruction(opy[k]->op_id, MULADD, src_id0[k], src_id1[k], src_id2[k]);
+                        }
+                        else{
+                            Operand* curr_op=new Operand();
+                            op_array.push_back(curr_op);
+                            Instruction* curr_inst=new Instruction();
+                            inst_array.push_back(curr_inst);
+                            src_id0[k]=pixl[k]->op_id;
+                            src_id1[k]=data_to_id(gx_id, INVAR);
+                            src_id2[k]=last_idx[k];
+                            curr_inst->Set_Instruction(curr_op->op_id, MULADD, src_id0[k], src_id1[k], src_id2[k]);
+                            last_idx[k]=curr_op->op_id;
 
-                    byte_id=(i+p)*R+j+q+3;
-                    word_id=byte_id/4;
-                    byte_lid=byte%4;
-                    pixl3=sub_in[word_id]>>byte_lid*8 & 0xff;
-                    if(p==-1 && q==-1){
-                        curr_idx3=pixl3*gx+0;
-                        curr_idy3=pixl3*gy+0;
-                        last_idx3=curr_idx3;
-                        last_idy3=curr_idy3;
-                    }
-                    else if(p==1 && q==1){
-                        sumx3=pixl3*gx+last_idx3;
-                        sumy3=pixl3*gy+last_idy3;
-                    }
-                    else{
-                        curr_idx3=pixl3*gx+last_idx3;
-                        curr_idy3=pixl3*gy+last_idy3;
-                        last_idx3=curr_idx3;
-                        last_idy3=curr_idy3;
+                            curr_op=new Operand();
+                            op_array.push_back(curr_op);
+                            curr_inst=new Instruction();
+                            inst_array.push_back(curr_inst);
+                            src_id0[k]=pixl[k]->op_id;
+                            src_id1[k]=data_to_id(gy_id, INVAR);
+                            src_id2[k]=last_idy[k];
+                            curr_inst->Set_Instruction(curr_op->op_id, MULADD, src_id0[k], src_id1[k], src_id2[k]);
+                            last_idy[k]=curr_op->op_id;
+                        }
                     }
                 }
             }
-            sum0=abs(sumx0)+abs(sumy0);
-            sum1=abs(sumx1)+abs(sumy1);
-            sum2=abs(sumx2)+abs(sumy2);
-            sum3=abs(sumx3)+abs(sumy3);
 
-            sum0=(sum0>255)? 0 : (255-sum0);
-            sum1=(sum1>255)? 0 : (255-sum1);
-            sum2=(sum2>255)? 0 : (255-sum2);
-            sum3=(sum3>255)? 0 : (255-sum3);
+            for(int k=0; k<4; k++){
+                Operand* abs_sumx=new Operand();
+                op_array.push_back(abs_sumx);
+                Operand* abs_sumy=new Operand();
+                op_array.push_back(abs_sumy);
+                Operand* abs_sum=new Operand();
+                op_array.push_back(abs_sum);
+
+                Instruction* inst_sumx=new Instruction();
+                inst_sumx->Set_Instruction(abs_sumx->op_id, ABS, opx[k]->op_id, 0, 0);
+                inst_array.push_back(inst_sumx);
+                Instruction* inst_sumy=new Instruction();
+                inst_sumy->Set_Instruction(abs_sumy->op_id, ABS, opy[k]->op_id, 0, 0);
+                inst_array.push_back(inst_sumy);
+                Instruction* inst_sum=new Instruction();
+                inst_sum->Set_Instruction(abs_sum->op_id, ADDADD, abs_sumx->op_id, abs_sumy->op_id, 0);
+                inst_array.push_back(inst_sum);
+
+                Operand* op_flag=new Operand();
+                op_array.push_back(op_flag);
+                Instruction* inst_flag=new Instruction();
+                inst_flag->Set_Instruction(op_flag->op_id, GT, abs_sum->op_id, data_to_id(255), 0);
+                inst_array.push_back(inst_flag);
+
+                Operand* op_sub=new Operand();
+                op_array.push_back(op_sub);
+                Instruction* inst_sub=new Instruction();
+                inst_sub->Set_Instruction(op_sub->op_id, SUBSUB, data_to_id(255), abs_sum->op_id, 0);
+                inst_array.push_back(inst_sub);
+
+                Instruction* inst_phi=new Instruction();
+                inst_phi->Set_Instruction(op[k]->op_id, PHI, op_flag->op_id, 0, op_sub->op_id);
+                inst_array.push_back(inst_phi);
+            }
+
+            Operand* op_tmp1=new Operand();
+            op_array.push_back(op_tmp1);
+            Instruction* inst_tmp1=new Instruction();
+            inst_tmp1->Set_Instruction(op_tmp1->op_id, LSFADD, op[1]->op_id, data_to_id(8), op[0]->op_id);
+            inst_array.push_back(inst_tmp1);
+
+            Operand* op_tmp2=new Operand();
+            op_array.push_back(op_tmp2);
+            Instruction* inst_tmp2=new Instruction();
+            inst_tmp2->Set_Instruction(op_tmp2->op_id, LSFADD, op[2]->op_id, data_to_id(16), op_tmp1->op_id);
+            inst_array.push_back(inst_tmp2);
 
             int nid=(i*R+j)>>2;
-            sub_out[nid]=sum0+sum1<<8+sum2<<16+sum3<<24;
-
-            int last_op_id;
-            int curr_op_id;
-            for(int k=0; k<N; k++){
-                Instruction* inst_ptr=new Instruction();
-                if(k==0){
-                    Operand* dst_ptr=new Operand();
-                    id_to_op[dst_ptr->op_id]=dst_ptr;
-                    op_array.push_back(dst_ptr);
-
-                    inst_ptr->dst_op=dst_ptr->op_id;
-                    inst_ptr->inst_opcode=MULADD;
-                    inst_ptr->src_op0=data_to_id(i, k, INVAR);
-                    inst_ptr->src_op1=data_to_id(N+k, j, INVAR);
-                    inst_ptr->src_op2=data_to_id(0);
-                    inst_array.push_back(inst_ptr);
-
-                    curr_op_id=dst_ptr->op_id;
-                    last_op_id=curr_op_id;
-                }
-                else if(k<N-1){
-                    Operand* dst_ptr=new Operand();
-                    id_to_op[dst_ptr->op_id]=dst_ptr;
-                    op_array.push_back(dst_ptr);
-
-                    inst_ptr->dst_op=dst_ptr->op_id;
-                    inst_ptr->inst_opcode=MULADD;
-                    inst_ptr->src_op0=data_to_id(i, k, INVAR);
-                    inst_ptr->src_op1=data_to_id(N+k, j, INVAR);
-                    inst_ptr->src_op2=last_op_id;
-                    inst_array.push_back(inst_ptr);
-
-                    curr_op_id=dst_ptr->op_id;
-                    last_op_id=curr_op_id;
-                }
-                else{
-                    inst_ptr->dst_op=data_to_id(i, j, OUTVAR);
-                    inst_ptr->inst_opcode=MULADD;
-                    inst_ptr->src_op0=data_to_id(i, k, INVAR);
-                    inst_ptr->src_op1=data_to_id(N+k, j, INVAR);
-                    inst_ptr->src_op2=last_op_id;
-                    inst_array.push_back(inst_ptr);
-                }
-            }
+            Instruction* inst_out=new Instruction();
+            inst_out->Set_Instruction(data_to_id(nid, OUTVAR), LSFADD, op[3]->op_id, data_to_id(24), op_tmp2->op_id);
+            inst_array.push_back(inst_out);
         }
     }
 }
@@ -408,9 +326,9 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
 void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){
     std::vector<Instruction*>::iterator inst_it;
     for(inst_it=inst_array.begin(); inst_it!=inst_array.end(); inst_it++){
-        int src_val0=id_to_op[(*inst_it)->src_op0]->op_value;
-        int src_val1=id_to_op[(*inst_it)->src_op1]->op_value;
-        int src_val2=id_to_op[(*inst_it)->src_op2]->op_value;
+        int src_val0=op_array[(*inst_it)->src_op0]->op_value;
+        int src_val1=op_array[(*inst_it)->src_op1]->op_value;
+        int src_val2=op_array[(*inst_it)->src_op2]->op_value;
         int dst_val;
         if((*inst_it)->inst_opcode==MULSUB){
             dst_val=src_val0*src_val1-src_val2;
@@ -433,30 +351,39 @@ void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &ins
         else if((*inst_it)->inst_opcode==PHI){
             dst_val=(src_val0==0) ? src_val1 : src_val2;
         }
+        else if((*inst_it)->inst_opcode==RSFAND){
+            dst_val=(src_val0>>src_val1) & src_val2;
+        }
+        else if((*inst_it)->inst_opcode==LSFADD){
+            dst_val=(src_val0<<src_val1)+src_val2;
+        }
+        else if((*inst_it)->inst_opcode==ABS){
+            dst_val=abs(src_val0);
+        }
+        else if((*inst_it)->inst_opcode==GT){
+            dst_val=(src_val1>src_val2)? 1 : 0;
+        }
         else{
             printf("Unexpected opcode! \n");
         }
         
-        id_to_op[(*inst_it)->dst_op]->op_value=dst_val;
+        op_array[(*inst_it)->dst_op]->op_value=dst_val;
     }
 }
 
 
-void verify(const std::vector<Operand*> &op_array, int sub_out[N][N]){
-    for(int i=0; i<N; i++){
-        for(int j=0; j<N; j++){
-            int op_id=data_to_id(i, j, OUTVAR);
-            if(id_to_op[op_id]->op_value!=sub_out[i][j]){
+void verify(const std::vector<Operand*> &op_array, int sub_out[R*C/4]){
+    for(int i=0; i<R*C/4; i++){
+        int op_id=data_to_id(i, OUTVAR);
+            if(op_array[op_id]->op_value!=sub_out[i]){
                 printf("DFG computation is wrong!\n");
-                printf("expected[%d][%d]=%d, computed result=%d \n", i, j, sub_out[i][j], id_to_op[op_id]->op_value);
+                printf("expected[%d]=%d, computed result=%d \n", i, sub_out[i], op_array[op_id]->op_value);
                 exit(EXIT_FAILURE);
             }
-        }
     }
 
     printf("Verification passed!\n");
 }
-
 
 
 void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array){

@@ -31,6 +31,8 @@ RSFAND	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAN
 SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
 SUBADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT$/;"	e	enum:OPCODE
 SUBSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT$/;"	e	enum:OPCODE
+Set_Instruction	Instruction.cpp	/^void Instruction::Set_Instruction(int _dst_op, OPCODE _inst_opcode, int _src_op0, int _src_op1, int _src_op2){$/;"	f	class:Instruction
+Set_Operand	Operand.cpp	/^void Operand::Set_Operand(int _op_value, int _op_bram_id, int _op_bram_addr, OPTYPE _op_type){$/;"	f	class:Operand
 TARGET	Makefile	/^TARGET = dfg-gen$/;"	m
 UNUSED	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
 __COMMON_H__	common.h	2;"	d
@@ -41,13 +43,12 @@ bram1_addr	dfg-gen.cpp	/^int bram1_addr=0; \/\/Output buffer address$/;"	v
 const_in	dfg-gen.cpp	/^int const_in[5]={0, 8, 16, 24, 255}; \/\/The constant array is put here to make id search easier.$/;"	v
 const_num	dfg-gen.cpp	/^const int const_num=5;$/;"	v
 data_to_id	dfg-gen.cpp	/^int data_to_id(int const_val){$/;"	f
-data_to_id	dfg-gen.cpp	/^int data_to_id(int idx, int idy, OPTYPE op_type){$/;"	f
+data_to_id	dfg-gen.cpp	/^int data_to_id(int idx, OPTYPE op_type){$/;"	f
 dfg_compute	dfg-gen.cpp	/^void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){$/;"	f
 dfg_dump	dfg-gen.cpp	/^void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array){$/;"	f
 dst_op	Instruction.h	/^        int dst_op;$/;"	m	struct:Instruction
 gl_id	Operand.cpp	/^int Operand::gl_id=0;$/;"	m	class:Operand	file:
 gl_id	Operand.h	/^        static int gl_id;$/;"	m	struct:Operand
-id_to_op	dfg-gen.cpp	/^std::map<int, Operand*> id_to_op;$/;"	v
 inst_opcode	Instruction.h	/^        OPCODE inst_opcode;$/;"	m	struct:Instruction
 io_init	dfg-gen.cpp	/^void io_init(int sub_in[R*C\/4+18], int sub_out[R*C\/4]){$/;"	f
 kernel_to_dfg	dfg-gen.cpp	/^void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){$/;"	f
@@ -64,4 +65,4 @@ self_increase	Operand.cpp	/^int Operand::self_increase(){$/;"	f	class:Operand
 src_op0	Instruction.h	/^        int src_op0;$/;"	m	struct:Instruction
 src_op1	Instruction.h	/^        int src_op1;$/;"	m	struct:Instruction
 src_op2	Instruction.h	/^        int src_op2;$/;"	m	struct:Instruction
-verify	dfg-gen.cpp	/^void verify(const std::vector<Operand*> &op_array, int sub_out[N][N]){$/;"	f
+verify	dfg-gen.cpp	/^void verify(const std::vector<Operand*> &op_array, int sub_out[R*C\/4]){$/;"	f

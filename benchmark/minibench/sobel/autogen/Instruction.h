@@ -12,7 +12,7 @@ struct Instruction{
         int src_op2;
 
         Instruction();
-        Instruction(int _dst_op, OPCODE _inst_opcode, int _src_op0, int _src_op1, int _src_op2);
+        void Set_Instruction(int _dst_op, OPCODE _inst_opcode, int _src_op0, int _src_op1, int _src_op2);
 };
 
 #endif

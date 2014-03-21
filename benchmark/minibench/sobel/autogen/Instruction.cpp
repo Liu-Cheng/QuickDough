@@ -8,7 +8,7 @@ Instruction::Instruction(){
     src_op2=0;
 }
 
-Instruction::Instruction(int _dst_op, OPCODE _inst_opcode, int _src_op0, int _src_op1, int _src_op2){
+void Instruction::Set_Instruction(int _dst_op, OPCODE _inst_opcode, int _src_op0, int _src_op1, int _src_op2){
     dst_op=_dst_op;
     inst_opcode=_inst_opcode;
     src_op0=_src_op0;
