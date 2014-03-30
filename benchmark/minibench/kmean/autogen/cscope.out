@@ -1,43 +1,49 @@
-cscope 15 $HOME/gitrepo/project/benchmark/minibench/sobel/autogen               0000108171
+cscope 15 $HOME/gitrepo/project/benchmark/minibench/kmean/autogen               0000112169
 	@Instruction.cpp
 
 1 
 	~"In¡ruùiÚ.h
 "
 
-3 
+3 
+	gIn¡ruùiÚ
+::
+gl_id
+=0;
+
+5 
 	gIn¡ruùiÚ
 ::
 	$In¡ruùiÚ
 (){
 
-4 
+6 
 d¡_Ý
 =0;
 
-5 
+7 
 š¡_Ýcode
 =
 MULADD
 ;
 
-6 
+8 
 ¤c_Ý0
 =0;
 
-7 
+9 
 ¤c_Ý1
 =0;
 
-8 
+10 
 ¤c_Ý2
 =0;
 
-9 
+11 
 	}
 }
 
-11 
+13 
 	gIn¡ruùiÚ
 ::
 	$S‘_In¡ruùiÚ
@@ -55,37 +61,103 @@ _¤c_Ý1
 _¤c_Ý2
 ){
 
-12 
+14 
 d¡_Ý
 =
 _d¡_Ý
 ;
 
-13 
+15 
 š¡_Ýcode
 =
 _š¡_Ýcode
 ;
 
-14 
+16 
 ¤c_Ý0
 =
 _¤c_Ý0
 ;
 
-15 
+17 
 ¤c_Ý1
 =
 _¤c_Ý1
 ;
 
-16 
+18 
 ¤c_Ý2
 =
 _¤c_Ý2
 ;
 
-17 
+19 
+š¡_id
+=
+	`S–f_Inü—£
+();
+
+20 
+	}
+}
+
+22 
+	gIn¡ruùiÚ
+::
+	$S–f_Inü—£
+(){
+
+23 
+tmp
+=
+gl_id
+;
+
+24 
+gl_id
+++;
+
+25  
+tmp
+;
+
+26 
+	}
+}
+
+29 
+	gIn¡ruùiÚ
+::
+	$Di¥Ïy
+(){
+
+30 
+¡d
+::
+cout
+ << 
+š¡_id
+ << ": " << 
+d¡_Ý
+ << " " << 
+š¡_Ýcode
+ << " ";
+
+31 
+¡d
+::
+cout
+ << 
+¤c_Ý0
+ << " " << 
+¤c_Ý1
+ << " " << 
+¤c_Ý2
+ << " " << std::
+’dl
+;
+
+32 
 	}
 }
 
@@ -135,11 +207,15 @@ OPCODE
 	m¤c_Ý2
 ;
 
-14 
+13 
+	mš¡_id
+;
+
+15 
 In¡ruùiÚ
 ();
 
-15 
+16 
 S‘_In¡ruùiÚ
 (
 _d¡_Ý
@@ -154,6 +230,22 @@ _¤c_Ý1
 , 
 _¤c_Ý2
 );
+
+17 
+S–f_Inü—£
+();
+
+21 
+Di¥Ïy
+();
+
+24 
+	m´iv©e
+:
+
+25 
+gl_id
+;
 
 	@Operand.cpp
 
@@ -225,7 +317,29 @@ tmp
 	}
 }
 
-20 
+19 
+	gO³¿nd
+::
+	$Di¥Ïy
+(){
+
+20 
+¡d
+::
+cout
+ << 
+Ý_id
+ <<": " << 
+Ý_v®ue
+ << std::
+’dl
+;
+
+21 
+	}
+}
+
+23 
 	gO³¿nd
 ::
 	$S‘_O³¿nd
@@ -241,31 +355,31 @@ OPTYPE
 _Ý_ty³
 ){
 
-21 
+24 
 Ý_v®ue
 =
 _Ý_v®ue
 ;
 
-22 
+25 
 Ý_b¿m_id
 =
 _Ý_b¿m_id
 ;
 
-23 
+26 
 Ý_b¿m_addr
 =
 _Ý_b¿m_addr
 ;
 
-24 
+27 
 Ý_ty³
 =
 _Ý_ty³
 ;
 
-25 
+28 
 	}
 }
 
@@ -333,15 +447,19 @@ OPTYPE
 _Ý_ty³
 );
 
-17 
+16 
+Di¥Ïy
+();
+
+18 
 	m´iv©e
 :
 
-18 
+19 
 gl_id
 ;
 
-19 
+20 
 £lf_šü—£
 ();
 
@@ -427,15 +545,63 @@ os
 os
  << "PHI";
 
+26 
+	gRSFAND
+:
+
 27 
+os
+ << "RSFAND";
+
+29 
+	gLSFADD
+:
+
+30 
+os
+ << "LSFADD";
+
+32 
+	gABS
+:
+
+33 
+os
+ << "ABS";
+
+35 
+	gGT
+:
+
+36 
+os
+ << "GT";
+
+38 
+	gLET
+:
+
+39 
+os
+ << "LET";
+
+41 
+	gANDAND
+:
+
+42 
+os
+ << "ANDAND";
+
+45 
 os
  << "UNDEFINED";
 
-30  
+48  
 	gos
 ;
 
-33 
+51 
 	g¡d
 ::
 o¡»am
@@ -451,55 +617,55 @@ OPTYPE
 	gÝ_ty³
 ){
 
-34 
+52 
 	gÝ_ty³
 ){
 
-35 
+53 
 	gINCONST
 :
 
-36 
+54 
 os
  << "INCONST";
 
-38 
+56 
 	gINVAR
 :
 
-39 
+57 
 os
  << "INVAR";
 
-41 
+59 
 	gUNUSED
 :
 
-42 
+60 
 os
  << "UNUSED";
 
-44 
+62 
 	gOUTVAR
 :
 
-45 
+63 
 os
  << "OUTVAR";
 
-47 
+65 
 	gIM
 :
 
-48 
+66 
 os
  << "IM";
 
-51 
+69 
 os
  << "UNDEFINED";
 
-54  
+72  
 	gos
 ;
 
@@ -520,22 +686,34 @@ __COMMON_H__
 >
 
 6 
-	#R
- 32
+	#N
+ 4
 
 	)
 
 7 
-	#C
- 32
+	#D
+ 2
 
 	)
 
-9 
+8 
+	#S
+ 500
+
+	)
+
+9 
+	#IT
+ 40
+
+	)
+
+11 
 	eOPCODE
  {
 
-10 
+12 
 	mMULSUB
 , 
 	mMULADD
@@ -557,13 +735,17 @@ __COMMON_H__
 	mABS
 , 
 	mGT
+, 
+	mLET
+, 
+	mANDAND
 
 
-13 
+15 
 	eOPTYPE
  {
 
-14 
+16 
 	mINCONST
 , 
 	mINVAR
@@ -575,7 +757,7 @@ __COMMON_H__
 	mIM
 
 
-17 
+19 
 	g¡d
 ::
 o¡»am
@@ -591,7 +773,7 @@ OPCODE
 	gš¡_Ýcode
 );
 
-18 
+20 
 	g¡d
 ::
 o¡»am
@@ -650,12 +832,14 @@ io_š™
 (
 sub_š
 [
-R
+S
 *
-C
-/4+18], 
+D
++
+N
+*D], 
 sub_out
-[R*C/4]);
+[N*D+N]);
 
 12 
 Ý_¬¿y_š™
@@ -670,12 +854,14 @@ O³¿nd
 , 
 sub_š
 [
-R
+S
 *
-C
-/4+18], 
+D
++
+N
+*D], 
 sub_out
-[R*C/4]);
+[N*D+N]);
 
 13 
 k”Ãl_to_dfg
@@ -722,10 +908,12 @@ O³¿nd
 , 
 sub_out
 [
-R
+N
 *
-C
-/4]);
+D
++N], 
+ex³ùed_ûÁroids
+[N][D]);
 
 16 
 dfg_dump
@@ -763,43 +951,113 @@ d©a_to_id
 cÚ¡_v®ue
 );
 
-20 
+19 
+O³¿nd
+* 
+ü—‹_Ý_š¡
+(
+¡d
+::
+veùÜ
+<O³¿nd*> &
+Ý_¬¿y
+, std::veùÜ<
+In¡ruùiÚ
+*> &
+š¡_¬¿y
+, 
+OPCODE
+ 
+š¡_Ýcode
+, 
+¤c0
+, 
+¤c1
+, 
+¤c2
+);
+
+20 
+O³¿nd
+* 
+b¿nch_š_loÝ
+(
+¡d
+::
+veùÜ
+<O³¿nd*> &
+Ý_¬¿y
+, std::veùÜ<
+In¡ruùiÚ
+*> &
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý_id
+, 
+¤c0
+, 
+¤c1
+, 
+¤c2
+, O³¿nd* 
+Ý_out
+, 
+sub_out_id
+);
+
+22 
 	gb¿m0_addr
 =0;
 
-21 
+23 
 	gb¿m1_addr
 =0;
 
-22 
+24 
 	gcÚ¡_š
-[5]={0, 8, 16, 24, 255};
+[2]={0, 1};
 
-23 cÚ¡ 
+25 cÚ¡ 
 	gcÚ¡_num
-=5;
+=2;
 
-25 
+28 
 	$maš
 (){
 
-27 
+30 
 sub_š
 [
-R
+S
 *
-C
-/4+18];
+D
++
+N
+*D];
 
-28 
+31 
 sub_out
 [
-R
+N
 *
-C
-/4];
+D
++N];
 
-30 
+32 
+ex³ùed_ûÁroids
+[
+N
+][
+D
+]={
+
+33 
+	~"»tuº_ûÁroids_sm®l.txt
+"
+
+36 
 ¡d
 ::
 veùÜ
@@ -809,7 +1067,7 @@ O³¿nd
 Ý_¬¿y
 ;
 
-31 
+37 
 ¡d
 ::
 veùÜ
@@ -819,15 +1077,15 @@ In¡ruùiÚ
 š¡_¬¿y
 ;
 
-32 
+38 
 ¡d
 ::
 ¡ršg
  
 dfg_Çme
-="sobel";
+="kmean";
 
-34 
+40 
 	`io_š™
 (
 sub_š
@@ -835,7 +1093,7 @@ sub_š
 sub_out
 );
 
-35 
+41 
 	`Ý_¬¿y_š™
 (
 Ý_¬¿y
@@ -845,7 +1103,7 @@ sub_š
 sub_out
 );
 
-36 
+42 
 	`k”Ãl_to_dfg
 (
 Ý_¬¿y
@@ -853,7 +1111,7 @@ sub_out
 š¡_¬¿y
 );
 
-37 
+43 
 	`dfg_compu‹
 (
 Ý_¬¿y
@@ -861,15 +1119,17 @@ sub_out
 š¡_¬¿y
 );
 
-38 
+44 
 	`v”ify
 (
 Ý_¬¿y
 , 
 sub_out
+, 
+ex³ùed_ûÁroids
 );
 
-39 
+45 
 	`dfg_dump
 (
 dfg_Çme
@@ -879,273 +1139,109 @@ dfg_Çme
 š¡_¬¿y
 );
 
-41 
+47 
 	}
 }
 
-43 
+49 
 io_š™
 (
 sub_š
 [
-R
+S
 *
-C
-/4+18], 
+D
++
+N
+*D], 
 sub_out
-[R*C/4]){
+[N*D+N]){
 
-44 
-	gfig_š
+51 
+	gš™_ûÁroids
 [
-R
+N
 ][
-C
+D
 ]={
 
-45 
-	~"fig_š_sm®l.txt
+52 
+	~"š™_ûÁroids_sm®l.txt
 "
 
-48 
-	gfig_out
+55 
+	g§m¶es
 [
-R
+S
 ][
-C
+D
 ]={
 
-49 
-	~"fig_out_sm®l.txt
+56 
+	~"km—n_š_sm®l.txt
 "
 
-52 
-	ggx
-[3][3]={
-
-58 
-	ggy
-[3][3]={
-
-64 
+59 
 	gid
 =0;
 
-65 
+60 
 	gi
 =0; i<
-	gR
+	gS
 ; i++){
 
-66 
+61 
 	gj
 =0; j<
-	gC
-; j=
-j
-+4){
-
-67 
-pixl0
-, 
-pixl1
-, 
-pixl2
-, 
-pixl3
-;
-
-68 
-	gpixl0
-=()
-fig_š
-[
-i
-][
-j
-];
-
-69 
-	gpixl1
-=()
-fig_š
-[
-i
-][
-j
-+1]<<8;
-
-70 
-	gpixl2
-=()
-fig_š
-[
-i
-][
-j
-+2]<<16;
-
-71 
-	gpixl3
-=()
-fig_š
-[
-i
-][
-j
-+3]<<24;
-
-72 
-	gsub_š
-[
-id
-]=
-pixl0
-+
-pixl1
-+
-pixl2
-+
-pixl3
-;
-
-73 
-	gid
-++;
-
-77 
-	gi
-=0; i<3; i++){
-
-78 
-	gj
-=0; j<3; j++){
-
-79 
-	gsub_š
-[
-id
-]=
-gx
-[
-i
-][
-j
-];
-
-80 
-	gid
-++;
-
-84 
-	gi
-=0; i<3; i++){
-
-85 
-	gj
-=0; j<3; j++){
-
-86 
-	gsub_š
-[
-id
-]=
-gy
-[
-i
-][
-j
-];
-
-87 
-	gid
-++;
-
-91 
-	gid
-=0;
-
-92 
-	gi
-=0; i<
-	gR
-; i++){
-
-93 
-	gj
-=0; j<
-	gC
+	gD
 ; j++){
 
-94 
-	gpixl0
-, 
-	gpixl1
-, 
-	gpixl2
-, 
-	gpixl3
-;
-
-95 
-	gpixl0
-=()
-fig_out
+62 
+	gsub_š
+[
+id
+]=
+§m¶es
 [
 i
 ][
 j
 ];
 
-96 
-	gpixl1
-=()
-fig_out
-[
-i
-][
-j
-+1]<<8;
-
-97 
-	gpixl2
-=()
-fig_out
-[
-i
-][
-j
-+2]<<16;
-
-98 
-	gpixl3
-=()
-fig_out
-[
-i
-][
-j
-+3]<<24;
-
-99 
-	gsub_out
-[
-id
-]=
-pixl0
-+
-pixl1
-+
-pixl2
-+
-pixl3
-;
-
-100 
+63 
 	gid
 ++;
 
-105 
+67 
+	gi
+=0; i<
+	gN
+; i++){
+
+68 
+	gj
+=0; j<
+	gD
+; j++){
+
+69 
+	gsub_š
+[
+id
+]=
+š™_ûÁroids
+[
+i
+][
+j
+];
+
+70 
+	gid
+++;
+
+76 
 Ý_¬¿y_š™
 (
 ¡d
@@ -1158,20 +1254,22 @@ O³¿nd
 , 
 sub_š
 [
-R
+S
 *
-C
-/4+18], 
+D
++
+N
+*D], 
 sub_out
-[R*C/4]){
+[N*D+N]){
 
-107 
+78 
 	gi
 =0; i<
 	gcÚ¡_num
 ; i++){
 
-108 
+79 
 O³¿nd
 * 
 	gÝ_±r
@@ -1179,7 +1277,7 @@ O³¿nd
 Ãw
  Operand();
 
-109 
+80 
 	gÝ_¬¿y
 .
 push_back
@@ -1187,7 +1285,7 @@ push_back
 Ý_±r
 );
 
-110 
+81 
 	gÝ_±r
 ->
 S‘_O³¿nd
@@ -1201,19 +1299,21 @@ b¿m0_addr
 INCONST
 );
 
-111 
+82 
 	gb¿m0_addr
 ++;
 
-115 
+86 
 	gi
 =0; i<
-R
+S
 *
-	gC
-/4+18; i++){
+	gD
++
+N
+*D; i++){
 
-116 
+87 
 O³¿nd
 * 
 	gÝ_±r
@@ -1221,7 +1321,7 @@ O³¿nd
 Ãw
  Operand();
 
-117 
+88 
 	gÝ_¬¿y
 .
 push_back
@@ -1229,7 +1329,7 @@ push_back
 Ý_±r
 );
 
-118 
+89 
 	gÝ_±r
 ->
 S‘_O³¿nd
@@ -1243,19 +1343,21 @@ b¿m0_addr
 INVAR
 );
 
-119 
+90 
 	gb¿m0_addr
 ++;
 
-123 
+94 
 	gi
 =0; i<
-R
+N
 *
-	gC
-/4; i++){
+	gD
++
+	gN
+; i++){
 
-124 
+95 
 O³¿nd
 * 
 	gÝ_±r
@@ -1263,7 +1365,7 @@ O³¿nd
 Ãw
  Operand();
 
-125 
+96 
 	gÝ_¬¿y
 .
 push_back
@@ -1271,7 +1373,7 @@ push_back
 Ý_±r
 );
 
-126 
+97 
 	gÝ_±r
 ->
 S‘_O³¿nd
@@ -1281,11 +1383,11 @@ b¿m1_addr
 OUTVAR
 );
 
-127 
+98 
 	gb¿m1_addr
 ++;
 
-131 
+102 
 	$d©a_to_id
 (
 idx
@@ -1295,33 +1397,35 @@ OPTYPE
 Ý_ty³
 ){
 
-132 
+103 
 šv¬_num
 =
-R
+S
 *
-C
-/4+18;
+D
++
+N
+*D;
 
-133 if(
+104 if(
 Ý_ty³
 ==
 INVAR
 ){
 
-134  (
+105  (
 idx
 +
 cÚ¡_num
 );
 
-136 if(
+107 if(
 Ý_ty³
 ==
 OUTVAR
 ){
 
-137  (
+108  (
 idx
 +
 cÚ¡_num
@@ -1329,27 +1433,33 @@ cÚ¡_num
 šv¬_num
 );
 
-140 
+111 
 	`´štf
 ("Unknown IO operands! \n");
 
-143 
+112 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+114 
 	}
 }
 
-145 
+116 
 	$d©a_to_id
 (
 cÚ¡_v®
 ){
 
-146 
+117 
 i
 =0; i<
 cÚ¡_num
 ; i++){
 
-147 if(
+118 if(
 cÚ¡_v®
 ==
 cÚ¡_š
@@ -1357,25 +1467,27 @@ cÚ¡_š
 i
 ]){
 
-148  
+119  
 i
 ;
 
-151 
+122 
 	`´štf
-("Couldn't findhe specifiedhe constant!\n");
+("Couldn'ˆfšdh¥ecif›dhcÚ¡ªt: %d!\n", 
+cÚ¡_v®
+);
 
-152 
+123 
 	`ex™
 (
 EXIT_FAILURE
 );
 
-153 
+124 
 	}
 }
 
-155 
+130 
 k”Ãl_to_dfg
 (
 ¡d
@@ -1391,1201 +1503,1723 @@ In¡ruùiÚ
 š¡_¬¿y
 ){
 
-157 
-i
-=1; 
-	gi
-<
-	gR
--1; i++){
+132 
+O³¿nd
+* 
+Ý_Ï¡
+[
+N
+*
+D
++N];
 
-158 
+134 
+	gi
+=0; i<
+	gS
+; i++){
+
+136 
+O³¿nd
+* 
+	gdi¡
+[
+N
+];
+
+137 
 	gj
-=4; j<
-	gC
--4; j=
+=0; j<
+	gN
+; j++){
+
+139 
+O³¿nd
+* 
+	gsub_Ý0
+;
+
+140 
+O³¿nd
+* 
+	gsub_Ý1
+;
+
+141 
+O³¿nd
+* 
+	gmuÏdd_Ý
+;
+
+142 
+	gdi¡
+[
 j
-+4){
+] = 
+Ãw
+ 
+O³¿nd
+();
+
+143 
+	gÝ_¬¿y
+.
+push_back
+(
+di¡
+[
+j
+]);
+
+145 
+	gsub_Ý0
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+SUBSUB
+, 
+d©a_to_id
+(
+i
+*
+D
+, 
+INVAR
+), d©a_to_id(
+S
+*D+2*
+j
+, INVAR), 0);
+
+146 
+	gsub_Ý1
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+SUBSUB
+, 
+d©a_to_id
+(
+i
+*
+D
++1, 
+INVAR
+), d©a_to_id(
+S
+*D+2*
+j
++1, INVAR), 0);
+
+147 
+	gmuÏdd_Ý
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+MULADD
+, 
+sub_Ý0
+->
+Ý_id
+, sub_op0->op_id, 0);
+
+148 
+	gdi¡
+[
+j
+] = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+MULADD
+, 
+sub_Ý1
+->
+Ý_id
+, sub_Ý1->Ý_id, 
+muÏdd_Ý
+->op_id);
+
+152 
+O³¿nd
+* 
+	gcomp_Ý0
+;
+
+153 
+O³¿nd
+* 
+	gcomp_Ý1
+;
+
+154 
+O³¿nd
+* 
+	gcomp_Ý2
+;
+
+155 
+O³¿nd
+* 
+	gcÚd_Ý0
+;
+
+156 
+O³¿nd
+* 
+	gcÚd_Ý1
+;
+
+157 
+O³¿nd
+* 
+	gcÚd_Ý2
+;
+
+158 
+O³¿nd
+* 
+	gcÚd_Ý3
+;
+
+160 
+	gcomp_Ý0
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+LET
+, 
+di¡
+[0]->
+Ý_id
+, dist[1]->op_id, 0);
 
 161 
-O³¿nd
-* 
-Ýx
-[4];
+	gcomp_Ý1
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+LET
+, 
+di¡
+[0]->
+Ý_id
+, dist[2]->op_id, 0);
 
 162 
-O³¿nd
-* 
-	gÝy
-[4];
+	gcomp_Ý2
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+LET
+, 
+di¡
+[0]->
+Ý_id
+, dist[3]->op_id, 0);
 
 163 
-O³¿nd
-* 
-	gÝ
-[4];
-
-164 
-	gk
-=0; k<4; k++){
+	gcÚd_Ý0
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+ANDAND
+, 
+comp_Ý0
+->
+Ý_id
+, 
+comp_Ý1
+->Ý_id, 
+comp_Ý2
+->op_id);
 
 165 
-	gÝx
-[
-k
-]=
-Ãw
- 
-O³¿nd
-();
+	gcomp_Ý0
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+GT
+, 
+di¡
+[0]->
+Ý_id
+, dist[1]->op_id, 0);
 
 166 
-	gÝy
-[
-k
-]=
-Ãw
- 
-O³¿nd
-();
+	gcomp_Ý1
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+LET
+, 
+di¡
+[1]->
+Ý_id
+, dist[2]->op_id, 0);
 
 167 
-	gÝ
-[
-k
-]=
-Ãw
- 
-O³¿nd
-();
+	gcomp_Ý2
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+LET
+, 
+di¡
+[1]->
+Ý_id
+, dist[3]->op_id, 0);
 
 168 
-	gÝ_¬¿y
-.
-push_back
+	gcÚd_Ý1
+ = 
+ü—‹_Ý_š¡
 (
-Ýx
-[
-k
-]);
-
-169 
-	gÝ_¬¿y
-.
-push_back
-(
-Ýy
-[
-k
-]);
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+ANDAND
+, 
+comp_Ý0
+->
+Ý_id
+, 
+comp_Ý1
+->Ý_id, 
+comp_Ý2
+->op_id);
 
 170 
-	gÝ_¬¿y
-.
-push_back
+	gcomp_Ý0
+ = 
+ü—‹_Ý_š¡
 (
-Ý
-[
-k
-]);
-
-173 
-	gp
-=-1;…<=1;…++){
-
-174 
-	gq
-=-1; q<=1; q++){
-
-175 
-	gby‹_id
+Ý_¬¿y
 , 
-	gwÜd_id
+š¡_¬¿y
 , 
-	gby‹_lid
-;
-
-176 
-	ggx_id
+GT
 , 
-	ggy_id
-;
+di¡
+[0]->
+Ý_id
+, dist[2]->op_id, 0);
 
-177 
-	g¤c_id0
-[4];
+171 
+	gcomp_Ý1
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+GT
+, 
+di¡
+[1]->
+Ý_id
+, dist[2]->op_id, 0);
 
-178 
-	g¤c_id1
-[4];
+172 
+	gcomp_Ý2
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+LET
+, 
+di¡
+[2]->
+Ý_id
+, dist[3]->op_id, 0);
 
-179 
-	g¤c_id2
-[4];
+173 
+	gcÚd_Ý2
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+ANDAND
+, 
+comp_Ý0
+->
+Ý_id
+, 
+comp_Ý1
+->Ý_id, 
+comp_Ý2
+->op_id);
 
-180 
-	gÏ¡_idx
-[4];
+175 
+	gcomp_Ý0
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+GT
+, 
+di¡
+[0]->
+Ý_id
+, dist[3]->op_id, 0);
 
-181 
-	gÏ¡_idy
-[4];
+176 
+	gcomp_Ý1
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+GT
+, 
+di¡
+[1]->
+Ý_id
+, dist[3]->op_id, 0);
+
+177 
+	gcomp_Ý2
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+GT
+, 
+di¡
+[2]->
+Ý_id
+, dist[3]->op_id, 0);
+
+178 
+	gcÚd_Ý3
+ = 
+ü—‹_Ý_š¡
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+ANDAND
+, 
+comp_Ý0
+->
+Ý_id
+, 
+comp_Ý1
+->Ý_id, 
+comp_Ý2
+->op_id);
+
+180 
+	gÝ_Ï¡
+[8] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý0
+->
+Ý_id
+, 0, 
+d©a_to_id
+(1), 0, 
+Ý_Ï¡
+[8], d©a_to_id(8, 
+OUTVAR
+));
+
+181 
+	gÝ_Ï¡
+[0] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý0
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
+, 
+INVAR
+), 0, 
+Ý_Ï¡
+[0], d©a_to_id(0, 
+OUTVAR
+));
 
 182 
-O³¿nd
-* 
-	gpixl
-[4];
+	gÝ_Ï¡
+[1] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý0
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
++1, 
+INVAR
+), 0, 
+Ý_Ï¡
+[1], d©a_to_id(1, 
+OUTVAR
+));
 
 183 
-	ggx_id
-=
-R
-*
-C
-/4+(
-p
-+1)*3+(
-q
-+1);
+	gÝ_Ï¡
+[9] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý1
+->
+Ý_id
+, 0, 
+d©a_to_id
+(1), 0, 
+Ý_Ï¡
+[9], d©a_to_id(9, 
+OUTVAR
+));
 
 184 
-	ggy_id
-=
-R
-*
-C
-/4+9+(
-p
-+1)*3+(
-q
-+1);
-
-190 
-	gk
-=0; k<4; k++){
-
-193 
-	gby‹_id
-=(
+	gÝ_Ï¡
+[2] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
 i
-+
-p
-)*
-R
-+
-j
-+
-q
-+
-k
-;
+, 
+cÚd_Ý1
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
+, 
+INVAR
+), 0, 
+Ý_Ï¡
+[2], d©a_to_id(2, 
+OUTVAR
+));
 
-194 
-	gwÜd_id
-=
-by‹_id
-/4;
+185 
+	gÝ_Ï¡
+[3] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý1
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
++1, 
+INVAR
+), 0, 
+Ý_Ï¡
+[3], d©a_to_id(3, 
+OUTVAR
+));
+
+186 
+	gÝ_Ï¡
+[10] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý2
+->
+Ý_id
+, 0, 
+d©a_to_id
+(1), 0, 
+Ý_Ï¡
+[10], d©a_to_id(10, 
+OUTVAR
+));
+
+187 
+	gÝ_Ï¡
+[4] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý2
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
+, 
+INVAR
+), 0, 
+Ý_Ï¡
+[4], d©a_to_id(4, 
+OUTVAR
+));
+
+188 
+	gÝ_Ï¡
+[5] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý2
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
++1, 
+INVAR
+), 0, 
+Ý_Ï¡
+[5], d©a_to_id(5, 
+OUTVAR
+));
+
+189 
+	gÝ_Ï¡
+[11] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý3
+->
+Ý_id
+, 0, 
+d©a_to_id
+(1), 0, 
+Ý_Ï¡
+[11], d©a_to_id(11, 
+OUTVAR
+));
+
+190 
+	gÝ_Ï¡
+[6] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý3
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
+, 
+INVAR
+), 0, 
+Ý_Ï¡
+[6], d©a_to_id(6, 
+OUTVAR
+));
+
+191 
+	gÝ_Ï¡
+[7] = 
+b¿nch_š_loÝ
+(
+Ý_¬¿y
+, 
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý3
+->
+Ý_id
+, 0, 
+d©a_to_id
+(i*
+D
++1, 
+INVAR
+), 0, 
+Ý_Ï¡
+[7], d©a_to_id(7, 
+OUTVAR
+));
 
 195 
-	gby‹_lid
-=
-by‹_id
-%4;
-
-196 
-	gpixl
-[
-k
-]=
-Ãw
- 
 O³¿nd
-();
+* 
+ü—‹_Ý_š¡
+(
+¡d
+::
+veùÜ
+<O³¿nd*> &
+Ý_¬¿y
+, std::veùÜ<
+In¡ruùiÚ
+*> &
+š¡_¬¿y
+, 
+OPCODE
+ 
+š¡_Ýcode
+, 
+¤c0
+, 
+¤c1
+, 
+¤c2
+){
 
 197 
-	gÝ_¬¿y
-.
-push_back
-(
-pixl
-[
-k
-]);
+O³¿nd
+* 
+	gd¡_Ý
+ = 
+Ãw
+ Operand();
 
 198 
-In¡ruùiÚ
-* 
-	gš¡0
-=
-Ãw
- Instruction();
+	gÝ_¬¿y
+.
+push_back
+(
+d¡_Ý
+);
 
 199 
-	gš¡_¬¿y
-.
-push_back
-(
-š¡0
-);
+In¡ruùiÚ
+* 
+	gš¡_tmp
+ = 
+Ãw
+ Instruction();
 
 200 
-	g¤c_id0
-[
-k
-]=
-d©a_to_id
-(
-wÜd_id
-, 
-INVAR
-);
-
-201 
-	g¤c_id1
-[
-k
-]=
-d©a_to_id
-(
-by‹_lid
-*8);
-
-202 
-	g¤c_id2
-[
-k
-]=
-d©a_to_id
-(0xff);
-
-203 
-	gš¡0
+	gš¡_tmp
 ->
 S‘_In¡ruùiÚ
 (
-pixl
-[
-k
-]->
+d¡_Ý
+->
 Ý_id
 , 
-RSFAND
+š¡_Ýcode
 , 
-¤c_id0
-[k], 
-¤c_id1
-[k], 
-¤c_id2
-[k]);
+¤c0
+, 
+¤c1
+, 
+¤c2
+);
 
-205 if(
-	gp
-==-1 && 
-q
-==-1){
+201 
+	g¤c_v®0
+ = 
+Ý_¬¿y
+[
+¤c0
+]->
+Ý_v®ue
+;
 
-206 
-O³¿nd
-* 
-cu¼_Ý
-=
-Ãw
- Operand();
+202 
+	g¤c_v®1
+ = 
+Ý_¬¿y
+[
+¤c1
+]->
+Ý_v®ue
+;
+
+203 
+	g¤c_v®2
+ = 
+Ý_¬¿y
+[
+¤c2
+]->
+Ý_v®ue
+;
+
+204 
+	gd¡_v®
+;
+
+205 
+	gš¡_Ýcode
+){
+
+206 
+	gMULSUB
+:
 
 207 
-	gÝ_¬¿y
-.
-push_back
-(
-cu¼_Ý
-);
+d¡_v®
+ = 
+¤c_v®0
+ * 
+¤c_v®1
+ - 
+¤c_v®2
+;
 
-208 
-In¡ruùiÚ
-* 
-	gcu¼_š¡
-=
-Ãw
- Instruction();
-
-209 
-	gš¡_¬¿y
-.
-push_back
-(
-cu¼_š¡
-);
+209 
+	gMULADD
+:
 
 210 
-	g¤c_id0
-[
-k
-]=
-pixl
-[k]->
-Ý_id
+d¡_v®
+ = 
+¤c_v®0
+ * 
+¤c_v®1
+ + 
+¤c_v®2
 ;
 
-211 
-	g¤c_id1
-[
-k
-]=
-d©a_to_id
-(
-gx_id
-, 
-INVAR
-);
-
-212 
-	g¤c_id2
-[
-k
-]=
-d©a_to_id
-(0);
+212 
+	gADDADD
+:
 
 213 
-	gcu¼_š¡
-->
-S‘_In¡ruùiÚ
-(
-cu¼_Ý
-->
-Ý_id
-, 
-MULADD
-, 
-¤c_id0
-[
-k
-], 
-¤c_id1
-[k], 
-¤c_id2
-[k]);
-
-214 
-	gÏ¡_idx
-[
-k
-]=
-cu¼_Ý
-->
-Ý_id
+d¡_v®
+ = 
+¤c_v®0
+ + 
+¤c_v®1
+ + 
+¤c_v®2
 ;
+
+215 
+	gADDSUB
+:
 
 216 
-	gcu¼_Ý
-=
-Ãw
- 
-O³¿nd
-();
+d¡_v®
+ = 
+¤c_v®0
+ + 
+¤c_v®1
+ - 
+¤c_v®2
+;
 
-217 
-	gÝ_¬¿y
-.
-push_back
-(
-cu¼_Ý
-);
-
-218 
-	gcu¼_š¡
-=
-Ãw
- 
-In¡ruùiÚ
-();
+218 
+	gSUBADD
+:
 
 219 
-	gš¡_¬¿y
-.
-push_back
-(
-cu¼_š¡
-);
+d¡_v®
+ = 
+¤c_v®0
+ - 
+¤c_v®1
+ + 
+¤c_v®2
+;
 
-220 
-	g¤c_id1
-[
-k
-]=
-d©a_to_id
-(
-gy_id
-, 
-INVAR
-);
-
-221 
-	gcu¼_š¡
-->
-S‘_In¡ruùiÚ
-(
-cu¼_Ý
-->
-Ý_id
-, 
-MULADD
-, 
-¤c_id0
-[
-k
-], 
-¤c_id1
-[k], 
-¤c_id2
-[k]);
+221 
+	gSUBSUB
+:
 
 222 
-	gÏ¡_idy
-[
-k
-]=
-cu¼_Ý
-->
-Ý_id
+d¡_v®
+ = 
+¤c_v®0
+ - 
+¤c_v®1
+ - 
+¤c_v®2
 ;
 
-224 if(
-	gp
-==1 && 
-q
-==1){
+224 
+	gPHI
+:
 
 225 
-In¡ruùiÚ
-* 
-cu¼_š¡
-=
-Ãw
- Instruction();
-
-226 
-	gš¡_¬¿y
-.
-push_back
-(
-cu¼_š¡
-);
-
-227 
-	g¤c_id0
-[
-k
-]=
-pixl
-[k]->
-Ý_id
+d¡_v®
+ = 
+¤c_v®0
+ ? 
+¤c_v®1
+ : 
+¤c_v®2
 ;
+
+227 
+	gRSFAND
+:
 
 228 
-	g¤c_id1
-[
-k
-]=
-d©a_to_id
-(
-gx_id
-, 
-INVAR
-);
+d¡_v®
+ = (
+¤c_v®0
+ >> 
+¤c_v®1
+è& 
+¤c_v®2
+;
 
-229 
-	g¤c_id2
-[
-k
-]=
-Ï¡_idx
-[k];
+230 
+	gLSFADD
+:
 
-230 
-	gcu¼_š¡
-->
-S‘_In¡ruùiÚ
-(
-Ýx
-[
-k
-]->
-Ý_id
-, 
-MULADD
-, 
-¤c_id0
-[k], 
-¤c_id1
-[k], 
-¤c_id2
-[k]);
+231 
+d¡_v®
+ = (
+¤c_v®0
+ << 
+¤c_v®1
+è+ 
+¤c_v®2
+;
 
-232 
-	gcu¼_š¡
-=
-Ãw
- 
-In¡ruùiÚ
-();
-
-233 
-	gš¡_¬¿y
-.
-push_back
-(
-cu¼_š¡
-);
+233 
+	gABS
+:
 
 234 
-	g¤c_id1
-[
-k
-]=
-d©a_to_id
+d¡_v®
+ = 
+abs
 (
-gy_id
-, 
-INVAR
+¤c_v®0
 );
 
-235 
-	g¤c_id2
-[
-k
-]=
-Ï¡_idy
-[k];
+236 
+	gGT
+:
 
-236 
-	gcu¼_š¡
-->
-S‘_In¡ruùiÚ
-(
-Ýy
-[
-k
-]->
-Ý_id
-, 
-MULADD
-, 
-¤c_id0
-[k], 
-¤c_id1
-[k], 
-¤c_id2
-[k]);
+237 
+d¡_v®
+ = (
+¤c_v®0
+ > 
+¤c_v®1
+) ? 1 : 0;
 
-239 
-O³¿nd
-* 
-	gcu¼_Ý
-=
-Ãw
- Operand();
+239 
+	gLET
+:
 
 240 
-	gÝ_¬¿y
-.
-push_back
-(
-cu¼_Ý
-);
+d¡_v®
+ = (
+¤c_v®0
+ <ð
+¤c_v®1
+) ? 1 : 0;
 
-241 
-In¡ruùiÚ
-* 
-	gcu¼_š¡
-=
-Ãw
- Instruction();
-
-242 
-	gš¡_¬¿y
-.
-push_back
-(
-cu¼_š¡
-);
+242 
+	gANDAND
+:
 
 243 
-	g¤c_id0
-[
-k
-]=
-pixl
-[k]->
-Ý_id
-;
-
-244 
-	g¤c_id1
-[
-k
-]=
-d©a_to_id
-(
-gx_id
-, 
-INVAR
-);
-
-245 
-	g¤c_id2
-[
-k
-]=
-Ï¡_idx
-[k];
+d¡_v®
+ = (
+¤c_v®0
+!=0è&& (
+¤c_v®1
+!=0è&& (
+¤c_v®2
+!=0);
 
 246 
-	gcu¼_š¡
-->
-S‘_In¡ruùiÚ
-(
-cu¼_Ý
-->
-Ý_id
-, 
-MULADD
-, 
-¤c_id0
-[
-k
-], 
-¤c_id1
-[k], 
-¤c_id2
-[k]);
+´štf
+("Unexpected instruction opcode!\n");
 
 247 
-	gÏ¡_idx
-[
-k
-]=
-cu¼_Ý
-->
-Ý_id
-;
-
-249 
-	gcu¼_Ý
-=
-Ãw
- 
-O³¿nd
-();
-
-250 
-	gÝ_¬¿y
-.
-push_back
+ex™
 (
-cu¼_Ý
+EXIT_FAILURE
 );
 
-251 
-	gcu¼_š¡
-=
-Ãw
- 
-In¡ruùiÚ
-();
+250 
+	gd¡_Ý
+->
+	gÝ_v®ue
+ = 
+d¡_v®
+;
 
-252 
+251 
 	gš¡_¬¿y
 .
 push_back
 (
-cu¼_š¡
+š¡_tmp
 );
 
-253 
-	g¤c_id0
-[
-k
-]=
-pixl
-[k]->
-Ý_id
+252  
+	gd¡_Ý
 ;
-
-254 
-	g¤c_id1
-[
-k
-]=
-d©a_to_id
-(
-gy_id
-, 
-INVAR
-);
-
-255 
-	g¤c_id2
-[
-k
-]=
-Ï¡_idy
-[k];
 
 256 
-	gcu¼_š¡
-->
-S‘_In¡ruùiÚ
+O³¿nd
+* 
+b¿nch_š_loÝ
 (
-cu¼_Ý
-->
-Ý_id
-, 
-MULADD
-, 
-¤c_id0
-[
-k
-], 
-¤c_id1
-[k], 
-¤c_id2
-[k]);
+¡d
+::
+veùÜ
+<O³¿nd*> &
+Ý_¬¿y
+, std::veùÜ<
+In¡ruùiÚ
+*> &
+š¡_¬¿y
+, 
+i
+, 
+cÚd_Ý_id
+, 
+¤c0
+, 
+¤c1
+, 
+¤c2
+, O³¿nd* 
+Ý_out
+, 
+sub_out_id
+){
 
-257 
-	gÏ¡_idy
-[
-k
-]=
-cu¼_Ý
-->
-Ý_id
+258 
+O³¿nd
+* 
+	gout_1
 ;
 
-263 
-	gk
-=0; k<4; k++){
-
-264 
+259 
 O³¿nd
 * 
-	gabs_sumx
-=
-Ãw
- Operand();
+	gout
+;
 
-265 
-	gÝ_¬¿y
-.
-push_back
-(
-abs_sumx
-);
-
-266 
-O³¿nd
+260 
+In¡ruùiÚ
 * 
-	gabs_sumy
-=
-Ãw
- Operand();
+	gš¡_tmp
+;
 
-267 
-	gÝ_¬¿y
-.
-push_back
-(
-abs_sumy
-);
+262 
+	g¤c_v®0
+;
 
-268 
-O³¿nd
-* 
-	gabs_sum
-=
-Ãw
- Operand();
+263 
+	g¤c_v®1
+;
+
+264 
+	g¤c_v®2
+;
+
+265 
+	gd¡_v®
+;
+
+267 if(
+	gi
+==0){
 
 269 
+out_1
+ = 
+Ãw
+ 
+O³¿nd
+();
+
+270 
 	gÝ_¬¿y
 .
 push_back
 (
-abs_sum
+out_1
 );
 
 271 
-In¡ruùiÚ
-* 
-	gš¡_sumx
-=
+	gš¡_tmp
+ = 
 Ãw
- Instruction();
+ 
+In¡ruùiÚ
+();
 
 272 
-	gš¡_sumx
+	gš¡_tmp
 ->
 S‘_In¡ruùiÚ
 (
-abs_sumx
-->
-Ý_id
-, 
-ABS
-, 
-Ýx
-[
-k
-]->op_id, 0, 0);
-
-273 
-	gš¡_¬¿y
-.
-push_back
-(
-š¡_sumx
-);
-
-274 
-In¡ruùiÚ
-* 
-	gš¡_sumy
-=
-Ãw
- Instruction();
-
-275 
-	gš¡_sumy
-->
-S‘_In¡ruùiÚ
-(
-abs_sumy
-->
-Ý_id
-, 
-ABS
-, 
-Ýy
-[
-k
-]->op_id, 0, 0);
-
-276 
-	gš¡_¬¿y
-.
-push_back
-(
-š¡_sumy
-);
-
-277 
-In¡ruùiÚ
-* 
-	gš¡_sum
-=
-Ãw
- Instruction();
-
-278 
-	gš¡_sum
-->
-S‘_In¡ruùiÚ
-(
-abs_sum
+out_1
 ->
 Ý_id
 , 
 ADDADD
 , 
-abs_sumx
-->Ý_id, 
-abs_sumy
-->op_id, 0);
+¤c0
+, 
+¤c1
+, 
+¤c2
+);
 
-279 
+273 
+	g¤c_v®0
+ = 
+Ý_¬¿y
+[
+¤c0
+]->
+Ý_v®ue
+;
+
+274 
+	g¤c_v®1
+ = 
+Ý_¬¿y
+[
+¤c1
+]->
+Ý_v®ue
+;
+
+275 
+	g¤c_v®2
+ = 
+Ý_¬¿y
+[
+¤c2
+]->
+Ý_v®ue
+;
+
+276 
+	gd¡_v®
+ = 
+¤c_v®0
+ + 
+¤c_v®1
+ + 
+¤c_v®2
+;
+
+277 
+	gout_1
+->
+	gÝ_v®ue
+ = 
+d¡_v®
+;
+
+278 
 	gš¡_¬¿y
 .
 push_back
 (
-š¡_sum
+š¡_tmp
 );
+
+280 
+	gout
+ = 
+Ãw
+ 
+O³¿nd
+();
 
 281 
-O³¿nd
-* 
-	gÝ_æag
-=
-Ãw
- Operand();
+	gÝ_¬¿y
+.
+push_back
+(
+out
+);
 
 282 
-	gÝ_¬¿y
-.
-push_back
-(
-Ý_æag
-);
+	gš¡_tmp
+ = 
+Ãw
+ 
+In¡ruùiÚ
+();
 
 283 
-In¡ruùiÚ
-* 
-	gš¡_æag
-=
-Ãw
- Instruction();
-
-284 
-	gš¡_æag
+	gš¡_tmp
 ->
 S‘_In¡ruùiÚ
 (
-Ý_æag
+out
 ->
-Ý_id
-, 
-GT
-, 
-abs_sum
-->Ý_id, 
-d©a_to_id
-(255), 0);
-
-285 
-	gš¡_¬¿y
-.
-push_back
-(
-š¡_æag
-);
-
-287 
-O³¿nd
-* 
-	gÝ_sub
-=
-Ãw
- Operand();
-
-288 
-	gÝ_¬¿y
-.
-push_back
-(
-Ý_sub
-);
-
-289 
-In¡ruùiÚ
-* 
-	gš¡_sub
-=
-Ãw
- Instruction();
-
-290 
-	gš¡_sub
-->
-S‘_In¡ruùiÚ
-(
-Ý_sub
-->
-Ý_id
-, 
-SUBSUB
-, 
-d©a_to_id
-(255), 
-abs_sum
-->op_id, 0);
-
-291 
-	gš¡_¬¿y
-.
-push_back
-(
-š¡_sub
-);
-
-293 
-In¡ruùiÚ
-* 
-	gš¡_phi
-=
-Ãw
- Instruction();
-
-294 
-	gš¡_phi
-->
-S‘_In¡ruùiÚ
-(
-Ý
-[
-k
-]->
 Ý_id
 , 
 PHI
 , 
-Ý_æag
-->Ý_id, 0, 
-Ý_sub
-->op_id);
+cÚd_Ý_id
+, 
+out_1
+->op_id, 0);
 
-295 
+284 
+	g¤c_v®0
+ = 
+Ý_¬¿y
+[
+cÚd_Ý_id
+]->
+Ý_v®ue
+;
+
+285 
+	g¤c_v®1
+ = 
+out_1
+->
+Ý_v®ue
+;
+
+286 
+	g¤c_v®2
+ = 0;
+
+287 
+	gd¡_v®
+ = 
+¤c_v®0
+ ? 
+¤c_v®1
+ : 
+¤c_v®2
+;
+
+288 
+	gout
+->
+	gÝ_v®ue
+ = 
+d¡_v®
+;
+
+289 
 	gš¡_¬¿y
 .
 push_back
 (
-š¡_phi
+š¡_tmp
 );
 
-298 
-O³¿nd
-* 
-	gÝ_tmp1
-=
-Ãw
- Operand();
+290  
+	gout
+;
 
-299 
+292 if(
+	gi
+<
+	gS
+-1){
+
+293 
+	gout_1
+ = 
+Ãw
+ 
+O³¿nd
+();
+
+294 
 	gÝ_¬¿y
 .
 push_back
 (
-Ý_tmp1
+out_1
 );
 
-300 
-In¡ruùiÚ
-* 
-	gš¡_tmp1
-=
+295 
+	gš¡_tmp
+ = 
 Ãw
- Instruction();
+ 
+In¡ruùiÚ
+();
 
-301 
-	gš¡_tmp1
+296 
+	gš¡_tmp
 ->
 S‘_In¡ruùiÚ
 (
-Ý_tmp1
+out_1
 ->
 Ý_id
 , 
-LSFADD
+ADDADD
 , 
-Ý
-[1]->Ý_id, 
-d©a_to_id
-(8), op[0]->op_id);
+¤c0
+, 
+¤c1
+, 
+¤c2
+);
+
+297 
+	g¤c_v®0
+ = 
+Ý_¬¿y
+[
+¤c0
+]->
+Ý_v®ue
+;
+
+298 
+	g¤c_v®1
+ = 
+Ý_¬¿y
+[
+¤c1
+]->
+Ý_v®ue
+;
+
+299 
+	g¤c_v®2
+ = 
+Ý_¬¿y
+[
+¤c2
+]->
+Ý_v®ue
+;
+
+300 
+	gd¡_v®
+ = 
+¤c_v®0
+ + 
+¤c_v®1
+ + 
+¤c_v®2
+;
+
+301 
+	gout_1
+->
+	gÝ_v®ue
+ = 
+d¡_v®
+;
 
 302 
 	gš¡_¬¿y
 .
 push_back
 (
-š¡_tmp1
+š¡_tmp
 );
 
 304 
-O³¿nd
-* 
-	gÝ_tmp2
-=
+	gout
+ = 
 Ãw
- Operand();
+ 
+O³¿nd
+();
 
 305 
 	gÝ_¬¿y
 .
 push_back
 (
-Ý_tmp2
+out
 );
 
 306 
-In¡ruùiÚ
-* 
-	gš¡_tmp2
-=
+	gš¡_tmp
+ = 
 Ãw
- Instruction();
+ 
+In¡ruùiÚ
+();
 
 307 
-	gš¡_tmp2
+	gš¡_tmp
 ->
 S‘_In¡ruùiÚ
 (
-Ý_tmp2
+out
 ->
 Ý_id
 , 
-LSFADD
+PHI
 , 
-Ý
-[2]->Ý_id, 
-d©a_to_id
-(16), 
-Ý_tmp1
+cÚd_Ý_id
+, 
+out_1
+->Ý_id, 
+Ý_out
 ->op_id);
 
 308 
-	gš¡_¬¿y
-.
-push_back
-(
-š¡_tmp2
-);
+	g¤c_v®0
+ = 
+Ý_¬¿y
+[
+cÚd_Ý_id
+]->
+Ý_v®ue
+;
 
-310 
-	gnid
-=(
-i
-*
-R
-+
-j
-)>>2;
+309 
+	g¤c_v®1
+ = 
+out_1
+->
+Ý_v®ue
+;
+
+310 
+	g¤c_v®2
+ = 
+Ý_out
+->
+Ý_v®ue
+;
 
 311 
-In¡ruùiÚ
-* 
-	gš¡_out
-=
-Ãw
- Instruction();
+	gd¡_v®
+ = 
+¤c_v®0
+ ? 
+¤c_v®1
+ : 
+¤c_v®2
+;
 
 312 
-	gš¡_out
+	gout
 ->
-S‘_In¡ruùiÚ
-(
-d©a_to_id
-(
-nid
-, 
-OUTVAR
-), 
-LSFADD
-, 
-Ý
-[3]->
-Ý_id
-, d©a_to_id(24), 
-Ý_tmp2
-->op_id);
+	gÝ_v®ue
+ = 
+d¡_v®
+;
 
 313 
 	gš¡_¬¿y
 .
 push_back
 (
-š¡_out
+š¡_tmp
 );
 
-318 
+314  
+	gout
+;
+
+317 
+	gout_1
+ = 
+Ãw
+ 
+O³¿nd
+();
+
+318 
+	gÝ_¬¿y
+.
+push_back
+(
+out_1
+);
+
+319 
+	gš¡_tmp
+ = 
+Ãw
+ 
+In¡ruùiÚ
+();
+
+320 
+	gš¡_tmp
+->
+S‘_In¡ruùiÚ
+(
+out_1
+->
+Ý_id
+, 
+ADDADD
+, 
+¤c0
+, 
+¤c1
+, 
+¤c2
+);
+
+321 
+	g¤c_v®0
+ = 
+Ý_¬¿y
+[
+¤c0
+]->
+Ý_v®ue
+;
+
+322 
+	g¤c_v®1
+ = 
+Ý_¬¿y
+[
+¤c1
+]->
+Ý_v®ue
+;
+
+323 
+	g¤c_v®2
+ = 
+Ý_¬¿y
+[
+¤c2
+]->
+Ý_v®ue
+;
+
+324 
+	gd¡_v®
+ = 
+¤c_v®0
+ + 
+¤c_v®1
+ + 
+¤c_v®2
+;
+
+325 
+	gout_1
+->
+	gÝ_v®ue
+ = 
+d¡_v®
+;
+
+326 
+	gš¡_¬¿y
+.
+push_back
+(
+š¡_tmp
+);
+
+328 
+	gš¡_tmp
+ = 
+Ãw
+ 
+In¡ruùiÚ
+();
+
+329 
+	gš¡_tmp
+->
+S‘_In¡ruùiÚ
+(
+sub_out_id
+, 
+PHI
+, 
+cÚd_Ý_id
+, 
+out_1
+->
+Ý_id
+, 
+Ý_out
+->op_id);
+
+330 
+	g¤c_v®0
+ = 
+Ý_¬¿y
+[
+cÚd_Ý_id
+]->
+Ý_v®ue
+;
+
+331 
+	g¤c_v®1
+ = 
+out_1
+->
+Ý_v®ue
+;
+
+332 
+	g¤c_v®2
+ = 
+Ý_out
+->
+Ý_v®ue
+;
+
+333 
+	gd¡_v®
+ = 
+¤c_v®0
+ ? 
+¤c_v®1
+ : 
+¤c_v®2
+;
+
+334 
+	gÝ_¬¿y
+[
+sub_out_id
+]->
+	gÝ_v®ue
+ = 
+d¡_v®
+;
+
+335 
+	gš¡_¬¿y
+.
+push_back
+(
+š¡_tmp
+);
+
+336  
+	gNULL
+;
+
+341 
 dfg_compu‹
 (
 ¡d
@@ -2601,7 +3235,7 @@ In¡ruùiÚ
 š¡_¬¿y
 ){
 
-319 
+343 
 ¡d
 ::
 veùÜ
@@ -2613,7 +3247,11 @@ In¡ruùiÚ
 š¡_™
 ;
 
-320 
+344 
+	gid
+;
+
+345 
 	gš¡_™
 =
 š¡_¬¿y
@@ -2623,7 +3261,7 @@ begš
 ’d
 (); inst_it++){
 
-321 
+346 
 	g¤c_v®0
 =
 Ý_¬¿y
@@ -2635,7 +3273,7 @@ begš
 Ý_v®ue
 ;
 
-322 
+347 
 	g¤c_v®1
 =
 Ý_¬¿y
@@ -2647,7 +3285,7 @@ begš
 Ý_v®ue
 ;
 
-323 
+348 
 	g¤c_v®2
 =
 Ý_¬¿y
@@ -2659,11 +3297,11 @@ begš
 Ý_v®ue
 ;
 
-324 
+349 
 	gd¡_v®
 ;
 
-325 if((*
+351 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2671,7 +3309,7 @@ begš
 MULSUB
 ){
 
-326 
+352 
 d¡_v®
 =
 ¤c_v®0
@@ -2681,7 +3319,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-328 if((*
+354 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2689,7 +3327,7 @@ d¡_v®
 MULADD
 ){
 
-329 
+355 
 d¡_v®
 =
 ¤c_v®0
@@ -2699,7 +3337,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-331 if((*
+357 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2707,7 +3345,7 @@ d¡_v®
 ADDADD
 ){
 
-332 
+358 
 d¡_v®
 =
 ¤c_v®0
@@ -2717,7 +3355,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-334 if((*
+360 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2725,7 +3363,7 @@ d¡_v®
 ADDSUB
 ){
 
-335 
+361 
 d¡_v®
 =
 ¤c_v®0
@@ -2735,7 +3373,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-337 if((*
+363 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2743,7 +3381,7 @@ d¡_v®
 SUBADD
 ){
 
-338 
+364 
 d¡_v®
 =
 ¤c_v®0
@@ -2753,7 +3391,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-340 if((*
+366 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2761,7 +3399,7 @@ d¡_v®
 SUBSUB
 ){
 
-341 
+367 
 d¡_v®
 =
 ¤c_v®0
@@ -2771,7 +3409,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-343 if((*
+369 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2779,17 +3417,17 @@ d¡_v®
 PHI
 ){
 
-344 
+370 
 d¡_v®
 =(
 ¤c_v®0
-==0è? 
+è? 
 ¤c_v®1
  : 
 ¤c_v®2
 ;
 
-346 if((*
+372 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2797,7 +3435,7 @@ d¡_v®
 RSFAND
 ){
 
-347 
+373 
 d¡_v®
 =(
 ¤c_v®0
@@ -2807,7 +3445,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-349 if((*
+375 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2815,7 +3453,7 @@ d¡_v®
 LSFADD
 ){
 
-350 
+376 
 d¡_v®
 =(
 ¤c_v®0
@@ -2825,7 +3463,7 @@ d¡_v®
 ¤c_v®2
 ;
 
-352 if((*
+378 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2833,7 +3471,7 @@ d¡_v®
 ABS
 ){
 
-353 
+379 
 d¡_v®
 =
 abs
@@ -2841,7 +3479,7 @@ abs
 ¤c_v®0
 );
 
-355 if((*
+381 if((*
 	gš¡_™
 )->
 	gš¡_Ýcode
@@ -2849,19 +3487,57 @@ abs
 GT
 ){
 
-356 
+382 
 d¡_v®
 =(
-¤c_v®1
+¤c_v®0
 >
-¤c_v®2
+¤c_v®1
 )? 1 : 0;
 
-359 
-´štf
-("Unexpected opcode! \n");
+384 if((*
+	gš¡_™
+)->
+	gš¡_Ýcode
+==
+LET
+){
 
-362 
+385 
+d¡_v®
+=(
+¤c_v®0
+<=
+¤c_v®1
+)? 1 : 0;
+
+387 if((*
+	gš¡_™
+)->
+	gš¡_Ýcode
+==
+ANDAND
+){
+
+388 
+d¡_v®
+=(
+¤c_v®0
+!=0è&& (
+¤c_v®1
+!=0è&& (
+¤c_v®2
+!=0);
+
+391 
+´štf
+("UÃx³ùed opcod%d ! \n", (*
+š¡_™
+)->
+š¡_Ýcode
+);
+
+393 
 	gÝ_¬¿y
 [(*
 š¡_™
@@ -2873,7 +3549,61 @@ d¡_Ý
 d¡_v®
 ;
 
-367 
+396 if(
+	gid
+>=0){
+
+398 (*
+š¡_™
+)->
+Di¥Ïy
+();
+
+399 
+	gÝ_¬¿y
+[(*
+š¡_™
+)->
+d¡_Ý
+]->
+Di¥Ïy
+();
+
+400 
+	gÝ_¬¿y
+[(*
+š¡_™
+)->
+¤c_Ý0
+]->
+Di¥Ïy
+();
+
+401 
+	gÝ_¬¿y
+[(*
+š¡_™
+)->
+¤c_Ý1
+]->
+Di¥Ïy
+();
+
+402 
+	gÝ_¬¿y
+[(*
+š¡_™
+)->
+¤c_Ý2
+]->
+Di¥Ïy
+();
+
+405 
+	gid
+++;
+
+410 
 v”ify
 (cÚ¡ 
 ¡d
@@ -2886,104 +3616,96 @@ O³¿nd
 , 
 sub_out
 [
-R
+N
 *
-C
-/4]){
+D
++N], 
+ex³ùed_ûÁroids
+[N][D]){
 
-370 
+413 
 	gi
 =0; i<
-	gR
+N
+*
+	gD
++
+	gN
 ; i++){
 
-371 
-	gj
-=0; j<
-	gC
-; j++){
-
-372 if(
-	gi
-==0 || 
-j
-==0 || 
-i
-==
-R
--1 || j==
-C
--1){
-
-375 if(
-	gj
-<=3 || 
-j
->=
-C
--4){
-
-379 
-	gšdex
-=(
-i
-*
-R
-+
-j
-)/4;
-
-380 
-	gÝ_id
-=
-d©a_to_id
-(
-šdex
-, 
-OUTVAR
-);
-
-381 if(
-	gÝ_¬¿y
+414 
+	gsub_out
 [
-Ý_id
-]->
-	gÝ_v®ue
-!=
-sub_out
-[
-šdex
-]){
-
-382 
-´štf
-("DFG computation is wrong!\n");
-
-383 
-´štf
-("ex³ùed[%d]=%d, compu‹d„esuÉ=%d \n", 
-šdex
-, 
-sub_out
-[šdex], 
+i
+] = 
 Ý_¬¿y
 [
-Ý_id
-]->
-Ý_v®ue
+d©a_to_id
+(i, 
+OUTVAR
+)]->
+	gÝ_v®ue
+;
+
+417 
+	gi
+=0; i<
+	gN
+; i++){
+
+418 
+	gj
+=0; j<
+	gD
+; j++){
+
+419 
+	gdfg_»suÉ
+=
+sub_out
+[
+i
+*
+D
++
+j
+]/sub_out[
+N
+*D+j];
+
+420 if(
+	gex³ùed_ûÁroids
+[
+i
+][
+j
+]!=
+dfg_»suÉ
+){
+
+421 
+´štf
+("ex³ùed_ûÁroids[%d][%d]=%d, dfg-»suÉð%d \n", 
+i
+, 
+j
+, 
+ex³ùed_ûÁroids
+[i][j], 
+dfg_»suÉ
 );
 
-384 
+422 
 ex™
 (
 EXIT_FAILURE
 );
 
-390 
+427 
 ´štf
 ("Verification…assed!\n");
 
-394 
+432 
 dfg_dump
 (cÚ¡ 
 ¡d
@@ -3003,7 +3725,7 @@ In¡ruùiÚ
 š¡_¬¿y
 ){
 
-395 
+433 
 ¡d
 ::
 o¡ršg¡»am
@@ -3011,13 +3733,13 @@ o¡ršg¡»am
 oss
 ;
 
-396 
+434 
 	goss
  << 
 	gdfg_Çme
  << ".txt";
 
-397 
+435 
 	g¡d
 ::
 of¡»am
@@ -3025,7 +3747,7 @@ of¡»am
 Ý_fhªdË
 ;
 
-398 
+436 
 	gÝ_fhªdË
 .
 Ý’
@@ -3037,13 +3759,13 @@ oss
 c_¡r
 ());
 
-399 if(!
+437 if(!
 	gÝ_fhªdË
 .
 is_Ý’
 ()){
 
-400 
+438 
 	g¡d
 ::
 cout
@@ -3053,31 +3775,31 @@ oss
 ¡r
 () << "\n";
 
-401 
+439 
 ex™
 (
 EXIT_FAILURE
 );
 
-404 
+442 
 	goss
 .
 þ—r
 ();
 
-405 
+443 
 	goss
 .
 ¡r
 ("");
 
-406 
+444 
 	goss
  << 
 	gdfg_Çme
  << ".s";
 
-407 
+445 
 	g¡d
 ::
 of¡»am
@@ -3085,7 +3807,7 @@ of¡»am
 š¡_fhªdË
 ;
 
-408 
+446 
 	gš¡_fhªdË
 .
 Ý’
@@ -3097,13 +3819,13 @@ oss
 c_¡r
 ());
 
-409 if(!
+447 if(!
 	gš¡_fhªdË
 .
 is_Ý’
 ()){
 
-410 
+448 
 	g¡d
 ::
 cout
@@ -3113,13 +3835,13 @@ oss
 ¡r
 () << "\n";
 
-411 
+449 
 ex™
 (
 EXIT_FAILURE
 );
 
-415 
+453 
 	g¡d
 ::
 veùÜ
@@ -3131,7 +3853,7 @@ cÚ¡_™”©Ü
 Ý_™
 ;
 
-416 
+454 
 	gÝ_™
 =
 Ý_¬¿y
@@ -3141,7 +3863,7 @@ begš
 ’d
 (); op_it++){
 
-417 
+455 
 	gÝ_fhªdË
  << (*
 	gÝ_™
@@ -3149,37 +3871,37 @@ begš
 	gÝ_id
  << " " \
 
-418 << (*
+456 << (*
 	gÝ_™
 )->
 	gÝ_b¿m_addr
  << " " \
 
-419 << (*
+457 << (*
 	gÝ_™
 )->
 	gÝ_v®ue
  << " " \
 
-420 << (*
+458 << (*
 	gÝ_™
 )->
 	gÝ_b¿m_id
  << " " \
 
-421 << (*
+459 << (*
 	gÝ_™
 )->
 	gÝ_ty³
  << "\n";
 
-423 
+461 
 	gÝ_fhªdË
 .
 þo£
 ();
 
-426 
+464 
 	g¡d
 ::
 veùÜ
@@ -3191,7 +3913,7 @@ cÚ¡_™”©Ü
 š¡_™
 ;
 
-427 
+465 
 	gš¡_™
 =
 š¡_¬¿y
@@ -3201,7 +3923,7 @@ begš
 ’d
 (); inst_it++){
 
-428 
+466 
 	gš¡_fhªdË
  << (*
 	gš¡_™
@@ -3209,31 +3931,31 @@ begš
 	gd¡_Ý
  << " " \
 
-429 << (*
+467 << (*
 	gš¡_™
 )->
 	gš¡_Ýcode
  << " " \
 
-430 << (*
+468 << (*
 	gš¡_™
 )->
 	g¤c_Ý0
  << " " \
 
-431 << (*
+469 << (*
 	gš¡_™
 )->
 	g¤c_Ý1
  << " " \
 
-432 << (*
+470 << (*
 	gš¡_™
 )->
 	g¤c_Ý2
  << "\n";
 
-434 
+472 
 	gš¡_fhªdË
 .
 þo£
@@ -9637,9 +10359,11 @@ __Ãed_m®loc_ªd_ÿÎoc
 __END_DECLS
 
 
-	@fig_in_small.txt
+	@init_centroids_small.txt
 
-	@fig_out_small.txt
+	@kmean_in_small.txt
+
+	@return_centroids_small.txt
 
 	@/usr/include/alloca.h
 
@@ -20210,8 +20934,8 @@ __END_DECLS
 .
 1
 /usr/include
-22
-406
+23
+442
 Instruction.cpp
 Instruction.h
 Operand.cpp
@@ -20221,8 +20945,9 @@ common.h
 dfg-gen.cpp
 /usr/include/stdio.h
 /usr/include/stdlib.h
-fig_in_small.txt
-fig_out_small.txt
+init_centroids_small.txt
+kmean_in_small.txt
+return_centroids_small.txt
 /usr/include/alloca.h
 /usr/include/features.h
 /usr/include/getopt.h

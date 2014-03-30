@@ -1,0 +1,80 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABS	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ADDADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ADDSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ANDAND	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -DDEBUG -g -Wmissing-braces -Wall $/;"	m
+D	common.h	7;"	d
+Display	Instruction.cpp	/^void Instruction::Display(){$/;"	f	class:Instruction
+Display	Operand.cpp	/^void Operand::Display(){$/;"	f	class:Operand
+GT	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+IM	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+INCONST	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+INVAR	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+IT	common.h	9;"	d
+Instruction	Instruction.cpp	/^Instruction::Instruction(){$/;"	f	class:Instruction
+Instruction	Instruction.h	/^struct Instruction{$/;"	s
+LET	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+LSFADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+MULADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+MULSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+N	common.h	6;"	d
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
+OPCODE	common.h	/^enum OPCODE {$/;"	g
+OPTYPE	common.h	/^enum OPTYPE {$/;"	g
+OUTVAR	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+Operand	Operand.cpp	/^Operand::Operand(){$/;"	f	class:Operand
+Operand	Operand.h	/^struct Operand{$/;"	s
+PHI	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+RSFAND	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+S	common.h	8;"	d
+SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
+SUBADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+SUBSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+Self_Increase	Instruction.cpp	/^int Instruction::Self_Increase(){$/;"	f	class:Instruction
+Set_Instruction	Instruction.cpp	/^void Instruction::Set_Instruction(int _dst_op, OPCODE _inst_opcode, int _src_op0, int _src_op1, int _src_op2){$/;"	f	class:Instruction
+Set_Operand	Operand.cpp	/^void Operand::Set_Operand(int _op_value, int _op_bram_id, int _op_bram_addr, OPTYPE _op_type){$/;"	f	class:Operand
+TARGET	Makefile	/^TARGET = dfg-gen$/;"	m
+UNUSED	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+__COMMON_H__	common.h	2;"	d
+__INSTRUCTION_H__	Instruction.h	2;"	d
+__OPERAND_H__	Operand.h	2;"	d
+bram0_addr	dfg-gen.cpp	/^int bram0_addr=0; \/\/Inbut buffer address$/;"	v
+bram1_addr	dfg-gen.cpp	/^int bram1_addr=0; \/\/Output buffer address$/;"	v
+branch_in_loop	dfg-gen.cpp	/^Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array, int i, int cond_op_id, int src0, int src1, int src2, Operand* op_out, int sub_out_id){$/;"	f
+const_in	dfg-gen.cpp	/^int const_in[2]={0, 1}; \/\/The constant array is put here to make id search easier.$/;"	v
+const_num	dfg-gen.cpp	/^const int const_num=2;$/;"	v
+create_op_inst	dfg-gen.cpp	/^Operand* create_op_inst(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array, OPCODE inst_opcode, int src0, int src1, int src2){$/;"	f
+data_to_id	dfg-gen.cpp	/^int data_to_id(int const_val){$/;"	f
+data_to_id	dfg-gen.cpp	/^int data_to_id(int idx, OPTYPE op_type){$/;"	f
+dfg_compute	dfg-gen.cpp	/^void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){$/;"	f
+dfg_dump	dfg-gen.cpp	/^void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array){$/;"	f
+dst_op	Instruction.h	/^        int dst_op;$/;"	m	struct:Instruction
+gl_id	Instruction.cpp	/^int Instruction::gl_id=0;$/;"	m	class:Instruction	file:
+gl_id	Instruction.h	/^        static int gl_id; $/;"	m	struct:Instruction
+gl_id	Operand.cpp	/^int Operand::gl_id=0;$/;"	m	class:Operand	file:
+gl_id	Operand.h	/^        static int gl_id;$/;"	m	struct:Operand
+inst_id	Instruction.h	/^        int inst_id;$/;"	m	struct:Instruction
+inst_opcode	Instruction.h	/^        OPCODE inst_opcode;$/;"	m	struct:Instruction
+io_init	dfg-gen.cpp	/^void io_init(int sub_in[S*D+N*D], int sub_out[N*D+N]){$/;"	f
+kernel_to_dfg	dfg-gen.cpp	/^void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){$/;"	f
+main	dfg-gen.cpp	/^int main(){$/;"	f
+op_array_init	dfg-gen.cpp	/^void op_array_init(std::vector<Operand*> &op_array, int sub_in[S*D+N*D], int sub_out[N*D+N]){$/;"	f
+op_bram_addr	Operand.h	/^        int op_bram_addr;$/;"	m	struct:Operand
+op_bram_id	Operand.h	/^        int op_bram_id;$/;"	m	struct:Operand
+op_id	Operand.h	/^        int op_id;$/;"	m	struct:Operand
+op_type	Operand.h	/^        OPTYPE op_type;$/;"	m	struct:Operand
+op_value	Operand.h	/^        int op_value;$/;"	m	struct:Operand
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, OPCODE inst_opcode){$/;"	f
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, OPTYPE op_type){$/;"	f
+self_increase	Operand.cpp	/^int Operand::self_increase(){$/;"	f	class:Operand
+src_op0	Instruction.h	/^        int src_op0;$/;"	m	struct:Instruction
+src_op1	Instruction.h	/^        int src_op1;$/;"	m	struct:Instruction
+src_op2	Instruction.h	/^        int src_op2;$/;"	m	struct:Instruction
+verify	dfg-gen.cpp	/^void verify(const std::vector<Operand*> &op_array, int sub_out[N*D+N], int expected_centroids[N][D]){$/;"	f

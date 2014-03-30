@@ -35,6 +35,12 @@ std::ostream& operator<< (std::ostream &os, OPCODE inst_opcode){
         case GT:
             os << "GT";
             break;
+        case LET:
+            os << "LET";
+            break;
+        case ANDAND:
+            os << "ANDAND";
+            break;
         default:
             os << "UNDEFINED";
             break;
