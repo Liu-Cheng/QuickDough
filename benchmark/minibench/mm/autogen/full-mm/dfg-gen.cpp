@@ -1,12 +1,7 @@
-#include <vector>
-#include <map>
-#include <fstream>
-#include <sstream>
-#include <stdio.h>
-#include <stdlib.h>
 #include "common.h"
 #include "Operand.h"
 #include "Instruction.h"
+#include "config.h"
 
 void io_init(int sub_in[2*N][N], int sub_out[N][N]);
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[2*N][N], int sub_out[N][N], int const_in[1]);
@@ -171,32 +166,7 @@ void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &ins
         int src_val0=op_array[(*inst_it)->src_op0]->op_value;
         int src_val1=op_array[(*inst_it)->src_op1]->op_value;
         int src_val2=op_array[(*inst_it)->src_op2]->op_value;
-
-        int dst_val;
-        if((*inst_it)->inst_opcode==MULSUB){
-            dst_val=src_val0*src_val1-src_val2;
-        }
-        else if((*inst_it)->inst_opcode==MULADD){
-            dst_val=src_val0*src_val1+src_val2;
-        }
-        else if((*inst_it)->inst_opcode==ADDADD){
-            dst_val=src_val0+src_val1+src_val2;
-        }
-        else if((*inst_it)->inst_opcode==ADDSUB){
-            dst_val=src_val0+src_val1-src_val2;
-        }
-        else if((*inst_it)->inst_opcode==SUBADD){
-            dst_val=src_val0-src_val1+src_val2;
-        }
-        else if((*inst_it)->inst_opcode==SUBSUB){
-            dst_val=src_val0-src_val1-src_val2;
-        }
-        else if((*inst_it)->inst_opcode==PHI){
-            dst_val=(src_val0==0) ? src_val1 : src_val2;
-        }
-        else{
-            printf("Unexpected opcode! \n");
-        }
+        int dst_val=(*inst_it)->Compute(src_val0, src_val1, src_val2);
         
         //id_to_op[(*inst_it)->dst_op]->op_value=dst_val;
         op_array[(*inst_it)->dst_op]->op_value=dst_val;

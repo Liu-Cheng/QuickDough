@@ -1,12 +1,7 @@
-#include <vector>
-#include <map>
-#include <fstream>
-#include <sstream>
-#include <stdio.h>
-#include <stdlib.h>
 #include "common.h"
 #include "Operand.h"
 #include "Instruction.h"
+#include "config.h"
 
 void io_init(int sub_in[M*D+N*D+N*D+N], int sub_out[N*D+N]);
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[M*D+N*D+N*D+N], int sub_out[N*D+N]);
@@ -217,6 +212,7 @@ Operand* create_op_inst(std::vector<Operand*> &op_array, std::vector<Instruction
     Instruction* inst_tmp = new Instruction();
     inst_tmp->Set_Instruction(dst_op->op_id, inst_opcode, src0, src1, src2);
 
+    /*
     int src_val0 = op_array[src0]->op_value;
     int src_val1 = op_array[src1]->op_value;
     int src_val2 = op_array[src2]->op_value;
@@ -267,6 +263,7 @@ Operand* create_op_inst(std::vector<Operand*> &op_array, std::vector<Instruction
 
     }
     dst_op->op_value = dst_val;
+    */
 
     inst_array.push_back(inst_tmp);
 
@@ -288,10 +285,12 @@ Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction
     Operand* out;
     Instruction* inst_tmp;
 
+    /*
     int src_val0;
     int src_val1;
     int src_val2;
     int dst_val;
+    */
 
     if(i==0){
         /* sub_out[8]=sub_out[8]+1 */
@@ -300,11 +299,13 @@ Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction
         inst_tmp = new Instruction();
         inst_tmp->Set_Instruction(out_1->op_id, ADDADD, src0, src1, src2);
 
+        /*
         src_val0 = op_array[src0]->op_value;
         src_val1 = op_array[src1]->op_value;
         src_val2 = op_array[src2]->op_value;
         dst_val = src_val0 + src_val1 + src_val2;
         out_1->op_value = dst_val;
+        */
 
         inst_array.push_back(inst_tmp);
 
@@ -321,11 +322,13 @@ Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction
         inst_tmp = new Instruction();
         inst_tmp->Set_Instruction(out->op_id, PHI, cond_op_id, out_1->op_id, 0);
 
+        /*
         src_val0 = op_array[cond_op_id]->op_value;
         src_val1 = out_1->op_value;
         src_val2 = 0;
         dst_val = src_val0 ? src_val1 : src_val2;
         out->op_value = dst_val;
+        */
 
         inst_array.push_back(inst_tmp);
 
@@ -345,11 +348,13 @@ Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction
         inst_tmp = new Instruction();
         inst_tmp->Set_Instruction(out_1->op_id, ADDADD, op_out->op_id, src1, src2);
 
+        /*
         src_val0 = op_out->op_value;
         src_val1 = op_array[src1]->op_value;
         src_val2 = op_array[src2]->op_value;
         dst_val = src_val0 + src_val1 + src_val2;
         out_1->op_value = dst_val;
+        */
 
         inst_array.push_back(inst_tmp);
 
@@ -366,11 +371,13 @@ Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction
         inst_tmp = new Instruction();
         inst_tmp->Set_Instruction(out->op_id, PHI, cond_op_id, out_1->op_id, op_out->op_id);
 
+        /*
         src_val0 = op_array[cond_op_id]->op_value;
         src_val1 = out_1->op_value;
         src_val2 = op_out->op_value;
         dst_val = src_val0 ? src_val1 : src_val2;
         out->op_value = dst_val;
+        */
 
         inst_array.push_back(inst_tmp);
 
@@ -390,11 +397,13 @@ Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction
         inst_tmp = new Instruction();
         inst_tmp->Set_Instruction(out_1->op_id, ADDADD, op_out->op_id, src1, src2);
 
+        /*
         src_val0 = op_out->op_value;
         src_val1 = op_array[src1]->op_value;
         src_val2 = op_array[src2]->op_value;
         dst_val = src_val0 + src_val1 + src_val2;
         out_1->op_value = dst_val;
+        */
 
         inst_array.push_back(inst_tmp);
 
@@ -409,11 +418,13 @@ Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction
         inst_tmp = new Instruction();
         inst_tmp->Set_Instruction(sub_out_id, PHI, cond_op_id, out_1->op_id, op_out->op_id);
 
+        /*
         src_val0 = op_array[cond_op_id]->op_value;
         src_val1 = out_1->op_value;
         src_val2 = op_out->op_value;
         dst_val = src_val0 ? src_val1 : src_val2;
         op_array[sub_out_id]->op_value = dst_val;
+        */
 
         inst_array.push_back(inst_tmp);
 
@@ -441,50 +452,7 @@ void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &ins
         int src_val0=op_array[(*inst_it)->src_op0]->op_value;
         int src_val1=op_array[(*inst_it)->src_op1]->op_value;
         int src_val2=op_array[(*inst_it)->src_op2]->op_value;
-        int dst_val;
-
-        if((*inst_it)->inst_opcode==MULSUB){
-            dst_val=src_val0*src_val1-src_val2;
-        }
-        else if((*inst_it)->inst_opcode==MULADD){
-            dst_val=src_val0*src_val1+src_val2;
-        }
-        else if((*inst_it)->inst_opcode==ADDADD){
-            dst_val=src_val0+src_val1+src_val2;
-        }
-        else if((*inst_it)->inst_opcode==ADDSUB){
-            dst_val=src_val0+src_val1-src_val2;
-        }
-        else if((*inst_it)->inst_opcode==SUBADD){
-            dst_val=src_val0-src_val1+src_val2;
-        }
-        else if((*inst_it)->inst_opcode==SUBSUB){
-            dst_val=src_val0-src_val1-src_val2;
-        }
-        else if((*inst_it)->inst_opcode==PHI){
-            dst_val=(src_val0) ? src_val1 : src_val2;
-        }
-        else if((*inst_it)->inst_opcode==RSFAND){
-            dst_val=(src_val0>>src_val1) & src_val2;
-        }
-        else if((*inst_it)->inst_opcode==LSFADD){
-            dst_val=(src_val0<<src_val1)+src_val2;
-        }
-        else if((*inst_it)->inst_opcode==ABS){
-            dst_val=abs(src_val0);
-        }
-        else if((*inst_it)->inst_opcode==GT){
-            dst_val=(src_val0>src_val1)? 1 : 0;
-        }
-        else if((*inst_it)->inst_opcode==LET){
-            dst_val=(src_val0<=src_val1)? 1 : 0;
-        }
-        else if((*inst_it)->inst_opcode==ANDAND){
-            dst_val=(src_val0!=0) && (src_val1!=0) && (src_val2!=0);
-        }
-        else{
-            printf("Unexpected opcode %d ! \n", (*inst_it)->inst_opcode);
-        }
+        int dst_val=(*inst_it)->Compute(src_val0, src_val1, src_val2);
         op_array[(*inst_it)->dst_op]->op_value=dst_val;
 
         /*        

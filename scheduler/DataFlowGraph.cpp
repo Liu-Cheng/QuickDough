@@ -154,15 +154,23 @@ bool DataFlowGraph::IsEdgeInDFG(const int &src, const int &dst){
 void DataFlowGraph::DFGConstruct(){
     string DFG_Inst_File;
     string DFG_IO_File;
+    string Opcode_File;
 
     ostringstream oss;
     oss << "./config/" << DFG_name << ".s";
     DFG_Inst_File = oss.str();
-    oss << "./config/" << DFG_name << ".txt";
+
+    oss.seekp(0);
+    oss << "./config/" << DFG_name << "_operand.txt";
     DFG_IO_File = oss.str();
+
+    oss.seekp(0);
+    oss << "./config/" << DFG_name << "Opcode.txt";
+    Opcode_File = oss.str();
 
     cout << "Load " << DFG_Inst_File << endl;
     cout << "Load " << DFG_IO_File << endl;
+    cout << "Load " << Opcode_File << endl;
 
     ifstream DFG_IO_Handle;
     DFG_IO_Handle.open(DFG_IO_File.c_str());
