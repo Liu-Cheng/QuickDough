@@ -119,11 +119,11 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                     Operand* dst_ptr=new Operand();
                     op_array.push_back(dst_ptr);
 
-                    inst_ptr->Set_Instruction( \
-                            dst_ptr->op_id, \
-                            MULADD, \
-                            data_to_id(i, k, INVAR), \
-                            data_to_id(N+k, j, INVAR), \ 
+                    inst_ptr->Set_Instruction( 
+                            dst_ptr->op_id, 
+                            MULADD, 
+                            data_to_id(i, k, INVAR), 
+                            data_to_id(N+k, j, INVAR),  
                             data_to_id(0));
 
                     inst_array.push_back(inst_ptr);
@@ -135,11 +135,11 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                     Operand* dst_ptr=new Operand();
                     op_array.push_back(dst_ptr);
 
-                    inst_ptr->Set_Instruction( \
-                            dst_ptr->op_id, \
-                            MULADD, \
-                            data_to_id(i, k, INVAR), \
-                            data_to_id(N+k, j, INVAR), \
+                    inst_ptr->Set_Instruction( 
+                            dst_ptr->op_id, 
+                            MULADD, 
+                            data_to_id(i, k, INVAR), 
+                            data_to_id(N+k, j, INVAR), 
                             last_op_id);
 
                     inst_array.push_back(inst_ptr);
@@ -148,11 +148,11 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                     last_op_id=curr_op_id;
                 }
                 else{
-                    inst_ptr->Set_Instruction( \
-                            data_to_id(i, j, OUTVAR), \
-                            MULADD, \
-                            data_to_id(i, k, INVAR), \
-                            data_to_id(N+k, j, INVAR), \
+                    inst_ptr->Set_Instruction( 
+                            data_to_id(i, j, OUTVAR), 
+                            MULADD, 
+                            data_to_id(i, k, INVAR), 
+                            data_to_id(N+k, j, INVAR), 
                             last_op_id);
 
                     inst_array.push_back(inst_ptr);
@@ -223,10 +223,10 @@ void verify(const std::vector<Operand*> &op_array, int sub_out[N][N]){
 
 void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array){
     std::ostringstream oss;
-    oss << dfg_name << ".txt";
-    std::ofstream op_fhandle;
-    op_fhandle.open(oss.str().c_str());
-    if(!op_fhandle.is_open()){
+    oss << dfg_name << "_operand.txt";
+    std::ofstream operand_fhandle;
+    operand_fhandle.open(oss.str().c_str());
+    if(!operand_fhandle.is_open()){
         std::cout << "Failed to open " << oss.str() << "\n";
         exit(EXIT_FAILURE);
     }
@@ -241,18 +241,30 @@ void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array
         exit(EXIT_FAILURE);
     }
 
+    oss.clear();
+    oss.str("");
+    oss << dfg_name << "_opcode.txt";
+    std::ofstream opcode_fhandle;
+    opcode_fhandle.open(oss.str().c_str());
+    if(!opcode_fhandle.is_open()){
+        std::cout << "Failed to open " << oss.str() << "\n";
+        exit(EXIT_FAILURE);
+    }
+
     /* Dump operand details to .txt file */
     std::vector<Operand*>::const_iterator op_it;
     for(op_it=op_array.begin(); op_it!=op_array.end(); op_it++){
-        op_fhandle << (*op_it)->op_id << " " \
+        operand_fhandle << (*op_it)->op_id << " " \
             << (*op_it)->op_bram_addr << " " \
             << (*op_it)->op_value << " " \
             << (*op_it)->op_bram_id << " " \
             << (*op_it)->op_type << "\n";
     }
-    op_fhandle.close();
+    operand_fhandle.close();
 
     /* Dump DFG node details to .s file */
+    std::map<OPCODE, int> opcode_encoder;
+    int opcode_id=0;
     std::vector<Instruction*>::const_iterator inst_it;
     for(inst_it=inst_array.begin(); inst_it!=inst_array.end(); inst_it++){
         inst_fhandle << (*inst_it)->dst_op << " " \
@@ -260,6 +272,19 @@ void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array
             << (*inst_it)->src_op0 << " " \
             << (*inst_it)->src_op1 << " " \
             << (*inst_it)->src_op2 << "\n";
+        if(opcode_encoder.count((*inst_it)->inst_opcode)<=0){
+            opcode_encoder[(*inst_it)->inst_opcode]=opcode_id;
+            opcode_id++;
+        }
     }
     inst_fhandle.close();
+
+    /* Dump the opcode summary to _opcode.txt file */
+    std::map<OPCODE, int>::iterator map_it;
+    for(map_it=opcode_encoder.begin(); map_it!=opcode_encoder.end(); map_it++){
+        opcode_fhandle << map_it->first << " " << map_it->second << std::endl;
+    }
+    opcode_fhandle.close();
+
+
 }

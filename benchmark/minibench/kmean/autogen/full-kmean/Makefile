@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS= -DDEBUG -g -Wmissing-braces -Wall 
+CFLAGS= -DDEBUG -g -Wall -Wno-missing-braces
 #CFLAGS= -g -o3
 TARGET = dfg-gen
 SRCS = dfg-gen.cpp \
