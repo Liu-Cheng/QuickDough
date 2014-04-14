@@ -4,30 +4,32 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABS	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ADDADD	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ADDSUB	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 ADD_DEP	config/dfg_interface/DFG_generation_aes.cpp	13;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_conv.cpp	13;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_fft.cpp	14;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_mmm.cpp	13;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_rand.cpp	21;"	d	file:
 ADD_DEP	config/dfg_interface/DFG_generation_vd.cpp	13;"	d	file:
+ANDAND	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 ARRAY_NUM	config/OpInfoGen/main.cpp	11;"	d	file:
 ActivePEFilter	Scheduler.cpp	/^void Scheduler::ActivePEFilter(list<int> &candidates){$/;"	f	class:Scheduler
-ActivityCheck	CoarseGrainReconArch.cpp	/^bool CoarseGrainReconArch::ActivityCheck(){$/;"	f	class:CoarseGrainReconArch
 AddLink	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::AddLink(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
 AddrGen	Scheduler.cpp	/^void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_time, const int &memCapacity, const int &PE_id){$/;"	f	class:Scheduler
 AfterBreakPoint	GlobalDef.h	/^    BeforeBreakPoint, AtBreakPoint, AfterBreakPoint$/;"	e	enum:VertexType2
 AtBreakPoint	GlobalDef.h	/^    BeforeBreakPoint, AtBreakPoint, AfterBreakPoint$/;"	e	enum:VertexType2
 AttachHistory	Vertex.h	/^struct AttachHistory{$/;"	s
-AverageDegree	DataFlowGraph.cpp	/^void DataFlowGraph::AverageDegree(){$/;"	f	class:DataFlowGraph
 BeforeBreakPoint	GlobalDef.h	/^    BeforeBreakPoint, AtBreakPoint, AfterBreakPoint$/;"	e	enum:VertexType2
-Bin2HeadFile	Scheduler.cpp	/^    void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth){$/;"	f	class:Scheduler
-Bin2Hex	Scheduler.cpp	/^    void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth){$/;"	f	class:Scheduler
+Bin2HeadFile	Scheduler.cpp	/^void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth){$/;"	f	class:Scheduler
+Bin2Hex	Scheduler.cpp	/^void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth){$/;"	f	class:Scheduler
+CC	Makefile	/^CC = g++$/;"	m
 CC	config/OpInfoGen/makefile	/^CC = g++$/;"	m
 CC	config/dfg_interface/makefile	/^CC = g++$/;"	m
-CC	makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
 CFLAGS	config/OpInfoGen/makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
 CFLAGS	config/dfg_interface/makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
-CFLAGS	makefile	/^CFLAGS= -DDEBUG -g -Wall$/;"	m
 CGRA	Scheduler.h	/^        CoarseGrainReconArch* CGRA;$/;"	m	class:Scheduler
 CGRA_scale	GlobalDef.cpp	/^int GLvar::CGRA_scale=16;$/;"	m	class:GLvar	file:
 CGRA_scale	GlobalDef.h	/^    static int CGRA_scale;$/;"	m	struct:GLvar
@@ -48,9 +50,7 @@ DEBUG3	GlobalDef.h	48;"	d
 DFG	Scheduler.h	/^        DataFlowGraph* DFG;$/;"	m	class:Scheduler
 DFGCalculation	DataFlowGraph.cpp	/^void DataFlowGraph::DFGCalculation(vector<int> &operation_result){$/;"	f	class:DataFlowGraph
 DFGConstruct	DataFlowGraph.cpp	/^void DataFlowGraph::DFGConstruct(){$/;"	f	class:DataFlowGraph
-DFGExpand	DataFlowGraph.cpp	/^int DataFlowGraph::DFGExpand(string &DFG_Inst_File, const int &kernel_size, const int &kernel_op_num){$/;"	f	class:DataFlowGraph
 DFGStatistic	DataFlowGraph.cpp	/^void DataFlowGraph::DFGStatistic(){$/;"	f	class:DataFlowGraph
-DFG_edge	DataFlowGraph.h	/^        vector<Edge*> DFG_edge;$/;"	m	class:DataFlowGraph
 DFG_generation_aes	config/dfg_interface/DFG_generation_aes.cpp	/^void DFG_generation_aes ()$/;"	f
 DFG_generation_conv	config/dfg_interface/DFG_generation_conv.cpp	/^void DFG_generation_conv ()$/;"	f
 DFG_generation_fft	config/dfg_interface/DFG_generation_fft.cpp	/^void DFG_generation_fft ()$/;"	f
@@ -69,60 +69,56 @@ DataFlowGraph	DataFlowGraph.cpp	/^DataFlowGraph::DataFlowGraph(){$/;"	f	class:Da
 DataFlowGraph	DataFlowGraph.h	/^class DataFlowGraph{$/;"	c
 DataInOutMem	GlobalDef.h	/^    DataInOutMem, DataUnavail, DataAvail$/;"	e	enum:VertexState
 DataMemoryAnalysis	Scheduler.cpp	/^void Scheduler::DataMemoryAnalysis(){$/;"	f	class:Scheduler
-DataMemoryDumpMem	Scheduler.cpp	/^    void Scheduler::DataMemoryDumpMem(){$/;"	f	class:Scheduler
-DataMemoryInit	Scheduler.cpp	/^    void Scheduler::DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const int &memory_capacity){$/;"	f	class:Scheduler
+DataMemoryDumpMem	Scheduler.cpp	/^void Scheduler::DataMemoryDumpMem(){$/;"	f	class:Scheduler
+DataMemoryInit	Scheduler.cpp	/^void Scheduler::DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const int &memory_capacity){$/;"	f	class:Scheduler
 DataUnavail	GlobalDef.h	/^    DataInOutMem, DataUnavail, DataAvail$/;"	e	enum:VertexState
 DijkstraPath	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::DijkstraPath(const int &src, const int &dst, list<int> &routing_path){$/;"	f	class:CoarseGrainReconArch
 DistCal	Scheduler.cpp	/^int Scheduler::DistCal(const int &src_op, const int &dst_op){$/;"	f	class:Scheduler
 DynamicOperationSelection	Scheduler.cpp	/^int Scheduler::DynamicOperationSelection(){$/;"	f	class:Scheduler
-Edge	Edge.cpp	/^Edge::Edge(const int &_edge_id){$/;"	f	class:Edge
-Edge	Edge.h	/^struct Edge{$/;"	s
-EdgeAttribute	Edge.h	/^struct EdgeAttribute{$/;"	s
 ExecutionMode	GlobalDef.h	/^enum ExecutionMode{$/;"	g
 FetchOP	Scheduler.cpp	/^int Scheduler::FetchOP(const int &src_op_id, const int &target_PE_id, const ExecutionMode &mode){$/;"	f	class:Scheduler
 FetchSourceOperation	Scheduler.cpp	/^void Scheduler::FetchSourceOperation(const int &target_PE_id, const vector<int> &src_operation_ids, const vector<list<int> > &source_routing_paths, const vector<int> &start_time, vector<int> &source_ready_time){$/;"	f	class:Scheduler
-FileLineCount	Scheduler.cpp	/^    int Scheduler::FileLineCount(const string &FileName){$/;"	f	class:Scheduler
+FileLineCount	Scheduler.cpp	/^int Scheduler::FileLineCount(const string &FileName){$/;"	f	class:Scheduler
 FromDSTToOutMem	Scheduler.cpp	/^void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){$/;"	f	class:Scheduler
 FullConnectGen	config/main.cpp	/^void FullConnectGen(int N, vector<vector<int> > &link_matrix){$/;"	f
 FullySearch	GlobalDef.h	/^    FullySearch, SpecifiedPath, SimplifiedSearch, SimulatedSearch $/;"	e	enum:RoutingAlgorithm
 GLvar	GlobalDef.h	/^struct GLvar{$/;"	s
+GT	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 GetChildID	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::GetChildID(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
 GetChildPEID	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::GetChildPEID(const int &PE_id, const int &mux_output){$/;"	f	class:CoarseGrainReconArch
-GetOpcodeName	GlobalDef.cpp	/^void GetOpcodeName(const int &opcode, string &opcode_name){$/;"	f
-GetOpcodeValue	GlobalDef.cpp	/^int GetOpcodeValue(const string &opcode_name){$/;"	f
 GetParentID	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::GetParentID(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
 GetParentPEID	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::GetParentPEID(const int &PE_id, const int &mux_input){$/;"	f	class:CoarseGrainReconArch
+IM	GlobalDef.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM$/;"	e	enum:OPTYPE
+INCONST	GlobalDef.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM$/;"	e	enum:OPTYPE
 INF	GlobalDef.h	32;"	d
 INPUT_BASE_ADDR	config/OpInfoGen/main.cpp	14;"	d	file:
 INSTR_OP_NUM	GlobalDef.h	38;"	d
 INST_MEM_DEPTH	GlobalDef.h	45;"	d
+INVAR	GlobalDef.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM$/;"	e	enum:OPTYPE
 IOstoring	GlobalDef.h	/^    IOstoring, RandomlySpreading, OutMemModeling, MultipleCopying$/;"	e	enum:OutMemDataScheduling
 Implementation	GlobalDef.h	/^    Simulation, Implementation, PartialImplementation$/;"	e	enum:ExecutionMode
 InoutDegreeRefresh	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::InoutDegreeRefresh(){$/;"	f	class:CoarseGrainReconArch
 InoutPortUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
 InputData	GlobalDef.h	/^    InputData, IntermediateData, OutputData$/;"	e	enum:VertexType
-InputDegreeAnalysis	DataFlowGraph.cpp	/^void DataFlowGraph::InputDegreeAnalysis(){$/;"	f	class:DataFlowGraph
 InputOperationScheduling	Scheduler.cpp	/^void Scheduler::InputOperationScheduling(){$/;"	f	class:Scheduler
 InputPortUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
-InstFormat	DataFlowGraph.cpp	/^void DataFlowGraph::InstFormat(){$/;"	f	class:DataFlowGraph
-InstructionDumpCoe	Scheduler.cpp	/^    void Scheduler::InstructionDumpCoe(int final_execution_time){$/;"	f	class:Scheduler
-InstructionDumpMem	Scheduler.cpp	/^    void Scheduler::InstructionDumpMem(int final_execution_time){$/;"	f	class:Scheduler
+InstructionDumpCoe	Scheduler.cpp	/^void Scheduler::InstructionDumpCoe(int final_execution_time){$/;"	f	class:Scheduler
+InstructionDumpMem	Scheduler.cpp	/^void Scheduler::InstructionDumpMem(int final_execution_time){$/;"	f	class:Scheduler
 IntermediateData	GlobalDef.h	/^    InputData, IntermediateData, OutputData$/;"	e	enum:VertexType
-IsEdgeInDFG	DataFlowGraph.cpp	/^bool DataFlowGraph::IsEdgeInDFG(const int &src, const int &dst){$/;"	f	class:DataFlowGraph
 IsLinkExisted	CoarseGrainReconArch.cpp	/^bool CoarseGrainReconArch::IsLinkExisted(const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
 IsVertexAssigned	Vertex.cpp	/^bool Vertex::IsVertexAssigned(){$/;"	f	class:Vertex
-IsVertexInDFG	DataFlowGraph.cpp	/^bool DataFlowGraph::IsVertexInDFG(const int &operation_id){$/;"	f	class:DataFlowGraph
+LET	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 LINK_FILTER_STANDARD	GlobalDef.h	33;"	d
 LOGDFG	config/dfg_interface/DFG_generation_aes.cpp	18;"	d	file:
 LOGDFG	config/dfg_interface/DFG_generation_conv.cpp	18;"	d	file:
 LOGDFG	config/dfg_interface/DFG_generation_fft.cpp	19;"	d	file:
 LOGDFG	config/dfg_interface/DFG_generation_mmm.cpp	18;"	d	file:
 LOGDFG	config/dfg_interface/DFG_generation_vd.cpp	18;"	d	file:
+LSFADD	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 LeastActivePESelection	Scheduler.cpp	/^int Scheduler::LeastActivePESelection(const list<int> &candidates){$/;"	f	class:Scheduler
 LeastCostOPSelection	Scheduler.cpp	/^int Scheduler::LeastCostOPSelection(const int &selected_PE_id, const list<int> &op_ready_set){$/;"	f	class:Scheduler
 LeastReadyOpAttachedPESelection	Scheduler.cpp	/^int Scheduler::LeastReadyOpAttachedPESelection(const list<int> &candidates,const list<int> &op_ready_set){$/;"	f	class:Scheduler
 LinkUtilizationAnalysis	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::LinkUtilizationAnalysis(const int &begin_time, const int &end_time){$/;"	f	class:CoarseGrainReconArch
-ListScheduling	GlobalDef.h	/^    ListScheduling, ModuloScheduling$/;"	e	enum:SchedulingType
 ListSchedulingAlgorithmOPFirst	Scheduler.cpp	/^void Scheduler::ListSchedulingAlgorithmOPFirst(){$/;"	f	class:Scheduler
 ListSchedulingAlgorithmPEFirst	Scheduler.cpp	/^void Scheduler::ListSchedulingAlgorithmPEFirst(){$/;"	f	class:Scheduler
 ListSchedulingAlgorithmPEOPTogether	Scheduler.cpp	/^void Scheduler::ListSchedulingAlgorithmPEOPTogether(){$/;"	f	class:Scheduler
@@ -130,7 +126,6 @@ LoadBalancePEFilter	Scheduler.cpp	/^void Scheduler::LoadBalancePEFilter(list<int
 LoadDataFromOutMem	Scheduler.cpp	/^int Scheduler::LoadDataFromOutMem(const int &operation_id, const ExecutionMode &mode){$/;"	f	class:Scheduler
 LoadParameter	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::LoadParameter(){$/;"	f	class:CoarseGrainReconArch
 LoadParameter	DataFlowGraph.cpp	/^void DataFlowGraph::LoadParameter(){$/;"	f	class:DataFlowGraph
-LoadParameter	Edge.cpp	/^void Edge::LoadParameter() {}$/;"	f	class:Edge
 LoadParameter	PE.cpp	/^void PE::LoadParameter(){}$/;"	f	class:PE
 LoadParameter	Scheduler.cpp	/^void Scheduler::LoadParameter(){$/;"	f	class:Scheduler
 LoadParameter	Vertex.cpp	/^void Vertex::LoadParameter(){}$/;"	f	class:Vertex
@@ -143,36 +138,37 @@ MATRIX_P	GlobalDef.h	44;"	d
 MAX_DFG_DEGREE	GlobalDef.h	39;"	d
 MAX_PE_NEIGHBOR	GlobalDef.h	40;"	d
 MAX_SEARCH_GAP	GlobalDef.h	34;"	d
-MMInstGen	DataFlowGraph.cpp	/^void DataFlowGraph::MMInstGen(int m, int n, int p){$/;"	f	class:DataFlowGraph
+MULADD	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+MULSUB	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 MemoryUtilization	PE.cpp	/^float PE::MemoryUtilization(const int &begin_time, const int &end_time){$/;"	f	class:PE
 MemoryUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
 MeshGen	config/main.cpp	/^void MeshGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
 MeshPath	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::MeshPath(const int &src, const int &dst, list<int> &routing_path){$/;"	f	class:CoarseGrainReconArch
-ModuloScheduling	GlobalDef.h	/^    ListScheduling, ModuloScheduling$/;"	e	enum:SchedulingType
-ModuloSchedulingAlgorithm	Scheduler.cpp	/^void Scheduler::ModuloSchedulingAlgorithm(){$/;"	f	class:Scheduler
 MultipleCopying	GlobalDef.h	/^    IOstoring, RandomlySpreading, OutMemModeling, MultipleCopying$/;"	e	enum:OutMemDataScheduling
+NC	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 NOTE	util/bmmGen.pl	/^NOTE: XDL and DATA2MEM must be installed and in the user's path.$/;"	l
 NaN	GlobalDef.h	31;"	d
 NearestAttachedPE	Scheduler.cpp	/^int Scheduler::NearestAttachedPE(const int &src_operation_id, const int &dst_PE_id, int &src_start_time){$/;"	f	class:Scheduler
 NetGraph	util/main.cpp	/^void NetGraph(const int &N){$/;"	f
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
 OBJS	config/OpInfoGen/makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
 OBJS	config/dfg_interface/makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
-OBJS	makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
+OPCODE	GlobalDef.h	/^enum OPCODE{$/;"	g
 OPReadySetInitialization	Scheduler.cpp	/^void Scheduler::OPReadySetInitialization(list<int> &op_ready_set){$/;"	f	class:Scheduler
 OPReadySetUpdate	Scheduler.cpp	/^void Scheduler::OPReadySetUpdate(list<int> &op_ready_set, const int &selected_op_id){$/;"	f	class:Scheduler
+OPTYPE	GlobalDef.h	/^enum OPTYPE{$/;"	g
 OUTPUT_BASE_ADDR	config/OpInfoGen/main.cpp	15;"	d	file:
+OUTVAR	GlobalDef.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM$/;"	e	enum:OPTYPE
 OperationExecution	Scheduler.cpp	/^int Scheduler::OperationExecution(const int &target_operation_id, const vector<int> &src_operation_ids, const int &target_PE_id, const vector<int> &arrival_time, const ExecutionMode &mode){$/;"	f	class:Scheduler
 OperationMigrationTime	CoarseGrainReconArch.cpp	/^int CoarseGrainReconArch::OperationMigrationTime(const int &start_time, const int &src, const int &dst){$/;"	f	class:CoarseGrainReconArch
-OperationResultCheck	Scheduler.cpp	/^    bool Scheduler::OperationResultCheck(){$/;"	f	class:Scheduler
+OperationResultCheck	Scheduler.cpp	/^bool Scheduler::OperationResultCheck(){$/;"	f	class:Scheduler
 OperationTransmission	Scheduler.cpp	/^int Scheduler::OperationTransmission(const int &start_time, const int &src_operation_id, const list<int> &routing_path, const ExecutionMode &mode){$/;"	f	class:Scheduler
 OutMemDataScheduling	GlobalDef.h	/^enum OutMemDataScheduling{$/;"	g
 OutMemModeling	GlobalDef.h	/^    IOstoring, RandomlySpreading, OutMemModeling, MultipleCopying$/;"	e	enum:OutMemDataScheduling
 OutputData	GlobalDef.h	/^    InputData, IntermediateData, OutputData$/;"	e	enum:VertexType
-OutputDegreeAnalysis	DataFlowGraph.cpp	/^void DataFlowGraph::OutputDegreeAnalysis(){$/;"	f	class:DataFlowGraph
 OutputPortUtilization	PE.cpp	/^float PE::OutputPortUtilization(const int &begin_time, const int &end_time){$/;"	f	class:PE
 OutputPortUtilizationFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
-OutsideAddrMemoryDumpCoe	Scheduler.cpp	/^    void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){$/;"	f	class:Scheduler
-OutsideDataMemoryDumpCoe	DataFlowGraph.cpp	/^void DataFlowGraph::OutsideDataMemoryDumpCoe(int max_bram_id, map<int, int> &op_to_value, map<int, int> &op_to_bram_addr, map<int, int> &op_to_bram_id){$/;"	f	class:DataFlowGraph
+OutsideAddrMemoryDumpCoe	Scheduler.cpp	/^void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){$/;"	f	class:Scheduler
 PE	PE.cpp	/^PE::PE(int _PE_id){$/;"	f	class:PE
 PE	PE.h	/^class PE{$/;"	c
 PEOPPairSelection	Scheduler.cpp	/^void Scheduler::PEOPPairSelection(int &selected_PE_id, int &selected_op_id, const list<int> &candidates, const list<int> &op_ready_set){$/;"	f	class:Scheduler
@@ -190,13 +186,14 @@ PE_output_mux	ComponentActivity.h	/^        int PE_output_mux[4]; $/;"	m	class:C
 PE_output_reserved	ComponentReserved.h	/^        bool PE_output_reserved[4];$/;"	m	class:ComponentReserved
 PE_pair_distance	CoarseGrainReconArch.h	/^        vector<vector<int> > PE_pair_distance;$/;"	m	class:CoarseGrainReconArch
 PE_pair_path	CoarseGrainReconArch.h	/^        vector<vector<list<int> > > PE_pair_path;$/;"	m	class:CoarseGrainReconArch
-ParentSet	DataFlowGraph.cpp	/^void DataFlowGraph::ParentSet(const int &target_operation_id, vector<int> &source_operation_ids){$/;"	f	class:DataFlowGraph
+PHI	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 PartialImplementation	GlobalDef.h	/^    Simulation, Implementation, PartialImplementation$/;"	e	enum:ExecutionMode
 Permutator	util/main.cpp	/^void Permutator(const vector<int> &levelin, const int &deg, vector<int> &levelout, int &opid, ofstream &fHandle){$/;"	f
 PhysicalDistanceFiltering	GlobalDef.h	/^    PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering$/;"	e	enum:PESelectionFilteringType
 PossiblePath	CoarseGrainReconArch.cpp	/^void CoarseGrainReconArch::PossiblePath(const int &start_time, const int &src, const int &dst, list<int> &routing_path){$/;"	f	class:CoarseGrainReconArch
 READ_PORT_NUM	GlobalDef.h	36;"	d
 READ_PORT_OUT	GlobalDef.h	37;"	d
+RSFAND	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 RandomInstGen	DataFlowGraph.cpp	/^void DataFlowGraph::RandomInstGen(){$/;"	f	class:DataFlowGraph
 RandomlySpreading	GlobalDef.h	/^    IOstoring, RandomlySpreading, OutMemModeling, MultipleCopying$/;"	e	enum:OutMemDataScheduling
 ReadMemoryUtilization	PE.cpp	/^float PE::ReadMemoryUtilization(const int &begin_time, const int &end_time){$/;"	f	class:PE
@@ -293,22 +290,22 @@ ResultMemCtrlWords	result/cgra6x6/mm6x6/result_ctrl_words.h	/^unsigned int Resul
 ResultMemCtrlWords	result/cgra6x6/mm7x7/result_ctrl_words.h	/^unsigned int ResultMemCtrlWords[287]={0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000001, 0xF8000003, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000006, 0x00000000, 0xF8000015, 0xF800000A, 0x00000000, 0xF800000B, 0x00000000, 0x00000000, 0x00000000, 0xF8000005, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000021, 0xF8000014, 0xF8000004, 0xF8000017, 0x00000000, 0xF8000002, 0xF8000009, 0xF8000020, 0xF800002C, 0x00000000, 0xF800001E, 0xF8000024, 0xF8000000, 0xF8000028, 0xF8000008, 0xF8000016, 0xF800001A, 0xF800002B, 0xF800000F, 0xF8000018, 0xF8000026, 0xF800001C, 0xF8000029, 0xF8000010, 0x00000000, 0xF8000013, 0xF8000007, 0xF8000030, 0xF8000022, 0x00000000, 0xF800000D, 0xF800001B, 0xF800002D, 0xF8000012, 0xF800002A, 0xF8000027, 0xF8000011, 0xF800000C, 0xF800002E, 0xF800000E, 0xF8000025, 0x00000000, 0xF800001D, 0x00000000, 0x00000000, 0xF800001F, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000019, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000023, 0x00000000, 0x00000000, 0x00000000, 0xF800002F, 0x80000000 };/;"	v
 ResultMemCtrlWords	result/cgra6x6/mm8x8/result_ctrl_words.h	/^unsigned int ResultMemCtrlWords[314]={0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000001, 0x00000000, 0x00000000, 0x00000000, 0xF8000000, 0xF8000003, 0xF8000010, 0xF8000018, 0xF8000009, 0xF800000B, 0xF8000002, 0xF800000C, 0xF8000021, 0xF8000033, 0x00000000, 0xF8000020, 0xF800002F, 0xF800002C, 0xF800002A, 0xF800002E, 0xF8000012, 0xF8000011, 0xF8000030, 0xF8000016, 0xF800003D, 0xF8000005, 0xF8000024, 0xF800001A, 0xF8000008, 0xF800000D, 0xF800002D, 0x00000000, 0xF800001B, 0xF800001E, 0xF8000017, 0xF8000025, 0xF800003E, 0xF8000007, 0xF8000036, 0xF8000019, 0xF8000026, 0xF8000006, 0xF8000004, 0xF800003B, 0xF8000028, 0xF8000034, 0xF8000013, 0xF800003C, 0xF800000A, 0xF8000035, 0xF8000038, 0x00000000, 0xF8000039, 0xF800001C, 0xF8000023, 0x00000000, 0xF800002B, 0xF8000014, 0xF8000027, 0xF800003F, 0x00000000, 0xF800000F, 0xF8000029, 0xF8000032, 0xF8000022, 0xF8000031, 0xF8000037, 0xF8000015, 0xF800001F, 0xF800003A, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF800001D, 0x00000000, 0xF800000E, 0x80000000 };/;"	v
 ResultMemCtrlWords	result/cgra6x6/mm9x9/result_ctrl_words.h	/^unsigned int ResultMemCtrlWords[352]={0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000000, 0x00000000, 0xF8000003, 0xF8000001, 0x00000000, 0x00000000, 0x00000000, 0xF8000006, 0x00000000, 0x00000000, 0xF800001B, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000025, 0x00000000, 0xF8000036, 0xF8000007, 0xF800002C, 0x00000000, 0xF8000024, 0xF8000009, 0xF8000027, 0xF800001E, 0xF8000013, 0xF800001C, 0xF800000C, 0xF8000008, 0xF8000039, 0xF8000017, 0xF800003F, 0xF800000D, 0xF8000005, 0xF8000004, 0xF800000E, 0xF8000014, 0xF8000041, 0xF800003B, 0xF8000019, 0xF8000021, 0xF800000B, 0x00000000, 0xF8000029, 0x00000000, 0xF8000016, 0xF8000002, 0xF8000011, 0xF800001A, 0x00000000, 0xF8000018, 0xF800004A, 0xF800004D, 0xF8000028, 0xF8000044, 0xF800003E, 0xF8000015, 0xF8000012, 0xF8000037, 0xF800000F, 0xF800003D, 0xF800004E, 0xF8000032, 0xF8000023, 0xF8000033, 0xF8000048, 0xF8000022, 0xF800000A, 0xF8000049, 0xF8000010, 0xF8000040, 0xF800003A, 0xF8000034, 0xF800002F, 0xF8000031, 0xF800004B, 0xF800002B, 0xF800001F, 0xF8000026, 0xF8000043, 0xF800004C, 0xF8000046, 0x00000000, 0xF800001D, 0xF8000045, 0xF8000050, 0xF8000038, 0xF800002E, 0xF8000042, 0xF800002A, 0xF8000030, 0xF800002D, 0xF800003C, 0xF8000020, 0xF800004F, 0xF8000047, 0x00000000, 0x00000000, 0xF8000035, 0x80000000 };/;"	v
-ResultMemCtrlWords	result/result_ctrl_words.h	/^unsigned int ResultMemCtrlWords[67]={0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000001, 0x00000000, 0xF8000002, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000003, 0x80000000 };/;"	v
+ResultMemCtrlWords	result/result_ctrl_words.h	/^unsigned int ResultMemCtrlWords[424]={0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000001, 0x00000000, 0xF8000018, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000000, 0xF8000002, 0xF8000006, 0xF8000003, 0xF8000008, 0xF8000012, 0xF8000005, 0xF800000C, 0xF8000011, 0xF8000009, 0xF800000B, 0xF8000014, 0xF800000E, 0xF8000015, 0xF8000017, 0xF800000F, 0xF800001A, 0xF800001B, 0xF800001D, 0xF800001E, 0xF8000020, 0xF8000021, 0xF8000022, 0xF8000023, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF800000A, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000010, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000004, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000016, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000013, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF8000019, 0xF8000007, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF800001F, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF800000D, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xF800001C, 0x80000000 };/;"	v
 RingGen	config/main.cpp	/^void RingGen(int N, vector<vector<int> > &link_matrix){$/;"	f
 RoutingAlgorithm	GlobalDef.h	/^enum RoutingAlgorithm{$/;"	g
 SINGLE_ARRAY_SIZE	config/OpInfoGen/main.cpp	13;"	d	file:
+SRCS	Makefile	/^SRCS = GlobalDef.cpp \\$/;"	m
 SRCS	config/OpInfoGen/makefile	/^SRCS = main.cpp $/;"	m
 SRCS	config/dfg_interface/makefile	/^SRCS = DFG_generation_aes.cpp \\$/;"	m
-SRCS	makefile	/^SRCS = GlobalDef.cpp \\$/;"	m
+SUBSUB	GlobalDef.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 Scheduler	Scheduler.cpp	/^Scheduler::Scheduler(DataFlowGraph * init_DFG, CoarseGrainReconArch* init_CGRA){$/;"	f	class:Scheduler
 Scheduler	Scheduler.h	/^class Scheduler{$/;"	c
 SchedulerInit	Scheduler.cpp	/^void Scheduler::SchedulerInit(DataFlowGraph* init_DFG, CoarseGrainReconArch* init_CGRA){$/;"	f	class:Scheduler
 Scheduling	Scheduler.cpp	/^void Scheduler::Scheduling(){$/;"	f	class:Scheduler
 SchedulingIsCompleted	Scheduler.cpp	/^bool Scheduler::SchedulingIsCompleted(){$/;"	f	class:Scheduler
-SchedulingResultCollection	Scheduler.cpp	/^    void Scheduler::SchedulingResultCollection(vector<int> &operation_result){$/;"	f	class:Scheduler
-SchedulingResultDump	Scheduler.cpp	/^    void Scheduler::SchedulingResultDump(){$/;"	f	class:Scheduler
+SchedulingResultCollection	Scheduler.cpp	/^void Scheduler::SchedulingResultCollection(vector<int> &operation_result){$/;"	f	class:Scheduler
+SchedulingResultDump	Scheduler.cpp	/^void Scheduler::SchedulingResultDump(){$/;"	f	class:Scheduler
 SchedulingStat	Scheduler.cpp	/^int Scheduler::SchedulingStat(){$/;"	f	class:Scheduler
-SchedulingType	GlobalDef.h	/^enum SchedulingType {$/;"	g
 SimpleList	config/dfg_interface/simplist.cpp	/^SimpleList::SimpleList()$/;"	f	class:SimpleList
 SimpleList	config/dfg_interface/simplist.h	/^class SimpleList {$/;"	c
 SimpleListNode	config/dfg_interface/simplist.cpp	/^SimpleListNode::SimpleListNode(VNode* node)$/;"	f	class:SimpleListNode
@@ -409,19 +406,21 @@ SrcMemCtrlWords	result/cgra6x6/mm6x6/src_ctrl_words.h	/^unsigned int SrcMemCtrlW
 SrcMemCtrlWords	result/cgra6x6/mm7x7/src_ctrl_words.h	/^unsigned int SrcMemCtrlWords[287]={0x80000000, 0x80000031, 0x00000000, 0x80000001, 0x80000038, 0x80000039, 0x8000003A, 0x8000003B, 0x80000002, 0x8000003F, 0x80000003, 0x80000046, 0x80000047, 0x80000048, 0x80000049, 0x8000003C, 0x80000040, 0x8000004A, 0x8000004B, 0x8000004C, 0x8000000A, 0x80000011, 0x80000018, 0x80000004, 0x8000004D, 0x8000004E, 0x8000004F, 0x80000041, 0x8000001F, 0x8000003D, 0x8000003E, 0x80000042, 0x80000043, 0x80000044, 0x80000050, 0x80000051, 0x80000008, 0x80000005, 0x80000054, 0x00000000, 0x80000026, 0x8000002D, 0x80000006, 0x8000005B, 0x8000005C, 0x8000005D, 0x8000000F, 0x8000005E, 0x8000005F, 0x80000052, 0x80000016, 0x8000000D, 0x80000045, 0x80000009, 0x80000053, 0x8000000B, 0x80000032, 0x00000000, 0x8000001D, 0x80000060, 0x80000061, 0x80000014, 0x80000012, 0x80000010, 0x80000055, 0x00000000, 0x80000024, 0x8000002B, 0x8000001B, 0x80000019, 0x80000017, 0x80000033, 0x00000000, 0x80000022, 0x8000001E, 0x80000020, 0x80000029, 0x80000025, 0x80000056, 0x00000000, 0x8000002C, 0x80000030, 0x80000027, 0x80000034, 0x00000000, 0x80000035, 0x8000002E, 0x80000057, 0x80000058, 0x80000059, 0x80000036, 0x8000005A, 0x80000037, 0x80000007, 0x8000000E, 0x80000015, 0x8000000C, 0x8000001C, 0x00000000, 0x80000023, 0x8000002A, 0x80000013, 0x8000001A, 0x00000000, 0x80000062, 0x00000000, 0x80000021, 0x00000000, 0x80000028, 0x8000002F, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x80000000 };/;"	v
 SrcMemCtrlWords	result/cgra6x6/mm8x8/src_ctrl_words.h	/^unsigned int SrcMemCtrlWords[314]={0x80000000, 0x80000040, 0x00000000, 0x80000001, 0x80000048, 0x80000049, 0x8000004A, 0x8000004B, 0x80000002, 0x80000050, 0x80000003, 0x80000058, 0x80000059, 0x8000005A, 0x8000005B, 0x8000004C, 0x80000051, 0x8000005C, 0x8000005D, 0x8000005E, 0x8000005F, 0x8000004D, 0x80000052, 0x8000000B, 0x80000013, 0x80000004, 0x80000060, 0x80000061, 0x8000004E, 0x8000004F, 0x80000062, 0x8000001B, 0x80000009, 0x80000053, 0x80000054, 0x80000063, 0x80000005, 0x80000068, 0x00000000, 0x80000023, 0x80000011, 0x80000064, 0x80000065, 0x8000002B, 0x80000033, 0x80000019, 0x80000066, 0x80000067, 0x8000000C, 0x80000055, 0x80000056, 0x80000006, 0x80000070, 0x00000000, 0x8000003B, 0x80000021, 0x80000029, 0x80000014, 0x80000057, 0x80000007, 0x80000078, 0x00000000, 0x80000041, 0x80000042, 0x80000043, 0x80000044, 0x80000045, 0x80000031, 0x8000001C, 0x8000000A, 0x80000046, 0x80000047, 0x80000008, 0x80000024, 0x80000069, 0x00000000, 0x80000039, 0x8000002C, 0x80000071, 0x00000000, 0x80000012, 0x80000034, 0x8000003C, 0x80000010, 0x80000079, 0x00000000, 0x80000018, 0x8000001A, 0x80000022, 0x8000002A, 0x80000020, 0x8000006A, 0x00000000, 0x80000032, 0x8000003A, 0x80000028, 0x80000030, 0x80000038, 0x80000072, 0x00000000, 0x80000080, 0x8000007A, 0x00000000, 0x8000006B, 0x80000073, 0x00000000, 0x8000006C, 0x8000007B, 0x80000074, 0x00000000, 0x8000007C, 0x8000006D, 0x8000007D, 0x8000007E, 0x8000007F, 0x8000000F, 0x8000006E, 0x8000006F, 0x8000000D, 0x80000075, 0x00000000, 0x80000017, 0x80000015, 0x80000076, 0x00000000, 0x80000077, 0x00000000, 0x8000000E, 0x00000000, 0x8000001F, 0x8000001D, 0x80000025, 0x00000000, 0x8000002D, 0x80000035, 0x80000027, 0x8000002F, 0x8000003D, 0x80000037, 0x00000000, 0x00000000, 0x80000016, 0x8000003F, 0x00000000, 0x8000001E, 0x80000026, 0x00000000, 0x8000002E, 0x80000036, 0x8000003E, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x80000000 };/;"	v
 SrcMemCtrlWords	result/cgra6x6/mm9x9/src_ctrl_words.h	/^unsigned int SrcMemCtrlWords[352]={0x80000000, 0x80000051, 0x00000000, 0x80000001, 0x8000005A, 0x8000005B, 0x8000005C, 0x8000005D, 0x80000002, 0x80000063, 0x80000003, 0x8000006C, 0x8000006D, 0x8000006E, 0x8000006F, 0x8000005E, 0x80000064, 0x80000070, 0x80000071, 0x80000072, 0x80000073, 0x8000005F, 0x80000065, 0x80000074, 0x8000000C, 0x80000015, 0x80000004, 0x80000075, 0x80000076, 0x80000077, 0x8000001E, 0x80000060, 0x80000061, 0x80000062, 0x80000066, 0x80000067, 0x80000078, 0x80000079, 0x8000007A, 0x8000000A, 0x80000068, 0x80000005, 0x8000007E, 0x00000000, 0x80000027, 0x80000030, 0x80000039, 0x80000013, 0x80000069, 0x8000006A, 0x8000007B, 0x8000007C, 0x8000006B, 0x80000006, 0x80000087, 0x00000000, 0x80000042, 0x8000004B, 0x8000001C, 0x8000007D, 0x8000000D, 0x8000000B, 0x80000007, 0x80000090, 0x00000000, 0x80000052, 0x80000053, 0x80000054, 0x80000055, 0x80000056, 0x80000057, 0x80000025, 0x8000002E, 0x80000058, 0x80000059, 0x80000014, 0x80000016, 0x80000008, 0x80000099, 0x00000000, 0x80000037, 0x80000040, 0x8000001D, 0x80000009, 0x8000001F, 0x8000007F, 0x00000000, 0x80000088, 0x00000000, 0x80000049, 0x80000012, 0x80000026, 0x80000028, 0x80000091, 0x00000000, 0x8000002F, 0x80000080, 0x80000081, 0x80000038, 0x8000001B, 0x80000041, 0x80000031, 0x8000003A, 0x80000043, 0x8000004A, 0x80000024, 0x80000082, 0x80000083, 0x8000002D, 0x80000084, 0x8000009A, 0x00000000, 0x80000036, 0x8000004C, 0x80000089, 0x8000003F, 0x80000085, 0x80000086, 0x80000092, 0x00000000, 0x80000048, 0x8000009B, 0x00000000, 0x8000008A, 0x00000000, 0x80000093, 0x800000A2, 0x8000008B, 0x8000008C, 0x80000094, 0x8000008D, 0x8000000E, 0x8000009C, 0x00000000, 0x8000009D, 0x00000000, 0x80000095, 0x8000008E, 0x8000009E, 0x00000000, 0x8000008F, 0x8000000F, 0x80000017, 0x80000096, 0x00000000, 0x8000009F, 0x800000A0, 0x80000020, 0x80000097, 0x80000098, 0x00000000, 0x800000A1, 0x80000018, 0x80000011, 0x80000029, 0x80000010, 0x00000000, 0x00000000, 0x80000032, 0x00000000, 0x80000019, 0x80000021, 0x00000000, 0x8000003B, 0x80000022, 0x8000001A, 0x00000000, 0x00000000, 0x80000044, 0x8000002B, 0x8000002A, 0x80000023, 0x00000000, 0x8000002C, 0x00000000, 0x8000004D, 0x80000034, 0x80000033, 0x00000000, 0x00000000, 0x80000035, 0x8000003C, 0x00000000, 0x8000003E, 0x8000003D, 0x00000000, 0x80000047, 0x80000045, 0x80000046, 0x00000000, 0x80000050, 0x8000004E, 0x8000004F, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x80000000 };/;"	v
-SrcMemCtrlWords	result/src_ctrl_words.h	/^unsigned int SrcMemCtrlWords[67]={0x80000000, 0x80000004, 0x00000000, 0x80000001, 0x80000006, 0x80000005, 0x80000007, 0x80000002, 0x00000000, 0x80000003, 0x80000008, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x80000000 };/;"	v
+SrcMemCtrlWords	result/src_ctrl_words.h	/^unsigned int SrcMemCtrlWords[424]={0x80000006, 0x00000000, 0x80000004, 0x80000007, 0x80000009, 0x8000000A, 0x8000000C, 0x8000000D, 0x80000005, 0x80000003, 0x00000000, 0x80000001, 0x8000000F, 0x80000002, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x80000008, 0x8000000B, 0x00000000, 0x80000010, 0x80000012, 0x8000000E, 0x80000011, 0x80000013, 0x00000000, 0x00000000, 0x80000014, 0x80000015, 0x00000000, 0x80000016, 0x80000017, 0x00000000, 0x00000000, 0x00000000, 0x80000018, 0x80000019, 0x00000000, 0x8000001A, 0x8000001B, 0x8000001C, 0x00000000, 0x00000000, 0x8000001D, 0x8000001E, 0x8000001F, 0x00000000, 0x80000020, 0x00000000, 0x00000000, 0x00000000, 0x80000021, 0x80000022, 0x00000000, 0x00000000, 0x80000023, 0x80000024, 0x00000000, 0x80000025, 0x00000000, 0x80000026, 0x80000027, 0x80000028, 0x80000029, 0x80000032, 0x8000002A, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x8000002B, 0x80000033, 0x80000034, 0x00000000, 0x80000035, 0x8000002C, 0x8000002D, 0x80000036, 0x80000037, 0x8000002E, 0x00000000, 0x00000000, 0x80000038, 0x8000002F, 0x00000000, 0x00000000, 0x80000039, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x80000030, 0x00000000, 0x80000031, 0x8000003A, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x80000000 };/;"	v
 StaticOperationSelection	Scheduler.cpp	/^int Scheduler::StaticOperationSelection(){$/;"	f	class:Scheduler
 StoreDataInOutMem	Scheduler.cpp	/^void Scheduler::StoreDataInOutMem(const int &operation_id){$/;"	f	class:Scheduler
+TARGET	Makefile	/^TARGET = cgracompiler$/;"	m
 TARGET	config/OpInfoGen/makefile	/^TARGET = iogen$/;"	m
 TARGET	config/dfg_interface/makefile	/^TARGET = DFGGen$/;"	m
-TARGET	makefile	/^TARGET = cgracompiler$/;"	m
 TOTAL_OP_NUM	config/OpInfoGen/main.cpp	12;"	d	file:
 TargetOperationRefresh	Scheduler.cpp	/^void Scheduler::TargetOperationRefresh(const vector<int> &src_operation_ids, const int &target_operation_id, const int &target_PE_id, const int &execution_time){$/;"	f	class:Scheduler
 TargetPERefresh	Scheduler.cpp	/^void Scheduler::TargetPERefresh(const vector<int> &src_operation_ids, const int &target_operation_id, const int &start_time, const int &target_PE_id){$/;"	f	class:Scheduler
 TorusGen	config/main.cpp	/^void TorusGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
+UNUSED	GlobalDef.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM$/;"	e	enum:OPTYPE
 UtilizationFilter	Scheduler.cpp	/^void Scheduler::UtilizationFilter(vector<int> &candidate_PE_id, const vector<float> &utilization_per_PE, const float &acceptable_percentile){$/;"	f	class:Scheduler
 VNode	config/dfg_interface/simplist.cpp	/^VNode::VNode(const char c, int n)$/;"	f	class:VNode
 VNode	config/dfg_interface/simplist.h	/^class VNode {$/;"	c
+Vertex	Vertex.cpp	/^Vertex::Vertex(){$/;"	f	class:Vertex
 Vertex	Vertex.cpp	/^Vertex::Vertex(int _vertex_id){$/;"	f	class:Vertex
 Vertex	Vertex.h	/^struct Vertex{$/;"	s
 VertexAttribute	Vertex.h	/^struct VertexAttribute{$/;"	s
@@ -438,7 +437,6 @@ _COMPONENT_ACTIVITY_H_	ComponentActivity.h	18;"	d
 _COMPONENT_RESERVED_H_	ComponentReserved.h	18;"	d
 _COMPONENT_STATE_H_	ComponentState.h	15;"	d
 _DATA_FLOW_GRAPH_H_	DataFlowGraph.h	18;"	d
-_EDGE_H_	Edge.h	16;"	d
 _GLOBAL_DEF_H_	GlobalDef.h	16;"	d
 _PE_H_	PE.h	16;"	d
 _SCHEDULER_H_	Scheduler.h	15;"	d
@@ -465,14 +463,12 @@ attach_history	Vertex.h	/^        list<AttachHistory> attach_history;$/;"	m	stru
 attached_PE_id	Vertex.h	/^    int attached_PE_id;$/;"	m	struct:AttachHistory
 attached_time	Vertex.h	/^    int attached_time;$/;"	m	struct:AttachHistory
 average_children_num	GlobalDef.h	/^    static float average_children_num;$/;"	m	struct:GLvar
-average_input_degree	DataFlowGraph.h	/^        float average_input_degree;$/;"	m	class:DataFlowGraph
-average_output_degree	DataFlowGraph.h	/^        float average_output_degree;$/;"	m	class:DataFlowGraph
+average_degree	DataFlowGraph.h	/^        float average_degree;$/;"	m	class:DataFlowGraph
 average_vertex_priority	DataFlowGraph.h	/^        float average_vertex_priority;$/;"	m	class:DataFlowGraph
 break_point_num	GlobalDef.cpp	/^int GLvar::break_point_num=15;$/;"	m	class:GLvar	file:
 break_point_num	GlobalDef.h	/^    static int break_point_num;$/;"	m	struct:GLvar
-break_point_store_time	Scheduler.h	/^        int break_point_store_time;$/;"	m	class:Scheduler
 cand_dod	config/dfg_interface/DFG_generation_rand.cpp	/^int *cand_dod;$/;"	v
-children	Vertex.h	/^        list<Vertex*> children;$/;"	m	struct:Vertex
+children	Vertex.h	/^        vector<Vertex*> children;$/;"	m	struct:Vertex
 col	CoarseGrainReconArch.h	/^        int col;$/;"	m	class:CoarseGrainReconArch
 component_activity	ComponentState.h	/^        ComponentActivity* component_activity;$/;"	m	class:ComponentState
 component_reserved	ComponentState.h	/^        ComponentReserved* component_reserved;$/;"	m	class:ComponentState
@@ -496,14 +492,8 @@ dfg_degree_adapter	GlobalDef.cpp	/^int GLvar::dfg_degree_adapter=2;$/;"	m	class:
 dfg_degree_adapter	GlobalDef.h	/^    static int dfg_degree_adapter;$/;"	m	struct:GLvar
 dfg_interface	config/dfg_interface/dfg_interface.cpp	/^void dfg_interface ()$/;"	f
 dod	config/dfg_interface/DFG_generation_rand.cpp	/^int dod (int dest) {$/;"	f
-dsp_opcode	ComponentActivity.h	/^        int dsp_opcode;$/;"	m	class:ComponentActivity
+dsp_opcode	ComponentActivity.h	/^        OPCODE dsp_opcode;$/;"	m	class:ComponentActivity
 dsp_pipeline_reserved	ComponentReserved.h	/^        bool dsp_pipeline_reserved;$/;"	m	class:ComponentReserved
-edge_attribute	Edge.h	/^        EdgeAttribute edge_attribute;$/;"	m	struct:Edge
-edge_cost	Edge.h	/^    int edge_cost;$/;"	m	struct:EdgeAttribute
-edge_dst	Edge.h	/^        int edge_dst;$/;"	m	struct:Edge
-edge_id	Edge.h	/^        int edge_id;$/;"	m	struct:Edge
-edge_num	DataFlowGraph.h	/^        int edge_num;$/;"	m	class:DataFlowGraph
-edge_src	Edge.h	/^        int edge_src;$/;"	m	struct:Edge
 example	util/bmmGen.pl	/^example: $0 -n top.ncd -o top.bmm -b top.bit$/;"	l
 example	util/bmmGen.pl	/^example: $0 -o top.bmm -t top$/;"	l
 execution_PE_id	Vertex.h	/^    int execution_PE_id;$/;"	m	struct:VertexAttribute
@@ -524,7 +514,7 @@ graph_rand	config/dfg_interface/read_equation.cpp	24;"	d	file:
 graph_vd	config/dfg_interface/main.cpp	41;"	d	file:
 graph_vd	config/dfg_interface/read_equation.cpp	27;"	d	file:
 head	config/dfg_interface/simplist.h	/^	SimpleListNode* head;$/;"	m	class:SimpleList
-in_edge	Vertex.h	/^        list<Edge*> in_edge;$/;"	m	struct:Vertex
+im_vertex_num	DataFlowGraph.h	/^        int im_vertex_num;$/;"	m	class:DataFlowGraph
 init	util/bmmGen.pl	/^sub init(){$/;"	s
 input_degree	PE.h	/^        int input_degree;$/;"	m	class:PE
 input_operation_num	GlobalDef.cpp	/^int GLvar::input_operation_num=10;$/;"	m	class:GLvar	file:
@@ -534,7 +524,6 @@ input_operation_proportion	GlobalDef.h	/^    static float input_operation_propor
 input_vertex_num	DataFlowGraph.h	/^        int input_vertex_num;$/;"	m	class:DataFlowGraph
 inst_memory_delay	GlobalDef.cpp	/^int GLvar::inst_memory_delay=3;$/;"	m	class:GLvar	file:
 inst_memory_delay	GlobalDef.h	/^    static int inst_memory_delay;$/;"	m	struct:GLvar
-inter_vertex_num	DataFlowGraph.h	/^        int inter_vertex_num;$/;"	m	class:DataFlowGraph
 kernel_repeat_num	GlobalDef.cpp	/^int GLvar::kernel_repeat_num=1;$/;"	m	class:GLvar	file:
 kernel_repeat_num	GlobalDef.h	/^    static int kernel_repeat_num;$/;"	m	struct:GLvar
 last_op_store_time	Scheduler.h	/^        int last_op_store_time;$/;"	m	class:Scheduler
@@ -561,8 +550,6 @@ maximum_data_memory_addr_width	GlobalDef.cpp	/^int GLvar::maximum_data_memory_ad
 maximum_data_memory_addr_width	GlobalDef.h	/^    static int maximum_data_memory_addr_width;$/;"	m	struct:GLvar
 maximum_data_memory_capacity	GlobalDef.cpp	/^int GLvar::maximum_data_memory_capacity=256;$/;"	m	class:GLvar	file:
 maximum_data_memory_capacity	GlobalDef.h	/^    static int maximum_data_memory_capacity;$/;"	m	struct:GLvar
-maximum_operation_cost	GlobalDef.cpp	/^int GLvar::maximum_operation_cost=1;$/;"	m	class:GLvar	file:
-maximum_operation_cost	GlobalDef.h	/^    static int maximum_operation_cost;$/;"	m	struct:GLvar
 maximum_operation_num	GlobalDef.cpp	/^int GLvar::maximum_operation_num=8000;$/;"	m	class:GLvar	file:
 maximum_operation_num	GlobalDef.h	/^    static int maximum_operation_num;$/;"	m	struct:GLvar
 maximum_operation_type	GlobalDef.cpp	/^int GLvar::maximum_operation_type=8;$/;"	m	class:GLvar	file:
@@ -577,8 +564,6 @@ memory_write_reserved	ComponentReserved.h	/^        bool memory_write_reserved[2
 min_input_degree	DataFlowGraph.h	/^        int min_input_degree;$/;"	m	class:DataFlowGraph
 min_output_degree	DataFlowGraph.h	/^        int min_output_degree;$/;"	m	class:DataFlowGraph
 min_vertex_priority	DataFlowGraph.h	/^        int min_vertex_priority;$/;"	m	class:DataFlowGraph
-minimum_operation_cost	GlobalDef.cpp	/^int GLvar::minimum_operation_cost=1;$/;"	m	class:GLvar	file:
-minimum_operation_cost	GlobalDef.h	/^    static int minimum_operation_cost;$/;"	m	struct:GLvar
 name	config/dfg_interface/simplist.h	/^	string name;$/;"	m	class:VNode
 next	config/dfg_interface/simplist.h	/^	SimpleListNode* next;$/;"	m	class:SimpleListNode
 num	config/dfg_interface/simplist.h	/^	int num;$/;"	m	class:VNode
@@ -586,9 +571,12 @@ num_dod	config/dfg_interface/main.cpp	/^int num_dod;$/;"	v
 num_input_data	config/dfg_interface/main.cpp	/^int num_input_data;$/;"	v
 num_ood	config/dfg_interface/main.cpp	/^int num_ood;$/;"	v
 num_operation	config/dfg_interface/main.cpp	/^int num_operation;$/;"	v
-opcode	Vertex.h	/^    int opcode;$/;"	m	struct:VertexAttribute
+op_compute	GlobalDef.cpp	/^int op_compute(const OPCODE &inst_opcode, const int &src_val0, const int &src_val1, const int &src_val2){$/;"	f
+opcode	Vertex.h	/^    OPCODE opcode;$/;"	m	struct:VertexAttribute
+opcode2int	GlobalDef.cpp	/^int opcode2int (const OPCODE &inst_opcode){$/;"	f
 operation_avail_time	Vertex.h	/^    int operation_avail_time;$/;"	m	struct:VertexAttribute
-out_edge	Vertex.h	/^        list<Edge*> out_edge;$/;"	m	struct:Vertex
+operator <<	GlobalDef.cpp	/^std::ostream& operator<< (std::ostream &os, OPCODE inst_opcode){$/;"	f
+operator <<	GlobalDef.cpp	/^std::ostream& operator<< (std::ostream &os, OPTYPE op_type){$/;"	f
 out_mem_data_scheduling	Scheduler.h	/^        OutMemDataScheduling out_mem_data_scheduling;$/;"	m	class:Scheduler
 output_degree	PE.h	/^        int output_degree;$/;"	m	class:PE
 output_operation_num	GlobalDef.cpp	/^int GLvar::output_operation_num=10;$/;"	m	class:GLvar	file:
@@ -596,7 +584,7 @@ output_operation_num	GlobalDef.h	/^    static int output_operation_num;$/;"	m	st
 output_operation_proportion	GlobalDef.cpp	/^float GLvar::output_operation_proportion=0.05;$/;"	m	class:GLvar	file:
 output_operation_proportion	GlobalDef.h	/^    static float output_operation_proportion;$/;"	m	struct:GLvar
 output_vertex_num	DataFlowGraph.h	/^        int output_vertex_num;$/;"	m	class:DataFlowGraph
-parents	Vertex.h	/^        list<Vertex*> parents;$/;"	m	struct:Vertex
+parents	Vertex.h	/^        vector<Vertex*> parents;$/;"	m	struct:Vertex
 pdpmtx	config/dfg_interface/main.cpp	/^VNode** pdpmtx; \/\/dependencies matrix$/;"	v
 pred	config/dfg_interface/simplist.h	/^	SimpleList* pred;$/;"	m	class:VNode
 print_level	GlobalDef.cpp	/^int GLvar::print_level=0;$/;"	m	class:GLvar	file:
@@ -616,14 +604,12 @@ report_level	GlobalDef.h	/^    static int report_level;$/;"	m	struct:GLvar
 routing_algorithm	CoarseGrainReconArch.h	/^        RoutingAlgorithm routing_algorithm;$/;"	m	class:CoarseGrainReconArch
 row	CoarseGrainReconArch.h	/^        int row;$/;"	m	class:CoarseGrainReconArch
 scheduling_priority	Vertex.h	/^    int scheduling_priority;$/;"	m	struct:VertexAttribute
-scheduling_type	GlobalDef.cpp	/^SchedulingType scheduling_type=ListScheduling;$/;"	v
-scheduling_type	GlobalDef.h	/^    static SchedulingType scheduling_type;$/;"	m	struct:GLvar
-scheduling_type	Scheduler.h	/^        SchedulingType scheduling_type;$/;"	m	class:Scheduler
 store_PE_id	GlobalDef.cpp	/^int GLvar::store_PE_id=15;$/;"	m	class:GLvar	file:
 store_PE_id	GlobalDef.h	/^    static int store_PE_id;$/;"	m	struct:GLvar
 store_mux	ComponentActivity.h	/^        int store_mux;$/;"	m	class:ComponentActivity
 store_op	ComponentActivity.h	/^        int store_op;$/;"	m	class:ComponentActivity
 store_path_reserved	ComponentReserved.h	/^        bool store_path_reserved;$/;"	m	class:ComponentReserved
+str2opcode	GlobalDef.cpp	/^OPCODE str2opcode(const std::string &opcode_str){$/;"	f
 succ	config/dfg_interface/simplist.h	/^	SimpleList* succ;$/;"	m	class:VNode
 tail	config/dfg_interface/simplist.h	/^	SimpleListNode* tail;$/;"	m	class:SimpleList
 type	config/dfg_interface/simplist.h	/^	char type;$/;"	m	class:VNode

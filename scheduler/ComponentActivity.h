@@ -28,7 +28,7 @@ class ComponentActivity{
         int PE_bypass_mux; //0->W, 1->N, 2->E, 3->S
         int memory_wr_ena[2]; //1->write enable, 0->read enable
         int memory_addr[6];
-        int dsp_opcode;
+        OPCODE dsp_opcode;
 
         //0->memory port0, 1->memory port1, 2->memory port2, 3->bypass
         int PE_output_mux[4]; 

@@ -21,8 +21,6 @@ config/main.cpp
 config/OpInfoGen/main.cpp
 DataFlowGraph.cpp
 DataFlowGraph.h
-Edge.cpp
-Edge.h
 GlobalDef.cpp
 GlobalDef.h
 main.cpp

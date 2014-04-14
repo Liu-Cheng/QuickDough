@@ -68,10 +68,6 @@ enum VertexState {
     DataInOutMem, DataUnavail, DataAvail
 };
 
-enum SchedulingType {
-    ListScheduling, ModuloScheduling
-};
-
 enum PESelectionFilteringType{
     PhysicalDistanceFiltering, MemoryUtilizationFiltering, DSPutilizationFiltering, WriteMemoryUtilizationFiltering, InputPortUtilizationFiltering, OutputPortUtilizationFiltering, InoutPortUtilizationFiltering
 };
@@ -87,6 +83,17 @@ enum RoutingAlgorithm{
 enum OutMemDataScheduling{
     IOstoring, RandomlySpreading, OutMemModeling, MultipleCopying
 };
+
+enum OPCODE{
+    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND
+};
+
+enum OPTYPE{
+    INCONST, INVAR, UNUSED, OUTVAR, IM
+};
+
+std::ostream& operator<< (std::ostream &os, OPCODE inst_opcode);
+std::ostream& operator<< (std::ostream &os, OPTYPE op_type);
 
 // ============================================================================
 // Global variables
@@ -104,10 +111,7 @@ struct GLvar{
     static int CGRA_scale;
     static int maximum_operation_num;
     static int maximum_simulation_time;
-    static int maximum_operation_cost;
     static int maximum_operation_type;
-    static int minimum_operation_cost;
-    static SchedulingType scheduling_type;
     static float average_children_num;
     static float output_operation_proportion;
     static float input_operation_proportion;
@@ -132,7 +136,8 @@ struct GLvar{
     static int proportion_switch;
 };
 
-void GetOpocdeName(const int &opcode, string &opcode_name);
-int GetOpcodeValue(const string &opcode_name);
+int opcode2int(const OPCODE &inst_opcode);
+OPCODE str2opcode(const std::string &opcode_str);
+int op_compute(const OPCODE &inst_opcode, const int &src_val0, const int &src_val1, const int &src_val2);
 
 #endif

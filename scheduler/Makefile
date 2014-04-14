@@ -3,7 +3,6 @@ CFLAGS= -DDEBUG -g -Wall
 #CFLAGS= -g -o3
 TARGET = cgracompiler
 SRCS = GlobalDef.cpp \
-       Edge.cpp \
 	   Vertex.cpp \
 	   ComponentActivity.cpp \
 	   ComponentReserved.cpp \
@@ -33,12 +32,11 @@ depend:
 # DO NOT DELETE
 
 GlobalDef.o: GlobalDef.h
-Edge.o: Edge.h GlobalDef.h
-Vertex.o: Vertex.h Edge.h GlobalDef.h
+Vertex.o: Vertex.h GlobalDef.h
 PE.o: PE.h GlobalDef.h
 CoarseGrainReconArch.o: CoarseGrainReconArch.h GlobalDef.h PE.h
-DataFlowGraph.o: DataFlowGraph.h Edge.h GlobalDef.h Vertex.h
-Scheduler.o: Scheduler.h GlobalDef.h DataFlowGraph.h Edge.h Vertex.h
+DataFlowGraph.o: DataFlowGraph.h GlobalDef.h Vertex.h
+Scheduler.o: Scheduler.h GlobalDef.h DataFlowGraph.h Vertex.h
 Scheduler.o: CoarseGrainReconArch.h PE.h
-main.o: GlobalDef.h DataFlowGraph.h Edge.h Vertex.h CoarseGrainReconArch.h
+main.o: GlobalDef.h DataFlowGraph.h Vertex.h CoarseGrainReconArch.h
 main.o: PE.h Scheduler.h

@@ -23,8 +23,6 @@ DataFlowGraph::DataFlowGraph(){
 
     DFGConstruct();
 
-    OutsideDataMemoryDumpCoe();
-
     DFGStatistic();
 
     VertexPriorityAllocation();
@@ -171,8 +169,7 @@ void DataFlowGraph::DFGConstruct(){
     // Build the connection between different vertex using kernel.s file
     string DFG_Inst_File;
     ifstream DFG_Inst_Handle;
-    oss.str(std::string());
-    oss.clear();
+    oss.seekp(0);
     oss << "./config/" << DFG_name << ".s";
     DFG_Inst_File = oss.str();
     DFG_Inst_Handle.open(DFG_Inst_File.c_str());
@@ -234,7 +231,7 @@ void DataFlowGraph::DFGStatistic(){
             vertex_num++;
             if((*vit)->children.size()==0 && (*vit)->parents.size()==0){
                 if((*vit)->vertex_id!=0){
-                    DEBUG2("Unused vertex %d appears!", (*vit)->vertex_id);
+                    DEBUG2("%s", "Unused vertex appears!");
                 }
             }
             else if((*vit)->vertex_type == InputData){
@@ -355,7 +352,7 @@ void DataFlowGraph::VertexPriorityAnalysis(){
 
     //Dump vertex priority information
     cout << "average vertex priority: " << average_vertex_priority << endl;
-    cout << "vertex priority distribution: " << endl;
+    cout << "vertex priority distribution: ";
     for(int i=0; i<vertex_priority_level; i++){
         if(vertex_priority_dist[i]!=0){
             cout << i << ": " << vertex_priority_dist[i] << endl;
@@ -604,14 +601,9 @@ void DataFlowGraph::DFGCalculation(vector<int> &operation_result){
     }
 }
 
+/*
+void DataFlowGraph::OutsideDataMemoryDumpCoe(int max_bram_id, map<int, int> &op_to_value, map<int, int> &op_to_bram_addr, map<int, int> &op_to_bram_id){
 
-/*---------------------------------------------------------------------
- * As the input operands are all stored sequestially, so they can 
- * simply be dumped in order.
- * ------------------------------------------------------------------*/
-void DataFlowGraph::OutsideDataMemoryDumpCoe(){
-
-    int max_bram_id=1;
     for(int i=0; i<=max_bram_id; i++){
 
         std::ostringstream os;
@@ -625,14 +617,14 @@ void DataFlowGraph::OutsideDataMemoryDumpCoe(){
         fHandle << "memory_initialization_radix=2;" << endl;
         fHandle << "memory_initialization_vector=" << endl;
 
-        vector<Vertex*>::iterator vit;
-        for(vit=DFG_vertex.begin(); vit!=DFG_vertex.end(); vit++){
+        for(map<int, int>::iterator map_it=op_to_value.begin(); map_it!=op_to_value.end(); ++map_it){
+            int current_op_id=map_it->first;
+            int dec_data=map_it->second;
 
-            int dec_data = (*vit)->vertex_value;
             list<int> bitList;
             list<int>::reverse_iterator it;
             int width=32; 
-            if((*vit)->vertex_bram_id==i){
+            if(op_to_bram_id[current_op_id]==i){
 
                 //Transform the decimal data to binary
                 if(dec_data==NaN){
@@ -646,10 +638,10 @@ void DataFlowGraph::OutsideDataMemoryDumpCoe(){
                 bitList.push_back(dec_data);
                 width--;
                 while(width!=0){
-                    bitList.push_back(0);
+                    int tmp=0;
+                    bitList.push_back(tmp);
                     width--;
                 }
-
                 for(it=bitList.rbegin(); it!=bitList.rend(); it++){
                     fHandle << (*it);
                 }
@@ -659,7 +651,8 @@ void DataFlowGraph::OutsideDataMemoryDumpCoe(){
             }
         }
         fHandle.close();
-    }
 
+    }
 }
+*/
 

@@ -19,7 +19,7 @@ using namespace std;
 ComponentActivity::ComponentActivity(){
     PE_input_mux=0; 
     PE_bypass_mux=0;
-    dsp_opcode=0;
+    dsp_opcode=NC;
     load_mux=0;
     store_mux=0;
 

@@ -47,9 +47,8 @@ class DataFlowGraph{
         string DFG_name;
         vector<Vertex*> DFG_vertex;
 
-        DataFlowGraph();
+        DataFlowGraph();    
         void DFGCalculation(vector<int> &operation_result);
-        void OutsideDataMemoryDumpCoe();
 
     private:
         void LoadParameter();

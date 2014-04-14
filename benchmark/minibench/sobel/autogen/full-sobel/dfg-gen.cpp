@@ -31,18 +31,18 @@ int main(){
     op_array_init(op_array, sub_in, sub_out);
     kernel_to_dfg(op_array, inst_array);
     dfg_compute(op_array, inst_array);
-    verify(op_array, sub_out);
+    //verify(op_array, sub_out);
     dfg_dump(dfg_name, op_array, inst_array);
 
 }
 
 void io_init(int sub_in[R*C/4+18], int sub_out[R*C/4]){
-    unsigned char fig_in[R][C]={
-#include "fig_in_small.txt"
+    unsigned char fig_in[R][C]={0
+//#include "fig_in_small.txt"
     };
 
-    unsigned char fig_out[R][C]={
-#include "fig_out_small.txt"
+    unsigned char fig_out[R][C]={0
+//#include "fig_out_small.txt"
     };
 
     int gx[3][3]={

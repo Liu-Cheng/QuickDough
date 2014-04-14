@@ -14,14 +14,13 @@
 #ifndef _VERTEX_H_
 #define _VERTEX_H_
 
-#include "Edge.h"
 #include "GlobalDef.h"
 
 using namespace std;
 
 struct VertexAttribute{
     int vertex_cost;
-    int opcode;
+    OPCODE opcode;
     int scheduling_priority;
     int execution_PE_id;
     int operation_avail_time;
@@ -37,18 +36,17 @@ struct Vertex{
     public:
         int vertex_id;
         int vertex_value;
-        unsigned int vertex_bram_addr;
-        unsigned int vertex_bram_id;
-        list<Edge*> in_edge;
-        list<Edge*> out_edge;
-        list<Vertex*> parents;
-        list<Vertex*> children;
+        int vertex_bram_addr;
+        int vertex_bram_id;
+        vector<Vertex*> parents;
+        vector<Vertex*> children;
         VertexType vertex_type;
         VertexType2 vertex_type2;
         VertexAttribute vertex_attribute;
         list<AttachHistory> attach_history;
 
         Vertex(int _vertex_id);
+        Vertex();
         bool IsVertexAssigned();
         ~Vertex(){};
 

@@ -17,6 +17,7 @@
 #include "CoarseGrainReconArch.h"
 
 CoarseGrainReconArch::CoarseGrainReconArch(){
+
     adjacency_matrix.resize(GLvar::CGRA_scale);
     PE_pair_distance.resize(GLvar::CGRA_scale);
     PE_pair_path.resize(GLvar::CGRA_scale);
@@ -34,24 +35,26 @@ CoarseGrainReconArch::CoarseGrainReconArch(){
     LoadParameter();
     InoutDegreeRefresh();
     PEPairInfo();
+
 }
 
 //Load local configuration information from 'configure.txt'
 void CoarseGrainReconArch::LoadParameter(){
-    string configure_file_name="config/configure.txt";
-    ifstream configure_file_handle;
-    configure_file_handle.open(configure_file_name.c_str());
-    if(!configure_file_handle.is_open()){
+
+    string Config_fName="config/configure.txt";
+    ifstream Config_fHandle;
+    Config_fHandle.open(Config_fName.c_str());
+    if(!Config_fHandle.is_open()){
         DEBUG1("Failed to open the configure.txt.");
     }
 
-    while(!configure_file_handle.eof()){
+    while(!Config_fHandle.eof()){
         string configure_item_key;
-        configure_file_handle >> configure_item_key;
+        Config_fHandle >> configure_item_key;
         
         if(configure_item_key=="routing_algorithm"){
             string configure_item_value;
-            configure_file_handle >> configure_item_value;
+            Config_fHandle >> configure_item_value;
             if(configure_item_value=="FullySearch"){
                 routing_algorithm=FullySearch;
             }
@@ -69,28 +72,28 @@ void CoarseGrainReconArch::LoadParameter(){
             }
         }
         else if(configure_item_key=="row"){
-            configure_file_handle >> row;
+            Config_fHandle >> row;
         }
         else if(configure_item_key=="col"){
-            configure_file_handle >> col;
+            Config_fHandle >> col;
         }
 
     }
-    configure_file_handle.close();
+    Config_fHandle.close();
 
-    configure_file_name="./config/link.txt";
-    configure_file_handle.open(configure_file_name.c_str());
-    if(!configure_file_handle.is_open()){
+    Config_fName="./config/link.txt";
+    Config_fHandle.open(Config_fName.c_str());
+    if(!Config_fHandle.is_open()){
         cout << "Failed to open the link.txt" << endl;
     }
-    while(!configure_file_handle.eof()){
+    while(!Config_fHandle.eof()){
         for(int i=0; i<GLvar::CGRA_scale; i++){
             for(int j=0; j<GLvar::CGRA_scale; j++){
-                configure_file_handle >> adjacency_matrix[i][j];
+                Config_fHandle >> adjacency_matrix[i][j];
             }
         }
     }
-    configure_file_handle.close();
+    Config_fHandle.close();
 }
 
 void CoarseGrainReconArch::InoutDegreeRefresh(){
@@ -586,24 +589,6 @@ void CoarseGrainReconArch::LinkUtilizationAnalysis(const int &begin_time, const 
       link_file_handle<<endl;
       }
       link_file_handle.close();*/
-}
-
-bool CoarseGrainReconArch::ActivityCheck(){
-    cout<<"Scheduling verification starts!"<<endl;
-    bool all_right=true;
-
-    // Just check the import signals that are closely realted to see
-    // whether they are coherent. Sometimes it depends on the actual 
-    // PE structure to or the scheduling algorithm. Anyway,I use it 
-    // mainly for verification purpose. I will just leave it for future work.
-
-    if(all_right){
-        cout<<"CGRA components show coherent behaviors!"<<endl;
-    }
-    else{
-        cout<<"CGRA component activities do not match!"<<endl;
-    }
-    return all_right;
 }
 
 CoarseGrainReconArch::~CoarseGrainReconArch(){

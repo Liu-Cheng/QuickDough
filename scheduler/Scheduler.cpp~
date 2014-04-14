@@ -1703,7 +1703,7 @@ void Scheduler::TargetPERefresh(const vector<int> &src_operation_ids, const int 
 
     CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_activity->memory_wr_ena[1]=0;
 
-    OPCODE opcode_tmp=DFG->DFG_vertex[target_operation_id]->vertex_attribute.opcode;
+    int opcode_tmp=DFG->DFG_vertex[target_operation_id]->vertex_attribute.opcode;
     CGRA->PE_array[target_PE_id]->component_trace[start_time+3]->component_activity->dsp_opcode=opcode_tmp;
     CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_activity->memory_wr_ena[0]=1;
 
@@ -1737,8 +1737,37 @@ void Scheduler::TargetOperationRefresh(const vector<int> &src_operation_ids, con
     int srcA=DFG->DFG_vertex[src_operation_ids[0]]->vertex_value;
     int srcB=DFG->DFG_vertex[src_operation_ids[1]]->vertex_value;
     int srcC=DFG->DFG_vertex[src_operation_ids[2]]->vertex_value;
-    OPCODE Opcode=DFG->DFG_vertex[target_operation_id]->vertex_attribute.opcode;
-    int Result=op_compute(Opcode, srcA, srcB, srcC);
+    int Opcode=DFG->DFG_vertex[target_operation_id]->vertex_attribute.opcode;
+    int Result;
+    if(Opcode==0){
+        Result=srcA*srcB-srcC;
+    }
+    else if(Opcode==1){
+        Result=srcA*srcB+srcC;
+    }
+    else if(Opcode==2){
+        Result=srcA+srcB+srcC;
+    }
+    else if(Opcode==3){
+        Result=srcA+srcB-srcC;
+    }
+    else if(Opcode==4){
+        Result=srcA-srcB+srcC;
+    }
+    else if(Opcode==5){
+        Result=srcA-srcB-srcC;
+    }
+    else if(Opcode==6){
+        if(srcA){
+            Result=srcB;
+        }
+        else{
+            Result=srcC;
+        }
+    }
+    else{
+        Result=srcA*srcB+srcC;
+    }
     DFG->DFG_vertex[target_operation_id]->vertex_value=Result;
 
     AttachHistory attach_point;
@@ -2006,7 +2035,7 @@ void Scheduler::DataMemoryAnalysis(){
 
 }
 
-/*---------------------------------------------------------------------
+/**********************************************************************
   Address allocation/release
   1) When an operand is written to the data memory for the first time.
   2) When operands are constants and they are initialized into the 
@@ -2014,7 +2043,7 @@ void Scheduler::DataMemoryAnalysis(){
   stored in data memory[0] in all PEs. 
   3) When the data operands are referenced for the last time, the address 
   will be released.
- -----------------------------------------------------------------------*/
+ *********************************************************************/
 void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_time, const int &memCapacity, const int &PE_id){
 
     map<int, int> OpToAddr;
@@ -2086,8 +2115,12 @@ void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_ti
         for(int p=0; p<6; p++){
             bool rd_reserve=CGRA->PE_array[PE_id]->component_trace[i]->component_reserved->memory_read_reserved[p];
             int rd_op=CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_port_op[p];
+
+            //The data have not been allocated an address when it is read,
+            //there must be something wrong in the address allocatio part.
             if(rd_reserve){
                 if(OpToAddr.count(rd_op)==0){
+                    //if(rd_op==28 && PE_id==0){
                     cout<<"op="<<rd_op<<endl;
                     cout<<"executed at PE "<<DFG->DFG_vertex[rd_op]->vertex_attribute.execution_PE_id<<endl;
                     cout<<"current PE is "<<PE_id<<endl;
@@ -2120,137 +2153,701 @@ void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_ti
                 else{
                     DEBUG1("Unexpected cases!");
                 }
+                }
+            }
+
+            //Put the released address back for reuse
+            while(!op_to_release.empty()){
+                int released_op=op_to_release.front();
+                int released_addr=OpToAddr[released_op];
+                AddrAvail.push_front(released_addr);
+                op_to_release.pop_front();
+                OpToAddr.erase(released_op);
+            }
+        }
+    }
+
+    void Scheduler::SchedulingResultCollection(vector<int> &operation_result){
+        operation_result.resize(GLvar::maximum_operation_num);
+        for(int i=0; i<GLvar::maximum_operation_num; i++){
+            operation_result[i]=DFG->DFG_vertex[i]->vertex_value;
+        }
+    }
+
+    bool Scheduler::OperationResultCheck(){
+        bool all_right=true;
+        vector<int> theoretical_result;
+        vector<int> practice_result;
+        DFG->DFGCalculation(theoretical_result);
+        SchedulingResultCollection(practice_result);
+
+        for(int i=0; i<GLvar::maximum_operation_num; i++){
+            if(theoretical_result[i]!=practice_result[i]){
+                DEBUG1("Calculation of Operation[%d] is wrong! Theory result is:%d, Practice result is:%d\n",i,theoretical_result[i],practice_result[i]);
+                all_right=false;
             }
         }
 
-        //Put the released address back for reuse
-        while(!op_to_release.empty()){
-            int released_op=op_to_release.front();
-            int released_addr=OpToAddr[released_op];
-            AddrAvail.push_front(released_addr);
-            op_to_release.pop_front();
-            OpToAddr.erase(released_op);
+        if(all_right){
+            cout<<"Scheduling algorithm obtains the results as expected!"<<endl;
+        }
+        else{
+            DEBUG2("Operation results are NOT correct!");
+        }
+
+        return all_right;
+    }
+
+    void Scheduler::InstructionDumpCoe(int final_execution_time){
+
+        for(int i=0; i<GLvar::CGRA_scale; i++){
+
+            ostringstream os;
+            os<<"./result/PE-"<<"inst-"<<i<<".coe";
+            string fName=os.str();
+            ofstream fHandle;
+            fHandle.open(fName.c_str());
+            if(!fHandle.is_open()){
+                DEBUG1("Fail to create the PE-inst-.coe");
+            }
+
+            fHandle << "memory_initialization_radix=2;" << endl;
+            fHandle << "memory_initialization_vector=" << endl;
+            list<int> bitList;
+            list<int>::reverse_iterator it;
+            int dec_data;
+            int width;
+            for(int j=0; j<final_execution_time; j++){
+
+                //The highest 4 bits are reserved for future extension and they keep 0 at the moment.
+                fHandle << "1000";
+
+                //load-mux, 1->input from neighboring PEs. 0->input from outside memory.
+                if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
+                    fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->load_mux;
+                }
+                else{
+                    fHandle << "0";
+                }
+
+                //PE input mux
+                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_input_mux;
+                switch (dec_data){
+                    case 0:
+                        fHandle << "00";
+                        break;
+                    case 1:
+                        fHandle << "01";
+                        break;
+                    case 2:
+                        fHandle << "10";
+                        break;
+                    case 3:
+                        fHandle << "11";
+                        break;
+                    default:
+                        DEBUG1("Unexpected PE_input_mux value!");
+                        break;
+                }
+
+                //PE bypass mux
+                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_bypass_mux;
+                switch (dec_data){
+                    case 0:
+                        fHandle << "00";
+                        break;
+                    case 1:
+                        fHandle << "01";
+                        break;
+                    case 2:
+                        fHandle << "10";
+                        break;
+                    case 3:
+                        fHandle << "11";
+                        break;
+                    default:
+                        DEBUG1("unexpected PE_bypass_mux value!");
+                        break;
+                }
+
+                //Memory ena
+                fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[1];
+                fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[0];
+
+                //Memory addr
+                int port[6]={3,4,5,0,1,2}; 
+                for(int l=0; l<6; l++){
+                    dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_addr[port[l]];
+                    width=8;
+                    if(dec_data==NaN){
+                        dec_data=0;
+                    }
+                    while(dec_data!=1 && dec_data!=0){
+                        bitList.push_back(dec_data%2);
+                        dec_data=dec_data/2;
+                        width--;
+                    }
+                    bitList.push_back(dec_data);
+                    width--;
+                    while(width!=0){
+                        int tmp=0;
+                        bitList.push_back(tmp);
+                        width--;
+                    }
+                    for(it=bitList.rbegin(); it!=bitList.rend(); it++){
+                        fHandle << (*it);
+                    }
+                    bitList.clear();
+                }
+
+                //dsp_opcode
+                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->dsp_opcode;
+                if(dec_data==0){
+                    fHandle << "000";
+                }
+                else if(dec_data==1){
+                    fHandle << "001";
+                }
+                else if(dec_data==2){
+                    fHandle << "010";
+                }
+                else if(dec_data==3){
+                    fHandle << "011";
+                }
+                else if(dec_data==4){
+                    fHandle << "100";
+                }
+                else if(dec_data==5){
+                    fHandle << "101";
+                }
+                else if(dec_data==6){
+                    fHandle << "110";
+                }
+                else{
+                    DEBUG1("Undefined opcode!");
+                }
+
+                //Store mux
+                if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
+                    dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->store_mux;
+                    switch (dec_data){
+                        case 0:
+                            fHandle << "00";
+                            break;
+                        case 1:
+                            fHandle << "01";
+                            break;
+                        case 2:
+                            fHandle << "10";
+                            break;
+                        case 3:
+                            fHandle << "11";
+                            break;
+                        default:
+                            DEBUG1("unexpected store_mux value!");
+                            break;
+                    }
+                }
+                else{
+                    fHandle << "00";
+                }
+
+                //PE output mux
+                for(int l=0; l<4; l++){
+                    dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_output_mux[l];
+                    switch (dec_data){
+                        case 0:
+                            fHandle << "00";
+                            break;
+                        case 1:
+                            fHandle << "01";
+                            break;
+                        case 2:
+                            fHandle << "10";
+                            break;
+                        case 3:
+                            fHandle << "11";
+                            break;
+                        default:
+                            DEBUG1("Unexpected PE_output_mux value!");
+                            break;
+                    }
+                }
+
+                fHandle<<endl;
+            }
+            fHandle.close();
         }
     }
 
-}
-
-void Scheduler::SchedulingResultCollection(vector<int> &operation_result){
-
-    operation_result.resize(GLvar::maximum_operation_num);
-    for(int i=0; i<GLvar::maximum_operation_num; i++){
-        operation_result[i]=DFG->DFG_vertex[i]->vertex_value;
-    }
-
-}
-
-bool Scheduler::OperationResultCheck(){
-
-    bool all_right=true;
-    vector<int> theoretical_result;
-    vector<int> simulated_result;
-    DFG->DFGCalculation(theoretical_result);
-    SchedulingResultCollection(simulated_result);
-
-    for(int i=0; i<GLvar::maximum_operation_num; i++){
-        if(theoretical_result[i]!=simulated_result[i]){
-            DEBUG1("Calculation of Operation[%d] is wrong! Theoretical result is:%d, simulated result is:%d\n",i,theoretical_result[i], simulated_result[i]);
-            all_right=false;
+    void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth){
+        ifstream BinFileHandle;
+        BinFileHandle.open(BinFileName.c_str());
+        if(!BinFileHandle.is_open()){
+            DEBUG1("Failed to open %s\n", BinFileName.c_str());  
         }
+
+        ofstream HexFileHandle;
+        HexFileHandle.open(HexFileName.c_str());
+        if(!HexFileHandle.is_open()){
+            DEBUG1("Failed to create %s\n", HexFileName.c_str());
+        }
+
+        char BinVec[100];
+        int LineNum=0;
+        while(BinFileHandle.getline(BinVec,100)){
+            LineNum++;
+
+            //Ignore the first two lines due to coe file format.
+            if(LineNum<3){
+                continue;
+            }
+
+            HexFileHandle << "0x";
+            for(int k=0; k<DataWidth/4; k++){
+                int id=k*4;
+                if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HexFileHandle << '0';
+                }
+                else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HexFileHandle << '1';
+                }
+                else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HexFileHandle << '2';
+                }
+                else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                    HexFileHandle << '3';
+                }
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HexFileHandle << '4';
+                }
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HexFileHandle << '5';
+                }
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HexFileHandle << '6';
+                }
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                    HexFileHandle << '7';
+                }
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HexFileHandle << '8';
+                }
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HexFileHandle << '9';
+                }
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HexFileHandle << 'A';
+                }
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                    HexFileHandle << 'B';
+                }
+                else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HexFileHandle << 'C';
+                }
+                else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HexFileHandle << 'D';
+                }
+                else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HexFileHandle << 'E';
+                }
+                else{
+                    HexFileHandle << 'F';
+                }
+            }
+            HexFileHandle<<endl;
+        }
+        HexFileHandle.close();
+        BinFileHandle.close();
     }
 
-    if(all_right){
-        cout<<"Scheduling algorithm obtains the results as expected!"<<endl;
+    void Scheduler::InstructionDumpMem(int final_execution_time){
+        const int instMemDepth=INST_MEM_DEPTH;
+        const int instMemWidth=72;
+
+        string fMemName="./result/inst.mem";
+        ofstream fMemHandle;
+        fMemHandle.open(fMemName.c_str());
+        if(!fMemHandle.is_open()){
+            DEBUG1("Fail to create inst.mem\n");
+        }
+
+        char vec[100];
+        for(int i=0; i<GLvar::CGRA_scale; i++){
+            int intAddr=i*instMemDepth*instMemWidth/8;
+
+            char hexAddr[20];
+            if(i==0){
+                sprintf(hexAddr, "@00000000");
+            }
+            else{
+                sprintf(hexAddr, "@0000%X", intAddr);
+            }
+            fMemHandle << hexAddr <<endl;
+
+            ostringstream os;
+            os<<"./result/PE-"<<"inst-"<<i<<".coe";
+            string fName=os.str();
+            ifstream fHandle;
+            fHandle.open(fName.c_str());
+            if(!fHandle.is_open()){
+                DEBUG1("Failed to open the PE.coe");
+            }
+
+            int lineNum=0;
+            while(fHandle.getline(vec,100)){
+                lineNum++;
+
+                if(lineNum<3){
+                    continue;
+                }
+
+                // ----------------------------------------------------------------------------------------
+                // You can't initialize the ROM block correctly using the raw data. The following steps 
+                // will show how the 72bit raw data should be reorganized before it goes to data2mem command. 
+                // I figured it out by comparing the original data and the dumped data from bitstream. It 
+                // took me quite a fucking long time.
+                // ----------------------------------------------------------------------------------------
+
+                // Exchange the higher 36bits and lower 36bits
+                char mVec[instMemWidth];
+                char nVec[instMemWidth];
+                for(int k=0; k<instMemWidth/2; k++){
+                    nVec[k]=vec[k+instMemWidth/2];
+                    nVec[k+instMemWidth/2]=vec[k];
+                }
+
+                // Exchanged data: (1bit, 8bit), (1bit, 8bit), ... The first bit will be stored in BRAM
+                // parity section, while the following 8bit will be stored in BRAM data section.
+                // Put the 4 parity bit together and leave the rest untouched. The new format should be
+                // (4bit), (8bit), (8bit), ...
+                int basicLen=9;
+                int kmax=instMemWidth/2/basicLen;
+                for(int k=0; k<kmax; k++){
+                    mVec[k]=nVec[k*basicLen];
+                    mVec[k+instMemWidth/2]=nVec[k*basicLen+instMemWidth/2];
+                    for(int index=1; index<basicLen; index++){
+                        mVec[kmax+k*(basicLen-1)+index-1]=nVec[k*basicLen+index];
+                        mVec[kmax+k*(basicLen-1)+index-1+instMemWidth/2]=nVec[k*basicLen+index+instMemWidth/2];
+                    }
+                }
+
+                /*
+                   if(lineNum==9 || lineNum==10){
+                   cout << "new= " << mVec << endl;
+                   }
+                   */
+
+                // Transform the bin to be hex
+                for(int k=0; k<instMemWidth/4; k++){
+                    int id=k*4;
+                    if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << '0';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << '1';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << '2';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
+                        fMemHandle << '3';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << '4';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << '5';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << '6';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='1'){
+                        fMemHandle << '7';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << '8';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << '9';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << 'A';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
+                        fMemHandle << 'B';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << 'C';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << 'D';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << 'E';
+                    }
+                    else{
+                        fMemHandle << 'F';
+                    }
+
+                    /*if(k+1==instMemWidth/8.0){
+                      fMemHandle << endl;
+                      }*/
+                }
+                fMemHandle<<endl;
+            }
+            fHandle.close();
+        }
+        fMemHandle.close();
     }
-    else{
-        DEBUG2("Operation results are NOT correct!");
-    }
 
-    return all_right;
+    void Scheduler::DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const int &memory_capacity){
+        //Data memory initialization
+        vector<int> memory_data;
+        memory_data.resize(memory_capacity);
+        for(int i=0; i<memory_capacity; i++){
+            memory_data[i]=0;
+        }
 
-}
+        //Get the initial value of data memory
+        for(int i=0; i<GLvar::maximum_operation_num; i++){
+            if(OpToAddr.count(i)>0){
+                int addr=OpToAddr[i];
+                memory_data[addr]=DFG->DFG_vertex[i]->vertex_value;
+            }
+        }
 
-void Scheduler::InstructionDumpCoe(int final_execution_time){
-
-    for(int i=0; i<GLvar::CGRA_scale; i++){
-
+        //Open a file to store initialized data of the data memory
         ostringstream os;
-        os<<"./result/PE-"<<"inst-"<<i<<".coe";
+        os<<"./result/PE-"<<"mem-"<<PE_id<<".coe";
         string fName=os.str();
         ofstream fHandle;
         fHandle.open(fName.c_str());
         if(!fHandle.is_open()){
-            DEBUG1("Fail to create the PE-inst-.coe");
+            DEBUG1("Fail to create the PE-mem.coe");
         }
 
-        fHandle << "memory_initialization_radix=2;" << endl;
-        fHandle << "memory_initialization_vector=" << endl;
-        list<int> bitList;
-        list<int>::reverse_iterator it;
-        int dec_data;
-        int width;
-        for(int j=0; j<final_execution_time; j++){
+        //Transform the decimal data to be binary data and store them in the file.
+        vector<int>bitList;
+        for(int i=0; i<memory_capacity; i++){
+            int dec_data=memory_data[i];
+            int width=16;
+            while(dec_data!=1 && dec_data!=0){
+                bitList.push_back(dec_data%2);
+                dec_data=dec_data/2;
+                width--;
+            }
+            bitList.push_back(dec_data);
+            width--;
+            while(width!=0){
+                int tmp=0;
+                bitList.push_back(tmp);
+                width--;
+            }
 
-            //The highest 3 bits are reserved for future extension and they keep 0 at the moment.
-            fHandle << "100";
+            vector<int>::reverse_iterator it;
+            for(it=bitList.rbegin(); it!=bitList.rend(); it++){
+                fHandle<<(*it);
+            }
+            fHandle<<endl;
+            bitList.clear();
+        }
+    }
 
-            //load-mux, 1->input from neighboring PEs. 0->input from outside memory.
-            if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
-                fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->load_mux;
+    void Scheduler::DataMemoryDumpMem(){
+        const int DataMemDepth=1024;
+        const int DataMemWidth=16;
+        const int readWidth=20;
+
+        string fMemName="./result/data.mem";
+        ofstream fMemHandle;
+        fMemHandle.open(fMemName.c_str());
+        if(!fMemHandle.is_open()){
+            DEBUG1("Fail to create data.mem\n");
+        }
+
+        char vec[readWidth];
+        for(int i=0; i<GLvar::CGRA_scale; i++){
+            int intAddr=i*DataMemDepth*DataMemWidth/8;
+
+            char hexAddr[20];
+            if(i==0){
+                sprintf(hexAddr, "@00000000");
             }
             else{
-                fHandle << "0";
+                sprintf(hexAddr, "@0000%X", intAddr);
+            }
+            fMemHandle << hexAddr <<endl;
+
+            ostringstream os;
+            os<<"./result/PE-"<<"mem-"<<i<<".coe";
+            string fName=os.str();
+            ifstream fHandle;
+            fHandle.open(fName.c_str());
+            if(!fHandle.is_open()){
+                DEBUG1("Fail to open the PE-mem.coe");
             }
 
-            //PE input mux
-            dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_input_mux;
-            switch (dec_data){
-                case 0:
-                    fHandle << "00";
-                    break;
-                case 1:
-                    fHandle << "01";
-                    break;
-                case 2:
-                    fHandle << "10";
-                    break;
-                case 3:
-                    fHandle << "11";
-                    break;
-                default:
-                    DEBUG1("Unexpected PE_input_mux value!");
-                    break;
+            while(fHandle.getline(vec,readWidth)){
+
+                char mVec[DataMemWidth];
+                for(int k=0; k<DataMemWidth; k++){
+                    mVec[k]=vec[k];
+                }
+
+                // Dump the bin to be hex
+                for(int k=0; k<DataMemWidth/4; k++){
+                    int id=k*4;
+                    if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << '0';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << '1';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << '2';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
+                        fMemHandle << '3';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << '4';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << '5';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << '6';
+                    }
+                    else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='1'){
+                        fMemHandle << '7';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << '8';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << '9';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << 'A';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
+                        fMemHandle << 'B';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
+                        fMemHandle << 'C';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
+                        fMemHandle << 'D';
+                    }
+                    else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
+                        fMemHandle << 'E';
+                    }
+                    else{
+                        fMemHandle << 'F';
+                    }
+                }
+                fMemHandle<<endl;
+            }
+            fHandle.close();
+        }
+        fMemHandle.close();
+    }
+
+    void Scheduler::SchedulingResultDump(){
+        ostringstream os;
+        os<<"./result/dst-"<<"op"<<".txt";
+        string fName=os.str();
+        ofstream fHandle;
+        fHandle.open(fName.c_str());
+        if(!fHandle.is_open()){
+            DEBUG1("Fail to create the dst-op.txt");
+        }
+
+        for(int i=0; i<GLvar::maximum_operation_num; i++){
+            //if(DFG->DFG_vertex[i]->vertex_type==OutputData){
+            fHandle<<DFG->DFG_vertex[i]->vertex_id<<" ";
+            fHandle<<DFG->DFG_vertex[i]->vertex_value<<" ";
+            fHandle<<DFG->DFG_vertex[i]->vertex_attribute.execution_PE_id<<" ";
+            fHandle<<endl;
+            //}
+        }
+
+        fHandle.close();
+    }
+
+    void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
+        int outside_bram_num=2;
+        int IO_PE[2]={0,1};
+        for(int i=0; i<outside_bram_num; i++){
+
+            ostringstream os;
+            os<<"./result/outside-"<<"bram-addr-"<<i<<".coe";
+            string fName=os.str();
+            ofstream fHandle;
+            fHandle.open(fName.c_str());
+            if(!fHandle.is_open()){
+                DEBUG1("Fail to create the outside-bram-addr-.coe");
             }
 
-            //PE bypass mux
-            dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_bypass_mux;
-            switch (dec_data){
-                case 0:
-                    fHandle << "00";
-                    break;
-                case 1:
-                    fHandle << "01";
-                    break;
-                case 2:
-                    fHandle << "10";
-                    break;
-                case 3:
-                    fHandle << "11";
-                    break;
-                default:
-                    DEBUG1("unexpected PE_bypass_mux value!");
-                    break;
+            fHandle << "memory_initialization_radix=2;" <<endl;
+            fHandle << "memory_initialization_vector=" <<endl;
+            int IO_PE_id=IO_PE[i];
+            vector<unsigned int> bram_addr;
+            bram_addr.resize(final_execution_time+2);
+            vector<int> load_store_idle; //0->load, 1->store, 2->idle
+            load_store_idle.resize(final_execution_time+2);
+            for(int j=0; j<final_execution_time+1; j++){
+                bram_addr[j]=0;
+                load_store_idle[j]=2;
             }
 
-            //Memory ena
-            fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[1];
-            fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[0];
+            for(int j=1; j<final_execution_time; j++){
 
-            //Memory addr
-            int port[6]={3,4,5,0,1,2}; 
-            for(int l=0; l<6; l++){
-                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_addr[port[l]];
-                width=8;
+                bool load_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->load_path_reserved==true;
+                int load_mux=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->load_mux;
+                bool store_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->store_path_reserved==true;
+                if(load_active && load_mux==0){
+                    if(load_store_idle[j-1]==1){
+                        DEBUG1("Unexpected load state!\n");
+                    }
+                    load_store_idle[j-1]=0;
+                    int loaded_op = CGRA->PE_array[IO_PE_id]->component_trace[j-1]->component_activity->load_op;
+                    bram_addr[j-1] = DFG->DFG_vertex[loaded_op]->vertex_bram_addr;
+                }
+
+                if(store_active){
+                    if(load_store_idle[j]==0){
+                        DEBUG1("Unexpected store state!\n");
+                    }
+                    load_store_idle[j+2]=1;
+                    int stored_op = CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->store_op;
+                    bram_addr[j+2] = DFG->DFG_vertex[stored_op]->vertex_bram_addr;
+                }
+
+            }
+
+            list<int> bitList;
+            list<int>::reverse_iterator it;
+            int dec_data;
+            int width; 
+            for(int j=0; j<final_execution_time+2; j++){
+
+                //The highest bit indicates the enable signal of the bram and the 
+                //following 4bits represent the byte wena signals.
+                if(load_store_idle[j]==0){
+                    fHandle << "10000";
+                }
+                else if(load_store_idle[j]==1){
+                    fHandle << "11111";
+                }
+                else{
+                    fHandle << "00000";
+                }
+
+                //Transform decimal addr to 27-bit binary 
+                dec_data=bram_addr[j];
+                width=27;
                 if(dec_data==NaN){
                     dec_data=0;
                 }
@@ -2270,743 +2867,133 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
                     fHandle << (*it);
                 }
                 bitList.clear();
+
+                fHandle<<endl;
             }
 
-            //dsp_opcode
-            OPCODE opcode_tmp = CGRA->PE_array[i]->component_trace[j]->component_activity->dsp_opcode;
-            dec_data = opcode2int(opcode_tmp);
-            if(dec_data==0){
-                fHandle << "0000";
-            }
-            else if(dec_data==1){
-                fHandle << "0001";
-            }
-            else if(dec_data==2){
-                fHandle << "0010";
-            }
-            else if(dec_data==3){
-                fHandle << "0011";
-            }
-            else if(dec_data==4){
-                fHandle << "0100";
-            }
-            else if(dec_data==5){
-                fHandle << "0101";
-            }
-            else if(dec_data==6){
-                fHandle << "0110";
-            }
-            else if(dec_data==7){
-                fHandle << "0111";
-            }
-            else if(dec_data==8){
-                fHandle << "1000";
-            }
-            else if(dec_data==9){
-                fHandle << "1001";
-            }
-            else if(dec_data==10){
-                fHandle << "1010";
-            }
-            else if(dec_data==11){
-                fHandle << "1011";
-            }
-            else if(dec_data==12){
-                fHandle << "1100";
-            }
-            else if(dec_data==13){
-                fHandle << "1101";
-            }
-            else if(dec_data==14){
-                fHandle << "1110";
-            }
-            else{
-                fHandle << "1111";
-            }
+            fHandle.close();
 
-            //Store mux
-            if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
-                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->store_mux;
-                switch (dec_data){
-                    case 0:
-                        fHandle << "00";
-                        break;
-                    case 1:
-                        fHandle << "01";
-                        break;
-                    case 2:
-                        fHandle << "10";
-                        break;
-                    case 3:
-                        fHandle << "11";
-                        break;
-                    default:
-                        DEBUG1("unexpected store_mux value!");
-                        break;
-                }
-            }
-            else{
-                fHandle << "00";
-            }
-
-            //PE output mux
-            for(int l=0; l<4; l++){
-                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_output_mux[l];
-                switch (dec_data){
-                    case 0:
-                        fHandle << "00";
-                        break;
-                    case 1:
-                        fHandle << "01";
-                        break;
-                    case 2:
-                        fHandle << "10";
-                        break;
-                    case 3:
-                        fHandle << "11";
-                        break;
-                    default:
-                        DEBUG1("Unexpected PE_output_mux value!");
-                        break;
-                }
-            }
-
-            fHandle<<endl;
         }
-        fHandle.close();
-    }
-}
+        Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mif", 32);
+        Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mif", 32);
+        Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mif", 32);
+        Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mif", 32);
+        Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/src_ctrl_words.h", "SrcMemCtrlWords", 32);
+        Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/result_ctrl_words.h", "ResultMemCtrlWords", 32);
+        Bin2HeadFile("./result/outside-data-memory-0.coe", "./result/initialized_src.h", "Src", 32);
+        Bin2HeadFile("./result/outside-data-memory-1.coe", "./result/initialized_result.h", "Result", 32);
 
-void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth){
-    ifstream BinFileHandle;
-    BinFileHandle.open(BinFileName.c_str());
-    if(!BinFileHandle.is_open()){
-        DEBUG1("Failed to open %s\n", BinFileName.c_str());  
     }
 
-    ofstream HexFileHandle;
-    HexFileHandle.open(HexFileName.c_str());
-    if(!HexFileHandle.is_open()){
-        DEBUG1("Failed to create %s\n", HexFileName.c_str());
-    }
+    void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth){
 
-    char BinVec[100];
-    int LineNum=0;
-    while(BinFileHandle.getline(BinVec,100)){
-        LineNum++;
-
-        //Ignore the first two lines due to coe file format.
-        if(LineNum<3){
-            continue;
+        int DataNum=FileLineCount(BinFileName)-2;
+        ifstream BinFileHandle;
+        BinFileHandle.open(BinFileName.c_str());
+        if(!BinFileHandle.is_open()){
+            DEBUG1("Failed to open %s\n", BinFileName.c_str());  
         }
 
-        HexFileHandle << "0x";
-        for(int k=0; k<DataWidth/4; k++){
-            int id=k*4;
-            if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << '0';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << '1';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << '2';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HexFileHandle << '3';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << '4';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << '5';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << '6';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HexFileHandle << '7';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << '8';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << '9';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << 'A';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HexFileHandle << 'B';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << 'C';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << 'D';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << 'E';
-            }
-            else{
-                HexFileHandle << 'F';
-            }
-        }
-        HexFileHandle<<endl;
-    }
-    HexFileHandle.close();
-    BinFileHandle.close();
-}
-
-void Scheduler::InstructionDumpMem(int final_execution_time){
-    const int instMemDepth=INST_MEM_DEPTH;
-    const int instMemWidth=72;
-
-    string fMemName="./result/inst.mem";
-    ofstream fMemHandle;
-    fMemHandle.open(fMemName.c_str());
-    if(!fMemHandle.is_open()){
-        DEBUG1("Fail to create inst.mem\n");
-    }
-
-    char vec[100];
-    for(int i=0; i<GLvar::CGRA_scale; i++){
-        int intAddr=i*instMemDepth*instMemWidth/8;
-
-        char hexAddr[20];
-        if(i==0){
-            sprintf(hexAddr, "@00000000");
-        }
-        else{
-            sprintf(hexAddr, "@0000%X", intAddr);
-        }
-        fMemHandle << hexAddr <<endl;
-
-        ostringstream os;
-        os<<"./result/PE-"<<"inst-"<<i<<".coe";
-        string fName=os.str();
-        ifstream fHandle;
-        fHandle.open(fName.c_str());
-        if(!fHandle.is_open()){
-            DEBUG1("Failed to open the PE.coe");
+        ofstream HeadFileHandle;
+        HeadFileHandle.open(HeadFileName.c_str());
+        if(!HeadFileHandle.is_open()){
+            DEBUG1("Failed to create %s\n", HeadFileName.c_str());
         }
 
-        int lineNum=0;
-        while(fHandle.getline(vec,100)){
-            lineNum++;
+        char BinVec[100];
+        int LineNum=0;
+        HeadFileHandle << "unsigned int " << ArrayName << "[" << DataNum <<"]={";
+        while(BinFileHandle.getline(BinVec,100)){
+            LineNum++;
 
-            if(lineNum<3){
+            //Ignore the first two lines due to coe file format.
+            if(LineNum<3){
                 continue;
             }
 
-            // ----------------------------------------------------------------------------------------
-            // You can't initialize the ROM block correctly using the raw data. The following steps 
-            // will show how the 72bit raw data should be reorganized before it goes to data2mem command. 
-            // I figured it out by comparing the original data and the dumped data from bitstream. It 
-            // took me quite a fucking long time.
-            // ----------------------------------------------------------------------------------------
-
-            // Exchange the higher 36bits and lower 36bits
-            char mVec[instMemWidth];
-            char nVec[instMemWidth];
-            for(int k=0; k<instMemWidth/2; k++){
-                nVec[k]=vec[k+instMemWidth/2];
-                nVec[k+instMemWidth/2]=vec[k];
-            }
-
-            // Exchanged data: (1bit, 8bit), (1bit, 8bit), ... The first bit will be stored in BRAM
-            // parity section, while the following 8bit will be stored in BRAM data section.
-            // Put the 4 parity bit together and leave the rest untouched. The new format should be
-            // (4bit), (8bit), (8bit), ...
-            int basicLen=9;
-            int kmax=instMemWidth/2/basicLen;
-            for(int k=0; k<kmax; k++){
-                mVec[k]=nVec[k*basicLen];
-                mVec[k+instMemWidth/2]=nVec[k*basicLen+instMemWidth/2];
-                for(int index=1; index<basicLen; index++){
-                    mVec[kmax+k*(basicLen-1)+index-1]=nVec[k*basicLen+index];
-                    mVec[kmax+k*(basicLen-1)+index-1+instMemWidth/2]=nVec[k*basicLen+index+instMemWidth/2];
-                }
-            }
-
-            /*
-               if(lineNum==9 || lineNum==10){
-               cout << "new= " << mVec << endl;
-               }
-               */
-
-            // Transform the bin to be hex
-            for(int k=0; k<instMemWidth/4; k++){
+            HeadFileHandle << "0x";
+            for(int k=0; k<DataWidth/4; k++){
                 int id=k*4;
-                if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '0';
+                if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HeadFileHandle << '0';
                 }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '1';
+                else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HeadFileHandle << '1';
                 }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '2';
+                else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HeadFileHandle << '2';
                 }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '3';
+                else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                    HeadFileHandle << '3';
                 }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '4';
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HeadFileHandle << '4';
                 }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '5';
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HeadFileHandle << '5';
                 }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '6';
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HeadFileHandle << '6';
                 }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '7';
+                else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                    HeadFileHandle << '7';
                 }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '8';
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HeadFileHandle << '8';
                 }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '9';
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HeadFileHandle << '9';
                 }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'A';
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HeadFileHandle << 'A';
                 }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << 'B';
+                else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
+                    HeadFileHandle << 'B';
                 }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << 'C';
+                else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
+                    HeadFileHandle << 'C';
                 }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << 'D';
+                else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
+                    HeadFileHandle << 'D';
                 }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'E';
+                else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
+                    HeadFileHandle << 'E';
                 }
                 else{
-                    fMemHandle << 'F';
-                }
-
-                /*if(k+1==instMemWidth/8.0){
-                  fMemHandle << endl;
-                  }*/
-            }
-            fMemHandle<<endl;
-        }
-        fHandle.close();
-    }
-    fMemHandle.close();
-}
-
-void Scheduler::DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const int &memory_capacity){
-    //Data memory initialization
-    vector<int> memory_data;
-    memory_data.resize(memory_capacity);
-    for(int i=0; i<memory_capacity; i++){
-        memory_data[i]=0;
-    }
-
-    //Get the initial value of data memory
-    for(int i=0; i<GLvar::maximum_operation_num; i++){
-        if(OpToAddr.count(i)>0){
-            int addr=OpToAddr[i];
-            memory_data[addr]=DFG->DFG_vertex[i]->vertex_value;
-        }
-    }
-
-    //Open a file to store initialized data of the data memory
-    ostringstream os;
-    os<<"./result/PE-"<<"mem-"<<PE_id<<".coe";
-    string fName=os.str();
-    ofstream fHandle;
-    fHandle.open(fName.c_str());
-    if(!fHandle.is_open()){
-        DEBUG1("Fail to create the PE-mem.coe");
-    }
-
-    //Transform the decimal data to be binary data and store them in the file.
-    vector<int>bitList;
-    for(int i=0; i<memory_capacity; i++){
-        int dec_data=memory_data[i];
-        int width=16;
-        while(dec_data!=1 && dec_data!=0){
-            bitList.push_back(dec_data%2);
-            dec_data=dec_data/2;
-            width--;
-        }
-        bitList.push_back(dec_data);
-        width--;
-        while(width!=0){
-            int tmp=0;
-            bitList.push_back(tmp);
-            width--;
-        }
-
-        vector<int>::reverse_iterator it;
-        for(it=bitList.rbegin(); it!=bitList.rend(); it++){
-            fHandle<<(*it);
-        }
-        fHandle<<endl;
-        bitList.clear();
-    }
-}
-
-void Scheduler::DataMemoryDumpMem(){
-    const int DataMemDepth=1024;
-    const int DataMemWidth=16;
-    const int readWidth=20;
-
-    string fMemName="./result/data.mem";
-    ofstream fMemHandle;
-    fMemHandle.open(fMemName.c_str());
-    if(!fMemHandle.is_open()){
-        DEBUG1("Fail to create data.mem\n");
-    }
-
-    char vec[readWidth];
-    for(int i=0; i<GLvar::CGRA_scale; i++){
-        int intAddr=i*DataMemDepth*DataMemWidth/8;
-
-        char hexAddr[20];
-        if(i==0){
-            sprintf(hexAddr, "@00000000");
-        }
-        else{
-            sprintf(hexAddr, "@0000%X", intAddr);
-        }
-        fMemHandle << hexAddr <<endl;
-
-        ostringstream os;
-        os<<"./result/PE-"<<"mem-"<<i<<".coe";
-        string fName=os.str();
-        ifstream fHandle;
-        fHandle.open(fName.c_str());
-        if(!fHandle.is_open()){
-            DEBUG1("Fail to open the PE-mem.coe");
-        }
-
-        while(fHandle.getline(vec,readWidth)){
-
-            char mVec[DataMemWidth];
-            for(int k=0; k<DataMemWidth; k++){
-                mVec[k]=vec[k];
-            }
-
-            // Dump the bin to be hex
-            for(int k=0; k<DataMemWidth/4; k++){
-                int id=k*4;
-                if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '0';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '1';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '2';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '3';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '4';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '5';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '6';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '7';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '8';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '9';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'A';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << 'B';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << 'C';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << 'D';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'E';
-                }
-                else{
-                    fMemHandle << 'F';
+                    HeadFileHandle << 'F';
                 }
             }
-            fMemHandle<<endl;
-        }
-        fHandle.close();
-    }
-    fMemHandle.close();
-}
-
-void Scheduler::SchedulingResultDump(){
-    ostringstream os;
-    os<<"./result/dst-"<<"op"<<".txt";
-    string fName=os.str();
-    ofstream fHandle;
-    fHandle.open(fName.c_str());
-    if(!fHandle.is_open()){
-        DEBUG1("Fail to create the dst-op.txt");
-    }
-
-    for(int i=0; i<GLvar::maximum_operation_num; i++){
-        //if(DFG->DFG_vertex[i]->vertex_type==OutputData){
-        fHandle<<DFG->DFG_vertex[i]->vertex_id<<" ";
-        fHandle<<DFG->DFG_vertex[i]->vertex_value<<" ";
-        fHandle<<DFG->DFG_vertex[i]->vertex_attribute.execution_PE_id<<" ";
-        fHandle<<endl;
-        //}
-    }
-
-    fHandle.close();
-}
-
-void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
-    int outside_bram_num=2;
-    int IO_PE[2]={0,1};
-    for(int i=0; i<outside_bram_num; i++){
-
-        ostringstream os;
-        os<<"./result/outside-"<<"bram-addr-"<<i<<".coe";
-        string fName=os.str();
-        ofstream fHandle;
-        fHandle.open(fName.c_str());
-        if(!fHandle.is_open()){
-            DEBUG1("Fail to create the outside-bram-addr-.coe");
-        }
-
-        fHandle << "memory_initialization_radix=2;" <<endl;
-        fHandle << "memory_initialization_vector=" <<endl;
-        int IO_PE_id=IO_PE[i];
-        vector<unsigned int> bram_addr;
-        bram_addr.resize(final_execution_time+2);
-        vector<int> load_store_idle; //0->load, 1->store, 2->idle
-        load_store_idle.resize(final_execution_time+2);
-        for(int j=0; j<final_execution_time+1; j++){
-            bram_addr[j]=0;
-            load_store_idle[j]=2;
-        }
-
-        for(int j=1; j<final_execution_time; j++){
-
-            bool load_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->load_path_reserved==true;
-            int load_mux=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->load_mux;
-            bool store_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->store_path_reserved==true;
-            if(load_active && load_mux==0){
-                if(load_store_idle[j-1]==1){
-                    DEBUG1("Unexpected load state!\n");
-                }
-                load_store_idle[j-1]=0;
-                int loaded_op = CGRA->PE_array[IO_PE_id]->component_trace[j-1]->component_activity->load_op;
-                bram_addr[j-1] = DFG->DFG_vertex[loaded_op]->vertex_bram_addr;
-            }
-
-            if(store_active){
-                if(load_store_idle[j]==0){
-                    DEBUG1("Unexpected store state!\n");
-                }
-                load_store_idle[j+2]=1;
-                int stored_op = CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->store_op;
-                bram_addr[j+2] = DFG->DFG_vertex[stored_op]->vertex_bram_addr;
-            }
-
-        }
-
-        list<int> bitList;
-        list<int>::reverse_iterator it;
-        int dec_data;
-        int width; 
-        for(int j=0; j<final_execution_time+2; j++){
-
-            //The highest bit indicates the enable signal of the bram and the 
-            //following 4bits represent the byte wena signals.
-            if(load_store_idle[j]==0){
-                fHandle << "10000";
-            }
-            else if(load_store_idle[j]==1){
-                fHandle << "11111";
+            if(LineNum==DataNum+2){
+                HeadFileHandle << " };";
             }
             else{
-                fHandle << "00000";
+                HeadFileHandle << ", ";
             }
-
-            /* ----------------------------------------------------------------
-             * The following 3 bits i.e. [26:24] represent the 
-             * computation status.
-             * 001 kernel computation is done, and CPU will be acknowledged.
-             * 010 One iteration of the CGRA computation is done. The next iteration 
-             *     will continue after a few cycles' preparation (controlling delay).
-             * 100 CGRA computation is on going.
-             * --------------------------------------------------------------*/
-            if(j==(final_execution_time+1)){
-                fHandle << "001";
+        }
+        for(int i=LineNum+1; i<=DataNum+2; i++){
+            if(i==DataNum+2){
+                HeadFileHandle << "0x00000000 };";
             }
             else{
-                fHandle << "100"; // The CGRA kernel iterates only once.
+                HeadFileHandle << "0x00000000, ";
             }
-
-            //Transform decimal addr to 24-bit binary 
-            dec_data=bram_addr[j];
-            width=24;
-            if(dec_data==NaN){
-                dec_data=0;
-            }
-            while(dec_data!=1 && dec_data!=0){
-                bitList.push_back(dec_data%2);
-                dec_data=dec_data/2;
-                width--;
-            }
-            bitList.push_back(dec_data);
-            width--;
-            while(width!=0){
-                int tmp=0;
-                bitList.push_back(tmp);
-                width--;
-            }
-            for(it=bitList.rbegin(); it!=bitList.rend(); it++){
-                fHandle << (*it);
-            }
-            bitList.clear();
-
-            fHandle<<endl;
         }
-
-        fHandle.close();
+        HeadFileHandle.close();
+        BinFileHandle.close();
 
     }
 
-    Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mif", 32);
-    Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mif", 32);
-    Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mif", 32);
-    Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mif", 32);
-    Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/src_ctrl_words.h", "SrcMemCtrlWords", 32);
-    Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/result_ctrl_words.h", "ResultMemCtrlWords", 32);
-    Bin2HeadFile("./result/outside-data-memory-0.coe", "./result/initialized_src.h", "Src", 32);
-    Bin2HeadFile("./result/outside-data-memory-1.coe", "./result/initialized_result.h", "Result", 32);
-
-}
-
-void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth){
-
-    int DataNum=FileLineCount(BinFileName)-2;
-    ifstream BinFileHandle;
-    BinFileHandle.open(BinFileName.c_str());
-    if(!BinFileHandle.is_open()){
-        DEBUG1("Failed to open %s\n", BinFileName.c_str());  
-    }
-
-    ofstream HeadFileHandle;
-    HeadFileHandle.open(HeadFileName.c_str());
-    if(!HeadFileHandle.is_open()){
-        DEBUG1("Failed to create %s\n", HeadFileName.c_str());
-    }
-
-    char BinVec[100];
-    int LineNum=0;
-    HeadFileHandle << "unsigned int " << ArrayName << "[" << DataNum <<"]={";
-    while(BinFileHandle.getline(BinVec,100)){
-        LineNum++;
-
-        //Ignore the first two lines due to coe file format.
-        if(LineNum<3){
-            continue;
+    int Scheduler::FileLineCount(const string &FileName){
+        int LineCnt=0;
+        ifstream FileHandle;
+        FileHandle.open(FileName.c_str());
+        if(!FileHandle.is_open()){
+            DEBUG1("File open failed!\n");
         }
-
-        HeadFileHandle << "0x";
-        for(int k=0; k<DataWidth/4; k++){
-            int id=k*4;
-            if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << '0';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << '1';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << '2';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HeadFileHandle << '3';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << '4';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << '5';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << '6';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HeadFileHandle << '7';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << '8';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << '9';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << 'A';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HeadFileHandle << 'B';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << 'C';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << 'D';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << 'E';
-            }
-            else{
-                HeadFileHandle << 'F';
-            }
+        char LineVec[200];
+        while(FileHandle.getline(LineVec, 200)){
+            LineCnt++;
         }
-        if(LineNum==DataNum+2){
-            HeadFileHandle << " };";
-        }
-        else{
-            HeadFileHandle << ", ";
-        }
+        return LineCnt;
     }
-    for(int i=LineNum+1; i<=DataNum+2; i++){
-        if(i==DataNum+2){
-            HeadFileHandle << "0x00000000 };";
-        }
-        else{
-            HeadFileHandle << "0x00000000, ";
-        }
-    }
-    HeadFileHandle.close();
-    BinFileHandle.close();
-
-}
-
-int Scheduler::FileLineCount(const string &FileName){
-    int LineCnt=0;
-    ifstream FileHandle;
-    FileHandle.open(FileName.c_str());
-    if(!FileHandle.is_open()){
-        DEBUG1("File open failed!\n");
-    }
-    char LineVec[200];
-    while(FileHandle.getline(LineVec, 200)){
-        LineCnt++;
-    }
-    return LineCnt;
-}
 

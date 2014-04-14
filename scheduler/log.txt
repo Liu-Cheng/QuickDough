@@ -1,0 +1,4 @@
+g++ -c -DDEBUG -g -Wall Scheduler.cpp -o  Scheduler.o
+Scheduler.cpp: In member function ‘void Scheduler::ListSchedulingAlgorithmOPFirst()’:
+Scheduler.cpp:681:18: error: ‘class DataFlowGraph’ has no member named ‘ParentSet’
+make: *** [Scheduler.o] Error 1

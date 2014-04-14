@@ -46,7 +46,6 @@ class CoarseGrainReconArch{
         int GetParentID(const int &src, const int &dst);
         int GetChildPEID(const int &PE_id, const int &mux_output);
         int GetParentPEID(const int &PE_id, const int &mux_input);
-        bool ActivityCheck();
         void LinkUtilizationAnalysis(const int &begin_time, const int &end_time);
         ~CoarseGrainReconArch();
 

@@ -27,21 +27,19 @@ class Scheduler{
     public:
         DataFlowGraph* DFG;
         CoarseGrainReconArch* CGRA;
-        SchedulingType scheduling_type;
         OutMemDataScheduling out_mem_data_scheduling;
 
         Scheduler(DataFlowGraph* init_DFG, CoarseGrainReconArch* init_CGRA);
         void Scheduling();
         bool OperationResultCheck();
         ofstream fTrace;
-        int break_point_store_time;
+        //int break_point_store_time;
         int last_op_store_time;
 
     private:
         void LoadParameter();
         void InputOperationScheduling();
         void SchedulerInit(DataFlowGraph* init_DFG, CoarseGrainReconArch* init_CGRA);
-        void ModuloSchedulingAlgorithm();
         void ListSchedulingAlgorithmOPFirst();
         void ListSchedulingAlgorithmPEFirst();
         int StaticOperationSelection();

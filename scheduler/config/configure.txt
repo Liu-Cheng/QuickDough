@@ -4,7 +4,7 @@ verification_level 0
 CGRA_scale 4
 row 2
 col 2
-DFG_type MM
+DFG_name mm
 maximum_operation_num 30000
 maximum_simulation_time 10000
 topology_type Specified
@@ -12,7 +12,6 @@ output_operation_proportion 0.05
 input_operation_proportion 0.05
 output_operation_num 5
 input_operation_num 5
-scheduling_type ListScheduling
 routing_algorithm SimulatedSearch
 out_mem_data_scheduling OutMemModeling 
 maximum_data_memory_addr_width 15
