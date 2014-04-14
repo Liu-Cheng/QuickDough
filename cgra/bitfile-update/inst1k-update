@@ -1,0 +1,199 @@
+#!/usr/bin/perl -w
+
+######################################################################## 
+# Multiple RAM and ROM initialization
+#
+# Description
+# 1. Generate BMM File according to xdl file
+# 2. Initialize the BRAM using data2mem command 
+# 
+# Acknowledgement
+# Stephen Douglas Craven from Configurable Computing Lab of Virginia Tech
+# developed a script for his openfire project in Jan 17th 2006, and Cheng Liu
+# extended it for his own CGRA based high level synthesis project in 2012.
+#
+# History
+# 1/17/2006 -- Added support for variable MB names
+# 6/27/2012 -- Added support for multiple independent RAM/ROM blocks
+# 4/15/2014 -- Fix the bug when ramloop[1] appears in front of ramloop[0]
+#
+########################################################################
+
+# Globals
+use vars qw/ %opt /;
+use Time::HiRes qw/time/;
+
+#---------------------------------------------------------------------
+#-Start of the program
+#---------------------------------------------------------------------
+my $start_time=time();
+
+init();
+GetUserOpt();
+
+if (-r $xdl_file) {
+} 
+else {	
+    system("xdl -ncd2xdl $ncd_file $xdl_file");
+}
+
+bmmgen(); 
+
+$error = `data2mem -bm $bmm_file`;
+if($error)  {
+    print "$error";
+    print "Error in BMM File!  Sorry!\n";
+}
+
+# Updata instruction memory
+$newbit_file = "new".$bit_file;
+`data2mem -bm $bmm_file -bd inst.mem -bt $bit_file -o b $newbit_file`;
+
+# Verification of the updating
+`data2mem -bm $bmm_file  -bt $newbit_file -d > newdump.txt`;
+`data2mem -bm $bmm_file  -bt $bit_file -d > olddump.txt`;
+`diff newdump.txt olddump.txt`;
+
+
+my $end_time=time();
+print "Total bitstream update time is ".($end_time-$start_time)."s!\n";
+
+
+#----------------------------------------------------------------------
+# DATA2MEM needs a BMM File to describe the memory layout and BRAM 
+# physical locations. when there is no bmm file, we will build a 
+# BMM file using information extracted from the XDL file
+# --------------------------------------------------------------------
+sub bmmgen {
+
+    open(inst_bmm_file, ">"."$bmm_file");
+
+    # Create BMM file for inst memory. Note that each BRAM is 9*1024 Byte = 1024 x 72 bit
+    $slb=0;  
+    $mlb=$row_num*$col_num*9*1024-1;
+    printf inst_bmm_file ("ADDRESS_SPACE PE"."_inst_mem RAMB36 [0x0000%X:0x000%X]\n", $slb, $mlb);
+
+    for($rcount = 0; $rcount < $row_num; $rcount++){
+        for($ccount = 0; $ccount < $col_num; $ccount++){
+
+            my $mem_name;
+            my $loc_name;
+            $target_name = "base_system_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."torus".$row_num."x".$col_num."/"."PE".$rcount.$ccount.'/'."Inst_Mem".'/'."rom1024";
+            $target_lines = `grep '^inst' $xdl_file | grep $target_name | grep 'ramloop.0.'`; 
+
+            print  inst_bmm_file "    BUS_BLOCK\n";
+            foreach $_ (split(/\n/, $target_lines)){
+                if(/inst \"base_system([^"]+).*RAMB36_([\w\d]+)/) {
+                    $mem_name = $1;
+                    $loc_name = $2;
+                }
+
+                print  inst_bmm_file "    base_system"."$mem_name"." [35:0] PLACED = $loc_name;\n";
+            }
+
+            $target_name = "base_system_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."torus".$row_num."x".$col_num."/"."PE".$rcount.$ccount.'/'."Inst_Mem".'/'."rom1024";
+            $target_lines = `grep '^inst' $xdl_file | grep $target_name | grep -in 'ramloop.1.'`; 
+            foreach $_ (split(/\n/, $target_lines)){
+                if(/inst \"base_system([^"]+).*RAMB36_([\w\d]+)/) {
+                    $mem_name = $1;
+                    $loc_name = $2;
+                }
+
+                print  inst_bmm_file "    base_system"."$mem_name"." [71:36] PLACED = $loc_name;\n";
+            }
+
+            print  inst_bmm_file "    END_BUS_BLOCK;\n";
+            print  inst_bmm_file "\n";
+        }
+    }
+    print inst_bmm_file "END_ADDRESS_SPACE;\n";
+    close(inst_bmm_file);
+}
+
+
+sub GetUserOpt {
+    if($opt{t}) {
+        $top_level_name = $opt{t};
+    } 
+    else {
+        $top_level_name = "top";
+    }
+
+    if($opt{n}) {
+        $ncd_file = $opt{n};
+    } 
+    else {
+        $ncd_file = $top_level_name.".ncd";
+    }
+
+    if($opt{x}){
+        $xdl_file = $opt{x};
+    }
+    else{
+        $xdl_file = $top_level_name.".xdl";
+    }
+
+    if($opt{o}) {
+        $bmm_file = $opt{o};
+    } 
+    else {
+        $bmm_file = $top_level_name.".bmm";
+    }
+
+    if($opt{b}) {
+        $bit_file = $opt{b};
+    } 
+    else {
+        $bit_file = $top_level_name.".bit";
+    }
+
+    if($opt{r}) {
+        $row_num=$opt{r};
+    } 
+    else {
+        $row_num=2;
+    }
+
+    if($opt{c}) {
+        $col_num=$opt{c};
+    } 
+    else {
+        $col_num=2;
+    }
+
+}
+
+# Command line options processing
+sub init {
+    use Getopt::Std;
+    my $opt_string = 'o:n:t:b:x:r:c:h';
+    getopts( "$opt_string", \%opt ) or usage();
+    usage() if ($opt{h});
+}
+
+# Message about this program and how to use it
+sub usage {
+    print STDERR << "EOF";
+
+This program creates a BMM file from an NCD which can be used to 
+write initial BRAM contents to a bitstream directly.
+
+NOTE: XDL and DATA2MEM must be installed and in the user's path.
+
+usage: $0 [-h] [-n NCD_FILE -o BMM_FILE] [-r ROM_FILE -b BITSTREAM]
+
+ -h		      : this (help) message
+ -n NCD file	      : NCD_FILE containing placed BRAMs (default = top.ncd)
+ -o BMM file	      : BMM_FILE to create (default = top.bmm)
+ -t top module        : name of the top-level module (default = top)
+ -b bitstream         : bitstream to update with BRAM contents (default = top.bit)
+ -x XDL file          : use specified XDL file (w/o flag, generates own from NCD_FILE)
+ -r row number        : row numer of the cgra (default row=4)
+ -c column number     : column number of the cgra (default column=4)
+
+example: $0 -n top.ncd -o top.bmm -b top.bit
+example: $0 -o top.bmm -t top
+
+EOF
+    exit;
+}
