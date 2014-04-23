@@ -588,7 +588,7 @@ void DataFlowGraph::DFGCalculation(vector<int> &operation_result){
     int result;
     vector<Vertex*>::iterator it;
     for(it=DFG_vertex.begin(); it!=DFG_vertex.end(); it++){
-        if((*it)->vertex_type!=InputData){
+        if((*it)->vertex_type!=InputData && (*it)->parents.size()>0){
            int src_val0 =  (*it)->parents[0]->vertex_value;
            int src_val1 = (*it)->parents[1]->vertex_value;
            int src_val2 = (*it)->parents[2]->vertex_value;

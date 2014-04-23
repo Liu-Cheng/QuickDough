@@ -50,9 +50,9 @@ $newbit_file = "new".$bit_file;
 `data2mem -bm $bmm_file -bd inst.mem -bt $bit_file -o b $newbit_file`;
 
 # Verification of the updating
-`data2mem -bm $bmm_file  -bt $newbit_file -d > newdump.txt`;
-`data2mem -bm $bmm_file  -bt $bit_file -d > olddump.txt`;
-`diff newdump.txt olddump.txt`;
+#`data2mem -bm $bmm_file  -bt $newbit_file -d > newdump.txt`;
+#`data2mem -bm $bmm_file  -bt $bit_file -d > olddump.txt`;
+#`diff newdump.txt olddump.txt`;
 
 
 my $end_time=time();
@@ -78,28 +78,30 @@ sub bmmgen {
 
             my $mem_name;
             my $loc_name;
-            $target_name = "base_system_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."torus".$row_num."x".$col_num."/"."PE".$rcount.$ccount.'/'."Inst_Mem".'/'."rom1024";
+            $target_name =
+            "base_sys_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."Torus".$row_num."x".$col_num."/"."PE".$rcount.$ccount.'/'."Inst_Mem".'/'."Inst_Rom";
             $target_lines = `grep '^inst' $xdl_file | grep $target_name | grep 'ramloop.0.'`; 
 
             print  inst_bmm_file "    BUS_BLOCK\n";
             foreach $_ (split(/\n/, $target_lines)){
-                if(/inst \"base_system([^"]+).*RAMB36_([\w\d]+)/) {
+                if(/inst \"base_sys([^"]+).*RAMB36_([\w\d]+)/) {
                     $mem_name = $1;
                     $loc_name = $2;
                 }
 
-                print  inst_bmm_file "    base_system"."$mem_name"." [35:0] PLACED = $loc_name;\n";
+                print  inst_bmm_file "    base_sys"."$mem_name"." [35:0] PLACED = $loc_name;\n";
             }
 
-            $target_name = "base_system_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."torus".$row_num."x".$col_num."/"."PE".$rcount.$ccount.'/'."Inst_Mem".'/'."rom1024";
+            $target_name =
+            "base_sys_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."Torus".$row_num."x".$col_num."/"."PE".$rcount.$ccount.'/'."Inst_Mem".'/'."Inst_Rom";
             $target_lines = `grep '^inst' $xdl_file | grep $target_name | grep -in 'ramloop.1.'`; 
             foreach $_ (split(/\n/, $target_lines)){
-                if(/inst \"base_system([^"]+).*RAMB36_([\w\d]+)/) {
+                if(/inst \"base_sys([^"]+).*RAMB36_([\w\d]+)/) {
                     $mem_name = $1;
                     $loc_name = $2;
                 }
 
-                print  inst_bmm_file "    base_system"."$mem_name"." [71:36] PLACED = $loc_name;\n";
+                print  inst_bmm_file "    base_sys"."$mem_name"." [71:36] PLACED = $loc_name;\n";
             }
 
             print  inst_bmm_file "    END_BUS_BLOCK;\n";

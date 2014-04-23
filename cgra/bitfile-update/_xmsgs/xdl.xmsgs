@@ -5,9 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="Portability" num="90" delta="new" >Command line error: <arg fmt="%z" index="1">Argument &lt;ncdfile&gt; must be specified.
-</arg>
-</msg>
-
 </messages>
 
