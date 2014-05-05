@@ -1,8 +1,8 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-#define B 8
-#define N 10
-#define M 2
+#define B 1
+#define N 1000
+#define M 1
 
 #endif

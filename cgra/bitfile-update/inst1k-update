@@ -46,11 +46,10 @@ if($error)  {
 }
 
 # Updata instruction memory
-$newbit_file = "new".$bit_file;
-`data2mem -bm $bmm_file -bd inst.mem -bt $bit_file -o b $newbit_file`;
+`data2mem -bm $bmm_file -bd $mem_file -bt $bit_file -o b $new_bitfile`;
 
 # Verification of the updating
-#`data2mem -bm $bmm_file  -bt $newbit_file -d > newdump.txt`;
+#`data2mem -bm $bmm_file  -bt $new_bitfile -d > newdump.txt`;
 #`data2mem -bm $bmm_file  -bt $bit_file -d > olddump.txt`;
 #`diff newdump.txt olddump.txt`;
 
@@ -149,6 +148,20 @@ sub GetUserOpt {
         $bit_file = $top_level_name.".bit";
     }
 
+    if($opt{m}){
+        $mem_file = $opt{m};
+    }
+    else{
+        $mem_file = "inst.mem";
+    }
+
+    if($opt{e}){
+        $new_bitfile = $opt{e};
+    }
+    else{
+        $new_bitfile = "newtop.bit";
+    }
+
     if($opt{r}) {
         $row_num=$opt{r};
     } 
@@ -168,7 +181,7 @@ sub GetUserOpt {
 # Command line options processing
 sub init {
     use Getopt::Std;
-    my $opt_string = 'o:n:t:b:x:r:c:h';
+    my $opt_string = 'o:m:n:t:b:x:r:c:e:h';
     getopts( "$opt_string", \%opt ) or usage();
     usage() if ($opt{h});
 }
@@ -192,9 +205,11 @@ usage: $0 [-h] [-n NCD_FILE -o BMM_FILE] [-r ROM_FILE -b BITSTREAM]
  -x XDL file          : use specified XDL file (w/o flag, generates own from NCD_FILE)
  -r row number        : row numer of the cgra (default row=4)
  -c column number     : column number of the cgra (default column=4)
+ -m Mem file          : data that is going to be put into the bitstream
+ -e new bitstream     : bitstream that is going to be exported
 
-example: $0 -n top.ncd -o top.bmm -b top.bit
-example: $0 -o top.bmm -t top
+example: $0 -n top.ncd -o top.bmm -b top.bit -m inst.mem -e newtop.bit
+example: $0 -o top.bmm -t top -m inst.mem -e newtop.bit
 
 EOF
     exit;

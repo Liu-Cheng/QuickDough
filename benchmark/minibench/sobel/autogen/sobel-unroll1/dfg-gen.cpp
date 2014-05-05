@@ -13,11 +13,8 @@ int data_to_id(int idx, OPTYPE op_type);
 int data_to_id(int const_value);
 void loop_io_addr_remap(const std::string &dfg_name);
 
-int bram0_addr=0; //Inbut buffer address
-int bram1_addr=0; //Output buffer address
 int const_in[5]={0, 8, 16, 24, 255}; //The constant array is put here to make id search easier.
 const int const_num=5;
-//int end_id=500;
 
 int main(){
 
@@ -40,11 +37,11 @@ int main(){
 
 void io_init(int sub_in[R*C/4+18], int sub_out[R*C/4]){
     unsigned char fig_in[R][C]={
-#include "fig_in_small.txt"
+//#include "fig_in_small.txt"
     };
 
     unsigned char fig_out[R][C]={
-#include "fig_out_small.txt"
+//#include "fig_out_small.txt"
     };
 
     int gx[3][3]={
@@ -58,6 +55,37 @@ void io_init(int sub_in[R*C/4+18], int sub_out[R*C/4]){
         {  0,  0,  0 },
         { -1, -2, -1 }
     };
+
+    for(int i=0; i<R; i++){
+        for(int j=0; j<C; j++){
+            fig_in[i][j] = rand()%256;
+        }
+    }
+
+    for(int i=0; i<R; i++){
+        for(int j=0; j<C; j++){
+            if(i==0 || j==0 || i==R-1 || j==C-1){
+                fig_out[i][j] = 255;
+            }
+            else{
+                int sumx = 0;
+                int sumy = 0;
+                for(int p=-1; p<=1; p++){
+                    for(int q=-1; q<=1; q++){
+                        sumx += fig_in[i+p][j+q]*gx[p+1][q+1];
+                        sumy += fig_in[i+p][j+q]*gy[p+1][q+1];
+                    }
+                }
+                int sum = abs(sumx) + abs(sumy);
+                if(sum>255){
+                    fig_out[i][j] = 0;
+                }
+                else{
+                    fig_out[i][j] = 255-sum;
+                }
+            }
+        }
+    }
 
     int id=0;
     for(int i=0; i<R; i++){
@@ -101,6 +129,10 @@ void io_init(int sub_in[R*C/4+18], int sub_out[R*C/4]){
 }
 
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[R*C/4+18], int sub_out[R*C/4]){
+
+    int bram0_addr=0; //Inbut buffer address
+    int bram1_addr=0; //Output buffer address
+
     /* Put constants into the op_array */
     for(int i=0; i<const_num; i++){
         Operand* op_ptr=new Operand();
@@ -146,14 +178,14 @@ int data_to_id(int const_val){
             return i;
         }
     }
-    printf("Couldn't find the specified the constant!\n");
+    printf("Unknown constant input!\n");
     exit(EXIT_FAILURE);
 }
 
 void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){
 
-    for(int i=1; i<R-1; i++){
-        for(int j=4; j<C-4; j=j+4){
+    for(int i=0; i<R; i++){
+        for(int j=0; j<C; j=j+4){
 
             /* Operands for the pixl computation */
             Operand* opx[4];
@@ -177,6 +209,7 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                     int src_id2[4];
                     int last_idx[4];
                     int last_idy[4];
+
                     //int rval;
                     Operand* pixl[4];
                     gx_id=R*C/4+(p+1)*3+(q+1);
@@ -189,18 +222,26 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                     for(int k=0; k<4; k++){
 
                         /* Pixl[k] calculation */
-                        byte_id=(i+p)*R+j+q+k;
+                        byte_id=(i+p)*C+j+q+k;
                         word_id=byte_id/4;
                         byte_lid=byte_id%4;
                         pixl[k]=new Operand();
                         op_array.push_back(pixl[k]);
                         Instruction* inst0=new Instruction();
                         inst_array.push_back(inst0);
-                        src_id0[k]=data_to_id(word_id, INVAR);
-                        src_id1[k]=data_to_id(byte_lid*8); //This operand is a constant (0, 8, 16, 24)
-                        src_id2[k]=data_to_id(0xff);
-                        inst0->Set_Instruction(pixl[k]->op_id, RSFAND, src_id0[k], src_id1[k], src_id2[k]);
-                        
+                        if((i+p)<0 || (j+q+k)<0 || (i+p)>=R || (j+q+k)>=C){
+                            src_id0[k] = 0;
+                            src_id1[k] = 0;
+                            src_id2[k] = 0;
+                            inst0->Set_Instruction(pixl[k]->op_id, ADDADD, src_id0[k], src_id1[k], src_id2[k]);
+                        }
+                        else{
+                            src_id0[k]=data_to_id(word_id, INVAR);
+                            src_id1[k]=data_to_id(byte_lid*8); //This operand is a constant (0, 8, 16, 24)
+                            src_id2[k]=data_to_id(0xff);
+                            inst0->Set_Instruction(pixl[k]->op_id, RSFAND, src_id0[k], src_id1[k], src_id2[k]);
+                        }
+
                         /*
                         rval=(op_array[src_id0[k]]->op_value >> op_array[src_id1[k]]->op_value) & 0xff;
                         pixl[k]->op_value=rval;
@@ -260,7 +301,7 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                                 op_array[src_id2[k]]->Display();
                             }
                             */
-                         
+
                         }
                         else if(p==1 && q==1){
                             Instruction* curr_inst=new Instruction();
@@ -301,6 +342,7 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                                 op_array[src_id2[k]]->Display();
                             }
                             */
+
                         }
                         else{
                             Operand* curr_op=new Operand();
@@ -326,7 +368,7 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                                 op_array[src_id2[k]]->Display();
                             }
                             */
-                            
+
                             curr_op=new Operand();
                             op_array.push_back(curr_op);
                             curr_inst=new Instruction();
@@ -391,7 +433,7 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
                     op_array[0]->Display();
                 }
                 */
-                
+
                 Operand* abs_sum=new Operand();
                 op_array.push_back(abs_sum);
                 Instruction* inst_sum=new Instruction();
@@ -499,7 +541,7 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
             }
             */
             
-            int nid=(i*R+j)>>2;
+            int nid=(i*C+j)>>2;
             Instruction* inst_out=new Instruction();
             inst_out->Set_Instruction(data_to_id(nid, OUTVAR), LSFADD, op[3]->op_id, data_to_id(24), op_tmp2->op_id);
             inst_array.push_back(inst_out);
@@ -550,24 +592,30 @@ void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &ins
 
 
 void verify(const std::vector<Operand*> &op_array, int sub_out[R*C/4]){
+
     /* Since the kernel just deals with the kernel part of the computation,
      * we will not verify the part that is not assigned to FPGA.*/
+
+    int computed_result[R*C/4];
     for(int i=0; i<R; i++){
         for(int j=0; j<C; j=j+4){
-            if(i==0 || j==0 || i==R-1 || j==C-1){
-                continue;
-            }
-            else if(j<=3 || j>=C-4){
-                continue;
-            }
-            else{
-                int index=(i*R+j)/4;
-                int op_id=data_to_id(index, OUTVAR);
-                if(op_array[op_id]->op_value!=sub_out[index]){
-                    printf("DFG computation is wrong!\n");
-                    printf("expected[%d]=%d, computed result=%d \n", index, sub_out[index], op_array[op_id]->op_value);
-                    exit(EXIT_FAILURE);
-                }
+            int index=(i*C+j)/4;
+            int op_id=data_to_id(index, OUTVAR);
+            computed_result[index] = op_array[op_id]->op_value;
+        }
+    }
+
+    // sub-out to char
+    unsigned char* ptr1;
+    unsigned char* ptr2;
+    ptr1 = (unsigned char*) sub_out;
+    ptr2 = (unsigned char*) computed_result;
+
+    for(int i=1; i<R-1; i++){
+        for(int j=1; j<C-1; j++){
+            if(ptr1[i*C+j]!=ptr2[i*C+j]){
+                printf("sub-out[%d][%d] is wrong!\n", i, j);
+                exit(EXIT_FAILURE);
             }
         }
     }
@@ -640,6 +688,7 @@ void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array
         opcode_fhandle << map_it->first << " " << map_it->second << std::endl;
     }
     opcode_fhandle.close();
+
 }
 
 void loop_io_addr_remap(const std::string &dfg_name){
@@ -722,20 +771,17 @@ void loop_io_addr_remap(const std::string &dfg_name){
         }
 
         //Normal output
-        for(int i=0; i<R*C/4; i++){
-            //As both the first row and last row of data are invalid.
-            if(i<C/4 || i>=(R-1)*C/4){
-                kernel_io_addr[row_index][it] = sub_out_addr[0];
+        for(int i=0; i<R; i++){
+            for(int j=0; j<C; j=j+4){
+                int out_index = ((p*(R-2)+i)*C+j)/4;
+                kernel_io_addr[row_index][it] = sub_out_addr[out_index];
+                if(p==0){
+                    kernel_io_addr[row_index][0] = data_to_id((i*C+j)/4, OUTVAR);
+                }
+                row_index++;
             }
-            else{
-                kernel_io_addr[row_index][it] = sub_out_addr[p*(R*C/4)+i-2*p*C/4];
-            }
-            if(p==0){
-                kernel_io_addr[row_index][0] = data_to_id(i, OUTVAR);
-            }
-            row_index++;
         }
-
+        
         //Intermediate output
 
         it++;

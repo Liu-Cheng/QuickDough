@@ -1,0 +1,35 @@
+
+		Fully Pipelined Soft-CGRA Scheduling
+	(C) E.E.E Department, The University of Hong Kong
+
+DFG Parameters 
+vertex_num: 1201
+input_vertex_num: 201
+output_vertex_num: 100
+average_degree: 2.49792
+average vertex priority: 5.67111
+vertex priority distribution: 
+1: 100
+2: 120
+3: 120
+4: 120
+5: 120
+6: 120
+7: 120
+8: 120
+9: 120
+10: 120
+11: 21
+Operation scheduling starts!
+Operation scheduling is completed!
+Kernel execution time: 577 cycles
+Start to dump the scheduling result for hardware implementation!
+PE    output port    memory read    memory write    dsp pipeline      
+0     0.3189         2.071          0.8622          0.477             
+1     0.08922        1.648          0.8816          0.4417            
+2     0.1078         1.647          0.7721          0.4788            
+3     0.06449        1.226          0.7208          0.3693            
+41 31 33 31 
+Scheduling result dump is done! 
+Total compilation time: 0.47 seconds
+Scheduling algorithm obtains the results as expected!

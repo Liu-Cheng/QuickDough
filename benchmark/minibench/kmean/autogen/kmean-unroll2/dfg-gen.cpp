@@ -2,6 +2,7 @@
 #include "Operand.h"
 #include "Instruction.h"
 #include "config.h"
+#include <cstdlib>
 
 void io_init(int sub_in[M*D+N*D], int sub_out[N*D+N]);
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[M*D+N*D], int sub_out[N*D+N]);
@@ -14,9 +15,8 @@ int data_to_id(int const_value);
 Operand* create_op_inst(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array, OPCODE inst_opcode, int src0, int src1, int src2);
 Operand* branch_in_loop(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array, int i, int cond_op_id, int src0, int src1, int src2, Operand* op_out, int sub_out_id);
 void loop_io_addr_remap(const std::string &dfg_name);
+void kmean_ip(int samples[M][D], int init_centroids[N][D], int centroids_sum[N][D], int centroids_num[N]);
 
-int bram0_addr=0; //Inbut buffer address
-int bram1_addr=0; //Output buffer address
 int const_in[2]={0, 1}; //The constant array is put here to make id search easier.
 const int const_num=2;
 
@@ -39,27 +39,96 @@ int main(){
 
 }
 
-void io_init(int sub_in[M*D+N*D], int sub_out[N*D+N]){
+void kmean_ip(int samples[M][D], int init_centroids[N][D], int centroids_sum[N][D], int centroids_num[N]){
 
-    int kernel_in[M*D+N*D]={
-#include "kernel_in.txt"
-    };
+    for(int i=0; i<N; i++){
+        centroids_num[i] = 0;
+        for(int j=0; j<D; j++){
+            centroids_sum[i][j] = 0;
+        }
+    }
 
-    int kernel_out[N*D+N]={
-#include "kernel_out.txt"
-    };
+    int dist[N];
+    for(int i=0; i<M; i++){
 
-   for(int i=0; i<M*D+N*D; i++){
-       sub_in[i] = kernel_in[i];
-   } 
+        for(int j=0; j<N; j++){
+            dist[j] = 0;
+            for(int k=0; k<D; k++){
+                dist[j] += (samples[i][k]-init_centroids[j][k]) * (samples[i][k]-init_centroids[j][k]);
+            }
+        }
 
-   for(int i=0; i<N*D+N; i++){
-       sub_out[i] = kernel_out[i];
-   }
+        //Search the closest centroid
+        int min_dist=dist[0];
+        int min_id=0;
+        for(int j=1; j<N; j++){
+            if(dist[j]<min_dist){
+                min_dist = dist[j];
+                min_id = j;
+            }
+        }
+
+        for(int j=0; j<D; j++){
+            centroids_sum[min_id][j] += samples[i][j];
+        }
+        centroids_num[min_id]++;
+    }
 
 }
 
+void io_init(int sub_in[M*D+N*D], int sub_out[N*D+N]){
+
+    int samples[M][D];
+    int init_centroids[N][D];
+    int centroids_sum[N][D];
+    int centroids_num[N];
+
+    //Input initialization
+    for(int i=0; i<M; i++){
+        for(int j=0; j<D; j++){
+            samples[i][j] = rand()%100;
+        }
+    }
+
+    for(int i=0; i<N; i++){
+        for(int j=0; j<D; j++){
+            init_centroids[i][j] = samples[i][j];
+        }
+    }
+
+    kmean_ip(samples, init_centroids, centroids_sum, centroids_num);
+
+    //Input combination
+    for(int i=0; i<M; i++){
+        for(int j=0; j<D; j++){
+            sub_in[i*D+j] = samples[i][j];
+        }
+    }
+
+    for(int i=0; i<N; i++){
+        for(int j=0; j<D; j++){
+            sub_in[M*D+i*D+j] = init_centroids[i][j];
+        }
+    }
+
+    //Output combination
+    for(int i=0; i<N; i++){
+        for(int j=0; j<D; j++){
+            sub_out[i*D+j] = centroids_sum[i][j];
+        }
+    }
+
+    for(int i=0; i<N; i++){
+        sub_out[N*D+i] = centroids_num[i];
+    }
+
+}
+
+
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[M*D+N*D], int sub_out[N*D+N]){
+
+    int bram0_addr=0; //Inbut buffer address
+    int bram1_addr=0; //Output buffer address
 
     /* Put constants into the op_array */
     for(int i=0; i<const_num; i++){
@@ -126,8 +195,8 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
             Operand* sub_op0;
             Operand* sub_op1;
             Operand* muladd_op;
-            dist[j] = new Operand();
-            op_array.push_back(dist[j]);
+            //dist[j] = new Operand();
+            //op_array.push_back(dist[j]);
 
            sub_op0 = create_op_inst(op_array, inst_array, SUBSUB, data_to_id(i*D, INVAR), data_to_id(M*D+2*j, INVAR), 0);
            sub_op1 = create_op_inst(op_array, inst_array, SUBSUB, data_to_id(i*D+1, INVAR), data_to_id(M*D+2*j+1, INVAR), 0);

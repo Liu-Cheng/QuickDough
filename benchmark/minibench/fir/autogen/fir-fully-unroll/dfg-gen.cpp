@@ -2,6 +2,7 @@
 #include "Operand.h"
 #include "Instruction.h"
 #include "config.h"
+#include <cstdlib>
 
 void io_init(int sub_in[L+N+N], int sub_out[L]);
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[L+N+N], int sub_out[L], int const_in[1]);
@@ -11,9 +12,6 @@ void verify(const std::vector<Operand*> &op_array, int sub_out[L]);
 void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array);
 int data_to_id(int idx, OPTYPE op_type);
 int data_to_id(int const_value);
-
-int bram0_addr=0;
-int bram1_addr=0;
 
 int main(){
 
@@ -37,15 +35,33 @@ int main(){
 }
 
 void io_init(int sub_in[L+N+N], int sub_out[L]){
+
     int in[L+N]={
-#include "in_small.txt"
+//#include "in_small.txt"
     };
     int coef[N]={
-#include "fir_coeff.txt"
+//#include "fir_coeff.txt"
     };
     int out[L+N]={
-#include "out_small.txt"
+//#include "out_small.txt"
     };
+
+    for(int i=0; i<L+N; i++){
+        in[i] = rand()%10;
+    }
+
+    for(int i=0; i<N; i++){
+        coef[i] = rand()%10;
+    }
+
+    for(int i=0; i<L+N; i++){
+        out[i] = 0;
+        for(int j=0; j<N; j++){
+            if(i>=j){
+                out[i] += coef[j]*in[i-j];
+            }
+        }
+    }
 
     for(int i=0; i<L+N; i++){
         sub_in[i]=in[i];
@@ -58,9 +74,14 @@ void io_init(int sub_in[L+N+N], int sub_out[L]){
     for(int i=0; i<L; i++){
         sub_out[i]=out[N+i];
     }
+
 }
 
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[L+N+N], int sub_out[L], int const_in[1]){
+
+    int bram0_addr=0;
+    int bram1_addr=0;
+
     /* 0 is the only contant */
     Operand* op_ptr=new Operand();
     op_ptr->Set_Operand(const_in[0], 0, bram0_addr, INCONST);

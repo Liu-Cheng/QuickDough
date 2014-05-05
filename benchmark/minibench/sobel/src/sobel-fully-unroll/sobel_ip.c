@@ -1,4 +1,5 @@
 #include "sobel.h"
+#include <stdlib.h>
 
 void sobel_ip(int sub_in[R*C/4+18], int sub_out[R*C/4]){
 	int i;
@@ -22,8 +23,8 @@ void sobel_ip(int sub_in[R*C/4+18], int sub_out[R*C/4]){
 		}
 	}
 
-	for(i=1; i<R-1; i=i+1){
-		sobel_ip_label2:for(j=4; j<C-4; j=j+4){
+	for(i=0; i<R; i=i+1){
+		for(j=0; j<C; j=j+4){
 			int sumx0=0;
 			int sumy0=0;
 			int sum0=0;
@@ -40,20 +41,48 @@ void sobel_ip(int sub_in[R*C/4+18], int sub_out[R*C/4]){
 			int sumy3=0;
 			int sum3=0;
 
-			sobel_ip_label1:for(p=-1; p<=1; p++){
-				sobel_ip_label0:for(q=-1; q<=1; q++){
-					sumx0+=((int)pixl_in_tmp[(i+p)*R+j+q])*gx[p+1][q+1];
-					sumy0+=((int)pixl_in_tmp[(i+p)*R+j+q])*gy[p+1][q+1];
+			for(p=-1; p<=1; p++){
+				for(q=-1; q<=1; q++){
+                    int pixl_index = (i+p)*R+j+q;
+                    if((i+p)<0 || (j+q)<0 || (i+p)>R || (j+q)>C){
+                        sumx0 = 0;
+                        sumy0 = 0;
+                    }
+                    else{
+                        sumx0 += ((int)pixl_in_tmp[pixl_index])*gx[p+1][q+1];
+                        sumy0 += ((int)pixl_in_tmp[pixl_index])*gy[p+1][q+1];
+                    }
+					
+                    pixl_index = (i+p)*R+j+1+q;
+                    if(pixl_index<0){
+                        sumx1 = 0;
+                        sumy1 = 0;
+                    }
+                    else{
+                        sumx1+=((int)pixl_in_tmp[pixl_index])*gx[p+1][q+1];
+                        sumy1+=((int)pixl_in_tmp[pixl_index])*gy[p+1][q+1];
+                    }
+					
+                    pixl_index = (i+p)*R+j+2+q;
+                    if(pixl_index<0){
+                        sumx2 = 0;
+                        sumy2 = 0;
+                    }
+                    else{
+                        sumx2+=((int)pixl_in_tmp[pixl_index])*gx[p+1][q+1];
+                        sumy2+=((int)pixl_in_tmp[pixl_index])*gy[p+1][q+1];
+                    }
 
-					sumx1+=((int)pixl_in_tmp[(i+p)*R+j+1+q])*gx[p+1][q+1];
-					sumy1+=((int)pixl_in_tmp[(i+p)*R+j+1+q])*gy[p+1][q+1];
-
-					sumx2+=((int)pixl_in_tmp[(i+p)*R+j+2+q])*gx[p+1][q+1];
-					sumy2+=((int)pixl_in_tmp[(i+p)*R+j+2+q])*gy[p+1][q+1];
-
-					sumx3+=((int)pixl_in_tmp[(i+p)*R+j+3+q])*gx[p+1][q+1];
-					sumy3+=((int)pixl_in_tmp[(i+p)*R+j+3+q])*gy[p+1][q+1];
-				}
+                    pixl_index = (i+p)*R+j+3+q;
+                    if(pixl_index<0){
+                        sumx3 = 0;
+                        sumy3 = 0;
+                    }
+                    else{
+                        sumx3+=((int)pixl_in_tmp[pixl_index])*gx[p+1][q+1];
+                        sumy3+=((int)pixl_in_tmp[pixl_index])*gy[p+1][q+1];
+                    }
+                }
 			}
 
 			sum0=abs(sumx0)+abs(sumy0);

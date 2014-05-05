@@ -34,8 +34,8 @@ int main(){
 
 	int i;
 	int j;
-	int p;
-	int q;
+	//int p;
+	//int q;
 
 	/*Input combination*/
 	int id;
@@ -73,14 +73,15 @@ int main(){
 	edge_out=(unsigned char*)sub_out;
 
 	/*Complete the corner case of the algorithm*/
-	int sumx;
-	int sumy;
-	int sum;
+	//int sumx;
+	//int sumy;
+	//int sum;
 	for(i=0; i<R; i++){
 		for(j=0; j<C; j++){
 			if(i==0 || i==R-1 || j==0 || j==C-1){
 				edge_out[i*R+j]=255;
 			}
+            /*
 			else if(j<=3 || j>=C-4){
 				sumx=0;
 				sumy=0;
@@ -100,6 +101,7 @@ int main(){
 
 				edge_out[i*R+j]=sum;
 			}
+            */
 		}
 	}
 
@@ -112,6 +114,8 @@ int main(){
 			}
 		}
 	}
+
 	printf("Verification passed!\n");
 
+    return 0;
 }

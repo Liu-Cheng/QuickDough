@@ -1,6 +1,6 @@
 CC = gcc
 
-CFLAGS= -DDEBUG -g -Wall
+CFLAGS= -DDEBUG -g -Wall -Wno-missing-braces
 TARGET = sobel 
 SRCS = sobel_ip.c \
 	   sobel_main.c

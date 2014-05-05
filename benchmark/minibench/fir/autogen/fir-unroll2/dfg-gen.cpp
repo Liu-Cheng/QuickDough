@@ -2,15 +2,16 @@
 #include "Operand.h"
 #include "Instruction.h"
 #include "config.h"
+#include <cstdlib>
 
 const int const_num = 2;
 int const_in[const_num]={0, 1};
 
-void io_init(int sub_in[N+L+N+N], int sub_out[L+N]);
-void op_array_init(std::vector<Operand*> &op_array, int sub_in[N+L+N+N], int sub_out[L+N], int const_in[const_num]);
+void io_init(int sub_in[N+L+N], int sub_out[L]);
+void op_array_init(std::vector<Operand*> &op_array, int sub_in[N+L+N], int sub_out[L], int const_in[const_num]);
 void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array);
 void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array);
-void verify(const std::vector<Operand*> &op_array, int sub_out[L+N]);
+void verify(const std::vector<Operand*> &op_array, int sub_out[L]);
 void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array);
 int data_to_id(int idx, OPTYPE op_type);
 int data_to_id(int const_value);
@@ -18,11 +19,10 @@ void loop_io_addr_remap(const std::string &dfg_name);
 
 int main(){
 
-    int sub_in[N+L+N+N];
-    int sub_out[L+N];
+    int sub_in[N+L+N];
+    int sub_out[L];
 
     std::vector<Operand*> op_array;
-
     std::vector<Instruction*> inst_array;
     std::string dfg_name="fir";
 
@@ -37,36 +37,58 @@ int main(){
 
 }
 
-void io_init(int sub_in[N+L+N+N], int sub_out[L+N]){
-    int in[L+N]={
-#include "in_small.txt"
+void io_init(int sub_in[N+L+N], int sub_out[L]){
+
+    int in[L]={
+//#include "in_small.txt"
     };
+
     int coef[N]={
-#include "fir_coeff.txt"
-    };
-    int out[L+N]={
-#include "out_small.txt"
+//#include "fir_coeff.txt"
     };
 
-    // Insert N zero to make sure the generated DFG can be repeated.
-    for(int i=0; i<L+N; i++){
-        sub_in[i] = 0;
-    }
+    int out[L]={
+//#include "out_small.txt"
+    };
 
-    for(int i=0; i<L+N; i++){
-        sub_in[N+i]=in[i];
+    for(int i=0; i<L; i++){
+        in[i] = rand()%10;
     }
 
     for(int i=0; i<N; i++){
-        sub_in[N+L+N+i]=coef[i];
+        coef[i] = rand()%10;
     }
 
-    for(int i=0; i<L+N; i++){
-        sub_out[i]=out[i];
+    for(int i=0; i<L; i++){
+
+        out[i] = 0;
+        for(int j=0; j<N; j++){
+            if(i>=j){
+                out[i] += coef[j]*in[i-j];
+            }
+        }
+
+    }
+
+    //Insert N zero to make sure the generated DFG can be repeated.
+    for(int i=0; i<N; i++){
+        sub_in[i] = 0;
+    }
+
+    for(int i=0; i<L; i++){
+        sub_in[N+i] = in[i];
+    }
+
+    for(int i=0; i<N; i++){
+        sub_in[N+L+i] = coef[i];
+    }
+
+    for(int i=0; i<L; i++){
+        sub_out[i] = out[i];
     }
 }
 
-void op_array_init(std::vector<Operand*> &op_array, int sub_in[N+L+N+N], int sub_out[L+N], int const_in[const_num]){
+void op_array_init(std::vector<Operand*> &op_array, int sub_in[N+L+N], int sub_out[L], int const_in[const_num]){
 
     int bram0_addr=0;
     int bram1_addr=0;
@@ -79,7 +101,7 @@ void op_array_init(std::vector<Operand*> &op_array, int sub_in[N+L+N+N], int sub
     }
     
     /* map input data to op_array */
-    for(int i=0; i<N+L+N+N; i++){
+    for(int i=0; i<N+L+N; i++){
         Operand* op_ptr = new Operand();
         op_ptr->Set_Operand(sub_in[i], 0, bram0_addr, INVAR);
         bram0_addr++;
@@ -87,16 +109,18 @@ void op_array_init(std::vector<Operand*> &op_array, int sub_in[N+L+N+N], int sub
     }
 
     /* map output data to op_array */
-    for(int i=0; i<L+N; i++){
+    for(int i=0; i<L; i++){
         Operand* op_ptr=new Operand();
         op_ptr->Set_Operand(0, 1, bram1_addr, OUTVAR);
         bram1_addr++;
         op_array.push_back(op_ptr);
     }
+
 }
 
 int data_to_id(int idx, OPTYPE op_type){
-    int invar_sum=N+L+N+N;
+
+    int invar_sum = N+L+N;
     if(op_type==INVAR){
         return (idx+const_num);
     }
@@ -110,6 +134,7 @@ int data_to_id(int idx, OPTYPE op_type){
 }
 
 int data_to_id(int const_val){
+
     for(int i=0; i<const_num; i++){
         if(const_in[i]==const_val){
             return i;
@@ -120,7 +145,7 @@ int data_to_id(int const_val){
 
 void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){
 
-    for(int i=N; i<N+L+N; i++){
+    for(int i=N; i<N+L; i++){
 
         Operand* op_result;
         Operand* last_op;
@@ -130,19 +155,19 @@ void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &i
             if(j==0){
                 op_result = new Operand();
                 op_array.push_back(op_result);
-                inst_result->Set_Instruction(op_result->op_id, MULADD, data_to_id(j+N+L+N, INVAR), data_to_id(i-j, INVAR), data_to_id(0));
+                inst_result->Set_Instruction(op_result->op_id, MULADD, data_to_id(j+N+L, INVAR), data_to_id(i-j, INVAR), data_to_id(0));
                 inst_array.push_back(inst_result);
                 last_op = op_result;
             }
             else if(j<N-1){
                 op_result = new Operand();
                 op_array.push_back(op_result);
-                inst_result->Set_Instruction(op_result->op_id, MULADD, data_to_id(j+N+L+N, INVAR), data_to_id(i-j, INVAR), last_op->op_id);
+                inst_result->Set_Instruction(op_result->op_id, MULADD, data_to_id(j+N+L, INVAR), data_to_id(i-j, INVAR), last_op->op_id);
                 inst_array.push_back(inst_result);
                 last_op = op_result;
             }
             else{
-                inst_result->Set_Instruction(data_to_id(i-N, OUTVAR), MULADD, data_to_id(j+N+L+N, INVAR), data_to_id(i-j, INVAR), last_op->op_id);
+                inst_result->Set_Instruction(data_to_id(i-N, OUTVAR), MULADD, data_to_id(j+N+L, INVAR), data_to_id(i-j, INVAR), last_op->op_id);
                 inst_array.push_back(inst_result);
             }
 
@@ -277,8 +302,8 @@ void loop_io_addr_remap(const std::string &dfg_name){
         remapped_bram1_addr ++;
     }
     
-    const int work_item_io_num = const_num + (N + B + N) + B; // total number of work-item's io operand
-    const int kernel_it_num = B/(L+N); // total number of the kernel iteration
+    const int work_item_io_num = const_num + (N+L+N) + B; // total number of work-item's io operand
+    const int kernel_it_num = B/L; // total number of the kernel iteration
     int kernel_io_addr[work_item_io_num][kernel_it_num+1]; // The first column represents kernel op_id
 
     // Here we assume that work_item_op_id can be used as index directly.
@@ -298,9 +323,9 @@ void loop_io_addr_remap(const std::string &dfg_name){
             row_index++;
         }
 
-        // Normal work-item input i.e. sub_in[N+L+N]
-        for(int i=0; i<N+L+N; i++){
-            kernel_io_addr[row_index][it] = sub_in_addr[p*(L+N)+i];
+        // Normal work-item input i.e. sub_in[N+L]
+        for(int i=0; i<N+L; i++){
+            kernel_io_addr[row_index][it] = sub_in_addr[p*L+i];
             if(p==0){
                 kernel_io_addr[row_index][0] = data_to_id(i, INVAR);
             }
@@ -311,7 +336,7 @@ void loop_io_addr_remap(const std::string &dfg_name){
         for(int i=0; i<N; i++){
             kernel_io_addr[row_index][it] = sub_in_addr[N+B+i];
             if(p==0){
-                kernel_io_addr[row_index][0] = data_to_id(N+L+N+i, INVAR);
+                kernel_io_addr[row_index][0] = data_to_id(N+L+i, INVAR);
             }
             row_index++;
         }

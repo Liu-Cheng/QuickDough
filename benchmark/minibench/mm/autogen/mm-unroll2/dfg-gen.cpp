@@ -2,6 +2,7 @@
 #include "Operand.h"
 #include "Instruction.h"
 #include "config.h"
+#include <cstdlib>
 
 void io_init(int sub_in[M+1][N], int sub_out[M]);
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_out[M], int const_in[1]);
@@ -13,10 +14,6 @@ int data_to_id(int idx, int idy, OPTYPE op_type);
 int data_to_id(int idx, OPTYPE op_type);
 int data_to_id(int const_value);
 void loop_io_addr_remap(const std::string &dfg_name);
-
-int bram0_addr=0;
-int bram1_addr=0;
-//std::map<int, Operand*> id_to_op;
 
 int main(){
 
@@ -42,7 +39,7 @@ void io_init(int sub_in[M+1][N], int sub_out[M]){
 
     for(int i=0; i<M+1; i++){
         for(int j=0; j<N; j++){
-            sub_in[i][j]=1;
+            sub_in[i][j] = rand()%10;
         }
     }
 
@@ -56,6 +53,10 @@ void io_init(int sub_in[M+1][N], int sub_out[M]){
 }
 
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_out[M], int const_in[1]){
+
+    int bram0_addr=0;
+    int bram1_addr=0;
+
     /* 0 is the only contant */
     Operand* op_ptr=new Operand();
     op_ptr->Set_Operand(const_in[0], 0, bram0_addr, INCONST);
@@ -79,6 +80,7 @@ void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_
         bram1_addr++;
         op_array.push_back(op_ptr);
     }
+
 }
 
 int data_to_id(int idx, int idy, OPTYPE op_type){

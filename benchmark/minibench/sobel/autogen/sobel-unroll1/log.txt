@@ -1,214 +1,118 @@
-557c557
-< 650: 0
+14d13
+< void loop_io_addr_remap(const std::string &dfg_name);
+18c17
+< 
 ---
-> 650: 1
-567,568c567,568
-< 537: 93
-< 650: 0
----
-> 537: 0
-> 650: 1
-587c587
-< 655: 0
----
-> 655: 1
-597,598c597,598
-< 540: 205
-< 655: 0
----
-> 540: 0
-> 655: 1
-617c617
-< 660: 0
----
-> 660: 1
-627,628c627,628
-< 543: 175
-< 660: 0
----
-> 543: 0
-> 660: 1
-647c647
-< 665: 0
----
-> 665: 1
-657,658c657,658
-< 546: 169
-< 665: 0
----
-> 546: 0
-> 665: 1
-662,663c662,663
-< 667: 52573
-< 540: 205
----
-> 667: 0
-> 540: 0
-665c665
-< 537: 93
----
-> 537: 0
-667,668c667,668
-< 668: 11521373
-< 543: 175
----
-> 668: 0
-> 543: 0
-670c670
-< 667: 52573
----
-> 667: 0
-672,673c672,673
-< 288: -1448096419
-< 546: 169
----
-> 288: 0
-> 546: 0
-675c675
-< 668: 11521373
----
-> 668: 0
-1232c1232
-< 784: 0
----
-> 784: 1
-1242,1243c1242,1243
-< 671: 211
-< 784: 0
----
-> 671: 0
-> 784: 1
-1262c1262
-< 789: 0
----
-> 789: 1
-1272,1273c1272,1273
-< 674: 227
-< 789: 0
----
-> 674: 0
-> 789: 1
-1292c1292
-< 794: 0
----
-> 794: 1
-1302,1303c1302,1303
-< 677: 235
-< 794: 0
----
-> 677: 0
-> 794: 1
-1322c1322
-< 799: 0
----
-> 799: 1
-1332,1333c1332,1333
-< 680: 241
-< 799: 0
----
-> 680: 0
-> 799: 1
-1337,1338c1337,1338
-< 801: 58323
-< 674: 227
----
-> 801: 0
-> 674: 0
-1340c1340
-< 671: 211
----
-> 671: 0
-1342,1343c1342,1343
-< 802: 15459283
-< 677: 235
----
-> 802: 0
-> 677: 0
-1345c1345
-< 801: 58323
----
-> 801: 0
-1347,1348c1347,1348
-< 289: -236198957
-< 680: 241
----
-> 289: 0
-> 680: 0
-1350c1350
-< 802: 15459283
----
-> 802: 0
-1907c1907
-< 918: 0
----
-> 918: 1
-1917,1918c1917,1918
-< 805: 239
-< 918: 0
----
-> 805: 0
-> 918: 1
-1937c1937
-< 923: 0
----
-> 923: 1
-1947,1948c1947,1948
-< 808: 251
-< 923: 0
----
-> 808: 0
-> 923: 1
-1967c1967
-< 928: 0
----
-> 928: 1
-1977,1978c1977,1978
-< 811: 241
-< 928: 0
----
-> 811: 0
-> 928: 1
-1997c1997
-< 933: 0
----
-> 933: 1
-2007,2008c2007,2008
-< 814: 251
-< 933: 0
----
-> 814: 0
-> 933: 1
-2012,2013c2012,2013
-< 935: 64495
-< 808: 251
----
-> 935: 0
-> 808: 0
-2015c2015
-< 805: 239
----
-> 805: 0
-2017,2018c2017,2018
-< 936: 15858671
-< 811: 241
----
-> 936: 0
-> 811: 0
-2020c2020
-< 935: 64495
----
-> 935: 0
-2022,2023c2022,2023
-< 290: -68027409
-< 814: 251
----
-> 290: 0
-> 814: 0
-2025c2025
-< 936: 15858671
----
-> 936: 0
-2506c2506
-< expected[9]=-1448096419, computed result=0 
----
-> 
+> int end_id = 500;
+34d32
+<     loop_io_addr_remap(dfg_name);
+693,801d690
+< 
+< void loop_io_addr_remap(const std::string &dfg_name){
+< 
+<     std::ostringstream oss;
+<     oss << dfg_name << "_kernel_io.txt";
+<     std::ofstream fHandle;
+<     fHandle.open(oss.str().c_str());
+<     if(!fHandle.is_open()){
+<         std::cout << "Failed to open " << oss.str() << "\n";
+<         exit(EXIT_FAILURE);
+<     }
+< 
+<     int remapped_bram0_addr = 0;
+<     int remapped_bram1_addr = 0;
+<     int const_in_addr[const_num];
+<     int sub_in_addr[BR*C/4+18];
+<     int sub_out_addr[BR*C/4];
+<     
+<     for(int i=0; i<const_num; i++){
+<         const_in_addr[i] = remapped_bram0_addr;
+<         remapped_bram0_addr++ ;
+<     }
+< 
+<     // Input pixl array
+<     for(int i=0; i<BR*C/4; i++){
+<         sub_in_addr[i] = remapped_bram0_addr;
+<         remapped_bram0_addr ++ ;
+<     }
+< 
+<     // Sobel operator
+<     for(int i=0; i<18; i++){
+<         sub_in_addr[BR*C/4+i] = remapped_bram0_addr;
+<         remapped_bram0_addr++;
+<     }
+< 
+<     // Output pixl array
+<     for(int i=0; i<BR*C/4; i++){
+<         sub_out_addr[i] = remapped_bram1_addr;
+<         remapped_bram1_addr ++;
+<     }
+<     
+<     const int work_item_io_num = const_num + (R*C/4 + 18) + R*C/4; // total number of work-item's io operand
+<     const int kernel_it_num = (BR-2)/(R-2); // total number of the kernel iteration
+<     int kernel_io_addr[work_item_io_num][kernel_it_num+1]; // The first column represents kernel op_id
+< 
+<     // Here we assume that work_item_op_id can be used as index directly.
+<     // If not, we need map this op_id to sequential array index.
+<     int it=1;
+<     int row_index;
+<     for(int p=0; p<kernel_it_num; p++){
+< 
+<         row_index = 0;
+< 
+<         // Constant work-item input
+<         for(int i=0; i<const_num; i++){
+<             kernel_io_addr[row_index][it] = const_in_addr[i];
+<             if(p==0){
+<                 kernel_io_addr[row_index][0] = data_to_id(const_in[i]);
+<             }
+<             row_index++;
+<         }
+< 
+<         // Normal work-item input i.e. sub_in[R*C/4+18]
+<         for(int i=0; i<R*C/4; i++){
+<             kernel_io_addr[row_index][it] = sub_in_addr[p*(R-2)*C/4+i];
+<             if(p==0){
+<                 kernel_io_addr[row_index][0] = data_to_id(i, INVAR);
+<             }
+<             row_index++;
+<         }
+< 
+<         // The 18 sobel operator
+<         for(int i=0; i<18; i++){
+<             kernel_io_addr[row_index][it] = sub_in_addr[BR*C/4+i];
+<             if(p==0){
+<                 kernel_io_addr[row_index][0] = data_to_id(R*C/4+i, INVAR);
+<             }
+<             row_index++;
+<         }
+< 
+<         //Normal output
+<         for(int i=0; i<R; i++){
+<             for(int j=0; j<C; j=j+4){
+<                 int out_index = ((p*(R-2)+i)*C+j)/4;
+<                 kernel_io_addr[row_index][it] = sub_out_addr[out_index];
+<                 if(p==0){
+<                     kernel_io_addr[row_index][0] = data_to_id((i*C+j)/4, OUTVAR);
+<                 }
+<                 row_index++;
+<             }
+<         }
+<         
+<         //Intermediate output
+< 
+<         it++;
+<     }
+< 
+< 
+<     //Dump the io addr of the whole kernel
+<     for(int i=0; i<work_item_io_num; i++){
+<         for(int j=0; j<kernel_it_num+1; j++){
+<             fHandle << kernel_io_addr[i][j] << " ";
+<         }
+<         fHandle << std::endl;
+<     }
+<     fHandle.close();
+< 
+< }
+< 

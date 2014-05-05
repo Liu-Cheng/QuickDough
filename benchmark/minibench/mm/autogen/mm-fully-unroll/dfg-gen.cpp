@@ -2,6 +2,7 @@
 #include "Operand.h"
 #include "Instruction.h"
 #include "config.h"
+#include <cstdlib>
 
 void io_init(int sub_in[2*N][N], int sub_out[N][N]);
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[2*N][N], int sub_out[N][N], int const_in[1]);
@@ -11,10 +12,6 @@ void verify(const std::vector<Operand*> &op_array, int sub_out[N][N]);
 void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array);
 int data_to_id(int idx, int idy, OPTYPE op_type);
 int data_to_id(int const_value);
-
-int bram0_addr=0;
-int bram1_addr=0;
-//std::map<int, Operand*> id_to_op;
 
 int main(){
 
@@ -37,14 +34,30 @@ int main(){
 
 void io_init(int sub_in[2*N][N], int sub_out[N][N]){
     int a[N][N]={
-#include "in_a_small.txt"
+//#include "in_a_small.txt"
     };
     int b[N][N]={
-#include "in_b_small.txt"
+//#include "in_b_small.txt"
     };
     int c[N][N]={
-#include "out_c_small.txt"
+//#include "out_c_small.txt"
     };
+
+    for(int i=0; i<N; i++){
+        for(int j=0; j<N; j++){
+            a[i][j] = rand()%10;
+            b[i][j] = rand()%10;
+            c[i][j] = 0;
+        }
+    }
+
+    for(int i=0; i<N; i++){
+        for(int j=0; j<N; j++){
+            for(int k=0; k<N; k++){
+                c[i][j] += a[i][k]*b[k][j];
+            }
+        }
+    }
 
     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
@@ -56,6 +69,10 @@ void io_init(int sub_in[2*N][N], int sub_out[N][N]){
 }
 
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[2*N][N], int sub_out[N][N], int const_in[1]){
+
+    int bram0_addr=0;
+    int bram1_addr=0;
+
     /* 0 is the only contant */
     Operand* op_ptr=new Operand();
     op_ptr->Set_Operand(const_in[0], 0, bram0_addr, INCONST);

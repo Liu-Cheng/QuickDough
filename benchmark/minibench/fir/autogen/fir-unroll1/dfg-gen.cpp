@@ -2,6 +2,7 @@
 #include "Operand.h"
 #include "Instruction.h"
 #include "config.h"
+#include <cstdlib>
 
 void io_init(int sub_in[L+N+N], int sub_out[L]);
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[L+N+N], int sub_out[L], int const_in[1]);
@@ -12,9 +13,6 @@ void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array
 int data_to_id(int idx, OPTYPE op_type);
 int data_to_id(int const_value);
 void loop_io_addr_remap(const std::string &dfg_name);
-
-int bram0_addr=0;
-int bram1_addr=0;
 
 int main(){
 
@@ -38,16 +36,34 @@ int main(){
 }
 
 void io_init(int sub_in[L+N+N], int sub_out[L]){
+
+    //Input initialization for verification later
     int in[L+N]={
-#include "in_small.txt"
+//#include "in_small.txt"
     };
     int coef[N]={
-#include "fir_coeff.txt"
+//#include "fir_coeff.txt"
     };
     int out[L+N]={
-#include "out_small.txt"
+//#include "out_small.txt"
     };
 
+    for(int i=0; i<L+N; i++){
+        in[i] = rand()%10;
+        out[i] = 0;
+    }
+
+    for(int i=0; i<N; i++){
+        coef[i] = rand()%10;
+    }
+
+    for(int i=0; i<L+N; i++){
+        for(int j=0; j<N; j++){
+            out[i] += coef[j]*in[i-j];
+        }
+    }
+
+    //-Input combination
     for(int i=0; i<L+N; i++){
         sub_in[i]=in[i];
     }
@@ -62,6 +78,10 @@ void io_init(int sub_in[L+N+N], int sub_out[L]){
 }
 
 void op_array_init(std::vector<Operand*> &op_array, int sub_in[L+N+N], int sub_out[L], int const_in[1]){
+
+    int bram0_addr=0;
+    int bram1_addr=0;
+
     /* 0 is the only contant */
     Operand* op_ptr=new Operand();
     op_ptr->Set_Operand(const_in[0], 0, bram0_addr, INCONST);
@@ -258,12 +278,12 @@ void loop_io_addr_remap(const std::string &dfg_name){
 
     for(int i=0; i<B+N+N; i++){
         sub_in_addr[i] = remapped_bram0_addr;
-        remapped_bram0_addr ++ ;
+        remapped_bram0_addr++ ;
     }
 
     for(int i=0; i<B; i++){
         sub_out_addr[i] = remapped_bram1_addr;
-        remapped_bram1_addr ++;
+        remapped_bram1_addr++;
     }
     
     const int work_item_io_num = 1+(N+L+N)+L; // total number of work-item's io operand

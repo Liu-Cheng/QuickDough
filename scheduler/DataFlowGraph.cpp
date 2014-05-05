@@ -628,16 +628,16 @@ void DataFlowGraph::OutsideDataMemoryDumpCoe(){
         vector<Vertex*>::iterator vit;
         for(vit=DFG_vertex.begin(); vit!=DFG_vertex.end(); vit++){
 
-            int dec_data = (*vit)->vertex_value;
+            unsigned int dec_data =(unsigned int) ((*vit)->vertex_value);
             list<int> bitList;
             list<int>::reverse_iterator it;
             int width=32; 
             if((*vit)->vertex_bram_id==i){
 
                 //Transform the decimal data to binary
-                if(dec_data==NaN){
-                    dec_data=0;
-                }
+                //if(dec_data==NaN){
+                    //dec_data=0;
+                //}
                 while(dec_data!=1 && dec_data!=0){
                     bitList.push_back(dec_data%2);
                     dec_data=dec_data/2;
