@@ -2773,7 +2773,57 @@ void Scheduler::SchedulingResultDump(){
     fHandle.close();
 }
 
+void Scheduler::LoadIOMapping(std::vector<int> &raw_data, int &row, int &col){
+
+    std::ostringstream oss; 
+    oss << "./config/" << DFG->DFG_name << "_kernel_io.txt";
+    std::string fName = oss.str();
+    std::ifstream fHandle;
+    fHandle.open(fName.c_str());
+    if(!fHandle.is_open()){
+        DEBUG1("%s open error!", fName.c_str());
+    }
+
+    while(!fHandle.eof()){
+        if(fHandle.fail()){
+            break;
+        }
+        int tmp;
+        fHandle >> tmp;
+        raw_data.push_back(tmp);
+    }
+
+    fHandle.clear();
+    fHandle.seekg(0, std::ios::beg);
+
+    row=0;
+    std::string unused;
+    while(std::getline(fHandle, unused)){
+        row++;
+    }
+
+    col = raw_data.size()/row;
+    fHandle.close();
+
+}
+
 void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
+    /*-------------------------------------------------------------------------
+     * When the kernel needs to be excuted multiple times, the addr sending to
+     * data memory among different iterations will be different. Also additional 
+     * idle information should be added to smoothe the swap between iterations.
+     * ------------------------------------------------------------------------*/
+
+    // Load op->addr information to an array, each column indicates the corresponding iteration.
+    // The first column represents the op id and the rest columns represent addr of different iterations.
+    int row, col;
+    std::vector<int> raw_data;
+    LoadIOMapping(raw_data, row, col);
+    std::map<int, int> opid_to_row_index; //Map kernel op id to row index of the addr array.
+    for(int i=0; i<row; i++){
+        opid_to_row_index[raw_data[i*col+0]] = i;
+    }
+
     int outside_bram_num=2;
     int IO_PE[2]={0,1};
     for(int i=0; i<outside_bram_num; i++){
@@ -2799,98 +2849,117 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
             load_store_idle[j]=2;
         }
 
-        for(int j=1; j<final_execution_time; j++){
+        for(int kit=1; kit<col; kit++){
+            for(int j=1; j<final_execution_time; j++){
 
-            bool load_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->load_path_reserved==true;
-            int load_mux=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->load_mux;
-            bool store_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->store_path_reserved==true;
-            if(load_active && load_mux==0){
-                if(load_store_idle[j-1]==1){
-                    DEBUG1("Unexpected load state!\n");
+                bool load_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->load_path_reserved==true;
+                int load_mux=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->load_mux;
+                bool store_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->store_path_reserved==true;
+                if(load_active && load_mux==0){
+                    if(load_store_idle[j-1]==1){
+                        DEBUG1("Unexpected load state!\n");
+                    }
+                    load_store_idle[j-1]=0;
+                    int loaded_op = CGRA->PE_array[IO_PE_id]->component_trace[j-1]->component_activity->load_op;
+                    //bram_addr[j-1] = DFG->DFG_vertex[loaded_op]->vertex_bram_addr;
+                    int row_index = opid_to_row_index[loaded_op];
+                    bram_addr[j-1] = raw_data[row_index*col+kit];
                 }
-                load_store_idle[j-1]=0;
-                int loaded_op = CGRA->PE_array[IO_PE_id]->component_trace[j-1]->component_activity->load_op;
-                bram_addr[j-1] = DFG->DFG_vertex[loaded_op]->vertex_bram_addr;
+
+                if(store_active){
+                    if(load_store_idle[j]==0){
+                        DEBUG1("Unexpected store state!\n");
+                    }
+                    load_store_idle[j+2]=1;
+                    int stored_op = CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->store_op;
+                    //bram_addr[j+2] = DFG->DFG_vertex[stored_op]->vertex_bram_addr;
+                    int row_index = opid_to_row_index[stored_op];
+                    bram_addr[j+2] = raw_data[row_index*col+kit];
+                }
+
             }
 
-            if(store_active){
+            list<int> bitList;
+            list<int>::reverse_iterator it;
+            int dec_data;
+            int width; 
+            for(int j=0; j<final_execution_time+2; j++){
+
+                //The highest bit indicates the enable signal of the bram and the 
+                //following 4bits represent the byte wena signals.
                 if(load_store_idle[j]==0){
-                    DEBUG1("Unexpected store state!\n");
+                    fHandle << "10000";
                 }
-                load_store_idle[j+2]=1;
-                int stored_op = CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->store_op;
-                bram_addr[j+2] = DFG->DFG_vertex[stored_op]->vertex_bram_addr;
+                else if(load_store_idle[j]==1){
+                    fHandle << "11111";
+                }
+                else{
+                    fHandle << "00000";
+                }
+
+                /* ----------------------------------------------------------------
+                 * The following 3 bits i.e. [26:24] represent the 
+                 * computation status.
+                 * 001 kernel computation is done, and CPU will be acknowledged.
+                 * 010 One iteration of the CGRA computation is done. The next iteration 
+                 *     will continue after a few cycles' preparation (controlling delay).
+                 * 100 CGRA computation is on going.
+                 * --------------------------------------------------------------*/
+                if(j==(final_execution_time+1) && kit==col-1){
+                    fHandle << "001";
+                }
+                else if(j==(final_execution_time+1) && kit<col-1){
+                    fHandle << "010";
+                }
+                else{
+                    fHandle << "100"; // The CGRA kernel iterates only once.
+                }
+
+                //Transform decimal addr to 24-bit binary 
+                dec_data=bram_addr[j];
+                width=24;
+                if(dec_data==NaN){
+                    dec_data=0;
+                }
+                while(dec_data!=1 && dec_data!=0){
+                    bitList.push_back(dec_data%2);
+                    dec_data=dec_data/2;
+                    width--;
+                }
+                bitList.push_back(dec_data);
+                width--;
+                while(width!=0){
+                    int tmp=0;
+                    bitList.push_back(tmp);
+                    width--;
+                }
+                for(it=bitList.rbegin(); it!=bitList.rend(); it++){
+                    fHandle << (*it);
+                }
+                bitList.clear();
+
+                fHandle<<endl;
+            }
+
+            //When the kernel iterates more than once, additional 5 lines should be added.
+            if(row>2 && kit<col-1){
+                fHandle << "00000100000000000000000000000000" << std::endl;
+                fHandle << "00000100000000000000000000000000" << std::endl;
+                fHandle << "00000100000000000000000000000000" << std::endl;
+                fHandle << "00000100000000000000000000000000" << std::endl;
+                fHandle << "00000100000000000000000000000000" << std::endl;
+                fHandle << "00000100000000000000000000000000" << std::endl;
             }
 
         }
-
-        list<int> bitList;
-        list<int>::reverse_iterator it;
-        int dec_data;
-        int width; 
-        for(int j=0; j<final_execution_time+2; j++){
-
-            //The highest bit indicates the enable signal of the bram and the 
-            //following 4bits represent the byte wena signals.
-            if(load_store_idle[j]==0){
-                fHandle << "10000";
-            }
-            else if(load_store_idle[j]==1){
-                fHandle << "11111";
-            }
-            else{
-                fHandle << "00000";
-            }
-
-            /* ----------------------------------------------------------------
-             * The following 3 bits i.e. [26:24] represent the 
-             * computation status.
-             * 001 kernel computation is done, and CPU will be acknowledged.
-             * 010 One iteration of the CGRA computation is done. The next iteration 
-             *     will continue after a few cycles' preparation (controlling delay).
-             * 100 CGRA computation is on going.
-             * --------------------------------------------------------------*/
-            if(j==(final_execution_time+1)){
-                fHandle << "001";
-            }
-            else{
-                fHandle << "100"; // The CGRA kernel iterates only once.
-            }
-
-            //Transform decimal addr to 24-bit binary 
-            dec_data=bram_addr[j];
-            width=24;
-            if(dec_data==NaN){
-                dec_data=0;
-            }
-            while(dec_data!=1 && dec_data!=0){
-                bitList.push_back(dec_data%2);
-                dec_data=dec_data/2;
-                width--;
-            }
-            bitList.push_back(dec_data);
-            width--;
-            while(width!=0){
-                int tmp=0;
-                bitList.push_back(tmp);
-                width--;
-            }
-            for(it=bitList.rbegin(); it!=bitList.rend(); it++){
-                fHandle << (*it);
-            }
-            bitList.clear();
-
-            fHandle<<endl;
-        }
-
         fHandle.close();
 
     }
 
-    Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mif", 32);
-    Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mif", 32);
-    Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mif", 32);
-    Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mif", 32);
+    //Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mif", 32);
+    //Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mif", 32);
+    //Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mif", 32);
+    //Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mif", 32);
     Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/src_ctrl_words.h", "SrcMemCtrlWords", 32);
     Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/result_ctrl_words.h", "ResultMemCtrlWords", 32);
     Bin2HeadFile("./result/outside-data-memory-0.coe", "./result/initialized_src.h", "Src", 32);

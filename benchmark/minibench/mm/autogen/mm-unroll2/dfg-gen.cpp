@@ -3,9 +3,10 @@
 #include "Instruction.h"
 #include "config.h"
 #include <cstdlib>
+#include <list>
 
 void io_init(int sub_in[M+1][N], int sub_out[M]);
-void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_out[M], int const_in[1]);
+void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_out[M]);
 void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array);
 void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array);
 void verify(const std::vector<Operand*> &op_array, int sub_out[M]);
@@ -14,10 +15,15 @@ int data_to_id(int idx, int idy, OPTYPE op_type);
 int data_to_id(int idx, OPTYPE op_type);
 int data_to_id(int const_value);
 void loop_io_addr_remap(const std::string &dfg_name);
+void Head_File_Dump();
+void IO_coe_Dump(int Block_In[B+1][N], int Block_Out[B]);
+void Single_Dec_Dump(std::ofstream &fHandle, unsigned int Dec_Data, int Width);
+
+int Const_In[1] = {0};
+int Const_Num = 1;
 
 int main(){
 
-    int const_in[1]={0};
     int sub_in[M+1][N];
     int sub_out[M];
 
@@ -26,13 +32,142 @@ int main(){
     std::string dfg_name="mm";
 
     io_init(sub_in, sub_out);
-    op_array_init(op_array, sub_in, sub_out, const_in);
+    op_array_init(op_array, sub_in, sub_out);
     kernel_to_dfg(op_array, inst_array);
     dfg_compute(op_array, inst_array);
     verify(op_array, sub_out);
     dfg_dump(dfg_name, op_array, inst_array);
     loop_io_addr_remap(dfg_name);
+    Head_File_Dump();
 
+}
+
+void Single_Dec_Dump(std::ofstream &fHandle, unsigned int Dec_Data, int Width){
+
+    std::list<int> Bit_List;
+    std::list<int>::reverse_iterator rit;
+    while(Dec_Data!=1 && Dec_Data!=0){
+        Bit_List.push_back(Dec_Data%2);
+        Dec_Data = Dec_Data/2;
+        Width--;
+    }
+    Bit_List.push_back(Dec_Data);
+    Width--;
+
+    while(Width!=0){
+        Bit_List.push_back(0);
+        Width--;
+    }
+
+    for(rit=Bit_List.rbegin(); rit!=Bit_List.rend(); rit++){
+        fHandle << (*rit);
+    }
+    Bit_List.clear();
+    fHandle << std::endl;
+
+}
+
+void IO_coe_Dump(int Block_In[B+1][N], int Block_Out[B]){
+
+    int Width = 32;
+    std::string fName = "./dump/outside-data-memory-0.coe";
+    std::ofstream fHandle;
+    fHandle.open(fName.c_str());
+    if(!fHandle.is_open()){
+        std::cout << fName << "open error!" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    fHandle << "memory_initialization_radix=2;" << std::endl;
+    fHandle << "memory_initialization_vector=" << std::endl;
+    for(int i=0; i<Const_Num; i++){
+        Single_Dec_Dump(fHandle, (unsigned int)Const_In[i], Width);
+    }
+
+    for(int i=0; i<B+1; i++){
+        for(int j=0; j<N; j++){
+            Single_Dec_Dump(fHandle, (unsigned int) Block_In[i][j], Width);
+        }
+    }
+    fHandle.close();
+
+    fName = "./dump/outside-data-memory-1.coe";
+    fHandle.open(fName.c_str());
+    if(!fHandle.is_open()){
+        std::cout << fName << "open error!" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    fHandle << "memory_initialization_radix=2;" << std::endl;
+    fHandle << "memory_initialization_vector=" << std::endl;
+    for(int i=0; i<B; i++){
+        Single_Dec_Dump(fHandle, (unsigned int)Block_Out[i], Width);
+    }
+    fHandle.close();
+
+}
+
+void Head_File_Dump(){
+
+    //Input initialization
+    int Block_In[B+1][N];
+    int Block_Out[B];
+
+    for(int i=0; i<B+1; i++){
+        for(int j=0; j<N; j++){
+            Block_In[i][j] = rand()%10;
+        }
+    }
+
+    for(int i=0; i<B; i++){
+        Block_Out[i] = 0;
+        for(int j=0; j<N; j++){
+            Block_Out[i] += Block_In[i][j]*Block_In[B][j];
+        }
+    }
+
+    IO_coe_Dump(Block_In, Block_Out);
+
+    std::string fName = "./dump/io.h";
+    std::ofstream fHandle;
+    fHandle.open(fName.c_str());
+    if(!fHandle.is_open()){
+        std::cout << fName << "open error!" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    fHandle << "// Input and output data of the benchmark" << std::endl;
+    fHandle << "int Src[" << Const_Num+(B+1)*N << "] = "<<"{";
+
+    //Const input
+    for(int i=0; i<Const_Num; i++){
+        fHandle << Const_In[i] << ", ";
+    }
+
+    for(int i=0; i<B+1; i++){
+        for(int j=0; j<N; j++){
+            if(i==B && j==N-1){
+                fHandle << Block_In[i][j];
+            }
+            else{
+                fHandle << Block_In[i][j] << ", ";
+            }
+        }
+    }
+
+    fHandle << "};" << std::endl;
+
+    fHandle << std::endl;
+    fHandle << "int Result[" << B << "] = " << "{";
+    for(int i=0; i<B; i++){
+        if(i==B-1){
+            fHandle << Block_Out[i];
+        }
+        else{
+            fHandle << Block_Out[i] << ", ";
+        }
+    }
+    fHandle << "};" << std::endl;
 }
 
 void io_init(int sub_in[M+1][N], int sub_out[M]){
@@ -52,14 +187,14 @@ void io_init(int sub_in[M+1][N], int sub_out[M]){
 
 }
 
-void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_out[M], int const_in[1]){
+void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_out[M]){
 
     int bram0_addr=0;
     int bram1_addr=0;
 
     /* 0 is the only contant */
     Operand* op_ptr=new Operand();
-    op_ptr->Set_Operand(const_in[0], 0, bram0_addr, INCONST);
+    op_ptr->Set_Operand(Const_In[0], 0, bram0_addr, INCONST);
     bram0_addr++;
     op_array.push_back(op_ptr);
 
@@ -84,9 +219,8 @@ void op_array_init(std::vector<Operand*> &op_array, int sub_in[M+1][N], int sub_
 }
 
 int data_to_id(int idx, int idy, OPTYPE op_type){
-    int const_sum=1;
     if(op_type==INVAR){
-        return (idx*N+idy+const_sum);
+        return (idx*N+idy+Const_Num);
     }
     else{
         printf("Unknown IO operands! \n");
@@ -115,52 +249,66 @@ int data_to_id(int const_val){
 void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){
 
     for(int i=0; i<M; i++){
-        int last_op_id;
+
+        // The first level is simple multiplication
+        Instruction* IM_Insts[N];
+        Operand* IM_Operands[N];
         for(int j=0; j<N; j++){
-            Instruction* inst_ptr=new Instruction();
-            if(j==0){
-                Operand* dst_ptr=new Operand();
-                op_array.push_back(dst_ptr);
+            IM_Operands[j] = new Operand();
+            op_array.push_back(IM_Operands[j]);
+            IM_Insts[j] =  new Instruction();
+            IM_Insts[j]->Set_Instruction(IM_Operands[j]->op_id, MULADD, data_to_id(i, j, INVAR), data_to_id(M, j, INVAR), data_to_id(0));
+            inst_array.push_back(IM_Insts[j]);
+        }
 
-                inst_ptr->Set_Instruction( \
-                        dst_ptr->op_id, \
-                        MULADD, \
-                        data_to_id(M, j, INVAR), \
-                        data_to_id(i, j, INVAR), \
-                        data_to_id(0));
-
-                inst_array.push_back(inst_ptr);
-                last_op_id=dst_ptr->op_id;
+        // Addition stages
+        int Res_OP_Num = N;
+        while(Res_OP_Num>3){
+            for(int j=0; j<Res_OP_Num; j=j+3){
+                if(j+1==Res_OP_Num){
+                    IM_Operands[j/3] = IM_Operands[j];
+                }
+                else if(j+2==Res_OP_Num){
+                    Operand* op_tmp = new Operand();
+                    op_array.push_back(op_tmp);
+                    Instruction* inst_tmp = new Instruction();
+                    inst_tmp->Set_Instruction(op_tmp->op_id, ADDADD, IM_Operands[j]->op_id, IM_Operands[j+1]->op_id, data_to_id(0));
+                    inst_array.push_back(inst_tmp);
+                    IM_Operands[j/3] = op_tmp;
+                }
+                else{
+                    Operand* op_tmp = new Operand();
+                    op_array.push_back(op_tmp);
+                    Instruction* inst_tmp = new Instruction();
+                    inst_tmp->Set_Instruction(op_tmp->op_id, ADDADD, IM_Operands[j]->op_id, IM_Operands[j+1]->op_id, IM_Operands[j+2]->op_id);
+                    inst_array.push_back(inst_tmp);
+                    IM_Operands[j/3] = op_tmp;
+                }
             }
-            else if(j<N-1){
-                Operand* dst_ptr=new Operand();
-                op_array.push_back(dst_ptr);
-
-                inst_ptr->Set_Instruction( \
-                        dst_ptr->op_id, \
-                        MULADD, \
-                        data_to_id(M, j, INVAR), \
-                        data_to_id(i, j, INVAR), \
-                        last_op_id);
-
-                inst_array.push_back(inst_ptr);
-                last_op_id=dst_ptr->op_id;
+            if((Res_OP_Num%3)==0){
+                Res_OP_Num = Res_OP_Num/3;
             }
             else{
-                inst_ptr->Set_Instruction( \
-                        data_to_id(i, OUTVAR), \
-                        MULADD, \
-                        data_to_id(M, j, INVAR), \
-                        data_to_id(i, j, INVAR), \
-                        last_op_id);
-
-                inst_array.push_back(inst_ptr);
+                Res_OP_Num = Res_OP_Num/3 + 1;
             }
+        }
+
+        //Last output
+        if(Res_OP_Num==3){
+            Instruction* inst_tmp = new Instruction();
+            inst_tmp->Set_Instruction(data_to_id(i, OUTVAR), ADDADD, IM_Operands[0]->op_id, IM_Operands[1]->op_id, IM_Operands[2]->op_id);
+            inst_array.push_back(inst_tmp);
+        }
+        else if(Res_OP_Num==2){
+            Instruction* inst_tmp = new Instruction();
+            inst_tmp->Set_Instruction(data_to_id(i, OUTVAR), ADDADD, IM_Operands[0]->op_id, IM_Operands[1]->op_id, data_to_id(0));
+            inst_array.push_back(inst_tmp);
+        }
+        else{
+            std::cout << "Unexpected residue!\n";
         }
     }
 }
-
-
 
 void dfg_compute(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){
     std::vector<Instruction*>::iterator inst_it;
@@ -193,10 +341,10 @@ void verify(const std::vector<Operand*> &op_array, int sub_out[M]){
 }
 
 
-
 void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array, const std::vector<Instruction*> &inst_array){
+
     std::ostringstream oss;
-    oss << dfg_name << "_operand.txt";
+    oss << "./dump/" << dfg_name << "_operand.txt";
     std::ofstream operand_fhandle;
     operand_fhandle.open(oss.str().c_str());
     if(!operand_fhandle.is_open()){
@@ -206,7 +354,7 @@ void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array
 
     oss.clear();
     oss.str("");
-    oss << dfg_name << ".s";
+    oss << "./dump/" << dfg_name << ".s";
     std::ofstream inst_fhandle;
     inst_fhandle.open(oss.str().c_str());
     if(!inst_fhandle.is_open()){
@@ -216,7 +364,7 @@ void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array
 
     oss.clear();
     oss.str("");
-    oss << dfg_name << "_opcode.txt";
+    oss << "./dump/" << dfg_name << "_opcode.txt";
     std::ofstream opcode_fhandle;
     opcode_fhandle.open(oss.str().c_str());
     if(!opcode_fhandle.is_open()){
@@ -278,7 +426,7 @@ void dfg_dump(const std::string &dfg_name, const std::vector<Operand*> &op_array
 void loop_io_addr_remap(const std::string &dfg_name){
 
     std::ostringstream oss;
-    oss << dfg_name << "_kernel_io.txt";
+    oss << "./dump/" << dfg_name << "_kernel_io.txt";
     std::ofstream fHandle;
     fHandle.open(oss.str().c_str());
     if(!fHandle.is_open()){
@@ -288,18 +436,18 @@ void loop_io_addr_remap(const std::string &dfg_name){
 
     /* ----------------------------------------------------------------
      * Addr allocation initialization:
-     * Constant: const_in[1]
+     * Constant: Const_In[1]
      * Input: sub_in[B][N] 
      * output: sub_out[B]
      * The newly remapped addr is stored in the array as if it is data.
      * --------------------------------------------------------------*/
     int remapped_bram0_addr = 0;
     int remapped_bram1_addr = 0;
-    int const_in_addr[1];
+    int Const_In_addr[1];
     int sub_in_addr[B+1][N];
     int sub_out_addr[B];
     
-    const_in_addr[0] = remapped_bram0_addr;
+    Const_In_addr[0] = remapped_bram0_addr;
     remapped_bram0_addr++ ;
 
     for(int i=0; i<B+1; i++){
@@ -327,7 +475,7 @@ void loop_io_addr_remap(const std::string &dfg_name){
         row_index = 0;
 
         //Constant work-item input
-        kernel_io_addr[row_index][it] = const_in_addr[0];
+        kernel_io_addr[row_index][it] = Const_In_addr[0];
         if(p==0){
             kernel_io_addr[row_index][0] = data_to_id(0);
         }
@@ -348,7 +496,7 @@ void loop_io_addr_remap(const std::string &dfg_name){
         for(int i=0; i<N; i++){
             kernel_io_addr[row_index][it] = sub_in_addr[B][i];
             if(p==0){
-                kernel_io_addr[row_index][0] = data_to_id(B, i, INVAR);
+                kernel_io_addr[row_index][0] = data_to_id(M, i, INVAR);
             }
             row_index++;
         }

@@ -82,6 +82,7 @@ class Scheduler{
         void Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth);
         void Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth);
         int FileLineCount(const string &FileName);
+        void LoadIOMapping(std::vector<int> &raw_data, int &row, int &col);
 };
 
 #endif
