@@ -1,7 +1,0 @@
-db.c
-dbmem.h
-dbVerify.c
-list.c
-list.h
-rbtree.c
-rbtree.h
