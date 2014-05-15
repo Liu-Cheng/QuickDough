@@ -1,0 +1,32 @@
+#!/bin/bash
+
+App_Name="mm"
+Type="small"
+CGRA_Size="2x2"
+DFG_Dir="/home/liucheng/gitrepo/project/benchmark/dump"
+Scheduler_Dir="/home/liucheng/gitrepo/project/scheduler"
+Bitfile_Dir="/home/liucheng/gitrepo/project/cgra/bitfile-update"
+
+#Move DFG to Scheduler
+cd $DFG_Dir
+cp -rf $App_Name"-"$Type"/"*.* $Scheduler_Dir"/config/"
+
+#Update configuration file
+cd $Scheduler_Dir"/config/"
+sed -i "/^DFG_name/c\DFG_name $App_Name" configure.txt
+cd ..
+./cgracompiler
+
+#Copy scheduling result as well as realted data to bitstream integration
+cp -rf ./result/inst.mem $Bitfile_Dir"/"$App_Name"-"$Type".mem"
+cp -rf ./result/src_ctrl_words.h $Bitfile_Dir"/dump"
+cp -rf ./result/result_ctrl_words.h $Bitfile_Dir"/dump"
+cp -rf ./config/io.h $Bitfile_Dir"/dump"
+
+#Bitfile integration
+cd $Bitfile_Dir
+Bitfile="scgra"$CGRA_Size"-"$App_Name"-"$Type".bit"
+Memfile=$App_Name"-"$Type".mem"
+Modulename="scgra"$CGRA_Size"-1k"
+./inst1k-update -t $Modulename -m $Memfile -e $Bitfile 
+mv $Bitfile ./dump
