@@ -2462,7 +2462,7 @@ void Scheduler::InstructionDumpMem(int final_execution_time){
     const int instMemDepth=INST_MEM_DEPTH;
     const int instMemWidth=72;
 
-    string fMemName="./result/dump/inst.mem";
+    string fMemName="./result/inst.mem";
     ofstream fMemHandle;
     fMemHandle.open(fMemName.c_str());
     if(!fMemHandle.is_open()){
@@ -2960,8 +2960,8 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
     //Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mif", 32);
     //Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mif", 32);
     //Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mif", 32);
-    Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/dump/src_ctrl_words.h", "SrcMemCtrlWords", 32);
-    Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/dump/result_ctrl_words.h", "ResultMemCtrlWords", 32);
+    Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/src_ctrl_words.h", "SrcMemCtrlWords", 32);
+    Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/result_ctrl_words.h", "ResultMemCtrlWords", 32);
     Bin2HeadFile("./result/outside-data-memory-0.coe", "./result/initialized_src.h", "Src", 32);
     Bin2HeadFile("./result/outside-data-memory-1.coe", "./result/initialized_result.h", "Result", 32);
 
