@@ -1,0 +1,204 @@
+#!/usr/bin/perl -w
+
+#----------------------------------------------------------------------
+# Soft CGRA HDL model generator
+#
+# Description:
+# Currently, it can only generate different size of CGRA.
+# We will add more features in future.
+#
+# History:
+# 3/12/2013 -- generate different size of CGRA
+#
+#
+#----------------------------------------------------------------------
+
+use vars qw/ %opt /;
+
+#----------------------------------------------------------------------
+#-Main program
+#----------------------------------------------------------------------
+Init();
+Get_User_Opt();
+Torus_Gen();
+cgra_Gen();
+Pack();
+
+# Command line options processing
+sub Init {
+    use Getopt::Std;
+    my $Opt_String = 'r:c:h';
+    getopts( "$Opt_String", \%opt ) or Usage();
+    Usage() if ($opt{h});
+}
+
+# Message about this program and how to use it
+sub Usage {
+    print STDERR << "EOF";
+This program creates a cgra HDL model with specified parameters.
+
+usage: $0 [-h] [-r row] [-c col]
+
+-h                    : this (help) message
+-r row of cgra        : default Row=4
+-c column of cgra     : default Col=4
+
+example: $0 -r 4 -c 4
+
+EOF
+
+exit;
+
+}
+
+sub Get_User_Opt {
+
+    if($opt{r}) {
+        $Row = $opt{r};
+    } 
+    else {
+        $Row = 4;
+    }
+
+    if($opt{c}) {
+        $Col = $opt{c};
+    } 
+    else {
+        $Col = 4;
+    }
+
+}
+
+sub Torus_Gen {
+
+    my $Torus_Module = "Torus".$Row."x".$Col.".v";
+    open OUTFILE, ">$Torus_Module";
+
+    print OUTFILE "`timescale 1 ns/1 ps \n\n";
+    print OUTFILE "module Torus".$Row."x".$Col." (\n\n"; 
+    print OUTFILE "    Clk,\n";
+    print OUTFILE "    Resetn,\n\n";
+    print OUTFILE "    Data0_Load,\n";
+    print OUTFILE "    Data0_Store,\n";
+    print OUTFILE "    Data1_Load,\n";
+    print OUTFILE "    Data1_Store,\n";
+    print OUTFILE "    PE_Array_Busy\n";
+    print OUTFILE ");\n\n";
+
+    print OUTFILE "parameter DWIDTH=32;\n";
+    print OUTFILE "parameter SYS_DWIDTH=32;\n\n";
+
+    print OUTFILE "input                    Clk;\n";
+    print OUTFILE "input                    Resetn;\n\n";
+
+    print OUTFILE "input [SYS_DWIDTH-1:0]   Data0_Load;\n";
+    print OUTFILE "input [SYS_DWIDTH-1:0]   Data1_Load;\n";
+    print OUTFILE "output [SYS_DWIDTH-1:0]  Data0_Store;\n";
+    print OUTFILE "output [SYS_DWIDTH-1:0]  Data1_Store;\n\n";
+
+    print OUTFILE "input                    PE_Array_Busy;\n\n";
+
+    for(my $i=0; $i<$Row; $i=$i+1){
+        for(my $j=0; $j<$Col; $j=$j+1){
+            for(my $k=0; $k<4; $k=$k+1){
+                print OUTFILE "wire [DWIDTH-1:0]        PE".$i.$j."_Out".$k.";\n";
+            }
+            print OUTFILE "\n";
+        }
+    }
+
+    for(my $i=0; $i<$Row; $i=$i+1){
+        for(my $j=0; $j<$Col; $j=$j+1){
+            if(($i==0 && $j==0)||($i==0 && $j==1)){
+                print OUTFILE "PEIO PE".$i.$j."(\n";
+            }
+            else{
+                print OUTFILE "PE PE".$i.$j."(\n";
+            }
+            print OUTFILE "    .Clk(Clk),\n";
+            print OUTFILE "    .Resetn(Resetn),\n\n";
+
+            my $p;
+            my $q;
+            my $r;
+            for(my $k=0; $k<4; $k=$k+1){
+                if($k==0){
+                    $p=$i;
+                    $q=($j+$Col-1)%$Col;
+                    $r=2;
+                }
+                if($k==1){
+                    $p=($i+$Row-1)%$Row;
+                    $q=$j;
+                    $r=3;
+                }
+                if($k==2){
+                    $p=$i;
+                    $q=($j+1)%$Col;
+                    $r=0;
+                }
+                if($k==3){
+                    $p=($i+1)%$Row;
+                    $q=$j;
+                    $r=1;
+                }
+                print OUTFILE "    .PE_In".$k."(PE".$p.$q."_Out".$r."),\n";
+            }
+
+            for(my $k=0; $k<4; $k=$k+1){
+                if($k==3){
+                    print OUTFILE "    .PE_Out".$k."(PE".$i.$j."_Out".$k."),\n";
+                }
+                else{
+                    print OUTFILE "    .PE_Out".$k."(PE".$i.$j."_Out".$k."),\n";
+                }
+            }
+
+            print OUTFILE "\n";
+            if($i==0 && $j==0){
+                print OUTFILE "    .PE_Load(Data0_Load),\n";
+                print OUTFILE "    .PE_Store(Data0_Store),\n";
+            }
+
+            if($i==0 && $j==1){
+                print OUTFILE "    .PE_Load(Data1_Load),\n";
+                print OUTFILE "    .PE_Store(Data1_Store),\n";
+            }
+
+            print OUTFILE "    .PE_Array_Busy(PE_Array_Busy)\n";
+            print OUTFILE "\n";
+            print OUTFILE ");\n";
+        }
+    }
+
+    print OUTFILE "endmodule\n";
+    close OUTFILE;
+
+}
+
+sub cgra_Gen {
+
+    my $cgra_File="cgra".$Row."x".$Col.".v";
+    my $cgra_Module="cgra".$Row."x".$Col;
+    my $Torus_Module="Torus".$Row."x".$Col;
+    system("cp -rf ./reference/cgra*.v $cgra_File");
+    system("sed -i 's/Torus2x2/$Torus_Module/g' $cgra_File");
+    system("sed -i 's/cgra2x2/$cgra_Module/g' $cgra_File");
+
+}
+
+sub Pack {
+
+    my $Dir_Name = "cgra".$Row."x".$Col;
+    system("mkdir -p $Dir_Name");
+    my $Torus_Module = "Torus".$Row."x".$Col.".v";
+    my $cgra_Module = "cgra".$Row."x".$Col.".v";
+    system("cp -rf ./reference/* $Dir_Name");
+    system("rm $Dir_Name/cgra2x2.v $Dir_Name/Torus2x2.v");
+    system("mv $Torus_Module ./$Dir_Name/");
+    system("mv $cgra_Module ./$Dir_Name/");
+    print "cgra generation is completed!\n";
+
+}
+
+
