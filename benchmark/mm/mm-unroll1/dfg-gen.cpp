@@ -134,7 +134,7 @@ void Head_File_Dump(){
     }
 
 
-    fHandle << "int Block_A_In[" << M << "][" << N <<"] = {" << std::endl;
+    fHandle << "int Block_A_In[" << B << "][" << N <<"] = {" << std::endl;
     for(int i=0; i<B; i++){
         for(int j=0; j<N; j++){
             if(j==0){
@@ -164,7 +164,7 @@ void Head_File_Dump(){
     }
 
 
-    fHandle << "int C_Out[" << B << "] = " << "{";
+    fHandle << "int Block_C_Out[" << B << "] = " << "{";
     for(int i=0; i<B; i++){
         if(i==B-1){
             fHandle << Block_C_Out[i] << "};" << std::endl << std::endl;

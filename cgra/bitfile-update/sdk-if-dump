@@ -1,7 +1,7 @@
 #!/bin/bash
 
-App_Name="mm"
-Type="small"
+App_Name="fir"
+Type="large"
 CGRA_Size="2x2"
 DFG_Dir="/home/liucheng/gitrepo/project/benchmark/dump"
 Scheduler_Dir="/home/liucheng/gitrepo/project/scheduler"

@@ -689,15 +689,11 @@ void Initial_IO_Placement(const std::string &DFG_Name){
     }
 
     /* ----------------------------------------------------------------
-     * Addr allocation initialization:
-     * Constant: Const_In[1]
-     * Input: A_In[B][N], B_In[N]
-     * output: C_Out[B]
      * The newly remapped addr is stored in the array as if it is data.
      * --------------------------------------------------------------*/
     int Remapped_Bram0_Addr = 0;
     int Remapped_Bram1_Addr = 0;
-    int Const_In_Addr[1];
+    int Const_In_Addr[2];
     int Block_Samples_Addr[B][D];
     int Init_Centroids_Addr[N][D];
     int Block_Centroids_Sum_Addr[N*(B/M)][D];
@@ -792,7 +788,7 @@ void Initial_IO_Placement(const std::string &DFG_Name){
         for(int i=0; i<N; i++){
             Kernel_IO_Addr[Row_Index][It] = Block_Centroids_Num_Addr[i+p*N];
             if(p==0){
-                Kernel_IO_Addr[Row_Index][0] = Data_To_ID("Centroids_Sum", i, 0);
+                Kernel_IO_Addr[Row_Index][0] = Data_To_ID("Centroids_Num", i, 0);
             }
             Row_Index++;
         }

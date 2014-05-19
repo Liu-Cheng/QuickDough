@@ -14,7 +14,7 @@ void DFG_Dump(const std::string &DFG_Name, const std::vector<Operand*> &OP_Array
 int Data_To_ID(std::string Name, int IDx);
 void Initial_IO_Placement(const std::string &DFG_Name);
 void Head_File_Dump();
-void IO_coe_Dump(int Block_Sig_In[N+B], int Block_Coeff[N], int Block_Sig_Out[B]);
+void IO_coe_Dump(int Block_Sig_In[N+B], int Coeff[N], int Block_Sig_Out[B]);
 void Single_Dec_Dump(std::ofstream &fHandle, unsigned int Dec_Data, int Width);
 
 const int Const_Num = 1;
@@ -362,7 +362,7 @@ void Initial_IO_Placement(const std::string &DFG_Name){
 void Head_File_Dump(){
 
     int Block_Sig_In[N+B];
-    int Block_Coeff[N];
+    int Coeff[N];
     int Block_Sig_Out[B];
 
     for(int i=0; i<N+B; i++){
@@ -375,17 +375,17 @@ void Head_File_Dump(){
     }
 
     for(int i=0; i<N; i++){
-        Block_Coeff[i] = rand()%10;
+        Coeff[i] = rand()%10;
     }
 
     for(int i=0; i<B; i++){
         Block_Sig_Out[i] = 0;
         for(int j=0; j<N; j++){
-            Block_Sig_Out[i] += Block_Sig_In[i+N-j] * Block_Coeff[j];
+            Block_Sig_Out[i] += Block_Sig_In[i+N-j] * Coeff[j];
         }
     }
 
-    IO_coe_Dump(Block_Sig_In, Block_Coeff, Block_Sig_Out);
+    IO_coe_Dump(Block_Sig_In, Coeff, Block_Sig_Out);
     std::string fName = "./dump/io.h";
     std::ofstream fHandle;
     fHandle.open(fName.c_str());
@@ -415,13 +415,13 @@ void Head_File_Dump(){
         }
     }
 
-    fHandle << "int Block_Coeff[" << N << "]={";
+    fHandle << "int Coeff[" << N << "]={";
     for(int i=0; i<N; i++){
         if(i==N-1){
-            fHandle << Block_Coeff[i] << "};" << std::endl << std::endl;
+            fHandle << Coeff[i] << "};" << std::endl << std::endl;
         }
         else{
-            fHandle << Block_Coeff[i] <<", ";
+            fHandle << Coeff[i] <<", ";
         }
     }
 
@@ -437,7 +437,7 @@ void Head_File_Dump(){
 
 }
 
-void IO_coe_Dump(int Block_Sig_In[N+B], int Block_Coeff[N], int Block_Sig_Out[B]){
+void IO_coe_Dump(int Block_Sig_In[N+B], int Coeff[N], int Block_Sig_Out[B]){
 
     int Width = 32;
     std::string fName = "./dump/outside-data-memory-0.coe";
@@ -459,7 +459,7 @@ void IO_coe_Dump(int Block_Sig_In[N+B], int Block_Coeff[N], int Block_Sig_Out[B]
     }
 
     for(int i=0; i<N; i++){
-        Single_Dec_Dump(fHandle, (unsigned int)Block_Coeff[i], Width);
+        Single_Dec_Dump(fHandle, (unsigned int)Coeff[i], Width);
     }
     fHandle.close();
 
