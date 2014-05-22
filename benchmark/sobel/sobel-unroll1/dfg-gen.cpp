@@ -789,7 +789,8 @@ void Initial_IO_Placement(const std::string &DFG_Name){
          * following work-item. Meanwhile, we don't want to the second
          * work-item to cover the second last row of data. To solve this
          * trouble, we will assign output addr of the first row and last 
-         * row to be output-buffer[0].
+         * row to be output-buffer[0]. As a result, the work items must be
+         * stacked in a column instead of a row. 
          * ----------------------------------------------------------*/
         for(int i=0; i<R*C/4; i++){
             if(i<C/4 || i>=(R-1)*C/4){

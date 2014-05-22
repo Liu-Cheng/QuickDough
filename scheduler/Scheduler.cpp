@@ -2478,7 +2478,7 @@ void Scheduler::InstructionDumpMem(int final_execution_time){
             sprintf(hexAddr, "@00000000");
         }
         else{
-            sprintf(hexAddr, "@0000%X", intAddr);
+            sprintf(hexAddr, "@%08X", intAddr);
         }
         fMemHandle << hexAddr <<endl;
 

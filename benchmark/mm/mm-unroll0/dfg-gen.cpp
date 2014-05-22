@@ -144,6 +144,8 @@ void IO_Init(int A_In[N][N], int B_In[N][N], int C_Out[N][N]){
         }
     }
 
+    printf("C_Out[0][0]=%d \n", C_Out[0][0]);
+
 }
 
 Operand* Create_OP(std::vector<Operand*> &OP_Array, int OP_Val, int Bram_ID, int &Bram_Addr, OPTYPE OP_Type){

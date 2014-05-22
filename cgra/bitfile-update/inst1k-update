@@ -47,12 +47,17 @@ if($error)  {
 
 # Updata instruction memory
 `data2mem -bm $bmm_file -bd $mem_file -bt $bit_file -o b $new_bitfile`;
+print "bmm-file=$bmm_file \n";
+print "mem-file=$mem_file \n";
+print "bit-file=$bit_file \n";
+print "new-bitfile=$new_bitfile";
 
 # Verification of the updating
+#$tmp_bitfile="tmp.bit";
+#`data2mem -bm $bmm_file -bd $mem_file -bt $new_bitfile -o b $tmp_bitfile`;
 #`data2mem -bm $bmm_file  -bt $new_bitfile -d > newdump.txt`;
-#`data2mem -bm $bmm_file  -bt $bit_file -d > olddump.txt`;
+#`data2mem -bm $bmm_file  -bt $tmp_bitfile -d > olddump.txt`;
 #`diff newdump.txt olddump.txt`;
-
 
 my $end_time=time();
 print "Total bitstream update time is ".($end_time-$start_time)."s!\n";
