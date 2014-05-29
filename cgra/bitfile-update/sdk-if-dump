@@ -1,7 +1,7 @@
 #!/bin/bash
 
-App_Name="mm"
-Type="medium"
+App_Name="kmean"
+Type="small"
 Row="5"
 Col="5"
 CGRA_Size=$Row"x"$Col
@@ -37,10 +37,5 @@ cd $Bitfile_Dir
 Bitfile="scgra"$CGRA_Size"-"$App_Name"-"$Type".bit"
 Memfile=$App_Name"-"$Type".mem"
 Modulename="scgra"$CGRA_Size"-1k"
-echo $Modulename;
-echo $Memfile
-echo $Bitfile
-echo $Row
-echo $Col
 ./inst1k-update -t $Modulename -r $Row -c $Col -m $Memfile -e $Bitfile 
 mv $Bitfile ./dump

@@ -1,7 +1,7 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-#define B 1000
-#define M 200
+#define B 100
+#define M 100
 
 #endif

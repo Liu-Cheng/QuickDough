@@ -262,6 +262,64 @@ void Kernel_To_DFG(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &I
 
     for(int i=0; i<M; i++){
 
+        Operand* IM_OP_Ptr[N];
+        for(int j=0; j<N; j++){
+            Instruction* Inst_Ptr = new Instruction();
+            IM_OP_Ptr[j] = new Operand();
+            OP_Array.push_back(IM_OP_Ptr[j]);
+            Inst_Ptr->Set_Instruction(IM_OP_Ptr[j]->op_id, MULADD, Data_To_ID("A_In", i, j), Data_To_ID("B_In", j, 0), 0);
+            Inst_Array.push_back(Inst_Ptr);
+        }
+
+        // Addition stages
+        int Res_OP_Num = N;
+        while(Res_OP_Num>3){
+            for(int j=0; j<Res_OP_Num; j=j+3){
+                if(j+1==Res_OP_Num){
+                    IM_OP_Ptr[j/3] = IM_OP_Ptr[j];
+                }
+                else if(j+2==Res_OP_Num){
+                    Operand* op_tmp = new Operand();
+                    OP_Array.push_back(op_tmp);
+                    Instruction* inst_tmp = new Instruction();
+                    inst_tmp->Set_Instruction(op_tmp->op_id, ADDADD, IM_OP_Ptr[j]->op_id, IM_OP_Ptr[j+1]->op_id, 0);
+                    Inst_Array.push_back(inst_tmp);
+                    IM_OP_Ptr[j/3] = op_tmp;
+                }
+                else{
+                    Operand* op_tmp = new Operand();
+                    OP_Array.push_back(op_tmp);
+                    Instruction* inst_tmp = new Instruction();
+                    inst_tmp->Set_Instruction(op_tmp->op_id, ADDADD, IM_OP_Ptr[j]->op_id, IM_OP_Ptr[j+1]->op_id, IM_OP_Ptr[j+2]->op_id);
+                    Inst_Array.push_back(inst_tmp);
+                    IM_OP_Ptr[j/3] = op_tmp;
+                }
+            }
+            if((Res_OP_Num%3)==0){
+                Res_OP_Num = Res_OP_Num/3;
+            }
+            else{
+                Res_OP_Num = Res_OP_Num/3 + 1;
+            }
+        }
+
+        //Last output
+        if(Res_OP_Num==3){
+            Instruction* inst_tmp = new Instruction();
+            inst_tmp->Set_Instruction(Data_To_ID("C_Out", i, 0), ADDADD, IM_OP_Ptr[0]->op_id, IM_OP_Ptr[1]->op_id, IM_OP_Ptr[2]->op_id);
+            Inst_Array.push_back(inst_tmp);
+        }
+        else if(Res_OP_Num==2){
+            Instruction* inst_tmp = new Instruction();
+            inst_tmp->Set_Instruction(Data_To_ID("C_Out", i, 0), ADDADD, IM_OP_Ptr[0]->op_id, IM_OP_Ptr[1]->op_id, 0);
+            Inst_Array.push_back(inst_tmp);
+        }
+        else{
+            std::cout << "Unexpected residue!\n";
+        }
+        
+        /*
+        // This is a straightforward data DFG generation
         int Last_OP_ID;
         for(int j=0; j<N; j++){
             Instruction* Inst_Ptr=new Instruction();
@@ -284,6 +342,7 @@ void Kernel_To_DFG(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &I
                 Inst_Array.push_back(Inst_Ptr);
             }
         }
+        */
     }
 }
 

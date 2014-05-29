@@ -47,10 +47,6 @@ if($error)  {
 
 # Updata instruction memory
 `data2mem -bm $bmm_file -bd $mem_file -bt $bit_file -o b $new_bitfile`;
-print "bmm-file=$bmm_file \n";
-print "mem-file=$mem_file \n";
-print "bit-file=$bit_file \n";
-print "new-bitfile=$new_bitfile";
 
 # Verification of the updating
 #$tmp_bitfile="tmp.bit";
