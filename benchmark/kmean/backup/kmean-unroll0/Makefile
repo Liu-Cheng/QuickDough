@@ -1,7 +1,7 @@
 CC = g++
 CDIR=../../common/
 
-CFLAGS= -I$(CDIR) -DDEBUG -g 
+CFLAGS= -I$(CDIR) -DDEBUG -gstabs+ -Wall
 
 TARGET = dfg-gen
 SRCS = dfg-gen.cpp \

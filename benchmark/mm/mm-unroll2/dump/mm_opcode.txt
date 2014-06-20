@@ -1,2 +1,0 @@
-MULADD 0
-ADDADD 1

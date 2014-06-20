@@ -22,6 +22,7 @@ Instruction	Instruction.cpp	/^Instruction::Instruction(){$/;"	f	class:Instructio
 Instruction	Instruction.h	/^struct Instruction{$/;"	s
 LET	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 LSFADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+M	common.h	8;"	d
 MULADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 MULSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 N	common.h	6;"	d
@@ -33,7 +34,7 @@ Operand	Operand.cpp	/^Operand::Operand(){$/;"	f	class:Operand
 Operand	Operand.h	/^struct Operand{$/;"	s
 PHI	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 RSFAND	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
-S	common.h	8;"	d
+S	common.h	10;"	d
 SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
 SUBADD	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
 SUBSUB	common.h	/^    MULSUB, MULADD, ADDADD, ADDSUB, SUBADD, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
@@ -62,7 +63,7 @@ gl_id	Operand.cpp	/^int Operand::gl_id=0;$/;"	m	class:Operand	file:
 gl_id	Operand.h	/^        static int gl_id;$/;"	m	struct:Operand
 inst_id	Instruction.h	/^        int inst_id;$/;"	m	struct:Instruction
 inst_opcode	Instruction.h	/^        OPCODE inst_opcode;$/;"	m	struct:Instruction
-io_init	dfg-gen.cpp	/^void io_init(int sub_in[S*D+N*D], int sub_out[N*D+N]){$/;"	f
+io_init	dfg-gen.cpp	/^void io_init(int sub_in[M*D+N*D+N*D+N], int sub_out[N*D+N]){$/;"	f
 kernel_to_dfg	dfg-gen.cpp	/^void kernel_to_dfg(std::vector<Operand*> &op_array, std::vector<Instruction*> &inst_array){$/;"	f
 main	dfg-gen.cpp	/^int main(){$/;"	f
 op_array_init	dfg-gen.cpp	/^void op_array_init(std::vector<Operand*> &op_array, int sub_in[S*D+N*D], int sub_out[N*D+N]){$/;"	f
@@ -77,4 +78,4 @@ self_increase	Operand.cpp	/^int Operand::self_increase(){$/;"	f	class:Operand
 src_op0	Instruction.h	/^        int src_op0;$/;"	m	struct:Instruction
 src_op1	Instruction.h	/^        int src_op1;$/;"	m	struct:Instruction
 src_op2	Instruction.h	/^        int src_op2;$/;"	m	struct:Instruction
-verify	dfg-gen.cpp	/^void verify(const std::vector<Operand*> &op_array, int sub_out[N*D+N], int expected_centroids[N][D]){$/;"	f
+verify	dfg-gen.cpp	/^void verify(const std::vector<Operand*> &op_array, int sub_out[N*D+N]){$/;"	f

@@ -1,13 +1,13 @@
 CC = g++
-CDIR=../../../common/
+CDIR=../../common/
 
-CFLAGS= -I$(CDIR) -DDEBUG -g -Wall -Wno-missing-braces
-#CFLAGS= -g -o3
+CFLAGS= -I$(CDIR) -DDEBUG -g -Wall 
+
 TARGET = dfg-gen
 SRCS = dfg-gen.cpp \
-	   ../../../common/Operand.cpp \
-	   ../../../common/common.cpp \
-	   ../../../common/Instruction.cpp
+	   ../../common/Operand.cpp \
+	   ../../common/common.cpp \
+	   ../../common/Instruction.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

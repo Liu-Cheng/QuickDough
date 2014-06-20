@@ -1,3 +1,4 @@
-This is the simple loop unrolling which removes the first N irregular computation.
-Since the irregular part is removed, there is no branch in the loop now. However,
-the irregular part should be done on ARM.
+This program is used to generate DFG of a fir with fully loop unrolling.
+Meanwhile, we add N 0 in front of the input vector, which could remove the
+branch in the loop. More importantly, taking the additional 0 as input allows
+us to repeat the kernel for longer input vector.
