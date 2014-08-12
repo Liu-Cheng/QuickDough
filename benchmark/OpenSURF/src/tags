@@ -1,0 +1,128 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AssignToClusters	kmeans.h	/^bool Kmeans::AssignToClusters()$/;"	f	class:Kmeans
+BoxIntegral	integral.h	/^inline float BoxIntegral(IplImage *img, int row, int col, int rows, int cols) $/;"	f
+COLOURS	utils.cpp	/^static const CvScalar COLOURS [] = {cvScalar(255,0,0), cvScalar(0,255,0), $/;"	v	file:
+Distance	kmeans.h	/^float Kmeans::Distance(Ipoint &ip1, Ipoint &ip2)$/;"	f	class:Kmeans
+FASTHESSIAN_H	fasthessian.h	13;"	d
+FastHessian	fasthessian.cpp	/^FastHessian::FastHessian(IplImage *img, std::vector<Ipoint> &ipts, $/;"	f	class:FastHessian
+FastHessian	fasthessian.cpp	/^FastHessian::FastHessian(std::vector<Ipoint> &ipts, $/;"	f	class:FastHessian
+FastHessian	fasthessian.h	/^class FastHessian {$/;"	c
+INIT_SAMPLE	fasthessian.h	/^static const int INIT_SAMPLE = 2;$/;"	v
+INTEGRAL_H	integral.h	13;"	d
+INTERVALS	fasthessian.h	/^static const int INTERVALS = 4;$/;"	v
+IPOINT_H	ipoint.h	13;"	d
+InitRandomClusters	kmeans.h	/^void Kmeans::InitRandomClusters(int n)$/;"	f	class:Kmeans
+Integral	integral.cpp	/^IplImage *Integral(IplImage *source)$/;"	f
+IpPairVec	ipoint.h	/^typedef std::vector<std::pair<Ipoint, Ipoint> > IpPairVec;$/;"	t
+IpVec	ipoint.h	/^typedef std::vector<Ipoint> IpVec;$/;"	t
+Ipoint	ipoint.h	/^  Ipoint() : orientation(0) {};$/;"	f	class:Ipoint
+Ipoint	ipoint.h	/^class Ipoint {$/;"	c
+Kmeans	kmeans.h	/^  Kmeans() {};$/;"	f	class:Kmeans
+Kmeans	kmeans.h	/^class Kmeans {$/;"	c
+NCOLOURS	utils.cpp	/^static const int NCOLOURS = 8;$/;"	v	file:
+OCTAVES	fasthessian.h	/^static const int OCTAVES = 5;$/;"	v
+PROCEDURE	main.cpp	27;"	d	file:
+RepositionClusters	kmeans.h	/^void Kmeans::RepositionClusters()$/;"	f	class:Kmeans
+ResponseLayer	responselayer.h	/^  ResponseLayer(int width, int height, int step, int filter)$/;"	f	class:ResponseLayer
+ResponseLayer	responselayer.h	/^class ResponseLayer$/;"	c
+Run	kmeans.h	/^void Kmeans::Run(IpVec *ipts, int clusters, bool init)$/;"	f	class:Kmeans
+SURFLIB_H	surflib.h	13;"	d
+SURF_H	surf.h	13;"	d
+SetIpoints	kmeans.h	/^void Kmeans::SetIpoints(IpVec *ipts)$/;"	f	class:Kmeans
+Surf	surf.cpp	/^Surf::Surf(IplImage *img, IpVec &ipts)$/;"	f	class:Surf
+Surf	surf.h	/^class Surf {$/;"	c
+THRES	fasthessian.h	/^static const float THRES = 0.0004f;$/;"	v
+UTILS_H	utils.h	13;"	d
+buildResponseLayer	fasthessian.cpp	/^void FastHessian::buildResponseLayer(ResponseLayer *rl)$/;"	f	class:FastHessian
+buildResponseMap	fasthessian.cpp	/^void FastHessian::buildResponseMap()$/;"	f	class:FastHessian
+clusterIndex	ipoint.h	/^  int clusterIndex;$/;"	m	class:Ipoint
+clusters	kmeans.h	/^  IpVec clusters;$/;"	m	class:Kmeans
+coords	responselayer.h	/^  std::vector<std::pair<int, int>> coords;$/;"	m	class:ResponseLayer
+deriv3D	fasthessian.cpp	/^CvMat* FastHessian::deriv3D(int r, int c, ResponseLayer *t, ResponseLayer *m, ResponseLayer *b)$/;"	f	class:FastHessian
+descriptor	ipoint.h	/^  float descriptor[64];$/;"	m	class:Ipoint
+drawFPS	utils.cpp	/^void drawFPS(IplImage *img)$/;"	f
+drawIpoint	utils.cpp	/^void drawIpoint(IplImage *img, Ipoint &ipt, int tailSize)$/;"	f
+drawIpoints	utils.cpp	/^void drawIpoints(IplImage *img, vector<Ipoint> &ipts, int tailSize)$/;"	f
+drawPoint	utils.cpp	/^void drawPoint(IplImage *img, Ipoint &ipt)$/;"	f
+drawPoints	utils.cpp	/^void drawPoints(IplImage *img, vector<Ipoint> &ipts)$/;"	f
+drawWindows	utils.cpp	/^void drawWindows(IplImage *img, vector<Ipoint> &ipts)$/;"	f
+dx	ipoint.h	/^  float dx, dy;$/;"	m	class:Ipoint
+dy	ipoint.h	/^  float dx, dy;$/;"	m	class:Ipoint
+error	utils.cpp	/^void error(const char *msg) $/;"	f
+fRound	utils.h	/^inline int fRound(float flt)$/;"	f
+filter	responselayer.h	/^  int width, height, step, filter;$/;"	m	class:ResponseLayer
+gauss25	surf.cpp	/^const double gauss25 [7][7] = {$/;"	v
+gaussian	surf.cpp	/^inline float Surf::gaussian(float x, float y, float sig)$/;"	f	class:Surf
+gaussian	surf.cpp	/^inline float Surf::gaussian(int x, int y, float sig)$/;"	f	class:Surf
+getAngle	surf.cpp	/^float Surf::getAngle(float X, float Y)$/;"	f	class:Surf
+getCoords	responselayer.h	/^  inline std::pair<int,int> getCoords(unsigned int row, unsigned int column)$/;"	f	class:ResponseLayer
+getCoords	responselayer.h	/^  inline std::pair<int,int> getCoords(unsigned int row, unsigned int column, ResponseLayer *src)$/;"	f	class:ResponseLayer
+getDescriptor	surf.cpp	/^void Surf::getDescriptor(bool bUpright)$/;"	f	class:Surf
+getDescriptors	surf.cpp	/^void Surf::getDescriptors(bool upright)$/;"	f	class:Surf
+getGray	utils.cpp	/^IplImage *getGray(const IplImage *img)$/;"	f
+getIpoints	fasthessian.cpp	/^void FastHessian::getIpoints()$/;"	f	class:FastHessian
+getLaplacian	responselayer.h	/^  inline unsigned char getLaplacian(unsigned int row, unsigned int column)$/;"	f	class:ResponseLayer
+getLaplacian	responselayer.h	/^  inline unsigned char getLaplacian(unsigned int row, unsigned int column, ResponseLayer *src)$/;"	f	class:ResponseLayer
+getMatches	ipoint.cpp	/^void getMatches(IpVec &ipts1, IpVec &ipts2, IpPairVec &matches)$/;"	f
+getOrientation	surf.cpp	/^void Surf::getOrientation()$/;"	f	class:Surf
+getResponse	responselayer.h	/^  inline float getResponse(unsigned int row, unsigned int column)$/;"	f	class:ResponseLayer
+getResponse	responselayer.h	/^  inline float getResponse(unsigned int row, unsigned int column, ResponseLayer *src)$/;"	f	class:ResponseLayer
+haarX	surf.cpp	/^inline float Surf::haarX(int row, int column, int s)$/;"	f	class:Surf
+haarY	surf.cpp	/^inline float Surf::haarY(int row, int column, int s)$/;"	f	class:Surf
+height	responselayer.h	/^  int width, height, step, filter;$/;"	m	class:ResponseLayer
+hessian3D	fasthessian.cpp	/^CvMat* FastHessian::hessian3D(int r, int c, ResponseLayer *t, ResponseLayer *m, ResponseLayer *b)$/;"	f	class:FastHessian
+i_height	fasthessian.h	/^    int i_width, i_height;$/;"	m	class:FastHessian
+i_width	fasthessian.h	/^    int i_width, i_height;$/;"	m	class:FastHessian
+img	fasthessian.h	/^    IplImage *img;$/;"	m	class:FastHessian
+img	surf.h	/^    IplImage *img;$/;"	m	class:Surf
+index	surf.h	/^    int index;$/;"	m	class:Surf
+init_sample	fasthessian.h	/^    int init_sample;$/;"	m	class:FastHessian
+interpolateExtremum	fasthessian.cpp	/^void FastHessian::interpolateExtremum(int r, int c, ResponseLayer *t, ResponseLayer *m, ResponseLayer *b)$/;"	f	class:FastHessian
+interpolateStep	fasthessian.cpp	/^void FastHessian::interpolateStep(int r, int c, ResponseLayer *t, ResponseLayer *m, ResponseLayer *b, $/;"	f	class:FastHessian
+intervals	fasthessian.h	/^    int intervals;$/;"	m	class:FastHessian
+ipts	fasthessian.h	/^    std::vector<Ipoint> &ipts;$/;"	m	class:FastHessian
+ipts	kmeans.h	/^  IpVec *ipts;$/;"	m	class:Kmeans
+ipts	surf.h	/^    IpVec &ipts;$/;"	m	class:Surf
+isExtremum	fasthessian.cpp	/^int FastHessian::isExtremum(int r, int c, ResponseLayer *t, ResponseLayer *m, ResponseLayer *b)$/;"	f	class:FastHessian
+laplacian	ipoint.h	/^  int laplacian;$/;"	m	class:Ipoint
+laplacian	responselayer.h	/^  unsigned char *laplacian;$/;"	m	class:ResponseLayer
+loadSurf	utils.cpp	/^void loadSurf(char *filename, vector<Ipoint> &ipts)$/;"	f
+main	main.cpp	/^int main(void) $/;"	f
+mainImage	main.cpp	/^int mainImage(void)$/;"	f
+mainKmeans	main.cpp	/^int mainKmeans(void)$/;"	f
+mainMatch	main.cpp	/^int mainMatch(void)$/;"	f
+mainMotionPoints	main.cpp	/^int mainMotionPoints(void)$/;"	f
+mainStaticMatch	main.cpp	/^int mainStaticMatch()$/;"	f
+mainVideo	main.cpp	/^int mainVideo(void)$/;"	f
+max	integral.h	23;"	d
+min	integral.h	19;"	d
+octaves	fasthessian.h	/^    int octaves;$/;"	m	class:FastHessian
+operator -	ipoint.h	/^  float operator-(const Ipoint &rhs)$/;"	f	class:Ipoint
+orientation	ipoint.h	/^  float orientation;$/;"	m	class:Ipoint
+pi	surf.cpp	/^const float pi = 3.14159f;$/;"	v
+responseMap	fasthessian.h	/^    std::vector<ResponseLayer *> responseMap;$/;"	m	class:FastHessian
+responses	responselayer.h	/^  float *responses;$/;"	m	class:ResponseLayer
+saveParameters	fasthessian.cpp	/^void FastHessian::saveParameters(const int octaves, const int intervals, $/;"	f	class:FastHessian
+saveSurf	utils.cpp	/^void saveSurf(char *filename, vector<Ipoint> &ipts)$/;"	f
+scale	ipoint.h	/^  float scale;$/;"	m	class:Ipoint
+setIntImage	fasthessian.cpp	/^void FastHessian::setIntImage(IplImage *img)$/;"	f	class:FastHessian
+showImage	utils.cpp	/^void showImage(char *title,const IplImage *img)$/;"	f
+showImage	utils.cpp	/^void showImage(const IplImage *img)$/;"	f
+step	responselayer.h	/^  int width, height, step, filter;$/;"	m	class:ResponseLayer
+surfDes	surflib.h	/^inline void surfDes(IplImage *img,  \/* image to find Ipoints in *\/$/;"	f
+surfDet	surflib.h	/^inline void surfDet(IplImage *img,  \/* image to find Ipoints in *\/$/;"	f
+surfDetDes	surflib.h	/^inline void surfDetDes(IplImage *img,  \/* image to find Ipoints in *\/$/;"	f
+thresh	fasthessian.h	/^    float thresh;$/;"	m	class:FastHessian
+translateCorners	ipoint.cpp	/^int translateCorners(IpPairVec &matches, const CvPoint src_corners[4], CvPoint dst_corners[4])$/;"	f
+width	responselayer.h	/^  int width, height, step, filter;$/;"	m	class:ResponseLayer
+x	ipoint.h	/^  float x, y;$/;"	m	class:Ipoint
+y	ipoint.h	/^  float x, y;$/;"	m	class:Ipoint
+~FastHessian	fasthessian.cpp	/^FastHessian::~FastHessian()$/;"	f	class:FastHessian
+~Ipoint	ipoint.h	/^  ~Ipoint() {};$/;"	f	class:Ipoint
+~Kmeans	kmeans.h	/^  ~Kmeans() {};$/;"	f	class:Kmeans
+~ResponseLayer	responselayer.h	/^  ~ResponseLayer()$/;"	f	class:ResponseLayer

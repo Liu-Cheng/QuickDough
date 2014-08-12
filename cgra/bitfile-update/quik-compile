@@ -57,11 +57,21 @@ CGRA_Size=$Row"x"$Col
 
 cd $DFG_Dir"/"$App_Name
 if [ "$App_Name" = "mm" ]; then
-    if [ "$Type" = "small" ]; then
-        cp -rf src/mm-3rd-level-unroll/*.* $App_Name"-dfg-gen/"
+    if [ "$Type" = "supersmall" ]; then
+        cp -rf src/mm-fully-unroll/*.* $App_Name"-dfg-gen/"
         shift
         sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
-    elif [ "$App_Name" = "medium" ]; then
+    elif [ "$Type" = "small" ]; then
+        cp -rf src/mm-3rd-level-unroll/*.* $App_Name"-dfg-gen/"
+        shift
+        sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
+        shift
+        sed -i "/^\#define M/c\\#define M $9" $App_Name"-dfg-gen/"config.h
+        shift
+        sed -i "/^\#define P/c\\#define P $9" $App_Name"-dfg-gen/"config.h
+        shift
+        sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
+    elif [ "$Type" = "medium" ]; then
         cp -rf src/mm-2nd-level-unroll/*.* $App_Name"-dfg-gen/"
         shift
         sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
@@ -93,7 +103,7 @@ elif [ "$App_Name" = "fir" ]; then
         sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
     fi
 elif [ "$App_Name" = "sobel" ]; then
-    if [ "$Type" = "small" && "$Row" = "4" && "$Col" = "4" ]; then
+    if [ "$Type" = "small" ] && [ "$Row" = "5" ] && [ "$Col" = "5" ]; then
         cp -rf src/sobel-fully-unroll/*.* $App_Name"-dfg-gen/"
         shift
         sed -i "/^\#define R/c\\#define R $9" $App_Name"-dfg-gen/"config.h
@@ -134,6 +144,7 @@ echo "DFG generation starts..."
 Start_Time=$(date +%s%N)
 cd $DFG_Dir"/"$App_Name"/"$App_Name"-dfg-gen"
 ./dfg-gen >> $Bitfile_Dir"/log.txt"
+mkdir -p $DFG_Dir/dump/$App_Name"-"$Type
 cp -rf dump/*.* "../../dump/"$App_Name"-"$Type"/"
 End_Time=$(date +%s%N)
 echo "DFG Genertion is done, time elapsed: $((($End_Time - $Start_Time)/1000000))""ms"
@@ -158,7 +169,8 @@ sed -i "/^row/c\row $Row" configure.txt
 sed -i "/^col/c\col $Col" configure.txt
 sed -i "/^DFG_name/c\DFG_name $App_Name" configure.txt
 cd ..
-./cgracompiler >> $Bitfile_Dir"/log.txt"
+#./cgracompiler >> $Bitfile_Dir"/log.txt"
+./cgracompiler
 End_Time=$(date +%s%N)
 echo "DFG scheduling completes, time elapsed $((($End_Time - $Start_Time)/1000000))""ms"
 echo

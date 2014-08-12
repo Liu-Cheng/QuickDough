@@ -1,0 +1,80 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABS	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ADDADD	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ADDSUB	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+ANDAND	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+B	config.h	4;"	d
+CC	Makefile	/^CC = g++$/;"	m
+CDIR	Makefile	/^CDIR=$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -I$(CDIR) -DDEBUG -g -Wall $/;"	m
+Compute	Instruction.cpp	/^int Instruction::Compute(int src_val0, int src_val1, int src_val2){$/;"	f	class:Instruction
+Const_In	dfg-gen.cpp	/^int Const_In[1] = {0};$/;"	v
+Const_Num	dfg-gen.cpp	/^int Const_Num = 1;$/;"	v
+DFG_Compute	dfg-gen.cpp	/^void DFG_Compute(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &Inst_Array){$/;"	f
+DFG_Dump	dfg-gen.cpp	/^void DFG_Dump(const std::string &DFG_Name, const std::vector<Operand*> &OP_Array, const std::vector<Instruction*> &Inst_Array){$/;"	f
+Data_To_ID	dfg-gen.cpp	/^int Data_To_ID(std::string Name, int IDx, int IDy){$/;"	f
+Display	Instruction.cpp	/^void Instruction::Display(){$/;"	f	class:Instruction
+Display	Operand.cpp	/^void Operand::Display(){$/;"	f	class:Operand
+GT	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+Head_File_Dump	dfg-gen.cpp	/^void Head_File_Dump(){$/;"	f
+IM	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+INCONST	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+INVAR	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+IO_Init	dfg-gen.cpp	/^void IO_Init(int A_In[M][N], int B_In[N], int C_Out[M]){$/;"	f
+IO_coe_Dump	dfg-gen.cpp	/^void IO_coe_Dump(int Block_A_In[B][N], int Block_B_In[N], int Block_C_Out[B]){$/;"	f
+Initial_IO_Placement	dfg-gen.cpp	/^void Initial_IO_Placement(const std::string &DFG_Name){$/;"	f
+Instruction	Instruction.cpp	/^Instruction::Instruction(){$/;"	f	class:Instruction
+Instruction	Instruction.h	/^struct Instruction{$/;"	s
+Kernel_To_DFG	dfg-gen.cpp	/^void Kernel_To_DFG(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &Inst_Array){$/;"	f
+LET	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+LSFADD	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+M	config.h	5;"	d
+MULADD	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+MULSUB	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+N	config.h	6;"	d
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
+OPCODE	common.h	/^enum OPCODE {$/;"	g
+OPTYPE	common.h	/^enum OPTYPE {$/;"	g
+OP_Array_Init	dfg-gen.cpp	/^void OP_Array_Init(std::vector<Operand*> &OP_Array, int A_In[M][N], int B_In[N], int C_Out[M]){$/;"	f
+OUTVAR	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+Operand	Operand.cpp	/^Operand::Operand(){$/;"	f	class:Operand
+Operand	Operand.h	/^struct Operand{$/;"	s
+PHI	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+RSFAND	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
+SUBSUB	common.h	/^    MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:OPCODE
+Self_Increase	Instruction.cpp	/^int Instruction::Self_Increase(){$/;"	f	class:Instruction
+Set_Instruction	Instruction.cpp	/^void Instruction::Set_Instruction(int _dst_op, OPCODE _inst_opcode, int _src_op0, int _src_op1, int _src_op2){$/;"	f	class:Instruction
+Set_Operand	Operand.cpp	/^void Operand::Set_Operand(int _op_value, int _op_bram_id, int _op_bram_addr, OPTYPE _op_type){$/;"	f	class:Operand
+Single_Dec_Dump	dfg-gen.cpp	/^void Single_Dec_Dump(std::ofstream &fHandle, unsigned int Dec_Data, int Width){$/;"	f
+TARGET	Makefile	/^TARGET = dfg-gen$/;"	m
+UNUSED	common.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM $/;"	e	enum:OPTYPE
+Verify	dfg-gen.cpp	/^void Verify(const std::vector<Operand*> &OP_Array, int C_Out[M]){$/;"	f
+__COMMON_H__	common.h	2;"	d
+__CONFIG_H__	config.h	2;"	d
+__INSTRUCTION_H__	Instruction.h	2;"	d
+__OPERAND_H__	Operand.h	2;"	d
+dst_op	Instruction.h	/^        int dst_op;$/;"	m	struct:Instruction
+gl_id	Instruction.cpp	/^int Instruction::gl_id=0;$/;"	m	class:Instruction	file:
+gl_id	Instruction.h	/^        static int gl_id; $/;"	m	struct:Instruction
+gl_id	Operand.cpp	/^int Operand::gl_id=0;$/;"	m	class:Operand	file:
+gl_id	Operand.h	/^        static int gl_id;$/;"	m	struct:Operand
+inst_id	Instruction.h	/^        int inst_id;$/;"	m	struct:Instruction
+inst_opcode	Instruction.h	/^        OPCODE inst_opcode;$/;"	m	struct:Instruction
+main	dfg-gen.cpp	/^int main(){$/;"	f
+op_bram_addr	Operand.h	/^        int op_bram_addr;$/;"	m	struct:Operand
+op_bram_id	Operand.h	/^        int op_bram_id;$/;"	m	struct:Operand
+op_id	Operand.h	/^        int op_id;$/;"	m	struct:Operand
+op_type	Operand.h	/^        OPTYPE op_type;$/;"	m	struct:Operand
+op_value	Operand.h	/^        int op_value;$/;"	m	struct:Operand
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, OPCODE inst_opcode){$/;"	f
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, OPTYPE op_type){$/;"	f
+self_increase	Operand.cpp	/^int Operand::self_increase(){$/;"	f	class:Operand
+src_op0	Instruction.h	/^        int src_op0;$/;"	m	struct:Instruction
+src_op1	Instruction.h	/^        int src_op1;$/;"	m	struct:Instruction
+src_op2	Instruction.h	/^        int src_op2;$/;"	m	struct:Instruction

@@ -1,7 +1,8 @@
-#ifndef __CONFIG_H__
-#define __CONFIG_H__
+#ifndef __COFIG_H__
+#define __COFIG_H__
 
-#define R 4
-#define C 8
+#define B 16
+#define R 16
+#define C 4
 
 #endif

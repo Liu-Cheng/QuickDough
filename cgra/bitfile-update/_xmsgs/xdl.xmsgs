@@ -5,5 +5,9 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="XDL" num="128" delta="new" >
+  The Ncd file &lt;<arg fmt="%s" index="1">scgra2x2-1k.ncd</arg>&gt; cannot be found.
+</msg>
+
 </messages>
 

@@ -3,6 +3,7 @@
 #include "Instruction.h"
 #include "config.h"
 #include <list>
+#include <cstdlib>
 
 void IO_Init(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/4]);
 void OP_Array_Init(std::vector<Operand*> &OP_Array, int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/4]);
@@ -12,8 +13,8 @@ void Verify(const std::vector<Operand*> &OP_Array, int Fig_Out[R*C/4]);
 void DFG_Dump(const std::string &DFG_Name, const std::vector<Operand*> &OP_Array, const std::vector<Instruction*> &Inst_Array);
 int Data_To_ID(std::string Name, int IDx, int IDy);
 void Initial_IO_Placement(const std::string &DFG_Name);
-void Head_File_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/4]);
-void IO_coe_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/4]);
+void Head_File_Dump(int Gx[3][3], int Gy[3][3]);
+void IO_coe_Dump(int Block_Fig_In[B*C/4], int Gx[3][3], int Gy[3][3], int Block_Fig_Out[B*C/4]);
 void Single_Dec_Dump(std::ofstream &fHandle, unsigned int Dec_Data, int Width);
 
 int Const_In[5]={0, 8, 16, 24, 255}; //The constant array is put here to make id search easier.
@@ -47,8 +48,7 @@ int main(){
     Verify(OP_Array, Fig_Out);
     DFG_Dump(DFG_Name, OP_Array, Inst_Array);
     Initial_IO_Placement(DFG_Name);
-    Head_File_Dump(Fig_In, Gx, Gy, Fig_Out);
-    IO_coe_Dump(Fig_In, Gx, Gy, Fig_Out);
+    Head_File_Dump(Gx, Gy);
 }
 
 void IO_Init(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/4]){
@@ -477,7 +477,7 @@ void DFG_Dump(const std::string &DFG_Name, const std::vector<Operand*> &OP_Array
     opcode_fhandle.close();
 }
 
-void IO_coe_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/4]){
+void IO_coe_Dump(int Block_Fig_In[B*C/4], int Gx[3][3], int Gy[3][3], int Block_Fig_Out[B*C/4]){
 
     int Width = 32;
     std::string fName = "./dump/outside-data-memory-0.coe";
@@ -494,8 +494,8 @@ void IO_coe_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/
         Single_Dec_Dump(fHandle, (unsigned int)Const_In[i], Width);
     }
 
-    for(int i=0; i<R*C/4; i++){
-        Single_Dec_Dump(fHandle, (unsigned int)Fig_In[i], Width);
+    for(int i=0; i<B*C/4; i++){
+        Single_Dec_Dump(fHandle, (unsigned int)Block_Fig_In[i], Width);
     }
 
     for(int i=0; i<3; i++){
@@ -521,14 +521,78 @@ void IO_coe_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/
 
     fHandle << "memory_initialization_radix=2;" << std::endl;
     fHandle << "memory_initialization_vector=" << std::endl;
-    for(int i=0; i<R*C/4; i++){
-        Single_Dec_Dump(fHandle, (unsigned int)Fig_Out[i], Width);
+    for(int i=0; i<B*C/4; i++){
+        Single_Dec_Dump(fHandle, (unsigned int)Block_Fig_Out[i], Width);
     }
     fHandle.close();
 
 }
 
-void Head_File_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C/4]){
+void Head_File_Dump(int Gx[3][3], int Gy[3][3]){
+
+    unsigned char Block_Pixl_In[B][C];
+    unsigned char Block_Pixl_Out[B][C];
+    int Block_Fig_In[B*C/4];
+    int Block_Fig_Out[B*C/4];
+
+    for(int i=0; i<B; i++){
+        for(int j=0; j<C; j++){
+            Block_Pixl_In[i][j] = rand()%256;
+        }
+    }
+
+    for(int i=0; i<B; i++){
+        for(int j=0; j<C; j++){
+            if(i==0 || j==0 || i==B-1 || j==C-1){
+                Block_Pixl_Out[i][j] = 255;
+            }
+            else{
+                int Sumx = 0;
+                int Sumy = 0;
+                for(int p=-1; p<=1; p++){
+                    for(int q=-1; q<=1; q++){
+                        Sumx += Block_Pixl_In[i+p][j+q]*Gx[p+1][q+1];
+                        Sumy += Block_Pixl_In[i+p][j+q]*Gy[p+1][q+1];
+                    }
+                }
+                int Sum = abs(Sumx) + abs(Sumy);
+                if(Sum>255){
+                    Block_Pixl_Out[i][j] = 0;
+                }
+                else{
+                    Block_Pixl_Out[i][j] = 255-Sum;
+                }
+            }
+        }
+    }
+
+    int ID=0;
+    for(int i=0; i<B; i++){
+        for(int j=0; j<C; j=j+4){
+            int Pixl0, Pixl1, Pixl2, Pixl3;
+            Pixl0=(unsigned int)Block_Pixl_In[i][j];
+            Pixl1=(unsigned int)Block_Pixl_In[i][j+1]<<8;
+            Pixl2=(unsigned int)Block_Pixl_In[i][j+2]<<16;
+            Pixl3=(unsigned int)Block_Pixl_In[i][j+3]<<24;
+            Block_Fig_In[ID]=Pixl0+Pixl1+Pixl2+Pixl3;
+            ID++;
+        }
+    }
+
+    ID=0;
+    for(int i=0; i<B; i++){
+        for(int j=0; j<C; j=j+4){
+            int Pixl0, Pixl1, Pixl2, Pixl3;
+            Pixl0=(unsigned int)Block_Pixl_Out[i][j];
+            Pixl1=(unsigned int)Block_Pixl_Out[i][j+1]<<8;
+            Pixl2=(unsigned int)Block_Pixl_Out[i][j+2]<<16;
+            Pixl3=(unsigned int)Block_Pixl_Out[i][j+3]<<24;
+            Block_Fig_Out[ID]=Pixl0+Pixl1+Pixl2+Pixl3;
+            ID++;
+        }
+    }
+
+    IO_coe_Dump(Block_Fig_In, Gx, Gy, Block_Fig_Out);
 
     std::string fName = "./dump/io.h";
     std::ofstream fHandle;
@@ -538,9 +602,8 @@ void Head_File_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R
         exit(EXIT_FAILURE);
     }
 
-    fHandle << "// Input and output data of the benchmark" << std::endl << std::endl;
-
-    fHandle << "int Const_In[" << Const_Num << "] = "<<"{";
+    fHandle << "//Input and output data of the benchmark" << std::endl << std::endl;
+    fHandle << "int Const_In[" << Const_Num << "] = " << "{";
     for(int i=0; i<Const_Num; i++){
         if(i==Const_Num-1){
             fHandle << Const_In[i] << "};" << std::endl << std::endl;
@@ -550,14 +613,13 @@ void Head_File_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R
         }
     }
 
-
-    fHandle << "int Fig_In[" << R*C/4 <<"] = {";
-    for(int i=0; i<R*C/4; i++){
-        if(i==R*C/4-1){
-            fHandle << Fig_In[i] << "}; " << std::endl << std::endl;
+    fHandle << "int Block_Fig_In[" << B*C/4 <<"] = {";
+    for(int i=0; i<B*C/4; i++){
+        if(i==B*C/4-1){
+            fHandle << Block_Fig_In[i] << "}; " << std::endl << std::endl;
         }
         else{
-            fHandle << Fig_In[i] << ", ";
+            fHandle << Block_Fig_In[i] << ", ";
         }
     }
 
@@ -599,13 +661,13 @@ void Head_File_Dump(int Fig_In[R*C/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R
         }
     }
 
-    fHandle << "int Fig_Out[" << R*C/4 << "] = " << "{";
-    for(int i=0; i<R*C/4; i++){
-        if(i==R*C/4-1){
-            fHandle << Fig_Out[i] << "};" << std::endl << std::endl;
+    fHandle << "int Block_Fig_Out[" << B*C/4 << "] = " << "{";
+    for(int i=0; i<B*C/4; i++){
+        if(i==B*C/4-1){
+            fHandle << Block_Fig_Out[i] << "};" << std::endl << std::endl;
         }
         else{
-            fHandle << Fig_Out[i] << ", ";
+            fHandle << Block_Fig_Out[i] << ", ";
         }
     }
     
@@ -625,17 +687,17 @@ void Initial_IO_Placement(const std::string &DFG_Name){
     /* ----------------------------------------------------------------
      * Addr allocation initialization:
      * Constant: Const_In[1]
-     * Input: Fig_In[R*C/4], Gx[3][3], Gy[3][3]
-     * output: Fig_Out[R*C/4]
+     * Input: Block_Fig_In[B*C/4], Gx[3][3], Gy[3][3]
+     * output: Block_Fig_Out[B*C/4]
      * The newly remapped addr is stored in the array as if it is data.
      * --------------------------------------------------------------*/
     int Remapped_Bram0_Addr = 0;
     int Remapped_Bram1_Addr = 0;
     int Const_In_Addr[5];
-    int Fig_In_Addr[R*C/4];
+    int Block_Fig_In_Addr[B*C/4];
     int Gx_Addr[3][3];
     int Gy_Addr[3][3];
-    int Fig_Out_Addr[R*C/4];
+    int Block_Fig_Out_Addr[B*C/4];
  
     //Input location
     for(int i=0; i<Const_Num; i++){
@@ -643,8 +705,8 @@ void Initial_IO_Placement(const std::string &DFG_Name){
         Remapped_Bram0_Addr++ ;
     }
 
-    for(int i=0; i<R*C/4; i++){
-        Fig_In_Addr[i] = Remapped_Bram0_Addr;
+    for(int i=0; i<B*C/4; i++){
+        Block_Fig_In_Addr[i] = Remapped_Bram0_Addr;
         Remapped_Bram0_Addr++ ;
     }
 
@@ -663,13 +725,13 @@ void Initial_IO_Placement(const std::string &DFG_Name){
     }
 
     // Output location
-    for(int i=0; i<R*C/4; i++){
-        Fig_Out_Addr[i] = Remapped_Bram1_Addr;
+    for(int i=0; i<B*C/4; i++){
+        Block_Fig_Out_Addr[i] = Remapped_Bram1_Addr;
         Remapped_Bram1_Addr++;
     }
 
     const int Work_Item_IO_Num = Const_Num + R*C/4 + 3*3 + 3*3 + R*C/4; //total number of work-item's operand
-    const int Kernel_It_Num = 1; //total number of the kernel iteration
+    const int Kernel_It_Num = (B-2)/(R-2); //total number of the kernel iteration
     int Kernel_IO_Addr[Work_Item_IO_Num][Kernel_It_Num+1]; //The first column represents kernel op_id
 
     // Here we assume that work_item_op_id can be used as index directly.
@@ -691,7 +753,7 @@ void Initial_IO_Placement(const std::string &DFG_Name){
 
         //Normal work-item input i.e. Fig_In[R*C/4]
         for(int i=0; i<R*C/4; i++){
-            Kernel_IO_Addr[Row_Index][It] = Fig_In_Addr[i];
+            Kernel_IO_Addr[Row_Index][It] = Block_Fig_In_Addr[p*(R-2)*C/4+i];
             if(p==0){
                 Kernel_IO_Addr[Row_Index][0] = Data_To_ID("Fig_In", i, 0);
             }
@@ -718,9 +780,25 @@ void Initial_IO_Placement(const std::string &DFG_Name){
             }
         }
 
-        //Output data
+        /*-------------------------------------------------------------
+         * Output data is totally different from input data.
+         * It is a bit tricky here because the first row and the last row
+         * of data are invalid. They are here for the convenience of DFG
+         * generation. The last row of output of the first work-item is
+         * supposed be replaced by the second row of output of the 
+         * following work-item. Meanwhile, we don't want to the second
+         * work-item to cover the second last row of data. To solve this
+         * trouble, we will assign output addr of the first row and last 
+         * row to be output-buffer[0]. As a result, the work items must be
+         * stacked in a column instead of a row. 
+         * ----------------------------------------------------------*/
         for(int i=0; i<R*C/4; i++){
-            Kernel_IO_Addr[Row_Index][It] = Fig_Out_Addr[i];
+            if(i<C/4 || i>=(R-1)*C/4){
+                Kernel_IO_Addr[Row_Index][It] = 0;
+            }
+            else{
+                Kernel_IO_Addr[Row_Index][It] = Block_Fig_Out_Addr[p*(R-2)*C/4+i];
+            }
             if(p==0){
                 Kernel_IO_Addr[Row_Index][0] = Data_To_ID("Fig_Out", i, 0);
             }
@@ -767,4 +845,6 @@ void Single_Dec_Dump(std::ofstream &fHandle, unsigned int Dec_Data, int Width){
     fHandle << std::endl;
 
 }
+
+
 

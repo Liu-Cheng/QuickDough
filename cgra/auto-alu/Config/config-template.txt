@@ -1,0 +1,35 @@
+Sel Operation-Name Operation-Type DWIDTH Pipeline-Num Operation-Details
+ Y       PHI              HDL        32        1            phi
+ N       ABS              HDL        32        1            abs
+ Y       GT               HDL        32        1            >
+ N       LET              HDL        32        1            <=
+ Y       EQ               HDL        32        1            ==
+ N       BEQ              HDL        32        1            !=
+ N       ADD              HDL        32        1            +
+ N       UADD             HDL        32        1            +
+ N       FXADD            IP         32        x
+ N       SUB              HDL        32        1            -
+ N       USUB             HDL        32        1            -
+ N       FXSUB            IP         32        x           
+ N       AND              HDL        32        1            &
+ N       OR               HDL        32        1            ||
+ N       XOR              HDL        32        1            xor
+ N       NOT              HDL        32        1            !
+ N       MUL              IP         32        x
+ N       FXMUL            IP         32        x
+ N       UMUL             IP         32        x
+ N       DIV              IP         32        x
+ N       UDIV             IP         32        x
+ N       SQRT             IP         32        x
+ N       ADDADD           HDL        32        x            + +
+ N       ADDSUB           HDL        32        2            + -
+ N       MULADD           IP         32        x                            
+ N       SUBMUL           IP         32        x
+ N       SUBSUB           HDL        32        2            - -
+ N       RSFAND           HDL        32        1            >> 0 8 16 24 &
+ N       LSFADD           HDL        32        2            << 0 8 16 24 +
+ N       ANDAND           HDL        32        1            & &
+ N       LSF              HDL        32        1            >> x
+ N       RSF              HDL        32        1            << x
+
+
