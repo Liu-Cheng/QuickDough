@@ -1,6 +1,7 @@
 // ============================================================================
 // Fucnction Description:
-// Present the scheduling algorithm as well as scheduling state. 
+// Implement the list scheduling algorithm, provide statistics of the scheduling
+// and dump scheduling result for the SCGRA bitstream generation. 
 //
 // Version:
 // 0.1     Nov 25th 2011
@@ -33,7 +34,6 @@ class Scheduler{
         void Scheduling();
         bool OperationResultCheck();
         ofstream fTrace;
-        //int break_point_store_time;
         int last_op_store_time;
 
     private:
@@ -59,7 +59,7 @@ class Scheduler{
         int SchedulingStat();
         bool SchedulingIsCompleted();
         void InstructionDumpCoe(int final_execution_time);
-        void InstructionDumpMem(int final_execution_time);
+        void InstructionDumpMem();
         void OutsideAddrMemoryDumpCoe(int final_execution_time);
         void DataMemoryAnalysis();
         void DataMemoryDumpMem();
@@ -79,10 +79,12 @@ class Scheduler{
         void LoadBalancePEFilter(list<int> &candidates, const vector<int> &executed_op_num);
         void ActivePEFilter(list<int> &candidates);
         int LeastReadyOpAttachedPESelection(const list<int> &candidates, const list<int> &op_ready_set);
-        void Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth);
+        void Bin2Mif(const string &BinFileName, const string &HexFileName, const int &DataWidth);
         void Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth);
         int FileLineCount(const string &FileName);
         void LoadIOMapping(std::vector<int> &raw_data, int &row, int &col);
+        char Bin2Hex(char* BinVec);
+        void AddrBufferDumpMem();
 };
 
 #endif

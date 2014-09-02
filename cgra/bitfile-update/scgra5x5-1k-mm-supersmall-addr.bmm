@@ -1,0 +1,12 @@
+ADDRESS_SPACE Addr_Buffer RAMB36 [0x00000:0x00047FF]
+    BUS_BLOCK
+    base_sys_i/cgra5x5_0/cgra5x5_0/BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [8:0] PLACED = X0Y2;
+    base_sys_i/cgra5x5_0/cgra5x5_0/BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [17:9] PLACED = X0Y1;
+    END_BUS_BLOCK;
+
+    BUS_BLOCK
+    base_sys_i/cgra5x5_0/cgra5x5_0/BramIF/Addr_Buffer1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [8:0] PLACED = X0Y4;
+    base_sys_i/cgra5x5_0/cgra5x5_0/BramIF/Addr_Buffer1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram [17:9] PLACED = X0Y3;
+    END_BUS_BLOCK;
+
+END_ADDRESS_SPACE;

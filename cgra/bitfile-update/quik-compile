@@ -182,17 +182,29 @@ echo
 echo "Bitstream generation starts..."
 Start_Time=$(date +%s%N)
 #Copy scheduling result as well as realted data to bitstream integration
-cp -rf ./result/inst.mem $Bitfile_Dir"/"$App_Name"-"$Type".mem"
-cp -rf ./result/src_ctrl_words.h $Bitfile_Dir"/dump"
-cp -rf ./result/result_ctrl_words.h $Bitfile_Dir"/dump"
+cp -rf ./result/inst.mem $Bitfile_Dir"/scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-inst.mem"
 cp -rf ./config/io.h $Bitfile_Dir"/dump"
+cp -rf ./result/addr-buffer.mem $Bitfile_Dir"/scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-addr.mem"
 
 #Bitfile integration
 cd $Bitfile_Dir
-Bitfile="scgra"$CGRA_Size"-"$App_Name"-"$Type".bit"
-Memfile=$App_Name"-"$Type".mem"
-Modulename="scgra"$CGRA_Size"-1k"
-./inst1k-update -t $Modulename -r $Row -c $Col -m $Memfile -e $Bitfile >> $Bitfile_Dir"/log.txt"
+NCDfile="scgra"$CGRA_Size"-1k.ncd"
+XDLfile="scgra"$CGRA_Size"-1k.xdl"
+EmptyBitfile="scgra"$CGRA_Size"-1k.bit"
+Bitfile="scgra"$CGRA_Size"-1k-"$App_Name"-"$Type".bit"
+
+Target="Inst" 
+BMMfile="scgra${CGRA_Size}-1k-${App_Name}-${Type}-inst.bmm"
+Memfile="scgra${CGRA_Size}-1k-${App_Name}-${Type}-inst.mem"
+TmpBitfile="tmp.bit"
+./inst1k-update -a $Target -n $NCDfile -o $BMMfile -b $EmptyBitfile -d $XDLfile -r $Row -c $Col -m $Memfile -e $TmpBitfile >> $Bitfile_Dir"/log.txt"
+
+Target="Addr"
+BMMfile="scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-addr.bmm"
+Memfile="scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-addr.mem"
+./inst1k-update -a $Target -n $NCDfile -o $BMMfile -b $TmpBitfile -d $XDLfile -r $Row -c $Col -m $Memfile -e $Bitfile >> $Bitfile_Dir"/log.txt"
+rm $TmpBitfile
+
 mv $Bitfile ./dump
 End_Time=$(date +%s%N)
 echo "Bitstream generation completes, time elapsed $((($End_Time - $Start_Time)/1000000))""ms"

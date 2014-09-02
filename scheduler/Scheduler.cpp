@@ -2,13 +2,13 @@
 // Algorithm Description:
 // Implementation of the scheduling algorithm
 //
-// Version:
-// 0.1      Nov 29th 2011
-// 0.2      Feb 24th 2012 Change the Scheduling algorithm due to New PE structure
-// 0.3      Mar 27th 2012 Pipeline the ALU operation
-// 0.4      May 29th 2012 Support 400MHz PE based CGRA
-// 0.5      July 17th 2012 Add IO model for accurate scheduling
-// 0.6      July 18th 2012 Add operation transmission history and reuse data stored in intermediate PE
+// Update:
+// Nov 29th 2011
+// Feb 24th 2012 Change the Scheduling algorithm due to New PE structure
+// Mar 27th 2012 Pipeline the ALU operation
+// May 29th 2012 Support 400MHz PE based CGRA
+// July 17th 2012 Add IO model for accurate scheduling
+// July 18th 2012 Add operation transmission history and reuse data stored in intermediate PE
 //
 // Author:
 // Cheng Liu
@@ -174,9 +174,10 @@ void Scheduler::Scheduling(){
     SchedulingStat();
     DataMemoryAnalysis();
     InstructionDumpCoe(final_execution_time);
-    InstructionDumpMem(final_execution_time);
+    InstructionDumpMem();
     SchedulingResultDump();
     OutsideAddrMemoryDumpCoe(final_execution_time);
+    AddrBufferDumpMem();
     cout << "Scheduling result dump is done! " << endl;
 
     t_end = clock();
@@ -323,7 +324,7 @@ void Scheduler::ActivePEFilter(list<int> &candidates){
 
 int Scheduler::LeastReadyOpAttachedPESelection(const list<int> &candidates,const list<int> &op_ready_set){
 
-    int selected_PE_id;
+    int selected_PE_id = 0;
     vector<int> PE_weight;
     PE_weight.resize(GLvar::CGRA_scale);
     for(int i=0; i<GLvar::CGRA_scale; i++){
@@ -736,7 +737,7 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
 int Scheduler::LeastActivePESelection(const list<int> &candidates){
 
     int min_active_time=GLvar::maximum_simulation_time;
-    int selected_PE_id;
+    int selected_PE_id = 0;
     list<int>::const_iterator it;
 
     for(it=candidates.begin(); it!=candidates.end(); it++){
@@ -2377,7 +2378,7 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
     }
 }
 
-void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, const int &DataWidth){
+void Scheduler::Bin2Mif(const string &BinFileName, const string &HexFileName, const int &DataWidth){
     ifstream BinFileHandle;
     BinFileHandle.open(BinFileName.c_str());
     if(!BinFileHandle.is_open()){
@@ -2403,54 +2404,7 @@ void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, co
         HexFileHandle << "0x";
         for(int k=0; k<DataWidth/4; k++){
             int id=k*4;
-            if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << '0';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << '1';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << '2';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HexFileHandle << '3';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << '4';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << '5';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << '6';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HexFileHandle << '7';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << '8';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << '9';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << 'A';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HexFileHandle << 'B';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HexFileHandle << 'C';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HexFileHandle << 'D';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HexFileHandle << 'E';
-            }
-            else{
-                HexFileHandle << 'F';
-            }
+            HexFileHandle << Bin2Hex(&BinVec[id]);
         }
         HexFileHandle<<endl;
     }
@@ -2458,7 +2412,83 @@ void Scheduler::Bin2Hex(const string &BinFileName, const string &HexFileName, co
     BinFileHandle.close();
 }
 
-void Scheduler::InstructionDumpMem(int final_execution_time){
+void Scheduler::AddrBufferDumpMem(){
+    const int BufferDepth=4096;
+    const int BufferWidth=18;
+
+    string fMemName="./result/addr-buffer.mem";
+    ofstream fMemHandle;
+    fMemHandle.open(fMemName.c_str());
+    if(!fMemHandle.is_open()){
+        DEBUG1("Fail to create addr-buffer.mem\n");
+    }
+
+    char vec[100];
+    for(int i=0; i<2; i++){
+        int initAddr=i*BufferDepth*BufferWidth/8;
+        char hexAddr[20];
+        if(i==0){
+            sprintf(hexAddr, "@00000000");
+        }
+        else{
+            sprintf(hexAddr, "@%08X", initAddr);
+        }
+        fMemHandle << hexAddr <<endl;
+
+        ostringstream os;
+        os<<"./result/"<<"outside-bram-addr-"<<i<<".coe";
+        string fName=os.str();
+        ifstream fHandle;
+        fHandle.open(fName.c_str());
+        if(!fHandle.is_open()){
+            DEBUG1("Failed to open the outside-addr-buffer.coe");
+        }
+
+        int lineNum=0;
+        while(fHandle.getline(vec,100)){
+            lineNum++;
+            if(lineNum<3){
+                continue;
+            }
+
+            char mVec0[100];
+            char mVec1[100];
+            mVec0[0] = '0';
+            mVec0[1] = '0';
+            mVec0[2] = '0';
+            mVec1[0] = '0';
+            mVec1[1] = '0';
+            mVec1[2] = '0';
+            for(int k=3; k<12; k++){
+                mVec1[k] = vec[k-3];
+                mVec0[k] = vec[k+6];
+            }
+            for(int k=12; k<100; k++){
+                mVec0[k] = vec[18];
+                mVec1[k] = vec[18];
+            }
+
+            // Transform the bin to be hex
+            for(int k=0; k<(BufferWidth/2+3)/4; k++){
+                int id=k*4;
+                fMemHandle << Bin2Hex(&mVec0[id]);
+            }
+            fMemHandle << endl;
+
+            for(int k=0; k<(BufferWidth/2+3)/4; k++){
+                int id=k*4;
+                fMemHandle << Bin2Hex(&mVec1[id]);
+            }
+            fMemHandle << endl;
+
+        }
+        fHandle.close();
+    }
+    fMemHandle.close();
+}
+
+
+void Scheduler::InstructionDumpMem(){
     const int instMemDepth=INST_MEM_DEPTH;
     const int instMemWidth=72;
 
@@ -2466,7 +2496,7 @@ void Scheduler::InstructionDumpMem(int final_execution_time){
     ofstream fMemHandle;
     fMemHandle.open(fMemName.c_str());
     if(!fMemHandle.is_open()){
-        DEBUG1("Fail to create inst.mem\n");
+        DEBUG1("Failed to create inst.mem\n");
     }
 
     char vec[100];
@@ -2491,107 +2521,104 @@ void Scheduler::InstructionDumpMem(int final_execution_time){
             DEBUG1("Failed to open the PE.coe");
         }
 
-        int lineNum=0;
-        while(fHandle.getline(vec,100)){
-            lineNum++;
+        if(instMemDepth==1024){
+            int lineNum=0;
+            while(fHandle.getline(vec,100)){
+                lineNum++;
 
-            if(lineNum<3){
-                continue;
+                if(lineNum<3){
+                    continue;
+                }
+
+                // ----------------------------------------------------------------------------------------
+                // You can't initialize the ROM block correctly using the raw data. The following steps 
+                // will show how the 72bit raw data should be reorganized before it goes to data2mem command. 
+                // I figured it out by comparing the original data and the dumped data from bitstream. It 
+                // took me quite a fucking long time.
+                // ----------------------------------------------------------------------------------------
+
+                // Exchange the higher 36bits and lower 36bits
+                char mVec[instMemWidth];
+                char nVec[instMemWidth];
+                for(int k=0; k<instMemWidth/2; k++){
+                    nVec[k]=vec[k+instMemWidth/2];
+                    nVec[k+instMemWidth/2]=vec[k];
+                }
+
+                // Exchanged data: (1bit, 8bit), (1bit, 8bit), ... The first bit will be stored in BRAM
+                // parity section, while the following 8bit will be stored in BRAM data section.
+                // Put the 4 parity bit together and leave the rest untouched. The new format should be
+                // (4bit), (8bit), (8bit), ...
+                int basicLen=9;
+                int kmax=instMemWidth/2/basicLen;
+                for(int k=0; k<kmax; k++){
+                    mVec[k]=nVec[k*basicLen];
+                    mVec[k+instMemWidth/2]=nVec[k*basicLen+instMemWidth/2];
+                    for(int index=1; index<basicLen; index++){
+                        mVec[kmax+k*(basicLen-1)+index-1]=nVec[k*basicLen+index];
+                        mVec[kmax+k*(basicLen-1)+index-1+instMemWidth/2]=nVec[k*basicLen+index+instMemWidth/2];
+                    }
+                }
+
+                /*
+                   if(lineNum==9 || lineNum==10){
+                   cout << "new= " << mVec << endl;
+                   }
+                   */
+
+                // Transform the bin to be hex
+                for(int k=0; k<instMemWidth/4; k++){
+                    int id=k*4;
+                    fMemHandle << Bin2Hex(&mVec[id]);
+                }
+                fMemHandle<<endl;
             }
+        }
+        else if(instMemDepth==512){
+            int lineNum=0;
+            while(fHandle.getline(vec,100)){
+                lineNum++;
 
-            // ----------------------------------------------------------------------------------------
-            // You can't initialize the ROM block correctly using the raw data. The following steps 
-            // will show how the 72bit raw data should be reorganized before it goes to data2mem command. 
-            // I figured it out by comparing the original data and the dumped data from bitstream. It 
-            // took me quite a fucking long time.
-            // ----------------------------------------------------------------------------------------
+                if(lineNum<3){
+                    continue;
+                }
 
-            // Exchange the higher 36bits and lower 36bits
-            char mVec[instMemWidth];
-            char nVec[instMemWidth];
-            for(int k=0; k<instMemWidth/2; k++){
-                nVec[k]=vec[k+instMemWidth/2];
-                nVec[k+instMemWidth/2]=vec[k];
+                // ----------------------------------------------------------------------------------------
+                // You can't initialize the ROM block correctly using the raw data. The following steps 
+                // will show how the 72bit raw data should be reorganized before it goes to data2mem command. 
+                // I figured it out by comparing the original data and the dumped data from bitstream. It 
+                // took me quite a fucking long time.
+                // ----------------------------------------------------------------------------------------
+
+                // Exchange the higher 36bits and lower 36bits
+                char mVec[instMemWidth];
+
+                // Exchanged data: (1bit, 8bit), (1bit, 8bit), ... The first bit will be stored in BRAM
+                // parity section, while the following 8bit will be stored in BRAM data section.
+                // Put the 4 parity bit together and leave the rest untouched. The new format should be
+                // (4bit), (8bit), (8bit), ...
+                int basicLen=9;
+                int kmax=instMemWidth/basicLen;
+                for(int k=0; k<kmax; k++){
+                    mVec[k]=vec[k*basicLen];
+                    for(int index=1; index<basicLen; index++){
+                        mVec[kmax+k*(basicLen-1)+index-1]=vec[k*basicLen+index];
+                    }
+                }
+
+                /*
+                   if(lineNum==9 || lineNum==10){
+                   cout << "new= " << mVec << endl;
+                   }
+                   */
+
+                // Transform the bin to be hex
+                for(int k=0; k<instMemWidth/4; k++){
+                    int id=k*4;
+                    fMemHandle << Bin2Hex(&mVec[id]);
+                }
+                fMemHandle<<endl;
             }
-
-            // Exchanged data: (1bit, 8bit), (1bit, 8bit), ... The first bit will be stored in BRAM
-            // parity section, while the following 8bit will be stored in BRAM data section.
-            // Put the 4 parity bit together and leave the rest untouched. The new format should be
-            // (4bit), (8bit), (8bit), ...
-            int basicLen=9;
-            int kmax=instMemWidth/2/basicLen;
-            for(int k=0; k<kmax; k++){
-                mVec[k]=nVec[k*basicLen];
-                mVec[k+instMemWidth/2]=nVec[k*basicLen+instMemWidth/2];
-                for(int index=1; index<basicLen; index++){
-                    mVec[kmax+k*(basicLen-1)+index-1]=nVec[k*basicLen+index];
-                    mVec[kmax+k*(basicLen-1)+index-1+instMemWidth/2]=nVec[k*basicLen+index+instMemWidth/2];
-                }
-            }
-
-            /*
-               if(lineNum==9 || lineNum==10){
-               cout << "new= " << mVec << endl;
-               }
-               */
-
-            // Transform the bin to be hex
-            for(int k=0; k<instMemWidth/4; k++){
-                int id=k*4;
-                if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '0';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '1';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '2';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '3';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '4';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '5';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '6';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '7';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '8';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '9';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'A';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << 'B';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << 'C';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << 'D';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'E';
-                }
-                else{
-                    fMemHandle << 'F';
-                }
-
-                /*if(k+1==instMemWidth/8.0){
-                  fMemHandle << endl;
-                  }*/
-            }
-            fMemHandle<<endl;
         }
         fHandle.close();
     }
@@ -2695,56 +2722,9 @@ void Scheduler::DataMemoryDumpMem(){
             // Dump the bin to be hex
             for(int k=0; k<DataMemWidth/4; k++){
                 int id=k*4;
-                if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '0';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '1';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '2';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '3';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '4';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '5';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << '6';
-                }
-                else if(mVec[id]=='0' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << '7';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << '8';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << '9';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'A';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='0' && mVec[id+2]=='1' && mVec[id+3]=='1'){
-                    fMemHandle << 'B';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='0'){
-                    fMemHandle << 'C';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='0' && mVec[id+3]=='1'){
-                    fMemHandle << 'D';
-                }
-                else if(mVec[id]=='1' && mVec[id+1]=='1' && mVec[id+2]=='1' && mVec[id+3]=='0'){
-                    fMemHandle << 'E';
-                }
-                else{
-                    fMemHandle << 'F';
-                }
+                fMemHandle << Bin2Hex(&mVec[id]);
             }
-            fMemHandle<<endl;
+            fMemHandle << endl;
         }
         fHandle.close();
     }
@@ -2808,12 +2788,6 @@ void Scheduler::LoadIOMapping(std::vector<int> &raw_data, int &row, int &col){
 }
 
 void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
-    /*-------------------------------------------------------------------------
-     * When the kernel needs to be excuted multiple times, the addr sending to
-     * data memory among different iterations will be different. Also additional 
-     * idle information should be added to smoothe the swap between iterations.
-     * ------------------------------------------------------------------------*/
-
     // Load op->addr information to an array, each column indicates the corresponding iteration.
     // The first column represents the op id and the rest columns represent addr of different iterations.
     int row, col;
@@ -2888,13 +2862,13 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
                 //The highest bit indicates the enable signal of the bram and the 
                 //following 4bits represent the byte wena signals.
                 if(load_store_idle[j]==0){
-                    fHandle << "10000";
+                    fHandle << "10";
                 }
                 else if(load_store_idle[j]==1){
-                    fHandle << "11111";
+                    fHandle << "11";
                 }
                 else{
-                    fHandle << "00000";
+                    fHandle << "00";
                 }
 
                 /* ----------------------------------------------------------------
@@ -2915,9 +2889,9 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
                     fHandle << "100"; // The CGRA kernel iterates only once.
                 }
 
-                //Transform decimal addr to 24-bit binary 
+                //Transform decimal addr to 13-bit binary 
                 dec_data=bram_addr[j];
-                width=24;
+                width=13;
                 if(dec_data==NaN){
                     dec_data=0;
                 }
@@ -2943,12 +2917,12 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
 
             //When the kernel iterates more than once, additional 5 lines should be added.
             if(row>2 && kit<col-1){
-                fHandle << "00000100000000000000000000000000" << std::endl;
-                fHandle << "00000100000000000000000000000000" << std::endl;
-                fHandle << "00000100000000000000000000000000" << std::endl;
-                fHandle << "00000100000000000000000000000000" << std::endl;
-                fHandle << "00000100000000000000000000000000" << std::endl;
-                fHandle << "00000100000000000000000000000000" << std::endl;
+                fHandle << "0010000000000000000" << std::endl;
+                fHandle << "0010000000000000000" << std::endl;
+                fHandle << "0010000000000000000" << std::endl;
+                fHandle << "0010000000000000000" << std::endl;
+                fHandle << "0010000000000000000" << std::endl;
+                fHandle << "0010000000000000000" << std::endl;
             }
 
         }
@@ -2956,15 +2930,69 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
 
     }
 
-    //Bin2Hex("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mif", 32);
-    //Bin2Hex("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mif", 32);
-    //Bin2Hex("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mif", 32);
-    //Bin2Hex("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mif", 32);
-    Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/src_ctrl_words.h", "SrcMemCtrlWords", 32);
-    Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/result_ctrl_words.h", "ResultMemCtrlWords", 32);
-    Bin2HeadFile("./result/outside-data-memory-0.coe", "./result/initialized_src.h", "Src", 32);
-    Bin2HeadFile("./result/outside-data-memory-1.coe", "./result/initialized_result.h", "Result", 32);
+    //Bin2Mif("./result/outside-bram-addr-0.coe", "./result/outside-bram-addr-0.mif", 32);
+    //Bin2Mif("./result/outside-bram-addr-1.coe", "./result/outside-bram-addr-1.mif", 32);
+    //Bin2Mif("./result/outside-data-memory-0.coe", "./result/outside-data-memory-0.mif", 32);
+    //Bin2Mif("./result/outside-data-memory-1.coe", "./result/outside-data-memory-1.mif", 32);
+    Bin2HeadFile("./result/outside-bram-addr-0.coe", "./result/src-ctrl-words.h", "SrcMemCtrlWords", 16);
+    Bin2HeadFile("./result/outside-bram-addr-1.coe", "./result/result-ctrl-words.h", "ResultMemCtrlWords", 16);
+    Bin2HeadFile("./result/outside-data-memory-0.coe", "./result/initialized-src.h", "Src", 32);
+    Bin2HeadFile("./result/outside-data-memory-1.coe", "./result/initialized-result.h", "Result", 32);
 
+}
+
+char Scheduler::Bin2Hex(char* BinVec){
+    char HexChar;
+    if(BinVec[0]=='0' && BinVec[1]=='0' && BinVec[2]=='0' && BinVec[3]=='0'){
+        HexChar = '0';
+    }
+    else if(BinVec[0]=='0' && BinVec[1]=='0' && BinVec[2]=='0' && BinVec[3]=='1'){
+        HexChar = '1';
+    }
+    else if(BinVec[0]=='0' && BinVec[1]=='0' && BinVec[2]=='1' && BinVec[3]=='0'){
+        HexChar = '2';
+    }
+    else if(BinVec[0]=='0' && BinVec[1]=='0' && BinVec[2]=='1' && BinVec[3]=='1'){
+        HexChar = '3';
+    }
+    else if(BinVec[0]=='0' && BinVec[1]=='1' && BinVec[2]=='0' && BinVec[3]=='0'){
+        HexChar = '4';
+    }
+    else if(BinVec[0]=='0' && BinVec[1]=='1' && BinVec[2]=='0' && BinVec[3]=='1'){
+        HexChar = '5';
+    }
+    else if(BinVec[0]=='0' && BinVec[1]=='1' && BinVec[2]=='1' && BinVec[3]=='0'){
+        HexChar = '6';
+    }
+    else if(BinVec[0]=='0' && BinVec[1]=='1' && BinVec[2]=='1' && BinVec[3]=='1'){
+        HexChar = '7';
+    }
+    else if(BinVec[0]=='1' && BinVec[1]=='0' && BinVec[2]=='0' && BinVec[3]=='0'){
+        HexChar = '8';
+    }
+    else if(BinVec[0]=='1' && BinVec[1]=='0' && BinVec[2]=='0' && BinVec[3]=='1'){
+        HexChar = '9';
+    }
+    else if(BinVec[0]=='1' && BinVec[1]=='0' && BinVec[2]=='1' && BinVec[3]=='0'){
+        HexChar = 'A';
+    }
+    else if(BinVec[0]=='1' && BinVec[1]=='0' && BinVec[2]=='1' && BinVec[3]=='1'){
+        HexChar = 'B';
+    }
+    else if(BinVec[0]=='1' && BinVec[1]=='1' && BinVec[2]=='0' && BinVec[3]=='0'){
+        HexChar = 'C';
+    }
+    else if(BinVec[0]=='1' && BinVec[1]=='1' && BinVec[2]=='0' && BinVec[3]=='1'){
+        HexChar = 'D';
+    }
+    else if(BinVec[0]=='1' && BinVec[1]=='1' && BinVec[2]=='1' && BinVec[3]=='0'){
+        HexChar = 'E';
+    }
+    else{
+        HexChar = 'F';
+    }
+
+    return HexChar;
 }
 
 void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileName, const string &ArrayName, const int &DataWidth){
@@ -2983,6 +3011,9 @@ void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileNa
     }
 
     char BinVec[100];
+    for(int i=0; i<100; i++){
+        BinVec[i] = '0';
+    }
     int LineNum=0;
     HeadFileHandle << "unsigned int " << ArrayName << "[" << DataNum <<"]={";
     while(BinFileHandle.getline(BinVec,100)){
@@ -2994,56 +3025,9 @@ void Scheduler::Bin2HeadFile(const string &BinFileName, const string &HeadFileNa
         }
 
         HeadFileHandle << "0x";
-        for(int k=0; k<DataWidth/4; k++){
+        for(int k=0; k<(DataWidth+3)/4; k++){
             int id=k*4;
-            if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << '0';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << '1';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << '2';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HeadFileHandle << '3';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << '4';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << '5';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << '6';
-            }
-            else if(BinVec[id]=='0' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HeadFileHandle << '7';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << '8';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << '9';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << 'A';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='0' && BinVec[id+2]=='1' && BinVec[id+3]=='1'){
-                HeadFileHandle << 'B';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='0'){
-                HeadFileHandle << 'C';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='0' && BinVec[id+3]=='1'){
-                HeadFileHandle << 'D';
-            }
-            else if(BinVec[id]=='1' && BinVec[id+1]=='1' && BinVec[id+2]=='1' && BinVec[id+3]=='0'){
-                HeadFileHandle << 'E';
-            }
-            else{
-                HeadFileHandle << 'F';
-            }
+            HeadFileHandle << Bin2Hex(&BinVec[id]);
         }
         if(LineNum==DataNum+2){
             HeadFileHandle << " };";

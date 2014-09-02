@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS= -DDEBUG -g -Wall
+CFLAGS= -DDEBUG -g -O0 -Wall -gstabs+
 #CFLAGS= -g -o3
 TARGET = cgracompiler
 SRCS = GlobalDef.cpp \

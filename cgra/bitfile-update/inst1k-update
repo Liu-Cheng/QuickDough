@@ -12,10 +12,14 @@
 # developed a script for his openfire project in Jan 17th 2006, and Cheng Liu
 # extended it for his own CGRA based high level synthesis project in 2012.
 #
+# Email:
+# st.liucheng@gmail.com, liucheng@eee.hku.hk
+#
 # History
-# 1/17/2006 -- Added support for variable MB names
-# 6/27/2012 -- Added support for multiple independent RAM/ROM blocks
+# 1/17/2006 -- Add support for variable MB names
+# 6/27/2012 -- Add support for multiple independent RAM/ROM blocks
 # 4/15/2014 -- Fix the bug when ramloop[1] appears in front of ramloop[0]
+# 8/19/2014 -- Add addr buffer initialization support.
 #
 ########################################################################
 
@@ -34,10 +38,19 @@ GetUserOpt();
 if (-r $xdl_file) {
 } 
 else {	
+    printf "ncd=$ncd_file, xdl=$xdl_file\n";
     system("xdl -ncd2xdl $ncd_file $xdl_file");
 }
 
-bmmgen(); 
+if($target eq "Addr"){
+    AddrBufferBmmGen(); 
+}
+elsif($target eq "Inst"){
+    InstMemBmmGen();
+}
+else{
+    HfInstMemBmmGen();
+}
 
 $error = `data2mem -bm $bmm_file`;
 if($error)  {
@@ -60,11 +73,11 @@ print "Total bitstream update time is ".($end_time-$start_time)."s!\n";
 
 
 #----------------------------------------------------------------------
-# DATA2MEM needs a BMM File to describe the memory layout and BRAM 
-# physical locations. when there is no bmm file, we will build a 
+# DATA2MEM needs a BMM File to describe the instruction memory layout 
+# and BRAM physical locations. when there is no bmm file, we will build a 
 # BMM file using information extracted from the XDL file
 # --------------------------------------------------------------------
-sub bmmgen {
+sub InstMemBmmGen {
 
     open(inst_bmm_file, ">"."$bmm_file");
 
@@ -112,77 +125,152 @@ sub bmmgen {
     close(inst_bmm_file);
 }
 
+#----------------------------------------------------------------------
+# DATA2MEM needs a BMM File to describe the address buffer layout 
+# and BRAM physical locations. when there is no bmm file, we will build a 
+# BMM file using information extracted from the XDL file
+# --------------------------------------------------------------------
+sub AddrBufferBmmGen {
 
+    open(addr_bmm_file, ">"."$bmm_file");
+
+    # Create BMM file for inst memory. Note that each BRAM is 18*1024 Byte = 2 x 4096 x 18 bit
+    $slb=0;  
+    $mlb=18*1024-1;
+    printf addr_bmm_file ("ADDRESS_SPACE Addr_Buffer RAMB36 [0x0000%X:0x000%X]\n", $slb, $mlb);
+
+    for($addr_buffer_count = 0; $addr_buffer_count < 2; $addr_buffer_count++){
+        my $mem_name;
+        my $loc_name;
+        $target_name = "base_sys_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."BramIF"."/"."Addr_Buffer".$addr_buffer_count;
+        $target_lines = `grep '^inst' $xdl_file | grep $target_name | grep 'ramloop.0.'`; 
+
+            print  addr_bmm_file "    BUS_BLOCK\n";
+            foreach $_ (split(/\n/, $target_lines)){
+                if(/inst \"base_sys([^"]+).*RAMB36_([\w\d]+)/) {
+                    $mem_name = $1;
+                    $loc_name = $2;
+                }
+
+                print  addr_bmm_file "    base_sys"."$mem_name"." [8:0] PLACED = $loc_name;\n";
+            }
+
+            $target_name = "base_sys_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."BramIF"."/"."Addr_Buffer".$addr_buffer_count;
+            $target_lines = `grep '^inst' $xdl_file | grep $target_name | grep -in 'ramloop.1.'`; 
+            foreach $_ (split(/\n/, $target_lines)){
+                if(/inst \"base_sys([^"]+).*RAMB36_([\w\d]+)/) {
+                    $mem_name = $1;
+                    $loc_name = $2;
+                }
+
+                print  addr_bmm_file "    base_sys"."$mem_name"." [17:9] PLACED = $loc_name;\n";
+            }
+
+            print  addr_bmm_file "    END_BUS_BLOCK;\n";
+            print  addr_bmm_file "\n";
+    }
+    print addr_bmm_file "END_ADDRESS_SPACE;\n";
+    close(addr_bmm_file);
+}
+
+#----------------------------------------------------------------------
+# DATA2MEM needs a BMM File to describe the instruction memory layout 
+# and BRAM physical locations. when there is no bmm file, we will build a 
+# BMM file using information extracted from the XDL file
+# --------------------------------------------------------------------
+sub HfInstMemBmmGen {
+
+    open(inst_bmm_file, ">"."$bmm_file");
+
+    # Create BMM file for inst memory. Note that each BRAM is 9*1024 Byte = 1024 x 72 bit
+    $slb=0;  
+    $mlb=$row_num*$col_num*9*512-1;
+    printf inst_bmm_file ("ADDRESS_SPACE PE"."_inst_mem COMBINED [0x0000%X:0x000%X]\n", $slb, $mlb);
+
+    for($rcount = 0; $rcount < $row_num; $rcount++){
+        for($ccount = 0; $ccount < $col_num; $ccount++){
+
+            my $mem_name;
+            my $loc_name;
+            $target_name =
+            "base_sys_i".'/'."cgra".$row_num."x".$col_num."_0".'/'."cgra".$row_num."x".$col_num."_0".'/'."Torus".$row_num."x".$col_num."/"."PE".$rcount.$ccount.'/'."Inst_Mem".'/'."Inst_Rom";
+            $target_lines = `grep '^inst' $xdl_file | grep $target_name | grep 'ramloop.0.'`; 
+
+            print inst_bmm_file "  ADDRESS_RANGE RAMB36\n";
+            print  inst_bmm_file "    BUS_BLOCK\n";
+            foreach $_ (split(/\n/, $target_lines)){
+                if(/inst \"base_sys([^"]+).*RAMB36_([\w\d]+)/) {
+                    $mem_name = $1;
+                    $loc_name = $2;
+                }
+
+                print  inst_bmm_file "    base_sys"."$mem_name"." [71:0] PLACED = $loc_name;\n";
+            }
+
+            print  inst_bmm_file "    END_BUS_BLOCK;\n";
+            print  inst_bmm_file "  END_ADDRESS_RANGE;\n";
+            print  inst_bmm_file "\n";
+        }
+    }
+    print inst_bmm_file "END_ADDRESS_SPACE;\n";
+    close(inst_bmm_file);
+}
 sub GetUserOpt {
-    if($opt{t}) {
-        $top_level_name = $opt{t};
-    } 
-    else {
-        $top_level_name = "top";
-    }
 
-    if($opt{n}) {
-        $ncd_file = $opt{n};
-    } 
-    else {
-        $ncd_file = $top_level_name.".ncd";
-    }
+    # Default setting
+    $bmm_file = "top.bmm";
+    $xdl_file = "top.xdl";
+    $mem_file = "inst.mem";
+    $target = "Inst";
+    $ncd_file = "top.ncd";
+    $bit_file = "top.bit";
+    $new_bitfile = "new_top.bit";
+    $row_num = 2;
+    $col_num = 2;
 
-    if($opt{x}){
-        $xdl_file = $opt{x};
-    }
-    else{
-        $xdl_file = $top_level_name.".xdl";
-    }
-
-    if($opt{o}) {
+    if($opt{o}){
         $bmm_file = $opt{o};
-    } 
-    else {
-        $bmm_file = $top_level_name.".bmm";
     }
 
-    if($opt{b}) {
-        $bit_file = $opt{b};
-    } 
-    else {
-        $bit_file = $top_level_name.".bit";
+    if($opt{d}){
+        $xdl_file = $opt{d};
+    }
+
+    if($opt{a}){
+        $target = $opt{a};
     }
 
     if($opt{m}){
         $mem_file = $opt{m};
     }
-    else{
-        $mem_file = "inst.mem";
-    }
+
+    if($opt{n}) {
+        $ncd_file = $opt{n};
+    } 
+
+    if($opt{b}) {
+        $bit_file = $opt{b};
+    } 
 
     if($opt{e}){
         $new_bitfile = $opt{e};
-    }
-    else{
-        $new_bitfile = "newtop.bit";
     }
 
     if($opt{r}) {
         $row_num=$opt{r};
     } 
-    else {
-        $row_num=2;
-    }
 
     if($opt{c}) {
         $col_num=$opt{c};
     } 
-    else {
-        $col_num=2;
-    }
 
 }
 
 # Command line options processing
 sub init {
     use Getopt::Std;
-    my $opt_string = 'o:m:n:t:b:x:r:c:e:h';
+    %opt=();
+    my $opt_string = "o:d:a:m:n:b:r:c:e:h";
     getopts( "$opt_string", \%opt ) or usage();
     usage() if ($opt{h});
 }
@@ -199,18 +287,18 @@ NOTE: XDL and DATA2MEM must be installed and in the user's path.
 usage: $0 [-h] [-n NCD_FILE -o BMM_FILE] [-r ROM_FILE -b BITSTREAM]
 
  -h		      : this (help) message
+ -a                   : Addr or Inst (default = Inst)
  -n NCD file	      : NCD_FILE containing placed BRAMs (default = top.ncd)
  -o BMM file	      : BMM_FILE to create (default = top.bmm)
- -t top module        : name of the top-level module (default = top)
  -b bitstream         : bitstream to update with BRAM contents (default = top.bit)
- -x XDL file          : use specified XDL file (w/o flag, generates own from NCD_FILE)
+ -d XDL file          : use specified XDL file (w/o flag, generates own from NCD_FILE)
  -r row number        : row numer of the cgra (default row=4)
  -c column number     : column number of the cgra (default column=4)
  -m Mem file          : data that is going to be put into the bitstream
  -e new bitstream     : bitstream that is going to be exported
 
-example: $0 -n top.ncd -o top.bmm -b top.bit -m inst.mem -e newtop.bit
-example: $0 -o top.bmm -t top -m inst.mem -e newtop.bit
+example: $0 -a Inst -n top.ncd -o top.bmm -b top.bit -m inst.mem -e newtop.bit
+example: $0 -a Inst -o top.bmm -m inst.mem -e newtop.bit
 
 EOF
     exit;

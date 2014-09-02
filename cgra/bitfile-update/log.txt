@@ -7,4 +7,12 @@ g++ -c -I../../common/ -DDEBUG -g -Wall  ../../common/common.cpp -o  ../../commo
 g++ -c -I../../common/ -DDEBUG -g -Wall  ../../common/Instruction.cpp -o  ../../common/Instruction.o
 g++ -I../../common/ -DDEBUG -g -Wall  dfg-gen.o ../../common/Operand.o ../../common/common.o ../../common/Instruction.o -o dfg-gen 2>&1 | c++filt
 Verification passed!
-Total bitstream update time is 1.69173908233643s!
+ncd=scgra5x5-1k.ncd, xdl=scgra5x5-1k.xdl
+Release 14.5 - xdl P.58f (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Loading device for application Rf_Device from file '7z020.nph' in environment /home/liucheng/user-disk/xilinx/14.5/ISE_DS/ISE/.
+   "base_sys_stub" is an NCD, version 3.2, device xc7z020, package clg484, speed -1
+Successfully converted design 'scgra5x5-1k.ncd' to 'scgra5x5-1k.xdl'.
+Total bitstream update time is 33.9981698989868s!
+Total bitstream update time is 1.15182113647461s!
