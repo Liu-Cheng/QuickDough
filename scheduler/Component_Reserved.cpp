@@ -3,7 +3,8 @@
 // 
 //
 // Version:
-// 0.1      Nov 1st 2012
+// Nov 1st 2012, Initial version
+// Sep 8th 2014, Update coding style
 //
 // Author:
 // Cheng Liu
@@ -12,28 +13,29 @@
 //
 // ====================================================================================================================
 
-#include "ComponentReserved.h"
+#include "Component_Reserved.h"
 
-using namespace std;
+Component_Reserved::Component_Reserved(){
 
-ComponentReserved::ComponentReserved(){
     for(int i=0; i<2; i++){
-        memory_write_reserved[i]=false;
+        Data_Mem_WR_Reserved[i] = false;
     }
 
     for(int i=0; i<6; i++){
-        memory_read_reserved[i]=false;
+        Data_Mem_RD_Reserved[i] = false;
     }
 
-    dsp_pipeline_reserved=false;
+    ALU_Input_Reserved = false;
+    ALU_Output_Reserved = false;
 
     for(int i=0; i<4; i++){
-        PE_output_reserved[i]=false;
+        PE_Output_Reserved[i] = false;
     }
 
-    PE_input_reserved=false;
-    PE_bypass_reserved=false;
-    load_path_reserved=false;
-    store_path_reserved=false;
+    PE_Input_Reserved = false;
+    PE_Bypass_Reserved = false;
+    Load_Path_Reserved = false;
+    Store_Path_Reserved = false;
+
 }
 

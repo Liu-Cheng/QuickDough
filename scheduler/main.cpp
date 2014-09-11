@@ -15,103 +15,55 @@
 //
 // ============================================================================
 
-#include "GlobalDef.h"
-#include "DataFlowGraph.h"
-#include "CoarseGrainReconArch.h"
-#include "Scheduler.h"
 #include <cstdlib>
+#include "Global_Def.h"
+#include "Data_Flow_Graph.h"
+#include "Coarse_Grain_Recon_Arch.h"
+#include "Scheduler.h"
 
-using namespace std;
-
-void LoadParameter();
+void Load_Parameters();
 
 int main(){
 
-    cout << endl << "\t\tFully Pipelined Soft-CGRA Scheduling" << endl;
-    cout << "\t(C) E.E.E Department, The University of Hong Kong" << endl << endl;
+    std::cout << std::endl << "\t\tFully Pipelined Soft-CGRA Scheduling" << std::endl;
+    std::cout << "\t(C) E.E.E Department, The University of Hong Kong" << std::endl << std::endl;
     
-    LoadParameter();
-
-    srand(GLvar::random_seed);
-
-    CoarseGrainReconArch* CGRA = new CoarseGrainReconArch();
-
-    DataFlowGraph* DFG = new DataFlowGraph();
-
-    Scheduler* current_scheduler = new Scheduler(DFG, CGRA);
-
-    current_scheduler->Scheduling();
-
-    current_scheduler->OperationResultCheck();
+    Load_Parameters();
+    srand(GL_Var::Random_Seed);
+    Coarse_Grain_Recon_Arch* CGRA = new Coarse_Grain_Recon_Arch();
+    Data_Flow_Graph* DFG = new Data_Flow_Graph();
+    Scheduler* Current_Scheduler = new Scheduler(DFG, CGRA);
+    Current_Scheduler->Scheduling();
+    Current_Scheduler->Operation_Result_Check();
 
 }
 
-void LoadParameter(){
+void Load_Parameters(){
 
-    string Config_fName = "config/configure.txt";
-    ifstream Config_fHandle;
+    std::string Config_fName = "config/configure.txt";
+    std::ifstream Config_fHandle;
     Config_fHandle.open(Config_fName.c_str());
     if(!Config_fHandle.is_open()){
         DEBUG1("Failed to open the configure.txt!");
     }
 
     while(!Config_fHandle.eof()){
-        string configure_item_key;
-        Config_fHandle >> configure_item_key;
 
-        if(configure_item_key=="print_level"){
-            Config_fHandle >> GLvar::print_level;
+        std::string Config_Item_Key;
+        Config_fHandle >> Config_Item_Key;
+
+        if(Config_Item_Key == "Print_Level"){
+            Config_fHandle >> GL_Var::Print_Level;
         }
-
-        else if(configure_item_key=="report_level"){
-            Config_fHandle >> GLvar::report_level;
+        else if(Config_Item_Key=="Verify_On"){
+            Config_fHandle >> GL_Var::Verify_On;
         }
-
-        else if(configure_item_key=="verification_level"){
-            Config_fHandle >> GLvar::verification_level;
-        }
-
-        else if(configure_item_key=="CGRA_scale"){
-            Config_fHandle >> GLvar::CGRA_scale;
-        }
-
-        else if(configure_item_key=="maximum_operation_num"){
-            Config_fHandle >> GLvar::maximum_operation_num;
-        }
-
-        else if(configure_item_key=="maximum_simulation_time"){
-            Config_fHandle >> GLvar::maximum_simulation_time;
-        }
-
-        else if(configure_item_key=="random_seed"){
-            Config_fHandle >> GLvar::random_seed;
-        }
-
-        else if(configure_item_key=="load_PE_id"){
-            Config_fHandle >> GLvar::load_PE_id;
-        }
-
-        else if(configure_item_key=="store_PE_id"){
-            Config_fHandle >> GLvar::store_PE_id;
-        }
-
-        else if(configure_item_key=="inst_memory_delay"){
-            Config_fHandle >> GLvar::inst_memory_delay;
-        }
-
-        else if(configure_item_key=="dfg_degree_adapter"){
-            Config_fHandle >> GLvar::dfg_degree_adapter;
-        }
-
-        else if(configure_item_key=="maximum_data_memory_addr_width"){
-            Config_fHandle >> GLvar::maximum_data_memory_addr_width;
-        }
-
-        else if(configure_item_key=="load_balance_factor"){
-            Config_fHandle >> GLvar::load_balance_factor;
+        else if(Config_Item_Key=="Random_Seed"){
+            Config_fHandle >> GL_Var::Random_Seed;
         }
     }
 
     Config_fHandle.close();
+
 }
 

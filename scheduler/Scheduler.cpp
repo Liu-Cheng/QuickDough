@@ -3,189 +3,160 @@
 // Implementation of the scheduling algorithm
 //
 // Update:
-// Nov 29th 2011
-// Feb 24th 2012 Change the Scheduling algorithm due to New PE structure
-// Mar 27th 2012 Pipeline the ALU operation
-// May 29th 2012 Support 400MHz PE based CGRA
-// July 17th 2012 Add IO model for accurate scheduling
-// July 18th 2012 Add operation transmission history and reuse data stored in intermediate PE
+// Nov 29th 2011,
+// Feb 24th 2012, Change the Scheduling algorithm due to New PE structure
+// Mar 27th 2012, Pipeline the ALU operation
+// May 29th 2012, Support 400MHz-16bit PE based CGRA
+// July 17th 2012, Add IO model for accurate scheduling
+// July 18th 2012, Add operation transmission history and reuse data stored in intermediate PE
+// Sep 9th 2014, Update coding style and remove useless functionality. 
 //
 // Author:
 // Cheng Liu
-// st.liucheng@gmail.com
+// st.liucheng@gmail.com, liucheng@eee.hku.hk
 // E.E.E department, The University of Hong Kong
 //
 // =====================================================================================================================
 
 #include "Scheduler.h"
 
-using namespace std;
+Scheduler::Scheduler(Data_Flow_Graph * _DFG, Coarse_Grain_Recon_Arch* _CGRA){
 
-Scheduler::Scheduler(DataFlowGraph * init_DFG, CoarseGrainReconArch* init_CGRA){
-
-    LoadParameter();
-    SchedulerInit(init_DFG, init_CGRA);
+    Load_Parameters();
+    Init(_DFG, _CGRA);
 
 }
 
-void Scheduler::LoadParameter(){
+void Scheduler::Load_Parameters(){
 
-    string Config_fName = "./config/configure.txt";
-    ifstream Config_fHandle(Config_fName.c_str());
+    std::string Config_fName = "./config/configure.txt";
+    std::ifstream Config_fHandle(Config_fName.c_str());
     if(!Config_fHandle.is_open()){
-        DEBUG1("Failed to open the configure.txt!");
+        DEBUG1("Failed to open configure.txt!");
     }
+
     while(!Config_fHandle.eof()){
-        string Config_Item_Key;
+        std::string Config_Item_Key;
         Config_fHandle >> Config_Item_Key;
-        if(Config_Item_Key=="out_mem_data_scheduling"){
-            string Config_Item_Val;
+        if(Config_Item_Key == "IO_Placement_Scheme"){
+            std::string Config_Item_Val;
             Config_fHandle >> Config_Item_Val;
-            if(Config_Item_Val=="IOstoring"){
-                out_mem_data_scheduling=IOstoring;
+            if(Config_Item_Val == "Sequential_Placement"){
+                IO_Placement_Scheme = Sequential_Placement;
             }
-            else if(Config_Item_Val=="RandomlySpreading"){
-                out_mem_data_scheduling=RandomlySpreading;
-            }
-            else if(Config_Item_Val=="OutMemModeling"){
-                out_mem_data_scheduling=OutMemModeling;
-            }
-            else if(Config_Item_Val=="MultipleCopying"){
-                out_mem_data_scheduling=MultipleCopying;
+            else if(Config_Item_Val == "Interleaving_Placement"){
+                IO_Placement_Scheme = Interleaving_Placement;
             }
             else{
-                DEBUG1("Unrecognized out_mem_data_scheduling!\n");
+                DEBUG1("Unknown IO Placement Scheme!\n");
+            }
+        }
+        else if(Config_Item_Key == "List_Scheduling_Strategy"){
+            std::string Config_Item_Val;
+            Config_fHandle >> Config_Item_Val;
+            if(Config_Item_Val == "PE_Pref"){
+                List_Scheduling_Strategy = PE_Pref;
+            }
+            else if(Config_Item_Val == "OP_Pref"){
+                List_Scheduling_Strategy = OP_Pref;
+            }
+            else if(Config_Item_Val == "PE_OP_Combined"){
+                List_Scheduling_Strategy = PE_OP_Combined;
+            }
+            else{
+                DEBUG1("Unknown scheduling strategy!\n");
+            }
+        }
+        else if(Config_Item_Key == "Load_Balance_Factor"){
+            Config_fHandle >> Load_Balance_Factor;
+        }
+        else if(Config_Item_Key == "PE_Sel_Strategy"){
+            std::string Config_Item_Val;
+            Config_fHandle >> Config_Item_Val;
+            if(Config_Item_Val == "Least_Recent_Used"){
+                PE_Sel_Strategy = Least_Recent_Used;
+            }
+            else if(Config_Item_Val == "Least_Ready_OP_Attached"){
+                PE_Sel_Strategy = Least_Ready_OP_Attached;
             }
         }
     }
+
 }
 
-void Scheduler::SchedulerInit(DataFlowGraph* init_DFG, CoarseGrainReconArch* init_CGRA){
-    DFG=init_DFG;
-    CGRA=init_CGRA;
-    last_op_store_time=0;
+void Scheduler::Init(Data_Flow_Graph* _DFG, Coarse_Grain_Recon_Arch* _CGRA){
+    
+    DFG = _DFG;
+    CGRA = _CGRA;
+    Scheduling_Complete_Time = 0;
+
 }
 
-/* --------------------------------------------------------------------
- * Input data distribution can be useful especially when there are 
- * multiple input buffers supplying data for the SCGRA computation. 
- * ------------------------------------------------------------------*/
-void Scheduler::InputOperationScheduling(){
-    if(out_mem_data_scheduling==IOstoring){
-        vector<Vertex*>::iterator iter_tmp;
-        int InID=0;
-        for(iter_tmp=DFG->DFG_vertex.begin(); iter_tmp!=DFG->DFG_vertex.end(); iter_tmp++){
-            if((*iter_tmp)->vertex_type==InputData){
-                (*iter_tmp)->vertex_attribute.vertex_cost=0;
-                if((InID/4)%4==0){
-                    (*iter_tmp)->vertex_attribute.execution_PE_id=0;
-                }
-                else if((InID/4)%4==1){
-                    (*iter_tmp)->vertex_attribute.execution_PE_id=1;
-                }
-                else if((InID/4)%4==2){
-                    (*iter_tmp)->vertex_attribute.execution_PE_id=2;
-                }
-                else {
-                    (*iter_tmp)->vertex_attribute.execution_PE_id=3;
-                }
-                InID++;
-                (*iter_tmp)->vertex_attribute.operation_avail_time=0;
-                (*iter_tmp)->vertex_attribute.vertex_state=DataAvail;
-                AttachHistory attach_point;
-                attach_point.attached_time=0;
-                attach_point.attached_PE_id=(*iter_tmp)->vertex_attribute.execution_PE_id;
-                (*iter_tmp)->attach_history.push_back(attach_point);
+void Scheduler::IO_Placing(){
+    
+    if(IO_Placement_Scheme == Sequential_Placement){
+        std::vector<Operand*>::iterator Vit;
+        for(Vit = DFG->OP_Array.begin(); Vit != DFG->OP_Array.end(); Vit++){
+            if((((*Vit)->OP_Type == INCONST) || ((*Vit)->OP_Type == INVAR)) && ((*Vit)->OP_ID !=0)){
+                (*Vit)->OP_Attribute.OP_Cost = 0;
+                (*Vit)->OP_Attribute.OP_Exe_PE_ID = INT_MAX;
+                (*Vit)->OP_Attribute.OP_Avail_Time = INT_MAX;
+                (*Vit)->OP_Attribute.OP_State = In_IO_Buffer;
             }
         }
     }
-    else if(out_mem_data_scheduling==RandomlySpreading){
-        vector<Vertex*>::iterator iter_tmp;
-        for(iter_tmp=DFG->DFG_vertex.begin(); iter_tmp!=DFG->DFG_vertex.end(); iter_tmp++){
-            if((*iter_tmp)->vertex_type==InputData){
-                int id_tmp=rand()%(GLvar::CGRA_scale);
-                (*iter_tmp)->vertex_attribute.vertex_cost=0;
-                (*iter_tmp)->vertex_attribute.execution_PE_id=id_tmp;
-                (*iter_tmp)->vertex_attribute.operation_avail_time=0;
-                (*iter_tmp)->vertex_attribute.vertex_state=DataAvail;
-                AttachHistory attach_point;
-                attach_point.attached_time=0;
-                attach_point.attached_PE_id=id_tmp;
-                (*iter_tmp)->attach_history.push_back(attach_point);
-            }
-        }
+    else if(IO_Placement_Scheme == Interleaving_Scheme){
+        // To be added
+        std::cout << "Interleaving scheme is not supported now! " << std::endl;
     }
-    else if(out_mem_data_scheduling==MultipleCopying){
-        vector<Vertex*>::iterator iter_tmp;
-        for(iter_tmp=DFG->DFG_vertex.begin(); iter_tmp!=DFG->DFG_vertex.end(); iter_tmp++){
-            if((*iter_tmp)->vertex_type==InputData){
-                (*iter_tmp)->vertex_attribute.vertex_cost=0;
-                (*iter_tmp)->vertex_attribute.execution_PE_id=rand()%(GLvar::CGRA_scale);
-                (*iter_tmp)->vertex_attribute.operation_avail_time=0;
-                (*iter_tmp)->vertex_attribute.vertex_state=DataAvail;
-                AttachHistory attach_point;
-                attach_point.attached_time=0;
-                for(int i=0; i<GLvar::CGRA_scale; i++){
-                    attach_point.attached_PE_id=i;
-                    (*iter_tmp)->attach_history.push_back(attach_point);
-                }
-            }
-        }
+    else {
+        DEBUG1("Unknown IO placement!\n");
     }
-    else if(out_mem_data_scheduling==OutMemModeling){
-        vector<Vertex*>::iterator iter_tmp;
-        for(iter_tmp=DFG->DFG_vertex.begin(); iter_tmp!=DFG->DFG_vertex.end(); iter_tmp++){
-            if((*iter_tmp)->vertex_type==InputData && (*iter_tmp)->vertex_id!=0){
-                (*iter_tmp)->vertex_attribute.vertex_cost=0;
-                (*iter_tmp)->vertex_attribute.execution_PE_id=INF;
-                (*iter_tmp)->vertex_attribute.operation_avail_time=INF;
-                (*iter_tmp)->vertex_attribute.vertex_state=DataInOutMem;
-            }
-        }
-    }
-    else{
-        DEBUG1("Unreognized out_mem_data_scheduling\n");
-    }
+
 }
 
 void Scheduler::Scheduling(){
 
-    if(GLvar::report_level>10){
-        string trace_file_name = "./result/trace.txt";
-        fTrace.open(trace_file_name.c_str());
-        if(!fTrace.is_open()){
-            DEBUG1("Failed to open the trace.txt!");
-        }
-    } 
-
-    time_t t_start, t_end;
-    t_start = clock();
-
-    cout<<"Operation scheduling starts!"<<endl;
-    //ListSchedulingAlgorithmOPFirst();
-    ListSchedulingAlgorithmPEFirst();
-    //ListSchedulingAlgorithmPEOPTogether();
-
-    int final_execution_time=last_op_store_time+1;
-    cout << "Operation scheduling is completed!" << endl;
-    cout << "Kernel execution time: " << final_execution_time << " cycles" << endl;
-
-    cout << "Start to dump the scheduling result for hardware implementation!" << endl;
-    SchedulingStat();
-    DataMemoryAnalysis();
-    InstructionDumpCoe(final_execution_time);
-    InstructionDumpMem();
-    SchedulingResultDump();
-    OutsideAddrMemoryDumpCoe(final_execution_time);
-    AddrBufferDumpMem();
-    cout << "Scheduling result dump is done! " << endl;
-
-    t_end = clock();
-    cout << "Total compilation time: " << (double)(1.0*(t_end-t_start)/CLOCKS_PER_SEC) << " seconds" <<endl;
-
-    if(GLvar::report_level>10){
-        fTrace.close();
+    std::string Trace_fName = "./result/trace.txt";
+    fTrace.open(Trace_fName.c_str());
+    if(!fTrace.is_open()){
+        DEBUG1("Failed to open the trace.txt!");
     }
+
+    time_t Start_Time, End_Time;
+    Start_Time = clock();
+
+    std::cout << "Operation scheduling starts!" << std::endl;
+    if(List_Scheduling_Strategy == PE_Pref){
+        List_Scheduling_PE_Pref();
+    }
+    else if(List_Scheduling_Strategy == OP_Pref){
+        List_Scheduling_OP_Pref();
+    }
+    else if(List_Scheduling_Strategy == PE_OP_Combined){
+        List_Scheduling_PE_OP_Combined();
+    }
+    else{
+        DEBUG1("Unknown scheduling strategy!\n");
+    }
+
+    std::cout << "Operation scheduling is completed!" << std::endl;
+    std::cout << "Kernel execution time: " << Scheduling_Complete_Time << " cycles" << std::endl;
+
+    std::cout << "Start to dump the scheduling result for hardware implementation!" << std::endl;
+    Scheduling_Stat();
+    Data_Mem_Analysis();
+    Inst_Mem_Dump_Coe();
+    Inst_Mem_Dump_Mem();
+    Scheduling_Result_Dump();
+    IO_Buffer_Dump_Coe();
+    Addr_Buffer_Dump_Mem();
+    std::cout << "Scheduling result is dumpped! " << std::endl;
+
+    End_Time = clock();
+    std::cout << "Total compilation time: " << (double)(1.0*(End_Time-Start_Time)/CLOCKS_PER_SEC) << " seconds." << std::endl;
+
+    fTrace.close();
 
 }
 
@@ -194,11 +165,11 @@ void Scheduler::ListSchedulingAlgorithmPEOPTogether(){
     bool scheduling_completed=false;
 
     //InputOperationScheduling();
-    list<int> op_ready_set;
-    OPReadySetInitialization(op_ready_set);
+    list<int> OP_Ready_Set;
+    OPReadySetInitialization(OP_Ready_Set);
     vector<int> executed_op_num;
-    executed_op_num.resize(GLvar::CGRA_scale);
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    executed_op_num.resize(CGRA->CGRA_Scale);
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         executed_op_num[i]=0;
     }
 
@@ -207,10 +178,10 @@ void Scheduler::ListSchedulingAlgorithmPEOPTogether(){
         int selected_op_id;
 
         //Choose an idle PE
-        list<int> candidates;
+        list<int> Candidates;
         int min_num=GLvar::maximum_operation_num;
         int max_num=0;
-        for(int i=0; i<GLvar::CGRA_scale; i++){
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
             if(min_num>executed_op_num[i]){
                 min_num=executed_op_num[i];
             }
@@ -220,221 +191,215 @@ void Scheduler::ListSchedulingAlgorithmPEOPTogether(){
         }
 
         int std_num=min_num+(max_num-min_num)*GLvar::load_balance_factor;
-        for(int i=0; i<GLvar::CGRA_scale; i++){
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
             if((max_num-min_num)>min_num && executed_op_num[i]>std_num){
                 continue;
             }
             else{
-                candidates.push_back(i);
+                Candidates.push_back(i);
             }
         }
 
-        //selected_PE_id=LeastActivePESelection(candidates);
+        //selected_PE_id=LeastActivePESelection(Candidates);
 
         //Choose an operation that can be executed
-        //selected_op_id=LeastCostOPSelection(selected_PE_id, op_ready_set);
-        PEOPPairSelection(selected_PE_id, selected_op_id, candidates, op_ready_set);
+        //selected_op_id=LeastCostOPSelection(selected_PE_id, OP_Ready_Set);
+        PEOPPairSelection(selected_PE_id, selected_op_id, Candidates, OP_Ready_Set);
 
         executed_op_num[selected_PE_id]++;
 
         //Operation Execution
         vector<Vertex*>::iterator it;
-        vector<int> src_op_ids;
+        vector<int> Src_OP_IDs;
         vector<int> arrival_time;
-        src_op_ids.resize(3);
+        Src_OP_IDs.resize(3);
         arrival_time.resize(3);
-        Vertex* tmp=DFG->DFG_vertex[selected_op_id];
+        Vertex* tmp=DFG->OP_Array[selected_op_id];
         int j=0;
         for(it=tmp->parents.begin(); it!=tmp->parents.end(); it++){
-            src_op_ids[j]=(*it)->vertex_id;
-            arrival_time[j]=FetchOP(src_op_ids[j], selected_PE_id, Implementation);
+            Src_OP_IDs[j]=(*it)->vertex_id;
+            arrival_time[j]=FetchOP(Src_OP_IDs[j], selected_PE_id, Implementation);
             j++;
         }
-        OperationExecution(selected_op_id, src_op_ids, selected_PE_id, arrival_time, Implementation);
+        OperationExecution(selected_op_id, Src_OP_IDs, selected_PE_id, arrival_time, Implementation);
 
         //output operation that has not been executed should be moved to output PE
-        if(DFG->DFG_vertex[selected_op_id]->vertex_type==OutputData){
+        if(DFG->OP_Array[selected_op_id]->vertex_type==OutputData){
             StoreDataInOutMem(selected_op_id);
         }
 
-        //cout<<"ready list size="<<op_ready_set.size()<<endl;
+        //cout<<"ready list size="<<OP_Ready_Set.size()<<endl;
         //Update the operation that is ready for execution
-        OPReadySetUpdate(op_ready_set, selected_op_id);
+        OPReadySetUpdate(OP_Ready_Set, selected_op_id);
 
         scheduling_completed=SchedulingIsCompleted();
     }
 
 }
 
-void Scheduler::LoadBalancePEFilter(list<int> &candidates, const vector<int> &executed_op_num){
+void Scheduler::Load_Balance_Filter(list<int> &Candidates){
 
-    int min_num=GLvar::maximum_operation_num;
-    int max_num=0;
-    list<int>::iterator it;
-    for(it=candidates.begin(); it!=candidates.end(); it++){
-        if(min_num>executed_op_num[*it]){
-            min_num=executed_op_num[*it];
+    int Min_Executed_OP_Num = DFG->OP_Num;
+    int Max_Executed_OP_Num = 0;
+    std::list<int>::iterator Lit;
+    for(Lit = Candidates.begin(); Lit != Candidates.end(); Lit++){
+        if(Min_Executed_OP_Num > CGRA->PE_Array[*Lit]->Executed_OP_Num){
+            Min_Executed_OP_Num = CGRA->PE_Array[*Lit]->Executed_OP_Num;
         }
-        if(max_num<executed_op_num[*it]){
-            max_num=executed_op_num[*it];
+        if(Max_Executed_OP_Num < CGRA->PE_Array[*Lit]->Executed_OP_Num){
+            Max_Executed_OP_Num = CGRA->PE_Array[*Lit]->Executed_OP_Num;
         }
     }
-    int std_num=min_num+(max_num-min_num)*GLvar::load_balance_factor;
-    for(it=candidates.begin(); it!=candidates.end(); ){
-        if(executed_op_num[*it]>1.3*min_num && executed_op_num[*it]>std_num){
-            it=candidates.erase(it);
+
+    int Threshold_Num = Min_Executed_OP_Num + (Max_Executed_OP_Num - Min_Executed_OP_Num) * Load_Balance_Factor;
+    for(Lit = Candidates.begin(); Lit != Candidates.end(); ){
+        if(CGRA->PE_Array[*Lit]->Executed_OP_Num > 1.3*Min_Executed_OP_Num && DFG->OP_Array[*Lit]->Executed_OP_Num > Threshold_Num){
+            Lit = Candidates.erase(Lit);
         }
         else{
-            it++;
+            Lit++;
         }
     }
 
 }
 
-/* Try to remove the PE that is recetly used from candidate list, because
- * they are more likely to be busy for new computation. */
-void Scheduler::ActivePEFilter(list<int> &candidates){
+/* Try to remove the PEs that is recetly used from candidate list, because
+ * they are more likely to be busy. */
+void Scheduler::Recent_Busy_Filter(std::list<int> &Candidates){
 
-    int min_active_time=GLvar::maximum_simulation_time;
-    int max_active_time=0;
-    int current_active_time;
-    list<int>::iterator it;
-    for(it=candidates.begin(); it!=candidates.end(); it++){
-        current_active_time=CGRA->PE_array[*it]->maximum_active_time;
-        if(current_active_time<min_active_time){
-            min_active_time=current_active_time;
+    int Min_Active_Time = INT_MAX;
+    int Max_Active_Time = 0;
+
+    std::list<int>::iterator Lit;
+    for(Lit = Candidates.begin(); Lit != Candidates.end(); Lit++){
+        int Current_Active_Time = CGRA->PE_Array[*Lit]->Max_Active_Time;
+        if(Current_Active_Time < Min_Active_Time){
+            Min_Active_Time = Current_Active_Time;
         }
-        if(current_active_time>max_active_time){
-            max_active_time=current_active_time;
+        if(Current_Active_Time > Max_Active_Time){
+            Max_Active_Time = Current_Active_Time;
         }
     }
 
-    int std_time=min_active_time+GLvar::load_balance_factor*(max_active_time-min_active_time);
-    for(it=candidates.begin(); it!=candidates.end();){
-        current_active_time=CGRA->PE_array[*it]->maximum_active_time;
-        if(current_active_time<=std_time){
-            it++;
+    int Threshold_Time = Min_Active_Time + Load_Balance_Factor * (Max_Active_Time - Min_Active_Time);
+    for(Lit = Candidates.begin(); Lit != Candidates.end();){
+        Current_Active_Time = CGRA->PE_Array[*Lit]->Max_Active_Time;
+        if(Current_Active_Time <= Threshold_Time){
+            Lit++;
         }
         else{
-            it=candidates.erase(it);
+            Lit = Candidates.erase(Lit);
         }
     }
 
 }
 
-int Scheduler::LeastReadyOpAttachedPESelection(const list<int> &candidates,const list<int> &op_ready_set){
+int Scheduler::Least_Ready_OP_Attached_Sel(const std::list<int> &Candidates, const std::list<int> &OP_Ready_Set){
 
-    int selected_PE_id = 0;
-    vector<int> PE_weight;
-    PE_weight.resize(GLvar::CGRA_scale);
-    for(int i=0; i<GLvar::CGRA_scale; i++){
-        PE_weight[i]=0;
+    int Sel_PE_ID;
+    std::vector<int> Attached_Ready_OP_Num;
+    Attached_Ready_OP_Num.resize(CGRA->CGRA_Scale);
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
+        Attached_Ready_OP_Num[i] = 0;
     }
 
-    list<int>::const_iterator cit;
-    vector<Vertex*>::iterator it;
-    list<AttachHistory>::iterator ait;
-    for(cit=op_ready_set.begin(); cit!=op_ready_set.end(); cit++){
-        for(it=DFG->DFG_vertex[*cit]->parents.begin();it!=DFG->DFG_vertex[*cit]->parents.end(); it++){
-            for(ait=DFG->DFG_vertex[(*it)->vertex_id]->attach_history.begin();ait!=DFG->DFG_vertex[(*it)->vertex_id]->attach_history.end();ait++){
-                PE_weight[ait->attached_PE_id]++;
+    std::list<int>::const_iterator Lcit;
+    std::vector<Operand*>::iterator Vit;
+    std::list<Attach_History>::iterator Lit;
+    for(Lcit = OP_Ready_Set.begin(); Lcit != OP_Ready_Set.end(); Lcit++){
+        for(Vit = DFG->OP_Array[*Lcit]->OP_Parents.begin(); Vit != DFG->OP_Array[*Lcit]->OP_Parents.end(); Vit++){
+            for(Lit = DFG->OP_Array[(*Vit)->OP_ID]->OP_Attach_History.begin(); Lit != DFG->OP_Array[(*Vit)->OP_ID]->OP_Attach_History.end(); Lit++){
+                Attached_Ready_OP_Num[Lit->Attached_PE_ID]++;
             }
         }
     }
 
-    int min_weight=INT_MAX;
-    list<int>::const_iterator ccit;
-    for(ccit=candidates.begin();ccit!=candidates.end();ccit++){
-        if(PE_weight[*ccit]<min_weight){
-            selected_PE_id=*ccit;
-            min_weight=PE_weight[*ccit];
+    int Min_Attached_OP_Num = INT_MAX;
+    for(Lcit = Candidates.begin(); Lcit != Candidates.end(); Lcit++){
+        if(Attached_Ready_OP_Num[*Lcit] < Min_Attached_OP_Num){
+            Sel_PE_id = *Lcit;
+            Min_Attached_OP_Num = Attached_Ready_OP_Num[*Lcit];
         }
     }
 
-    return selected_PE_id;
+    return Sel_PE_ID;
 
 }
 
-void Scheduler::ListSchedulingAlgorithmPEFirst(){
+void Scheduler::List_Scheduling_PE_Pref(){
 
-    bool scheduling_completed=false;
+    bool Scheduling_Completed = false;
+    std::list<int> OP_Ready_Set;
+    OP_Ready_Set_Init(OP_Ready_Set);
 
-    //InputOperationScheduling();
-    list<int> op_ready_set;
-    OPReadySetInitialization(op_ready_set);
-    vector<int> executed_op_num;
-    executed_op_num.resize(GLvar::CGRA_scale);
-    for(int i=0; i<GLvar::CGRA_scale; i++){
-        executed_op_num[i]=0;
-    }
+    while(!Scheduling_Completed){
 
+        int Sel_PE_ID;
+        int Sel_OP_ID;
 
-    while(!scheduling_completed){
-        int selected_PE_id;
-        int selected_op_id;
-
-        //Choose an idle PE
-        list<int> candidates;
-        for(int i=0; i<GLvar::CGRA_scale; i++){
-            candidates.push_back(i);
+        // Select a PE for the next operation
+        std::list<int> Candidates;
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
+            Candidates.push_back(i);
         }
+        Load_Balance_Filter(Candidates);
+        Recent_Busy_Filter(Candidates);
+        if(PE_Sel_Strategy == Least_Recent_Used){
+            Sel_PE_ID = Least_Recent_Used_Sel(Candidates);
+        }
+        else if(PE_Sel_Strategy == Least_Ready_OP_Attached){
+            Sel_PE_ID = Least_Ready_OP_Attached_Sel(Candidates, OP_Ready_Set);
+        }
+        else{
+            DEBUG1("Unknown PE selection strategy!\n");
+        }
+        CGRA->PE_Array[Sel_PE_ID]->Executed_OP_Num++;
 
-        LoadBalancePEFilter(candidates,executed_op_num);
-        ActivePEFilter(candidates);
-
-        //selected_PE_id=LeastActivePESelection(candidates);
-        selected_PE_id=LeastReadyOpAttachedPESelection(candidates, op_ready_set);
-        executed_op_num[selected_PE_id]++;
-
-        //Choose an operation that can be executed
-        selected_op_id=LeastCostOPSelection(selected_PE_id, op_ready_set);
-
-        //cout<<"op="<<selected_op_id<<endl;
+        //Select an operation that can be executed on the pre-selected PE.
+        Sel_OP_ID = Least_Cost_OP_Sel(Sel_PE_ID, OP_Ready_Set);
 
         //Operation Execution
-        vector<Vertex*>::iterator it;
-        vector<int> src_op_ids;
-        vector<int> arrival_time;
-        src_op_ids.resize(3);
-        arrival_time.resize(3);
-        Vertex* tmp=DFG->DFG_vertex[selected_op_id];
-        int j=0;
-        for(it=tmp->parents.begin(); it!=tmp->parents.end(); it++){
-            src_op_ids[j]=(*it)->vertex_id;
-            arrival_time[j]=FetchOP(src_op_ids[j], selected_PE_id, Implementation);
-            j++;
+        std::vector<Operand*>::iterator Vit;
+        std::vector<int> Src_OP_IDs;
+        std::vector<int> Src_OP_Arrival_Time;
+        Src_OP_IDs.resize(3);
+        Src_OP_Arrival_Time.resize(3);
+        Operand* OP_Ptr = DFG->OP_Array[Sel_OP_ID];
+
+        int i=0;
+        for(Vit = OP_Ptr->OP_Parents.begin(); Vit != OP_Ptr->OP_Parents.end(); Vit++){
+            Src_OP_IDs[i] = (*Vit)->OP_ID;
+            Src_OP_Arrival_Time[i] = Fetch_OP(Src_OP_IDs[i], Sel_PE_ID, Impl);
+            i++;
         }
-        OperationExecution(selected_op_id, src_op_ids, selected_PE_id, arrival_time, Implementation);
+        OP_Exe(Sel_OP_ID, Src_OP_IDs, Sel_PE_ID, Src_OP_Arrival_Time, Impl);
 
         //output operation that has been executed should be moved to output PE
-        if(DFG->DFG_vertex[selected_op_id]->vertex_type==OutputData){
-            StoreDataInOutMem(selected_op_id);
+        if(DFG->OP_Array[Sel_OP_ID]->OP_Type == OUTVAR || DFG->OP_Array[Sel_OP_ID]->OP_Type == IMOUT){
+            Store_OP_In_IO_Buffer(Sel_OP_ID);
         }
-        //if(DFG->DFG_vertex[selected_op_id]->vertex_type==IntermediateData && DFG->DFG_vertex[selected_op_id]->vertex_type2==AtBreakPoint){
-        //StoreDataInOutMem(selected_op_id);
-        //}
 
         //Update the operation that is ready for execution
-        OPReadySetUpdate(op_ready_set, selected_op_id);
+        OP_Ready_Set_Update(OP_Ready_Set, Sel_OP_ID);
 
-        scheduling_completed=SchedulingIsCompleted();
-        //cout<<"loop-id="<<loop_id<<endl;
+        Scheduling_Completed = Is_Scheduling_Completed();
+
     }
 
 }
 
-void Scheduler::OPReadySetUpdate(list<int> &op_ready_set, const int &selected_op_id){
+void Scheduler::OPReadySetUpdate(list<int> &OP_Ready_Set, const int &selected_op_id){
 
     list<int>::iterator cit;
-    for(cit=op_ready_set.begin(); cit!=op_ready_set.end(); cit++){
+    for(cit=OP_Ready_Set.begin(); cit!=OP_Ready_Set.end(); cit++){
         if((*cit)==selected_op_id){
-            op_ready_set.erase(cit);
+            OP_Ready_Set.erase(cit);
             break;
         }
     }
 
     vector<Vertex*>::iterator vit;
-    for(vit=DFG->DFG_vertex[selected_op_id]->children.begin(); vit!=DFG->DFG_vertex[selected_op_id]->children.end(); vit++){
+    for(vit=DFG->OP_Array[selected_op_id]->children.begin(); vit!=DFG->OP_Array[selected_op_id]->children.end(); vit++){
         int current_id=(*vit)->vertex_id;
 
         bool all_src_ready=true;
@@ -442,7 +407,7 @@ void Scheduler::OPReadySetUpdate(list<int> &op_ready_set, const int &selected_op
         vector<Vertex*>::iterator it;
         for(it=(*vit)->parents.begin(); it!=(*vit)->parents.end(); it++){
             list<int>::iterator opit;
-            for(opit=op_ready_set.begin(); opit!=op_ready_set.end(); opit++){
+            for(opit=OP_Ready_Set.begin(); opit!=OP_Ready_Set.end(); opit++){
                 if(*opit==current_id){
                     already_in_set=true;
                     break;
@@ -454,36 +419,36 @@ void Scheduler::OPReadySetUpdate(list<int> &op_ready_set, const int &selected_op
             }
         }
 
-        bool none_executed=DFG->DFG_vertex[current_id]->vertex_attribute.vertex_state==DataUnavail;
+        bool none_executed=DFG->OP_Array[current_id]->vertex_attribute.vertex_state==DataUnavail;
         if(all_src_ready && none_executed && !already_in_set){
-            op_ready_set.push_back(current_id);
+            OP_Ready_Set.push_back(current_id);
         }
     }
 
 }
 
-void Scheduler::PEOPPairSelection(int &selected_PE_id, int &selected_op_id, const list<int> &candidates, const list<int> &op_ready_set){
+void Scheduler::PEOPPairSelection(int &selected_PE_id, int &selected_op_id, const list<int> &Candidates, const list<int> &OP_Ready_Set){
 
     int min_execution_cost=GLvar::maximum_simulation_time;
     list<int>::const_iterator PE_it;
-    for(PE_it=candidates.begin(); PE_it!=candidates.end(); PE_it++){
+    for(PE_it=Candidates.begin(); PE_it!=Candidates.end(); PE_it++){
         list<int>::const_iterator op_it;
-        int PE_free_time=CGRA->PE_array[*PE_it]->maximum_active_time;
-        for(op_it=op_ready_set.begin(); op_it!=op_ready_set.end(); op_it++){
+        int PE_free_time=CGRA->PE_Array[*PE_it]->maximum_active_time;
+        for(op_it=OP_Ready_Set.begin(); op_it!=OP_Ready_Set.end(); op_it++){
             float op_cost=0;
             int dst_op=*op_it;
             vector<Vertex*>::iterator vit;
-            for(vit=DFG->DFG_vertex[dst_op]->parents.begin(); vit!=DFG->DFG_vertex[dst_op]->parents.end(); vit++){
+            for(vit=DFG->OP_Array[dst_op]->parents.begin(); vit!=DFG->OP_Array[dst_op]->parents.end(); vit++){
                 int src_op=(*vit)->vertex_id;
                 //int time_cost=FetchOP(src_op,selected_PE_id,Simulation);
                 int attached_PE_id;
                 int ready_time;
-                if(DFG->DFG_vertex[src_op]->vertex_attribute.vertex_state==DataAvail){
+                if(DFG->OP_Array[src_op]->vertex_attribute.vertex_state==DataAvail){
                     attached_PE_id=NearestAttachedPE(src_op, selected_PE_id, ready_time);
                 }
                 else{
                     attached_PE_id=GLvar::load_PE_id;
-                    ready_time=CGRA->PE_array[attached_PE_id]->maximum_active_time;
+                    ready_time=CGRA->PE_Array[attached_PE_id]->maximum_active_time;
                 }
                 int dist_cost=CGRA->PE_pair_distance[attached_PE_id][*PE_it];
 
@@ -514,122 +479,109 @@ void Scheduler::PEOPPairSelection(int &selected_PE_id, int &selected_op_id, cons
 }
 
 
-int Scheduler::LeastCostOPSelection(const int &selected_PE_id, const list<int> &op_ready_set){
+int Scheduler::Least_Cost_OP_Sel(const int &Sel_PE_ID, const std::list<int> &OP_Ready_Set){
 
-    int selected_op_id=NaN;
-    list<int>::const_iterator cit;
-    int min_execution_cost=GLvar::maximum_simulation_time;
-    int PE_free_time=CGRA->PE_array[selected_PE_id]->maximum_active_time;
+    int Sel_OP_ID = NaN;
+    std::list<int>::const_iterator Lcit;
+    int Min_Exe_Cost = INT_MAX; 
+    int PE_Active_Time = CGRA->PE_Array[Sel_PE_ID]->Max_Active_Time;
 
-    for(cit=op_ready_set.begin(); cit!=op_ready_set.end(); cit++){
-        int dst_op=*cit;
-        float op_cost=0;
-        vector<Vertex*>::iterator vit;
-        for(vit=DFG->DFG_vertex[dst_op]->parents.begin(); vit!=DFG->DFG_vertex[dst_op]->parents.end(); vit++){
-            int src_op=(*vit)->vertex_id;
-            //int time_cost=FetchOP(src_op,selected_PE_id,Simulation);
-            //if(time_cost-10<PE_free_time){
-            //time_cost=0;
-            //}
-            //else{
-            //time_cost=time_cost+10-PE_free_time;
-            //}
-            int attached_PE_id;
-            int ready_time;
-            if(DFG->DFG_vertex[src_op]->vertex_attribute.vertex_state==DataAvail){
-                attached_PE_id=NearestAttachedPE(src_op, selected_PE_id, ready_time);
+    for(Lcit = OP_Ready_Set.begin(); Lcit != OP_Ready_Set.end(); Lcit++){
+        float OP_Exe_Cost = 0;
+        std::vector<Operand*>::iterator Vit;
+        for(Vit = DFG->OP_Array[*Lcit]->OP_Parents.begin(); Vit != DFG->OP_Array[*Lcit]->OP_Parents.end(); Vit++){
+            int Src_OP_ID = (*Vit)->OP_ID;
+            int Attached_PE_ID;
+            int Src_Ready_Time;
+            if(DFG->OP_Array[Src_OP_ID]->OP_Attribute.OP_State == Avail){
+                Attached_PE_ID = Nearest_Attached_PE(Src_OP_ID, Sel_PE_ID, Src_Ready_Time);
             }
             else{
-                attached_PE_id=GLvar::load_PE_id;
-                ready_time=CGRA->PE_array[attached_PE_id]->maximum_active_time;
-            }
-            int dist_cost=CGRA->PE_pair_distance[attached_PE_id][selected_PE_id];
-
-            //Expand the distance
-            if(dist_cost>1){
-                dist_cost=dist_cost*2;
+                Attached_PE_ID = CGRA->Load_PE_ID;
+                Src_Ready_Time = CGRA->PE_Array[Attached_PE_ID]->Max_Active_Time;
             }
 
-            if(PE_free_time>ready_time+100){
-                op_cost+=dist_cost;
+            int Physical_Dist = CGRA->PE_Pair_Dist[Attached_PE_ID][Sel_PE_ID];
+            if(Physical_Dist > 1){
+                OP_Exe_Cost = Physical_Dist * 2;
             }
-            else if(PE_free_time>ready_time+50){
-                op_cost+=dist_cost*1.5;
+            if(PE_Active_Time > (Src_Ready_Time + 100)){
+                OP_Exe_Cost += Physical_Dist;
+            }
+            else if(PE_Active_Time > (Src_Ready_Time + 50)){
+                OP_Exe_Cost += Physical_Dist * 1.5;
             }
             else{
-                op_cost+=dist_cost*2;
+                OP_Exe_Cost += Physical_Dist * 2;
             }
 
-            //op_cost+=dist_cost;
-            //if(tmp>PE_free_time){
-            //op_cost+=tmp-PE_free_time;
-            //}
         }
-        if(op_cost<min_execution_cost){
-            min_execution_cost=op_cost;
-            selected_op_id=dst_op;
+
+        if(OP_Exe_Cost < Min_Exe_Cost){
+            Min_Exe_Cost = OP_Exe_Cost;
+            Sel_OP_ID = *Lcit;
         }
     }
 
-    if(selected_op_id==NaN){
+    if(Sel_OP_ID == NaN){
         DEBUG1("Unexpected operation selection!");
     }
-    return selected_op_id;
+
+    return Sel_OP_ID;
 
 }
 
-void Scheduler::OPReadySetInitialization(list<int> &op_ready_set){
+void Scheduler::OP_Ready_Set_Init(std::list<int> &OP_Ready_Set){
 
-    for(int i=0; i<GLvar::maximum_operation_num; i++){
-        Vertex* vp=DFG->DFG_vertex[i];
-        if(vp->vertex_type!=InputData){
-            vector<Vertex*>::iterator it;
-            bool all_src_ready=true;
-            for(it=vp->parents.begin(); it!=vp->parents.end(); it++){
-                if((*it)->vertex_attribute.vertex_state==DataUnavail){
-                    all_src_ready=false;
+    for(int i=0; i<DFG->OP_Num; i++){
+        Operand* OP_Ptr = DFG->OP_Array[i];
+        if((OP_Ptr->OP_Type != INCONST) && (OP_Ptr != INVAR)){
+            std::vector<Operand*>::iterator OP_It;
+            bool Is_Src_OP_Ready = true;
+            for(OP_It = OP_Ptr->OP_Parents.begin(); OP_It != OP_Ptr->OP_Parents.end(); OP_It++){
+                if((*OP_It)->OP_Attribute.OP_State == Unavail){
+                    Is_Src_OP_Ready = false;
                     break;
                 }
             }
 
-            if(all_src_ready){
-                op_ready_set.push_back(i);
+            if(Is_Src_OP_Ready){
+                OP_Ready_Set.push_back(i);
             }
         }
     }
 
 }
 
-int Scheduler::FetchOP(const int &src_op_id, const int &target_PE_id, const ExecutionMode &mode){
+int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, const Exe_Mode &Fun_Mode){
 
-    int fetch_cost=0;
-    int attached_PE_id;
+    int Expected_Complete_Time = 0;
+    int Src_Avail_Time;
+    int Src_Attached_PE_ID;
 
-    //op_id=0 is always considered to be 0 and available in all PE data memory.
-    if(src_op_id==0){
-        DFG->DFG_vertex[0]->vertex_attribute.vertex_state=DataAvail;
-        attached_PE_id=target_PE_id;
+    // Const 0 is always available on each PE
+    if(Src_OP_ID == 0){
+        DFG->OP_Array[0]->OP_Attribute.OP_State = Avail;
+        Src_Attached_PE_ID = Target_PE_ID;
     }
-    else if(src_op_id!=0 && DFG->DFG_vertex[src_op_id]->vertex_attribute.vertex_state==DataAvail){
-        attached_PE_id=NearestAttachedPE(src_op_id, target_PE_id, fetch_cost);
+    else if(Src_OP_ID!=0 && DFG->OP_Array[Src_OP_ID]->OP_Attribute.OP_State == Avail){
+        Src_Attached_PE_ID = Nearest_Attached_PE(Src_OP_ID, Target_PE_ID, Src_Avail_Time);
     }
-    else if(DFG->DFG_vertex[src_op_id]->vertex_attribute.vertex_state==DataInOutMem){
-        fetch_cost+=LoadDataFromOutMem(src_op_id, mode);
-        attached_PE_id=GLvar::load_PE_id;
+    else if(DFG->OP_Array[Src_OP_ID]->OP_Attribute.OP_State == In_IO_Buffer){
+        Src_Avail_Time = Load_From_IO_Buffer(Src_OP_ID, Fun_Mode);
+        Src_Attached_PE_ID = CGRA->Load_PE_ID;
     }
-
     else{
         DEBUG1("Unexpected operation fectching!");
     }
 
-    if(attached_PE_id!=target_PE_id){
-        //Find out a routing path that leads to target PE
-        list<int> shortest_path;
-        int ready_time=fetch_cost;
-        CGRA->PossiblePath(ready_time, attached_PE_id, target_PE_id, shortest_path);
+    // Move source operand to target PE.
+    if(Src_Attached_PE_ID != Target_PE_ID){
+        std::list<int> Shortest_Routing_Path;
+        CGRA->PossiblePath(Src_Avail_Time, Src_Attached_PE_ID, Target_PE_ID, Shortest_Routing_Path);
 
         //Transfer data from src to dst using this path
-        fetch_cost=OperationTransmission(ready_time, src_op_id, shortest_path, mode);
+        fetch_cost=OperationTransmission(ready_time, Src_OP_ID, shortest_path, mode);
     }
 
     return fetch_cost;
@@ -656,9 +608,9 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
         source_start_time.resize(INSTR_OP_NUM-1);
         source_routing_paths.resize(INSTR_OP_NUM-1);
 
-        bool input_operation_flag=DFG->DFG_vertex[selected_operation_id]->vertex_type==InputData;
-        bool output_operation_flag=DFG->DFG_vertex[selected_operation_id]->vertex_type==OutputData;
-        bool in_out_mem_flag=DFG->DFG_vertex[selected_operation_id]->vertex_attribute.vertex_state==DataInOutMem;
+        bool input_operation_flag=DFG->OP_Array[selected_operation_id]->vertex_type==InputData;
+        bool output_operation_flag=DFG->OP_Array[selected_operation_id]->vertex_type==OutputData;
+        bool in_out_mem_flag=DFG->OP_Array[selected_operation_id]->vertex_attribute.vertex_state==DataInOutMem;
 
         //Input operation that is still in out memory will be loaded first
         if(input_operation_flag && in_out_mem_flag){
@@ -667,14 +619,14 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
         //output operation and intermediate operation will be executed
         else if(!input_operation_flag){
             vector<Vertex*>::iterator it;
-            Vertex* selected_vertex=DFG->DFG_vertex[selected_operation_id];
+            Vertex* selected_vertex=DFG->OP_Array[selected_operation_id];
             for(it=selected_vertex->parents.begin(); it!=selected_vertex->parents.end(); it++){
                 src_operation_ids.push_back((*it)->vertex_id);
             }
 
             selected_PE_id=PESelection(selected_operation_id, src_operation_ids, source_routing_paths, source_start_time);
 
-            //tmp_op=CGRA->PE_array[1]->component_trace[42]->component_activity->memory_port_op[0];
+            //tmp_op=CGRA->PE_Array[1]->Component_Trace[42]->component_activity->memory_port_op[0];
             //if(tmp_op==154){
             //cout<<"checkpoint 1: right!"<<endl;
             //}
@@ -684,8 +636,8 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
 
             FetchSourceOperation(selected_PE_id, src_operation_ids, source_routing_paths, source_start_time, source_ready_time);
 
-            /*tmp_op=CGRA->PE_array[1]->component_trace[3]->component_activity->memory_port_op[0];
-              op_read=CGRA->PE_array[1]->component_trace[3]->component_reserved->memory_read_reserved[0];
+            /*tmp_op=CGRA->PE_Array[1]->Component_Trace[3]->component_activity->memory_port_op[0];
+              op_read=CGRA->PE_Array[1]->Component_Trace[3]->component_reserved->memory_read_reserved[0];
               cout<<"After source fetch"<<endl;
               if(op_read){
               cout<<"checkpoint 0: right! tmp_op="<<tmp_op<<endl;
@@ -694,7 +646,7 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
               cout<<"checkpoint 0: wrong! tmp_op="<<tmp_op<<endl;
               }*/
 
-            //tmp_op=CGRA->PE_array[1]->component_trace[42]->component_activity->memory_port_op[0];
+            //tmp_op=CGRA->PE_Array[1]->Component_Trace[42]->component_activity->memory_port_op[0];
             //if(tmp_op==154){
             //cout<<"checkpoint 2: right!"<<endl;
             //}
@@ -703,8 +655,8 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
             //}
 
             OperationExecution(selected_operation_id, src_operation_ids, selected_PE_id, source_ready_time, Implementation);
-            /*tmp_op=CGRA->PE_array[1]->component_trace[3]->component_activity->memory_port_op[0];
-              op_read=CGRA->PE_array[1]->component_trace[3]->component_reserved->memory_read_reserved[0];
+            /*tmp_op=CGRA->PE_Array[1]->Component_Trace[3]->component_activity->memory_port_op[0];
+              op_read=CGRA->PE_Array[1]->Component_Trace[3]->component_reserved->memory_read_reserved[0];
               cout<<"After execution"<<endl;
               if(op_read){
               cout<<"checkpoint 0: right! tmp_op="<<tmp_op<<endl;
@@ -718,8 +670,8 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
                 StoreDataInOutMem(selected_operation_id);
             }
 
-            /*tmp_op=CGRA->PE_array[1]->component_trace[3]->component_activity->memory_port_op[0];
-              op_read=CGRA->PE_array[1]->component_trace[3]->component_reserved->memory_read_reserved[0];
+            /*tmp_op=CGRA->PE_Array[1]->Component_Trace[3]->component_activity->memory_port_op[0];
+              op_read=CGRA->PE_Array[1]->Component_Trace[3]->component_reserved->memory_read_reserved[0];
               cout<<"After store!"<<endl;
               if(op_read){
               cout<<"checkpoint 0: right! tmp_op="<<tmp_op<<endl;
@@ -734,21 +686,21 @@ void Scheduler::ListSchedulingAlgorithmOPFirst(){
 
 }
 
-int Scheduler::LeastActivePESelection(const list<int> &candidates){
+int Scheduler::Least_Recent_Used_Sel(const std::list<int> &Candidates){
 
-    int min_active_time=GLvar::maximum_simulation_time;
-    int selected_PE_id = 0;
-    list<int>::const_iterator it;
+    int Min_Active_Time = INT_MAX;
+    int Sel_PE_ID = 0;
+    std::list<int>::const_iterator Lcit;
 
-    for(it=candidates.begin(); it!=candidates.end(); it++){
-        int i=(*it);
-        int current_active_time=CGRA->PE_array[i]->maximum_active_time;
-        if(current_active_time<min_active_time){
-            selected_PE_id=i;
-            min_active_time=current_active_time;
+    for(Lcit = Candidates.begin(); Lcit!=Candidates.end(); Lcit++){
+        int Current_PE_Active_Time = CGRA->PE_Array[i]->Max_Active_Time;
+        if(Current_PE_Active_Time < Min_Active_Time){
+            Sel_PE_id= *Lcit;
+            Min_Active_Time = Current_PE_Active_Time;
         }
     }
-    return selected_PE_id;
+
+    return Sel_PE_ID;
 
 }
 
@@ -758,11 +710,11 @@ int Scheduler::LeastActivePESelection(const list<int> &candidates){
  * -------------------------------------------------------------------*/
 int Scheduler::PESelection(const int &target_operation_id, const vector<int> &src_operation_ids, vector<list<int> > &source_routing_paths, vector<int> &source_operation_ready_time){
 
-    //Initial PE candidates
+    //Initial PE Candidates
     vector<int> candidate_PE_id;
 
     //Filter the input PE 
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         //if(i!=GLvar::store_PE_id){
         candidate_PE_id.push_back(i);
         //}
@@ -785,15 +737,15 @@ int Scheduler::PESelection(const int &target_operation_id, const vector<int> &sr
     }
 
     vector<int> execution_time_on_each_PE;
-    execution_time_on_each_PE.resize(GLvar::CGRA_scale);
-    int earliest_execution_time=INF;
+    execution_time_on_each_PE.resize(CGRA->CGRA_Scale);
+    int earliest_execution_time=INT_MAX;
     int selected_PE_id=NaN;
     vector<list<int> > source_routing_paths_tmp;
     source_routing_paths_tmp.resize(INSTR_OP_NUM-1);
     vector<int> source_operation_ready_time_tmp;
     source_operation_ready_time_tmp.resize(INSTR_OP_NUM-1);
     list<int> shortest_path;
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         vector<int>::iterator iter_tmp;
         bool is_candidate=false;
         for(iter_tmp=candidate_PE_id.begin(); iter_tmp!=candidate_PE_id.end(); iter_tmp++){
@@ -807,7 +759,7 @@ int Scheduler::PESelection(const int &target_operation_id, const vector<int> &sr
             arrival_destination_time.resize(INSTR_OP_NUM-1);
             for(int j=0; j<INSTR_OP_NUM-1; j++){
                 int attached_PE_id;
-                source_operation_ready_time_tmp[j]=DFG->DFG_vertex[src_operation_ids[j]]->vertex_attribute.operation_avail_time;
+                source_operation_ready_time_tmp[j]=DFG->OP_Array[src_operation_ids[j]]->vertex_attribute.operation_avail_time;
                 attached_PE_id=NearestAttachedPE(src_operation_ids[j], i, source_operation_ready_time_tmp[j]);
 
                 shortest_path.clear();
@@ -838,59 +790,57 @@ int Scheduler::PESelection(const int &target_operation_id, const vector<int> &sr
 
 }
 
-int Scheduler::LoadDataFromOutMem(const int &operation_id, const ExecutionMode &mode){
+int Scheduler::Load_From_IO_Buffer(const int &OP_ID, const Exe_Mode &Fun_Mode){
 
-    //Load the operation from out memory
-    int load_cost=NaN;
-    int in_PE_id=GLvar::load_PE_id;
-    for(int i=0; i<GLvar::maximum_simulation_time; i++){
-        bool load_path_avail=CGRA->PE_array[in_PE_id]->component_trace[i+1]->component_reserved->load_path_reserved==false;
-        bool write_port1_avail=CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_reserved->memory_write_reserved[1]==false;
-        bool read_port3_avail=CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_reserved->memory_read_reserved[3]==false;
-        bool read_port4_avail=CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_reserved->memory_read_reserved[4]==false;
-        bool read_port5_avail=CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_reserved->memory_read_reserved[5]==false;
-        if(load_path_avail && write_port1_avail && read_port3_avail && read_port4_avail && read_port5_avail){
-            if(mode==Implementation){
+    //Load the operation from IO Buffer
+    int Expected_Complete_Time = NaN;
+    for(int i=0; i<INT_MAX; i++){
+        bool Load_Path_Avail = CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+1]->PE_Component_Reserved->Load_Path_Reserved == false;
+        bool WR_Port1_Avail = CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Reserved->Data_Mem_WR_Reserved[1] == false;
+        bool RD_Port3_Avail = CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Reserved->Data_Mem_RD_Reserved[3] == false;
+        bool RD_Port4_Avail = CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Reserved->Data_Mem_RD_Reserved[4] == false;
+        bool RD_Port5_Avail = CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Reserved->Data_Mem_RD_Reserved[5] == false;
+        if(Load_Path_Avail && WR_Port1_Avail && RD_Port3_Avail && RD_Port4_Avail && RD_Port5_Avail){
+            if(Fun_Mode == Impl){
+
                 //update corresponding PE component state
-                CGRA->PE_array[in_PE_id]->component_trace[i+1]->component_reserved->load_path_reserved=true;
-                CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_reserved->memory_write_reserved[1]=true;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+1]->PE_Component_Reserved->Load_Path_Reserved = true;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Reserved->Data_Mem_WR_Reserved[1] = true;
 
                 //update corresponding PE component activity
-                CGRA->PE_array[in_PE_id]->component_trace[i]->component_activity->load_op=operation_id;
-                CGRA->PE_array[in_PE_id]->component_trace[i+1]->component_activity->load_mux=0;
-                CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_activity->memory_wr_ena[1]=1;
-                CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_activity->memory_port_op[3]=operation_id;
-                CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_activity->memory_port_op[4]=operation_id;
-                CGRA->PE_array[in_PE_id]->component_trace[i+2]->component_activity->memory_port_op[5]=operation_id;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i]->PE_Component_Activity->Load_OP = OP_ID;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+1]->PE_Component_Activity->Load_Mux = 0;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 1;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Activity->Data_Mem_Port_OP[3] = OP_ID;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Activity->Data_Mem_Port_OP[4] = OP_ID;
+                CGRA->PE_Array[CGRA->Load_PE_ID]->Component_Trace[i+2]->PE_Component_Activity->Data_Mem_Port_OP[5] = OP_ID;
 
                 //Update operation state
-                DFG->DFG_vertex[operation_id]->vertex_attribute.vertex_state=DataAvail;
-                DFG->DFG_vertex[operation_id]->vertex_attribute.execution_PE_id=in_PE_id;
-                DFG->DFG_vertex[operation_id]->vertex_attribute.operation_avail_time=i+2;
-                AttachHistory attach_point;
-                attach_point.attached_time=i+2;
-                attach_point.attached_PE_id=in_PE_id;
-                DFG->DFG_vertex[operation_id]->attach_history.push_back(attach_point);
-                //if(operation_id==0 && in_PE_id==1){
-                //cout<<"cp1: attach_time="<<i+2<<endl;
-                //}
+                DFG->OP_Array[OP_ID]->OP_Attribute.OP_State = Avail;
+                DFG->OP_Array[OP_ID]->OP_Attribute.OP_Exe_PE_ID = CGRA->Load_PE_ID;
+                DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time = i+2;
+
+                Attach_History Attach_Point;
+                Attach_Point.Attached_Time = i+2;
+                Attach_Point.Attached_PE_ID = CGRA->Load_PE_ID;
+                DFG->OP_Array[OP_ID]->OP_Attach_History.push_back(Attach_Point);
 
                 //Dump the trace
-                if(GLvar::report_level>10){
-                    //Time when data gets to current PE input port.
-                    fTrace<<"Load "<<operation_id<<" through "<<in_PE_id<<" at time "<<i<<endl;
+                if(GL_Var::Print_Level>10){
+                    fTrace << "Load " << OP_ID << " through " << CGRA->Load_PE_ID << " at time " << i << std::endl;
                 }
             }
-            load_cost=i+2;
+
+            Expected_Complete_Time = i+2;
             break;
         }
     }
 
-    if(load_cost==NaN){
+    if(Expected_Complete_Time == NaN){
         DEBUG1("Unexpected load occassion!");
     }
 
-    return load_cost;
+    return Expected_Complete_Time;
 
 }
 
@@ -898,8 +848,8 @@ void Scheduler::StoreDataInOutMem(const int &operation_id){
 
     //Check whether the operation is executed in store_PE
     //If so, pull it out of the data memory
-    int op_avail_time=DFG->DFG_vertex[operation_id]->vertex_attribute.operation_avail_time+1;
-    int src=DFG->DFG_vertex[operation_id]->vertex_attribute.execution_PE_id;
+    int op_avail_time=DFG->OP_Array[operation_id]->vertex_attribute.operation_avail_time+1;
+    int src=DFG->OP_Array[operation_id]->vertex_attribute.execution_PE_id;
     int dst=GLvar::store_PE_id;
 
     if(src==dst){
@@ -908,7 +858,7 @@ void Scheduler::StoreDataInOutMem(const int &operation_id){
     else{
         //Find a routing path from src to dst
         list<int> shortest_path;
-        int ready_time=DFG->DFG_vertex[operation_id]->vertex_attribute.operation_avail_time;
+        int ready_time=DFG->OP_Array[operation_id]->vertex_attribute.operation_avail_time;
         CGRA->PossiblePath(ready_time, src, dst, shortest_path);
 
         //Transfer data from src to dst
@@ -924,19 +874,19 @@ void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){
 
     int op_avail_time=start_time;
     while(true){
-        bool write0_avail=CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_write_reserved[0]==false;
-        bool read0_avail=CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[0]==false;
-        bool read1_avail=CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[1]==false;
-        bool read2_avail=CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[2]==false;
-        bool store_path_avail=CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved==false;
+        bool write0_avail=CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_reserved->memory_write_reserved[0]==false;
+        bool read0_avail=CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_reserved->memory_read_reserved[0]==false;
+        bool read1_avail=CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_reserved->memory_read_reserved[1]==false;
+        bool read2_avail=CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_reserved->memory_read_reserved[2]==false;
+        bool store_path_avail=CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_reserved->store_path_reserved==false;
 
         if(write0_avail && read0_avail && store_path_avail){
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[0]=true;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[0]=operation_id;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=0;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_reserved->memory_read_reserved[0]=true;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_activity->memory_port_op[0]=operation_id;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_activity->store_op=operation_id;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_activity->store_mux=0;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
 
             //Dump the trace
             if(GLvar::report_level>10){
@@ -946,12 +896,12 @@ void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){
             break;
         }
         else if(write0_avail && read1_avail && store_path_avail){
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[1]=true;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[1]=operation_id;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=1;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_reserved->memory_read_reserved[1]=true;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_activity->memory_port_op[1]=operation_id;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_activity->store_op=operation_id;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_activity->store_mux=1;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
 
             //Dump the trace
             if(GLvar::report_level>10){
@@ -961,12 +911,12 @@ void Scheduler::FromDSTToOutMem(const int &operation_id, const int &start_time){
             break;
         }
         else if(write0_avail && read2_avail && store_path_avail){
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_reserved->memory_read_reserved[2]=true;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time]->component_activity->memory_port_op[2]=operation_id;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_op=operation_id;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_activity->store_mux=2;
-            CGRA->PE_array[GLvar::store_PE_id]->component_trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_reserved->memory_read_reserved[2]=true;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_activity->memory_wr_ena[0]=0;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time]->component_activity->memory_port_op[2]=operation_id;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_activity->store_op=operation_id;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_activity->store_mux=2;
+            CGRA->PE_Array[GLvar::store_PE_id]->Component_Trace[op_avail_time+2]->component_reserved->store_path_reserved=true;
 
             //Dump the trace
             if(GLvar::report_level>10){
@@ -990,12 +940,12 @@ void Scheduler::PESelectionFilter(vector<int> &candidate_PE_id, const int &targe
 
     int begin_time;
     int end_time;
-    begin_time=INF;
+    begin_time=INT_MAX;
     float physical_distance_acceptable_percentile=0.25;
     float utilization_acceptable_percentile=0.9;
 
     for(int i=0; i<INSTR_OP_NUM-1; i++){
-        int src_ready_time=DFG->DFG_vertex[src_operation_ids[i]]->vertex_attribute.operation_avail_time;
+        int src_ready_time=DFG->OP_Array[src_operation_ids[i]]->vertex_attribute.operation_avail_time;
         if(begin_time>src_ready_time){
             begin_time=src_ready_time;
         }
@@ -1003,9 +953,9 @@ void Scheduler::PESelectionFilter(vector<int> &candidate_PE_id, const int &targe
     end_time=GLvar::maximum_simulation_time-1;
     if(filtering_type==PhysicalDistanceFiltering){
         int max_distance=0;
-        int min_distance=INF;
-        for(int i=0; i<GLvar::CGRA_scale; i++){
-            for(int j=0; j<GLvar::CGRA_scale; j++){
+        int min_distance=INT_MAX;
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
+            for(int j=0; j<CGRA->CGRA_Scale; j++){
                 if(CGRA->PE_pair_distance[i][j]>max_distance && CGRA->PE_pair_distance[i][j]>0){
                     max_distance=CGRA->PE_pair_distance[i][j];
                 }
@@ -1034,52 +984,52 @@ void Scheduler::PESelectionFilter(vector<int> &candidate_PE_id, const int &targe
     }
     else if(filtering_type==MemoryUtilizationFiltering){
         vector<float> utilization_per_PE;
-        utilization_per_PE.resize(GLvar::CGRA_scale);
-        for(int i=0; i<GLvar::CGRA_scale; i++){
+        utilization_per_PE.resize(CGRA->CGRA_Scale);
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
             utilization_per_PE[i]=1;
         }
         vector<int>::iterator iter_tmp;
         for(iter_tmp=candidate_PE_id.begin(); iter_tmp!=candidate_PE_id.end(); iter_tmp++){
-            float utilization_tmp=CGRA->PE_array[*iter_tmp]->MemoryUtilization(begin_time, end_time);
+            float utilization_tmp=CGRA->PE_Array[*iter_tmp]->MemoryUtilization(begin_time, end_time);
             utilization_per_PE[*iter_tmp]=utilization_tmp;
         }
         UtilizationFilter(candidate_PE_id, utilization_per_PE, utilization_acceptable_percentile);
     }
     else if(filtering_type==DSPutilizationFiltering){
         vector<float> utilization_per_PE;
-        utilization_per_PE.resize(GLvar::CGRA_scale);
-        for(int i=0; i<GLvar::CGRA_scale; i++){
+        utilization_per_PE.resize(CGRA->CGRA_Scale);
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
             utilization_per_PE[i]=1;
         }
         vector<int>::iterator iter_tmp;
         for(iter_tmp=candidate_PE_id.begin(); iter_tmp!=candidate_PE_id.end(); iter_tmp++){
-            float utilization_tmp=CGRA->PE_array[*iter_tmp]->DSPutilization(begin_time, end_time);
+            float utilization_tmp=CGRA->PE_Array[*iter_tmp]->DSPutilization(begin_time, end_time);
             utilization_per_PE[*iter_tmp]=utilization_tmp;
         }
         UtilizationFilter(candidate_PE_id, utilization_per_PE, utilization_acceptable_percentile);
     }
     else if(filtering_type==WriteMemoryUtilizationFiltering){
         vector<float> utilization_per_PE;
-        utilization_per_PE.resize(GLvar::CGRA_scale);
-        for(int i=0; i<GLvar::CGRA_scale; i++){
+        utilization_per_PE.resize(CGRA->CGRA_Scale);
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
             utilization_per_PE[i]=1;
         }
         vector<int>::iterator iter_tmp;
         for(iter_tmp=candidate_PE_id.begin(); iter_tmp!=candidate_PE_id.end(); iter_tmp++){
-            float utilization_tmp=CGRA->PE_array[*iter_tmp]->WriteMemoryUtilization(begin_time, end_time);
+            float utilization_tmp=CGRA->PE_Array[*iter_tmp]->WriteMemoryUtilization(begin_time, end_time);
             utilization_per_PE[*iter_tmp]=utilization_tmp;
         }
         UtilizationFilter(candidate_PE_id, utilization_per_PE, utilization_acceptable_percentile);
     }
     else if(filtering_type==OutputPortUtilizationFiltering){
         vector<float> utilization_per_PE;
-        utilization_per_PE.resize(GLvar::CGRA_scale);
-        for(int i=0; i<GLvar::CGRA_scale; i++){
+        utilization_per_PE.resize(CGRA->CGRA_Scale);
+        for(int i=0; i<CGRA->CGRA_Scale; i++){
             utilization_per_PE[i]=1;
         }
         vector<int>::iterator iter_tmp;
         for(iter_tmp=candidate_PE_id.begin(); iter_tmp!=candidate_PE_id.end(); iter_tmp++){
-            float utilization_tmp=CGRA->PE_array[*iter_tmp]->OutputPortUtilization(begin_time, end_time);
+            float utilization_tmp=CGRA->PE_Array[*iter_tmp]->OutputPortUtilization(begin_time, end_time);
             utilization_per_PE[*iter_tmp]=utilization_tmp;
         }
         UtilizationFilter(candidate_PE_id, utilization_per_PE, utilization_acceptable_percentile);
@@ -1197,22 +1147,22 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
         else{
             //First transmission on the path
             if(i==0){
-                bool current_PE_memory_read_avail0=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[0]==false;
-                bool current_PE_memory_read_avail1=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[1]==false;
-                bool current_PE_memory_read_avail2=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[2]==false;
-                bool current_PE_memory_write_avail0=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->memory_write_reserved[0]==false;
-                bool current_PE_output_avail=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3]->component_reserved->PE_output_reserved[child_id]==false;
-                bool next_PE_input_avail=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+5]->component_reserved->PE_input_reserved==false;
+                bool current_PE_memory_read_avail0=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[0]==false;
+                bool current_PE_memory_read_avail1=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[1]==false;
+                bool current_PE_memory_read_avail2=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[2]==false;
+                bool current_PE_memory_write_avail0=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->memory_write_reserved[0]==false;
+                bool current_PE_output_avail=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3]->component_reserved->PE_output_reserved[child_id]==false;
+                bool next_PE_input_avail=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+5]->component_reserved->PE_input_reserved==false;
 
                 bool next_load_path_avail=true;
                 if(next_PE_id==GLvar::load_PE_id || next_PE_id==GLvar::store_PE_id){
-                    next_load_path_avail=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+6]->component_reserved->load_path_reserved==false;
+                    next_load_path_avail=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+6]->component_reserved->load_path_reserved==false;
                 }
 
-                bool next_PE_memory_write_avail1=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_write_reserved[1]==false;
-                bool next_PE_memory_read_avail3=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_read_reserved[3]==false;
-                bool next_PE_memory_read_avail4=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_read_reserved[4]==false;
-                bool next_PE_memory_read_avail5=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_read_reserved[5]==false;
+                bool next_PE_memory_write_avail1=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_write_reserved[1]==false;
+                bool next_PE_memory_read_avail3=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_read_reserved[3]==false;
+                bool next_PE_memory_read_avail4=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_read_reserved[4]==false;
+                bool next_PE_memory_read_avail5=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+6+next_additional_pipeline]->component_reserved->memory_read_reserved[5]==false;
 
                 bool current_PE_memory_read_avail=(current_PE_memory_read_avail0 || current_PE_memory_read_avail1 || current_PE_memory_read_avail2) && current_PE_memory_write_avail0;
                 bool next_PE_memory_write_avail=next_PE_memory_write_avail1 && next_PE_memory_read_avail3 && next_PE_memory_read_avail4 && next_PE_memory_read_avail5;
@@ -1221,22 +1171,22 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
                     if(mode==Implementation){
 
                         if(current_PE_memory_read_avail0){
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[0]=true;
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->memory_port_op[0]=src_operation_id;
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3]->component_activity->PE_output_mux[child_id]=0;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[0]=true;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_activity->memory_port_op[0]=src_operation_id;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3]->component_activity->PE_output_mux[child_id]=0;
                         }
                         else if(current_PE_memory_read_avail1){
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[1]=true;
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->memory_port_op[1]=src_operation_id;
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3]->component_activity->PE_output_mux[child_id]=1;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[1]=true;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_activity->memory_port_op[1]=src_operation_id;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3]->component_activity->PE_output_mux[child_id]=1;
                         }
                         else{
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[2]=true;
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->memory_port_op[2]=src_operation_id;
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3]->component_activity->PE_output_mux[child_id]=2;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->memory_read_reserved[2]=true;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_activity->memory_port_op[2]=src_operation_id;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3]->component_activity->PE_output_mux[child_id]=2;
                         }
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3]->component_reserved->PE_output_reserved[child_id]=true;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->memory_wr_ena[0]=0;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3]->component_reserved->PE_output_reserved[child_id]=true;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_activity->memory_wr_ena[0]=0;
 
                         if(GLvar::report_level>10){
                             fTrace << "Move operation " << src_operation_id << " First: from " << " PE " <<current_PE_id<<" to "<< " PE " << next_PE_id << " at time " << transmission_progress_time+1 <<endl;
@@ -1250,8 +1200,8 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
                     transmission_progress_time++;
                 }
 
-                /*int tmp_op=CGRA->PE_array[1]->component_trace[3]->component_activity->memory_port_op[0];
-                  int op_read=CGRA->PE_array[1]->component_trace[3]->component_reserved->memory_read_reserved[0];
+                /*int tmp_op=CGRA->PE_Array[1]->Component_Trace[3]->component_activity->memory_port_op[0];
+                  int op_read=CGRA->PE_Array[1]->Component_Trace[3]->component_reserved->memory_read_reserved[0];
                   cout<<"After first transmission"<<endl;
                   if(op_read){
                   cout<<"checkpoint 0: right! tmp_op="<<tmp_op<<endl;
@@ -1260,7 +1210,7 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
                   cout<<"checkpoint 0: wrong! tmp_op="<<tmp_op<<endl;
                   }*/
 
-                //int tmp_op=CGRA->PE_array[1]->component_trace[670]->component_activity->memory_port_op[0];
+                //int tmp_op=CGRA->PE_Array[1]->Component_Trace[670]->component_activity->memory_port_op[0];
                 //if(tmp_op==1221){
                 //cout<<"checkpoint 2: right!"<<endl;
                 //}
@@ -1273,27 +1223,27 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
             else if(i>0 && i<PE_num_on_path-1){
 
                 //Important states for bypass data path 
-                bool current_PE_bypass_avail=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->PE_bypass_reserved==false;
-                bool current_PE_output_avail=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_reserved->PE_output_reserved[child_id]==false;
-                bool next_PE_input_avail=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+4]->component_reserved->PE_input_reserved==false;
+                bool current_PE_bypass_avail=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->PE_bypass_reserved==false;
+                bool current_PE_output_avail=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2]->component_reserved->PE_output_reserved[child_id]==false;
+                bool next_PE_input_avail=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+4]->component_reserved->PE_input_reserved==false;
 
                 bool next_load_path_avail=true;
                 if(next_PE_id==GLvar::load_PE_id || next_PE_id==GLvar::store_PE_id){
-                    next_load_path_avail=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+5]->component_reserved->load_path_reserved==false;
+                    next_load_path_avail=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+5]->component_reserved->load_path_reserved==false;
                 }
 
-                bool next_PE_memory_write_avail1=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_write_reserved[1]==false;
-                bool next_PE_memory_read_avail3=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_read_reserved[3]==false;
-                bool next_PE_memory_read_avail4=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_read_reserved[4]==false;
-                bool next_PE_memory_read_avail5=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_read_reserved[5]==false;
+                bool next_PE_memory_write_avail1=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_write_reserved[1]==false;
+                bool next_PE_memory_read_avail3=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_read_reserved[3]==false;
+                bool next_PE_memory_read_avail4=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_read_reserved[4]==false;
+                bool next_PE_memory_read_avail5=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+5+next_additional_pipeline]->component_reserved->memory_read_reserved[5]==false;
                 bool next_PE_memory_write_avail=next_PE_memory_write_avail1 && next_PE_memory_read_avail3 && next_PE_memory_read_avail4 && next_PE_memory_read_avail5;
 
                 if(current_PE_bypass_avail && current_PE_output_avail && next_PE_input_avail && next_PE_memory_write_avail && next_load_path_avail){
                     if(mode==Implementation){
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->PE_bypass_reserved=true;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_reserved->PE_output_reserved[child_id]=true;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->PE_bypass_mux=last_parent_id;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_activity->PE_output_mux[child_id]=3;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->PE_bypass_reserved=true;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2]->component_reserved->PE_output_reserved[child_id]=true;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_activity->PE_bypass_mux=last_parent_id;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2]->component_activity->PE_output_mux[child_id]=3;
 
                         if(GLvar::report_level>10){
                             fTrace << "Move operation " << src_operation_id<< " bypass: from" << " PE " << current_PE_id << " to " << " PE " << next_PE_id << " at time " << transmission_progress_time+2 <<endl;
@@ -1308,23 +1258,23 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
                 else{
                     //If the data needs to be stored, there must be no resource confliction and we simply reserve the corresponding resources.
                     if(mode==Implementation){
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->PE_input_reserved=true;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->PE_input_reserved=true;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
                         if(current_PE_id==GLvar::load_PE_id || current_PE_id==GLvar::store_PE_id){
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_reserved->load_path_reserved=true;
-                            CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_activity->load_mux=1;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2]->component_reserved->load_path_reserved=true;
+                            CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2]->component_activity->load_mux=1;
                         }
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_reserved->memory_write_reserved[1]=true;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_wr_ena[1]=1;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[3]=src_operation_id;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[4]=src_operation_id;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[5]=src_operation_id;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_reserved->memory_write_reserved[1]=true;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_wr_ena[1]=1;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[3]=src_operation_id;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[4]=src_operation_id;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[5]=src_operation_id;
 
                         //Keep the attach point which can be reused later
                         AttachHistory attach_point;
                         attach_point.attached_time=transmission_progress_time+2+current_additional_pipeline;
                         attach_point.attached_PE_id=current_PE_id;
-                        DFG->DFG_vertex[src_operation_id]->attach_history.push_back(attach_point);
+                        DFG->OP_Array[src_operation_id]->attach_history.push_back(attach_point);
 
                         if(GLvar::report_level>10){
                             fTrace<<"Store operation "<<src_operation_id<<" from PE "<<last_parent_id<<" in "<<" PE "<<current_PE_id<<" at time "<<transmission_progress_time<<endl;
@@ -1334,45 +1284,45 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
                     //Move the data from data memory to next PE
                     while(true){
 
-                        bool current_PE_memory_read_avail0=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[0]==false;
-                        bool current_PE_memory_read_avail1=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[1]==false;
-                        bool current_PE_memory_read_avail2=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[2]==false;
-                        bool current_PE_memory_write_avail0=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_write_reserved[0]==false;
+                        bool current_PE_memory_read_avail0=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[0]==false;
+                        bool current_PE_memory_read_avail1=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[1]==false;
+                        bool current_PE_memory_read_avail2=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[2]==false;
+                        bool current_PE_memory_write_avail0=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_write_reserved[0]==false;
                         bool current_PE_memory_read_avail=(current_PE_memory_read_avail0 || current_PE_memory_read_avail1 || current_PE_memory_read_avail2) && current_PE_memory_write_avail0;
-                        bool current_PE_output_avail=CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+5+current_additional_pipeline]->component_reserved->PE_output_reserved[child_id]==false;
-                        bool next_PE_input_avail=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+7+current_additional_pipeline]->component_reserved->PE_input_reserved==false;
+                        bool current_PE_output_avail=CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+5+current_additional_pipeline]->component_reserved->PE_output_reserved[child_id]==false;
+                        bool next_PE_input_avail=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+7+current_additional_pipeline]->component_reserved->PE_input_reserved==false;
 
                         bool next_load_path_avail=true;
                         if(next_PE_id==GLvar::load_PE_id || next_PE_id==GLvar::store_PE_id){
-                            next_load_path_avail=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+8+current_additional_pipeline]->component_reserved->load_path_reserved==false;
+                            next_load_path_avail=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+8+current_additional_pipeline]->component_reserved->load_path_reserved==false;
                         }
 
-                        bool next_PE_memory_write_avail1=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_write_reserved[1]==false;
-                        bool next_PE_memory_read_avail3=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_read_reserved[3]==false;
-                        bool next_PE_memory_read_avail4=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_read_reserved[4]==false;
-                        bool next_PE_memory_read_avail5=CGRA->PE_array[next_PE_id]->component_trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_read_reserved[5]==false;
+                        bool next_PE_memory_write_avail1=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_write_reserved[1]==false;
+                        bool next_PE_memory_read_avail3=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_read_reserved[3]==false;
+                        bool next_PE_memory_read_avail4=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_read_reserved[4]==false;
+                        bool next_PE_memory_read_avail5=CGRA->PE_Array[next_PE_id]->Component_Trace[transmission_progress_time+8+current_additional_pipeline+next_additional_pipeline]->component_reserved->memory_read_reserved[5]==false;
                         bool next_PE_memory_write_avail=next_PE_memory_write_avail1 && next_PE_memory_read_avail3 && next_PE_memory_read_avail4 && next_PE_memory_read_avail5;
 
                         if(current_PE_memory_read_avail && current_PE_output_avail && next_PE_input_avail && next_PE_memory_write_avail && next_load_path_avail){
                             if(mode==Implementation){
                                 if(current_PE_memory_read_avail0){
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[0]=true;
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_port_op[0]=src_operation_id;
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+5+current_additional_pipeline]->component_activity->PE_output_mux[child_id]=0;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[0]=true;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_port_op[0]=src_operation_id;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+5+current_additional_pipeline]->component_activity->PE_output_mux[child_id]=0;
                                 }
                                 else if(current_PE_memory_read_avail1){
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[1]=true;
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_port_op[1]=src_operation_id;
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+5+current_additional_pipeline]->component_activity->PE_output_mux[child_id]=1;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[1]=true;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_port_op[1]=src_operation_id;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+5+current_additional_pipeline]->component_activity->PE_output_mux[child_id]=1;
                                 }
                                 else{ 
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[2]=true;
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_port_op[2]=src_operation_id;
-                                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+5+current_additional_pipeline]->component_activity->PE_output_mux[child_id]=2;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_reserved->memory_read_reserved[2]=true;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_port_op[2]=src_operation_id;
+                                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+5+current_additional_pipeline]->component_activity->PE_output_mux[child_id]=2;
                                 }
 
-                                CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+5+current_additional_pipeline]->component_reserved->PE_output_reserved[child_id]=true;
-                                CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_wr_ena[0]=0;
+                                CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+5+current_additional_pipeline]->component_reserved->PE_output_reserved[child_id]=true;
+                                CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+3+current_additional_pipeline]->component_activity->memory_wr_ena[0]=0;
 
                                 if(GLvar::report_level>10){
                                     fTrace<< " Move operation " << src_operation_id << " forward: from " << " PE " << current_PE_id << " to " << " PE " << next_PE_id << " at time " << transmission_progress_time+4+current_additional_pipeline << endl;
@@ -1394,17 +1344,17 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
             //Arrive in last PE data memory
             else{
                 if(mode==Implementation){
-                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_reserved->PE_input_reserved=true;
-                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
+                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_reserved->PE_input_reserved=true;
+                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+1]->component_activity->PE_input_mux=last_parent_id;
                     if(current_PE_id==GLvar::load_PE_id || current_PE_id==GLvar::store_PE_id){
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_reserved->load_path_reserved=true;
-                        CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2]->component_activity->load_mux=1;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2]->component_reserved->load_path_reserved=true;
+                        CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2]->component_activity->load_mux=1;
                     }
-                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_reserved->memory_write_reserved[1]=true;
-                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_wr_ena[1]=1;
-                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[3]=src_operation_id;
-                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[4]=src_operation_id;
-                    CGRA->PE_array[current_PE_id]->component_trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[5]=src_operation_id;
+                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_reserved->memory_write_reserved[1]=true;
+                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_wr_ena[1]=1;
+                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[3]=src_operation_id;
+                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[4]=src_operation_id;
+                    CGRA->PE_Array[current_PE_id]->Component_Trace[transmission_progress_time+2+current_additional_pipeline]->component_activity->memory_port_op[5]=src_operation_id;
 
                     if(GLvar::report_level>10){
                         fTrace<< "Move operation " << src_operation_id << " last: from " << " PE " << last_PE_id << " to PE " << current_PE_id << " at time " << transmission_progress_time << endl;
@@ -1414,7 +1364,7 @@ int Scheduler::OperationTransmission(const int &start_time, const int &src_opera
                     AttachHistory attach_point;
                     attach_point.attached_time=transmission_progress_time+2+current_additional_pipeline;
                     attach_point.attached_PE_id=current_PE_id;
-                    DFG->DFG_vertex[src_operation_id]->attach_history.push_back(attach_point);
+                    DFG->OP_Array[src_operation_id]->attach_history.push_back(attach_point);
 
                     /*
                        if(src_operation_id==3 && current_PE_id==2 && last_PE_id==0){
@@ -1446,16 +1396,16 @@ int Scheduler::OperationExecution(const int &target_operation_id, const vector<i
     int start_time=latest_arrival_time;
     while(true){
         bool src_read_avail=true;
-        src_read_avail = src_read_avail && (CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_reserved->memory_read_reserved[3]==false);
-        src_read_avail = src_read_avail && (CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_reserved->memory_read_reserved[4]==false);
-        src_read_avail = src_read_avail && (CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_reserved->memory_read_reserved[5]==false);
-        src_read_avail = src_read_avail && (CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_reserved->memory_write_reserved[1]==false);
+        src_read_avail = src_read_avail && (CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_reserved->memory_read_reserved[3]==false);
+        src_read_avail = src_read_avail && (CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_reserved->memory_read_reserved[4]==false);
+        src_read_avail = src_read_avail && (CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_reserved->memory_read_reserved[5]==false);
+        src_read_avail = src_read_avail && (CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_reserved->memory_write_reserved[1]==false);
 
-        bool dsp_pipeline_avail=CGRA->PE_array[target_PE_id]->component_trace[start_time+3]->component_reserved->dsp_pipeline_reserved==false;
-        bool memory_write_avail=CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_reserved->memory_write_reserved[0]==false;
-        memory_write_avail=memory_write_avail && (CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_reserved->memory_read_reserved[0]==false);
-        memory_write_avail=memory_write_avail && (CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_reserved->memory_read_reserved[1]==false);
-        memory_write_avail=memory_write_avail && (CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_reserved->memory_read_reserved[2]==false);
+        bool dsp_pipeline_avail=CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+3]->component_reserved->dsp_pipeline_reserved==false;
+        bool memory_write_avail=CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_reserved->memory_write_reserved[0]==false;
+        memory_write_avail=memory_write_avail && (CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_reserved->memory_read_reserved[0]==false);
+        memory_write_avail=memory_write_avail && (CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_reserved->memory_read_reserved[1]==false);
+        memory_write_avail=memory_write_avail && (CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_reserved->memory_read_reserved[2]==false);
 
         if(src_read_avail && dsp_pipeline_avail && memory_write_avail){
             break;
@@ -1480,52 +1430,36 @@ int Scheduler::OperationExecution(const int &target_operation_id, const vector<i
 
 }
 
-int Scheduler::NearestAttachedPE(const int &src_operation_id, const int &dst_PE_id, int &src_start_time){
+int Scheduler::Nearest_Attached_PE(const int &Src_OP_ID, const int &Dst_PE_ID, int &Src_Ready_Time){
 
-    //We may search the source operation trace history to find the PE that could provide source data earliest.
-    //However, it makes the program much more complex. Here we simply assume that all the operation keeps the
-    //result in local memory and we have to fetch it whenever we need it.
-    int attached_PE_id=NaN;
-    /*if(out_mem_data_scheduling==MultipleCopying){
-      if(DFG->DFG_vertex[src_operation_id]->vertex_type==InputData){
-      attached_PE_id=dst_PE_id;
-      } 
-      else{
-      attached_PE_id=DFG->DFG_vertex[src_operation_id]->vertex_attribute.execution_PE_id;
-      }
+    int Nearest_Attached_PE_ID = NaN;
+    int Min_Dist = INT_MAX;
 
-      return attached_PE_id;
-      }*/
-    if(out_mem_data_scheduling==OutMemModeling){
-        //Assume that neighboring PE can always promise a fast data transmission
-        list<AttachHistory>::iterator it;
-        list<AttachHistory>::iterator it_head;
-        list<AttachHistory>::iterator it_tail;
-        it_head=DFG->DFG_vertex[src_operation_id]->attach_history.begin();
-        it_tail=DFG->DFG_vertex[src_operation_id]->attach_history.end();
-        int min_distance=INF;
-        for(it=it_head; it!=it_tail; it++){
-            int PE_id_tmp=(*it).attached_PE_id;
-            int distance_tmp=CGRA->PE_pair_distance[PE_id_tmp][dst_PE_id];
-            if(distance_tmp<min_distance){
-                min_distance=distance_tmp;
-                attached_PE_id=PE_id_tmp;
-                src_start_time=(*it).attached_time;
-            }
+    std::list<Attach_History>::iterator Lit;
+    std::list<Attach_History>::iterator Lit_Head;
+    std::list<Attach_History>::iterator Lit_Tail;
+    Lit_Head = DFG->OP_Array[Src_OP_ID]->OP_Attach_History.begin();
+    Lit_Tail = DFG->OP_Array[Src_OP_ID]->OP_Attach_History.end();
+    for(Lit = Lit_Head; Lit != Lit_Tail; Lit++){
+        int PE_ID_Tmp = (*Lit).Attached_PE_ID;
+        int Dist_Tmp = CGRA->PE_Pair_Dist[PE_ID_Tmp][Dst_PE_ID];
+        if(Dist_Tmp < Min_Dist){
+            Min_Dist = Dist_Tmp;
+            Nearest_Attached_PE_ID = PE_ID_Tmp;
+            Src_Ready_Time = (*Lit).Attached_Time;
         }
-        if(DFG->DFG_vertex[src_operation_id]->vertex_id==0){
-            attached_PE_id=dst_PE_id;
-        }
-
-        if(attached_PE_id==NaN){
-            DEBUG1("Unexpected nearest PE!");
-        }
-
-        return attached_PE_id;
     }
-    else{
-        DEBUG1("Unexpected out memory scheduling scheme!");
+
+    // 0 is available for each PE
+    if(DFG->OP_Array[Src_OP_ID]->OP_ID == 0){
+        Nearest_Attached_PE_ID = Dst_PE_ID;
     }
+
+    if(Nearest_Attached_PE_ID == NaN){
+        DEBUG1("Unexpected nearest PE!");
+    }
+
+    return Nearest_Attached_PE_ID;
 
 }
 
@@ -1534,8 +1468,8 @@ int Scheduler::DistCal(const int &src_op, const int &dst_op){
         return 0;
     }
     else{
-        int src_PE_id=DFG->DFG_vertex[src_op]->vertex_attribute.execution_PE_id;
-        int dst_PE_id=DFG->DFG_vertex[dst_op]->vertex_attribute.execution_PE_id;
+        int src_PE_id=DFG->OP_Array[src_op]->vertex_attribute.execution_PE_id;
+        int dst_PE_id=DFG->OP_Array[dst_op]->vertex_attribute.execution_PE_id;
         return CGRA->PE_pair_distance[src_PE_id][dst_PE_id];
     }
 }
@@ -1556,7 +1490,7 @@ int Scheduler::DynamicOperationSelection(){
     list<int> possible_distance;
 
     for(int i=0; i<DFG->vertex_num; i++){
-        Vertex* vp=DFG->DFG_vertex[i];
+        Vertex* vp=DFG->OP_Array[i];
         if(vp->vertex_type!=InputData && vp->vertex_attribute.vertex_state==DataUnavail){
             vector<Vertex*>::iterator it;
 
@@ -1580,13 +1514,13 @@ int Scheduler::DynamicOperationSelection(){
                 }
                 if(out_op_num==0){
                     ready_operation_set.push_back(i);
-                    vector<int> src_op_ids;
+                    vector<int> Src_OP_IDs;
                     for(it=vp->parents.begin(); it!=vp->parents.end(); it++){
-                        src_op_ids.push_back((*it)->vertex_id);
+                        Src_OP_IDs.push_back((*it)->vertex_id);
                     }
-                    int sum_dist=DistCal(src_op_ids[0], src_op_ids[1]);
-                    sum_dist+=DistCal(src_op_ids[0], src_op_ids[2]);
-                    sum_dist+=DistCal(src_op_ids[1], src_op_ids[2]);
+                    int sum_dist=DistCal(Src_OP_IDs[0], Src_OP_IDs[1]);
+                    sum_dist+=DistCal(Src_OP_IDs[0], Src_OP_IDs[2]);
+                    sum_dist+=DistCal(Src_OP_IDs[1], Src_OP_IDs[2]);
                     possible_distance.push_back(sum_dist);
                 }
                 else if(out_op_num==1){
@@ -1620,7 +1554,7 @@ int Scheduler::DynamicOperationSelection(){
     if(!ready_operation_set.empty()){
         list<int>::iterator it1;
         list<int>::iterator it2;
-        int min_dist=INF;
+        int min_dist=INT_MAX;
         int selected_op=NaN;
         it2=possible_distance.begin();
         for(it1=ready_operation_set.begin(); it1!=ready_operation_set.end(); it1++){
@@ -1654,7 +1588,7 @@ int Scheduler::StaticOperationSelection(){
 
     //Find out the highest priority of operations that have not been executed or fethced.
     for(int i=0; i<DFG->vertex_num; i++){
-        Vertex* vertex_tmp=DFG->DFG_vertex[i];
+        Vertex* vertex_tmp=DFG->OP_Array[i];
         if(vertex_tmp->vertex_attribute.vertex_state==DataInOutMem || vertex_tmp->vertex_attribute.vertex_state==DataUnavail){
             int priority_tmp=vertex_tmp->vertex_attribute.scheduling_priority;
             if(priority_tmp>highest_priority){
@@ -1665,7 +1599,7 @@ int Scheduler::StaticOperationSelection(){
 
     //Put these operations with highest available priority in a list
     for(int i=0; i<DFG->vertex_num; i++){
-        Vertex* vertex_tmp=DFG->DFG_vertex[i];
+        Vertex* vertex_tmp=DFG->OP_Array[i];
         if(vertex_tmp->vertex_attribute.vertex_state==DataInOutMem || vertex_tmp->vertex_attribute.vertex_state==DataUnavail){
             int priority_tmp=vertex_tmp->vertex_attribute.scheduling_priority;
             if(priority_tmp==highest_priority){
@@ -1674,16 +1608,16 @@ int Scheduler::StaticOperationSelection(){
         }
     }
     if(candidate_operation_set.empty()==true){
-        DEBUG1("No candidates available before scheduling is completed!");
+        DEBUG1("No Candidates available before scheduling is completed!");
     }
 
     //Selected the operation with most children first. Note that it may require larger data memory because data will not be
     //consumed as soon as possible. If data memory is the bottleneck, chooing the operation with least children may help.
-    int min_children_num=INF;
+    int min_children_num=INT_MAX;
     int selected_operation_id;
     list<int>::iterator iter_tmp;
     for(iter_tmp=candidate_operation_set.begin(); iter_tmp!=candidate_operation_set.end(); iter_tmp++){
-        int children_num=DFG->DFG_vertex[*iter_tmp]->children.size();
+        int children_num=DFG->OP_Array[*iter_tmp]->children.size();
         if(min_children_num>children_num){
             min_children_num=children_num;
             selected_operation_id=*iter_tmp;
@@ -1695,29 +1629,29 @@ int Scheduler::StaticOperationSelection(){
 
 void Scheduler::TargetPERefresh(const vector<int> &src_operation_ids, const int &target_operation_id, const int &start_time, const int &target_PE_id){
 
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_reserved->memory_read_reserved[3]=true;
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_reserved->memory_read_reserved[4]=true;
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_reserved->memory_read_reserved[5]=true;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_reserved->memory_read_reserved[3]=true;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_reserved->memory_read_reserved[4]=true;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_reserved->memory_read_reserved[5]=true;
 
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+3]->component_reserved->dsp_pipeline_reserved=true;
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_reserved->memory_write_reserved[0]=true;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+3]->component_reserved->dsp_pipeline_reserved=true;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_reserved->memory_write_reserved[0]=true;
 
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_activity->memory_wr_ena[1]=0;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_activity->memory_wr_ena[1]=0;
 
-    OPCODE opcode_tmp=DFG->DFG_vertex[target_operation_id]->vertex_attribute.opcode;
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+3]->component_activity->dsp_opcode=opcode_tmp;
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_activity->memory_wr_ena[0]=1;
+    OPCODE opcode_tmp=DFG->OP_Array[target_operation_id]->vertex_attribute.opcode;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+3]->component_activity->dsp_opcode=opcode_tmp;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_activity->memory_wr_ena[0]=1;
 
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_activity->memory_port_op[3]=src_operation_ids[0];
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_activity->memory_port_op[4]=src_operation_ids[1];
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+1]->component_activity->memory_port_op[5]=src_operation_ids[2];
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_activity->memory_port_op[0]=target_operation_id;
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_activity->memory_port_op[1]=target_operation_id;
-    CGRA->PE_array[target_PE_id]->component_trace[start_time+7]->component_activity->memory_port_op[2]=target_operation_id;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_activity->memory_port_op[3]=src_operation_ids[0];
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_activity->memory_port_op[4]=src_operation_ids[1];
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+1]->component_activity->memory_port_op[5]=src_operation_ids[2];
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_activity->memory_port_op[0]=target_operation_id;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_activity->memory_port_op[1]=target_operation_id;
+    CGRA->PE_Array[target_PE_id]->Component_Trace[start_time+7]->component_activity->memory_port_op[2]=target_operation_id;
 
     int current_execution_time=start_time+7;
-    if(CGRA->PE_array[target_PE_id]->maximum_active_time<current_execution_time){
-        CGRA->PE_array[target_PE_id]->maximum_active_time=current_execution_time;
+    if(CGRA->PE_Array[target_PE_id]->maximum_active_time<current_execution_time){
+        CGRA->PE_Array[target_PE_id]->maximum_active_time=current_execution_time;
     }
 
 }
@@ -1732,20 +1666,20 @@ void Scheduler::FetchSourceOperation(const int &target_PE_id, const vector<int> 
 
 void Scheduler::TargetOperationRefresh(const vector<int> &src_operation_ids, const int &target_operation_id, const int &target_PE_id, const int &execution_time){
 
-    DFG->DFG_vertex[target_operation_id]->vertex_attribute.vertex_state=DataAvail;
-    DFG->DFG_vertex[target_operation_id]->vertex_attribute.operation_avail_time=execution_time;
-    DFG->DFG_vertex[target_operation_id]->vertex_attribute.execution_PE_id=target_PE_id;
-    int srcA=DFG->DFG_vertex[src_operation_ids[0]]->vertex_value;
-    int srcB=DFG->DFG_vertex[src_operation_ids[1]]->vertex_value;
-    int srcC=DFG->DFG_vertex[src_operation_ids[2]]->vertex_value;
-    OPCODE Opcode=DFG->DFG_vertex[target_operation_id]->vertex_attribute.opcode;
+    DFG->OP_Array[target_operation_id]->vertex_attribute.vertex_state=DataAvail;
+    DFG->OP_Array[target_operation_id]->vertex_attribute.operation_avail_time=execution_time;
+    DFG->OP_Array[target_operation_id]->vertex_attribute.execution_PE_id=target_PE_id;
+    int srcA=DFG->OP_Array[src_operation_ids[0]]->vertex_value;
+    int srcB=DFG->OP_Array[src_operation_ids[1]]->vertex_value;
+    int srcC=DFG->OP_Array[src_operation_ids[2]]->vertex_value;
+    OPCODE Opcode=DFG->OP_Array[target_operation_id]->vertex_attribute.opcode;
     int Result=op_compute(Opcode, srcA, srcB, srcC);
-    DFG->DFG_vertex[target_operation_id]->vertex_value=Result;
+    DFG->OP_Array[target_operation_id]->vertex_value=Result;
 
     AttachHistory attach_point;
     attach_point.attached_time=execution_time;
     attach_point.attached_PE_id=target_PE_id;
-    DFG->DFG_vertex[target_operation_id]->attach_history.push_back(attach_point);
+    DFG->OP_Array[target_operation_id]->attach_history.push_back(attach_point);
 
 }
 
@@ -1758,16 +1692,16 @@ bool Scheduler::SchedulingIsCompleted(){
     for(int i=0; i<DFG->vertex_num; i++){
         //Some of the input may not be used. so the input condition can be ignored.
         /*
-           if(DFG->DFG_vertex[i]->vertex_type==InputData && DFG->DFG_vertex[i]->vertex_attribute.vertex_state!=DataAvail){
+           if(DFG->OP_Array[i]->vertex_type==InputData && DFG->OP_Array[i]->vertex_attribute.vertex_state!=DataAvail){
            scheduling_flag=false;
            break;
            }
            */
-        if(DFG->DFG_vertex[i]->vertex_type==IntermediateData && DFG->DFG_vertex[i]->vertex_attribute.vertex_state!=DataAvail){
+        if(DFG->OP_Array[i]->vertex_type==IntermediateData && DFG->OP_Array[i]->vertex_attribute.vertex_state!=DataAvail){
             scheduling_flag=false;
             break;
         }
-        else if(DFG->DFG_vertex[i]->vertex_type==OutputData && DFG->DFG_vertex[i]->vertex_attribute.vertex_state!=DataAvail){
+        else if(DFG->OP_Array[i]->vertex_type==OutputData && DFG->OP_Array[i]->vertex_attribute.vertex_state!=DataAvail){
             scheduling_flag=false;
             break;
         }
@@ -1779,11 +1713,11 @@ bool Scheduler::SchedulingIsCompleted(){
     /*
     //Check the breakpoints
     for(int i=0; i<DFG->vertex_num; i++){
-    if(DFG->DFG_vertex[i]->vertex_type==IntermediateData && DFG->DFG_vertex[i]->vertex_type2==AtBreakPoint && DFG->DFG_vertex[i]->vertex_attribute.vertex_state!=DataAvail){
+    if(DFG->OP_Array[i]->vertex_type==IntermediateData && DFG->OP_Array[i]->vertex_type2==AtBreakPoint && DFG->OP_Array[i]->vertex_attribute.vertex_state!=DataAvail){
     break_point_scheduling_flag=false;
     break;
     }
-    else if(DFG->DFG_vertex[i]->vertex_type==OutputData && (DFG->DFG_vertex[i]->vertex_type2==AtBreakPoint || DFG->DFG_vertex[i]->vertex_type2==BeforeBreakPoint) && DFG->DFG_vertex[i]->vertex_attribute.vertex_state!=DataAvail){
+    else if(DFG->OP_Array[i]->vertex_type==OutputData && (DFG->OP_Array[i]->vertex_type2==AtBreakPoint || DFG->OP_Array[i]->vertex_type2==BeforeBreakPoint) && DFG->OP_Array[i]->vertex_attribute.vertex_state!=DataAvail){
     break_point_scheduling_flag=false;
     break;
     }
@@ -1816,39 +1750,39 @@ int Scheduler::SchedulingStat(){
     vector<float> write_memory_utilization;
     vector<float> output_port_utilization;
     vector<float> dsp_pipeline_utilization;
-    output_port_utilization.resize(GLvar::CGRA_scale);
-    read_memory_utilization.resize(GLvar::CGRA_scale);
-    write_memory_utilization.resize(GLvar::CGRA_scale);
-    dsp_pipeline_utilization.resize(GLvar::CGRA_scale);
+    output_port_utilization.resize(CGRA->CGRA_Scale);
+    read_memory_utilization.resize(CGRA->CGRA_Scale);
+    write_memory_utilization.resize(CGRA->CGRA_Scale);
+    dsp_pipeline_utilization.resize(CGRA->CGRA_Scale);
     for(int i=0; i<DFG->vertex_num; i++){
-        int execution_time_tmp=DFG->DFG_vertex[i]->vertex_attribute.operation_avail_time;
+        int execution_time_tmp=DFG->OP_Array[i]->vertex_attribute.operation_avail_time;
         if(execution_time_tmp>final_execution_time){
             final_execution_time=execution_time_tmp;
         }
     }
 
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         int PE_output_counter=0;
         int dsp_pipeline_counter=0;
         int read_memory_counter=0;
         int write_memory_counter=0;
-        int output_degree=CGRA->PE_array[i]->output_degree;
+        int output_degree=CGRA->PE_Array[i]->output_degree;
         for(int j=0; j<=final_execution_time; j++){
             for(int p=0; p<6; p++){
-                if(CGRA->PE_array[i]->component_trace[j]->component_reserved->memory_read_reserved[p]){
+                if(CGRA->PE_Array[i]->Component_Trace[j]->component_reserved->memory_read_reserved[p]){
                     read_memory_counter++;
                 }
             }
             for(int p=0; p<4; p++){
-                if(CGRA->PE_array[i]->component_trace[j]->component_reserved->PE_output_reserved[p]){
+                if(CGRA->PE_Array[i]->Component_Trace[j]->component_reserved->PE_output_reserved[p]){
                     PE_output_counter++;
                 }
             }
-            if(CGRA->PE_array[i]->component_trace[j]->component_reserved->dsp_pipeline_reserved){
+            if(CGRA->PE_Array[i]->Component_Trace[j]->component_reserved->dsp_pipeline_reserved){
                 dsp_pipeline_counter++;
             }
             for(int p=0; p<2; p++){
-                if(CGRA->PE_array[i]->component_trace[j]->component_reserved->memory_write_reserved[p]){
+                if(CGRA->PE_Array[i]->Component_Trace[j]->component_reserved->memory_write_reserved[p]){
                     write_memory_counter++;
                 }
             }
@@ -1867,7 +1801,7 @@ int Scheduler::SchedulingStat(){
     cout<<setfill(' ')<<setw(16)<<"memory write";
     cout<<setfill(' ')<<setw(18)<<"dsp pipeline";
     cout<<"\n";
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         cout<<setfill(' ')<<setw(6)<<i;
         cout<<setfill(' ')<<setw(15)<<setprecision(4)<<output_port_utilization[i];
         cout<<setfill(' ')<<setw(15)<<setprecision(4)<<read_memory_utilization[i];
@@ -1879,13 +1813,13 @@ int Scheduler::SchedulingStat(){
     CGRA->LinkUtilizationAnalysis(0, final_execution_time);
 
     //Dump read0 port operations
-    /*for(int i=0; i<GLvar::CGRA_scale; i++){
+    /*for(int i=0; i<CGRA->CGRA_Scale; i++){
       if(i!=5){
       continue;
       }
       for(int j=0; j<final_execution_time; j++){
-      int current_output_id=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_read_addr[0];
-      bool read_enable=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_read_enable[0];
+      int current_output_id=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_read_addr[0];
+      bool read_enable=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_read_enable[0];
       if(read_enable){
       cout<<setfill(' ')<<setw(10)<<j;
       cout<<setfill(' ')<<setw(6)<<current_output_id<<endl;
@@ -1900,8 +1834,8 @@ void Scheduler::DataMemoryAnalysis(){
 
     //Analyze the data memory capacity
     vector<int> data_mem_capacity;
-    data_mem_capacity.resize(GLvar::CGRA_scale);
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    data_mem_capacity.resize(CGRA->CGRA_Scale);
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         data_mem_capacity[i]=0;
     }
     vector<int> birth_time;
@@ -1909,7 +1843,7 @@ void Scheduler::DataMemoryAnalysis(){
     birth_time.resize(GLvar::maximum_operation_num);
     die_time.resize(GLvar::maximum_operation_num);
 
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
 
         for(int j=0; j<GLvar::maximum_operation_num; j++){
             birth_time[j]=NaN;
@@ -1922,13 +1856,13 @@ void Scheduler::DataMemoryAnalysis(){
             for(int p=0; p<2; p++){
                 int wr_op;
                 if(p==0){
-                    wr_op=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_port_op[0];
+                    wr_op=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_port_op[0];
                 }
                 else{
-                    wr_op=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_port_op[3];
+                    wr_op=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_port_op[3];
                 }
 
-                bool wr_reserve=CGRA->PE_array[i]->component_trace[j]->component_reserved->memory_write_reserved[p];
+                bool wr_reserve=CGRA->PE_Array[i]->Component_Trace[j]->component_reserved->memory_write_reserved[p];
                 if(wr_reserve){
 
                     if(birth_time[wr_op]==NaN || birth_time[wr_op]>j){
@@ -1941,8 +1875,8 @@ void Scheduler::DataMemoryAnalysis(){
             //Refresh the birth time & die time in memory reading port
             for(int p=0; p<6; p++){
 
-                bool rd_reserve=CGRA->PE_array[i]->component_trace[j]->component_reserved->memory_read_reserved[p];
-                int rd_op=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_port_op[p];
+                bool rd_reserve=CGRA->PE_Array[i]->Component_Trace[j]->component_reserved->memory_read_reserved[p];
+                int rd_op=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_port_op[p];
                 if(rd_reserve){
 
                     if(die_time[rd_op]==NaN || die_time[rd_op]<j){
@@ -1957,13 +1891,13 @@ void Scheduler::DataMemoryAnalysis(){
         for(int j=0; j<GLvar::maximum_operation_num; j++){
             if(birth_time[j]==NaN && die_time[j]>0){
 
-                cout<<"op is "<<j<<" , it has "<<DFG->DFG_vertex[j]->children.size()<<"children and "<<DFG->DFG_vertex[j]->parents.size()<<"parents!";
-                cout<<"execution PE id is "<<DFG->DFG_vertex[j]->vertex_attribute.execution_PE_id<<endl;
-                cout<<"executed time is "<<DFG->DFG_vertex[j]->vertex_attribute.operation_avail_time<<endl;
-                if(DFG->DFG_vertex[j]->vertex_type==InputData){
+                cout<<"op is "<<j<<" , it has "<<DFG->OP_Array[j]->children.size()<<"children and "<<DFG->OP_Array[j]->parents.size()<<"parents!";
+                cout<<"execution PE id is "<<DFG->OP_Array[j]->vertex_attribute.execution_PE_id<<endl;
+                cout<<"executed time is "<<DFG->OP_Array[j]->vertex_attribute.operation_avail_time<<endl;
+                if(DFG->OP_Array[j]->vertex_type==InputData){
                     cout<<"Input Operation"<<endl;
                 }
-                else if(DFG->DFG_vertex[j]->vertex_type==OutputData){
+                else if(DFG->OP_Array[j]->vertex_type==OutputData){
                     cout<<"Output operation"<<endl;
                 }
                 else{
@@ -2000,7 +1934,7 @@ void Scheduler::DataMemoryAnalysis(){
     }
 
     //print data memory capacity of each PE
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         cout<<data_mem_capacity[i]<<" ";
     }
     cout<<endl;
@@ -2041,39 +1975,39 @@ void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_ti
         for(int p=0; p<2; p++){
             int wr_op;
             if(p==0){
-                wr_op=CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_port_op[0];
+                wr_op=CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_port_op[0];
             }
             else{
-                wr_op=CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_port_op[3];
+                wr_op=CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_port_op[3];
             }
 
             //Allocate address when the data is first writen into data memory
-            bool wr_reserve=CGRA->PE_array[PE_id]->component_trace[i]->component_reserved->memory_write_reserved[p];
+            bool wr_reserve=CGRA->PE_Array[PE_id]->Component_Trace[i]->component_reserved->memory_write_reserved[p];
             if(wr_reserve){
                 if(OpToAddr.count(wr_op)==0){
                     if(p==0){
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[0]=AddrAvail.front();
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[1]=AddrAvail.front();
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[2]=AddrAvail.front();
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[0]=AddrAvail.front();
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[1]=AddrAvail.front();
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[2]=AddrAvail.front();
                     }
                     else{
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[3]=AddrAvail.front();
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[4]=AddrAvail.front();
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[5]=AddrAvail.front();
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[3]=AddrAvail.front();
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[4]=AddrAvail.front();
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[5]=AddrAvail.front();
                     }
                     OpToAddr[wr_op]=AddrAvail.front();
                     AddrAvail.pop_front();
                 }
                 else if(OpToAddr.count(wr_op)>0){
                     if(p==0){
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[0]=OpToAddr[wr_op];
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[1]=OpToAddr[wr_op];
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[2]=OpToAddr[wr_op];
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[0]=OpToAddr[wr_op];
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[1]=OpToAddr[wr_op];
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[2]=OpToAddr[wr_op];
                     }
                     else{
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[3]=OpToAddr[wr_op];
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[4]=OpToAddr[wr_op];
-                        CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[5]=OpToAddr[wr_op];
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[3]=OpToAddr[wr_op];
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[4]=OpToAddr[wr_op];
+                        CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[5]=OpToAddr[wr_op];
                     }
                 }
                 else{
@@ -2085,14 +2019,14 @@ void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_ti
         list<int> op_to_release;
         list<int>::iterator it;
         for(int p=0; p<6; p++){
-            bool rd_reserve=CGRA->PE_array[PE_id]->component_trace[i]->component_reserved->memory_read_reserved[p];
-            int rd_op=CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_port_op[p];
+            bool rd_reserve=CGRA->PE_Array[PE_id]->Component_Trace[i]->component_reserved->memory_read_reserved[p];
+            int rd_op=CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_port_op[p];
             if(rd_reserve){
                 if(OpToAddr.count(rd_op)==0){
                     cout<<"op="<<rd_op<<endl;
-                    cout<<"executed at PE "<<DFG->DFG_vertex[rd_op]->vertex_attribute.execution_PE_id<<endl;
+                    cout<<"executed at PE "<<DFG->OP_Array[rd_op]->vertex_attribute.execution_PE_id<<endl;
                     cout<<"current PE is "<<PE_id<<endl;
-                    cout<<"execution time="<<DFG->DFG_vertex[rd_op]->vertex_attribute.operation_avail_time<<endl;
+                    cout<<"execution time="<<DFG->OP_Array[rd_op]->vertex_attribute.operation_avail_time<<endl;
                     cout<<"current time="<<i<<endl;
                     cout<<"port number="<<p<<endl;
                     cout<<"Bram addr="<<OpToAddr[rd_op]<<endl;
@@ -2104,7 +2038,7 @@ void Scheduler::AddrGen(const vector<int> &birth_time, const vector<int> &die_ti
                         DEBUG1("Unexpected cases!");
                     }
 
-                    CGRA->PE_array[PE_id]->component_trace[i]->component_activity->memory_addr[p]=OpToAddr[rd_op];
+                    CGRA->PE_Array[PE_id]->Component_Trace[i]->component_activity->memory_addr[p]=OpToAddr[rd_op];
                     if(die_time[rd_op]==i){
                         bool no_replica=true;
                         for(it=op_to_release.begin(); it!=op_to_release.end(); it++){
@@ -2140,7 +2074,7 @@ void Scheduler::SchedulingResultCollection(vector<int> &operation_result){
 
     operation_result.resize(GLvar::maximum_operation_num);
     for(int i=0; i<GLvar::maximum_operation_num; i++){
-        operation_result[i]=DFG->DFG_vertex[i]->vertex_value;
+        operation_result[i]=DFG->OP_Array[i]->vertex_value;
     }
 
 }
@@ -2173,7 +2107,7 @@ bool Scheduler::OperationResultCheck(){
 
 void Scheduler::InstructionDumpCoe(int final_execution_time){
 
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
 
         ostringstream os;
         os<<"./result/PE-"<<"inst-"<<i<<".coe";
@@ -2197,14 +2131,14 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
 
             //load-mux, 1->input from neighboring PEs. 0->input from outside memory.
             if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
-                fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->load_mux;
+                fHandle << CGRA->PE_Array[i]->Component_Trace[j]->component_activity->load_mux;
             }
             else{
                 fHandle << "0";
             }
 
             //PE input mux
-            dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_input_mux;
+            dec_data=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->PE_input_mux;
             switch (dec_data){
                 case 0:
                     fHandle << "00";
@@ -2224,7 +2158,7 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
             }
 
             //PE bypass mux
-            dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_bypass_mux;
+            dec_data=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->PE_bypass_mux;
             switch (dec_data){
                 case 0:
                     fHandle << "00";
@@ -2244,13 +2178,13 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
             }
 
             //Memory ena
-            fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[1];
-            fHandle << CGRA->PE_array[i]->component_trace[j]->component_activity->memory_wr_ena[0];
+            fHandle << CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_wr_ena[1];
+            fHandle << CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_wr_ena[0];
 
             //Memory addr
             int port[6]={3,4,5,0,1,2}; 
             for(int l=0; l<6; l++){
-                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->memory_addr[port[l]];
+                dec_data=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->memory_addr[port[l]];
                 width=8;
                 if(dec_data==NaN){
                     dec_data=0;
@@ -2274,7 +2208,7 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
             }
 
             //dsp_opcode
-            OPCODE opcode_tmp = CGRA->PE_array[i]->component_trace[j]->component_activity->dsp_opcode;
+            OPCODE opcode_tmp = CGRA->PE_Array[i]->Component_Trace[j]->component_activity->dsp_opcode;
             dec_data = opcode2int(opcode_tmp);
             if(dec_data==0){
                 fHandle << "0000";
@@ -2327,7 +2261,7 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
 
             //Store mux
             if(i==GLvar::load_PE_id || i==GLvar::store_PE_id){
-                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->store_mux;
+                dec_data=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->store_mux;
                 switch (dec_data){
                     case 0:
                         fHandle << "00";
@@ -2352,7 +2286,7 @@ void Scheduler::InstructionDumpCoe(int final_execution_time){
 
             //PE output mux
             for(int l=0; l<4; l++){
-                dec_data=CGRA->PE_array[i]->component_trace[j]->component_activity->PE_output_mux[l];
+                dec_data=CGRA->PE_Array[i]->Component_Trace[j]->component_activity->PE_output_mux[l];
                 switch (dec_data){
                     case 0:
                         fHandle << "00";
@@ -2500,7 +2434,7 @@ void Scheduler::InstructionDumpMem(){
     }
 
     char vec[100];
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         int intAddr=i*instMemDepth*instMemWidth/8;
 
         char hexAddr[20];
@@ -2637,7 +2571,7 @@ void Scheduler::DataMemoryInit(map<int, int> &OpToAddr, const int &PE_id, const 
     for(int i=0; i<GLvar::maximum_operation_num; i++){
         if(OpToAddr.count(i)>0){
             int addr=OpToAddr[i];
-            memory_data[addr]=DFG->DFG_vertex[i]->vertex_value;
+            memory_data[addr]=DFG->OP_Array[i]->vertex_value;
         }
     }
 
@@ -2691,7 +2625,7 @@ void Scheduler::DataMemoryDumpMem(){
     }
 
     char vec[readWidth];
-    for(int i=0; i<GLvar::CGRA_scale; i++){
+    for(int i=0; i<CGRA->CGRA_Scale; i++){
         int intAddr=i*DataMemDepth*DataMemWidth/8;
 
         char hexAddr[20];
@@ -2742,10 +2676,10 @@ void Scheduler::SchedulingResultDump(){
     }
 
     for(int i=0; i<GLvar::maximum_operation_num; i++){
-        //if(DFG->DFG_vertex[i]->vertex_type==OutputData){
-        fHandle<<DFG->DFG_vertex[i]->vertex_id<<" ";
-        fHandle<<DFG->DFG_vertex[i]->vertex_value<<" ";
-        fHandle<<DFG->DFG_vertex[i]->vertex_attribute.execution_PE_id<<" ";
+        //if(DFG->OP_Array[i]->vertex_type==OutputData){
+        fHandle<<DFG->OP_Array[i]->vertex_id<<" ";
+        fHandle<<DFG->OP_Array[i]->vertex_value<<" ";
+        fHandle<<DFG->OP_Array[i]->vertex_attribute.execution_PE_id<<" ";
         fHandle<<endl;
         //}
     }
@@ -2826,16 +2760,16 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
         for(int kit=1; kit<col; kit++){
             for(int j=1; j<final_execution_time; j++){
 
-                bool load_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->load_path_reserved==true;
-                int load_mux=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->load_mux;
-                bool store_active=CGRA->PE_array[IO_PE_id]->component_trace[j]->component_reserved->store_path_reserved==true;
+                bool load_active=CGRA->PE_Array[IO_PE_id]->Component_Trace[j]->component_reserved->load_path_reserved==true;
+                int load_mux=CGRA->PE_Array[IO_PE_id]->Component_Trace[j]->component_activity->load_mux;
+                bool store_active=CGRA->PE_Array[IO_PE_id]->Component_Trace[j]->component_reserved->store_path_reserved==true;
                 if(load_active && load_mux==0){
                     if(load_store_idle[j-1]==1){
                         DEBUG1("Unexpected load state!\n");
                     }
                     load_store_idle[j-1]=0;
-                    int loaded_op = CGRA->PE_array[IO_PE_id]->component_trace[j-1]->component_activity->load_op;
-                    //bram_addr[j-1] = DFG->DFG_vertex[loaded_op]->vertex_bram_addr;
+                    int loaded_op = CGRA->PE_Array[IO_PE_id]->Component_Trace[j-1]->component_activity->load_op;
+                    //bram_addr[j-1] = DFG->OP_Array[loaded_op]->vertex_bram_addr;
                     int row_index = opid_to_row_index[loaded_op];
                     bram_addr[j-1] = raw_data[row_index*col+kit];
                 }
@@ -2845,8 +2779,8 @@ void Scheduler::OutsideAddrMemoryDumpCoe(int final_execution_time){
                         DEBUG1("Unexpected store state!\n");
                     }
                     load_store_idle[j+2]=1;
-                    int stored_op = CGRA->PE_array[IO_PE_id]->component_trace[j]->component_activity->store_op;
-                    //bram_addr[j+2] = DFG->DFG_vertex[stored_op]->vertex_bram_addr;
+                    int stored_op = CGRA->PE_Array[IO_PE_id]->Component_Trace[j]->component_activity->store_op;
+                    //bram_addr[j+2] = DFG->OP_Array[stored_op]->vertex_bram_addr;
                     int row_index = opid_to_row_index[stored_op];
                     bram_addr[j+2] = raw_data[row_index*col+kit];
                 }

@@ -14,15 +14,13 @@
 #ifndef _COMPONENT_STATE_H_
 #define _COMPONENT_STATE_H_
 
-#include "ComponentActivity.h"
-#include "ComponentReserved.h"
+#include "Component_Activity.h"
+#include "Component_Reserved.h"
 
-using namespace std;
-
-class ComponentState{
+class Component_State{
     public:
-        ComponentActivity* component_activity;
-        ComponentReserved* component_reserved;
+        Component_Activity* PE_Component_Activity;
+        Component_Reserved* PE_Component_Reserved;
 
         ComponentState();
         ~ComponentState();

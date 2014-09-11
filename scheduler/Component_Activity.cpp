@@ -3,40 +3,40 @@
 // 
 //
 // Version:
-// 0.1      Jan 1st 2012
+// Jan 1st 2012, initial version
+// Sep 8th 2014, update coding style
 //
 // Author:
 // Cheng Liu
-// st.liucheng@gmail.com
+// st.liucheng@gmail.com, liucheng@eee.hku.hk
 // E.E.E department, The University of Hong Kong
 //
 // ====================================================================================================================
 
-#include "ComponentActivity.h"
+#include "Component_Activity.h"
 
-using namespace std;
+Component_Activity::Component_Activity(){
 
-ComponentActivity::ComponentActivity(){
-    PE_input_mux=0; 
-    PE_bypass_mux=0;
-    dsp_opcode=NC;
-    load_mux=0;
-    store_mux=0;
+    PE_Input_Mux = 0; 
+    PE_Bypass_Mux = 0;
+    ALU_Opcode = NC;
+    Load_Mux = 0;
+    Store_Mux = 0;
 
     for(int i=0; i<2; i++){
-        memory_wr_ena[i]=0;
+        Data_Memory_WR_Ena[i] = 0;
     }
 
     for(int i=0; i<6; i++){
-        memory_addr[i]=NaN;
-        memory_port_op[i]=NaN;
+        Data_Mem_Addr[i] = NaN;
+        Data_Mem_Port_OP[i] = NaN;
     }
 
     for(int i=0; i<4; i++){
-        PE_output_mux[i]=0;
+        PE_Output_Mux[i] = 0;
     }
 
-    load_op=NaN;
-    store_op=NaN;
+    Load_OP = NaN;
+    Store_OP = NaN;
 }
 

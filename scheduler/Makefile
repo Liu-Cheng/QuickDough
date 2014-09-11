@@ -1,15 +1,15 @@
 CC = g++
-CFLAGS= -DDEBUG -g -O0 -Wall -gstabs+
+CFLAGS= -DDEBUG -g -O0 -Wall 
 #CFLAGS= -g -o3
 TARGET = cgracompiler
-SRCS = GlobalDef.cpp \
+SRCS = Global_Def.cpp \
 	   Vertex.cpp \
-	   ComponentActivity.cpp \
-	   ComponentReserved.cpp \
-	   ComponentState.cpp \
+	   Component_Activity.cpp \
+	   Component_Reserved.cpp \
+	   Component_State.cpp \
 	   PE.cpp \
-	   CoarseGrainReconArch.cpp \
-	   DataFlowGraph.cpp \
+	   Coarse_Grain_Recon_Arch.cpp \
+	   Data_Flow_Graph.cpp \
 	   Scheduler.cpp \
 	   main.cpp
 

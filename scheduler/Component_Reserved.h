@@ -4,8 +4,9 @@
 // 
 //
 // Version:
-// 0.1      Jan 1st 2012
-// 0.2      May 29th 2012
+// Jan 1st 2012, Initial version
+// May 29th 2012, Add load/store component
+// Sep 8th 2014, Update coding style
 //
 // Author:
 // Cheng Liu
@@ -17,22 +18,21 @@
 #ifndef _COMPONENT_RESERVED_H_
 #define _COMPONENT_RESERVED_H_
 
-#include "GlobalDef.h"
+#include "Global_Def.h"
 
-using namespace std;
-
-class ComponentReserved {
+class Component_Reserved {
     public:
-        bool memory_write_reserved[2];
-        bool memory_read_reserved[6];
-        bool dsp_pipeline_reserved;
-        bool PE_output_reserved[4];
-        bool PE_input_reserved;
-        bool PE_bypass_reserved;
-        bool load_path_reserved;
-        bool store_path_reserved;
+        bool Data_Mem_WR_Reserved[2];
+        bool Data_Mem_RD_Reserved[6];
+        bool ALU_Input_Reserved;
+        bool ALU_Output_Reserved;
+        bool PE_Output_Reserved[4];
+        bool PE_Input_Reserved;
+        bool PE_Bypass_Reserved;
+        bool Load_Path_Reserved;
+        bool Store_Path_Reserved;
 
-        ComponentReserved();
+        Component_Reserved();
 };
 
 #endif
