@@ -15,6 +15,9 @@
 
 #include "PE.h"
 
+int PE::Inst_Mem_Depth = 1024;
+int PE::Inst_Mem_Width = 72;
+
 PE::PE(int _PE_ID){
 
     PE_ID =_PE_ID;
@@ -49,6 +52,12 @@ void PE::Load_Parameters(){
         }
         else if(Config_Item_Key == "Output_Degree"){
             Config_fHandle >> Output_Degree;
+        }
+        else if(Config_Item_Key == "Inst_Mem_Depth"){
+            Config_fHandle >> PE::Inst_Mem_Depth;
+        }
+        else if(Config_Item_Key == "Inst_Mem_Width"){
+            Config_fHandle >> PE::Inst_Mem_Width;
         }
     }
 

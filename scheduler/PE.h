@@ -20,6 +20,8 @@
 
 class PE{
     public:
+        static int Inst_Mem_Depth;
+        static int Inst_Mem_Width;
         int PE_ID;
         int Data_Mem_WR_Port_Num;
         int Data_Mem_RD_Port_Num;

@@ -62,6 +62,18 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
         else if(Config_Item_Key == "IO_Buffer_Num"){
             Config_fHandle >> IO_Buffer_Num;
         }
+        else if(Config_Item_Key == "IO_Buffer_Depth"){
+            Config_fHandle >> IO_Buffer_Depth;
+        }
+        else if(Config_Item_Key == "IO_Buffer_Width"){
+            Config_fHandle >> IO_Buffer_Width;
+        }
+        else if(Config_Item_Key == "Addr_Buffer_Depth"){
+            Config_fHandle >> Addr_Buffer_Depth;
+        }
+        else if(Config_Item_Key == "Addr_Buffer_Width"){
+            Config_fHandle >> Addr_Buffer_Width;
+        }
 
     }
     Config_fHandle.close();

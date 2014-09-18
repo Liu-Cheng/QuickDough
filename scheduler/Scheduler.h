@@ -1,11 +1,12 @@
 // ============================================================================
+//
 // Fucnction Description:
 // Implement the list scheduling algorithm, provide statistics of the scheduling
 // and dump scheduling result for the SCGRA bitstream generation. 
 //
 // Version:
 // Nov 25th 2011, initial version
-// Sep 8th 2014, Clean up the code with better coding style
+// Sep 8th 2014, Clean up the code and rewrite with better coding style
 //
 // Author:
 // Cheng Liu
@@ -13,6 +14,7 @@
 // E.E.E department, The University of Hong Kong
 //
 // ============================================================================
+
 #ifndef _SCHEDULER_H_
 #define _SCHEDULER_H_
 
@@ -89,6 +91,7 @@ class Scheduler{
         int FileLineCount(const string &FileName);
         void LoadIOMapping(std::vector<int> &raw_data, int &row, int &col);
         char Bin2Hex(char* BinVec);
+        std::string Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width);
         void AddrBufferDumpMem();
 };
 

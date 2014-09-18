@@ -29,6 +29,10 @@ class Coarse_Grain_Recon_Arch{
         int IO_Buffer_Num;
         int Load_PE_ID;
         int Store_PE_ID;
+        int Addr_Buffer_Depth;
+        int Addr_Buffer_Width;
+        int IO_Buffer_Depth;
+        int IO_Buffer_Width;
         std::vector<PE*> PE_Array;
 
         Coarse_Grain_Recon_Arch();
