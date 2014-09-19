@@ -25,22 +25,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <sstream>
 
 // Global definition
 #define NaN -1
-#define LINK_FILTER_STANDARD 1
-#define MAX_SEARCH_GAP 200
-#define WRITE_PORT_NUM 2
-#define READ_PORT_NUM 6
-#define READ_PORT_OUT 2
-#define INSTR_OP_NUM 4
-#define MAX_DFG_DEGREE 1000
-#define MAX_PE_NEIGHBOR 4
-#define DSP_PIPELINE_DEPTH 1
-#define INST_MEM_DEPTH 1024
-#define DEBUG1(FMT, ARG...) do {fprintf(stderr,"File=%s, Line=%d: "FMT" \n",__FILE__, __LINE__,##ARG); exit(1);} while(0)
-#define DEBUG2(FMT, ARG...) do {fprintf(stdout,"File=%s, Line=%d  "FMT" \n",__FILE__, __LINE__,##ARG);} while(0)
-#define DEBUG3(FMT, ARG...) do {fprintf(stdout,FMT"/n",##ARG);} while(0)
+#define ERROR(FMT, ARG...) do {fprintf(stderr,"File=%s, Line=%d: "FMT" \n",__FILE__, __LINE__,##ARG); exit(1);} while(0)
+#define PRINT(FMT, ARG...) do {fprintf(stdout,"File=%s, Line=%d  "FMT" \n",__FILE__, __LINE__,##ARG);} while(0)
 
 /*-----------------------------------------------------------------------------
  In_Outside_Buffer: Data stays in data buffers and it can be 'Input', 'IM_Output' 
@@ -53,6 +43,10 @@
  be in PE data memory. If it is 'Output' or 'IM_Output' data, it must have 
  a copy in data memory.
  ----------------------------------------------------------------------------*/
+enum Topology{
+    Torus, Mesh, Customized
+};
+
 enum Operand_State {
     In_IO_Buffer, Unavail, Avail
 };
@@ -70,7 +64,7 @@ enum Exe_Mode{
 };
 
 enum Routing_Alg{
-    Dynamic_Search, Static_XY, Static_Dijkstra 
+    Dynamic_Dijkstra, Dynamic_XY, Static_XY, Static_Dijkstra 
 };
 
 enum IO_Placement{
@@ -90,7 +84,7 @@ enum Operand_Type{
 };
 
 std::ostream& operator<< (std::ostream &os, Opcode Inst_Opcode);
-std::ostream& operator<< (std::ostream &os, OP_Type Operand_Type);
+std::ostream& operator<< (std::ostream &os, Operand_Type OP_Type);
 
 // ============================================================================
 // Global variables
@@ -103,6 +97,6 @@ struct GL_Var{
 
 int Opcode_To_Int(const Opcode &Inst_Opcode);
 Opcode Str_To_Opcode(const std::string &Opcode_Str);
-int Opcode_Compute(const Opcode &Inst_Opcode, const int &Src_Val0, const int &Src_Val1, const int &Src_Val2);
+int OP_Compute(const Opcode &Inst_Opcode, const int &Src_Val0, const int &Src_Val1, const int &Src_Val2);
 
 #endif

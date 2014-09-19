@@ -31,7 +31,7 @@ void Data_Flow_Graph::Load_Parameters(){
     std::ifstream Config_fHandle;
     Config_fHandle.open(Config_fName.c_str());
     if(!Config_fHandle.is_open()){
-        DEBUG1("Failed to open the configure.txt!");
+        ERROR("Failed to open the configure.txt!");
     }
 
     while(!Config_fHandle.eof()){
@@ -39,6 +39,9 @@ void Data_Flow_Graph::Load_Parameters(){
         Config_fHandle >> Config_Item_Key;
         if(Config_Item_Key == "DFG_Name"){
             Config_fHandle >> DFG_Name;
+        }
+        else if(Config_Item_Key == "Max_Src_OP_Num"){
+            Config_fHandle >> Max_Src_OP_Num;
         }
     }
     Config_fHandle.close();
@@ -52,24 +55,24 @@ void Data_Flow_Graph::DFG_Construct(){
     oss << "./config/" << DFG_Name << "_operand.txt";
     DFG_OP_File = oss.str();
 
-    ifstream DFG_OP_Handle;
+    std::ifstream DFG_OP_Handle;
     DFG_OP_Handle.open(DFG_OP_File.c_str());
     if(!DFG_OP_Handle.is_open()){
-        DEBUG1("DFG IO file open error!");
+        ERROR("DFG IO file open error!");
     }
 
     while(!DFG_OP_Handle.eof()){
 
         int _OP_ID;
-        int _OP_IO_Buffer_Addr;
+        int _IO_Buffer_Addr;
         int _OP_Val;
-        int _OP_IO_Buffer_ID;
-        std::string OP_Type_Str;
+        int _IO_Buffer_ID;
+        std::string _OP_Type_Str;
 
         DFG_OP_Handle >> _OP_ID;
-        DFG_OP_Handle >> _OP_IO_Buffer_Addr;
+        DFG_OP_Handle >> _IO_Buffer_Addr;
         DFG_OP_Handle >> _OP_Val;
-        DFG_OP_Handle >> _OP_IO_Buffer_ID;
+        DFG_OP_Handle >> _IO_Buffer_ID;
         DFG_OP_Handle >> _OP_Type_Str;
 
         if(DFG_OP_Handle.fail()){
@@ -77,13 +80,13 @@ void Data_Flow_Graph::DFG_Construct(){
         }
 
         Operand* OP_Ptr = new Operand();
-        DFG_Array.push_back(OP_Ptr);
+        OP_Array.push_back(OP_Ptr);
         OP_Ptr->OP_ID = _OP_ID;
         OP_Ptr->OP_Val = _OP_Val;
-        OP_Ptr->OP_IO_Buffer_Addr = _OP_IO_Buffer_Addr;
-        OP_Ptr->OP_IO_Buffer_ID = _OP_IO_Buffer_ID;
+        OP_Ptr->IO_Buffer_Addr = _IO_Buffer_Addr;
+        OP_Ptr->IO_Buffer_ID = _IO_Buffer_ID;
 
-        if(OP_Type_Str == "INCONST"){
+        if(_OP_Type_Str == "INCONST"){
             OP_Ptr->OP_Type = INCONST; 
 
             // Operand 0 is a constant and it is available on each PE initially.
@@ -94,24 +97,24 @@ void Data_Flow_Graph::DFG_Construct(){
                 OP_Ptr->OP_Attribute.OP_State = In_IO_Buffer;
             }
         }
-        else if(OP_Type_Str == "INVAR"){
+        else if(_OP_Type_Str == "INVAR"){
             OP_Ptr->OP_Type = INVAR;
             OP_Ptr->OP_Attribute.OP_State = In_IO_Buffer;
         }
-        else if(OP_Type_Str == "IM"){
+        else if(_OP_Type_Str == "IM"){
             OP_Ptr->OP_Type = IM;
             OP_Ptr->OP_Attribute.OP_State = Unavail;
         }
-        else if(OP_Type_Str == "OUTVAR"){
+        else if(_OP_Type_Str == "OUTVAR"){
             OP_Ptr->OP_Type = OUTVAR;
             OP_Ptr->OP_Attribute.OP_State = Unavail;
         }
-        else if(OP_Type_Str == "IMOUT"){
+        else if(_OP_Type_Str == "IMOUT"){
             OP_Ptr->OP_Type = IMOUT;
             OP_Ptr->OP_Attribute.OP_State = Unavail;
         }
         else{
-            DEBUG1("Unresolved OP type in operand.txt file");
+            ERROR("Unresolved OP type in operand.txt file");
         }
     }
     DFG_OP_Handle.close();
@@ -125,7 +128,7 @@ void Data_Flow_Graph::DFG_Construct(){
     DFG_Inst_File = oss.str();
     DFG_Inst_Handle.open(DFG_Inst_File.c_str());
     if(!DFG_Inst_Handle.is_open()){
-        DEBUG1("DFG instruction file open error!");
+        ERROR("DFG instruction file open error!");
     }
 
     // Instruction format: dst--opcode--src0--src1--src2
@@ -134,7 +137,7 @@ void Data_Flow_Graph::DFG_Construct(){
         std::string Inst_Opcode_Str;
         int Src_OP0_ID;
         int Src_OP1_ID;
-        int src_op2_ID;
+        int Src_OP2_ID;
 
         DFG_Inst_Handle >> Dst_OP_ID;
         DFG_Inst_Handle >> Inst_Opcode_Str;
@@ -175,13 +178,13 @@ void Data_Flow_Graph::DFG_Stat(){
     std::vector<Operand*>::iterator Vec_It;
     for(Vec_It = OP_Array.begin(); Vec_It != OP_Array.end(); Vec_It++){
         if((*Vec_It)->OP_ID == NaN){
-            DEBUG1("Uninitialized Operand is found in DFG!");
+            ERROR("Uninitialized Operand is found in DFG!");
         }
         else{
             OP_Num++;
             if((*Vec_It)->OP_Children.size() == 0 && (*Vec_It)->OP_Parents.size() == 0){
                 if((*Vec_It)->OP_ID!=0){
-                    DEBUG2("Unused Operand %d appears!", (*Vec_It)->OP_ID);
+                    ERROR("Unused Operand %d appears!", (*Vec_It)->OP_ID);
                 }
             }
             else if((*Vec_It)->OP_Type == INCONST || (*Vec_It)->OP_Type == INVAR){
@@ -204,13 +207,12 @@ void Data_Flow_Graph::DFG_Stat(){
 
     Avg_Input_Degree = Total_Degree*1.0/(IM_OP_Num + Output_OP_Num + IM_Output_OP_Num);
     Avg_Output_Degree = Total_Degree*1.0/(Input_OP_Num + IM_OP_Num + IM_Output_OP_Num);
-    GL_Var::Max_OP_Num = OP_Num;
     std::cout << "DFG Parameters " << std::endl;
     std::cout << "OP_Num: " << OP_Num << std::endl;
     std::cout << "Input_OP_Num: " << Input_OP_Num << std::endl;
     std::cout << "Output_OP_Num: " << Output_OP_Num << std::endl;
-    std::cout << "Average_Input_Degree: " << Average_Input_Degree << std::endl;
-    std::cout << "Average_Output_Degree: " << Average_Output_Degree << std::endl;
+    std::cout << "Average_Input_Degree: " << Avg_Input_Degree << std::endl;
+    std::cout << "Average_Output_Degree: " << Avg_Output_Degree << std::endl;
 
 }
 
@@ -230,28 +232,28 @@ void Data_Flow_Graph::DFG_Priority_Allocation(){
     for(int i=0; i<OP_Num; i++){
         OP_Priority_Allocated[i] = false;
         if(OP_Array[i]->OP_Children.size() == 0){
-            OP_Array[i]->OP_Attribute.OP_Scheduling_Priority = OP_Array[i]->OP_Attribute.OP_Cost;
+            OP_Array[i]->OP_Attribute.Scheduling_Priority = OP_Array[i]->OP_Attribute.OP_Cost;
             OP_Priority_Allocated[i] = true;
         }
     }
 
-    bool Priotiry_Allocation_Completed = false;
+    bool Priority_Allocation_Completed = false;
     while(!Priority_Allocation_Completed){
         for(int i=0; i<OP_Num; i++){
             if(OP_Priority_Allocated[i] == false){
                 int Max_Child_Priority = 0;
                 bool Children_Priority_Allocated = true;
                 std::vector<Operand*>::iterator Vec_It;
-                for(Vec_It = OP_Array[i]->OP_Children.begin(); Vec_It! = OP_Array[i]->OP_Children.end(); Vec_It++){
-                    Children_Priority_Allocated &= OP_priority_Allocated[(*Vec_It)->OP_ID];
-                    if((*Vec_It)->OP_Attribute.OP_Scheduling_Priority > Max_Child_Priority){
-                        Max_Child_Priority = (*Vec_It)->OP_Attribute.OP_Scheduling_Priority;
+                for(Vec_It = OP_Array[i]->OP_Children.begin(); Vec_It != OP_Array[i]->OP_Children.end(); Vec_It++){
+                    Children_Priority_Allocated &= OP_Priority_Allocated[(*Vec_It)->OP_ID];
+                    if((*Vec_It)->OP_Attribute.Scheduling_Priority > Max_Child_Priority){
+                        Max_Child_Priority = (*Vec_It)->OP_Attribute.Scheduling_Priority;
                     }
                 }
 
                 if(Children_Priority_Allocated == true){
                     int Current_OP_Cost = OP_Array[i]->OP_Attribute.OP_Cost;
-                    OP_Array[i]->OP_Attribute.OP_Scheduling_Priority = Max_Child_Priority + Current_OP_Cost;
+                    OP_Array[i]->OP_Attribute.Scheduling_Priority = Max_Child_Priority + Current_OP_Cost;
                     OP_Priority_Allocated[i] = true;
                 }
             }
@@ -275,10 +277,10 @@ void Data_Flow_Graph::DFG_Priority_Analysis(){
     Priority_Level = 0;
     int Priority_Sum = 0;
     for(int i=0; i<OP_Num; i++){
-        Priority_Sum += OP_Array[i]->OP_Attribute.OP_Scheduling_Priority;
+        Priority_Sum += OP_Array[i]->OP_Attribute.Scheduling_Priority;
         if(OP_Array[i]->OP_Type == INVAR || OP_Array[i]->OP_Type == INCONST){
-            if(Max_OP_Priority < OP_Array[i]->OP_Attribute.OP_Scheduling_Priority){
-                Max_OP_Priority = OP_Array[i]->OP_Attribute.OP_Scheduling_Priority;
+            if(Max_OP_Priority < OP_Array[i]->OP_Attribute.Scheduling_Priority){
+                Max_OP_Priority = OP_Array[i]->OP_Attribute.Scheduling_Priority;
             }
         }
     }
@@ -294,7 +296,7 @@ void Data_Flow_Graph::DFG_Priority_Analysis(){
     }
 
     for(int i=0; i<OP_Num; i++){
-        int Current_OP_Priority = OP_Array[i]->OP_Attribute.OP_Scheduling_Priority;
+        int Current_OP_Priority = OP_Array[i]->OP_Attribute.Scheduling_Priority;
         if(DFG_Priority_Dist[Current_OP_Priority] == NaN){
             DFG_Priority_Dist[Current_OP_Priority] =  1;
         }
@@ -315,7 +317,7 @@ void Data_Flow_Graph::DFG_Priority_Analysis(){
     std::cout << "OP priority distribution of the DFG: ";
     for(int i=0; i<Max_OP_Priority; i++){
         if(DFG_Priority_Dist[i] != NaN){
-            std::cout << OP_Priority_Dist[i] << " ";
+            std::cout << DFG_Priority_Dist[i] << " ";
         }
     }
     std::cout << std::endl;

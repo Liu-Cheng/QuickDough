@@ -32,6 +32,7 @@ class Data_Flow_Graph{
         int Output_OP_Num;
         int IM_OP_Num;
         int IM_Output_OP_Num;
+        int Max_Src_OP_Num;
         float Avg_Output_Degree;
         float Avg_Input_Degree;
         float Avg_OP_Priority;
@@ -41,7 +42,7 @@ class Data_Flow_Graph{
         std::vector<Operand*> OP_Array;
 
         Data_Flow_Graph();
-        void DFG_Calculation(vector<int> &OP_Result);
+        void DFG_Calculation(std::vector<int> &OP_Result);
 
     private:
         void Load_Parameters();

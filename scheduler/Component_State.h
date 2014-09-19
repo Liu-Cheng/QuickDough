@@ -22,8 +22,8 @@ class Component_State{
         Component_Activity* PE_Component_Activity;
         Component_Reserved* PE_Component_Reserved;
 
-        ComponentState();
-        ~ComponentState();
+        Component_State();
+        ~Component_State();
 };
 
 #endif

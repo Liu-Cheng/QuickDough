@@ -23,6 +23,7 @@
 class Coarse_Grain_Recon_Arch{
 
     public:
+        Topology CGRA_Topology;
         int CGRA_Scale;
         int Row;
         int Col;
@@ -34,11 +35,14 @@ class Coarse_Grain_Recon_Arch{
         int IO_Buffer_Depth;
         int IO_Buffer_Width;
         std::vector<PE*> PE_Array;
+        Routing_Alg Dynamic_Routing_Alg;
+        Routing_Alg Static_Routing_Alg;
 
         Coarse_Grain_Recon_Arch();
-        bool Is_Link_Existed(const int &src, const int &dst);
+        bool Is_Link_Existed(const int &Src_PE_ID, const int &Dst_PE_ID);
         int OP_Migration_Time(const int &start_time, const int &src, const int &dst);
         void Dynamic_Routing(const Routing_Alg &CGRA_Routing_Alg, const int &Src_Avail_Time, const int &Src_PE_ID, const int &Dst_PE_ID, std::list<int> &Routing_Path);
+        void Dynamic_Dijkstra_Routing(const int &Src_Avail_Time, const int &Src_PE_ID, const int &Dst_PE_ID, std::list<int> &Routing_Path);
         void Static_Dijkstra_Routing(int Src, std::vector<std::list<int> > &Src_Routing_Path, std::vector<int> &Src_Routing_Dist);
         void Static_XY_Routing(int Src, std::vector<std::list<int> > &Src_Routing_Path, std::vector<int> &Src_Routing_Dist);
         void Static_Routing(const Routing_Alg &CGRA_Routing_Alg);
@@ -49,6 +53,7 @@ class Coarse_Grain_Recon_Arch{
         void Link_Util_Analysis(const int &Start_Time, const int &End_Time);
         void Add_Link(const int &Src, const int &Dst);
         void Remove_Link(const int &Src, const int &Dst);
+        int Get_Dist(const int &Src_PE_ID, const int &Dst_PE_ID);
         ~Coarse_Grain_Recon_Arch();
 
     private:

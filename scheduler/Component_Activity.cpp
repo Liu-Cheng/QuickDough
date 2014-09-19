@@ -19,12 +19,13 @@ Component_Activity::Component_Activity(){
 
     PE_Input_Mux = 0; 
     PE_Bypass_Mux = 0;
+    ALU_Output_Mux = 0;
     ALU_Opcode = NC;
     Load_Mux = 0;
     Store_Mux = 0;
 
     for(int i=0; i<2; i++){
-        Data_Memory_WR_Ena[i] = 0;
+        Data_Mem_WR_Ena[i] = 0;
     }
 
     for(int i=0; i<6; i++){
@@ -38,5 +39,8 @@ Component_Activity::Component_Activity(){
 
     Load_OP = NaN;
     Store_OP = NaN;
+}
+
+Component_Activity::~Component_Activity(){
 }
 

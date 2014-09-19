@@ -39,3 +39,5 @@ Component_Reserved::Component_Reserved(){
 
 }
 
+Component_Reserved::~Component_Reserved(){
+}

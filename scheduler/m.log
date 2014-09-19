@@ -1,0 +1,2 @@
+g++ -c -DDEBUG -g -O0 -Wall  main.cpp -o  main.o
+g++ -DDEBUG -g -O0 -Wall  Global_Def.o Component_Activity.o Component_Reserved.o Component_State.o Operand.o PE.o Coarse_Grain_Recon_Arch.o Data_Flow_Graph.o Scheduler.o main.o -o cgracompiler 2>&1 | c++filt

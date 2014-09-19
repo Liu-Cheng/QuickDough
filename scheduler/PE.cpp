@@ -22,7 +22,7 @@ PE::PE(int _PE_ID){
 
     PE_ID =_PE_ID;
     Max_Active_Time = 0;
-    Executed_OP_Num = 0;
+    Exe_OP_Num = 0;
     Load_Parameters();
 
 }
@@ -33,7 +33,7 @@ void PE::Load_Parameters(){
     std::ifstream Config_fHandle;
     Config_fHandle.open(Config_fName.c_str());
     if(!Config_fHandle.is_open()){
-        DEBUG1("Failed to open the configure.txt!");
+        ERROR("Failed to open the configure.txt!");
     }
 
     while(!Config_fHandle.eof()){

@@ -34,7 +34,7 @@ int main(){
     Data_Flow_Graph* DFG = new Data_Flow_Graph();
     Scheduler* Current_Scheduler = new Scheduler(DFG, CGRA);
     Current_Scheduler->Scheduling();
-    Current_Scheduler->Operation_Result_Check();
+    Current_Scheduler->OP_Computation_Check();
 
 }
 
@@ -44,7 +44,7 @@ void Load_Parameters(){
     std::ifstream Config_fHandle;
     Config_fHandle.open(Config_fName.c_str());
     if(!Config_fHandle.is_open()){
-        DEBUG1("Failed to open the configure.txt!");
+        ERROR("Failed to open the configure.txt!");
     }
 
     while(!Config_fHandle.eof()){

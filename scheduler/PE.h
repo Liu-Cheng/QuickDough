@@ -28,7 +28,7 @@ class PE{
         int Input_Degree;
         int Output_Degree;
         int Max_Active_Time; //The maximum timestamp that PE is active.
-        int Executed_OP_Num;
+        int Exe_OP_Num;
         std::vector<Component_State*> Component_Trace; 
 
         PE(int _PE_ID);

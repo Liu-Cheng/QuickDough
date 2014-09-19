@@ -12,16 +12,14 @@
 //
 // ====================================================================================================================
 
-#include "ComponentState.h"
+#include "Component_State.h"
 
-using namespace std;
-
-ComponentState::ComponentState(){
-    component_activity=new ComponentActivity;
-    component_reserved=new ComponentReserved;
+Component_State::Component_State(){
+    PE_Component_Activity = new Component_Activity();
+    PE_Component_Reserved = new Component_Reserved();
 }
 
-ComponentState::~ComponentState(){
-    delete component_activity;
-    delete component_reserved;
+Component_State::~Component_State(){
+    delete PE_Component_Activity;
+    delete PE_Component_Reserved;
 }

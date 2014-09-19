@@ -33,6 +33,7 @@ class Component_Reserved {
         bool Store_Path_Reserved;
 
         Component_Reserved();
+        ~Component_Reserved();
 };
 
 #endif

@@ -22,11 +22,15 @@ Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch(){
     Load_Parameters();
 
     PE_Array.resize(CGRA_Scale);
+    CGRA_Routing_Dist.resize(CGRA_Scale);
+    CGRA_Routing_Path.resize(CGRA_Scale);
     for(int i=0; i<CGRA_Scale; i++){
         PE_Array[i] = new PE(i);
+        CGRA_Routing_Path[i].resize(CGRA_Scale);
+        CGRA_Routing_Dist[i].resize(CGRA_Scale);
     }
 
-    Static_Routing(Static_Dijkstra);
+    Static_Routing(Static_Routing_Alg);
 
 }
 
@@ -37,7 +41,7 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
     std::ifstream Config_fHandle;
     Config_fHandle.open(Config_fName.c_str());
     if(!Config_fHandle.is_open()){
-        DEBUG1("Failed to open configure.txt.");
+        ERROR("Failed to open configure.txt.");
     }
 
     while(!Config_fHandle.eof()){
@@ -46,6 +50,22 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
         
         if(Config_Item_Key == "CGRA_Scale"){
             Config_fHandle >> CGRA_Scale;
+        }
+        else if(Config_Item_Key == "CGRA_Topology"){
+            std::string Config_Item_Val;
+            Config_fHandle >> Config_Item_Val;
+            if(Config_Item_Val == "Torus"){
+                CGRA_Topology = Torus;
+            }
+            else if(Config_Item_Val == "Mesh"){
+                CGRA_Topology = Mesh;
+            }
+            else if(Config_Item_Val == "Customized"){
+                CGRA_Topology = Customized;
+            }
+            else{
+                ERROR("Undefined CGRA Topology!\n");
+            }
         }
         else if(Config_Item_Key == "Row"){
             Config_fHandle >> Row;
@@ -74,6 +94,32 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
         else if(Config_Item_Key == "Addr_Buffer_Width"){
             Config_fHandle >> Addr_Buffer_Width;
         }
+        else if(Config_Item_Key == "Dynamic_Routing_Alg"){
+            std::string Config_Item_Val;
+            Config_fHandle >> Config_Item_Val;
+            if(Config_Item_Val == "Dynamic_Dijkstra"){
+                Dynamic_Routing_Alg = Dynamic_Dijkstra;
+            }
+            else if(Config_Item_Val == "Dynamic_XY"){
+                Dynamic_Routing_Alg = Dynamic_XY;
+            }
+            else{
+                ERROR("Undefined routing algorithm!\n");
+            }
+        }
+        else if(Config_Item_Key == "Static_Routing_Alg"){
+            std::string Config_Item_Val;
+            Config_fHandle >> Config_Item_Val;
+            if(Config_Item_Val == "Static_Dijkstra"){
+                Static_Routing_Alg = Static_Dijkstra;
+            }
+            else if(Config_Item_Val == "Static_XY"){
+                Static_Routing_Alg = Static_XY;
+            }
+            else{
+                ERROR("Undefined routing algorithm!\n");
+            }
+        }
 
     }
     Config_fHandle.close();
@@ -83,10 +129,25 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
     for(int i=0; i<CGRA_Scale; i++){
         CGRA_Adjacency_Mat[i].resize(CGRA_Scale);
     }
-    Config_fName="./config/link.txt";
+
+    std::ostringstream oss;
+    if(CGRA_Topology == Customized){
+        Config_fName="./config/link.txt";
+    }
+    else if(CGRA_Topology == Torus){
+        oss << "./config/torus_" << CGRA_Scale << "_" << Row << "_" << Col << ".txt";
+        Config_fName = oss.str();
+    }
+    else if(CGRA_Topology == Mesh){
+        oss << "./config/mesh_" << CGRA_Scale << "_" << Row << "_" << Col << ".txt";
+        Config_fName = oss.str(); 
+    }
+    else{
+        ERROR("Undefined CGRA Topology!\n");
+    }
     Config_fHandle.open(Config_fName.c_str());
     if(!Config_fHandle.is_open()){
-        cout << "Failed to open the link.txt" << endl;
+        std::cout << "Failed to open " << Config_fName << std::endl;
     }
     while(!Config_fHandle.eof()){
         for(int i=0; i<CGRA_Scale; i++){
@@ -102,7 +163,7 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
 void Coarse_Grain_Recon_Arch::Static_Dijkstra_Routing(int Src, std::vector<std::list<int> > &Src_Routing_Path, std::vector<int> &Src_Routing_Dist){
 
     // Initialization
-    Src_Routing_Path.resize(CGRA_Scale);
+    Src_Routing_Dist.resize(CGRA_Scale);
     Src_Routing_Path.resize(CGRA_Scale);
     for(int Dst=0; Dst<CGRA_Scale; Dst++){
         if(Dst==Src){
@@ -145,7 +206,7 @@ void Coarse_Grain_Recon_Arch::Static_Dijkstra_Routing(int Src, std::vector<std::
 
         //Refresh the two set
         if(Min_Dist == INT_MAX){
-            DEBUG1("It is not a connected topology!\n");
+            ERROR("It is not a connected topology!\n");
         }
         Routed_PE_Set.push_back(Next_Routed_PE_ID);
         Unrouted_PE_Set.erase(PE_It);
@@ -188,11 +249,11 @@ void Coarse_Grain_Recon_Arch::Static_Routing(const Routing_Alg &CGRA_Routing_Alg
             Static_XY_Routing(Src, Src_Routing_Path, Src_Routing_Dist);
         }
         else{
-            DEBUG1("Unsupported routing algorithm.\n");
+            ERROR("Unsupported routing algorithm.\n");
         }
 
         for(int Dst=0; Dst<CGRA_Scale; Dst++){
-            CGRA_Routing_Dst[Src][Dst] = Src_Routing_Dist[Dst];
+            CGRA_Routing_Dist[Src][Dst] = Src_Routing_Dist[Dst];
             CGRA_Routing_Path[Src][Dst] = Src_Routing_Path[Dst];
         }
     }
@@ -212,10 +273,15 @@ void Coarse_Grain_Recon_Arch::Static_Routing(const Routing_Alg &CGRA_Routing_Alg
 
 }
 
+int Coarse_Grain_Recon_Arch::Get_Dist(const int &Src_PE_ID, const int &Dst_PE_ID){
+
+    return CGRA_Routing_Dist[Src_PE_ID][Dst_PE_ID];
+}
+
 void Coarse_Grain_Recon_Arch::Add_Link(const int &Src, const int &Dst){
 
     if(CGRA_Adjacency_Mat[Src][Dst] != 0){
-        DEBUG1("The link %d--> %d exists already!!!", Src, Dst);
+        ERROR("The link %d--> %d exists already!!!", Src, Dst);
     }
     else{
         CGRA_Adjacency_Mat[Src][Dst] = 1;
@@ -225,7 +291,7 @@ void Coarse_Grain_Recon_Arch::Add_Link(const int &Src, const int &Dst){
 
 void Coarse_Grain_Recon_Arch::Remove_Link(const int &Src, const int &Dst){
     if(CGRA_Adjacency_Mat[Src][Dst]==0){
-        DEBUG1("The link %d-->%d has been removed before!!!", Src, Dst);
+        ERROR("The link %d-->%d has been removed before!!!", Src, Dst);
     }
     else{
         CGRA_Adjacency_Mat[Src][Dst] = 0;
@@ -237,8 +303,11 @@ void Coarse_Grain_Recon_Arch::Dynamic_Routing(const Routing_Alg &CGRA_Routing_Al
     if(CGRA_Routing_Alg == Dynamic_Dijkstra){
         Dynamic_Dijkstra_Routing(Src_Avail_Time, Src_PE_ID, Dst_PE_ID, Routing_Path);
     }
+    else if(CGRA_Routing_Alg == Dynamic_XY){
+        // To be fixed
+    }
     else{
-        DEBUG1("Unrecongnized routing algorithm!");
+        ERROR("Unrecongnized routing algorithm!");
     }
 
 }
@@ -306,12 +375,12 @@ void Coarse_Grain_Recon_Arch::Dynamic_Dijkstra_Routing(const int &Src_Avail_Time
         for(int i=0; i<CGRA_Scale; i++){
             if(Is_Link_Existed(Optimal_Routing_PE_ID, i)){
                 int To_Optimal_PE_Routing_Time = PEs_Routing_Time[Optimal_Routing_PE_ID];
-                int Upated_Routing_Time = PEs_Routing_Time[Optimal_Routing_PE_ID] + OP_Migration_Time(To_Optimal_PE_Routing_Time, Optimal_Routing_PE_ID, i);
-                if(Updated_Routing_Time < PE_Routing_Time[i]){
-                    PE_Routing_Time[i] = Updated_Routing_Time;
-                    PE_Routing_Path[i].clear();
-                    PE_Routing_Path[i] = PE_Routing_Path[Optimal_Routing_PE_ID];
-                    PE_Routing_Path[i].push_back(i);
+                int Updated_Routing_Time = PEs_Routing_Time[Optimal_Routing_PE_ID] + OP_Migration_Time(To_Optimal_PE_Routing_Time, Optimal_Routing_PE_ID, i);
+                if(Updated_Routing_Time < PEs_Routing_Time[i]){
+                    PEs_Routing_Time[i] = Updated_Routing_Time;
+                    PEs_Routing_Path[i].clear();
+                    PEs_Routing_Path[i] = PEs_Routing_Path[Optimal_Routing_PE_ID];
+                    PEs_Routing_Path[i].push_back(i);
                 }
             }
         }
@@ -319,7 +388,7 @@ void Coarse_Grain_Recon_Arch::Dynamic_Dijkstra_Routing(const int &Src_Avail_Time
         //Check whether simulation is completed.
         Routing_Complete = true;
         for(int i=0; i<CGRA_Scale; i++){
-            Routing_Complete = Routing_Complete && PE_Routing_Flag[i];
+            Routing_Complete = Routing_Complete && PEs_Routing_Flag[i];
         }
     }
 
@@ -345,7 +414,7 @@ int Coarse_Grain_Recon_Arch::OP_Migration_Time(const int &Start_Time, const int 
 
     while(!Migration_Complete){
         if(Src_PE_ID == Dst_PE_ID){
-            DEBUG1("Unexpected Src PE and Dst PE pair here!");
+            ERROR("Unexpected Src PE and Dst PE pair here!");
         }
         else{
             int PE_Output_Index = Get_Downstream_Index(Src_PE_ID, Dst_PE_ID);
@@ -389,7 +458,7 @@ int Coarse_Grain_Recon_Arch::OP_Migration_Time(const int &Start_Time, const int 
 
 bool Coarse_Grain_Recon_Arch::Is_Link_Existed(const int &Src_PE_ID, const int &Dst_PE_ID){
 
-    return (CGRA_Adjacency_Mat[Src_PE_ID][Dst_PE_ID] == 1)
+    return (CGRA_Adjacency_Mat[Src_PE_ID][Dst_PE_ID] == 1);
 
 }
 

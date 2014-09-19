@@ -18,13 +18,13 @@
 Operand::Operand(int _OP_ID){
     OP_ID = _OP_ID;
     OP_Val = NaN;
-    OP_IO_Buffer_Addr = NaN;
-    OP_IO_Buffer_ID = NaN;
-    OP_Type = IN_VAR;
+    IO_Buffer_Addr = NaN;
+    IO_Buffer_ID = NaN;
+    OP_Type = INVAR;
     OP_Attribute.OP_Cost = 1;
     OP_Attribute.OP_Opcode = NC;
-    OP_Attribute.OP_Exe_PE_ID = NaN;
-    OP_Attribute.OP_Scheduling_Priority = NaN;
+    OP_Attribute.Exe_PE_ID = NaN;
+    OP_Attribute.Scheduling_Priority = NaN;
     OP_Attribute.OP_Avail_Time = NaN;
     OP_Attribute.OP_State = Unavail;
     Load_Parameters();
@@ -33,13 +33,13 @@ Operand::Operand(int _OP_ID){
 Operand::Operand(){
     OP_ID = NaN;
     OP_Val = NaN;
-    OP_IO_Buffer_Addr = NaN;
-    OP_IO_Buffer_ID = NaN;
-    OP_Type = IN_VAR;
+    IO_Buffer_Addr = NaN;
+    IO_Buffer_ID = NaN;
+    OP_Type = INVAR;
     OP_Attribute.OP_Cost = 1;
     OP_Attribute.OP_Opcode = NC;
-    OP_Attribute.OP_Exe_PE_id = NaN;
-    OP_Attribute.OP_Scheduling_Priority = NaN;
+    OP_Attribute.Exe_PE_ID = NaN;
+    OP_Attribute.Scheduling_Priority = NaN;
     OP_Attribute.OP_Avail_Time = NaN;
     OP_Attribute.OP_State = Unavail;
     Load_Parameters();
@@ -47,6 +47,6 @@ Operand::Operand(){
 
 void Operand::Load_Parameters(){}
 
-bool Operand::Is_Operand_Scheduled(){
+bool Operand::Is_OP_Scheduled(){
     return OP_Attribute.OP_State == Avail;
 }

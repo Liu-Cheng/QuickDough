@@ -1,12 +1,12 @@
 CC = g++
-CFLAGS= -DDEBUG -g -O0 -Wall 
+CFLAGS= -DDEBUG -g -Wall -gdwarf-2 
 #CFLAGS= -g -o3
 TARGET = cgracompiler
 SRCS = Global_Def.cpp \
-	   Vertex.cpp \
 	   Component_Activity.cpp \
 	   Component_Reserved.cpp \
 	   Component_State.cpp \
+	   Operand.cpp \
 	   PE.cpp \
 	   Coarse_Grain_Recon_Arch.cpp \
 	   Data_Flow_Graph.cpp \
@@ -31,12 +31,4 @@ depend:
 
 # DO NOT DELETE
 
-GlobalDef.o: GlobalDef.h
-Vertex.o: Vertex.h GlobalDef.h
-PE.o: PE.h GlobalDef.h
-CoarseGrainReconArch.o: CoarseGrainReconArch.h GlobalDef.h PE.h
-DataFlowGraph.o: DataFlowGraph.h GlobalDef.h Vertex.h
-Scheduler.o: Scheduler.h GlobalDef.h DataFlowGraph.h Vertex.h
-Scheduler.o: CoarseGrainReconArch.h PE.h
-main.o: GlobalDef.h DataFlowGraph.h Vertex.h CoarseGrainReconArch.h
-main.o: PE.h Scheduler.h
+
