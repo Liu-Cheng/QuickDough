@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <sstream>
+#include <cmath>
 
 // Global definition
 #define NaN -1
@@ -72,7 +73,7 @@ enum IO_Placement{
 };
 
 enum Scheduling_Strategy{
-    PE_Pref, OP_Pref, PE_OP_Combined
+    PE_Pref, OP_Pref, PE_OP_Together
 };
 
 enum Opcode{

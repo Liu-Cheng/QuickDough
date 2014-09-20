@@ -135,11 +135,11 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
         Config_fName="./config/link.txt";
     }
     else if(CGRA_Topology == Torus){
-        oss << "./config/torus_" << CGRA_Scale << "_" << Row << "_" << Col << ".txt";
+        oss << "./config/torus_" << CGRA_Scale << "_" << Row << "x" << Col << ".txt";
         Config_fName = oss.str();
     }
     else if(CGRA_Topology == Mesh){
-        oss << "./config/mesh_" << CGRA_Scale << "_" << Row << "_" << Col << ".txt";
+        oss << "./config/mesh_" << CGRA_Scale << "_" << Row << "x" << Col << ".txt";
         Config_fName = oss.str(); 
     }
     else{
@@ -259,15 +259,17 @@ void Coarse_Grain_Recon_Arch::Static_Routing(const Routing_Alg &CGRA_Routing_Alg
     }
 
     //Print the path information
-    for(int i=0; i<CGRA_Scale; i++){
-        for(int j=0; j<CGRA_Scale; j++){
-            std::cout << i << "->" << j << " " << CGRA_Routing_Dist[i][j] << std::endl;
-            std::cout << "Path:";
-            std::list<int>::iterator Lit;
-            for(Lit=CGRA_Routing_Path[i][j].begin(); Lit!=CGRA_Routing_Path[i][j].end(); Lit++){
-                std::cout << " " << *Lit;
+    if(GL_Var::Print_Level>10){
+        for(int i=0; i<CGRA_Scale; i++){
+            for(int j=0; j<CGRA_Scale; j++){
+                std::cout << i << "->" << j << " " << CGRA_Routing_Dist[i][j] << std::endl;
+                std::cout << "Path:";
+                std::list<int>::iterator Lit;
+                for(Lit=CGRA_Routing_Path[i][j].begin(); Lit!=CGRA_Routing_Path[i][j].end(); Lit++){
+                    std::cout << " " << *Lit;
+                }
+                std::cout << std::endl;
             }
-            std::cout << std::endl;
         }
     }
 
@@ -394,7 +396,7 @@ void Coarse_Grain_Recon_Arch::Dynamic_Dijkstra_Routing(const int &Src_Avail_Time
 
     Routing_Path = PEs_Routing_Path[Dst_PE_ID];
 
-    if(GL_Var::Print_Level==10){
+    if(GL_Var::Print_Level>10){
         std::list<int>::iterator Lit;
         std::cout << Src_PE_ID << "->" << Dst_PE_ID << " simulation path: ";
         for(Lit = Routing_Path.begin(); Lit != Routing_Path.end(); Lit++){

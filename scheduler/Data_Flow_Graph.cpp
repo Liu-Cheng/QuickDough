@@ -207,7 +207,7 @@ void Data_Flow_Graph::DFG_Stat(){
 
     Avg_Input_Degree = Total_Degree*1.0/(IM_OP_Num + Output_OP_Num + IM_Output_OP_Num);
     Avg_Output_Degree = Total_Degree*1.0/(Input_OP_Num + IM_OP_Num + IM_Output_OP_Num);
-    std::cout << "DFG Parameters " << std::endl;
+    std::cout << "DFG Parameters: " << std::endl;
     std::cout << "OP_Num: " << OP_Num << std::endl;
     std::cout << "Input_OP_Num: " << Input_OP_Num << std::endl;
     std::cout << "Output_OP_Num: " << Output_OP_Num << std::endl;

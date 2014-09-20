@@ -134,6 +134,12 @@ float PE::Get_Output_Port_Util(const int &Start_Time, const int &End_Time){
 
 }
 
+int PE::Get_Trace_Size(){
+
+    return Component_Trace.size();
+
+}
+
 PE::~PE(){
 
     Component_Trace.clear();

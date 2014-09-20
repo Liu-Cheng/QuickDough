@@ -38,6 +38,7 @@ class PE{
         float Get_Data_Mem_RD_Util(const int &Start_Time, const int &End_Time);
         float Get_Output_Port_Util(const int &Start_Time, const int &End_Time);
         int Get_OP_Avail_Time(const int &OP_ID);
+        int Get_Trace_Size();
         ~PE();
 
     private:

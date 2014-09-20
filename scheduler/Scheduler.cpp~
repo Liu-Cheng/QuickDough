@@ -156,15 +156,12 @@ void Scheduler::Scheduling(){
     Scheduling_Stat();
     Computation_Result_Dump();
 
-    IO_Buffer_Dump_Coe();
-    IO_Buffer_Dump_Head_File();
     Data_Mem_Analysis();
     Inst_Mem_Dump_Coe();
     Inst_Mem_Dump_Mem();
     Addr_Buffer_Dump_Coe();
     Addr_Buffer_Dump_Mem();
-
-    std::cout << std::endl << "Scheduling result is dumpped! " << std::endl;
+    std::cout << "Scheduling result is dumpped! " << std::endl;
 
     End_Time = clock();
     std::cout << "Total compilation time: " << (double)(1.0*(End_Time-Start_Time)/CLOCKS_PER_SEC) << " seconds." << std::endl;
@@ -860,7 +857,7 @@ void Scheduler::Store_In_IO_Buffer(const int &OP_ID){
         //Transfer data from src to dst
         int OP_Arrival_Time = OP_Migration(OP_Ready_Time, OP_ID, Routing_Path, Impl) + 1;
 
-        //Move data from dst to IO Buffer
+        //Move data from dst to outside memory
         WR_To_IO_Buffer(OP_ID, OP_Arrival_Time);
     }
 
@@ -887,7 +884,7 @@ void Scheduler::WR_To_IO_Buffer(const int &OP_ID, const int &Start_Time){
 
             //Dump the trace
             if(GL_Var::Print_Level>10){
-                fTrace << "Store " << OP_ID << " in IO Buffer " << " at time " << Store_Ready_Time+3 << std::endl;
+                fTrace << "Store " << OP_ID << " in outside memory " << " at time " << Store_Ready_Time+3 << std::endl;
             }
 
             break;
@@ -903,7 +900,7 @@ void Scheduler::WR_To_IO_Buffer(const int &OP_ID, const int &Start_Time){
 
             //Dump the trace
             if(GL_Var::Print_Level>10){
-                fTrace << "Store " << OP_ID << " in IO Buffer " << " at time " << Store_Ready_Time+3 << std::endl;
+                fTrace << "Store " << OP_ID << " in outside memory " << " at time " << Store_Ready_Time+3 << std::endl;
             }
 
             break;
@@ -918,7 +915,7 @@ void Scheduler::WR_To_IO_Buffer(const int &OP_ID, const int &Start_Time){
 
             //Dump the trace
             if(GL_Var::Print_Level>10){
-                fTrace << "Store " << OP_ID << " in IO Buffer " << " at time " << Store_Ready_Time+3 << std::endl;
+                fTrace << "Store " << OP_ID << " in outside memory " << " at time " << Store_Ready_Time+3 << std::endl;
             }
 
             break;
@@ -1847,7 +1844,6 @@ void Scheduler::Data_Mem_Analysis(){
     }
 
     //print data memory capacity of each PE
-    std::cout << "PE minimum data memory requirements: ";
     for(int i=0; i<CGRA->CGRA_Scale; i++){
         std::cout << Data_Mem_Capacity[i] << " ";
     }
@@ -2041,7 +2037,7 @@ void Scheduler::Inst_Mem_Dump_Coe(){
             // DFG execution status: 100
             fHandle << "100";
 
-            //load-mux, 1->input from neighboring PEs. 0->input from IO Buffer.
+            //load-mux, 1->input from neighboring PEs. 0->input from outside memory.
             if(i==CGRA->Load_PE_ID || i==CGRA->Store_PE_ID){
                 fHandle << CGRA->PE_Array[i]->Component_Trace[j]->PE_Component_Activity->Load_Mux;
             }
@@ -2112,11 +2108,11 @@ void Scheduler::Inst_Mem_Dump_Coe(){
 
 void Scheduler::Addr_Buffer_Dump_Mem(){
 
-    std::string fName = "./result/Addr-Buffer.mem";
+    std::string fName = "./result/addr-buffer.mem";
     std::ofstream fHandle;
     fHandle.open(fName.c_str());
     if(!fHandle.is_open()){
-        ERROR("Fail to create Addr-Buffer.mem\n");
+        ERROR("Fail to create addr-buffer.mem\n");
     }
 
     char Char_Bin_Vec[100];
@@ -2133,12 +2129,12 @@ void Scheduler::Addr_Buffer_Dump_Mem(){
         fHandle << Char_Hex_Addr << std::endl;
 
         std::ostringstream os;
-        os << "./result/" << "Addr-Buffer-" << i << ".coe";
+        os << "./result/" << "outside-bram-addr-" << i << ".coe";
         std::string fName1 = os.str();
         std::ifstream fHandle1;
         fHandle1.open(fName1.c_str());
         if(!fHandle1.is_open()){
-            ERROR("Failed to open the Addr-Buffer.coe");
+            ERROR("Failed to open the outside-addr-buffer.coe");
         }
 
         int Line_Num = 0;
@@ -2169,13 +2165,13 @@ void Scheduler::Addr_Buffer_Dump_Mem(){
             }
 
             // Transform the bin to be hex
-            for(int k=0; k<(CGRA->Addr_Buffer_Width/2+3)/4; k++){
+            for(int k=0; k<(CGRA->IO_Buffer_Width/2+3)/4; k++){
                 int Index = k*4;
                 fHandle << Bin_To_Hex(&Vec_Tmp0[Index]);
             }
             fHandle << std::endl;
 
-            for(int k=0; k<(CGRA->Addr_Buffer_Width/2+3)/4; k++){
+            for(int k=0; k<(CGRA->IO_Buffer_Width/2+3)/4; k++){
                 int Index = k*4;
                 fHandle << Bin_To_Hex(&Vec_Tmp1[Index]);
             }
@@ -2490,12 +2486,12 @@ void Scheduler::Addr_Buffer_Dump_Coe(){
     for(int i=0; i<CGRA->IO_Buffer_Num; i++){
 
         std::ostringstream os;
-        os << "./result/" << "Addr-Buffer-" << i << ".coe";
+        os << "./result/outside-" << "bram-addr-" << i << ".coe";
         std::string fName = os.str();
         std::ofstream fHandle;
         fHandle.open(fName.c_str());
         if(!fHandle.is_open()){
-            ERROR("Fail to create the Addr-Buffer-.coe");
+            ERROR("Fail to create the outside-bram-addr-.coe");
         }
 
         fHandle << "memory_initialization_radix=2;" << std::endl;
@@ -2598,6 +2594,9 @@ void Scheduler::Addr_Buffer_Dump_Coe(){
 
     }
 
+    Bin_To_Head_File("./result/outside-data-memory-0.coe", "./result/initialized-src.h", "Src", 32);
+    Bin_To_Head_File("./result/outside-data-memory-1.coe", "./result/initialized-result.h", "Result", 32);
+
 }
 
 char Scheduler::Bin_To_Hex(char* Bin_Vec){
@@ -2654,6 +2653,60 @@ char Scheduler::Bin_To_Hex(char* Bin_Vec){
     return Hex_Char;
 }
 
+void Scheduler::Bin_To_Head_File(const std::string &Bin_fName, const std::string &Head_fName, const std::string &Array_Name, const int &Data_Width){
+
+    int Data_Num = File_Line_Cnt(Bin_fName) - 2;
+    std::ifstream Bin_fHandle;
+    Bin_fHandle.open(Bin_fName.c_str());
+    if(!Bin_fHandle.is_open()){
+        ERROR("Failed to open %s\n", Bin_fName.c_str());  
+    }
+
+    std::ofstream Head_fHandle;
+    Head_fHandle.open(Head_fName.c_str());
+    if(!Head_fHandle.is_open()){
+        ERROR("Failed to create %s\n", Head_fName.c_str());
+    }
+
+    char Bin_Vec[100];
+    for(int i=0; i<100; i++){
+        Bin_Vec[i] = '0';
+    }
+    int Line_Num=0;
+    Head_fHandle << "unsigned int " << Array_Name << "[" << Data_Num <<"]={";
+    while(Bin_fHandle.getline(Bin_Vec,100)){
+        Line_Num++;
+
+        //Ignore the first two lines due to coe file format.
+        if(Line_Num<3){
+            continue;
+        }
+
+        Head_fHandle << "0x";
+        for(int k=0; k<(Data_Width+3)/4; k++){
+            int Index = k*4;
+            Head_fHandle << Bin_To_Hex(&Bin_Vec[Index]);
+        }
+        if(Line_Num == Data_Num + 2){
+            Head_fHandle << " };";
+        }
+        else{
+            Head_fHandle << ", ";
+        }
+    }
+    for(int i=Line_Num+1; i<=Data_Num+2; i++){
+        if(i==Data_Num+2){
+            Head_fHandle << "0x00000000 };";
+        }
+        else{
+            Head_fHandle << "0x00000000, ";
+        }
+    }
+    Head_fHandle.close();
+    Bin_fHandle.close();
+
+}
+
 int Scheduler::File_Line_Cnt(const std::string &fName){
     int Line_Cnt=0;
     std::ifstream fHandle;
@@ -2669,17 +2722,8 @@ int Scheduler::File_Line_Cnt(const std::string &fName){
 }
 
 void Scheduler::Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width, std::string &Bin_Str){
-
-    int Dec_Data_Tmp;
-    if(Dec_Data < 0){
-        Dec_Data_Tmp = pow(2, Data_Width) - 1 + Dec_Data;
-    }
-    else{
-        Dec_Data_Tmp = Dec_Data;
-    }
-
     if(Data_Width==2){
-        switch(Dec_Data_Tmp){
+        switch(Dec_Data){
             case 0:
                 Bin_Str = "00";
                 break;
@@ -2698,7 +2742,7 @@ void Scheduler::Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width, std::
         }
     }
     else if(Data_Width==4){
-        switch(Dec_Data_Tmp){
+        switch(Dec_Data){
             case 0:
                 Bin_Str = "0000";
                 break;
@@ -2752,8 +2796,8 @@ void Scheduler::Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width, std::
                 break;
         }
     }
-    else {
-        int Data_Tmp = Dec_Data_Tmp;
+    else if(Data_Width==8 || Data_Width==13){
+        int Data_Tmp = Dec_Data;
         int Width_Tmp = Data_Width;
         std::list<int> Bit_List;
         std::list<int>::reverse_iterator Rit;
@@ -2778,89 +2822,8 @@ void Scheduler::Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width, std::
         Bit_List.clear();
         Bin_Str = os.str();
     }
-
-}
-
-void Scheduler::IO_Buffer_Dump_Coe(){
-
-    for(int i=0; i<CGRA->IO_Buffer_Num; i++){
-
-        std::ostringstream oss;
-        oss << "./result/IO-Buffer-"<<i<<".coe";
-        std::string fName=oss.str();
-        std::ofstream fHandle;
-        fHandle.open(fName.c_str());
-        if(!fHandle.is_open()){
-            ERROR("Failed to create the IO-Buffer-.coe");
-        }
-        fHandle << "memory_initialization_radix=2;" << std::endl;
-        fHandle << "memory_initialization_vector=" << std::endl;
-
-        std::vector<Operand*>::iterator Vit;
-        for(Vit = DFG->OP_Array.begin(); Vit != DFG->OP_Array.end(); Vit++){
-            int Dec_Data = (*Vit)->OP_Val;
-            int Data_Width = 32;
-            if((*Vit)->IO_Buffer_ID == i){
-                std::string Bin_Str;
-                Dec_To_Bin_Str(Dec_Data, Data_Width, Bin_Str);
-                fHandle << Bin_Str << std::endl;
-            }
-        }
-        fHandle.close();
-
+    else{
+        ERROR("Unexpected Data_Wdith!\n");
     }
 
 }
-
-
-void Scheduler::IO_Buffer_Dump_Head_File(){
-
-    std::ostringstream oss;
-    oss << "./result/IO.h";
-    std::string fName=oss.str();
-    std::ofstream fHandle;
-    fHandle.open(fName.c_str());
-    if(!fHandle.is_open()){
-        ERROR("Failed to create the IO.h");
-    }
-
-    fHandle << "#ifndef _IO_H_" << std::endl;
-    fHandle << "#define _IO_H_" << std::endl << std::endl;
-
-    // Const input
-    int Const_Cnt = 0;
-    int Invar_Cnt = 0;
-    int Out_Cnt = 0;
-    std::vector<Operand*>::iterator Vit;
-    for(Vit = DFG->OP_Array.begin(); Vit != DFG->OP_Array.end(); Vit++){
-        if((*Vit)->OP_Type == INCONST){
-            Const_Cnt++;
-        }
-        if((*Vit)->OP_Type == INVAR){
-            Invar_Cnt++;
-        }
-        if((*Vit)->OP_Type == OUTVAR || (*Vit)->OP_Type == IMOUT){
-            Out_Cnt++;
-        }
-    }
-
-    int Cnt = 0;
-    fHandle << "int Const_In[" << Const_Cnt <<"] = { " ;
-    for(Vit = DFG->OP_Array.begin(); Vit != DFG->OP_Array.end(); Vit++){
-        Cnt++;
-        if((*Vit)->OP_Type == INCONST && Cnt == Const_Cnt){
-            fHandle << (*Vit)->OP_Val;
-        }
-        else if((*Vit)->OP_Type == INCONST){
-            fHandle << (*Vit)->OP_Val << ", ";
-        }
-    }
-    fHandle << " };" << std::endl;
-
-    fHandle << "int Data_In[" << Invar_Cnt << "];" << std::endl;
-    fHandle << "int Data_Out[" << Out_Cnt << "];" << std::endl << std::endl;
-    fHandle << "#endif" << std::endl;
-    fHandle.close();
-
-}
-

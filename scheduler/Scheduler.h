@@ -70,14 +70,15 @@ class Scheduler{
         void Data_Mem_Analysis();
         void Data_Mem_Addr_Gen(const std::vector<int> &Create_Time, const std::vector<int> &Destroy_Time, const int &Data_Mem_Capacity, const int &PE_ID);
         void Inst_Mem_Dump_Coe();
+        void IO_Buffer_Dump_Coe();
         void Addr_Buffer_Dump_Mem();
         void Inst_Mem_Dump_Mem();
         void Load_IO_Mapping(std::vector<int> &Raw_Data, int &Row, int &Col);
         void Addr_Buffer_Dump_Coe();
         char Bin_To_Hex(char* Bin_Vec);
-        void Bin_To_Head_File(const std::string &Bin_fName, const std::string &Head_fName, const std::string &Array_Name, const int &Data_Width);
         int File_Line_Cnt(const std::string &fName);
         void Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width, std::string &Bin_Str);
+        void IO_Buffer_Dump_Head_File();
 
 };
 
