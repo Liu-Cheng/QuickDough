@@ -1,0 +1,106 @@
+CGRA writes         45 to output buffer[         0]!
+
+CGRA writes          0 to output buffer[         4]!
+
+CGRA writes         88 to output buffer[         6]!
+
+CGRA writes          5 to output buffer[        12]!
+
+CGRA writes        121 to output buffer[        16]!
+
+CGRA writes         93 to output buffer[         1]!
+
+CGRA writes        185 to output buffer[        18]!
+
+CGRA writes        117 to output buffer[         7]!
+
+CGRA writes        260 to output buffer[        24]!
+
+CGRA writes        120 to output buffer[         5]!
+
+CGRA writes        119 to output buffer[        14]!
+
+CGRA writes        119 to output buffer[        30]!
+
+CGRA writes         95 to output buffer[        20]!
+
+CGRA writes         73 to output buffer[        13]!
+
+CGRA writes        202 to output buffer[        22]!
+
+CGRA writes        114 to output buffer[         2]!
+
+CGRA writes        122 to output buffer[        17]!
+
+CGRA writes        122 to output buffer[         8]!
+
+CGRA writes         75 to output buffer[        26]!
+
+CGRA writes        133 to output buffer[        23]!
+
+CGRA writes         70 to output buffer[        11]!
+
+CGRA writes         75 to output buffer[        28]!
+
+CGRA writes        188 to output buffer[        31]!
+
+CGRA writes        116 to output buffer[        32]!
+
+CGRA writes        123 to output buffer[        10]!
+
+CGRA writes        128 to output buffer[        19]!
+
+CGRA writes        160 to output buffer[        25]!
+
+CGRA writes        128 to output buffer[        29]!
+
+CGRA writes        134 to output buffer[        21]!
+
+CGRA writes        117 to output buffer[        34]!
+
+CGRA writes        150 to output buffer[        35]!
+
+CGRA writes        262 to output buffer[        27]!
+
+CGRA writes        142 to output buffer[        15]!
+
+CGRA writes        124 to output buffer[         9]!
+
+CGRA writes          0 to output buffer[        33]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes        163 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+
+CGRA writes          0 to output buffer[         3]!
+

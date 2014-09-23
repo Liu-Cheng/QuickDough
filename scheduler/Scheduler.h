@@ -78,7 +78,6 @@ class Scheduler{
         char Bin_To_Hex(char* Bin_Vec);
         int File_Line_Cnt(const std::string &fName);
         void Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width, std::string &Bin_Str);
-        void IO_Buffer_Dump_Head_File();
 
 };
 

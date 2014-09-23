@@ -124,39 +124,15 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
     }
     Config_fHandle.close();
 
-    //Load link information
+    // Update link information
     CGRA_Adjacency_Mat.resize(CGRA_Scale);
     for(int i=0; i<CGRA_Scale; i++){
         CGRA_Adjacency_Mat[i].resize(CGRA_Scale);
     }
 
-    std::ostringstream oss;
-    if(CGRA_Topology == Customized){
-        Config_fName="./config/link.txt";
-    }
-    else if(CGRA_Topology == Torus){
-        oss << "./config/torus_" << CGRA_Scale << "_" << Row << "x" << Col << ".txt";
-        Config_fName = oss.str();
-    }
-    else if(CGRA_Topology == Mesh){
-        oss << "./config/mesh_" << CGRA_Scale << "_" << Row << "x" << Col << ".txt";
-        Config_fName = oss.str(); 
-    }
-    else{
-        ERROR("Undefined CGRA Topology!\n");
-    }
-    Config_fHandle.open(Config_fName.c_str());
-    if(!Config_fHandle.is_open()){
-        std::cout << "Failed to open " << Config_fName << std::endl;
-    }
-    while(!Config_fHandle.eof()){
-        for(int i=0; i<CGRA_Scale; i++){
-            for(int j=0; j<CGRA_Scale; j++){
-                Config_fHandle >> CGRA_Adjacency_Mat[i][j];
-            }
-        }
-    }
-    Config_fHandle.close();
+    std::cout << "I am ok!" << std::endl;
+    Link_Gen();
+
 
 }
 
@@ -544,6 +520,91 @@ int Coarse_Grain_Recon_Arch::Get_Downstream_PE_ID(const int &Current_PE_ID, cons
         }
     }
     return Downstream_PE_ID;
+
+}
+
+void Coarse_Grain_Recon_Arch::Link_Gen(){
+
+    if(CGRA_Topology == Torus){
+        for(int i=0; i<CGRA_Scale; i++){
+            for(int j=0; j<CGRA_Scale; j++){
+                int Src_Row = i/Col;
+                int Src_Col = i%Col;
+                int Dst_Row = j/Col;
+                int Dst_Col = j%Col;
+
+                // i,j are neighbors on the horizontal level.
+                if(Src_Row == Dst_Row && ((Dst_Col-Src_Col==1)||(Src_Col-Dst_Col==1)||(Dst_Col-Src_Col==Col-1)||(Src_Col-Dst_Col==Col-1))){
+                    CGRA_Adjacency_Mat[i][j] = 1;
+                }
+                //i, j are neighbors on the vertical level
+                else if(Src_Col==Dst_Col && ((Src_Row-Dst_Row==1)||(Dst_Row-Src_Row==1)||(Src_Row-Dst_Row==Row-1)||(Dst_Row-Src_Row==Row-1))){
+                    CGRA_Adjacency_Mat[i][j] = 1;
+                }
+                else{
+                    CGRA_Adjacency_Mat[i][j] = 0;
+                }
+            }
+        }
+    }
+    else if(CGRA_Topology == Mesh){
+        for(int i=0; i<CGRA_Scale; i++){
+            for(int j=0; j<CGRA_Scale; j++){
+                int Src_Row=i/Col;
+                int Src_Col=i%Col;
+                int Dst_Row=j/Col;
+                int Dst_Col=j%Col;
+
+                // i,j are neighbors on the horizontal level.
+                if(Src_Row==Dst_Row && ((Dst_Col-Src_Col==1)||(Src_Col-Dst_Col==1))){
+                    CGRA_Adjacency_Mat[i][j] = 1;
+                }
+                //i, j are neighbors on the vertical level
+                else if(Src_Col==Dst_Col && ((Src_Row-Dst_Row==1)||(Dst_Row-Src_Row==1))){
+                    CGRA_Adjacency_Mat[i][j] = 1;
+                }
+                else{
+                    CGRA_Adjacency_Mat[i][j] = 0;
+                }
+            }
+        }
+
+    }
+    else if(CGRA_Topology == Full_Connect){    
+        for(int i=0; i<CGRA_Scale; i++){
+            for(int j=0; j<CGRA_Scale; j++){
+                if(i!=j){
+                    CGRA_Adjacency_Mat[i][j] = 1;
+                }
+                else{
+                    CGRA_Adjacency_Mat[i][j]=0;
+                }
+            }
+        }
+    }
+    else if(CGRA_Topology == Customized){
+        ERROR("Customized topology hasn't been implemented!\n");
+    }
+    else{
+        ERROR("Undefined Topology!\n");
+    }
+
+    std::ostringstream oss;
+    std::ofstream fHandle;
+    std::string fName="./config/link.txt";
+    
+    fHandle.open(fName.c_str());
+    if(!fHandle.is_open()){
+        ERROR("Failed to create link.txt\n");
+    }
+
+    for(int i=0; i<CGRA_Scale; i++){
+        for(int j=0; j<CGRA_Scale; j++){
+            fHandle << " " << CGRA_Adjacency_Mat[i][j];
+        }
+        fHandle << std::endl;
+    }
+    fHandle.close();
 
 }
 

@@ -12,7 +12,6 @@ ALU_Opcode	Component_Activity.h	/^        Opcode ALU_Opcode;$/;"	m	class:Compone
 ALU_Output_Mux	Component_Activity.h	/^        int ALU_Output_Mux;$/;"	m	class:Component_Activity
 ALU_Output_Reserved	Component_Reserved.h	/^        bool ALU_Output_Reserved;$/;"	m	class:Component_Reserved
 ANDAND	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
-A_In	config/io.h	/^int A_In[10][10]={ $/;"	v
 Add_Link	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Add_Link(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
 Addr_Buffer_Depth	Coarse_Grain_Recon_Arch.h	/^        int Addr_Buffer_Depth;$/;"	m	class:Coarse_Grain_Recon_Arch
 Addr_Buffer_Dump_Coe	Scheduler.cpp	/^void Scheduler::Addr_Buffer_Dump_Coe(){$/;"	f	class:Scheduler
@@ -25,8 +24,6 @@ Avail	Global_Def.h	/^    In_IO_Buffer, Unavail, Avail$/;"	e	enum:Operand_State
 Avg_Input_Degree	Data_Flow_Graph.h	/^        float Avg_Input_Degree;$/;"	m	class:Data_Flow_Graph
 Avg_OP_Priority	Data_Flow_Graph.h	/^        float Avg_OP_Priority;$/;"	m	class:Data_Flow_Graph
 Avg_Output_Degree	Data_Flow_Graph.h	/^        float Avg_Output_Degree;$/;"	m	class:Data_Flow_Graph
-B_In	config/io.h	/^int B_In[10][10]={ $/;"	v
-Bin_To_Head_File	Scheduler.cpp	/^void Scheduler::Bin_To_Head_File(const std::string &Bin_fName, const std::string &Head_fName, const std::string &Array_Name, const int &Data_Width){$/;"	f	class:Scheduler
 Bin_To_Hex	Scheduler.cpp	/^char Scheduler::Bin_To_Hex(char* Bin_Vec){$/;"	f	class:Scheduler
 CC	Makefile	/^CC = g++$/;"	m
 CFLAGS	Makefile	/^CFLAGS= -DDEBUG -g -Wall -gdwarf-2 $/;"	m
@@ -36,7 +33,6 @@ CGRA_Routing_Dist	Coarse_Grain_Recon_Arch.h	/^        std::vector<std::vector<in
 CGRA_Routing_Path	Coarse_Grain_Recon_Arch.h	/^        std::vector<std::vector<std::list<int> > > CGRA_Routing_Path;$/;"	m	class:Coarse_Grain_Recon_Arch
 CGRA_Scale	Coarse_Grain_Recon_Arch.h	/^        int CGRA_Scale;$/;"	m	class:Coarse_Grain_Recon_Arch
 CGRA_Topology	Coarse_Grain_Recon_Arch.h	/^        Topology CGRA_Topology;$/;"	m	class:Coarse_Grain_Recon_Arch
-C_Out	config/io.h	/^int C_Out[10][10]={ $/;"	v
 Coarse_Grain_Recon_Arch	Coarse_Grain_Recon_Arch.cpp	/^Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch(){$/;"	f	class:Coarse_Grain_Recon_Arch
 Coarse_Grain_Recon_Arch	Coarse_Grain_Recon_Arch.h	/^class Coarse_Grain_Recon_Arch{$/;"	c
 Col	Coarse_Grain_Recon_Arch.h	/^        int Col;$/;"	m	class:Coarse_Grain_Recon_Arch
@@ -49,7 +45,6 @@ Component_State	Component_State.cpp	/^Component_State::Component_State(){$/;"	f	
 Component_State	Component_State.h	/^class Component_State{$/;"	c
 Component_Trace	PE.h	/^        std::vector<Component_State*> Component_Trace; $/;"	m	class:PE
 Computation_Result_Dump	Scheduler.cpp	/^void Scheduler::Computation_Result_Dump(){$/;"	f	class:Scheduler
-Const_In	config/io.h	/^int Const_In[1] = {0};$/;"	v
 Customized	Global_Def.h	/^    Torus, Mesh, Customized$/;"	e	enum:Topology
 DFG	Scheduler.h	/^        Data_Flow_Graph* DFG;$/;"	m	class:Scheduler
 DFG_Calculation	Data_Flow_Graph.cpp	/^void Data_Flow_Graph::DFG_Calculation(std::vector<int> &OP_Result){$/;"	f	class:Data_Flow_Graph
@@ -77,13 +72,13 @@ Dynamic_Dijkstra_Routing	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_A
 Dynamic_Routing	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Dynamic_Routing(const Routing_Alg &CGRA_Routing_Alg, const int &Src_Avail_Time, const int &Src_PE_ID, const int &Dst_PE_ID, std::list<int> &Routing_Path){$/;"	f	class:Coarse_Grain_Recon_Arch
 Dynamic_Routing_Alg	Coarse_Grain_Recon_Arch.h	/^        Routing_Alg Dynamic_Routing_Alg;$/;"	m	class:Coarse_Grain_Recon_Arch
 Dynamic_XY	Global_Def.h	/^    Dynamic_Dijkstra, Dynamic_XY, Static_XY, Static_Dijkstra $/;"	e	enum:Routing_Alg
-ERROR	Global_Def.h	32;"	d
+ERROR	Global_Def.h	33;"	d
 Exe_Mode	Global_Def.h	/^enum Exe_Mode{$/;"	g
 Exe_OP_Num	PE.h	/^        int Exe_OP_Num;$/;"	m	class:PE
 Exe_PE_ID	Operand.h	/^    int Exe_PE_ID;$/;"	m	struct:Operand_Attribute
 Fetch_OP	Scheduler.cpp	/^int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, const Exe_Mode &Mode){$/;"	f	class:Scheduler
 File_Line_Cnt	Scheduler.cpp	/^int Scheduler::File_Line_Cnt(const std::string &fName){$/;"	f	class:Scheduler
-FullConnectGen	config/main.cpp	/^void FullConnectGen(int N, vector<vector<int> > &link_matrix){$/;"	f
+FullConnectGen	util/Link-Gen/src/link-gen.cpp	/^void FullConnectGen(int N, vector<vector<int> > &link_matrix){$/;"	f
 GL_Var	Global_Def.h	/^struct GL_Var{$/;"	s
 GT	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
 Get_ALU_Util	PE.cpp	/^float PE::Get_ALU_Util(const int &Start_Time, const int &End_Time){$/;"	f	class:PE
@@ -94,6 +89,7 @@ Get_Dist	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Dist(con
 Get_Downstream_Index	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Downstream_Index(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
 Get_Downstream_PE_ID	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Downstream_PE_ID(const int &Current_PE_ID, const int &Output_Mux){$/;"	f	class:Coarse_Grain_Recon_Arch
 Get_Output_Port_Util	PE.cpp	/^float PE::Get_Output_Port_Util(const int &Start_Time, const int &End_Time){$/;"	f	class:PE
+Get_Trace_Size	PE.cpp	/^int PE::Get_Trace_Size(){$/;"	f	class:PE
 Get_Upstream_Index	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Upstream_Index(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
 Get_Upstream_PE_ID	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Upstream_PE_ID(const int &Current_PE_ID, const int &Input_Mux){$/;"	f	class:Coarse_Grain_Recon_Arch
 IM	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:Operand_Type
@@ -104,6 +100,7 @@ INCONST	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:
 INVAR	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:Operand_Type
 IO_Buffer_Addr	Operand.h	/^        int IO_Buffer_Addr;$/;"	m	struct:Operand
 IO_Buffer_Depth	Coarse_Grain_Recon_Arch.h	/^        int IO_Buffer_Depth;$/;"	m	class:Coarse_Grain_Recon_Arch
+IO_Buffer_Dump_Coe	Scheduler.cpp	/^void Scheduler::IO_Buffer_Dump_Coe(){$/;"	f	class:Scheduler
 IO_Buffer_ID	Operand.h	/^        int IO_Buffer_ID;$/;"	m	struct:Operand
 IO_Buffer_Num	Coarse_Grain_Recon_Arch.h	/^        int IO_Buffer_Num;$/;"	m	class:Coarse_Grain_Recon_Arch
 IO_Buffer_Width	Coarse_Grain_Recon_Arch.h	/^        int IO_Buffer_Width;$/;"	m	class:Coarse_Grain_Recon_Arch
@@ -161,10 +158,10 @@ Max_OP_Priority	Data_Flow_Graph.h	/^        int Max_OP_Priority;$/;"	m	class:Dat
 Max_Src_OP_Num	Data_Flow_Graph.h	/^        int Max_Src_OP_Num;$/;"	m	class:Data_Flow_Graph
 Mem_Util_Filter	Global_Def.h	/^    Dist_Filter, Mem_Util_Filter, DSP_Util_Filter, Write_Mem_Util_Filter, Input_Port_Util_Filter, Output_Port_Util_Filter, Inout_Port_Util_Filter$/;"	e	enum:PE_Sel_Filter_Type
 Mesh	Global_Def.h	/^    Torus, Mesh, Customized$/;"	e	enum:Topology
-MeshGen	config/main.cpp	/^void MeshGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
+MeshGen	util/Link-Gen/src/link-gen.cpp	/^void MeshGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
 NC	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
 NOTE	util/bmmGen.pl	/^NOTE: XDL and DATA2MEM must be installed and in the user's path.$/;"	l
-NaN	Global_Def.h	31;"	d
+NaN	Global_Def.h	32;"	d
 Nearest_Attached_PE	Scheduler.cpp	/^int Scheduler::Nearest_Attached_PE(const int &Src_OP_ID, const int &Dst_PE_ID, int &Src_Ready_Time){$/;"	f	class:Scheduler
 NetGraph	util/main.cpp	/^void NetGraph(const int &N){$/;"	f
 OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
@@ -183,7 +180,7 @@ OP_Migration_Time	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::OP_
 OP_Num	Data_Flow_Graph.h	/^        int OP_Num;$/;"	m	class:Data_Flow_Graph
 OP_Opcode	Operand.h	/^    Opcode OP_Opcode;$/;"	m	struct:Operand_Attribute
 OP_Parents	Operand.h	/^        std::vector<Operand*> OP_Parents;$/;"	m	struct:Operand
-OP_Pref	Global_Def.h	/^    PE_Pref, OP_Pref, PE_OP_Combined$/;"	e	enum:Scheduling_Strategy
+OP_Pref	Global_Def.h	/^    PE_Pref, OP_Pref, PE_OP_Together$/;"	e	enum:Scheduling_Strategy
 OP_Ready_Set_Init	Scheduler.cpp	/^void Scheduler::OP_Ready_Set_Init(std::list<int> &OP_Ready_Set){$/;"	f	class:Scheduler
 OP_Ready_Set_Update	Scheduler.cpp	/^void Scheduler::OP_Ready_Set_Update(std::list<int> &OP_Ready_Set, const int &Sel_OP_ID){$/;"	f	class:Scheduler
 OP_State	Operand.h	/^    Operand_State OP_State;$/;"	m	struct:Operand_Attribute
@@ -211,16 +208,16 @@ PE_Component_Reserved	Component_State.h	/^        Component_Reserved* PE_Compone
 PE_ID	PE.h	/^        int PE_ID;$/;"	m	class:PE
 PE_Input_Mux	Component_Activity.h	/^        int PE_Input_Mux;  \/\/0->W 1->N, 2->E, 3->S$/;"	m	class:Component_Activity
 PE_Input_Reserved	Component_Reserved.h	/^        bool PE_Input_Reserved;$/;"	m	class:Component_Reserved
-PE_OP_Combined	Global_Def.h	/^    PE_Pref, OP_Pref, PE_OP_Combined$/;"	e	enum:Scheduling_Strategy
 PE_OP_Sel	Scheduler.cpp	/^void Scheduler::PE_OP_Sel(int &Sel_PE_ID, int &Sel_OP_ID, const std::list<int> &Candidates, const std::list<int> &OP_Ready_Set){}$/;"	f	class:Scheduler
+PE_OP_Together	Global_Def.h	/^    PE_Pref, OP_Pref, PE_OP_Together$/;"	e	enum:Scheduling_Strategy
 PE_Output_Mux	Component_Activity.h	/^        int PE_Output_Mux[4]; \/\/0->memory port0, 1->memory port1, 2->memory port2, 3->bypass$/;"	m	class:Component_Activity
 PE_Output_Reserved	Component_Reserved.h	/^        bool PE_Output_Reserved[4];$/;"	m	class:Component_Reserved
-PE_Pref	Global_Def.h	/^    PE_Pref, OP_Pref, PE_OP_Combined$/;"	e	enum:Scheduling_Strategy
+PE_Pref	Global_Def.h	/^    PE_Pref, OP_Pref, PE_OP_Together$/;"	e	enum:Scheduling_Strategy
 PE_Sel_Filter_Type	Global_Def.h	/^enum PE_Sel_Filter_Type{$/;"	g
 PE_Sel_Strategy	Scheduler.h	/^        PE_Selection PE_Sel_Strategy;$/;"	m	class:Scheduler
 PE_Selection	Global_Def.h	/^enum PE_Selection{$/;"	g
 PHI	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
-PRINT	Global_Def.h	33;"	d
+PRINT	Global_Def.h	34;"	d
 Partial_Impl	Global_Def.h	/^    Sim, Impl, Partial_Impl$/;"	e	enum:Exe_Mode
 Permutator	util/main.cpp	/^void Permutator(const vector<int> &levelin, const int &deg, vector<int> &levelout, int &opid, ofstream &fHandle){$/;"	f
 Print_Level	Global_Def.cpp	/^int GL_Var::Print_Level = 0;$/;"	m	class:GL_Var	file:
@@ -231,9 +228,7 @@ Random_Seed	Global_Def.cpp	/^int GL_Var::Random_Seed = 0;$/;"	m	class:GL_Var	fil
 Random_Seed	Global_Def.h	/^    static int Random_Seed;$/;"	m	struct:GL_Var
 Recent_Busy_Filter	Scheduler.cpp	/^void Scheduler::Recent_Busy_Filter(std::list<int> &Candidates){$/;"	f	class:Scheduler
 Remove_Link	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Remove_Link(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
-Result	result/initialized-result.h	/^unsigned int Result[200]={0x000000BE, 0x00000116, 0x00000091, 0x00000084, 0x000000BE, 0x00000088, 0x000000C8, 0x000000A9, 0x000000A1, 0x000000A7, 0x000000BA, 0x00000163, 0x0000009C, 0x0000009D, 0x000000CF, 0x000000D1, 0x000000B9, 0x000000A4, 0x000000D2, 0x000000F6, 0x000000BF, 0x0000014F, 0x000000E9, 0x000000B3, 0x000000C4, 0x00000101, 0x000000DC, 0x000000E3, 0x000000AE, 0x000000E8, 0x000000BF, 0x0000013F, 0x000000AC, 0x0000009C, 0x000000A7, 0x000000DA, 0x000000B6, 0x000000BA, 0x000000A5, 0x000000BA, 0x00000114, 0x000001B1, 0x000000EF, 0x000000CD, 0x000000E5, 0x00000131, 0x000000FB, 0x000000FC, 0x000000C1, 0x00000101, 0x000000E9, 0x0000017A, 0x000000DE, 0x000000B5, 0x000000DA, 0x000000F0, 0x000000E7, 0x000000D8, 0x000000B4, 0x000000E2, 0x000000E8, 0x000001AE, 0x000000DD, 0x0000009B, 0x000000FF, 0x00000112, 0x000000BB, 0x000000CB, 0x000000C1, 0x00000148, 0x000000F8, 0x0000013F, 0x000000B2, 0x00000089, 0x000000C9, 0x000000D9, 0x000000E9, 0x000000AB, 0x000000A5, 0x000000EC, 0x0000010B, 0x0000017B, 0x000000B8, 0x0000008D, 0x000000E7, 0x00000114, 0x00000103, 0x000000F7, 0x000000DA, 0x0000012D, 0x000000FC, 0x000001DD, 0x000000EF, 0x000000CC, 0x0000011A, 0x0000012E, 0x000000EF, 0x00000105, 0x000000F5, 0x0000014E, 0x00000053, 0x00000069, 0x00000024, 0x00000027, 0x00000026, 0x00000035, 0x00000053, 0x0000004C, 0x0000003C, 0x00000023, 0x00000044, 0x00000056, 0x00000013, 0x0000001F, 0x00000024, 0x00000021, 0x00000041, 0x0000003D, 0x00000030, 0x00000016, 0x0000004A, 0x0000005A, 0x00000049, 0x00000025, 0x0000000E, 0x00000059, 0x00000059, 0x00000049, 0x0000003C, 0x0000003C, 0x00000050, 0x00000073, 0x00000043, 0x0000002E, 0x00000019, 0x0000004F, 0x0000004D, 0x0000004C, 0x00000036, 0x0000002C, 0x00000072, 0x000000A1, 0x0000005B, 0x00000040, 0x00000025, 0x0000006D, 0x0000006F, 0x0000006C, 0x0000004E, 0x0000003E, 0x00000053, 0x0000007C, 0x0000004A, 0x00000032, 0x00000019, 0x00000055, 0x0000004D, 0x0000004F, 0x00000036, 0x0000002D, 0x0000001D, 0x00000048, 0x00000031, 0x0000001F, 0x00000005, 0x0000002C, 0x00000008, 0x0000001C, 0x00000006, 0x00000009, 0x00000049, 0x00000055, 0x0000003D, 0x00000022, 0x00000012, 0x0000004E, 0x00000058, 0x00000047, 0x0000003C, 0x00000037, 0x00000059, 0x0000005A, 0x00000034, 0x00000022, 0x0000001D, 0x0000004D, 0x00000071, 0x00000055, 0x0000004E, 0x0000003F, 0x00000053, 0x00000076, 0x0000002D, 0x0000002D, 0x00000025, 0x0000003A, 0x0000004A, 0x0000004C, 0x00000036, 0x0000001F };/;"	v
-ResultMemCtrlWords	result/result-ctrl-words.h	/^unsigned int ResultMemCtrlWords[352]={0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0xE000, 0x2000, 0x2000, 0x2000, 0xE00A, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0xE016, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0xE005, 0xE007, 0x2000, 0x2000, 0xE001, 0x2000, 0x2000, 0xE010, 0x2000, 0xE000, 0xE007, 0xE001, 0xE007, 0x2000, 0x2000, 0xE00A, 0x2000, 0x2000, 0x2000, 0x2000, 0xE00C, 0xE001, 0x2000, 0xE007, 0xE009, 0xE00B, 0xE012, 0xE00C, 0xE00B, 0xE010, 0xE00B, 0xE006, 0xE00C, 0xE001, 0xE009, 0xE004, 0xE002, 0xE018, 0xE002, 0xE018, 0xE006, 0xE005, 0xE010, 0xE013, 0xE00E, 0xE017, 0xE015, 0xE005, 0xE000, 0xE010, 0xE004, 0xE006, 0xE00F, 0xE017, 0xE015, 0xE004, 0xE00F, 0xE015, 0xE006, 0xE00D, 0xE016, 0xE016, 0xE005, 0xE011, 0xE002, 0xE015, 0xE014, 0xE000, 0xE00A, 0xE017, 0xE017, 0xE00B, 0xE00F, 0xE00D, 0xE008, 0xE011, 0xE013, 0xE008, 0xE003, 0xE011, 0xE00E, 0xE011, 0xE00E, 0xE003, 0xE013, 0xE012, 0xE00E, 0xE014, 0xE00C, 0xE00D, 0xE012, 0xE003, 0xE018, 0x2000, 0xE008, 0xE018, 0xE014, 0xE002, 0xE00D, 0xE014, 0xE012, 0xE016, 0xE00A, 0xE00F, 0xE013, 0xE009, 0xE008, 0xE009, 0xE004, 0xE003, 0x8800 };/;"	v
-RingGen	config/main.cpp	/^void RingGen(int N, vector<vector<int> > &link_matrix){$/;"	f
+RingGen	util/Link-Gen/src/link-gen.cpp	/^void RingGen(int N, vector<vector<int> > &link_matrix){$/;"	f
 Routing_Alg	Global_Def.h	/^enum Routing_Alg{$/;"	g
 Row	Coarse_Grain_Recon_Arch.h	/^        int Row;$/;"	m	class:Coarse_Grain_Recon_Arch
 SRCS	Makefile	/^SRCS = Global_Def.cpp \\$/;"	m
@@ -247,8 +242,6 @@ Scheduling_Stat	Scheduler.cpp	/^void Scheduler::Scheduling_Stat(){$/;"	f	class:S
 Scheduling_Strategy	Global_Def.h	/^enum Scheduling_Strategy{$/;"	g
 Sequential_Placement	Global_Def.h	/^    Sequential_Placement, Interleaving_Placement$/;"	e	enum:IO_Placement
 Sim	Global_Def.h	/^    Sim, Impl, Partial_Impl$/;"	e	enum:Exe_Mode
-Src	result/initialized-src.h	/^unsigned int Src[301]={0x00000000, 0x00000003, 0x00000007, 0x00000003, 0x00000006, 0x00000009, 0x00000002, 0x00000000, 0x00000003, 0x00000000, 0x00000002, 0x00000001, 0x00000007, 0x00000002, 0x00000002, 0x00000007, 0x00000009, 0x00000002, 0x00000009, 0x00000003, 0x00000001, 0x00000009, 0x00000001, 0x00000004, 0x00000008, 0x00000005, 0x00000003, 0x00000001, 0x00000006, 0x00000002, 0x00000006, 0x00000005, 0x00000004, 0x00000006, 0x00000006, 0x00000003, 0x00000004, 0x00000002, 0x00000004, 0x00000004, 0x00000003, 0x00000007, 0x00000006, 0x00000008, 0x00000003, 0x00000004, 0x00000002, 0x00000006, 0x00000009, 0x00000006, 0x00000004, 0x00000005, 0x00000004, 0x00000007, 0x00000007, 0x00000007, 0x00000002, 0x00000001, 0x00000006, 0x00000005, 0x00000004, 0x00000000, 0x00000001, 0x00000007, 0x00000001, 0x00000009, 0x00000007, 0x00000007, 0x00000006, 0x00000006, 0x00000009, 0x00000008, 0x00000002, 0x00000003, 0x00000000, 0x00000008, 0x00000000, 0x00000006, 0x00000008, 0x00000006, 0x00000001, 0x00000009, 0x00000004, 0x00000001, 0x00000003, 0x00000004, 0x00000004, 0x00000007, 0x00000003, 0x00000007, 0x00000009, 0x00000002, 0x00000007, 0x00000005, 0x00000004, 0x00000008, 0x00000009, 0x00000005, 0x00000008, 0x00000003, 0x00000008, 0x00000006, 0x00000005, 0x00000005, 0x00000002, 0x00000001, 0x00000007, 0x00000009, 0x00000006, 0x00000006, 0x00000006, 0x00000008, 0x00000009, 0x00000000, 0x00000003, 0x00000005, 0x00000002, 0x00000008, 0x00000007, 0x00000006, 0x00000002, 0x00000003, 0x00000009, 0x00000007, 0x00000004, 0x00000000, 0x00000006, 0x00000000, 0x00000003, 0x00000000, 0x00000001, 0x00000005, 0x00000007, 0x00000005, 0x00000009, 0x00000007, 0x00000005, 0x00000005, 0x00000007, 0x00000004, 0x00000000, 0x00000008, 0x00000008, 0x00000004, 0x00000001, 0x00000009, 0x00000000, 0x00000008, 0x00000002, 0x00000006, 0x00000009, 0x00000000, 0x00000008, 0x00000001, 0x00000002, 0x00000002, 0x00000006, 0x00000000, 0x00000001, 0x00000009, 0x00000009, 0x00000009, 0x00000007, 0x00000001, 0x00000005, 0x00000007, 0x00000006, 0x00000003, 0x00000005, 0x00000003, 0x00000004, 0x00000001, 0x00000009, 0x00000009, 0x00000008, 0x00000005, 0x00000009, 0x00000003, 0x00000005, 0x00000001, 0x00000005, 0x00000008, 0x00000008, 0x00000000, 0x00000000, 0x00000004, 0x00000004, 0x00000006, 0x00000001, 0x00000005, 0x00000006, 0x00000001, 0x00000008, 0x00000007, 0x00000001, 0x00000005, 0x00000007, 0x00000003, 0x00000008, 0x00000001, 0x00000009, 0x0000004A, 0x0000004E, 0x0000000F, 0x0000001B, 0x00000026, 0x00000023, 0x00000053, 0x00000043, 0x0000003C, 0x00000020, 0x0000003E, 0x00000044, 0x00000005, 0x00000017, 0x00000024, 0x00000015, 0x00000041, 0x00000037, 0x00000030, 0x00000014, 0x0000003E, 0x00000036, 0x0000002D, 0x00000015, 0x0000000E, 0x00000041, 0x00000059, 0x0000003D, 0x0000003C, 0x00000038, 0x0000003E, 0x0000003D, 0x00000019, 0x00000016, 0x00000019, 0x0000002B, 0x0000004D, 0x0000003A, 0x00000036, 0x00000026, 0x0000005A, 0x00000059, 0x00000023, 0x00000020, 0x00000025, 0x0000003D, 0x0000006F, 0x00000054, 0x0000004E, 0x00000036, 0x0000003E, 0x0000003D, 0x00000019, 0x00000016, 0x00000019, 0x0000002B, 0x0000004D, 0x0000003A, 0x00000036, 0x00000026, 0x00000008, 0x00000009, 0x00000000, 0x00000003, 0x00000005, 0x00000002, 0x00000008, 0x00000007, 0x00000006, 0x00000002, 0x00000040, 0x0000003A, 0x00000028, 0x00000016, 0x00000012, 0x0000003C, 0x00000058, 0x0000003E, 0x0000003C, 0x00000034, 0x00000056, 0x00000051, 0x0000002D, 0x0000001E, 0x0000001D, 0x00000047, 0x00000071, 0x00000052, 0x0000004E, 0x0000003E, 0x00000044, 0x00000049, 0x0000000A, 0x00000019, 0x00000025, 0x0000001C, 0x0000004A, 0x0000003D, 0x00000036, 0x0000001A };/;"	v
-SrcMemCtrlWords	result/src-ctrl-words.h	/^unsigned int SrcMemCtrlWords[352]={0xA000, 0xA019, 0x2000, 0xA019, 0xA019, 0xA01A, 0xA01A, 0xA01A, 0xA01A, 0xA01B, 0xA01B, 0xA01B, 0xA002, 0xA005, 0xA007, 0xA00A, 0x2000, 0xA00C, 0xA00F, 0x2000, 0xA011, 0xA014, 0xA016, 0x2000, 0xA000, 0xA01B, 0x2000, 0xA01C, 0xA01C, 0xA01C, 0xA01C, 0xA01D, 0xA01D, 0xA01D, 0xA01D, 0xA01E, 0xA003, 0xA005, 0xA008, 0xA00F, 0xA00A, 0x2000, 0xA00D, 0xA014, 0x2000, 0xA000, 0xA01F, 0xA01F, 0xA012, 0xA017, 0x2000, 0xA01F, 0xA01F, 0xA020, 0xA005, 0xA01E, 0xA020, 0xA01E, 0xA00F, 0xA008, 0xA00A, 0xA014, 0xA01E, 0x2000, 0xA003, 0xA020, 0x2000, 0xA00D, 0xA017, 0x2000, 0xA001, 0xA021, 0xA012, 0xA020, 0x2000, 0xA021, 0xA023, 0xA006, 0xA022, 0xA022, 0xA008, 0xA010, 0xA00D, 0xA022, 0xA00B, 0x2000, 0xA017, 0x2000, 0xA003, 0xA022, 0xA021, 0xA015, 0xA012, 0xA021, 0xA001, 0xA023, 0x2000, 0xA00B, 0x2000, 0xA024, 0xA023, 0xA006, 0xA017, 0x2000, 0xA003, 0xA024, 0xA025, 0xA025, 0xA008, 0xA024, 0xA00D, 0xA012, 0xA015, 0xA010, 0xA025, 0xA001, 0xA025, 0x2000, 0xA024, 0xA023, 0xA00B, 0x2000, 0xA018, 0xA026, 0x2000, 0xA027, 0xA006, 0xA001, 0xA028, 0x2000, 0xA028, 0xA004, 0xA026, 0xA027, 0xA027, 0xA00E, 0xA010, 0xA009, 0xA015, 0xA027, 0xA00B, 0x2000, 0xA013, 0xA026, 0xA018, 0xA028, 0x2000, 0xA002, 0xA02A, 0x2000, 0xA026, 0xA029, 0xA00C, 0x2000, 0xA02A, 0xA006, 0xA00E, 0xA029, 0xA02A, 0xA029, 0xA010, 0xA02A, 0xA015, 0xA018, 0xA02B, 0x2000, 0xA004, 0xA002, 0xA02D, 0x2000, 0xA009, 0xA029, 0xA013, 0xA00C, 0x2000, 0xA02C, 0xA028, 0xA018, 0xA02D, 0x2000, 0xA02C, 0xA007, 0xA02D, 0xA02B, 0xA02C, 0xA00E, 0xA016, 0xA02C, 0xA011, 0xA013, 0xA009, 0xA02B, 0xA002, 0xA02F, 0x2000, 0xA004, 0xA02E, 0xA00C, 0x2000, 0xA02B, 0xA02E, 0xA011, 0xA019, 0xA030, 0x2000, 0xA007, 0xA009, 0xA02F, 0xA02E, 0xA02F, 0xA02F, 0xA02E, 0xA02D, 0x2000, 0x2000, 0xA00E, 0xA013, 0xA016, 0xA007, 0xA004, 0xA00A, 0x2000, 0xA031, 0xA030, 0x2000, 0x2000, 0xA011, 0x2000, 0x2000, 0xA031, 0x2000, 0x2000, 0xA031, 0xA032, 0xA031, 0xA005, 0xA014, 0xA00F, 0xA030, 0xA016, 0xA030, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x8800 };/;"	v
 Static_Dijkstra	Global_Def.h	/^    Dynamic_Dijkstra, Dynamic_XY, Static_XY, Static_Dijkstra $/;"	e	enum:Routing_Alg
 Static_Dijkstra_Routing	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Static_Dijkstra_Routing(int Src, std::vector<std::list<int> > &Src_Routing_Path, std::vector<int> &Src_Routing_Dist){$/;"	f	class:Coarse_Grain_Recon_Arch
 Static_Routing	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Static_Routing(const Routing_Alg &CGRA_Routing_Alg){$/;"	f	class:Coarse_Grain_Recon_Arch
@@ -266,7 +259,7 @@ Target_OP_Refresh	Scheduler.cpp	/^void Scheduler::Target_OP_Refresh(const std::v
 Target_PE_Refresh	Scheduler.cpp	/^void Scheduler::Target_PE_Refresh(const std::vector<int> &Src_OP_IDs, const int &Target_OP_ID, const int &Start_Time, const int &Target_PE_ID){$/;"	f	class:Scheduler
 Topology	Global_Def.h	/^enum Topology{$/;"	g
 Torus	Global_Def.h	/^    Torus, Mesh, Customized$/;"	e	enum:Topology
-TorusGen	config/main.cpp	/^void TorusGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
+TorusGen	util/Link-Gen/src/link-gen.cpp	/^void TorusGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
 UNUSED	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:Operand_Type
 Unavail	Global_Def.h	/^    In_IO_Buffer, Unavail, Avail$/;"	e	enum:Operand_State
 Verify_On	Global_Def.cpp	/^int GL_Var::Verify_On = 0;$/;"	m	class:GL_Var	file:
@@ -286,8 +279,8 @@ example	util/bmmGen.pl	/^example: $0 -n top.ncd -o top.bmm -b top.bit$/;"	l
 example	util/bmmGen.pl	/^example: $0 -o top.bmm -t top$/;"	l
 fTrace	Scheduler.h	/^        std::ofstream fTrace;$/;"	m	class:Scheduler
 init	util/bmmGen.pl	/^sub init(){$/;"	s
-main	config/main.cpp	/^int main(){$/;"	f
 main	main.cpp	/^int main(){$/;"	f
+main	util/Link-Gen/src/link-gen.cpp	/^int main(){$/;"	f
 main	util/logcollect.cpp	/^int main(){$/;"	f
 main	util/main.cpp	/^int main(){$/;"	f
 operator <<	Global_Def.cpp	/^std::ostream& operator<< (std::ostream &os, Opcode Inst_Opcode){$/;"	f

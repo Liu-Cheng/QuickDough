@@ -4,20 +4,23 @@
 #include "common.h"
 
 struct Operand{
+
     public:
-        int op_id;
-        int op_value;
-        int op_bram_id;
-        int op_bram_addr;
-        OPTYPE op_type;
+        int OP_ID;
+        int OP_Val;
+        int IO_Buffer_ID;
+        int IO_Buffer_Addr;
+        Operand_Type OP_Type;
 
         Operand();
-        void Set_Operand(int _op_value, int _op_bram_id, int _op_bram_addr, OPTYPE _op_type);
+        void Set_Operand(int _OP_Val, int _IO_Buffer_ID, int _IO_Buffer_Addr, Operand_Type _OP_Type);
         void Display();
 
     private:    
-        static int gl_id;
-        int self_increase();
+
+        static int Inst_Cnt;
+        int Self_Increase();
+
 };
 
 #endif

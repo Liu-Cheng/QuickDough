@@ -157,7 +157,6 @@ void Scheduler::Scheduling(){
     Computation_Result_Dump();
 
     IO_Buffer_Dump_Coe();
-    IO_Buffer_Dump_Head_File();
     Data_Mem_Analysis();
     Inst_Mem_Dump_Coe();
     Inst_Mem_Dump_Mem();
@@ -402,6 +401,9 @@ void Scheduler::List_Scheduling_PE_Pref(){
         Scheduling_Completed = Is_Scheduling_Completed();
 
     }
+
+    //Add an idle cycle in the end
+    Scheduling_Complete_Time++ ;
 
 }
 
@@ -2190,11 +2192,11 @@ void Scheduler::Addr_Buffer_Dump_Mem(){
 
 void Scheduler::Inst_Mem_Dump_Mem(){
 
-    std::string fName="./result/inst.mem";
+    std::string fName="./result/Inst.mem";
     std::ofstream fHandle;
     fHandle.open(fName.c_str());
     if(!fHandle.is_open()){
-        ERROR("Failed to create inst.mem\n");
+        ERROR("Failed to create Inst.mem\n");
     }
 
     char Char_Bin_Vec[100];
@@ -2420,7 +2422,7 @@ void Scheduler::DataMemoryDumpMem(){
 void Scheduler::Computation_Result_Dump(){
     
     std::ostringstream os;
-    os << "./result/dst-" << "op" << ".txt";
+    os << "./result/dst-op.txt";
     std::string fName = os.str();
     std::ofstream fHandle;
     fHandle.open(fName.c_str());
@@ -2431,7 +2433,6 @@ void Scheduler::Computation_Result_Dump(){
     for(int i=0; i<DFG->OP_Num; i++){
         fHandle << DFG->OP_Array[i]->OP_ID << " ";
         fHandle << DFG->OP_Array[i]->OP_Val << " ";
-        fHandle << DFG->OP_Array[i]->OP_Attribute.Exe_PE_ID << " ";
         fHandle << std::endl;
     }
 
@@ -2442,7 +2443,7 @@ void Scheduler::Computation_Result_Dump(){
 void Scheduler::Load_IO_Mapping(std::vector<int> &Raw_Data, int &Row, int &Col){
 
     std::ostringstream oss; 
-    oss << "./config/" << DFG->DFG_Name << "_kernel_io.txt";
+    oss << "./config/block-io.txt";
     std::string fName = oss.str();
     std::ifstream fHandle;
     fHandle.open(fName.c_str());
@@ -2555,7 +2556,6 @@ void Scheduler::Addr_Buffer_Dump_Coe(){
                 }
 
                 /* ----------------------------------------------------------------
-                 * The following 3 bits i.e. [26:24] represent the 
                  * computation status.
                  * 001 kernel computation is done, and CPU will be acknowledged.
                  * 010 One iteration of the CGRA computation is done. The next iteration 
@@ -2812,7 +2812,7 @@ void Scheduler::IO_Buffer_Dump_Coe(){
 
 }
 
-
+/*
 void Scheduler::IO_Buffer_Dump_Head_File(){
 
     std::ostringstream oss;
@@ -2863,4 +2863,4 @@ void Scheduler::IO_Buffer_Dump_Head_File(){
     fHandle.close();
 
 }
-
+*/

@@ -52,7 +52,7 @@ void Data_Flow_Graph::DFG_Construct(){
 
     std::string DFG_OP_File;
     std::ostringstream oss;
-    oss << "./config/" << DFG_Name << "_operand.txt";
+    oss << "./config/kernel-operand.txt";
     DFG_OP_File = oss.str();
 
     std::ifstream DFG_OP_Handle;
@@ -124,7 +124,7 @@ void Data_Flow_Graph::DFG_Construct(){
     std::ifstream DFG_Inst_Handle;
     oss.str(std::string());
     oss.clear();
-    oss << "./config/" << DFG_Name << ".s";
+    oss << "./config/dfg.s";
     DFG_Inst_File = oss.str();
     DFG_Inst_Handle.open(DFG_Inst_File.c_str());
     if(!DFG_Inst_Handle.is_open()){

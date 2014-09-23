@@ -45,7 +45,7 @@
  a copy in data memory.
  ----------------------------------------------------------------------------*/
 enum Topology{
-    Torus, Mesh, Customized
+    Torus, Mesh, Full_Connect, Customized
 };
 
 enum Operand_State {

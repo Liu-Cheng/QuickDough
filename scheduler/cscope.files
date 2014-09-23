@@ -6,8 +6,6 @@ Component_Reserved.cpp
 Component_Reserved.h
 Component_State.cpp
 Component_State.h
-config/io.h
-config/main.cpp
 Data_Flow_Graph.cpp
 Data_Flow_Graph.h
 Global_Def.cpp
@@ -17,11 +15,8 @@ Operand.cpp
 Operand.h
 PE.cpp
 PE.h
-result/initialized-result.h
-result/initialized-src.h
-result/result-ctrl-words.h
-result/src-ctrl-words.h
 Scheduler.cpp
 Scheduler.h
+util/Link-Gen/src/link-gen.cpp
 util/logcollect.cpp
 util/main.cpp

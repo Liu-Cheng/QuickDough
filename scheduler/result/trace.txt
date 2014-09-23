@@ -1,0 +1,754 @@
+Load 1 through 0 at time 0
+Load 37 through 0 at time 1
+Operation 109 starts execution on  PE 0 at time 6
+Move operation 1 First: from  PE 0 to  PE 1 at time 3
+Move operation 1 last: from  PE 0 to PE 1 at time 6
+Load 38 through 0 at time 3
+Move operation 38 First: from  PE 0 to  PE 1 at time 6
+Move operation 38 last: from  PE 0 to PE 1 at time 9
+Operation 114 starts execution on  PE 1 at time 15
+Move operation 1 First: from  PE 0 to  PE 2 at time 3
+Move operation 1 last: from  PE 0 to PE 2 at time 6
+Load 39 through 0 at time 4
+Move operation 39 First: from  PE 0 to  PE 2 at time 7
+Move operation 39 last: from  PE 0 to PE 2 at time 10
+Operation 119 starts execution on  PE 2 at time 15
+Move operation 1 First: from  PE 1 to  PE 3 at time 10
+Move operation 1 last: from  PE 1 to PE 3 at time 13
+Load 40 through 0 at time 5
+Move operation 40 First: from  PE 0 to  PE 1 at time 8
+Move operation 40 bypass: from PE 1 to  PE 3 at time 13
+Move operation 40 last: from  PE 1 to PE 3 at time 14
+Operation 124 starts execution on  PE 3 at time 19
+Load 41 through 0 at time 6
+Operation 129 starts execution on  PE 0 at time 11
+Load 42 through 0 at time 8
+Move operation 42 First: from  PE 0 to  PE 1 at time 11
+Move operation 42 last: from  PE 0 to PE 1 at time 14
+Operation 134 starts execution on  PE 1 at time 20
+Load 7 through 0 at time 9
+Move operation 7 First: from  PE 0 to  PE 2 at time 12
+Move operation 7 last: from  PE 0 to PE 2 at time 15
+Operation 149 starts execution on  PE 2 at time 20
+Move operation 7 First: from  PE 2 to  PE 3 at time 18
+Move operation 7 last: from  PE 2 to PE 3 at time 21
+Operation 154 starts execution on  PE 3 at time 26
+Operation 139 starts execution on  PE 0 at time 14
+Move operation 7 First: from  PE 0 to  PE 1 at time 13
+Move operation 7 last: from  PE 0 to PE 1 at time 16
+Operation 144 starts execution on  PE 1 at time 22
+Move operation 41 First: from  PE 0 to  PE 2 at time 9
+Move operation 41 last: from  PE 0 to PE 2 at time 12
+Operation 159 starts execution on  PE 2 at time 21
+Move operation 42 First: from  PE 1 to  PE 3 at time 20
+Move operation 42 last: from  PE 1 to PE 3 at time 23
+Operation 164 starts execution on  PE 3 at time 28
+Load 13 through 0 at time 11
+Operation 169 starts execution on  PE 0 at time 16
+Move operation 13 First: from  PE 0 to  PE 2 at time 16
+Move operation 13 last: from  PE 0 to PE 2 at time 19
+Operation 179 starts execution on  PE 2 at time 24
+Move operation 13 First: from  PE 0 to  PE 1 at time 16
+Move operation 13 last: from  PE 0 to PE 1 at time 19
+Operation 174 starts execution on  PE 1 at time 25
+Move operation 13 First: from  PE 2 to  PE 3 at time 22
+Move operation 13 last: from  PE 2 to PE 3 at time 25
+Operation 184 starts execution on  PE 3 at time 30
+Operation 189 starts execution on  PE 0 at time 17
+Operation 194 starts execution on  PE 0 at time 18
+Load 19 through 0 at time 15
+Move operation 19 First: from  PE 0 to  PE 2 at time 19
+Move operation 19 last: from  PE 0 to PE 2 at time 22
+Operation 209 starts execution on  PE 2 at time 27
+Move operation 19 First: from  PE 0 to  PE 1 at time 19
+Move operation 19 last: from  PE 0 to PE 1 at time 22
+Operation 204 starts execution on  PE 1 at time 28
+Operation 219 starts execution on  PE 2 at time 28
+Operation 224 starts execution on  PE 1 at time 29
+Move operation 19 First: from  PE 2 to  PE 3 at time 26
+Move operation 19 last: from  PE 2 to PE 3 at time 29
+Operation 214 starts execution on  PE 3 at time 34
+Operation 199 starts execution on  PE 0 at time 20
+Load 25 through 0 at time 17
+Move operation 25 First: from  PE 0 to  PE 2 at time 23
+Move operation 25 last: from  PE 0 to PE 2 at time 26
+Operation 239 starts execution on  PE 2 at time 31
+Move operation 25 First: from  PE 0 to  PE 1 at time 23
+Move operation 25 last: from  PE 0 to PE 1 at time 26
+Operation 234 starts execution on  PE 1 at time 32
+Move operation 25 First: from  PE 2 to  PE 3 at time 29
+Move operation 25 last: from  PE 2 to PE 3 at time 32
+Operation 244 starts execution on  PE 3 at time 37
+Operation 229 starts execution on  PE 0 at time 22
+Operation 249 starts execution on  PE 2 at time 32
+Operation 254 starts execution on  PE 1 at time 33
+Load 31 through 0 at time 19
+Move operation 31 First: from  PE 0 to  PE 2 at time 27
+Store operation 31 from PE 3 in  PE 2 at time 30
+ Move operation 31 forward: from  PE 2 to  PE 3 at time 34
+Move operation 31 last: from  PE 2 to PE 3 at time 36
+Operation 274 starts execution on  PE 3 at time 41
+Operation 259 starts execution on  PE 0 at time 24
+Operation 264 starts execution on  PE 0 at time 25
+Operation 269 starts execution on  PE 2 at time 35
+Move operation 31 First: from  PE 0 to  PE 1 at time 27
+Move operation 31 last: from  PE 0 to PE 1 at time 30
+Operation 284 starts execution on  PE 1 at time 36
+Operation 279 starts execution on  PE 2 at time 36
+Load 2 through 0 at time 22
+Move operation 2 First: from  PE 0 to  PE 1 at time 30
+Move operation 2 last: from  PE 0 to PE 1 at time 33
+Load 44 through 0 at time 23
+Move operation 44 First: from  PE 0 to  PE 1 at time 31
+Move operation 44 last: from  PE 0 to PE 1 at time 34
+Operation 115 starts execution on  PE 1 at time 40
+Move operation 2 First: from  PE 1 to  PE 3 at time 38
+Move operation 2 last: from  PE 1 to PE 3 at time 41
+Load 46 through 0 at time 24
+Move operation 46 First: from  PE 0 to  PE 2 at time 30
+Store operation 46 from PE 3 in  PE 2 at time 33
+ Move operation 46 forward: from  PE 2 to  PE 3 at time 38
+Move operation 46 last: from  PE 2 to PE 3 at time 40
+Operation 125 starts execution on  PE 3 at time 46
+Load 43 through 0 at time 25
+Operation 110 starts execution on  PE 0 at time 30
+Move operation 2 First: from  PE 0 to  PE 2 at time 31
+Move operation 2 last: from  PE 0 to PE 2 at time 34
+Load 45 through 0 at time 27
+Move operation 45 First: from  PE 0 to  PE 2 at time 32
+Move operation 45 last: from  PE 0 to PE 2 at time 35
+Operation 120 starts execution on  PE 2 at time 40
+Load 48 through 0 at time 28
+Move operation 48 First: from  PE 0 to  PE 1 at time 33
+Move operation 48 last: from  PE 0 to PE 1 at time 36
+Operation 135 starts execution on  PE 1 at time 42
+Load 8 through 0 at time 29
+Move operation 8 First: from  PE 0 to  PE 2 at time 35
+Store operation 8 from PE 3 in  PE 2 at time 38
+ Move operation 8 forward: from  PE 2 to  PE 3 at time 42
+Move operation 8 last: from  PE 2 to PE 3 at time 44
+Operation 155 starts execution on  PE 3 at time 49
+Load 47 through 0 at time 30
+Operation 130 starts execution on  PE 0 at time 35
+Operation 150 starts execution on  PE 2 at time 43
+Move operation 8 First: from  PE 0 to  PE 1 at time 35
+Move operation 8 last: from  PE 0 to PE 1 at time 38
+Operation 145 starts execution on  PE 1 at time 44
+Move operation 48 First: from  PE 1 to  PE 3 at time 43
+Move operation 48 last: from  PE 1 to PE 3 at time 46
+Operation 165 starts execution on  PE 3 at time 51
+Operation 140 starts execution on  PE 0 at time 36
+Load 14 through 0 at time 33
+Operation 170 starts execution on  PE 0 at time 38
+Move operation 47 First: from  PE 0 to  PE 2 at time 37
+Move operation 47 last: from  PE 0 to PE 2 at time 40
+Operation 160 starts execution on  PE 2 at time 45
+Move operation 14 First: from  PE 0 to  PE 1 at time 37
+Move operation 14 last: from  PE 0 to PE 1 at time 40
+Operation 175 starts execution on  PE 1 at time 46
+Move operation 14 First: from  PE 0 to  PE 2 at time 41
+Move operation 14 last: from  PE 0 to PE 2 at time 44
+Operation 180 starts execution on  PE 2 at time 49
+Move operation 194 First: from  PE 0 to  PE 1 at time 41
+Move operation 194 last: from  PE 0 to PE 1 at time 44
+Operation 195 starts execution on  PE 1 at time 50
+Move operation 14 First: from  PE 1 to  PE 3 at time 45
+Move operation 14 last: from  PE 1 to PE 3 at time 48
+Operation 185 starts execution on  PE 3 at time 53
+Operation 190 starts execution on  PE 0 at time 39
+Load 20 through 0 at time 36
+Move operation 20 First: from  PE 0 to  PE 2 at time 44
+Move operation 20 last: from  PE 0 to PE 2 at time 47
+Operation 210 starts execution on  PE 2 at time 52
+Move operation 20 First: from  PE 0 to  PE 1 at time 44
+Move operation 20 last: from  PE 0 to PE 1 at time 47
+Operation 205 starts execution on  PE 1 at time 53
+Move operation 20 First: from  PE 2 to  PE 3 at time 50
+Move operation 20 last: from  PE 2 to PE 3 at time 53
+Operation 215 starts execution on  PE 3 at time 58
+Operation 200 starts execution on  PE 0 at time 41
+Operation 220 starts execution on  PE 2 at time 53
+Operation 225 starts execution on  PE 1 at time 54
+Load 26 through 0 at time 38
+Move operation 26 First: from  PE 0 to  PE 2 at time 47
+Store operation 26 from PE 3 in  PE 2 at time 50
+ Move operation 26 forward: from  PE 2 to  PE 3 at time 55
+Move operation 26 last: from  PE 2 to PE 3 at time 57
+Operation 245 starts execution on  PE 3 at time 62
+Operation 230 starts execution on  PE 0 at time 44
+Operation 240 starts execution on  PE 2 at time 55
+Move operation 26 First: from  PE 0 to  PE 1 at time 47
+Move operation 26 last: from  PE 0 to PE 1 at time 50
+Operation 235 starts execution on  PE 1 at time 56
+Move operation 254 First: from  PE 1 to  PE 3 at time 47
+Move operation 254 last: from  PE 1 to PE 3 at time 50
+Operation 255 starts execution on  PE 3 at time 63
+Load 32 through 0 at time 39
+Operation 260 starts execution on  PE 0 at time 45
+Operation 265 starts execution on  PE 0 at time 46
+Operation 250 starts execution on  PE 2 at time 56
+Move operation 32 First: from  PE 0 to  PE 1 at time 51
+Move operation 32 last: from  PE 0 to PE 1 at time 54
+Operation 285 starts execution on  PE 1 at time 60
+Move operation 32 First: from  PE 0 to  PE 2 at time 51
+Move operation 32 last: from  PE 0 to PE 2 at time 54
+Operation 270 starts execution on  PE 2 at time 59
+Move operation 46 First: from  PE 0 to  PE 1 at time 53
+Move operation 46 last: from  PE 0 to PE 1 at time 56
+Move operation 274 First: from  PE 3 to  PE 1 at time 49
+Move operation 274 last: from  PE 3 to PE 1 at time 52
+Operation 275 starts execution on  PE 1 at time 62
+Move operation 32 First: from  PE 1 to  PE 3 at time 59
+Move operation 32 last: from  PE 1 to PE 3 at time 62
+Move operation 47 First: from  PE 2 to  PE 3 at time 48
+Move operation 47 last: from  PE 2 to PE 3 at time 51
+Move operation 279 First: from  PE 2 to  PE 3 at time 52
+Move operation 279 last: from  PE 2 to PE 3 at time 55
+Operation 280 starts execution on  PE 3 at time 67
+Load 3 through 0 at time 43
+Load 49 through 0 at time 44
+Operation 111 starts execution on  PE 0 at time 50
+Move operation 3 First: from  PE 0 to  PE 2 at time 53
+Move operation 3 last: from  PE 0 to PE 2 at time 56
+Load 51 through 0 at time 45
+Move operation 51 First: from  PE 0 to  PE 2 at time 55
+Move operation 51 last: from  PE 0 to PE 2 at time 58
+Operation 121 starts execution on  PE 2 at time 63
+Move operation 3 First: from  PE 0 to  PE 1 at time 55
+Move operation 3 last: from  PE 0 to PE 1 at time 58
+Load 50 through 0 at time 47
+Move operation 50 First: from  PE 0 to  PE 1 at time 56
+Move operation 50 last: from  PE 0 to PE 1 at time 59
+Operation 116 starts execution on  PE 1 at time 65
+Move operation 3 First: from  PE 2 to  PE 3 at time 61
+Move operation 3 last: from  PE 2 to PE 3 at time 64
+Load 52 through 0 at time 48
+Move operation 52 First: from  PE 0 to  PE 2 at time 57
+Store operation 52 from PE 3 in  PE 2 at time 60
+ Move operation 52 forward: from  PE 2 to  PE 3 at time 65
+Move operation 52 last: from  PE 2 to PE 3 at time 67
+Operation 126 starts execution on  PE 3 at time 72
+Load 53 through 0 at time 49
+Operation 131 starts execution on  PE 0 at time 54
+Load 9 through 0 at time 51
+Move operation 9 First: from  PE 0 to  PE 2 at time 59
+Move operation 9 last: from  PE 0 to PE 2 at time 62
+Operation 151 starts execution on  PE 2 at time 67
+Load 54 through 0 at time 52
+Move operation 54 First: from  PE 0 to  PE 1 at time 59
+Move operation 54 last: from  PE 0 to PE 1 at time 62
+Operation 136 starts execution on  PE 1 at time 68
+Move operation 9 First: from  PE 2 to  PE 3 at time 66
+Move operation 9 last: from  PE 2 to PE 3 at time 69
+Operation 156 starts execution on  PE 3 at time 74
+Operation 141 starts execution on  PE 0 at time 57
+Load 15 through 0 at time 54
+Operation 171 starts execution on  PE 0 at time 59
+Move operation 53 First: from  PE 0 to  PE 2 at time 62
+Move operation 53 last: from  PE 0 to PE 2 at time 65
+Operation 161 starts execution on  PE 2 at time 70
+Move operation 9 First: from  PE 0 to  PE 1 at time 62
+Move operation 9 last: from  PE 0 to PE 1 at time 65
+Operation 146 starts execution on  PE 1 at time 71
+Move operation 15 First: from  PE 0 to  PE 2 at time 64
+Move operation 15 last: from  PE 0 to PE 2 at time 67
+Operation 181 starts execution on  PE 2 at time 72
+Move operation 165 First: from  PE 3 to  PE 1 at time 58
+Move operation 165 last: from  PE 3 to PE 1 at time 61
+Operation 166 starts execution on  PE 1 at time 72
+Move operation 15 First: from  PE 2 to  PE 3 at time 70
+Move operation 15 last: from  PE 2 to PE 3 at time 73
+Operation 186 starts execution on  PE 3 at time 78
+Operation 191 starts execution on  PE 0 at time 61
+Move operation 15 First: from  PE 0 to  PE 1 at time 66
+Move operation 15 last: from  PE 0 to PE 1 at time 69
+Operation 176 starts execution on  PE 1 at time 75
+Load 21 through 0 at time 56
+Move operation 21 First: from  PE 0 to  PE 2 at time 66
+Move operation 21 last: from  PE 0 to PE 2 at time 69
+Operation 211 starts execution on  PE 2 at time 74
+Move operation 21 First: from  PE 2 to  PE 3 at time 72
+Move operation 21 last: from  PE 2 to PE 3 at time 75
+Operation 216 starts execution on  PE 3 at time 80
+Operation 201 starts execution on  PE 0 at time 63
+Operation 221 starts execution on  PE 2 at time 75
+Operation 196 starts execution on  PE 1 at time 76
+Move operation 50 First: from  PE 1 to  PE 3 at time 63
+Move operation 50 last: from  PE 1 to PE 3 at time 66
+Move operation 205 First: from  PE 1 to  PE 3 at time 62
+Move operation 205 last: from  PE 1 to PE 3 at time 65
+Operation 206 starts execution on  PE 3 at time 81
+Load 27 through 0 at time 58
+Operation 231 starts execution on  PE 0 at time 64
+Load 33 through 0 at time 61
+Operation 261 starts execution on  PE 0 at time 66
+Move operation 27 First: from  PE 0 to  PE 2 at time 69
+Move operation 27 last: from  PE 0 to PE 2 at time 72
+Operation 241 starts execution on  PE 2 at time 77
+Move operation 21 First: from  PE 0 to  PE 1 at time 69
+Move operation 21 last: from  PE 0 to PE 1 at time 72
+Operation 226 starts execution on  PE 1 at time 78
+Operation 251 starts execution on  PE 2 at time 78
+Move operation 27 First: from  PE 0 to  PE 1 at time 71
+Move operation 27 last: from  PE 0 to PE 1 at time 74
+Operation 236 starts execution on  PE 1 at time 80
+Move operation 27 First: from  PE 2 to  PE 3 at time 75
+Move operation 27 last: from  PE 2 to PE 3 at time 78
+Operation 246 starts execution on  PE 3 at time 83
+Operation 266 starts execution on  PE 0 at time 68
+Move operation 33 First: from  PE 0 to  PE 2 at time 73
+Move operation 33 last: from  PE 0 to PE 2 at time 76
+Operation 271 starts execution on  PE 2 at time 81
+Move operation 255 First: from  PE 3 to  PE 1 at time 73
+Move operation 255 last: from  PE 3 to PE 1 at time 76
+Operation 256 starts execution on  PE 1 at time 82
+Move operation 33 First: from  PE 2 to  PE 3 at time 80
+Move operation 33 last: from  PE 2 to PE 3 at time 83
+Move operation 275 First: from  PE 1 to  PE 3 at time 68
+Move operation 275 last: from  PE 1 to PE 3 at time 71
+Operation 276 starts execution on  PE 3 at time 88
+Load 4 through 0 at time 63
+Load 55 through 0 at time 65
+Operation 112 starts execution on  PE 0 at time 70
+Move operation 280 First: from  PE 3 to  PE 2 at time 72
+Move operation 280 last: from  PE 3 to PE 2 at time 75
+Operation 281 starts execution on  PE 2 at time 82
+Move operation 33 First: from  PE 0 to  PE 1 at time 75
+Move operation 33 last: from  PE 0 to PE 1 at time 78
+Operation 286 starts execution on  PE 1 at time 84
+Move operation 4 First: from  PE 0 to  PE 2 at time 76
+Move operation 4 bypass: from PE 2 to  PE 3 at time 81
+Move operation 4 last: from  PE 2 to PE 3 at time 82
+Load 58 through 0 at time 67
+Move operation 58 First: from  PE 0 to  PE 2 at time 77
+Store operation 58 from PE 3 in  PE 2 at time 80
+ Move operation 58 forward: from  PE 2 to  PE 3 at time 84
+Move operation 58 last: from  PE 2 to PE 3 at time 86
+Operation 127 starts execution on  PE 3 at time 91
+Load 59 through 0 at time 68
+Operation 132 starts execution on  PE 0 at time 74
+Move operation 4 First: from  PE 0 to  PE 2 at time 79
+Move operation 4 last: from  PE 0 to PE 2 at time 82
+Load 57 through 0 at time 69
+Move operation 57 First: from  PE 0 to  PE 2 at time 80
+Move operation 57 last: from  PE 0 to PE 2 at time 83
+Operation 122 starts execution on  PE 2 at time 88
+Move operation 4 First: from  PE 0 to  PE 1 at time 77
+Move operation 4 last: from  PE 0 to PE 1 at time 80
+Load 56 through 0 at time 71
+Move operation 56 First: from  PE 0 to  PE 1 at time 79
+Move operation 56 last: from  PE 0 to PE 1 at time 82
+Operation 117 starts execution on  PE 1 at time 88
+Load 10 through 0 at time 72
+Move operation 10 First: from  PE 0 to  PE 1 at time 81
+Store operation 10 from PE 2 in  PE 1 at time 84
+ Move operation 10 forward: from  PE 1 to  PE 3 at time 90
+Move operation 10 last: from  PE 1 to PE 3 at time 92
+Operation 157 starts execution on  PE 3 at time 97
+Operation 142 starts execution on  PE 0 at time 78
+Load 16 through 0 at time 73
+Operation 172 starts execution on  PE 0 at time 79
+Operation 147 starts execution on  PE 1 at time 90
+Move operation 10 First: from  PE 0 to  PE 2 at time 84
+Move operation 10 last: from  PE 0 to PE 2 at time 87
+Operation 152 starts execution on  PE 2 at time 92
+Load 60 through 0 at time 76
+Move operation 60 First: from  PE 0 to  PE 1 at time 84
+Move operation 60 last: from  PE 0 to PE 1 at time 87
+Operation 137 starts execution on  PE 1 at time 93
+Move operation 59 First: from  PE 0 to  PE 2 at time 86
+Move operation 59 last: from  PE 0 to PE 2 at time 89
+Operation 162 starts execution on  PE 2 at time 94
+Move operation 60 First: from  PE 1 to  PE 3 at time 91
+Move operation 60 last: from  PE 1 to PE 3 at time 94
+Move operation 166 First: from  PE 1 to  PE 3 at time 77
+Move operation 166 last: from  PE 1 to PE 3 at time 80
+Operation 167 starts execution on  PE 3 at time 99
+Operation 192 starts execution on  PE 0 at time 81
+Move operation 16 First: from  PE 0 to  PE 1 at time 86
+Move operation 16 last: from  PE 0 to PE 1 at time 89
+Operation 177 starts execution on  PE 1 at time 95
+Move operation 16 First: from  PE 0 to  PE 2 at time 88
+Move operation 16 last: from  PE 0 to PE 2 at time 91
+Operation 182 starts execution on  PE 2 at time 96
+Move operation 16 First: from  PE 1 to  PE 3 at time 93
+Move operation 16 last: from  PE 1 to PE 3 at time 96
+Operation 187 starts execution on  PE 3 at time 101
+Load 22 through 0 at time 78
+Operation 202 starts execution on  PE 0 at time 83
+Operation 197 starts execution on  PE 1 at time 96
+Move operation 22 First: from  PE 0 to  PE 2 at time 90
+Move operation 22 last: from  PE 0 to PE 2 at time 93
+Operation 212 starts execution on  PE 2 at time 98
+Move operation 22 First: from  PE 2 to  PE 3 at time 97
+Move operation 22 last: from  PE 2 to PE 3 at time 100
+Operation 217 starts execution on  PE 3 at time 105
+Load 28 through 0 at time 80
+Operation 232 starts execution on  PE 0 at time 85
+Load 34 through 0 at time 82
+Operation 262 starts execution on  PE 0 at time 87
+Move operation 22 First: from  PE 0 to  PE 1 at time 90
+Move operation 22 last: from  PE 0 to PE 1 at time 93
+Operation 227 starts execution on  PE 1 at time 99
+Operation 222 starts execution on  PE 2 at time 99
+Move operation 206 First: from  PE 3 to  PE 1 at time 89
+Move operation 206 last: from  PE 3 to PE 1 at time 92
+Operation 207 starts execution on  PE 1 at time 100
+Move operation 28 First: from  PE 0 to  PE 2 at time 93
+Move operation 28 last: from  PE 0 to PE 2 at time 96
+Operation 242 starts execution on  PE 2 at time 101
+Move operation 28 First: from  PE 2 to  PE 3 at time 99
+Move operation 28 last: from  PE 2 to PE 3 at time 102
+Operation 247 starts execution on  PE 3 at time 107
+Operation 267 starts execution on  PE 0 at time 88
+Move operation 28 First: from  PE 0 to  PE 1 at time 93
+Move operation 28 last: from  PE 0 to PE 1 at time 96
+Operation 237 starts execution on  PE 1 at time 102
+Operation 252 starts execution on  PE 2 at time 102
+Move operation 256 First: from  PE 1 to  PE 3 at time 87
+Move operation 256 last: from  PE 1 to PE 3 at time 90
+Operation 257 starts execution on  PE 3 at time 108
+Load 5 through 0 at time 85
+Load 61 through 0 at time 86
+Operation 113 starts execution on  PE 0 at time 91
+Move operation 34 First: from  PE 0 to  PE 1 at time 96
+Move operation 34 last: from  PE 0 to PE 1 at time 99
+Operation 287 starts execution on  PE 1 at time 105
+Move operation 34 First: from  PE 0 to  PE 2 at time 96
+Move operation 34 last: from  PE 0 to PE 2 at time 99
+Operation 272 starts execution on  PE 2 at time 104
+Move operation 34 First: from  PE 1 to  PE 3 at time 105
+Move operation 34 last: from  PE 1 to PE 3 at time 108
+Operation 277 starts execution on  PE 3 at time 113
+Load 65 through 0 at time 88
+Operation 133 starts execution on  PE 0 at time 93
+Load 11 through 0 at time 90
+Operation 143 starts execution on  PE 0 at time 95
+Operation 282 starts execution on  PE 2 at time 105
+Move operation 5 First: from  PE 0 to  PE 1 at time 98
+Move operation 5 last: from  PE 0 to PE 1 at time 101
+Load 62 through 0 at time 92
+Move operation 62 First: from  PE 0 to  PE 1 at time 100
+Move operation 62 last: from  PE 0 to PE 1 at time 103
+Operation 118 starts execution on  PE 1 at time 109
+Move operation 5 First: from  PE 0 to  PE 2 at time 100
+Move operation 5 last: from  PE 0 to PE 2 at time 103
+Load 63 through 0 at time 93
+Move operation 63 First: from  PE 0 to  PE 2 at time 101
+Move operation 63 last: from  PE 0 to PE 2 at time 104
+Operation 123 starts execution on  PE 2 at time 109
+Move operation 11 First: from  PE 0 to  PE 1 at time 102
+Move operation 11 last: from  PE 0 to PE 1 at time 105
+Operation 148 starts execution on  PE 1 at time 111
+Move operation 11 First: from  PE 1 to  PE 3 at time 110
+Move operation 11 last: from  PE 1 to PE 3 at time 113
+Move operation 63 First: from  PE 2 to  PE 3 at time 107
+Move operation 63 last: from  PE 2 to PE 3 at time 110
+Move operation 152 First: from  PE 2 to  PE 3 at time 104
+Move operation 152 last: from  PE 2 to PE 3 at time 107
+Operation 153 starts execution on  PE 3 at time 118
+Load 17 through 0 at time 94
+Operation 173 starts execution on  PE 0 at time 99
+Move operation 17 First: from  PE 0 to  PE 2 at time 104
+Move operation 17 last: from  PE 0 to PE 2 at time 107
+Operation 183 starts execution on  PE 2 at time 112
+Load 66 through 0 at time 96
+Move operation 66 First: from  PE 0 to  PE 1 at time 104
+Move operation 66 last: from  PE 0 to PE 1 at time 107
+Operation 138 starts execution on  PE 1 at time 113
+Move operation 66 First: from  PE 1 to  PE 3 at time 112
+Move operation 66 last: from  PE 1 to PE 3 at time 115
+Operation 168 starts execution on  PE 3 at time 120
+Operation 193 starts execution on  PE 0 at time 101
+Load 23 through 0 at time 98
+Move operation 23 First: from  PE 0 to  PE 2 at time 106
+Move operation 23 last: from  PE 0 to PE 2 at time 109
+Operation 213 starts execution on  PE 2 at time 114
+Move operation 17 First: from  PE 0 to  PE 1 at time 106
+Move operation 17 last: from  PE 0 to PE 1 at time 109
+Operation 178 starts execution on  PE 1 at time 115
+Move operation 17 First: from  PE 2 to  PE 3 at time 114
+Move operation 17 last: from  PE 2 to PE 3 at time 117
+Move operation 197 First: from  PE 1 to  PE 3 at time 102
+Move operation 197 last: from  PE 1 to PE 3 at time 105
+Operation 198 starts execution on  PE 3 at time 122
+Operation 203 starts execution on  PE 0 at time 103
+Move operation 65 First: from  PE 0 to  PE 2 at time 108
+Move operation 65 last: from  PE 0 to PE 2 at time 111
+Operation 223 starts execution on  PE 2 at time 116
+Move operation 23 First: from  PE 0 to  PE 1 at time 108
+Move operation 23 last: from  PE 0 to PE 1 at time 111
+Operation 228 starts execution on  PE 1 at time 117
+Move operation 65 First: from  PE 2 to  PE 3 at time 117
+Move operation 65 last: from  PE 2 to PE 3 at time 120
+Move operation 162 First: from  PE 2 to  PE 3 at time 119
+Move operation 162 last: from  PE 2 to PE 3 at time 122
+Operation 163 starts execution on  PE 3 at time 127
+Load 29 through 0 at time 100
+Operation 233 starts execution on  PE 0 at time 105
+Load 35 through 0 at time 102
+Operation 263 starts execution on  PE 0 at time 107
+Move operation 29 First: from  PE 0 to  PE 2 at time 110
+Move operation 29 last: from  PE 0 to PE 2 at time 113
+Operation 243 starts execution on  PE 2 at time 118
+Operation 208 starts execution on  PE 1 at time 118
+Move operation 29 First: from  PE 0 to  PE 1 at time 112
+Move operation 29 last: from  PE 0 to PE 1 at time 115
+Operation 238 starts execution on  PE 1 at time 121
+Operation 253 starts execution on  PE 2 at time 119
+Move operation 29 First: from  PE 2 to  PE 3 at time 121
+Move operation 29 last: from  PE 2 to PE 3 at time 124
+Operation 258 starts execution on  PE 3 at time 129
+Operation 268 starts execution on  PE 0 at time 109
+Move operation 35 First: from  PE 0 to  PE 2 at time 114
+Move operation 35 last: from  PE 0 to PE 2 at time 117
+Operation 273 starts execution on  PE 2 at time 122
+Move operation 35 First: from  PE 0 to  PE 1 at time 114
+Move operation 35 last: from  PE 0 to PE 1 at time 117
+Operation 288 starts execution on  PE 1 at time 123
+Move operation 35 First: from  PE 2 to  PE 3 at time 124
+Move operation 35 last: from  PE 2 to PE 3 at time 127
+Move operation 282 First: from  PE 2 to  PE 3 at time 125
+Move operation 282 last: from  PE 2 to PE 3 at time 128
+Operation 283 starts execution on  PE 3 at time 133
+Load 6 through 0 at time 104
+Load 67 through 0 at time 106
+Operation 73 starts execution on  PE 0 at time 111
+Move operation 73 First: from  PE 0 to  PE 1 at time 116
+Move operation 73 last: from  PE 0 to PE 1 at time 119
+Store 73 in IO Buffer  at time 126
+Load 64 through 0 at time 108
+Move operation 64 First: from  PE 0 to  PE 2 at time 116
+Move operation 64 last: from  PE 0 to PE 2 at time 119
+Move operation 127 First: from  PE 3 to  PE 2 at time 99
+Move operation 127 last: from  PE 3 to PE 2 at time 102
+Operation 128 starts execution on  PE 2 at time 124
+Move operation 64 First: from  PE 0 to  PE 1 at time 117
+Move operation 64 last: from  PE 0 to PE 1 at time 120
+Move operation 157 First: from  PE 3 to  PE 1 at time 118
+Move operation 157 last: from  PE 3 to PE 1 at time 121
+Operation 158 starts execution on  PE 1 at time 127
+Move operation 64 First: from  PE 2 to  PE 3 at time 127
+Move operation 64 last: from  PE 2 to PE 3 at time 130
+Operation 188 starts execution on  PE 3 at time 135
+Load 71 through 0 at time 109
+Operation 77 starts execution on  PE 0 at time 114
+Move operation 77 First: from  PE 0 to  PE 1 at time 120
+Move operation 77 last: from  PE 0 to PE 1 at time 123
+Store 77 in IO Buffer  at time 131
+Load 12 through 0 at time 111
+Operation 79 starts execution on  PE 0 at time 117
+Move operation 79 First: from  PE 0 to  PE 1 at time 122
+Move operation 79 last: from  PE 0 to PE 1 at time 125
+Store 79 in IO Buffer  at time 132
+Move operation 217 First: from  PE 3 to  PE 2 at time 113
+Move operation 217 last: from  PE 3 to PE 2 at time 116
+Operation 218 starts execution on  PE 2 at time 125
+Move operation 247 First: from  PE 3 to  PE 2 at time 119
+Move operation 247 last: from  PE 3 to PE 2 at time 122
+Operation 248 starts execution on  PE 2 at time 127
+Move operation 277 First: from  PE 3 to  PE 1 at time 121
+Move operation 277 last: from  PE 3 to PE 1 at time 124
+Operation 278 starts execution on  PE 1 at time 131
+Move operation 6 First: from  PE 0 to  PE 1 at time 124
+Move operation 6 last: from  PE 0 to PE 1 at time 127
+Load 68 through 0 at time 112
+Move operation 68 First: from  PE 0 to  PE 1 at time 125
+Move operation 68 last: from  PE 0 to PE 1 at time 128
+Operation 74 starts execution on  PE 1 at time 134
+Store 74 in IO Buffer  at time 142
+Move operation 6 First: from  PE 1 to  PE 3 at time 132
+Move operation 6 last: from  PE 1 to PE 3 at time 135
+Load 69 through 0 at time 114
+Move operation 69 First: from  PE 0 to  PE 2 at time 122
+Store operation 69 from PE 3 in  PE 2 at time 125
+ Move operation 69 forward: from  PE 2 to  PE 3 at time 131
+Move operation 69 last: from  PE 2 to PE 3 at time 133
+Move operation 123 First: from  PE 2 to  PE 3 at time 133
+Move operation 123 last: from  PE 2 to PE 3 at time 136
+Operation 75 starts execution on  PE 3 at time 141
+Move operation 75 First: from  PE 3 to  PE 1 at time 146
+Move operation 75 last: from  PE 3 to PE 1 at time 149
+Store 75 in IO Buffer  at time 156
+Load 18 through 0 at time 115
+Operation 85 starts execution on  PE 0 at time 122
+Move operation 85 First: from  PE 0 to  PE 1 at time 127
+Move operation 85 last: from  PE 0 to PE 1 at time 130
+Store 85 in IO Buffer  at time 137
+Move operation 18 First: from  PE 0 to  PE 2 at time 123
+Move operation 18 last: from  PE 0 to PE 2 at time 126
+Operation 87 starts execution on  PE 2 at time 131
+Move operation 87 First: from  PE 2 to  PE 3 at time 136
+Move operation 87 bypass: from PE 3 to  PE 1 at time 141
+Move operation 87 last: from  PE 3 to PE 1 at time 142
+Store 87 in IO Buffer  at time 149
+Move operation 12 First: from  PE 0 to  PE 1 at time 128
+Move operation 12 last: from  PE 0 to PE 1 at time 131
+Operation 80 starts execution on  PE 1 at time 137
+Store 80 in IO Buffer  at time 145
+Move operation 12 First: from  PE 1 to  PE 3 at time 136
+Move operation 12 last: from  PE 1 to PE 3 at time 139
+Operation 81 starts execution on  PE 3 at time 144
+Move operation 81 First: from  PE 3 to  PE 1 at time 149
+Move operation 81 last: from  PE 3 to PE 1 at time 152
+Store 81 in IO Buffer  at time 159
+Operation 89 starts execution on  PE 0 at time 125
+Move operation 89 First: from  PE 0 to  PE 1 at time 130
+Move operation 89 last: from  PE 0 to PE 1 at time 133
+Store 89 in IO Buffer  at time 140
+Load 24 through 0 at time 116
+Move operation 24 First: from  PE 0 to  PE 2 at time 125
+Move operation 24 last: from  PE 0 to PE 2 at time 128
+Operation 93 starts execution on  PE 2 at time 133
+Move operation 93 First: from  PE 2 to  PE 3 at time 138
+Move operation 93 bypass: from PE 3 to  PE 1 at time 143
+Move operation 93 last: from  PE 3 to PE 1 at time 144
+Store 93 in IO Buffer  at time 151
+Load 72 through 0 at time 117
+Move operation 72 First: from  PE 0 to  PE 1 at time 131
+Move operation 72 last: from  PE 0 to PE 1 at time 134
+Operation 78 starts execution on  PE 1 at time 140
+Store 78 in IO Buffer  at time 148
+Move operation 72 First: from  PE 1 to  PE 3 at time 139
+Move operation 72 last: from  PE 1 to PE 3 at time 142
+Operation 84 starts execution on  PE 3 at time 147
+Move operation 84 First: from  PE 3 to  PE 1 at time 152
+Move operation 84 last: from  PE 3 to PE 1 at time 155
+Store 84 in IO Buffer  at time 162
+Operation 91 starts execution on  PE 0 at time 128
+Move operation 91 First: from  PE 0 to  PE 1 at time 133
+Move operation 91 last: from  PE 0 to PE 1 at time 136
+Store 91 in IO Buffer  at time 143
+Load 30 through 0 at time 119
+Operation 97 starts execution on  PE 0 at time 130
+Move operation 97 First: from  PE 0 to  PE 1 at time 135
+Move operation 97 last: from  PE 0 to PE 1 at time 138
+Store 97 in IO Buffer  at time 146
+Move operation 71 First: from  PE 0 to  PE 2 at time 127
+Move operation 71 last: from  PE 0 to PE 2 at time 130
+Operation 95 starts execution on  PE 2 at time 135
+Move operation 95 First: from  PE 2 to  PE 3 at time 141
+Move operation 95 bypass: from PE 3 to  PE 1 at time 146
+Move operation 95 last: from  PE 3 to PE 1 at time 147
+Store 95 in IO Buffer  at time 154
+Move operation 30 First: from  PE 0 to  PE 2 at time 130
+Move operation 30 last: from  PE 0 to PE 2 at time 133
+Operation 99 starts execution on  PE 2 at time 138
+Move operation 99 First: from  PE 2 to  PE 3 at time 143
+Store operation 99 from PE 2 in  PE 3 at time 146
+ Move operation 99 forward: from  PE 3 to  PE 1 at time 151
+Move operation 99 last: from  PE 3 to PE 1 at time 153
+Store 99 in IO Buffer  at time 160
+Move operation 18 First: from  PE 0 to  PE 1 at time 136
+Move operation 18 last: from  PE 0 to PE 1 at time 139
+Operation 86 starts execution on  PE 1 at time 145
+Store 86 in IO Buffer  at time 153
+Move operation 198 First: from  PE 3 to  PE 1 at time 134
+Move operation 198 last: from  PE 3 to PE 1 at time 137
+Operation 90 starts execution on  PE 1 at time 148
+Store 90 in IO Buffer  at time 157
+Move operation 71 First: from  PE 2 to  PE 3 at time 144
+Move operation 71 last: from  PE 2 to PE 3 at time 147
+Operation 83 starts execution on  PE 3 at time 152
+Move operation 83 First: from  PE 3 to  PE 1 at time 157
+Move operation 83 last: from  PE 3 to PE 1 at time 160
+Store 83 in IO Buffer  at time 167
+Load 36 through 0 at time 120
+Operation 103 starts execution on  PE 0 at time 133
+Move operation 103 First: from  PE 0 to  PE 1 at time 138
+Move operation 103 last: from  PE 0 to PE 1 at time 141
+Store 103 in IO Buffer  at time 150
+Operation 101 starts execution on  PE 2 at time 141
+Move operation 101 First: from  PE 2 to  PE 3 at time 146
+Store operation 101 from PE 2 in  PE 3 at time 149
+ Move operation 101 forward: from  PE 3 to  PE 1 at time 154
+Move operation 101 last: from  PE 3 to PE 1 at time 156
+Store 101 in IO Buffer  at time 163
+Move operation 24 First: from  PE 0 to  PE 1 at time 142
+Move operation 24 last: from  PE 0 to PE 1 at time 145
+Operation 96 starts execution on  PE 1 at time 151
+Store 96 in IO Buffer  at time 161
+Move operation 30 First: from  PE 2 to  PE 3 at time 147
+Move operation 30 last: from  PE 2 to PE 3 at time 150
+Operation 102 starts execution on  PE 3 at time 155
+Move operation 102 First: from  PE 3 to  PE 1 at time 160
+Move operation 102 last: from  PE 3 to PE 1 at time 163
+Store 102 in IO Buffer  at time 170
+Operation 104 starts execution on  PE 0 at time 135
+Move operation 104 First: from  PE 0 to  PE 1 at time 145
+Move operation 104 last: from  PE 0 to PE 1 at time 148
+Store 104 in IO Buffer  at time 164
+Move operation 36 First: from  PE 0 to  PE 2 at time 133
+Move operation 36 last: from  PE 0 to PE 2 at time 136
+Operation 105 starts execution on  PE 2 at time 144
+Move operation 105 First: from  PE 2 to  PE 3 at time 149
+Store operation 105 from PE 2 in  PE 3 at time 152
+ Move operation 105 forward: from  PE 3 to  PE 1 at time 156
+Move operation 105 last: from  PE 3 to PE 1 at time 158
+Store 105 in IO Buffer  at time 165
+Operation 92 starts execution on  PE 1 at time 159
+Store 92 in IO Buffer  at time 168
+Move operation 36 First: from  PE 2 to  PE 3 at time 150
+Move operation 36 last: from  PE 2 to PE 3 at time 153
+Operation 107 starts execution on  PE 3 at time 158
+Move operation 107 First: from  PE 3 to  PE 1 at time 163
+Move operation 107 last: from  PE 3 to PE 1 at time 166
+Store 107 in IO Buffer  at time 173
+Move operation 238 First: from  PE 1 to  PE 3 at time 129
+Move operation 238 bypass: from PE 3 to  PE 2 at time 134
+Move operation 238 bypass: from PE 2 to  PE 0 at time 137
+Move operation 238 last: from  PE 2 to PE 0 at time 138
+Operation 98 starts execution on  PE 0 at time 144
+Move operation 98 First: from  PE 0 to  PE 1 at time 154
+Move operation 98 last: from  PE 0 to PE 1 at time 157
+Store 98 in IO Buffer  at time 169
+Load 70 through 0 at time 122
+Move operation 70 First: from  PE 0 to  PE 2 at time 135
+Move operation 70 last: from  PE 0 to PE 2 at time 138
+Operation 94 starts execution on  PE 2 at time 147
+Move operation 94 First: from  PE 2 to  PE 3 at time 152
+Store operation 94 from PE 2 in  PE 3 at time 155
+ Move operation 94 forward: from  PE 3 to  PE 1 at time 159
+Move operation 94 last: from  PE 3 to PE 1 at time 161
+Store 94 in IO Buffer  at time 171
+Move operation 288 First: from  PE 1 to  PE 3 at time 142
+Move operation 288 last: from  PE 1 to PE 3 at time 145
+Operation 108 starts execution on  PE 3 at time 160
+Move operation 108 First: from  PE 3 to  PE 1 at time 165
+Move operation 108 last: from  PE 3 to PE 1 at time 168
+Store 108 in IO Buffer  at time 175
+Move operation 128 First: from  PE 2 to  PE 3 at time 154
+Store operation 128 from PE 2 in  PE 3 at time 157
+ Move operation 128 forward: from  PE 3 to  PE 1 at time 162
+Move operation 128 bypass: from PE 1 to  PE 0 at time 166
+Move operation 128 last: from  PE 1 to PE 0 at time 167
+Operation 76 starts execution on  PE 0 at time 173
+Move operation 76 First: from  PE 0 to  PE 1 at time 178
+Move operation 76 last: from  PE 0 to PE 1 at time 181
+Store 76 in IO Buffer  at time 188
+Operation 100 starts execution on  PE 2 at time 149
+Move operation 100 First: from  PE 2 to  PE 3 at time 155
+Store operation 100 from PE 2 in  PE 3 at time 158
+ Move operation 100 forward: from  PE 3 to  PE 1 at time 167
+Move operation 100 last: from  PE 3 to PE 1 at time 169
+Store 100 in IO Buffer  at time 176
+Move operation 188 First: from  PE 3 to  PE 2 at time 141
+Move operation 188 last: from  PE 3 to PE 2 at time 144
+Operation 88 starts execution on  PE 2 at time 152
+Move operation 88 First: from  PE 2 to  PE 3 at time 157
+Store operation 88 from PE 2 in  PE 3 at time 160
+ Move operation 88 forward: from  PE 3 to  PE 1 at time 168
+Move operation 88 last: from  PE 3 to PE 1 at time 170
+Store 88 in IO Buffer  at time 177
+Move operation 70 First: from  PE 0 to  PE 1 at time 147
+Move operation 70 last: from  PE 0 to PE 1 at time 150
+Operation 82 starts execution on  PE 1 at time 167
+Store 82 in IO Buffer  at time 178
+Move operation 70 First: from  PE 2 to  PE 3 at time 158
+Move operation 70 last: from  PE 2 to PE 3 at time 161
+Move operation 278 First: from  PE 1 to  PE 3 at time 156
+Move operation 278 last: from  PE 1 to PE 3 at time 159
+Operation 106 starts execution on  PE 3 at time 166
+Move operation 106 First: from  PE 3 to  PE 1 at time 171
+Move operation 106 last: from  PE 3 to PE 1 at time 174
+Store 106 in IO Buffer  at time 181

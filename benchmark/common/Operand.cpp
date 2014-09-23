@@ -1,28 +1,32 @@
 #include "Operand.h"
 
-int Operand::gl_id=0;
+int Operand::Inst_Cnt = 0;
 
 Operand::Operand(){
-    op_id=self_increase();
-    op_value=0;
-    op_bram_id=-1;
-    op_bram_addr=-1;
-    op_type=IM;
+    OP_ID = Self_Increase();
+    OP_Val = 0;
+    IO_Buffer_ID = -1;
+    IO_Buffer_Addr = -1;
+    OP_Type = IM;
 }
 
-int Operand::self_increase(){
-    int tmp=gl_id;
-    gl_id++;
-    return tmp;
+int Operand::Self_Increase(){
+    int Tmp = Inst_Cnt;
+    Inst_Cnt++;
+    return Tmp;
 }
 
 void Operand::Display(){
-    std::cout << op_id <<": " << op_value << std::endl;
+
+    std::cout << OP_ID <<": " << OP_Val << std::endl;
+
 }
 
-void Operand::Set_Operand(int _op_value, int _op_bram_id, int _op_bram_addr, OPTYPE _op_type){
-    op_value=_op_value;
-    op_bram_id=_op_bram_id;
-    op_bram_addr=_op_bram_addr;
-    op_type=_op_type;
+void Operand::Set_Operand(int _OP_Val, int _IO_Buffer_ID, int _IO_Buffer_Addr, Operand_Type _OP_Type){
+
+    OP_Val = _OP_Val;
+    IO_Buffer_ID = _IO_Buffer_ID;
+    IO_Buffer_Addr = _IO_Buffer_Addr;
+    OP_Type = _OP_Type;
+
 }

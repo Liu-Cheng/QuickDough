@@ -58,79 +58,78 @@ CGRA_Size=$Row"x"$Col
 cd $DFG_Dir"/"$App_Name
 if [ "$App_Name" = "mm" ]; then
     if [ "$Type" = "supersmall" ]; then
-        cp -rf src/mm-fully-unroll/*.* $App_Name"-dfg-gen/"
+        cd mm-fully-unroll/
         shift
-        sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define N/c\\#define N $9" config.h
     elif [ "$Type" = "small" ]; then
-        cp -rf src/mm-3rd-level-unroll/*.* $App_Name"-dfg-gen/"
+        cd mm-3rd-level-unroll/
         shift
-        sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define B/c\\#define B $9" config.h
         shift
-        sed -i "/^\#define M/c\\#define M $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define M/c\\#define M $9" config.h
         shift
-        sed -i "/^\#define P/c\\#define P $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define P/c\\#define P $9" config.h
         shift
-        sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define N/c\\#define N $9" config.h
     elif [ "$Type" = "medium" ]; then
-        cp -rf src/mm-2nd-level-unroll/*.* $App_Name"-dfg-gen/"
+        cd mm-2nd-level-unroll/
         shift
-        sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define B/c\\#define B $9" config.h
         shift
-        sed -i "/^\#define M/c\\#define M $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define M/c\\#define M $9" config.h
         shift
-        sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define N/c\\#define N $9" config.h
     else
-        cp -rf src/mm-1st-level-unroll/*.* $App_Name"-dfg-gen/"
+        cd mm-1st-level-unroll/
         shift
-        sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define B/c\\#define B $9" config.h
         shift
-        sed -i "/^\#define M/c\\#define M $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define M/c\\#define M $9" config.h
     fi
 elif [ "$App_Name" = "fir" ]; then
     if [ "$Type" = "small" ]; then
-        cp -rf src/fir-fully-unroll/*.* $App_Name"-dfg-gen/"
+        cd fir-fully-unroll/
         shift
-        sed -i "/^\#define L/c\\#define L $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define L/c\\#define L $9" config.h
         shift
-        sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define N/c\\#define N $9" config.h
     else
-        cp -rf src/fir-2nd-level-unroll/*.* $App_Name"-dfg-gen/"
+        cd fir-2nd-level-unroll/
         shift
-        sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define B/c\\#define B $9" config.h
         shift
-        sed -i "/^\#define L/c\\#define L $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define L/c\\#define L $9" config.h
         shift
-        sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define N/c\\#define N $9" config.h
     fi
 elif [ "$App_Name" = "sobel" ]; then
     if [ "$Type" = "small" ] && [ "$Row" = "5" ] && [ "$Col" = "5" ]; then
-        cp -rf src/sobel-fully-unroll/*.* $App_Name"-dfg-gen/"
+        cd sobel-fully-unroll/
         shift
-        sed -i "/^\#define R/c\\#define R $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define R/c\\#define R $9" config.h
         shift
-        sed -i "/^\#define C/c\\#define C $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define C/c\\#define C $9" config.h
     else
-        cp -rf src/sobel-4th-level-unroll/*.* $App_Name"-dfg-gen/"
+        cd sobel-4th-level-unroll/
         shift
-        sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define B/c\\#define B $9" config.h
         shift
-        sed -i "/^\#define R/c\\#define R $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define R/c\\#define R $9" config.h
         shift
-        sed -i "/^\#define C/c\\#define C $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define C/c\\#define C $9" config.h
     fi
 elif [ "$App_Name" = "kmean" ]; then
-    cp -rf src/kmean-3rd-level-unroll/*.* $App_Name"-dfg-gen/"
+    cd kmean-3rd-level-unroll/
     shift
-        sed -i "/^\#define B/c\\#define B $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define B/c\\#define B $9" config.h
     shift
-        sed -i "/^\#define M/c\\#define M $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define M/c\\#define M $9" config.h
     shift
-        sed -i "/^\#define N/c\\#define N $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define N/c\\#define N $9" config.h
     shift
-        sed -i "/^\#define D/c\\#define D $9" $App_Name"-dfg-gen/"config.h
+        sed -i "/^\#define D/c\\#define D $9" config.h
 fi
 
-cd $App_Name"-dfg-gen"
 echo "Compile the DFG generator" >> $Bitfile_Dir"/log.txt"
 make clean >> $Bitfile_Dir"/log.txt"
 make >> $Bitfile_Dir"/log.txt"
@@ -142,36 +141,30 @@ make >> $Bitfile_Dir"/log.txt"
 
 echo "DFG generation starts..."
 Start_Time=$(date +%s%N)
-cd $DFG_Dir"/"$App_Name"/"$App_Name"-dfg-gen"
 ./dfg-gen >> $Bitfile_Dir"/log.txt"
-mkdir -p $DFG_Dir/dump/$App_Name"-"$Type
-cp -rf dump/*.* "../../dump/"$App_Name"-"$Type"/"
 End_Time=$(date +%s%N)
 echo "DFG Genertion is done, time elapsed: $((($End_Time - $Start_Time)/1000000))""ms"
 echo
+
 ###########################################################
 # DFG Scheduling
 ###########################################################
 
 echo "DFG Scheduling starts..."
 Start_Time=$(date +%s%N)
-cd $DFG_Dir"/dump"
-cp -rf $App_Name"-"$Type"/"*.* $Scheduler_Dir"/config/"
+cp -rf dump/*.* $Scheduler_Dir"/config/"
 
 #Update configuration file
 cd $Scheduler_Dir"/config/"
-let Num=$Row*$Col
-Link_Name="torus_"$Num"_"$CGRA_Size".txt"
-rm "link.txt"
-cp "$Link_Name" "link.txt"
-sed -i "/^CGRA_scale/c\CGRA_scale $Num" configure.txt
-sed -i "/^row/c\row $Row" configure.txt
-sed -i "/^col/c\col $Col" configure.txt
-sed -i "/^DFG_name/c\DFG_name $App_Name" configure.txt
+let Num=$Row*$Col 
+sed -i "/^CGRA_Scale/c\CGRA_Scale $Num" configure.txt
+sed -i "/^Row/c\Row $Row" configure.txt
+sed -i "/^Col/c\Col $Col" configure.txt
+sed -i "/^DFG_Name/c\DFG_Name $App_Name" configure.txt
 cd ..
-#./cgracompiler >> $Bitfile_Dir"/log.txt"
 ./cgracompiler
 End_Time=$(date +%s%N)
+
 echo "DFG scheduling completes, time elapsed $((($End_Time - $Start_Time)/1000000))""ms"
 echo
 
@@ -182,9 +175,9 @@ echo
 echo "Bitstream generation starts..."
 Start_Time=$(date +%s%N)
 #Copy scheduling result as well as realted data to bitstream integration
-cp -rf ./result/inst.mem $Bitfile_Dir"/scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-inst.mem"
-cp -rf ./config/io.h $Bitfile_Dir"/dump"
-cp -rf ./result/addr-buffer.mem $Bitfile_Dir"/scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-addr.mem"
+cp -rf ./result/Inst.mem $Bitfile_Dir"/scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-inst.mem"
+cp -rf ./config/IO.h $Bitfile_Dir"/dump"
+cp -rf ./result/Addr-Buffer.mem $Bitfile_Dir"/scgra"$CGRA_Size"-1k-"$App_Name"-"$Type"-addr.mem"
 
 #Bitfile integration
 cd $Bitfile_Dir

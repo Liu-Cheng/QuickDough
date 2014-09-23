@@ -1,4 +1,4 @@
-cscope 15 $HOME/gitrepo/project/scheduler               0000232423
+cscope 15 $HOME/gitrepo/project/scheduler               0000220389
 	@Coarse_Grain_Recon_Arch.cpp
 
 18 
@@ -1591,7 +1591,7 @@ D°_PE_ID
 	gGL_V¨
 ::
 Pröt_Levñ
-==10){
+>10){
 
 400 
 °d
@@ -4079,7 +4079,7 @@ IM_Ouçut_OP_Num
 °d
 ::
 cout
- << "DFG P¨amëî†" << std::
+ << "DFG P¨amëîs: " << std::
 ídl
 ;
 
@@ -5501,13 +5501,17 @@ _GLOBAL_DEF_H_
 	~<s°ªam
 >
 
-31 
+29 
+	~<cm©h
+>
+
+32 
 	#NaN
  -1
 
 	)
 
-32 
+33 
 	#ERROR
 (
 FMT
@@ -5527,7 +5531,7 @@ __LINE__
 
 	)
 
-33 
+34 
 	#PRINT
 (
 FMT
@@ -5545,11 +5549,11 @@ __LINE__
 
 	)
 
-46 
+47 
 	eT›ﬁogy
 {
 
-47 
+48 
 	mT‹us
 , 
 	mMesh
@@ -5557,11 +5561,11 @@ __LINE__
 	mCu°omized
 
 
-50 
+51 
 	eO≥ønd_Sèã
  {
 
-51 
+52 
 	mIn_IO_Buf„r
 , 
 	mU«vaû
@@ -5569,11 +5573,11 @@ __LINE__
 	mAvaû
 
 
-54 
+55 
 	ePE_Sñ_Fûãr_Ty≥
 {
 
-55 
+56 
 	mDi°_Fûãr
 , 
 	mMem_Utû_Fûãr
@@ -5589,21 +5593,21 @@ __LINE__
 	mInout_P‹t_Utû_Fûãr
 
 
-58 
+59 
 	ePE_Sñe˘i⁄
 {
 
-59 
+60 
 	mLó°_Re˚¡_U£d
 , 
 	mLó°_Ródy_OP_Aâached
 
 
-62 
+63 
 	eExe_Mode
 {
 
-63 
+64 
 	mSim
 , 
 	mIm∂
@@ -5611,11 +5615,11 @@ __LINE__
 	mP¨tül_Im∂
 
 
-66 
+67 
 	eRoutög_Alg
 {
 
-67 
+68 
 	mDy«mic_Dijk°ø
 , 
 	mDy«mic_XY
@@ -5625,33 +5629,33 @@ __LINE__
 	mSètic_Dijk°ø
 
 
-70 
+71 
 	eIO_Pœ˚mít
 {
 
-71 
+72 
 	mSequítül_Pœ˚mít
 , 
 	mI¡îÀavög_Pœ˚mít
 
 
-74 
+75 
 	eSchedulög_Så©egy
 {
 
-75 
+76 
 	mPE_Pªf
 , 
 	mOP_Pªf
 , 
-	mPE_OP_Comböed
+	mPE_OP_Togëhî
 
 
-78 
+79 
 	eOpcode
 {
 
-79 
+80 
 	mNC
 , 
 	mMULADD
@@ -5679,11 +5683,11 @@ __LINE__
 	mANDAND
 
 
-82 
+83 
 	eO≥ønd_Ty≥
 {
 
-83 
+84 
 	mINCONST
 , 
 	mINVAR
@@ -5697,7 +5701,7 @@ __LINE__
 	mIMOUT
 
 
-86 
+87 
 	g°d
 ::
 o°ªam
@@ -5713,7 +5717,7 @@ Opcode
 	gIn°_Opcode
 );
 
-87 
+88 
 	g°d
 ::
 o°ªam
@@ -5729,23 +5733,23 @@ O≥ønd_Ty≥
 	gOP_Ty≥
 );
 
-92 
+93 
 	sGL_V¨
 {
 
-93 
+94 
 	mPröt_Levñ
 ;
 
-94 
+95 
 	mVîify_On
 ;
 
-95 
+96 
 	mR™dom_Sìd
 ;
 
-98 
+99 
 Opcode_To_I¡
 (c⁄° 
 Opcode
@@ -5753,7 +5757,7 @@ Opcode
 In°_Opcode
 );
 
-99 
+100 
 Opcode
  
 Så_To_Opcode
@@ -5765,7 +5769,7 @@ Så_To_Opcode
 Opcode_Så
 );
 
-100 
+101 
 OP_Compuã
 (c⁄° 
 Opcode
@@ -6629,19 +6633,35 @@ Ouçut_P‹t_Utû
 	}
 }
 
-137 
+137 
+	gPE
+::
+	$Gë_Tø˚_Size
+(){
+
+139  
+Comp⁄ít_Tø˚
+.
+	`size
+();
+
+141 
+	}
+}
+
+143 
 	gPE
 ::~
 	$PE
 (){
 
-139 
+145 
 Comp⁄ít_Tø˚
 .
 	`˛ór
 ();
 
-141 
+147 
 	}
 }
 
@@ -6767,15 +6787,19 @@ Gë_OP_Avaû_Time
 OP_ID
 );
 
-41 ~
+41 
+Gë_Tø˚_Size
+();
+
+42 ~
 PE
 ();
 
-43 
+44 
 	m¥iv©e
 :
 
-44 
+45 
 Lﬂd_P¨amëîs
 ();
 
@@ -6953,12 +6977,12 @@ OP_Pªf
 
 63 if(
 C⁄fig_Iãm_VÆ
- == "PE_OP_Combined"){
+ == "PE_OP_Together"){
 
 64 
 Li°_Schedulög_Så©egy
  = 
-PE_OP_Comböed
+PE_OP_Togëhî
 ;
 
 67 
@@ -7047,23 +7071,79 @@ _CGRA
 Schedulög_Com∂ëe_Time
  = 0;
 
-93 
+94 
+Max_Sim_C¡
+ = (Ë(
+DFG
+->
+OP_Num
+ / (
+CGRA
+->
+CGRA_SˇÀ
+*0.01));
+
+95 
+i
+=0; i<
+CGRA
+->
+CGRA_SˇÀ
+; i++){
+
+96 
+CGRA
+->
+PE_Aºay
+[
+i
+]->
+Comp⁄ít_Tø˚
+.
+	`ªsize
+(
+Max_Sim_C¡
+);
+
+97 
+j
+=0; j<
+Max_Sim_C¡
+; j++){
+
+98 
+CGRA
+->
+PE_Aºay
+[
+i
+]->
+Comp⁄ít_Tø˚
+[
+j
+] = 
+√w
+ 
+	`Comp⁄ít_Sèã
+();
+
+102 
 	}
 }
 
-95 
+104 
 	gScheduÀr
 ::
 	$IO_Pœcög
 (){
 
-97 if(
+106 if(
 IO_Pœ˚mít_Scheme
  =
 Sequítül_Pœ˚mít
 ){
 
-98 
+107 
 °d
 ::
 ve˘‹
@@ -7075,7 +7155,7 @@ O≥ønd
 Vô
 ;
 
-99 
+108 
 Vô
  = 
 DFG
@@ -7087,7 +7167,7 @@ OP_Aºay
 	`íd
 (); Vit++){
 
-100 if((((*
+109 if((((*
 Vô
 )->
 OP_Ty≥
@@ -7099,7 +7179,7 @@ INVAR
 OP_ID
  !=0)){
 
-101 (*
+110 (*
 Vô
 )->
 OP_Aâribuã
@@ -7107,7 +7187,7 @@ OP_Aâribuã
 OP_Co°
  = 0;
 
-102 (*
+111 (*
 Vô
 )->
 OP_Aâribuã
@@ -7117,7 +7197,7 @@ Exe_PE_ID
 INT_MAX
 ;
 
-103 (*
+112 (*
 Vô
 )->
 OP_Aâribuã
@@ -7127,7 +7207,7 @@ OP_Avaû_Time
 INT_MAX
 ;
 
-104 (*
+113 (*
 Vô
 )->
 OP_Aâribuã
@@ -7137,13 +7217,13 @@ OP_Sèã
 In_IO_Buf„r
 ;
 
-108 if(
+117 if(
 IO_Pœ˚mít_Scheme
  =
 I¡îÀavög_Pœ˚mít
 ){
 
-110 
+119 
 °d
 ::
 cout
@@ -7151,21 +7231,21 @@ cout
 ídl
 ;
 
-113 
+122 
 	`ERROR
 ("Unknown IOÖlacement!\n");
 
-116 
+125 
 	}
 }
 
-118 
+127 
 	gScheduÀr
 ::
 	$Schedulög
 (){
 
-120 
+129 
 °d
 ::
 °rög
@@ -7173,7 +7253,7 @@ cout
 Tø˚_fName
  = "./result/trace.txt";
 
-121 
+130 
 fTø˚
 .
 	`›í
@@ -7183,17 +7263,17 @@ Tø˚_fName
 	`c_°r
 ());
 
-122 if(!
+131 if(!
 fTø˚
 .
 	`is_›í
 ()){
 
-123 
+132 
 	`ERROR
 ("FailedÅo openÅheÅrace.txt!");
 
-126 
+135 
 time_t
  
 Sèπ_Time
@@ -7201,55 +7281,55 @@ Sèπ_Time
 End_Time
 ;
 
-127 
+136 
 Sèπ_Time
  = 
 	`˛ock
 ();
 
-129 
+138 
 °d
 ::
 cout
- << "O≥øti⁄ schedulög sèπs!" << std::
+ << std::
 ídl
-;
+ << "Operation scheduling starts!" << std::endl;
 
-130 if(
+139 if(
 Li°_Schedulög_Så©egy
  =
 PE_Pªf
 ){
 
-131 
+140 
 	`Li°_Schedulög_PE_Pªf
 ();
 
-133 if(
+142 if(
 Li°_Schedulög_Så©egy
  =
 OP_Pªf
 ){
 
-134 
+143 
 	`Li°_Schedulög_OP_Pªf
 ();
 
-136 if(
+145 if(
 Li°_Schedulög_Så©egy
  =
-PE_OP_Comböed
+PE_OP_Togëhî
 ){
 
-137 
+146 
 	`Li°_Schedulög_PE_OP_Togëhî
 ();
 
-140 
+149 
 	`ERROR
 ("Unknown scheduling strategy!\n");
 
-143 
+152 
 °d
 ::
 cout
@@ -7257,7 +7337,7 @@ cout
 ídl
 ;
 
-144 
+153 
 °d
 ::
 cout
@@ -7267,7 +7347,7 @@ Schedulög_Com∂ëe_Time
 ídl
 ;
 
-145 
+154 
 °d
 ::
 cout
@@ -7275,49 +7355,53 @@ cout
 ídl
 ;
 
-147 
+156 
 	`Schedulög_Sèt
 ();
 
-148 
-	`D©a_Mem_A«lysis
-();
-
-149 
-	`In°_Mem_Dump_C€
-();
-
-150 
-	`In°_Mem_Dump_Mem
-();
-
-151 
+157 
 	`Compuèti⁄_Resu…_Dump
 ();
 
-152 
+159 
+	`IO_Buf„r_Dump_C€
+();
+
+160 
+	`D©a_Mem_A«lysis
+();
+
+161 
+	`In°_Mem_Dump_C€
+();
+
+162 
+	`In°_Mem_Dump_Mem
+();
+
+163 
 	`Addr_Buf„r_Dump_C€
 ();
 
-153 
+164 
 	`Addr_Buf„r_Dump_Mem
 ();
 
-154 
+166 
 °d
 ::
 cout
- << "SchedulögÑesu… i†dumµed! " << std::
+ << std::
 ídl
-;
+ << "SchedulingÑesult is dumpped! " << std::endl;
 
-156 
+168 
 End_Time
  = 
 	`˛ock
 ();
 
-157 
+169 
 °d
 ::
 cout
@@ -7331,17 +7415,17 @@ CLOCKS_PER_SEC
 ídl
 ;
 
-159 
+171 
 fTø˚
 .
 	`˛o£
 ();
 
-161 
+173 
 	}
 }
 
-163 
+175 
 	gScheduÀr
 ::
 	$Li°_Schedulög_PE_OP_Togëhî
@@ -7349,7 +7433,7 @@ fTø˚
 	}
 }
 
-244 
+256 
 ScheduÀr
 ::
 Lﬂd_BÆ™˚_Fûãr
@@ -7361,7 +7445,7 @@ li°
 C™did©es
 ){
 
-246 
+258 
 Mö_Exe_OP_Num
  = 
 DFG
@@ -7369,11 +7453,11 @@ DFG
 OP_Num
 ;
 
-247 
+259 
 	gMax_Exe_OP_Num
  = 0;
 
-248 
+260 
 	g°d
 ::
 li°
@@ -7383,7 +7467,7 @@ li°
 Lô
 ;
 
-249 
+261 
 	gLô
  = 
 C™did©es
@@ -7393,7 +7477,7 @@ begö
 íd
 (); Lit++){
 
-250 if(
+262 if(
 	gMö_Exe_OP_Num
  > 
 	gCGRA
@@ -7405,7 +7489,7 @@ Lô
 	gExe_OP_Num
 ){
 
-251 
+263 
 	gMö_Exe_OP_Num
  = 
 CGRA
@@ -7417,7 +7501,7 @@ Lô
 Exe_OP_Num
 ;
 
-253 if(
+265 if(
 	gMax_Exe_OP_Num
  < 
 	gCGRA
@@ -7429,7 +7513,7 @@ Lô
 	gExe_OP_Num
 ){
 
-254 
+266 
 	gMax_Exe_OP_Num
  = 
 CGRA
@@ -7441,7 +7525,7 @@ Lô
 Exe_OP_Num
 ;
 
-258 
+270 
 	gThªshﬁd_Num
  = 
 Mö_Exe_OP_Num
@@ -7451,7 +7535,7 @@ Max_Exe_OP_Num
 Lﬂd_BÆ™˚_Fa˘‹
 ;
 
-259 
+271 
 	gLô
  = 
 C™did©es
@@ -7461,7 +7545,7 @@ begö
 íd
 (); ){
 
-260 if(
+272 if(
 	gCGRA
 ->
 	gPE_Aºay
@@ -7475,7 +7559,7 @@ Lô
 	gThªshﬁd_Num
 ){
 
-261 
+273 
 	gLô
  = 
 C™did©es
@@ -7485,11 +7569,11 @@ C™did©es
 Lô
 );
 
-264 
+276 
 	gLô
 ++;
 
-272 
+284 
 	gScheduÀr
 ::
 Re˚¡_Busy_Fûãr
@@ -7501,17 +7585,17 @@ li°
 C™did©es
 ){
 
-274 
+286 
 Mö_A˘ive_Time
  = 
 INT_MAX
 ;
 
-275 
+287 
 	gMax_A˘ive_Time
  = 0;
 
-277 
+289 
 	g°d
 ::
 li°
@@ -7521,7 +7605,7 @@ li°
 Lô
 ;
 
-278 
+290 
 	gLô
  = 
 C™did©es
@@ -7531,7 +7615,7 @@ begö
 íd
 (); Lit++){
 
-279 
+291 
 	gCuºít_A˘ive_Time
  = 
 CGRA
@@ -7543,31 +7627,31 @@ Lô
 Max_A˘ive_Time
 ;
 
-280 if(
+292 if(
 	gCuºít_A˘ive_Time
  < 
 	gMö_A˘ive_Time
 ){
 
-281 
+293 
 	gMö_A˘ive_Time
  = 
 Cuºít_A˘ive_Time
 ;
 
-283 if(
+295 if(
 	gCuºít_A˘ive_Time
  > 
 	gMax_A˘ive_Time
 ){
 
-284 
+296 
 	gMax_A˘ive_Time
  = 
 Cuºít_A˘ive_Time
 ;
 
-288 
+300 
 	gThªshﬁd_Time
  = 
 Mö_A˘ive_Time
@@ -7577,7 +7661,7 @@ Lﬂd_BÆ™˚_Fa˘‹
 Max_A˘ive_Time
  - Min_Active_Time);
 
-289 
+301 
 	gLô
  = 
 C™did©es
@@ -7587,7 +7671,7 @@ begö
 íd
 ();){
 
-290 
+302 
 	gCuºít_A˘ive_Time
  = 
 CGRA
@@ -7599,17 +7683,17 @@ Lô
 Max_A˘ive_Time
 ;
 
-291 if(
+303 if(
 	gCuºít_A˘ive_Time
  <
 Thªshﬁd_Time
 ){
 
-292 
+304 
 Lô
 ++;
 
-295 
+307 
 	gLô
  = 
 C™did©es
@@ -7619,7 +7703,7 @@ C™did©es
 Lô
 );
 
-301 
+313 
 	gScheduÀr
 ::
 Ló°_Ródy_OP_Aâached_Sñ
@@ -7633,11 +7717,11 @@ C™did©es
 OP_Ródy_Së
 ){
 
-303 
+315 
 Sñ_PE_ID
 ;
 
-304 
+316 
 	g°d
 ::
 ve˘‹
@@ -7645,7 +7729,7 @@ ve˘‹
 Aâached_Ródy_OP_Num
 ;
 
-305 
+317 
 	gAâached_Ródy_OP_Num
 .
 ªsize
@@ -7655,7 +7739,7 @@ CGRA
 CGRA_SˇÀ
 );
 
-306 
+318 
 	gi
 =0; i<
 	gCGRA
@@ -7663,13 +7747,13 @@ CGRA_SˇÀ
 	gCGRA_SˇÀ
 ; i++){
 
-307 
+319 
 	gAâached_Ródy_OP_Num
 [
 i
 ] = 0;
 
-310 
+322 
 	g°d
 ::
 li°
@@ -7679,7 +7763,7 @@ c⁄°_ôî©‹
 Lcô
 ;
 
-311 
+323 
 	g°d
 ::
 ve˘‹
@@ -7691,7 +7775,7 @@ O≥ønd
 Vô
 ;
 
-312 
+324 
 	g°d
 ::
 li°
@@ -7703,7 +7787,7 @@ Aâach_Hi°‹y
 Lô
 ;
 
-313 
+325 
 	gLcô
  = 
 OP_Ródy_Së
@@ -7713,7 +7797,7 @@ begö
 íd
 (); Lcit++){
 
-314 
+326 
 	gVô
  = 
 DFG
@@ -7729,7 +7813,7 @@ begö
 íd
 (); Vit++){
 
-315 
+327 
 	gLô
  = 
 DFG
@@ -7747,7 +7831,7 @@ begö
 íd
 (); Lit++){
 
-316 
+328 
 	gAâached_Ródy_OP_Num
 [
 Lô
@@ -7755,13 +7839,13 @@ Lô
 Aâached_PE_ID
 ]++;
 
-321 
+333 
 	gMö_Aâached_OP_Num
  = 
 INT_MAX
 ;
 
-322 
+334 
 	gLcô
  = 
 C™did©es
@@ -7771,7 +7855,7 @@ begö
 íd
 (); Lcit++){
 
-323 if(
+335 if(
 	gAâached_Ródy_OP_Num
 [*
 Lcô
@@ -7779,13 +7863,13 @@ Lcô
 	gMö_Aâached_OP_Num
 ){
 
-324 
+336 
 	gSñ_PE_ID
  = *
 Lcô
 ;
 
-325 
+337 
 	gMö_Aâached_OP_Num
  = 
 Aâached_Ródy_OP_Num
@@ -7793,17 +7877,17 @@ Aâached_Ródy_OP_Num
 Lcô
 ];
 
-329  
+341  
 	gSñ_PE_ID
 ;
 
-333 
+345 
 	gScheduÀr
 ::
 	$Li°_Schedulög_PE_Pªf
 (){
 
-335 
+347 
 boﬁ
  
 Schedulög_Com∂ëed
@@ -7811,7 +7895,7 @@ Schedulög_Com∂ëed
 Ál£
 ;
 
-336 
+348 
 °d
 ::
 li°
@@ -7819,25 +7903,25 @@ li°
 OP_Ródy_Së
 ;
 
-337 
+349 
 	`OP_Ródy_Së_Inô
 (
 OP_Ródy_Së
 );
 
-339 !
+351 !
 Schedulög_Com∂ëed
 ){
 
-341 
+353 
 Sñ_PE_ID
 ;
 
-342 
+354 
 Sñ_OP_ID
 ;
 
-345 
+357 
 °d
 ::
 li°
@@ -7845,7 +7929,7 @@ li°
 C™did©es
 ;
 
-346 
+358 
 i
 =0; i<
 CGRA
@@ -7853,7 +7937,7 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-347 
+359 
 C™did©es
 .
 	`push_back
@@ -7861,25 +7945,25 @@ C™did©es
 i
 );
 
-349 
+361 
 	`Lﬂd_BÆ™˚_Fûãr
 (
 C™did©es
 );
 
-350 
+362 
 	`Re˚¡_Busy_Fûãr
 (
 C™did©es
 );
 
-351 if(
+363 if(
 PE_Sñ_Så©egy
  =
 Ló°_Re˚¡_U£d
 ){
 
-352 
+364 
 Sñ_PE_ID
  = 
 	`Ló°_Re˚¡_U£d_Sñ
@@ -7887,13 +7971,13 @@ Sñ_PE_ID
 C™did©es
 );
 
-354 if(
+366 if(
 PE_Sñ_Så©egy
  =
 Ló°_Ródy_OP_Aâached
 ){
 
-355 
+367 
 Sñ_PE_ID
  = 
 	`Ló°_Ródy_OP_Aâached_Sñ
@@ -7903,11 +7987,11 @@ C™did©es
 OP_Ródy_Së
 );
 
-358 
+370 
 	`ERROR
 ("Unknown PE selection strategy!\n");
 
-360 
+372 
 CGRA
 ->
 PE_Aºay
@@ -7917,7 +8001,7 @@ Sñ_PE_ID
 Exe_OP_Num
 ++;
 
-363 
+375 
 Sñ_OP_ID
  = 
 	`Ló°_Co°_OP_Sñ
@@ -7927,7 +8011,7 @@ Sñ_PE_ID
 OP_Ródy_Së
 );
 
-366 
+378 
 °d
 ::
 ve˘‹
@@ -7939,7 +8023,7 @@ O≥ønd
 Vô
 ;
 
-367 
+379 
 °d
 ::
 ve˘‹
@@ -7947,7 +8031,7 @@ ve˘‹
 Src_OP_IDs
 ;
 
-368 
+380 
 °d
 ::
 ve˘‹
@@ -7955,19 +8039,19 @@ ve˘‹
 Src_OP_AºivÆ_Time
 ;
 
-369 
+381 
 Src_OP_IDs
 .
 	`ªsize
 (3);
 
-370 
+382 
 Src_OP_AºivÆ_Time
 .
 	`ªsize
 (3);
 
-371 
+383 
 O≥ønd
 * 
 OP_På
@@ -7979,11 +8063,11 @@ OP_Aºay
 Sñ_OP_ID
 ];
 
-373 
+385 
 i
 =0;
 
-374 
+386 
 Vô
  = 
 OP_På
@@ -7995,7 +8079,7 @@ OP_P¨íts
 	`íd
 (); Vit++){
 
-375 
+387 
 Src_OP_IDs
 [
 i
@@ -8005,7 +8089,7 @@ Vô
 OP_ID
 ;
 
-376 
+388 
 Src_OP_AºivÆ_Time
 [
 i
@@ -8019,11 +8103,11 @@ Sñ_PE_ID
 Im∂
 );
 
-377 
+389 
 i
 ++;
 
-379 
+391 
 	`OP_Exe
 (
 Sñ_OP_ID
@@ -8037,7 +8121,7 @@ Src_OP_AºivÆ_Time
 Im∂
 );
 
-382 if(
+394 if(
 DFG
 ->
 OP_Aºay
@@ -8051,13 +8135,13 @@ OUTVAR
 IMOUT
 ){
 
-383 
+395 
 	`St‹e_In_IO_Buf„r
 (
 Sñ_OP_ID
 );
 
-387 
+399 
 	`OP_Ródy_Së_Upd©e
 (
 OP_Ródy_Së
@@ -8065,17 +8149,17 @@ OP_Ródy_Së
 Sñ_OP_ID
 );
 
-389 
+401 
 Schedulög_Com∂ëed
  = 
 	`Is_Schedulög_Com∂ëed
 ();
 
-393 
+405 
 	}
 }
 
-395 
+407 
 	gScheduÀr
 ::
 OP_Ródy_Së_Upd©e
@@ -8089,7 +8173,7 @@ OP_Ródy_Së
 Sñ_OP_ID
 ){
 
-397 
+409 
 	g°d
 ::
 li°
@@ -8099,7 +8183,7 @@ li°
 lô
 ;
 
-398 
+410 
 	glô
 =
 OP_Ródy_Së
@@ -8109,13 +8193,13 @@ begö
 íd
 ();Üit++){
 
-399 if((*
+411 if((*
 	glô
 Ë=
 Sñ_OP_ID
 ){
 
-400 
+412 
 OP_Ródy_Së
 .
 îa£
@@ -8123,7 +8207,7 @@ OP_Ródy_Së
 lô
 );
 
-405 
+417 
 	g°d
 ::
 ve˘‹
@@ -8135,7 +8219,7 @@ O≥ønd
 Vô
 ;
 
-406 
+418 
 	gVô
 =
 DFG
@@ -8151,7 +8235,7 @@ begö
 íd
 (); Vit++){
 
-408 
+420 
 boﬁ
  
 	gAŒ_Src_Ródy
@@ -8159,7 +8243,7 @@ boﬁ
 åue
 ;
 
-409 
+421 
 boﬁ
  
 	gIs_In_Ródy_Li°
@@ -8167,7 +8251,7 @@ boﬁ
 Ál£
 ;
 
-410 
+422 
 	g°d
 ::
 ve˘‹
@@ -8179,7 +8263,7 @@ O≥ønd
 ô
 ;
 
-411 
+423 
 	gô
 =(*
 Vô
@@ -8191,7 +8275,7 @@ begö
 íd
 (); it++){
 
-412 
+424 
 	g°d
 ::
 li°
@@ -8201,7 +8285,7 @@ li°
 OP_It
 ;
 
-413 
+425 
 	gOP_It
 =
 OP_Ródy_Së
@@ -8211,7 +8295,7 @@ begö
 íd
 (); OP_It++){
 
-414 if(*
+426 if(*
 	gOP_It
 ==(*
 Vô
@@ -8219,13 +8303,13 @@ Vô
 OP_ID
 ){
 
-415 
+427 
 Is_In_Ródy_Li°
  = 
 åue
 ;
 
-419 if((*
+431 if((*
 	gô
 )->
 	gOP_Aâribuã
@@ -8235,13 +8319,13 @@ Is_In_Ródy_Li°
 U«vaû
 ){
 
-420 
+432 
 AŒ_Src_Ródy
  = 
 Ál£
 ;
 
-425 
+437 
 boﬁ
  
 	gNŸ_Execuãd
@@ -8261,7 +8345,7 @@ OP_Sèã
 U«vaû
 ;
 
-426 if(
+438 if(
 	gAŒ_Src_Ródy
  && 
 	gNŸ_Execuãd
@@ -8269,7 +8353,7 @@ U«vaû
 	gIs_In_Ródy_Li°
 ){
 
-427 
+439 
 	gOP_Ródy_Së
 .
 push_back
@@ -8279,7 +8363,7 @@ Vô
 OP_ID
 );
 
-433 
+445 
 	gScheduÀr
 ::
 PE_OP_Sñ
@@ -8297,7 +8381,7 @@ C™did©es
 OP_Ródy_Së
 ){}
 
-489 
+501 
 ScheduÀr
 ::
 Ló°_Co°_OP_Sñ
@@ -8311,13 +8395,13 @@ li°
 OP_Ródy_Së
 ){
 
-491 
+503 
 Sñ_OP_ID
  = 
 NaN
 ;
 
-492 
+504 
 	g°d
 ::
 li°
@@ -8327,13 +8411,13 @@ c⁄°_ôî©‹
 Lcô
 ;
 
-493 
+505 
 	gMö_Exe_Co°
  = 
 INT_MAX
 ;
 
-494 
+506 
 	gPE_A˘ive_Time
  = 
 CGRA
@@ -8345,7 +8429,7 @@ Sñ_PE_ID
 Max_A˘ive_Time
 ;
 
-496 
+508 
 	gLcô
  = 
 OP_Ródy_Së
@@ -8355,11 +8439,11 @@ begö
 íd
 (); Lcit++){
 
-497 
+509 
 	gOP_Exe_Co°
  = 0;
 
-498 
+510 
 	g°d
 ::
 ve˘‹
@@ -8371,7 +8455,7 @@ O≥ønd
 Vô
 ;
 
-499 
+511 
 	gVô
  = 
 DFG
@@ -8387,7 +8471,7 @@ begö
 íd
 (); Vit++){
 
-500 
+512 
 	gSrc_OP_ID
  = (*
 Vô
@@ -8395,15 +8479,15 @@ Vô
 OP_ID
 ;
 
-501 
+513 
 	gAâached_PE_ID
 ;
 
-502 
+514 
 	gSrc_Ródy_Time
 ;
 
-503 if(
+515 if(
 	gDFG
 ->
 	gOP_Aºay
@@ -8417,7 +8501,7 @@ Src_OP_ID
 Avaû
 ){
 
-504 
+516 
 Aâached_PE_ID
  = 
 Nóª°_Aâached_PE
@@ -8429,7 +8513,7 @@ Sñ_PE_ID
 Src_Ródy_Time
 );
 
-507 
+519 
 	gAâached_PE_ID
  = 
 CGRA
@@ -8437,7 +8521,7 @@ CGRA
 Lﬂd_PE_ID
 ;
 
-508 
+520 
 	gSrc_Ródy_Time
  = 
 CGRA
@@ -8449,7 +8533,7 @@ Aâached_PE_ID
 Max_A˘ive_Time
 ;
 
-511 
+523 
 	gPhysiˇl_Di°
  = 
 CGRA
@@ -8461,79 +8545,93 @@ Aâached_PE_ID
 Sñ_PE_ID
 );
 
-512 if(
+525 
+	gOP_Exe_Co°
+ +
+DFG
+->
+OP_Aºay
+[
+Src_OP_ID
+]->
+OP_Aâribuã
+.
+OP_Co°
+;
+
+526 if(
 	gPhysiˇl_Di°
  > 1){
 
-513 
+527 
 	gOP_Exe_Co°
- = 
+ +
 Physiˇl_Di°
  * 2;
 
-515 if(
+529 if(
 	gPE_A˘ive_Time
  > (
 	gSrc_Ródy_Time
  + 100)){
 
-516 
+530 
 	gOP_Exe_Co°
  +
 Physiˇl_Di°
 ;
 
-518 if(
+532 if(
 	gPE_A˘ive_Time
  > (
 	gSrc_Ródy_Time
  + 50)){
 
-519 
+533 
 	gOP_Exe_Co°
  +
 Physiˇl_Di°
  * 1.5;
 
-522 
+536 
 	gOP_Exe_Co°
  +
 Physiˇl_Di°
  * 2;
 
-527 if(
+541 if(
 	gOP_Exe_Co°
  < 
 	gMö_Exe_Co°
 ){
 
-528 
+542 
 	gMö_Exe_Co°
  = 
 OP_Exe_Co°
 ;
 
-529 
+543 
 	gSñ_OP_ID
  = *
 Lcô
 ;
 
-533 if(
+547 if(
 	gSñ_OP_ID
  =
 NaN
 ){
 
-534 
+548 
 ERROR
 ("Unexpected operation selection!");
 
-537  
+551  
 	gSñ_OP_ID
 ;
 
-541 
+555 
 	gScheduÀr
 ::
 OP_Ródy_Së_Inô
@@ -8545,7 +8643,7 @@ li°
 OP_Ródy_Së
 ){
 
-543 
+557 
 i
 =0; 
 	gi
@@ -8555,7 +8653,7 @@ i
 	gOP_Num
 ; i++){
 
-544 
+558 
 O≥ønd
 * 
 	gOP_På
@@ -8567,7 +8665,7 @@ OP_Aºay
 i
 ];
 
-545 if((
+559 if((
 	gOP_På
 ->
 	gOP_Ty≥
@@ -8581,7 +8679,7 @@ OP_Ty≥
 INVAR
 )){
 
-546 
+560 
 °d
 ::
 ve˘‹
@@ -8593,7 +8691,7 @@ O≥ønd
 OP_It
 ;
 
-547 
+561 
 boﬁ
  
 	gIs_Src_OP_Ródy
@@ -8601,7 +8699,7 @@ boﬁ
 åue
 ;
 
-548 
+562 
 	gOP_It
  = 
 OP_På
@@ -8613,7 +8711,7 @@ begö
 íd
 (); OP_It++){
 
-549 if((*
+563 if((*
 	gOP_It
 )->
 	gOP_Aâribuã
@@ -8623,17 +8721,17 @@ begö
 U«vaû
 ){
 
-550 
+564 
 Is_Src_OP_Ródy
  = 
 Ál£
 ;
 
-555 if(
+569 if(
 	gIs_Src_OP_Ródy
 ){
 
-556 
+570 
 	gOP_Ródy_Së
 .
 push_back
@@ -8641,7 +8739,7 @@ push_back
 i
 );
 
-563 
+577 
 	gScheduÀr
 ::
 	$Fëch_OP
@@ -8655,23 +8753,23 @@ Exe_Mode
 Mode
 ){
 
-565 
+579 
 Ex≥˘ed_Com∂ëe_Time
  = 0;
 
-566 
+580 
 Src_Avaû_Time
 ;
 
-567 
+581 
 Src_Aâached_PE_ID
 ;
 
-570 if(
+584 if(
 Src_OP_ID
  == 0){
 
-571 
+585 
 DFG
 ->
 OP_Aºay
@@ -8683,17 +8781,17 @@ OP_Sèã
 Avaû
 ;
 
-572 
+586 
 Src_Aâached_PE_ID
  = 
 T¨gë_PE_ID
 ;
 
-573 
+587 
 Src_Avaû_Time
  = 0;
 
-575 if(
+589 if(
 Src_OP_ID
 !=0 && 
 DFG
@@ -8707,7 +8805,7 @@ OP_Sèã
 Avaû
 ){
 
-576 
+590 
 Src_Aâached_PE_ID
  = 
 	`Nóª°_Aâached_PE
@@ -8719,7 +8817,7 @@ T¨gë_PE_ID
 Src_Avaû_Time
 );
 
-578 if(
+592 if(
 DFG
 ->
 OP_Aºay
@@ -8733,7 +8831,7 @@ OP_Sèã
 In_IO_Buf„r
 ){
 
-579 
+593 
 Src_Avaû_Time
  = 
 	`Lﬂd_From_IO_Buf„r
@@ -8743,7 +8841,7 @@ Src_OP_ID
 Mode
 );
 
-580 
+594 
 Src_Aâached_PE_ID
  = 
 CGRA
@@ -8751,17 +8849,17 @@ CGRA
 Lﬂd_PE_ID
 ;
 
-583 
+597 
 	`ERROR
 ("Unexpected operation fectching!");
 
-587 if(
+601 if(
 Src_Aâached_PE_ID
  !
 T¨gë_PE_ID
 ){
 
-588 
+602 
 °d
 ::
 li°
@@ -8769,7 +8867,7 @@ li°
 Routög_P©h
 ;
 
-589 
+603 
 CGRA
 ->
 	`Dy«mic_Routög
@@ -8785,7 +8883,7 @@ T¨gë_PE_ID
 Routög_P©h
 );
 
-590 
+604 
 Ex≥˘ed_Com∂ëe_Time
  = 
 	`OP_Migøti⁄
@@ -8799,15 +8897,21 @@ Routög_P©h
 Mode
 );
 
-593  
+607 
+Ex≥˘ed_Com∂ëe_Time
+ = 
+Src_Avaû_Time
+;
+
+610  
 Ex≥˘ed_Com∂ëe_Time
 ;
 
-595 
+612 
 	}
 }
 
-597 
+614 
 	gScheduÀr
 ::
 	$Li°_Schedulög_OP_Pªf
@@ -8815,7 +8919,7 @@ Ex≥˘ed_Com∂ëe_Time
 	}
 }
 
-669 
+686 
 ScheduÀr
 ::
 Ló°_Re˚¡_U£d_Sñ
@@ -8827,17 +8931,17 @@ li°
 C™did©es
 ){
 
-671 
+688 
 Mö_A˘ive_Time
  = 
 INT_MAX
 ;
 
-672 
+689 
 	gSñ_PE_ID
  = 0;
 
-673 
+690 
 	g°d
 ::
 li°
@@ -8847,7 +8951,7 @@ c⁄°_ôî©‹
 Lcô
 ;
 
-675 
+692 
 	gLcô
  = 
 C™did©es
@@ -8857,7 +8961,7 @@ begö
 íd
 (); Lcit++){
 
-676 
+693 
 	gCuºít_PE_A˘ive_Time
  = 
 CGRA
@@ -8869,29 +8973,29 @@ Lcô
 Max_A˘ive_Time
 ;
 
-677 if(
+694 if(
 	gCuºít_PE_A˘ive_Time
  < 
 	gMö_A˘ive_Time
 ){
 
-678 
+695 
 	gSñ_PE_ID
  = *
 Lcô
 ;
 
-679 
+696 
 	gMö_A˘ive_Time
  = 
 Cuºít_PE_A˘ive_Time
 ;
 
-683  
+700  
 	gSñ_PE_ID
 ;
 
-771 
+788 
 	gScheduÀr
 ::
 	$Lﬂd_From_IO_Buf„r
@@ -8903,19 +9007,19 @@ Exe_Mode
 Mode
 ){
 
-774 
+791 
 Ex≥˘ed_Com∂ëe_Time
  = 
 NaN
 ;
 
-775 
+792 
 i
 =0; i<
 INT_MAX
 ; i++){
 
-776 
+793 
 boﬁ
  
 Lﬂd_P©h_Avaû
@@ -8937,7 +9041,7 @@ Lﬂd_P©h_Re£rved
 Ál£
 ;
 
-777 
+794 
 boﬁ
  
 WR_P‹t1_Avaû
@@ -8959,7 +9063,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-778 
+795 
 boﬁ
  
 RD_P‹t3_Avaû
@@ -8981,7 +9085,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-779 
+796 
 boﬁ
  
 RD_P‹t4_Avaû
@@ -9003,7 +9107,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-780 
+797 
 boﬁ
  
 RD_P‹t5_Avaû
@@ -9025,7 +9129,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-781 if(
+798 if(
 Lﬂd_P©h_Avaû
  && 
 WR_P‹t1_Avaû
@@ -9037,13 +9141,13 @@ RD_P‹t4_Avaû
 RD_P‹t5_Avaû
 ){
 
-782 if(
+799 if(
 Mode
  =
 Im∂
 ){
 
-785 
+802 
 CGRA
 ->
 PE_Aºay
@@ -9061,7 +9165,7 @@ Lﬂd_P©h_Re£rved
 åue
 ;
 
-786 
+803 
 CGRA
 ->
 PE_Aºay
@@ -9079,7 +9183,7 @@ D©a_Mem_WR_Re£rved
 åue
 ;
 
-789 
+806 
 CGRA
 ->
 PE_Aºay
@@ -9097,7 +9201,7 @@ Lﬂd_OP
 OP_ID
 ;
 
-790 
+807 
 CGRA
 ->
 PE_Aºay
@@ -9113,7 +9217,7 @@ PE_Comp⁄ít_A˘ivôy
 Lﬂd_Mux
  = 0;
 
-791 
+808 
 CGRA
 ->
 PE_Aºay
@@ -9129,7 +9233,7 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_WR_E«
 [1] = 1;
 
-792 
+809 
 CGRA
 ->
 PE_Aºay
@@ -9147,7 +9251,7 @@ D©a_Mem_P‹t_OP
 OP_ID
 ;
 
-793 
+810 
 CGRA
 ->
 PE_Aºay
@@ -9165,7 +9269,7 @@ D©a_Mem_P‹t_OP
 OP_ID
 ;
 
-794 
+811 
 CGRA
 ->
 PE_Aºay
@@ -9183,7 +9287,7 @@ D©a_Mem_P‹t_OP
 OP_ID
 ;
 
-797 
+814 
 DFG
 ->
 OP_Aºay
@@ -9197,7 +9301,7 @@ OP_Sèã
 Avaû
 ;
 
-798 
+815 
 DFG
 ->
 OP_Aºay
@@ -9213,7 +9317,7 @@ CGRA
 Lﬂd_PE_ID
 ;
 
-799 
+816 
 DFG
 ->
 OP_Aºay
@@ -9227,13 +9331,13 @@ OP_Avaû_Time
 i
 +2;
 
-801 
+818 
 Aâach_Hi°‹y
  
 Aâach_Poöt
 ;
 
-802 
+819 
 Aâach_Poöt
 .
 Aâached_Time
@@ -9241,7 +9345,7 @@ Aâached_Time
 i
 +2;
 
-803 
+820 
 Aâach_Poöt
 .
 Aâached_PE_ID
@@ -9251,7 +9355,7 @@ CGRA
 Lﬂd_PE_ID
 ;
 
-804 
+821 
 DFG
 ->
 OP_Aºay
@@ -9265,13 +9369,13 @@ OP_Aâach_Hi°‹y
 Aâach_Poöt
 );
 
-807 if(
+824 if(
 GL_V¨
 ::
 Pröt_Levñ
 >10){
 
-808 
+825 
 fTø˚
  << "Lﬂd " << 
 OP_ID
@@ -9287,31 +9391,31 @@ i
 ídl
 ;
 
-812 
+829 
 Ex≥˘ed_Com∂ëe_Time
  = 
 i
 +2;
 
-817 if(
+834 if(
 Ex≥˘ed_Com∂ëe_Time
  =
 NaN
 ){
 
-818 
+835 
 	`ERROR
 ("UnexpectedÜoad occassion!");
 
-821  
+838  
 Ex≥˘ed_Com∂ëe_Time
 ;
 
-823 
+840 
 	}
 }
 
-825 
+842 
 	gScheduÀr
 ::
 	$St‹e_In_IO_Buf„r
@@ -9319,7 +9423,7 @@ Ex≥˘ed_Com∂ëe_Time
 OP_ID
 ){
 
-829 
+846 
 OP_Avaû_Time
  = 
 DFG
@@ -9331,7 +9435,7 @@ OP_ID
 OP_Aâribuã
 .OP_Avail_Time + 1;
 
-830 
+847 
 Src_PE_ID
  = 
 DFG
@@ -9345,7 +9449,7 @@ OP_Aâribuã
 Exe_PE_ID
 ;
 
-831 
+848 
 D°_PE_ID
  = 
 CGRA
@@ -9353,13 +9457,13 @@ CGRA
 St‹e_PE_ID
 ;
 
-833 if(
+850 if(
 Src_PE_ID
  =
 D°_PE_ID
 ){
 
-834 
+851 
 	`WR_To_IO_Buf„r
 (
 OP_ID
@@ -9367,7 +9471,7 @@ OP_ID
 OP_Avaû_Time
 );
 
-838 
+855 
 °d
 ::
 li°
@@ -9375,7 +9479,7 @@ li°
 Routög_P©h
 ;
 
-839 
+856 
 OP_Ródy_Time
  = 
 DFG
@@ -9389,7 +9493,7 @@ OP_Aâribuã
 OP_Avaû_Time
 ;
 
-840 
+857 
 CGRA
 ->
 	`Dy«mic_Routög
@@ -9405,7 +9509,7 @@ D°_PE_ID
 Routög_P©h
 );
 
-843 
+860 
 OP_AºivÆ_Time
  = 
 	`OP_Migøti⁄
@@ -9419,7 +9523,7 @@ Routög_P©h
 Im∂
 ) + 1;
 
-846 
+863 
 	`WR_To_IO_Buf„r
 (
 OP_ID
@@ -9427,11 +9531,11 @@ OP_ID
 OP_AºivÆ_Time
 );
 
-849 
+866 
 	}
 }
 
-851 
+868 
 	gScheduÀr
 ::
 	$WR_To_IO_Buf„r
@@ -9441,17 +9545,17 @@ OP_ID
 Sèπ_Time
 ){
 
-853 
+870 
 St‹e_Ródy_Time
  = 
 Sèπ_Time
 ;
 
-855 
+872 
 åue
 ){
 
-856 
+873 
 boﬁ
  
 D©a_Mem_WR_Avaû0
@@ -9473,7 +9577,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-857 
+874 
 boﬁ
  
 D©a_Mem_RD_Avaû0
@@ -9495,7 +9599,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-858 
+875 
 boﬁ
  
 D©a_Mem_RD_Avaû1
@@ -9517,7 +9621,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-859 
+876 
 boﬁ
  
 D©a_Mem_RD_Avaû2
@@ -9539,7 +9643,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-860 
+877 
 boﬁ
  
 St‹e_P©h_Avaû
@@ -9561,161 +9665,13 @@ St‹e_P©h_Re£rved
 Ál£
 ;
 
-862 if(
+879 if(
 D©a_Mem_WR_Avaû0
  && 
 D©a_Mem_RD_Avaû0
  && 
 St‹e_P©h_Avaû
 ){
-
-863 
-CGRA
-->
-PE_Aºay
-[CGRA->
-St‹e_PE_ID
-]->
-Comp⁄ít_Tø˚
-[
-St‹e_Ródy_Time
-]->
-PE_Comp⁄ít_Re£rved
-->
-D©a_Mem_RD_Re£rved
-[0] = 
-åue
-;
-
-864 
-CGRA
-->
-PE_Aºay
-[CGRA->
-St‹e_PE_ID
-]->
-Comp⁄ít_Tø˚
-[
-St‹e_Ródy_Time
-]->
-PE_Comp⁄ít_A˘ivôy
-->
-D©a_Mem_WR_E«
-[0] = 0;
-
-865 
-CGRA
-->
-PE_Aºay
-[CGRA->
-St‹e_PE_ID
-]->
-Comp⁄ít_Tø˚
-[
-St‹e_Ródy_Time
-]->
-PE_Comp⁄ít_A˘ivôy
-->
-D©a_Mem_P‹t_OP
-[0] = 
-OP_ID
-;
-
-866 
-CGRA
-->
-PE_Aºay
-[CGRA->
-St‹e_PE_ID
-]->
-Comp⁄ít_Tø˚
-[
-St‹e_Ródy_Time
-+2]->
-PE_Comp⁄ít_A˘ivôy
-->
-St‹e_OP
- = 
-OP_ID
-;
-
-867 
-CGRA
-->
-PE_Aºay
-[CGRA->
-St‹e_PE_ID
-]->
-Comp⁄ít_Tø˚
-[
-St‹e_Ródy_Time
-+2]->
-PE_Comp⁄ít_A˘ivôy
-->
-St‹e_Mux
- = 0;
-
-868 
-CGRA
-->
-PE_Aºay
-[CGRA->
-St‹e_PE_ID
-]->
-Comp⁄ít_Tø˚
-[
-St‹e_Ródy_Time
-+2]->
-PE_Comp⁄ít_Re£rved
-->
-St‹e_P©h_Re£rved
- = 
-åue
-;
-
-871 if(
-GL_V¨
-::
-Pröt_Levñ
->10){
-
-872 
-fTø˚
- << "St‹ê" << 
-OP_ID
- << " i¿outsidêmem‹y " << "áàtimê" << 
-St‹e_Ródy_Time
-+3 << 
-°d
-::
-ídl
-;
-
-878 if(
-D©a_Mem_WR_Avaû0
- && 
-D©a_Mem_RD_Avaû1
- && 
-St‹e_P©h_Avaû
-){
-
-879 
-CGRA
-->
-PE_Aºay
-[CGRA->
-St‹e_PE_ID
-]->
-Comp⁄ít_Tø˚
-[
-St‹e_Ródy_Time
-]->
-PE_Comp⁄ít_Re£rved
-->
-D©a_Mem_RD_Re£rved
-[1] = 
-åue
-;
 
 880 
 CGRA
@@ -9728,10 +9684,12 @@ Comp⁄ít_Tø˚
 [
 St‹e_Ródy_Time
 ]->
-PE_Comp⁄ít_A˘ivôy
+PE_Comp⁄ít_Re£rved
 ->
-D©a_Mem_WR_E«
-[0] = 0;
+D©a_Mem_RD_Re£rved
+[0] = 
+åue
+;
 
 881 
 CGRA
@@ -9746,10 +9704,8 @@ St‹e_Ródy_Time
 ]->
 PE_Comp⁄ít_A˘ivôy
 ->
-D©a_Mem_P‹t_OP
-[1] = 
-OP_ID
-;
+D©a_Mem_WR_E«
+[0] = 0;
 
 882 
 CGRA
@@ -9761,11 +9717,11 @@ St‹e_PE_ID
 Comp⁄ít_Tø˚
 [
 St‹e_Ródy_Time
-+2]->
+]->
 PE_Comp⁄ít_A˘ivôy
 ->
-St‹e_OP
- = 
+D©a_Mem_P‹t_OP
+[0] = 
 OP_ID
 ;
 
@@ -9782,10 +9738,28 @@ St‹e_Ródy_Time
 +2]->
 PE_Comp⁄ít_A˘ivôy
 ->
-St‹e_Mux
- = 1;
+St‹e_OP
+ = 
+OP_ID
+;
 
 884 
+CGRA
+->
+PE_Aºay
+[CGRA->
+St‹e_PE_ID
+]->
+Comp⁄ít_Tø˚
+[
+St‹e_Ródy_Time
++2]->
+PE_Comp⁄ít_A˘ivôy
+->
+St‹e_Mux
+ = 0;
+
+885 
 CGRA
 ->
 PE_Aºay
@@ -9803,17 +9777,17 @@ St‹e_P©h_Re£rved
 åue
 ;
 
-887 if(
+888 if(
 GL_V¨
 ::
 Pröt_Levñ
 >10){
 
-888 
+889 
 fTø˚
  << "St‹ê" << 
 OP_ID
- << " i¿outsidêmem‹y " << "áàtimê" << 
+ << " i¿IO Buf„∏" << "áàtimê" << 
 St‹e_Ródy_Time
 +3 << 
 °d
@@ -9821,15 +9795,15 @@ St‹e_Ródy_Time
 ídl
 ;
 
-893 if(
+895 if(
 D©a_Mem_WR_Avaû0
  && 
-D©a_Mem_RD_Avaû2
+D©a_Mem_RD_Avaû1
  && 
 St‹e_P©h_Avaû
 ){
 
-894 
+896 
 CGRA
 ->
 PE_Aºay
@@ -9843,11 +9817,11 @@ St‹e_Ródy_Time
 PE_Comp⁄ít_Re£rved
 ->
 D©a_Mem_RD_Re£rved
-[2] = 
+[1] = 
 åue
 ;
 
-895 
+897 
 CGRA
 ->
 PE_Aºay
@@ -9863,7 +9837,7 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_WR_E«
 [0] = 0;
 
-896 
+898 
 CGRA
 ->
 PE_Aºay
@@ -9877,11 +9851,11 @@ St‹e_Ródy_Time
 PE_Comp⁄ít_A˘ivôy
 ->
 D©a_Mem_P‹t_OP
-[2] = 
+[1] = 
 OP_ID
 ;
 
-897 
+899 
 CGRA
 ->
 PE_Aºay
@@ -9899,7 +9873,7 @@ St‹e_OP
 OP_ID
 ;
 
-898 
+900 
 CGRA
 ->
 PE_Aºay
@@ -9913,9 +9887,9 @@ St‹e_Ródy_Time
 PE_Comp⁄ít_A˘ivôy
 ->
 St‹e_Mux
- = 2;
+ = 1;
 
-899 
+901 
 CGRA
 ->
 PE_Aºay
@@ -9933,17 +9907,17 @@ St‹e_P©h_Re£rved
 åue
 ;
 
-902 if(
+904 if(
 GL_V¨
 ::
 Pröt_Levñ
 >10){
 
-903 
+905 
 fTø˚
  << "St‹ê" << 
 OP_ID
- << " i¿outsidêmem‹y " << "áàtimê" << 
+ << " i¿IO Buf„∏" << "áàtimê" << 
 St‹e_Ródy_Time
 +3 << 
 °d
@@ -9951,27 +9925,157 @@ St‹e_Ródy_Time
 ídl
 ;
 
-909 
+910 if(
+D©a_Mem_WR_Avaû0
+ && 
+D©a_Mem_RD_Avaû2
+ && 
+St‹e_P©h_Avaû
+){
+
+911 
+CGRA
+->
+PE_Aºay
+[CGRA->
+St‹e_PE_ID
+]->
+Comp⁄ít_Tø˚
+[
+St‹e_Ródy_Time
+]->
+PE_Comp⁄ít_Re£rved
+->
+D©a_Mem_RD_Re£rved
+[2] = 
+åue
+;
+
+912 
+CGRA
+->
+PE_Aºay
+[CGRA->
+St‹e_PE_ID
+]->
+Comp⁄ít_Tø˚
+[
+St‹e_Ródy_Time
+]->
+PE_Comp⁄ít_A˘ivôy
+->
+D©a_Mem_WR_E«
+[0] = 0;
+
+913 
+CGRA
+->
+PE_Aºay
+[CGRA->
+St‹e_PE_ID
+]->
+Comp⁄ít_Tø˚
+[
+St‹e_Ródy_Time
+]->
+PE_Comp⁄ít_A˘ivôy
+->
+D©a_Mem_P‹t_OP
+[2] = 
+OP_ID
+;
+
+914 
+CGRA
+->
+PE_Aºay
+[CGRA->
+St‹e_PE_ID
+]->
+Comp⁄ít_Tø˚
+[
+St‹e_Ródy_Time
++2]->
+PE_Comp⁄ít_A˘ivôy
+->
+St‹e_OP
+ = 
+OP_ID
+;
+
+915 
+CGRA
+->
+PE_Aºay
+[CGRA->
+St‹e_PE_ID
+]->
+Comp⁄ít_Tø˚
+[
+St‹e_Ródy_Time
++2]->
+PE_Comp⁄ít_A˘ivôy
+->
+St‹e_Mux
+ = 2;
+
+916 
+CGRA
+->
+PE_Aºay
+[CGRA->
+St‹e_PE_ID
+]->
+Comp⁄ít_Tø˚
+[
+St‹e_Ródy_Time
++2]->
+PE_Comp⁄ít_Re£rved
+->
+St‹e_P©h_Re£rved
+ = 
+åue
+;
+
+919 if(
+GL_V¨
+::
+Pröt_Levñ
+>10){
+
+920 
+fTø˚
+ << "St‹ê" << 
+OP_ID
+ << " i¿IO Buf„∏" << "áàtimê" << 
+St‹e_Ródy_Time
++3 << 
+°d
+::
+ídl
+;
+
+926 
 St‹e_Ródy_Time
 ++;
 
-913 if(
+930 if(
 Schedulög_Com∂ëe_Time
  < (
 St‹e_Ródy_Time
 +3)){
 
-914 
+931 
 Schedulög_Com∂ëe_Time
  = 
 St‹e_Ródy_Time
 +3;
 
-917 
+934 
 	}
 }
 
-1058 
+1075 
 	gScheduÀr
 ::
 OP_Migøti⁄
@@ -9991,19 +10095,19 @@ Exe_Mode
 Mode
 ){
 
-1060 
+1077 
 	gCom∂ëe_Time
  = 
 Sèπ_Time
 ;
 
-1061 
+1078 
 	gMigøti⁄_Time
  = 
 Sèπ_Time
 ;
 
-1062 
+1080 
 	gPE_Num_On_P©h
  = 
 Routög_P©h
@@ -10011,15 +10115,15 @@ Routög_P©h
 size
 ();
 
-1063 if(
+1081 if(
 	gPE_Num_On_P©h
 ==0){
 
-1064 
+1082 
 ERROR
 ("EmptyÑoutingÖath!\n");
 
-1067 
+1084 
 	g°d
 ::
 ve˘‹
@@ -10027,7 +10131,7 @@ ve˘‹
 Routög_P©h_C›y
 ;
 
-1068 
+1085 
 	gRoutög_P©h_C›y
 .
 ªsize
@@ -10035,7 +10139,7 @@ Routög_P©h_C›y
 PE_Num_On_P©h
 );
 
-1069 
+1086 
 	g°d
 ::
 li°
@@ -10045,11 +10149,11 @@ c⁄°_ôî©‹
 C_Lô
 ;
 
-1070 
+1087 
 	gVID
 =0;
 
-1071 
+1088 
 	gC_Lô
 =
 Routög_P©h
@@ -10059,7 +10163,7 @@ begö
 íd
 (); C_Lit++){
 
-1072 
+1089 
 	gRoutög_P©h_C›y
 [
 VID
@@ -10067,49 +10171,49 @@ VID
 C_Lô
 ;
 
-1073 
+1090 
 	gVID
 ++;
 
-1077 
+1094 
 	gCuºít_PE_Addôi⁄Æ_Pùñöe
  = 0;
 
-1078 
+1095 
 	gNext_PE_Addôi⁄Æ_Pùñöe
  = 0;
 
-1079 
+1096 
 	gChûd_Index
  = 
 NaN
 ;
 
-1080 
+1097 
 	gP¨ít_Index
  = 
 NaN
 ;
 
-1081 
+1098 
 	gLa°_P¨ít_Index
  = 
 NaN
 ;
 
-1082 
+1099 
 	gLa°_PE_ID
  = 
 NaN
 ;
 
-1084 
+1101 
 	gi
 =0; i<
 	gPE_Num_On_P©h
 ;){
 
-1087 
+1104 
 	gCuºít_PE_ID
  = 
 Routög_P©h_C›y
@@ -10117,7 +10221,7 @@ Routög_P©h_C›y
 i
 ];
 
-1088 if(
+1105 if(
 	gCuºít_PE_ID
  =
 CGRA
@@ -10129,57 +10233,57 @@ Cuºít_PE_ID
 St‹e_PE_ID
 ){
 
-1089 
+1106 
 Cuºít_PE_Addôi⁄Æ_Pùñöe
  = 1;
 
-1092 
+1109 
 	gCuºít_PE_Addôi⁄Æ_Pùñöe
  = 0;
 
-1095 
+1112 
 	gNext_PE_ID
  =
 NaN
 ;
 
-1096 if(
+1113 if(
 	gi
 <
 	gPE_Num_On_P©h
 ){
 
-1097 if(
+1114 if(
 	gi
 ==
 PE_Num_On_P©h
 -1){
 
-1098 
+1115 
 Next_PE_ID
  = 
 NaN
 ;
 
-1099 
+1116 
 	gChûd_Index
  = 
 NaN
 ;
 
-1100 
+1117 
 	gLa°_P¨ít_Index
  = 
 P¨ít_Index
 ;
 
-1101 
+1118 
 	gP¨ít_Index
  = 
 NaN
 ;
 
-1104 
+1121 
 	gNext_PE_ID
  = 
 Routög_P©h_C›y
@@ -10187,7 +10291,7 @@ Routög_P©h_C›y
 i
 +1];
 
-1105 
+1122 
 	gChûd_Index
  = 
 CGRA
@@ -10199,13 +10303,13 @@ Cuºít_PE_ID
 Next_PE_ID
 );
 
-1106 
+1123 
 	gLa°_P¨ít_Index
  = 
 P¨ít_Index
 ;
 
-1107 
+1124 
 	gP¨ít_Index
  = 
 CGRA
@@ -10217,7 +10321,7 @@ Cuºít_PE_ID
 Next_PE_ID
 );
 
-1110 if(
+1127 if(
 	gNext_PE_ID
  =
 CGRA
@@ -10229,27 +10333,27 @@ Next_PE_ID
 St‹e_PE_ID
 ){
 
-1111 
+1128 
 Next_PE_Addôi⁄Æ_Pùñöe
  = 1;
 
-1114 
+1131 
 	gNext_PE_Addôi⁄Æ_Pùñöe
  = 0;
 
-1120 if(
+1137 if(
 	gPE_Num_On_P©h
 ==1){
 
-1121 
+1138 
 i
 ++;
 
-1125 if(
+1142 if(
 	gi
 ==0){
 
-1126 
+1143 
 boﬁ
  
 Cuºít_PE_D©a_Mem_RD_Avaû0
@@ -10271,7 +10375,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1127 
+1144 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_RD_Avaû1
@@ -10293,7 +10397,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1128 
+1145 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_RD_Avaû2
@@ -10315,7 +10419,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1129 
+1146 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_WR_Avaû0
@@ -10337,7 +10441,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-1130 
+1147 
 boﬁ
  
 	gCuºít_PE_Ouçut_Avaû
@@ -10361,7 +10465,7 @@ Chûd_Index
 Ál£
 ;
 
-1131 
+1148 
 boﬁ
  
 	gNext_PE_I≈ut_Avaû
@@ -10383,7 +10487,7 @@ PE_I≈ut_Re£rved
 Ál£
 ;
 
-1132 
+1149 
 boﬁ
  
 	gNext_Lﬂd_P©h_Avaû
@@ -10391,7 +10495,7 @@ boﬁ
 åue
 ;
 
-1133 if(
+1150 if(
 	gNext_PE_ID
 ==
 CGRA
@@ -10403,7 +10507,7 @@ Next_PE_ID
 St‹e_PE_ID
 ){
 
-1134 
+1151 
 Next_Lﬂd_P©h_Avaû
  = 
 CGRA
@@ -10423,7 +10527,7 @@ Lﬂd_P©h_Re£rved
 Ál£
 ;
 
-1137 
+1154 
 boﬁ
  
 	gNext_PE_D©a_Mem_WR_Avaû1
@@ -10447,7 +10551,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-1138 
+1155 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû3
@@ -10471,7 +10575,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1139 
+1156 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû4
@@ -10495,7 +10599,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1140 
+1157 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû5
@@ -10519,7 +10623,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1142 
+1159 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_RD_Avaû
@@ -10533,7 +10637,7 @@ Cuºít_PE_D©a_Mem_RD_Avaû2
 Cuºít_PE_D©a_Mem_WR_Avaû0
 ;
 
-1143 
+1160 
 boﬁ
  
 	gNext_PE_D©a_Mem_WR_Avaû
@@ -10547,7 +10651,7 @@ Next_PE_D©a_Mem_RD_Avaû4
 Next_PE_D©a_Mem_RD_Avaû5
 ;
 
-1144 if(
+1161 if(
 	gCuºít_PE_D©a_Mem_RD_Avaû
  && 
 	gCuºít_PE_Ouçut_Avaû
@@ -10559,17 +10663,17 @@ Next_PE_D©a_Mem_RD_Avaû5
 	gNext_Lﬂd_P©h_Avaû
 ){
 
-1145 if(
+1162 if(
 	gMode
 ==
 Im∂
 ){
 
-1146 if(
+1163 if(
 Cuºít_PE_D©a_Mem_RD_Avaû0
 ){
 
-1147 
+1164 
 CGRA
 ->
 PE_Aºay
@@ -10587,7 +10691,7 @@ D©a_Mem_RD_Re£rved
 åue
 ;
 
-1148 
+1165 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10605,7 +10709,7 @@ Migøti⁄_Time
 Src_OP_ID
 ;
 
-1149 
+1166 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10623,11 +10727,11 @@ Migøti⁄_Time
 Chûd_Index
 ] = 0;
 
-1151 if(
+1168 if(
 	gCuºít_PE_D©a_Mem_RD_Avaû1
 ){
 
-1152 
+1169 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10645,7 +10749,7 @@ Migøti⁄_Time
 åue
 ;
 
-1153 
+1170 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10663,7 +10767,7 @@ Migøti⁄_Time
 Src_OP_ID
 ;
 
-1154 
+1171 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10681,7 +10785,7 @@ Migøti⁄_Time
 Chûd_Index
 ] = 1;
 
-1157 
+1174 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10699,7 +10803,7 @@ Migøti⁄_Time
 åue
 ;
 
-1158 
+1175 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10717,7 +10821,7 @@ Migøti⁄_Time
 Src_OP_ID
 ;
 
-1159 
+1176 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10735,7 +10839,7 @@ Migøti⁄_Time
 Chûd_Index
 ] = 2;
 
-1162 
+1179 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10755,7 +10859,7 @@ Chûd_Index
 åue
 ;
 
-1163 
+1180 
 	gCGRA
 ->
 	gPE_Aºay
@@ -10771,13 +10875,13 @@ Migøti⁄_Time
 	gD©a_Mem_WR_E«
 [0] = 0;
 
-1165 if(
+1182 if(
 	gGL_V¨
 ::
 Pröt_Levñ
 >10){
 
-1166 
+1183 
 fTø˚
  << "Movê›î©i⁄ " << 
 Src_OP_ID
@@ -10793,25 +10897,25 @@ Migøti⁄_Time
 ídl
 ;
 
-1170 
+1187 
 	gMigøti⁄_Time
  += 4;
 
-1171 
+1188 
 	gi
 ++;
 
-1174 
+1191 
 	gMigøti⁄_Time
 ++;
 
-1179 if(
+1196 if(
 	gi
 >0 && i<
 	gPE_Num_On_P©h
 -1){
 
-1181 
+1198 
 boﬁ
  
 	gCuºít_PE_By∑ss_Avaû
@@ -10833,7 +10937,7 @@ PE_By∑ss_Re£rved
 Ál£
 ;
 
-1182 
+1199 
 boﬁ
  
 	gCuºít_PE_Ouçut_Avaû
@@ -10857,7 +10961,7 @@ Chûd_Index
 Ál£
 ;
 
-1183 
+1200 
 boﬁ
  
 	gNext_PE_I≈ut_Avaû
@@ -10879,7 +10983,7 @@ PE_I≈ut_Re£rved
 Ál£
 ;
 
-1184 
+1201 
 boﬁ
  
 	gNext_Lﬂd_P©h_Avaû
@@ -10887,7 +10991,7 @@ boﬁ
 åue
 ;
 
-1186 if(
+1203 if(
 	gNext_PE_ID
  =
 CGRA
@@ -10899,7 +11003,7 @@ Next_PE_ID
 St‹e_PE_ID
 ){
 
-1187 
+1204 
 Next_Lﬂd_P©h_Avaû
  = 
 CGRA
@@ -10919,7 +11023,7 @@ Lﬂd_P©h_Re£rved
 Ál£
 ;
 
-1190 
+1207 
 boﬁ
  
 	gNext_PE_D©a_Mem_WR_Avaû1
@@ -10943,7 +11047,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-1191 
+1208 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû3
@@ -10967,7 +11071,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1192 
+1209 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû4
@@ -10991,7 +11095,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1193 
+1210 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû5
@@ -11015,7 +11119,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1194 
+1211 
 boﬁ
  
 	gNext_PE_D©a_Mem_WR_Avaû
@@ -11029,7 +11133,7 @@ Next_PE_D©a_Mem_RD_Avaû4
 Next_PE_D©a_Mem_RD_Avaû5
 ;
 
-1197 if(
+1214 if(
 	gCuºít_PE_By∑ss_Avaû
  && 
 	gCuºít_PE_Ouçut_Avaû
@@ -11041,13 +11145,13 @@ Next_PE_D©a_Mem_RD_Avaû5
 	gNext_Lﬂd_P©h_Avaû
 ){
 
-1198 if(
+1215 if(
 	gMode
  =
 Im∂
 ){
 
-1199 
+1216 
 CGRA
 ->
 PE_Aºay
@@ -11065,7 +11169,7 @@ PE_By∑ss_Re£rved
 åue
 ;
 
-1200 
+1217 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11085,7 +11189,7 @@ Chûd_Index
 åue
 ;
 
-1201 
+1218 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11103,7 +11207,7 @@ Migøti⁄_Time
 La°_P¨ít_Index
 ;
 
-1202 
+1219 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11121,13 +11225,13 @@ Migøti⁄_Time
 Chûd_Index
 ] = 3;
 
-1204 if(
+1221 if(
 	gGL_V¨
 ::
 Pröt_Levñ
 >10){
 
-1205 
+1222 
 fTø˚
  << "Movê›î©i⁄ " << 
 Src_OP_ID
@@ -11143,21 +11247,21 @@ Migøti⁄_Time
 ídl
 ;
 
-1209 
+1226 
 	gMigøti⁄_Time
  += 3;
 
-1210 
+1227 
 	gi
 ++;
 
-1216 if(
+1233 if(
 	gMode
  =
 Im∂
 ){
 
-1217 
+1234 
 CGRA
 ->
 PE_Aºay
@@ -11175,7 +11279,7 @@ PE_I≈ut_Re£rved
 åue
 ;
 
-1218 
+1235 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11193,7 +11297,7 @@ Migøti⁄_Time
 La°_P¨ít_Index
 ;
 
-1219 if(
+1236 if(
 	gCuºít_PE_ID
  =
 CGRA
@@ -11205,7 +11309,7 @@ Cuºít_PE_ID
 St‹e_PE_ID
 ){
 
-1220 
+1237 
 CGRA
 ->
 PE_Aºay
@@ -11223,7 +11327,7 @@ Lﬂd_P©h_Re£rved
 åue
 ;
 
-1221 
+1238 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11239,7 +11343,7 @@ Migøti⁄_Time
 	gLﬂd_Mux
  = 1;
 
-1223 
+1240 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11259,7 +11363,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 åue
 ;
 
-1224 
+1241 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11277,7 +11381,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 	gD©a_Mem_WR_E«
 [1] = 1;
 
-1225 
+1242 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11297,7 +11401,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1226 
+1243 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11317,7 +11421,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1227 
+1244 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11337,13 +11441,13 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1230 
+1247 
 Aâach_Hi°‹y
  
 	gAâach_Poöt
 ;
 
-1231 
+1248 
 	gAâach_Poöt
 .
 	gAâached_Time
@@ -11353,7 +11457,7 @@ Migøti⁄_Time
 Cuºít_PE_Addôi⁄Æ_Pùñöe
 ;
 
-1232 
+1249 
 	gAâach_Poöt
 .
 	gAâached_PE_ID
@@ -11361,7 +11465,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Cuºít_PE_ID
 ;
 
-1233 
+1250 
 	gDFG
 ->
 	gOP_Aºay
@@ -11375,13 +11479,13 @@ push_back
 Aâach_Poöt
 );
 
-1235 if(
+1252 if(
 	gGL_V¨
 ::
 Pröt_Levñ
 >10){
 
-1236 
+1253 
 fTø˚
  << "St‹ê›î©i⁄ " << 
 Src_OP_ID
@@ -11397,11 +11501,11 @@ Migøti⁄_Time
 ídl
 ;
 
-1241 
+1258 
 	gåue
 ){
 
-1243 
+1260 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_RD_Avaû0
@@ -11425,7 +11529,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1244 
+1261 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_RD_Avaû1
@@ -11449,7 +11553,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1245 
+1262 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_RD_Avaû2
@@ -11473,7 +11577,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1246 
+1263 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_WR_Avaû0
@@ -11497,7 +11601,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-1247 
+1264 
 boﬁ
  
 	gCuºít_PE_D©a_Mem_RD_Avaû
@@ -11511,7 +11615,7 @@ Cuºít_PE_D©a_Mem_RD_Avaû2
 Cuºít_PE_D©a_Mem_WR_Avaû0
 ;
 
-1248 
+1265 
 boﬁ
  
 	gCuºít_PE_Ouçut_Avaû
@@ -11537,7 +11641,7 @@ Chûd_Index
 Ál£
 ;
 
-1249 
+1266 
 boﬁ
  
 	gNext_PE_I≈ut_Avaû
@@ -11561,7 +11665,7 @@ PE_I≈ut_Re£rved
 Ál£
 ;
 
-1250 
+1267 
 boﬁ
  
 	gNext_Lﬂd_P©h_Avaû
@@ -11569,7 +11673,7 @@ boﬁ
 åue
 ;
 
-1251 if(
+1268 if(
 	gNext_PE_ID
  =
 CGRA
@@ -11581,7 +11685,7 @@ Next_PE_ID
 St‹e_PE_ID
 ){
 
-1252 
+1269 
 Next_Lﬂd_P©h_Avaû
  = 
 CGRA
@@ -11603,7 +11707,7 @@ Lﬂd_P©h_Re£rved
 Ál£
 ;
 
-1255 
+1272 
 boﬁ
  
 	gNext_PE_D©a_Mem_WR_Avaû1
@@ -11629,7 +11733,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-1256 
+1273 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû3
@@ -11655,7 +11759,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1257 
+1274 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû4
@@ -11681,7 +11785,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1258 
+1275 
 boﬁ
  
 	gNext_PE_D©a_Mem_RD_Avaû5
@@ -11707,7 +11811,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 ;
 
-1259 
+1276 
 boﬁ
  
 	gNext_PE_D©a_Mem_WR_Avaû
@@ -11721,7 +11825,7 @@ Next_PE_D©a_Mem_RD_Avaû4
 Next_PE_D©a_Mem_RD_Avaû5
 ;
 
-1261 if(
+1278 if(
 	gCuºít_PE_D©a_Mem_RD_Avaû
  && 
 	gCuºít_PE_Ouçut_Avaû
@@ -11733,17 +11837,17 @@ Next_PE_D©a_Mem_RD_Avaû5
 	gNext_Lﬂd_P©h_Avaû
 ){
 
-1262 if(
+1279 if(
 	gMode
 ==
 Im∂
 ){
 
-1263 if(
+1280 if(
 Cuºít_PE_D©a_Mem_RD_Avaû0
 ){
 
-1264 
+1281 
 CGRA
 ->
 PE_Aºay
@@ -11763,7 +11867,7 @@ D©a_Mem_RD_Re£rved
 åue
 ;
 
-1265 
+1282 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11783,7 +11887,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1266 
+1283 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11803,11 +11907,11 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Chûd_Index
 ] = 0;
 
-1268 if(
+1285 if(
 	gCuºít_PE_D©a_Mem_RD_Avaû1
 ){
 
-1269 
+1286 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11827,7 +11931,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 åue
 ;
 
-1270 
+1287 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11847,7 +11951,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1271 
+1288 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11867,7 +11971,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Chûd_Index
 ]=1;
 
-1274 
+1291 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11887,7 +11991,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 åue
 ;
 
-1275 
+1292 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11907,7 +12011,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1276 
+1293 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11927,7 +12031,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Chûd_Index
 ] = 2;
 
-1279 
+1296 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11949,7 +12053,7 @@ Chûd_Index
 åue
 ;
 
-1280 
+1297 
 	gCGRA
 ->
 	gPE_Aºay
@@ -11967,13 +12071,13 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 	gD©a_Mem_WR_E«
 [0] = 0;
 
-1282 if(
+1299 if(
 	gGL_V¨
 ::
 Pröt_Levñ
 >10){
 
-1283 
+1300 
 fTø˚
 << " Movê›î©i⁄ " << 
 Src_OP_ID
@@ -11991,7 +12095,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 ídl
 ;
 
-1287 
+1304 
 	gMigøti⁄_Time
  = 
 Migøti⁄_Time
@@ -11999,21 +12103,21 @@ Migøti⁄_Time
 Cuºít_PE_Addôi⁄Æ_Pùñöe
 ;
 
-1288 
+1305 
 	gi
 ++;
 
-1292 
+1309 
 	gMigøti⁄_Time
 ++;
 
-1300 if(
+1317 if(
 	gMode
  =
 Im∂
 ){
 
-1301 
+1318 
 CGRA
 ->
 PE_Aºay
@@ -12031,7 +12135,7 @@ PE_I≈ut_Re£rved
 åue
 ;
 
-1302 
+1319 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12049,7 +12153,7 @@ Migøti⁄_Time
 La°_P¨ít_Index
 ;
 
-1303 if(
+1320 if(
 	gCuºít_PE_ID
  =
 CGRA
@@ -12061,7 +12165,7 @@ Cuºít_PE_ID
 St‹e_PE_ID
 ){
 
-1304 
+1321 
 CGRA
 ->
 PE_Aºay
@@ -12079,7 +12183,7 @@ Lﬂd_P©h_Re£rved
 åue
 ;
 
-1305 
+1322 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12095,7 +12199,7 @@ Migøti⁄_Time
 	gLﬂd_Mux
  = 1;
 
-1307 
+1324 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12115,7 +12219,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 åue
 ;
 
-1308 
+1325 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12133,7 +12237,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 	gD©a_Mem_WR_E«
 [1] = 1;
 
-1309 
+1326 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12153,7 +12257,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1310 
+1327 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12173,7 +12277,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1311 
+1328 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12193,13 +12297,13 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Src_OP_ID
 ;
 
-1313 if(
+1330 if(
 	gGL_V¨
 ::
 Pröt_Levñ
 >10){
 
-1314 
+1331 
 fTø˚
  << "Movê›î©i⁄ " << 
 Src_OP_ID
@@ -12215,13 +12319,13 @@ Migøti⁄_Time
 ídl
 ;
 
-1318 
+1335 
 Aâach_Hi°‹y
  
 	gAâach_Poöt
 ;
 
-1319 
+1336 
 	gAâach_Poöt
 .
 	gAâached_Time
@@ -12231,7 +12335,7 @@ Migøti⁄_Time
 Cuºít_PE_Addôi⁄Æ_Pùñöe
 ;
 
-1320 
+1337 
 	gAâach_Poöt
 .
 	gAâached_PE_ID
@@ -12239,7 +12343,7 @@ Cuºít_PE_Addôi⁄Æ_Pùñöe
 Cuºít_PE_ID
 ;
 
-1321 
+1338 
 	gDFG
 ->
 	gOP_Aºay
@@ -12253,11 +12357,11 @@ push_back
 Aâach_Poöt
 );
 
-1325 
+1342 
 	gi
 ++;
 
-1326 
+1343 
 	gCom∂ëe_Time
  = 
 Migøti⁄_Time
@@ -12265,17 +12369,17 @@ Migøti⁄_Time
 Cuºít_PE_Addôi⁄Æ_Pùñöe
 ;
 
-1332 
+1349 
 	gLa°_PE_ID
  = 
 Cuºít_PE_ID
 ;
 
-1336  
+1353  
 	gCom∂ëe_Time
 ;
 
-1340 
+1357 
 	gScheduÀr
 ::
 OP_Exe
@@ -12297,15 +12401,15 @@ Exe_Mode
 Mode
 ){
 
-1342 
+1359 
 	gExe_Time
 ;
 
-1343 
+1360 
 	gLa°_AºivÆ_Time
  = 0;
 
-1344 
+1361 
 	gi
 =0; i<
 	gDFG
@@ -12313,7 +12417,7 @@ Mode
 	gMax_Src_OP_Num
 ; i++){
 
-1345 if(
+1362 if(
 	gLa°_AºivÆ_Time
  < 
 	gAºivÆ_Time
@@ -12321,7 +12425,7 @@ Mode
 i
 ]){
 
-1346 
+1363 
 	gLa°_AºivÆ_Time
  = 
 AºivÆ_Time
@@ -12329,17 +12433,17 @@ AºivÆ_Time
 i
 ];
 
-1349 
+1366 
 	gSèπ_Time
  = 
 La°_AºivÆ_Time
 ;
 
-1351 
+1368 
 	gåue
 ){
 
-1352 
+1369 
 boﬁ
  
 	gSrc_RD_Avaû
@@ -12347,7 +12451,7 @@ boﬁ
 åue
 ;
 
-1353 
+1370 
 	gSrc_RD_Avaû
  = 
 Src_RD_Avaû
@@ -12369,7 +12473,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 );
 
-1354 
+1371 
 	gSrc_RD_Avaû
  = 
 Src_RD_Avaû
@@ -12391,7 +12495,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 );
 
-1355 
+1372 
 	gSrc_RD_Avaû
  = 
 Src_RD_Avaû
@@ -12413,7 +12517,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 );
 
-1356 
+1373 
 	gSrc_RD_Avaû
  = 
 Src_RD_Avaû
@@ -12435,7 +12539,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 );
 
-1358 
+1375 
 boﬁ
  
 	gALU_I≈ut_Avaû
@@ -12457,7 +12561,7 @@ ALU_I≈ut_Re£rved
 Ál£
 ;
 
-1359 
+1376 
 boﬁ
  
 	gD©a_Mem_WR_Avaû
@@ -12479,7 +12583,7 @@ D©a_Mem_WR_Re£rved
 Ál£
 ;
 
-1360 
+1377 
 	gD©a_Mem_WR_Avaû
 =
 D©a_Mem_WR_Avaû
@@ -12501,7 +12605,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 );
 
-1361 
+1378 
 	gD©a_Mem_WR_Avaû
 =
 D©a_Mem_WR_Avaû
@@ -12523,7 +12627,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 );
 
-1362 
+1379 
 	gD©a_Mem_WR_Avaû
 =
 D©a_Mem_WR_Avaû
@@ -12545,7 +12649,7 @@ D©a_Mem_RD_Re£rved
 Ál£
 );
 
-1364 if(
+1381 if(
 	gSrc_RD_Avaû
  && 
 	gALU_I≈ut_Avaû
@@ -12553,29 +12657,29 @@ D©a_Mem_RD_Re£rved
 	gD©a_Mem_WR_Avaû
 ){
 
-1368 
+1385 
 	gSèπ_Time
 ++;
 
-1371 
+1388 
 	gExe_Time
  = 
 Sèπ_Time
 +7;
 
-1373 if(
+1390 if(
 	gMode
  =
 Im∂
 ){
 
-1374 if(
+1391 if(
 GL_V¨
 ::
 Pröt_Levñ
 >10){
 
-1375 
+1392 
 fTø˚
  << "O≥øti⁄ " << 
 T¨gë_OP_ID
@@ -12589,7 +12693,7 @@ Sèπ_Time
 ídl
 ;
 
-1378 
+1395 
 T¨gë_PE_Re‰esh
 (
 Src_OP_IDs
@@ -12601,7 +12705,7 @@ Sèπ_Time
 T¨gë_PE_ID
 );
 
-1379 
+1396 
 T¨gë_OP_Re‰esh
 (
 Src_OP_IDs
@@ -12613,11 +12717,11 @@ T¨gë_PE_ID
 Exe_Time
 );
 
-1383  
+1400  
 	gExe_Time
 ;
 
-1387 
+1404 
 	gScheduÀr
 ::
 	$Nóª°_Aâached_PE
@@ -12629,19 +12733,19 @@ D°_PE_ID
 Src_Ródy_Time
 ){
 
-1389 
+1406 
 Nóª°_Aâached_PE_ID
  = 
 NaN
 ;
 
-1390 
+1407 
 Mö_Di°
  = 
 INT_MAX
 ;
 
-1392 
+1409 
 °d
 ::
 li°
@@ -12653,7 +12757,7 @@ Aâach_Hi°‹y
 Lô
 ;
 
-1393 
+1410 
 °d
 ::
 li°
@@ -12665,7 +12769,7 @@ Aâach_Hi°‹y
 Lô_Hód
 ;
 
-1394 
+1411 
 °d
 ::
 li°
@@ -12677,7 +12781,7 @@ Aâach_Hi°‹y
 Lô_Taû
 ;
 
-1395 
+1412 
 Lô_Hód
  = 
 DFG
@@ -12691,7 +12795,7 @@ OP_Aâach_Hi°‹y
 	`begö
 ();
 
-1396 
+1413 
 Lô_Taû
  = 
 DFG
@@ -12705,7 +12809,7 @@ OP_Aâach_Hi°‹y
 	`íd
 ();
 
-1397 
+1414 
 Lô
  = 
 Lô_Hód
@@ -12713,7 +12817,7 @@ Lô_Hód
 Lô_Taû
 ; Lit++){
 
-1398 
+1415 
 PE_ID_Tmp
  = (*
 Lô
@@ -12721,7 +12825,7 @@ Lô
 Aâached_PE_ID
 ;
 
-1399 
+1416 
 Di°_Tmp
  = 
 CGRA
@@ -12733,25 +12837,25 @@ PE_ID_Tmp
 D°_PE_ID
 );
 
-1400 if(
+1417 if(
 Di°_Tmp
  < 
 Mö_Di°
 ){
 
-1401 
+1418 
 Mö_Di°
  = 
 Di°_Tmp
 ;
 
-1402 
+1419 
 Nóª°_Aâached_PE_ID
  = 
 PE_ID_Tmp
 ;
 
-1403 
+1420 
 Src_Ródy_Time
  = (*
 Lô
@@ -12759,7 +12863,7 @@ Lô
 Aâached_Time
 ;
 
-1408 if(
+1425 if(
 DFG
 ->
 OP_Aºay
@@ -12769,31 +12873,31 @@ Src_OP_ID
 OP_ID
  == 0){
 
-1409 
+1426 
 Nóª°_Aâached_PE_ID
  = 
 D°_PE_ID
 ;
 
-1412 if(
+1429 if(
 Nóª°_Aâached_PE_ID
  =
 NaN
 ){
 
-1413 
+1430 
 	`ERROR
 ("UnexpectedÇearest PE!");
 
-1416  
+1433  
 Nóª°_Aâached_PE_ID
 ;
 
-1418 
+1435 
 	}
 }
 
-1590 
+1607 
 	gScheduÀr
 ::
 T¨gë_PE_Re‰esh
@@ -12811,7 +12915,7 @@ Sèπ_Time
 T¨gë_PE_ID
 ){
 
-1592 
+1609 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12829,7 +12933,7 @@ Sèπ_Time
 åue
 ;
 
-1593 
+1610 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12847,7 +12951,7 @@ Sèπ_Time
 åue
 ;
 
-1594 
+1611 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12865,7 +12969,7 @@ Sèπ_Time
 åue
 ;
 
-1595 
+1612 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12883,7 +12987,7 @@ Sèπ_Time
 åue
 ;
 
-1596 
+1613 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12901,7 +13005,7 @@ Sèπ_Time
 åue
 ;
 
-1597 
+1614 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12917,7 +13021,7 @@ Sèπ_Time
 	gD©a_Mem_WR_E«
 [1] = 0;
 
-1599 
+1616 
 Opcode
  
 	gOpcode_Tmp
@@ -12933,7 +13037,7 @@ OP_Aâribuã
 OP_Opcode
 ;
 
-1600 
+1617 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12951,7 +13055,7 @@ Sèπ_Time
 Opcode_Tmp
 ;
 
-1601 
+1618 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12967,7 +13071,7 @@ Sèπ_Time
 	gD©a_Mem_WR_E«
 [0] = 1;
 
-1603 
+1620 
 	gCGRA
 ->
 	gPE_Aºay
@@ -12985,7 +13089,7 @@ Sèπ_Time
 Src_OP_IDs
 [0];
 
-1604 
+1621 
 	gCGRA
 ->
 	gPE_Aºay
@@ -13003,7 +13107,7 @@ Sèπ_Time
 Src_OP_IDs
 [1];
 
-1605 
+1622 
 	gCGRA
 ->
 	gPE_Aºay
@@ -13021,7 +13125,7 @@ Sèπ_Time
 Src_OP_IDs
 [2];
 
-1606 
+1623 
 	gCGRA
 ->
 	gPE_Aºay
@@ -13039,7 +13143,7 @@ Sèπ_Time
 T¨gë_OP_ID
 ;
 
-1607 
+1624 
 	gCGRA
 ->
 	gPE_Aºay
@@ -13057,7 +13161,7 @@ Sèπ_Time
 T¨gë_OP_ID
 ;
 
-1608 
+1625 
 	gCGRA
 ->
 	gPE_Aºay
@@ -13075,13 +13179,13 @@ Sèπ_Time
 T¨gë_OP_ID
 ;
 
-1610 
+1627 
 	gCuºít_Exe_Time
  = 
 Sèπ_Time
 +7;
 
-1611 if(
+1628 if(
 	gCGRA
 ->
 	gPE_Aºay
@@ -13093,7 +13197,7 @@ T¨gë_PE_ID
 	gCuºít_Exe_Time
 ){
 
-1612 
+1629 
 	gCGRA
 ->
 	gPE_Aºay
@@ -13105,7 +13209,7 @@ T¨gë_PE_ID
 Cuºít_Exe_Time
 ;
 
-1627 
+1644 
 	gScheduÀr
 ::
 T¨gë_OP_Re‰esh
@@ -13123,7 +13227,7 @@ T¨gë_PE_ID
 Exe_Time
 ){
 
-1629 
+1646 
 	gDFG
 ->
 	gOP_Aºay
@@ -13137,7 +13241,7 @@ T¨gë_OP_ID
 Avaû
 ;
 
-1630 
+1647 
 	gDFG
 ->
 	gOP_Aºay
@@ -13151,7 +13255,7 @@ T¨gë_OP_ID
 Exe_Time
 ;
 
-1631 
+1648 
 	gDFG
 ->
 	gOP_Aºay
@@ -13165,7 +13269,7 @@ T¨gë_OP_ID
 T¨gë_PE_ID
 ;
 
-1632 
+1649 
 	gSrc0
  = 
 DFG
@@ -13177,7 +13281,7 @@ Src_OP_IDs
 OP_VÆ
 ;
 
-1633 
+1650 
 	gSrc1
  = 
 DFG
@@ -13189,7 +13293,7 @@ Src_OP_IDs
 OP_VÆ
 ;
 
-1634 
+1651 
 	gSrc2
  = 
 DFG
@@ -13201,7 +13305,7 @@ Src_OP_IDs
 OP_VÆ
 ;
 
-1635 
+1652 
 Opcode
  
 	gOpcode_Tmp
@@ -13217,7 +13321,7 @@ OP_Aâribuã
 OP_Opcode
 ;
 
-1636 
+1653 
 	gDFG
 ->
 	gOP_Aºay
@@ -13237,13 +13341,13 @@ Src1
 Src2
 );
 
-1638 
+1655 
 Aâach_Hi°‹y
  
 	gAâach_Poöt
 ;
 
-1639 
+1656 
 	gAâach_Poöt
 .
 	gAâached_Time
@@ -13251,7 +13355,7 @@ Aâach_Hi°‹y
 Exe_Time
 ;
 
-1640 
+1657 
 	gAâach_Poöt
 .
 	gAâached_PE_ID
@@ -13259,7 +13363,7 @@ Exe_Time
 T¨gë_PE_ID
 ;
 
-1641 
+1658 
 	gDFG
 ->
 	gOP_Aºay
@@ -13273,7 +13377,7 @@ push_back
 Aâach_Poöt
 );
 
-1645 
+1662 
 boﬁ
  
 	gScheduÀr
@@ -13281,7 +13385,7 @@ boﬁ
 	$Is_Schedulög_Com∂ëed
 (){
 
-1647 
+1664 
 boﬁ
  
 Schedulög_Com∂ëed
@@ -13289,7 +13393,7 @@ Schedulög_Com∂ëed
 åue
 ;
 
-1650 
+1667 
 i
 =0; i<
 DFG
@@ -13297,7 +13401,7 @@ DFG
 OP_Num
 ; i++){
 
-1651 if(
+1668 if(
 DFG
 ->
 OP_Aºay
@@ -13315,13 +13419,13 @@ OP_Sèã
 Avaû
 ){
 
-1652 
+1669 
 Schedulög_Com∂ëed
  = 
 Ál£
 ;
 
-1655 if((
+1672 if((
 DFG
 ->
 OP_Aºay
@@ -13339,31 +13443,29 @@ OP_Aâribuã
 OP_Sèã
  !
 Avaû
- || DFG->OP_Aºay[i]->OP_Aâribuã.OP_Sèã !
-In_IO_Buf„r
 )){
 
-1656 
+1673 
 Schedulög_Com∂ëed
  = 
 Ál£
 ;
 
-1661  
+1678  
 Schedulög_Com∂ëed
 ;
 
-1663 
+1680 
 	}
 }
 
-1665 
+1682 
 	gScheduÀr
 ::
 	$Schedulög_Sèt
 (){
 
-1668 
+1685 
 °d
 ::
 ve˘‹
@@ -13371,7 +13473,7 @@ ve˘‹
 Ouçut_P‹t_Utû
 ;
 
-1669 
+1686 
 °d
 ::
 ve˘‹
@@ -13379,7 +13481,7 @@ ve˘‹
 D©a_Mem_RD_Utû
 ;
 
-1670 
+1687 
 °d
 ::
 ve˘‹
@@ -13387,7 +13489,7 @@ ve˘‹
 D©a_Mem_WR_Utû
 ;
 
-1671 
+1688 
 °d
 ::
 ve˘‹
@@ -13395,7 +13497,7 @@ ve˘‹
 ALU_Utû
 ;
 
-1672 
+1689 
 Ouçut_P‹t_Utû
 .
 	`ªsize
@@ -13405,7 +13507,7 @@ CGRA
 CGRA_SˇÀ
 );
 
-1673 
+1690 
 D©a_Mem_RD_Utû
 .
 	`ªsize
@@ -13415,7 +13517,7 @@ CGRA
 CGRA_SˇÀ
 );
 
-1674 
+1691 
 D©a_Mem_WR_Utû
 .
 	`ªsize
@@ -13425,7 +13527,7 @@ CGRA
 CGRA_SˇÀ
 );
 
-1675 
+1692 
 ALU_Utû
 .
 	`ªsize
@@ -13435,7 +13537,7 @@ CGRA
 CGRA_SˇÀ
 );
 
-1677 
+1694 
 i
 =0; i<
 CGRA
@@ -13443,23 +13545,23 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-1678 
+1695 
 Ouçut_P‹t_Utû_C¡
  = 0;
 
-1679 
+1696 
 ALU_Utû_C¡
  = 0;
 
-1680 
+1697 
 D©a_Mem_RD_Utû_C¡
  = 0;
 
-1681 
+1698 
 D©a_Mem_WR_Utû_C¡
  = 0;
 
-1682 
+1699 
 Ouçut_Degªe
  = 
 CGRA
@@ -13469,17 +13571,17 @@ PE_Aºay
 i
 ]->Output_Degree;
 
-1683 
+1700 
 j
 =0; j<=
 Schedulög_Com∂ëe_Time
 ; j++){
 
-1684 
+1701 
 p
 =0;Ö<6;Ö++){
 
-1685 if(
+1702 if(
 CGRA
 ->
 PE_Aºay
@@ -13497,15 +13599,15 @@ D©a_Mem_RD_Re£rved
 p
 ]){
 
-1686 
+1703 
 D©a_Mem_RD_Utû_C¡
 ++;
 
-1690 
+1707 
 p
 =0;Ö<4;Ö++){
 
-1691 if(
+1708 if(
 CGRA
 ->
 PE_Aºay
@@ -13523,11 +13625,11 @@ PE_Ouçut_Re£rved
 p
 ]){
 
-1692 
+1709 
 Ouçut_P‹t_Utû_C¡
 ++;
 
-1696 if(
+1713 if(
 CGRA
 ->
 PE_Aºay
@@ -13543,15 +13645,15 @@ PE_Comp⁄ít_Re£rved
 ALU_I≈ut_Re£rved
 ){
 
-1697 
+1714 
 ALU_Utû_C¡
 ++;
 
-1700 
+1717 
 p
 =0;Ö<2;Ö++){
 
-1701 if(
+1718 if(
 CGRA
 ->
 PE_Aºay
@@ -13569,11 +13671,11 @@ D©a_Mem_WR_Re£rved
 p
 ]){
 
-1702 
+1719 
 D©a_Mem_WR_Utû_C¡
 ++;
 
-1706 
+1723 
 D©a_Mem_RD_Utû
 [
 i
@@ -13583,7 +13685,7 @@ D©a_Mem_RD_Utû_C¡
 Schedulög_Com∂ëe_Time
 ;
 
-1707 
+1724 
 D©a_Mem_WR_Utû
 [
 i
@@ -13593,7 +13695,7 @@ D©a_Mem_WR_Utû_C¡
 Schedulög_Com∂ëe_Time
 ;
 
-1708 
+1725 
 Ouçut_P‹t_Utû
 [
 i
@@ -13605,7 +13707,7 @@ Schedulög_Com∂ëe_Time
 Ouçut_Degªe
 );
 
-1709 
+1726 
 ALU_Utû
 [
 i
@@ -13615,7 +13717,7 @@ ALU_Utû_C¡
 Schedulög_Com∂ëe_Time
 ;
 
-1713 
+1730 
 °d
 ::
 cout
@@ -13627,7 +13729,7 @@ ios
 À·
 );
 
-1714 
+1731 
 °d
 ::
 cout
@@ -13637,7 +13739,7 @@ cout
 	`£tw
 (6) << "PE";
 
-1715 
+1732 
 °d
 ::
 cout
@@ -13647,7 +13749,7 @@ cout
 	`£tw
 (15) << "outputÖort";
 
-1716 
+1733 
 °d
 ::
 cout
@@ -13657,7 +13759,7 @@ cout
 	`£tw
 (15) << "Data Mem Read";
 
-1717 
+1734 
 °d
 ::
 cout
@@ -13667,7 +13769,7 @@ cout
 	`£tw
 (16) << "Data Mem Write";
 
-1718 
+1735 
 °d
 ::
 cout
@@ -13677,13 +13779,13 @@ cout
 	`£tw
 (18) << "ALU";
 
-1719 
+1736 
 °d
 ::
 cout
  << "\n";
 
-1720 
+1737 
 i
 =0; i<
 CGRA
@@ -13691,7 +13793,7 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-1721 
+1738 
 °d
 ::
 cout
@@ -13703,7 +13805,7 @@ cout
 i
 ;
 
-1722 
+1739 
 °d
 ::
 cout
@@ -13719,7 +13821,7 @@ Ouçut_P‹t_Utû
 i
 ];
 
-1723 
+1740 
 °d
 ::
 cout
@@ -13735,7 +13837,7 @@ D©a_Mem_RD_Utû
 i
 ];
 
-1724 
+1741 
 °d
 ::
 cout
@@ -13751,7 +13853,7 @@ D©a_Mem_WR_Utû
 i
 ];
 
-1725 
+1742 
 °d
 ::
 cout
@@ -13767,17 +13869,17 @@ ALU_Utû
 i
 ] << "\n";
 
-1728 
+1745 
 	}
 }
 
-1730 
+1747 
 	gScheduÀr
 ::
 	$D©a_Mem_A«lysis
 (){
 
-1733 
+1750 
 °d
 ::
 ve˘‹
@@ -13785,7 +13887,7 @@ ve˘‹
 D©a_Mem_C≠acôy
 ;
 
-1734 
+1751 
 D©a_Mem_C≠acôy
 .
 	`ªsize
@@ -13795,7 +13897,7 @@ CGRA
 CGRA_SˇÀ
 );
 
-1735 
+1752 
 i
 =0; i<
 CGRA
@@ -13803,13 +13905,13 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-1736 
+1753 
 D©a_Mem_C≠acôy
 [
 i
 ] = 0;
 
-1739 
+1756 
 °d
 ::
 ve˘‹
@@ -13817,7 +13919,7 @@ ve˘‹
 Cª©e_Time
 ;
 
-1740 
+1757 
 °d
 ::
 ve˘‹
@@ -13825,7 +13927,7 @@ ve˘‹
 De°roy_Time
 ;
 
-1741 
+1758 
 Cª©e_Time
 .
 	`ªsize
@@ -13835,7 +13937,7 @@ DFG
 OP_Num
 );
 
-1742 
+1759 
 De°roy_Time
 .
 	`ªsize
@@ -13845,7 +13947,7 @@ DFG
 OP_Num
 );
 
-1744 
+1761 
 i
 =0; i<
 CGRA
@@ -13853,7 +13955,7 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-1745 
+1762 
 j
 =0; j<
 DFG
@@ -13861,7 +13963,7 @@ DFG
 OP_Num
 ; j++){
 
-1746 
+1763 
 Cª©e_Time
 [
 j
@@ -13869,7 +13971,7 @@ j
 NaN
 ;
 
-1747 
+1764 
 De°roy_Time
 [
 j
@@ -13877,29 +13979,29 @@ j
 NaN
 ;
 
-1749 
+1766 
 Cª©e_Time
 [0] = 0;
 
-1752 
+1769 
 j
 =0; j<
 Schedulög_Com∂ëe_Time
 ; j++){
 
-1753 
+1770 
 p
 =0;Ö<2;Ö++){
 
-1754 
+1771 
 WR_OP
 ;
 
-1755 if(
+1772 if(
 p
 ==0){
 
-1756 
+1773 
 WR_OP
  = 
 CGRA
@@ -13917,7 +14019,7 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_P‹t_OP
 [0];
 
-1759 
+1776 
 WR_OP
  = 
 CGRA
@@ -13935,7 +14037,7 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_P‹t_OP
 [3];
 
-1762 
+1780 
 boﬁ
  
 WR_Re£rved
@@ -13957,11 +14059,11 @@ D©a_Mem_WR_Re£rved
 p
 ];
 
-1763 if(
+1781 if(
 WR_Re£rved
 ){
 
-1764 if(
+1782 if(
 Cª©e_Time
 [
 WR_OP
@@ -13971,7 +14073,7 @@ NaN
 j
 ){
 
-1765 
+1783 
 Cª©e_Time
 [
 WR_OP
@@ -13979,11 +14081,11 @@ WR_OP
 j
 ;
 
-1772 
+1790 
 p
 =0;Ö<6;Ö++){
 
-1773 
+1791 
 boﬁ
  
 RD_Re£rved
@@ -14005,7 +14107,7 @@ D©a_Mem_RD_Re£rved
 p
 ];
 
-1774 
+1792 
 RD_OP
  = 
 CGRA
@@ -14025,11 +14127,11 @@ D©a_Mem_P‹t_OP
 p
 ];
 
-1775 if(
+1793 if(
 RD_Re£rved
 ){
 
-1776 if(
+1794 if(
 De°roy_Time
 [
 RD_OP
@@ -14039,7 +14141,7 @@ NaN
 j
 ){
 
-1777 
+1795 
 De°roy_Time
 [
 RD_OP
@@ -14047,7 +14149,7 @@ RD_OP
 j
 ;
 
-1785 
+1803 
 j
 =0; j<
 DFG
@@ -14055,7 +14157,7 @@ DFG
 OP_Num
 ; j++){
 
-1786 if(
+1804 if(
 Cª©e_Time
 [
 j
@@ -14065,11 +14167,11 @@ NaN
 De°roy_Time
 [j]>0){
 
-1787 
+1805 
 °d
 ::
 cout
- << "› i†" << 
+ << "OP ID i†" << 
 j
  << " , iàha†" << 
 DFG
@@ -14083,11 +14185,11 @@ OP_Chûdªn
 OP_P¨íts
 .size() << "parents!";
 
-1788 
+1806 
 °d
 ::
 cout
- << "executi⁄ PE id i†" << 
+ << "Executi⁄ PE id i†" << 
 DFG
 ->
 OP_Aºay
@@ -14101,11 +14203,11 @@ Exe_PE_ID
 ídl
 ;
 
-1789 
+1807 
 °d
 ::
 cout
- << "execuãdÅimêi†" << 
+ << "ExecuãdÅimêi†" << 
 DFG
 ->
 OP_Aºay
@@ -14119,7 +14221,7 @@ OP_Avaû_Time
 ídl
 ;
 
-1790 if(
+1808 if(
 DFG
 ->
 OP_Aºay
@@ -14133,7 +14235,7 @@ INVAR
 INCONST
 ){
 
-1791 
+1809 
 °d
 ::
 cout
@@ -14141,7 +14243,7 @@ cout
 ídl
 ;
 
-1793 if(
+1811 if(
 DFG
 ->
 OP_Aºay
@@ -14153,7 +14255,7 @@ OP_Ty≥
 OUTVAR
 ){
 
-1794 
+1812 
 °d
 ::
 cout
@@ -14161,7 +14263,7 @@ cout
 ídl
 ;
 
-1797 
+1815 
 °d
 ::
 cout
@@ -14169,11 +14271,11 @@ cout
 ídl
 ;
 
-1799 
+1817 
 	`ERROR
 ("Error!\n");
 
-1804 
+1822 
 °d
 ::
 ve˘‹
@@ -14181,7 +14283,7 @@ ve˘‹
 D©a_Mem_Tø˚
 ;
 
-1805 
+1823 
 D©a_Mem_Tø˚
 .
 	`ªsize
@@ -14189,29 +14291,29 @@ D©a_Mem_Tø˚
 Schedulög_Com∂ëe_Time
 );
 
-1806 
+1824 
 j
 =0; j<
 Schedulög_Com∂ëe_Time
 ; j++){
 
-1807 
+1825 
 D©a_Mem_Tø˚
 [
 j
 ] = 0;
 
-1810 
+1828 
 OP_In_D©a_Mem_C¡
  = 0;
 
-1811 
+1829 
 j
 =0; j<
 Schedulög_Com∂ëe_Time
 ; j++){
 
-1812 
+1830 
 p
 =0;Ö<
 DFG
@@ -14219,7 +14321,7 @@ DFG
 OP_Num
 ;Ö++){
 
-1813 if(
+1831 if(
 Cª©e_Time
 [
 p
@@ -14227,11 +14329,11 @@ p
 j
 ){
 
-1814 
+1832 
 OP_In_D©a_Mem_C¡
 ++;
 
-1816 if(
+1834 if(
 De°roy_Time
 [
 p
@@ -14239,11 +14341,11 @@ p
 j
 ){
 
-1817 
+1835 
 OP_In_D©a_Mem_C¡
 --;
 
-1820 
+1838 
 D©a_Mem_Tø˚
 [
 j
@@ -14251,7 +14353,7 @@ j
 OP_In_D©a_Mem_C¡
 ;
 
-1821 if(
+1839 if(
 D©a_Mem_C≠acôy
 [
 i
@@ -14259,7 +14361,7 @@ i
 OP_In_D©a_Mem_C¡
 ){
 
-1822 
+1840 
 D©a_Mem_C≠acôy
 [
 i
@@ -14267,7 +14369,7 @@ i
 OP_In_D©a_Mem_C¡
 ;
 
-1826 
+1845 
 	`D©a_Mem_Addr_Gí
 (
 Cª©e_Time
@@ -14279,7 +14381,13 @@ D©a_Mem_C≠acôy
 i
 ], i);
 
-1830 
+1849 
+°d
+::
+cout
+ << "PE minimum data memoryÑequirements: ";
+
+1850 
 i
 =0; i<
 CGRA
@@ -14287,7 +14395,7 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-1831 
+1851 
 °d
 ::
 cout
@@ -14297,7 +14405,7 @@ D©a_Mem_C≠acôy
 i
 ] << " ";
 
-1833 
+1853 
 °d
 ::
 cout
@@ -14305,11 +14413,11 @@ cout
 ídl
 ;
 
-1835 
+1855 
 	}
 }
 
-1846 
+1866 
 	gScheduÀr
 ::
 D©a_Mem_Addr_Gí
@@ -14327,7 +14435,7 @@ D©a_Mem_C≠acôy
 PE_ID
 ){
 
-1848 
+1869 
 	g°d
 ::
 m≠
@@ -14335,11 +14443,11 @@ m≠
 	gOP_To_Addr
 ;
 
-1849 
+1870 
 	gOP_To_Addr
 [0] = 0;
 
-1852 
+1873 
 	g°d
 ::
 li°
@@ -14347,13 +14455,13 @@ li°
 Addr_Avaû
 ;
 
-1853 
+1874 
 	gi
 =1; i<
 	gD©a_Mem_C≠acôy
 +10; i++){
 
-1854 
+1875 
 	gAddr_Avaû
 .
 push_back
@@ -14361,7 +14469,7 @@ push_back
 i
 );
 
-1858 
+1879 
 	gi
 =1; i<
 	gDFG
@@ -14369,13 +14477,13 @@ i
 	gOP_Num
 ; i++){
 
-1859 if(
+1880 if(
 	gCª©e_Time
 [
 i
 ]==0){
 
-1860 
+1881 
 OP_To_Addr
 [
 i
@@ -14385,31 +14493,31 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1861 
+1882 
 	gAddr_Avaû
 .
 p›_‰⁄t
 ();
 
-1865 
+1886 
 	gi
 =0; i<
 	gSchedulög_Com∂ëe_Time
 ; i++){
 
-1866 
+1887 
 	gp
 =0;Ö<2;Ö++){
 
-1867 
+1888 
 	gWR_OP
 ;
 
-1868 if(
+1889 if(
 	gp
 ==0){
 
-1869 
+1890 
 WR_OP
  = 
 CGRA
@@ -14427,7 +14535,7 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_P‹t_OP
 [0];
 
-1872 
+1893 
 	gWR_OP
  = 
 CGRA
@@ -14445,7 +14553,7 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_P‹t_OP
 [3];
 
-1876 
+1897 
 boﬁ
  
 	gWR_Re£rved
@@ -14467,11 +14575,11 @@ D©a_Mem_WR_Re£rved
 p
 ];
 
-1877 if(
+1899 if(
 	gWR_Re£rved
 ){
 
-1878 if(
+1900 if(
 	gOP_To_Addr
 .
 cou¡
@@ -14479,11 +14587,11 @@ cou¡
 WR_OP
 )==0){
 
-1879 if(
+1901 if(
 p
 ==0){
 
-1880 
+1902 
 CGRA
 ->
 PE_Aºay
@@ -14503,7 +14611,7 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1881 
+1903 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14523,7 +14631,7 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1882 
+1904 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14543,7 +14651,7 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1885 
+1907 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14563,7 +14671,7 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1886 
+1908 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14583,7 +14691,7 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1887 
+1909 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14603,7 +14711,7 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1889 
+1911 
 	gOP_To_Addr
 [
 WR_OP
@@ -14613,13 +14721,13 @@ Addr_Avaû
 ‰⁄t
 ();
 
-1890 
+1912 
 	gAddr_Avaû
 .
 p›_‰⁄t
 ();
 
-1892 if(
+1914 if(
 	gOP_To_Addr
 .
 cou¡
@@ -14627,11 +14735,11 @@ cou¡
 WR_OP
 )>0){
 
-1893 if(
+1915 if(
 	gp
 ==0){
 
-1894 
+1916 
 CGRA
 ->
 PE_Aºay
@@ -14651,7 +14759,7 @@ OP_To_Addr
 WR_OP
 ];
 
-1895 
+1917 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14671,7 +14779,7 @@ OP_To_Addr
 WR_OP
 ];
 
-1896 
+1918 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14691,7 +14799,7 @@ OP_To_Addr
 WR_OP
 ];
 
-1899 
+1921 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14711,7 +14819,7 @@ OP_To_Addr
 WR_OP
 ];
 
-1900 
+1922 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14731,7 +14839,7 @@ OP_To_Addr
 WR_OP
 ];
 
-1901 
+1923 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14751,11 +14859,11 @@ OP_To_Addr
 WR_OP
 ];
 
-1905 
+1927 
 ERROR
 ("Unexpected write operation!");
 
-1910 
+1932 
 	g°d
 ::
 li°
@@ -14763,7 +14871,7 @@ li°
 OP_To_Rñó£
 ;
 
-1911 
+1933 
 	g°d
 ::
 li°
@@ -14773,11 +14881,11 @@ li°
 Lô
 ;
 
-1912 
+1934 
 	gp
 =0;Ö<6;Ö++){
 
-1913 
+1935 
 boﬁ
  
 	gRD_Re£rved
@@ -14799,7 +14907,7 @@ D©a_Mem_RD_Re£rved
 p
 ];
 
-1914 
+1936 
 	gRD_OP
  = 
 CGRA
@@ -14819,11 +14927,11 @@ D©a_Mem_P‹t_OP
 p
 ];
 
-1915 if(
+1937 if(
 	gRD_Re£rved
 ){
 
-1916 if(
+1938 if(
 	gOP_To_Addr
 .
 cou¡
@@ -14831,21 +14939,21 @@ cou¡
 RD_OP
 )==0){
 
-1917 
+1939 
 °d
 ::
 cout
- << "›=" << 
+ << "OP_ID i†" << 
 RD_OP
  << std::
 ídl
 ;
 
-1918 
+1940 
 	g°d
 ::
 cout
- << "execuãdáàPE " << 
+ << "ExecuãdáàPE " << 
 DFG
 ->
 OP_Aºay
@@ -14861,11 +14969,11 @@ Exe_PE_ID
 ídl
 ;
 
-1919 
+1941 
 	g°d
 ::
 cout
- << "cuºíàPE i†" << 
+ << "CuºíàPE i†" << 
 PE_ID
  << 
 °d
@@ -14873,11 +14981,11 @@ PE_ID
 ídl
 ;
 
-1920 
+1942 
 	g°d
 ::
 cout
- << "executi⁄Åime=" << 
+ << "Executi⁄ Timêi†" << 
 DFG
 ->
 OP_Aºay
@@ -14893,11 +15001,11 @@ OP_Avaû_Time
 ídl
 ;
 
-1921 
+1943 
 	g°d
 ::
 cout
- << "cuºíàtime=" << 
+ << "Cuºíàtimêi†" << 
 i
  << 
 °d
@@ -14905,11 +15013,11 @@ i
 ídl
 ;
 
-1922 
+1944 
 	g°d
 ::
 cout
- << "p‹ànumbî=" << 
+ << "P‹àödex i†" << 
 p
  << 
 °d
@@ -14917,11 +15025,11 @@ p
 ídl
 ;
 
-1923 
+1945 
 	g°d
 ::
 cout
- << "Bømáddr=" << 
+ << "IO Buf„∏Add∏i†" << 
 OP_To_Addr
 [
 RD_OP
@@ -14931,11 +15039,11 @@ RD_OP
 ídl
 ;
 
-1924 
+1946 
 ERROR
 ("The operation hasÇever been storedátáll!");
 
-1927 if(
+1949 if(
 	gOP_To_Addr
 .
 cou¡
@@ -14943,7 +15051,7 @@ cou¡
 RD_OP
 )>0){
 
-1928 if(
+1950 if(
 	gDe°roy_Time
 [
 RD_OP
@@ -14951,11 +15059,11 @@ RD_OP
 NaN
 ){
 
-1929 
+1951 
 ERROR
 ("Unexpected cases!");
 
-1932 
+1954 
 	gCGRA
 ->
 	gPE_Aºay
@@ -14977,7 +15085,7 @@ OP_To_Addr
 RD_OP
 ];
 
-1933 if(
+1955 if(
 	gDe°roy_Time
 [
 RD_OP
@@ -14985,7 +15093,7 @@ RD_OP
 i
 ){
 
-1934 
+1956 
 boﬁ
  
 No_Rïliˇ
@@ -14993,7 +15101,7 @@ No_Rïliˇ
 åue
 ;
 
-1935 
+1957 
 	gLô
  = 
 OP_To_Rñó£
@@ -15003,25 +15111,25 @@ begö
 íd
 (); Lit++){
 
-1936 if(
+1958 if(
 	gRD_OP
  =*
 Lô
 ){
 
-1937 
+1959 
 No_Rïliˇ
  = 
 Ál£
 ;
 
-1941 if(
+1963 if(
 	gNo_Rïliˇ
  && 
 	gRD_OP
 !=0){
 
-1942 
+1964 
 OP_To_Rñó£
 .
 push_back
@@ -15029,17 +15137,17 @@ push_back
 RD_OP
 );
 
-1947 
+1969 
 ERROR
 ("Unexpected cases!");
 
-1953 !
+1975 !
 	gOP_To_Rñó£
 .
 em±y
 ()){
 
-1954 
+1976 
 	gRñó£d_OP
  = 
 OP_To_Rñó£
@@ -15047,7 +15155,7 @@ OP_To_Rñó£
 ‰⁄t
 ();
 
-1955 
+1977 
 	gRñó£d_Addr
  = 
 OP_To_Addr
@@ -15055,7 +15163,7 @@ OP_To_Addr
 Rñó£d_OP
 ];
 
-1956 
+1978 
 	gAddr_Avaû
 .
 push_‰⁄t
@@ -15063,13 +15171,13 @@ push_‰⁄t
 Rñó£d_Addr
 );
 
-1957 
+1979 
 	gOP_To_Rñó£
 .
 p›_‰⁄t
 ();
 
-1958 
+1980 
 	gOP_To_Addr
 .
 îa£
@@ -15077,7 +15185,7 @@ p›_‰⁄t
 Rñó£d_OP
 );
 
-1964 
+1986 
 boﬁ
  
 	gScheduÀr
@@ -15085,7 +15193,7 @@ boﬁ
 	$OP_Compuèti⁄_Check
 (){
 
-1966 
+1988 
 boﬁ
  
 Vîify_Pas£d
@@ -15093,7 +15201,7 @@ Vîify_Pas£d
 åue
 ;
 
-1967 
+1989 
 °d
 ::
 ve˘‹
@@ -15101,7 +15209,7 @@ ve˘‹
 The‹ëiˇl_OP_Resu…
 ;
 
-1968 
+1990 
 °d
 ::
 ve˘‹
@@ -15109,7 +15217,7 @@ ve˘‹
 Simuœãd_OP_Resu…
 ;
 
-1969 
+1991 
 DFG
 ->
 	`DFG_CÆcuœti⁄
@@ -15117,7 +15225,7 @@ DFG
 The‹ëiˇl_OP_Resu…
 );
 
-1971 
+1993 
 Simuœãd_OP_Resu…
 .
 	`ªsize
@@ -15127,7 +15235,7 @@ DFG
 OP_Num
 );
 
-1972 
+1994 
 i
 =0; i<
 DFG
@@ -15135,7 +15243,7 @@ DFG
 OP_Num
 ; i++){
 
-1973 
+1995 
 Simuœãd_OP_Resu…
 [
 i
@@ -15147,7 +15255,7 @@ OP_Aºay
 OP_VÆ
 ;
 
-1977 
+1999 
 i
 =0; i<
 DFG
@@ -15155,7 +15263,7 @@ DFG
 OP_Num
 ; i++){
 
-1978 if(
+2000 if(
 The‹ëiˇl_OP_Resu…
 [
 i
@@ -15163,7 +15271,7 @@ i
 Simuœãd_OP_Resu…
 [i]){
 
-1979 
+2001 
 	`ERROR
 ("CÆcuœti⁄ o‡O≥øti⁄[%d] i†wr⁄g! The‹ëiˇ»ªsu… is:%d, simuœãdÑesu… is:%d\n", 
 i
@@ -15173,17 +15281,17 @@ The‹ëiˇl_OP_Resu…
 Simuœãd_OP_Resu…
 [i]);
 
-1980 
+2002 
 Vîify_Pas£d
  = 
 Ál£
 ;
 
-1984 if(
+2006 if(
 Vîify_Pas£d
 ){
 
-1985 
+2007 
 °d
 ::
 cout
@@ -15191,25 +15299,25 @@ cout
 ídl
 ;
 
-1988 
+2010 
 	`PRINT
 ("OperationÑesultsáre NOT correct!");
 
-1991  
+2013  
 Vîify_Pas£d
 ;
 
-1993 
+2015 
 	}
 }
 
-1995 
+2017 
 	gScheduÀr
 ::
 	$In°_Mem_Dump_C€
 (){
 
-1997 
+2019 
 i
 =0; i<
 CGRA
@@ -15217,7 +15325,7 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-1999 
+2021 
 °d
 ::
 o°rög°ªam
@@ -15225,13 +15333,13 @@ o°rög°ªam
 os
 ;
 
-2000 
+2022 
 os
  << "./ªsu…/PE-" << "ö°-" << 
 i
  << ".coe";
 
-2001 
+2023 
 °d
 ::
 °rög
@@ -15243,7 +15351,7 @@ os
 	`°r
 ();
 
-2002 
+2024 
 °d
 ::
 of°ªam
@@ -15251,7 +15359,7 @@ of°ªam
 fH™dÀ
 ;
 
-2003 
+2025 
 fH™dÀ
 .
 	`›í
@@ -15261,17 +15369,17 @@ fName
 	`c_°r
 ());
 
-2004 if(!
+2026 if(!
 fH™dÀ
 .
 	`is_›í
 ()){
 
-2005 
+2027 
 	`ERROR
 ("FailÅo createÅhe PE-inst-.coe");
 
-2008 
+2030 
 fH™dÀ
  << "mem‹y_öôüliz©i⁄_ødix=2;" << 
 °d
@@ -15279,7 +15387,7 @@ fH™dÀ
 ídl
 ;
 
-2009 
+2031 
 fH™dÀ
  << "mem‹y_öôüliz©i⁄_ve˘‹=" << 
 °d
@@ -15287,7 +15395,7 @@ fH™dÀ
 ídl
 ;
 
-2011 
+2033 
 °d
 ::
 li°
@@ -15295,7 +15403,7 @@ li°
 Bô_Li°
 ;
 
-2012 
+2034 
 °d
 ::
 li°
@@ -15305,15 +15413,15 @@ li°
 Rô
 ;
 
-2013 
+2035 
 Dec_D©a
 ;
 
-2014 
+2036 
 D©a_Width
 ;
 
-2015 
+2037 
 °d
 ::
 °rög
@@ -15321,17 +15429,17 @@ D©a_Width
 Bö_Så
 ;
 
-2016 
+2038 
 j
 =0; j<
 Schedulög_Com∂ëe_Time
 ; j++){
 
-2019 
+2041 
 fH™dÀ
  << "100";
 
-2022 if(
+2044 if(
 i
 ==
 CGRA
@@ -15341,7 +15449,7 @@ Lﬂd_PE_ID
 St‹e_PE_ID
 ){
 
-2023 
+2045 
 fH™dÀ
  << 
 CGRA
@@ -15359,11 +15467,11 @@ PE_Comp⁄ít_A˘ivôy
 Lﬂd_Mux
 ;
 
-2026 
+2048 
 fH™dÀ
  << "0";
 
-2030 
+2052 
 Dec_D©a
  = 
 CGRA
@@ -15381,11 +15489,11 @@ PE_Comp⁄ít_A˘ivôy
 PE_I≈ut_Mux
 ;
 
-2031 
+2053 
 D©a_Width
  = 2;
 
-2032 
+2054 
 	`Dec_To_Bö_Så
 (
 Dec_D©a
@@ -15395,13 +15503,13 @@ D©a_Width
 Bö_Så
 );
 
-2033 
+2055 
 fH™dÀ
  << 
 Bö_Så
 ;
 
-2036 
+2058 
 Dec_D©a
 =
 CGRA
@@ -15419,11 +15527,11 @@ PE_Comp⁄ít_A˘ivôy
 PE_By∑ss_Mux
 ;
 
-2037 
+2059 
 D©a_Width
  = 2;
 
-2038 
+2060 
 	`Dec_To_Bö_Så
 (
 Dec_D©a
@@ -15433,13 +15541,13 @@ D©a_Width
 Bö_Så
 );
 
-2039 
+2061 
 fH™dÀ
  << 
 Bö_Så
 ;
 
-2042 
+2064 
 fH™dÀ
  << 
 CGRA
@@ -15457,7 +15565,7 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_WR_E«
 [1];
 
-2043 
+2065 
 fH™dÀ
  << 
 CGRA
@@ -15475,19 +15583,19 @@ PE_Comp⁄ít_A˘ivôy
 D©a_Mem_WR_E«
 [0];
 
-2046 
+2068 
 P‹t_Index
 [6]={3,4,5,0,1,2};
 
-2047 
+2069 
 D©a_Width
  = 8;
 
-2048 
+2070 
 l
 =0;Ü<6;Ü++){
 
-2049 
+2071 
 Dec_D©a
  = 
 CGRA
@@ -15509,17 +15617,17 @@ P‹t_Index
 l
 ]];
 
-2050 if(
+2072 if(
 Dec_D©a
  =
 NaN
 ){
 
-2051 
+2073 
 Dec_D©a
  = 0;
 
-2053 
+2075 
 	`Dec_To_Bö_Så
 (
 Dec_D©a
@@ -15529,13 +15637,13 @@ D©a_Width
 Bö_Så
 );
 
-2054 
+2076 
 fH™dÀ
  << 
 Bö_Så
 ;
 
-2058 
+2080 
 Opcode
  
 Opcode_Tmp
@@ -15555,7 +15663,7 @@ PE_Comp⁄ít_A˘ivôy
 ALU_Opcode
 ;
 
-2059 
+2081 
 Dec_D©a
  = 
 	`Opcode_To_I¡
@@ -15563,11 +15671,11 @@ Dec_D©a
 Opcode_Tmp
 );
 
-2060 
+2082 
 D©a_Width
  = 4;
 
-2061 
+2083 
 	`Dec_To_Bö_Så
 (
 Dec_D©a
@@ -15577,17 +15685,17 @@ D©a_Width
 Bö_Så
 );
 
-2062 
+2084 
 fH™dÀ
  << 
 Bö_Så
 ;
 
-2065 
+2087 
 D©a_Width
  = 2;
 
-2066 if(
+2088 if(
 i
 ==
 CGRA
@@ -15597,7 +15705,7 @@ Lﬂd_PE_ID
 St‹e_PE_ID
 ){
 
-2067 
+2089 
 Dec_D©a
  = 
 CGRA
@@ -15615,11 +15723,11 @@ PE_Comp⁄ít_A˘ivôy
 St‹e_Mux
 ;
 
-2070 
+2092 
 Dec_D©a
  = 0;
 
-2072 
+2094 
 	`Dec_To_Bö_Så
 (
 Dec_D©a
@@ -15629,17 +15737,17 @@ D©a_Width
 Bö_Så
 );
 
-2073 
+2095 
 fH™dÀ
  << 
 Bö_Så
 ;
 
-2076 
+2098 
 l
 =0;Ü<4;Ü++){
 
-2077 
+2099 
 Dec_D©a
  = 
 CGRA
@@ -15659,11 +15767,11 @@ PE_Ouçut_Mux
 l
 ];
 
-2078 
+2100 
 D©a_Width
  = 2;
 
-2079 
+2101 
 	`Dec_To_Bö_Så
 (
 Dec_D©a
@@ -15673,13 +15781,13 @@ D©a_Width
 Bö_Så
 );
 
-2080 
+2102 
 fH™dÀ
  << 
 Bö_Så
 ;
 
-2083 
+2105 
 fH™dÀ
  << 
 °d
@@ -15687,31 +15795,31 @@ fH™dÀ
 ídl
 ;
 
-2085 
+2107 
 fH™dÀ
 .
 	`˛o£
 ();
 
-2087 
+2109 
 	}
 }
 
-2090 
+2112 
 	gScheduÀr
 ::
 	$Addr_Buf„r_Dump_Mem
 (){
 
-2092 
+2114 
 °d
 ::
 °rög
  
 fName
- = "./result/addr-buffer.mem";
+ = "./result/Addr-Buffer.mem";
 
-2093 
+2115 
 °d
 ::
 of°ªam
@@ -15719,7 +15827,7 @@ of°ªam
 fH™dÀ
 ;
 
-2094 
+2116 
 fH™dÀ
 .
 	`›í
@@ -15729,21 +15837,21 @@ fName
 	`c_°r
 ());
 
-2095 if(!
+2117 if(!
 fH™dÀ
 .
 	`is_›í
 ()){
 
-2096 
+2118 
 	`ERROR
-("FailÅo createáddr-buffer.mem\n");
+("FailÅo create Addr-Buffer.mem\n");
 
-2099 
+2121 
 Ch¨_Bö_Vec
 [100];
 
-2100 
+2122 
 i
 =0; i<
 CGRA
@@ -15751,7 +15859,7 @@ CGRA
 IO_Buf„r_Num
 ; i++){
 
-2101 
+2123 
 Sèπ_Addr
  = (
 i
@@ -15763,21 +15871,21 @@ Addr_Buf„r_Dïth
 Addr_Buf„r_Width
 )/8;
 
-2103 
+2125 
 Ch¨_Hex_Addr
 [20];
 
-2104 if(
+2126 if(
 i
 ==0){
 
-2105 
+2127 
 	`•rötf
 (
 Ch¨_Hex_Addr
 , "@00000000");
 
-2108 
+2130 
 	`•rötf
 (
 Ch¨_Hex_Addr
@@ -15785,7 +15893,7 @@ Ch¨_Hex_Addr
 Sèπ_Addr
 );
 
-2110 
+2132 
 fH™dÀ
  << 
 Ch¨_Hex_Addr
@@ -15795,7 +15903,7 @@ Ch¨_Hex_Addr
 ídl
 ;
 
-2112 
+2134 
 °d
 ::
 o°rög°ªam
@@ -15803,13 +15911,13 @@ o°rög°ªam
 os
 ;
 
-2113 
+2135 
 os
- << "./ªsu…/" << "outside-bøm-addr-" << 
+ << "./ªsu…/" << "Addr-Buf„r-" << 
 i
  << ".coe";
 
-2114 
+2136 
 °d
 ::
 °rög
@@ -15821,7 +15929,7 @@ os
 	`°r
 ();
 
-2115 
+2137 
 °d
 ::
 if°ªam
@@ -15829,7 +15937,7 @@ if°ªam
 fH™dÀ1
 ;
 
-2116 
+2138 
 fH™dÀ1
 .
 	`›í
@@ -15839,21 +15947,21 @@ fName1
 	`c_°r
 ());
 
-2117 if(!
+2139 if(!
 fH™dÀ1
 .
 	`is_›í
 ()){
 
-2118 
+2140 
 	`ERROR
-("FailedÅo openÅhe outside-addr-buffer.coe");
+("FailedÅo openÅhe Addr-Buffer.coe");
 
-2121 
+2143 
 Löe_Num
  = 0;
 
-2122 
+2144 
 fH™dÀ1
 .
 	`gëlöe
@@ -15861,51 +15969,51 @@ fH™dÀ1
 Ch¨_Bö_Vec
 ,100)){
 
-2123 
+2145 
 Löe_Num
 ++;
 
-2124 if(
+2146 if(
 Löe_Num
 <3){
 
-2128 
+2150 
 Vec_Tmp0
 [100];
 
-2129 
+2151 
 Vec_Tmp1
 [100];
 
-2130 
+2152 
 Vec_Tmp0
 [0] = '0';
 
-2131 
+2153 
 Vec_Tmp0
 [1] = '0';
 
-2132 
+2154 
 Vec_Tmp0
 [2] = '0';
 
-2134 
+2156 
 Vec_Tmp1
 [0] = '0';
 
-2135 
+2157 
 Vec_Tmp1
 [1] = '0';
 
-2136 
+2158 
 Vec_Tmp1
 [2] = '0';
 
-2138 
+2160 
 k
 =3; k<12; k++){
 
-2139 
+2161 
 Vec_Tmp0
 [
 k
@@ -15913,7 +16021,7 @@ k
 Ch¨_Bö_Vec
 [k+6];
 
-2140 
+2162 
 Vec_Tmp1
 [
 k
@@ -15921,11 +16029,11 @@ k
 Ch¨_Bö_Vec
 [k-3];
 
-2143 
+2165 
 k
 =12; k<100; k++){
 
-2144 
+2166 
 Vec_Tmp0
 [
 k
@@ -15933,7 +16041,7 @@ k
 Ch¨_Bö_Vec
 [18];
 
-2145 
+2167 
 Vec_Tmp1
 [
 k
@@ -15941,21 +16049,21 @@ k
 Ch¨_Bö_Vec
 [18];
 
-2149 
+2171 
 k
 =0; k<(
 CGRA
 ->
-IO_Buf„r_Width
+Addr_Buf„r_Width
 /2+3)/4; k++){
 
-2150 
+2172 
 Index
  = 
 k
 *4;
 
-2151 
+2173 
 fH™dÀ
  << 
 	`Bö_To_Hex
@@ -15965,7 +16073,7 @@ Vec_Tmp0
 Index
 ]);
 
-2153 
+2175 
 fH™dÀ
  << 
 °d
@@ -15973,21 +16081,21 @@ fH™dÀ
 ídl
 ;
 
-2155 
+2177 
 k
 =0; k<(
 CGRA
 ->
-IO_Buf„r_Width
+Addr_Buf„r_Width
 /2+3)/4; k++){
 
-2156 
+2178 
 Index
  = 
 k
 *4;
 
-2157 
+2179 
 fH™dÀ
  << 
 	`Bö_To_Hex
@@ -15997,7 +16105,7 @@ Vec_Tmp1
 Index
 ]);
 
-2159 
+2181 
 fH™dÀ
  << 
 °d
@@ -16005,29 +16113,29 @@ fH™dÀ
 ídl
 ;
 
-2162 
+2184 
 fH™dÀ1
 .
 	`˛o£
 ();
 
-2164 
+2186 
 fH™dÀ
 .
 	`˛o£
 ();
 
-2165 
+2187 
 	}
 }
 
-2168 
+2190 
 	gScheduÀr
 ::
 	$In°_Mem_Dump_Mem
 (){
 
-2170 
+2192 
 °d
 ::
 °rög
@@ -16035,7 +16143,7 @@ fH™dÀ
 fName
 ="./result/inst.mem";
 
-2171 
+2193 
 °d
 ::
 of°ªam
@@ -16043,7 +16151,7 @@ of°ªam
 fH™dÀ
 ;
 
-2172 
+2194 
 fH™dÀ
 .
 	`›í
@@ -16053,21 +16161,21 @@ fName
 	`c_°r
 ());
 
-2173 if(!
+2195 if(!
 fH™dÀ
 .
 	`is_›í
 ()){
 
-2174 
+2196 
 	`ERROR
 ("FailedÅo create inst.mem\n");
 
-2177 
+2199 
 Ch¨_Bö_Vec
 [100];
 
-2178 
+2200 
 i
 =0; i<
 CGRA
@@ -16075,7 +16183,7 @@ CGRA
 CGRA_SˇÀ
 ; i++){
 
-2179 
+2201 
 Sèπ_Addr
  = (
 i
@@ -16087,21 +16195,21 @@ In°_Mem_Dïth
 In°_Mem_Width
 )/8;
 
-2181 
+2203 
 Ch¨_Hex_Addr
 [20];
 
-2182 if(
+2204 if(
 i
 ==0){
 
-2183 
+2205 
 	`•rötf
 (
 Ch¨_Hex_Addr
 , "@00000000");
 
-2186 
+2208 
 	`•rötf
 (
 Ch¨_Hex_Addr
@@ -16109,7 +16217,7 @@ Ch¨_Hex_Addr
 Sèπ_Addr
 );
 
-2188 
+2210 
 fH™dÀ
  << 
 Ch¨_Hex_Addr
@@ -16119,7 +16227,7 @@ Ch¨_Hex_Addr
 ídl
 ;
 
-2190 
+2212 
 °d
 ::
 o°rög°ªam
@@ -16127,13 +16235,13 @@ o°rög°ªam
 os
 ;
 
-2191 
+2213 
 os
  << "./ªsu…/PE-" << "ö°-" << 
 i
  << ".coe";
 
-2192 
+2214 
 °d
 ::
 °rög
@@ -16145,7 +16253,7 @@ os
 	`°r
 ();
 
-2193 
+2215 
 °d
 ::
 if°ªam
@@ -16153,7 +16261,7 @@ if°ªam
 fH™dÀ1
 ;
 
-2194 
+2216 
 fH™dÀ1
 .
 	`›í
@@ -16163,27 +16271,27 @@ fName1
 	`c_°r
 ());
 
-2195 if(!
+2217 if(!
 fH™dÀ1
 .
 	`is_›í
 ()){
 
-2196 
+2218 
 	`ERROR
 ("FailedÅo openÅhe PE.coe");
 
-2199 if(
+2221 if(
 PE
 ::
 In°_Mem_Dïth
 ==1024){
 
-2200 
+2222 
 Löe_Num
  = 0;
 
-2201 
+2223 
 fH™dÀ1
 .
 	`gëlöe
@@ -16191,23 +16299,23 @@ fH™dÀ1
 Ch¨_Bö_Vec
 ,100)){
 
-2202 
+2224 
 Löe_Num
 ++;
 
-2203 if(
+2225 if(
 Löe_Num
 <3){
 
-2215 
+2237 
 Vec_Tmp0
 [100];
 
-2216 
+2238 
 Vec_Tmp1
 [100];
 
-2217 
+2239 
 k
 =0; k<
 PE
@@ -16215,7 +16323,7 @@ PE
 In°_Mem_Width
 /2; k++){
 
-2218 
+2240 
 Vec_Tmp0
 [
 k
@@ -16227,7 +16335,7 @@ PE
 In°_Mem_Width
 /2];
 
-2219 
+2241 
 Vec_Tmp0
 [
 k
@@ -16239,11 +16347,11 @@ In°_Mem_Width
 Ch¨_Bö_Vec
 [k];
 
-2226 
+2248 
 Basic_Lí
  = 9;
 
-2227 
+2249 
 Kmax
  = 
 PE
@@ -16253,13 +16361,13 @@ In°_Mem_Width
 Basic_Lí
 ;
 
-2228 
+2250 
 k
 =0; k<
 Kmax
 ; k++){
 
-2229 
+2251 
 Vec_Tmp1
 [
 k
@@ -16269,7 +16377,7 @@ Vec_Tmp0
 Basic_Lí
 ];
 
-2230 
+2252 
 Vec_Tmp1
 [
 k
@@ -16283,13 +16391,13 @@ Vec_Tmp0
 Basic_Lí
  + PE::Inst_Mem_Width/2];
 
-2231 
+2253 
 Index
 =1; Index<
 Basic_Lí
 ; Index++){
 
-2232 
+2254 
 Vec_Tmp1
 [
 Kmax
@@ -16303,7 +16411,7 @@ Index
 Vec_Tmp0
 [k*Basic_Len + Index];
 
-2233 
+2255 
 Vec_Tmp1
 [
 Kmax
@@ -16321,7 +16429,7 @@ In°_Mem_Width
 Vec_Tmp0
 [k*Basic_Len + Index + PE::Inst_Mem_Width/2];
 
-2238 
+2260 
 k
 =0; k<
 PE
@@ -16329,13 +16437,13 @@ PE
 In°_Mem_Width
 /4; k++){
 
-2239 
+2261 
 Index
  = 
 k
 *4;
 
-2240 
+2262 
 fH™dÀ
  << 
 	`Bö_To_Hex
@@ -16345,7 +16453,7 @@ Vec_Tmp1
 Index
 ]);
 
-2242 
+2264 
 fH™dÀ
  << 
 °d
@@ -16353,23 +16461,23 @@ fH™dÀ
 ídl
 ;
 
-2245 
+2267 
 fH™dÀ1
 .
 	`˛o£
 ();
 
-2247 if(
+2269 if(
 PE
 ::
 In°_Mem_Dïth
  == 512){
 
-2248 
+2270 
 Löe_Num
 =0;
 
-2249 
+2271 
 fH™dÀ1
 .
 	`gëlöe
@@ -16377,23 +16485,23 @@ fH™dÀ1
 Ch¨_Bö_Vec
 , 100)){
 
-2250 
+2272 
 Löe_Num
 ++;
 
-2251 if(
+2273 if(
 Löe_Num
 <3){
 
-2256 
+2278 
 Vec_Tmp
 [100];
 
-2262 
+2284 
 Basic_Lí
 =9;
 
-2263 
+2285 
 Kmax
  = 
 PE
@@ -16403,13 +16511,13 @@ In°_Mem_Width
 Basic_Lí
 ;
 
-2264 
+2286 
 k
 =0; k<
 Kmax
 ; k++){
 
-2265 
+2287 
 Vec_Tmp
 [
 k
@@ -16419,13 +16527,13 @@ Ch¨_Bö_Vec
 Basic_Lí
 ];
 
-2266 
+2288 
 Index
 =1; Index<
 Basic_Lí
 ; Index++){
 
-2267 
+2289 
 Vec_Tmp
 [
 Kmax
@@ -16439,7 +16547,7 @@ Index
 Ch¨_Bö_Vec
 [k*Basic_Len+Index];
 
-2272 
+2294 
 k
 =0; k<
 PE
@@ -16447,13 +16555,13 @@ PE
 In°_Mem_Width
 /4; k++){
 
-2273 
+2295 
 Index
  = 
 k
 *4;
 
-2274 
+2296 
 fH™dÀ
  << 
 	`Bö_To_Hex
@@ -16463,7 +16571,7 @@ Vec_Tmp
 Index
 ]);
 
-2276 
+2298 
 fH™dÀ
  << 
 °d
@@ -16471,29 +16579,29 @@ fH™dÀ
 ídl
 ;
 
-2278 
+2300 
 fH™dÀ1
 .
 	`˛o£
 ();
 
-2283 
+2305 
 fH™dÀ
 .
 	`˛o£
 ();
 
-2285 
+2307 
 	}
 }
 
-2397 
+2419 
 	gScheduÀr
 ::
 	$Compuèti⁄_Resu…_Dump
 (){
 
-2399 
+2421 
 °d
 ::
 o°rög°ªam
@@ -16501,11 +16609,11 @@ o°rög°ªam
 os
 ;
 
-2400 
+2422 
 os
  << "./result/dst-" << "op" << ".txt";
 
-2401 
+2423 
 °d
 ::
 °rög
@@ -16517,7 +16625,7 @@ os
 	`°r
 ();
 
-2402 
+2424 
 °d
 ::
 of°ªam
@@ -16525,7 +16633,7 @@ of°ªam
 fH™dÀ
 ;
 
-2403 
+2425 
 fH™dÀ
 .
 	`›í
@@ -16535,17 +16643,17 @@ fName
 	`c_°r
 ());
 
-2404 if(!
+2426 if(!
 fH™dÀ
 .
 	`is_›í
 ()){
 
-2405 
+2427 
 	`ERROR
 ("FailÅo createÅhe dst-op.txt");
 
-2408 
+2430 
 i
 =0; i<
 DFG
@@ -16553,7 +16661,7 @@ DFG
 OP_Num
 ; i++){
 
-2409 
+2431 
 fH™dÀ
  << 
 DFG
@@ -16565,7 +16673,7 @@ i
 OP_ID
  << " ";
 
-2410 
+2432 
 fH™dÀ
  << 
 DFG
@@ -16577,7 +16685,7 @@ i
 OP_VÆ
  << " ";
 
-2411 
+2433 
 fH™dÀ
  << 
 DFG
@@ -16591,7 +16699,7 @@ OP_Aâribuã
 Exe_PE_ID
  << " ";
 
-2412 
+2434 
 fH™dÀ
  << 
 °d
@@ -16599,17 +16707,17 @@ fH™dÀ
 ídl
 ;
 
-2415 
+2437 
 fH™dÀ
 .
 	`˛o£
 ();
 
-2417 
+2439 
 	}
 }
 
-2419 
+2441 
 	gScheduÀr
 ::
 Lﬂd_IO_M≠pög
@@ -16625,7 +16733,7 @@ Row
 Cﬁ
 ){
 
-2421 
+2443 
 	g°d
 ::
 o°rög°ªam
@@ -16633,7 +16741,7 @@ o°rög°ªam
 oss
 ;
 
-2422 
+2444 
 	goss
  << "./c⁄fig/" << 
 	gDFG
@@ -16641,7 +16749,7 @@ oss
 	gDFG_Name
  << "_kernel_io.txt";
 
-2423 
+2445 
 	g°d
 ::
 °rög
@@ -16653,7 +16761,7 @@ oss
 °r
 ();
 
-2424 
+2446 
 	g°d
 ::
 if°ªam
@@ -16661,7 +16769,7 @@ if°ªam
 fH™dÀ
 ;
 
-2425 
+2447 
 	gfH™dÀ
 .
 ›í
@@ -16671,13 +16779,13 @@ fName
 c_°r
 ());
 
-2426 if(!
+2448 if(!
 	gfH™dÀ
 .
 is_›í
 ()){
 
-2427 
+2449 
 ERROR
 ("%†›íÉº‹!", 
 fName
@@ -16685,29 +16793,29 @@ fName
 c_°r
 ());
 
-2430 !
+2452 !
 	gfH™dÀ
 .
 eof
 ()){
 
-2431 if(
+2453 if(
 	gfH™dÀ
 .
 Áû
 ()){
 
-2435 
+2457 
 	gTmp
 ;
 
-2436 
+2458 
 	gfH™dÀ
  >> 
 	gTmp
 ;
 
-2437 
+2459 
 	gRaw_D©a
 .
 push_back
@@ -16715,13 +16823,13 @@ push_back
 Tmp
 );
 
-2440 
+2462 
 	gfH™dÀ
 .
 ˛ór
 ();
 
-2441 
+2463 
 	gfH™dÀ
 .
 £ekg
@@ -16733,11 +16841,11 @@ ios
 beg
 );
 
-2443 
+2465 
 	gRow
 =0;
 
-2444 
+2466 
 	g°d
 ::
 °rög
@@ -16745,7 +16853,7 @@ beg
 Unu£d
 ;
 
-2445 
+2467 
 	g°d
 ::
 gëlöe
@@ -16755,11 +16863,11 @@ fH™dÀ
 Unu£d
 )){
 
-2446 
+2468 
 	gRow
 ++;
 
-2449 
+2471 
 	gCﬁ
  = 
 Raw_D©a
@@ -16769,25 +16877,25 @@ size
 Row
 ;
 
-2450 
+2472 
 	gfH™dÀ
 .
 ˛o£
 ();
 
-2454 
+2476 
 	gScheduÀr
 ::
 	$Addr_Buf„r_Dump_C€
 (){
 
-2458 
+2480 
 Row
 , 
 Cﬁ
 ;
 
-2459 
+2481 
 °d
 ::
 ve˘‹
@@ -16795,7 +16903,7 @@ ve˘‹
 Raw_D©a
 ;
 
-2460 
+2482 
 	`Lﬂd_IO_M≠pög
 (
 Raw_D©a
@@ -16805,7 +16913,7 @@ Row
 Cﬁ
 );
 
-2461 
+2483 
 °d
 ::
 m≠
@@ -16813,13 +16921,13 @@ m≠
 OP_ID_To_Row_Index
 ;
 
-2462 
+2484 
 i
 =0; i<
 Row
 ; i++){
 
-2463 
+2485 
 OP_ID_To_Row_Index
 [
 Raw_D©a
@@ -16829,11 +16937,11 @@ i
 Cﬁ
 +0]] = i;
 
-2466 
+2488 
 IO_PE
 [2] = {0,1};
 
-2467 
+2489 
 i
 =0; i<
 CGRA
@@ -16841,7 +16949,7 @@ CGRA
 IO_Buf„r_Num
 ; i++){
 
-2469 
+2491 
 °d
 ::
 o°rög°ªam
@@ -16849,13 +16957,13 @@ o°rög°ªam
 os
 ;
 
-2470 
+2492 
 os
- << "./ªsu…/outside-" << "bøm-addr-" << 
+ << "./ªsu…/" << "Addr-Buf„r-" << 
 i
  << ".coe";
 
-2471 
+2493 
 °d
 ::
 °rög
@@ -16867,7 +16975,7 @@ os
 	`°r
 ();
 
-2472 
+2494 
 °d
 ::
 of°ªam
@@ -16875,7 +16983,7 @@ of°ªam
 fH™dÀ
 ;
 
-2473 
+2495 
 fH™dÀ
 .
 	`›í
@@ -16885,17 +16993,17 @@ fName
 	`c_°r
 ());
 
-2474 if(!
+2496 if(!
 fH™dÀ
 .
 	`is_›í
 ()){
 
-2475 
+2497 
 	`ERROR
-("FailÅo createÅhe outside-bram-addr-.coe");
+("FailÅo createÅhe Addr-Buffer-.coe");
 
-2478 
+2500 
 fH™dÀ
  << "mem‹y_öôüliz©i⁄_ødix=2;" << 
 °d
@@ -16903,7 +17011,7 @@ fH™dÀ
 ídl
 ;
 
-2479 
+2501 
 fH™dÀ
  << "mem‹y_öôüliz©i⁄_ve˘‹=" << 
 °d
@@ -16911,7 +17019,7 @@ fH™dÀ
 ídl
 ;
 
-2480 
+2502 
 IO_PE_ID
  = 
 IO_PE
@@ -16919,7 +17027,7 @@ IO_PE
 i
 ];
 
-2481 
+2503 
 °d
 ::
 ve˘‹
@@ -16927,7 +17035,7 @@ ve˘‹
 IO_Buf„r_Addr
 ;
 
-2482 
+2504 
 IO_Buf„r_Addr
 .
 	`ªsize
@@ -16935,7 +17043,7 @@ IO_Buf„r_Addr
 Schedulög_Com∂ëe_Time
  + 2);
 
-2483 
+2505 
 °d
 ::
 ve˘‹
@@ -16943,7 +17051,7 @@ ve˘‹
 IO_A˘ivôy
 ;
 
-2484 
+2506 
 IO_A˘ivôy
 .
 	`ªsize
@@ -16951,37 +17059,37 @@ IO_A˘ivôy
 Schedulög_Com∂ëe_Time
  + 2);
 
-2486 
+2508 
 j
 =0; j<
 Schedulög_Com∂ëe_Time
  + 1; j++){
 
-2487 
+2509 
 IO_Buf„r_Addr
 [
 j
 ] = 0;
 
-2488 
+2510 
 IO_A˘ivôy
 [
 j
 ] = 2;
 
-2491 
+2513 
 Kô
 =1; Kô<
 Cﬁ
 ; Kit++){
 
-2492 
+2514 
 j
 =1; j<
 Schedulög_Com∂ëe_Time
 ; j++){
 
-2494 
+2516 
 boﬁ
  
 Lﬂd_A˘ive
@@ -17003,7 +17111,7 @@ Lﬂd_P©h_Re£rved
 åue
 ;
 
-2495 
+2517 
 Lﬂd_Mux
  = 
 CGRA
@@ -17019,7 +17127,7 @@ j
 PE_Comp⁄ít_A˘ivôy
 ->Load_Mux;
 
-2496 
+2518 
 boﬁ
  
 St‹e_A˘ive
@@ -17041,29 +17149,29 @@ St‹e_P©h_Re£rved
 åue
 ;
 
-2497 if(
+2519 if(
 Lﬂd_A˘ive
  && 
 Lﬂd_Mux
 ==0){
 
-2498 if(
+2520 if(
 IO_A˘ivôy
 [
 j
 -1]==1){
 
-2499 
+2521 
 	`ERROR
 ("UnexpectedÜoad state!\n");
 
-2501 
+2523 
 IO_A˘ivôy
 [
 j
 -1] = 0;
 
-2502 
+2524 
 Lﬂd_OP
  = 
 CGRA
@@ -17079,7 +17187,7 @@ j
 PE_Comp⁄ít_A˘ivôy
 ->Load_OP;
 
-2503 
+2525 
 Row_Index
  = 
 OP_ID_To_Row_Index
@@ -17087,7 +17195,7 @@ OP_ID_To_Row_Index
 Lﬂd_OP
 ];
 
-2504 
+2526 
 IO_Buf„r_Addr
 [
 j
@@ -17101,27 +17209,27 @@ Cﬁ
 Kô
 ];
 
-2507 if(
+2529 if(
 St‹e_A˘ive
 ){
 
-2508 if(
+2530 if(
 IO_A˘ivôy
 [
 j
 ] == 0){
 
-2509 
+2531 
 	`ERROR
 ("Unexpected store state!\n");
 
-2511 
+2533 
 IO_A˘ivôy
 [
 j
 +2]=1;
 
-2512 
+2534 
 St‹e_OP
  = 
 CGRA
@@ -17137,7 +17245,7 @@ j
 PE_Comp⁄ít_A˘ivôy
 ->Store_OP;
 
-2513 
+2535 
 Row_Index
  = 
 OP_ID_To_Row_Index
@@ -17145,7 +17253,7 @@ OP_ID_To_Row_Index
 St‹e_OP
 ];
 
-2514 
+2536 
 IO_Buf„r_Addr
 [
 j
@@ -17159,15 +17267,15 @@ Cﬁ
 Kô
 ];
 
-2519 
+2541 
 Dec_D©a
 ;
 
-2520 
+2542 
 D©a_Width
 ;
 
-2521 
+2543 
 °d
 ::
 °rög
@@ -17175,37 +17283,37 @@ D©a_Width
 Bö_Så
 ;
 
-2522 
+2544 
 j
 =0; j<
 Schedulög_Com∂ëe_Time
 +2; j++){
 
-2524 if(
+2546 if(
 IO_A˘ivôy
 [
 j
 ]==0){
 
-2525 
+2547 
 fH™dÀ
  << "10";
 
-2527 if(
+2549 if(
 IO_A˘ivôy
 [
 j
 ]==1){
 
-2528 
+2550 
 fH™dÀ
  << "11";
 
-2531 
+2553 
 fH™dÀ
  << "00";
 
-2542 if(
+2564 if(
 j
 ==(
 Schedulög_Com∂ëe_Time
@@ -17215,11 +17323,11 @@ Kô
 Cﬁ
 -1){
 
-2543 
+2565 
 fH™dÀ
  << "001";
 
-2545 if(
+2567 if(
 j
 ==(
 Schedulög_Com∂ëe_Time
@@ -17229,15 +17337,15 @@ Kô
 Cﬁ
 -1){
 
-2546 
+2568 
 fH™dÀ
  << "010";
 
-2549 
+2571 
 fH™dÀ
  << "100";
 
-2553 
+2575 
 Dec_D©a
  = 
 IO_Buf„r_Addr
@@ -17245,21 +17353,21 @@ IO_Buf„r_Addr
 j
 ];
 
-2554 
+2576 
 D©a_Width
  = 13;
 
-2555 if(
+2577 if(
 Dec_D©a
 ==
 NaN
 ){
 
-2556 
+2578 
 Dec_D©a
 =0;
 
-2558 
+2580 
 	`Dec_To_Bö_Så
 (
 Dec_D©a
@@ -17269,13 +17377,13 @@ D©a_Width
 Bö_Så
 );
 
-2559 
+2581 
 fH™dÀ
  << 
 Bö_Så
 ;
 
-2560 
+2582 
 fH™dÀ
  << 
 °d
@@ -17283,7 +17391,7 @@ fH™dÀ
 ídl
 ;
 
-2564 if(
+2586 if(
 Row
 >2 && 
 Kô
@@ -17291,7 +17399,7 @@ Kô
 Cﬁ
 -1){
 
-2565 
+2587 
 fH™dÀ
  << "0010000000000000000" << 
 °d
@@ -17299,7 +17407,7 @@ fH™dÀ
 ídl
 ;
 
-2566 
+2588 
 fH™dÀ
  << "0010000000000000000" << 
 °d
@@ -17307,7 +17415,7 @@ fH™dÀ
 ídl
 ;
 
-2567 
+2589 
 fH™dÀ
  << "0010000000000000000" << 
 °d
@@ -17315,7 +17423,7 @@ fH™dÀ
 ídl
 ;
 
-2568 
+2590 
 fH™dÀ
  << "0010000000000000000" << 
 °d
@@ -17323,7 +17431,7 @@ fH™dÀ
 ídl
 ;
 
-2569 
+2591 
 fH™dÀ
  << "0010000000000000000" << 
 °d
@@ -17331,7 +17439,7 @@ fH™dÀ
 ídl
 ;
 
-2570 
+2592 
 fH™dÀ
  << "0010000000000000000" << 
 °d
@@ -17339,25 +17447,17 @@ fH™dÀ
 ídl
 ;
 
-2574 
+2596 
 fH™dÀ
 .
 	`˛o£
 ();
 
-2578 
-	`Bö_To_Hód_Fûe
-("./result/outside-data-memory-0.coe", "./result/initialized-src.h", "Src", 32);
-
-2579 
-	`Bö_To_Hód_Fûe
-("./result/outside-data-memory-1.coe", "./result/initialized-result.h", "Result", 32);
-
-2581 
+2600 
 	}
 }
 
-2583 
+2602 
 	gScheduÀr
 ::
 	$Bö_To_Hex
@@ -17365,349 +17465,143 @@ fH™dÀ
 Bö_Vec
 ){
 
-2584 
+2603 
 Hex_Ch¨
 ;
 
-2585 if(
+2604 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='0' && Bin_Vec[2]=='0' && Bin_Vec[3]=='0'){
 
-2586 
+2605 
 Hex_Ch¨
  = '0';
 
-2588 if(
+2607 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='0' && Bin_Vec[2]=='0' && Bin_Vec[3]=='1'){
 
-2589 
+2608 
 Hex_Ch¨
  = '1';
 
-2591 if(
+2610 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='0' && Bin_Vec[2]=='1' && Bin_Vec[3]=='0'){
 
-2592 
+2611 
 Hex_Ch¨
  = '2';
 
-2594 if(
+2613 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='0' && Bin_Vec[2]=='1' && Bin_Vec[3]=='1'){
 
-2595 
+2614 
 Hex_Ch¨
  = '3';
 
-2597 if(
+2616 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='1' && Bin_Vec[2]=='0' && Bin_Vec[3]=='0'){
 
-2598 
+2617 
 Hex_Ch¨
  = '4';
 
-2600 if(
+2619 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='1' && Bin_Vec[2]=='0' && Bin_Vec[3]=='1'){
 
-2601 
+2620 
 Hex_Ch¨
  = '5';
 
-2603 if(
+2622 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='1' && Bin_Vec[2]=='1' && Bin_Vec[3]=='0'){
 
-2604 
+2623 
 Hex_Ch¨
  = '6';
 
-2606 if(
+2625 if(
 Bö_Vec
 [0]=='0' && Bin_Vec[1]=='1' && Bin_Vec[2]=='1' && Bin_Vec[3]=='1'){
 
-2607 
+2626 
 Hex_Ch¨
  = '7';
 
-2609 if(
+2628 if(
 Bö_Vec
 [0]=='1' && Bin_Vec[1]=='0' && Bin_Vec[2]=='0' && Bin_Vec[3]=='0'){
 
-2610 
+2629 
 Hex_Ch¨
  = '8';
 
-2612 if(
+2631 if(
 Bö_Vec
 [0]=='1' && Bin_Vec[1]=='0' && Bin_Vec[2]=='0' && Bin_Vec[3]=='1'){
 
-2613 
+2632 
 Hex_Ch¨
  = '9';
 
-2615 if(
+2634 if(
 Bö_Vec
 [0]=='1' && Bin_Vec[1]=='0' && Bin_Vec[2]=='1' && Bin_Vec[3]=='0'){
 
-2616 
+2635 
 Hex_Ch¨
  = 'A';
 
-2618 if(
+2637 if(
 Bö_Vec
 [0]=='1' && Bin_Vec[1]=='0' && Bin_Vec[2]=='1' && Bin_Vec[3]=='1'){
 
-2619 
+2638 
 Hex_Ch¨
  = 'B';
 
-2621 if(
+2640 if(
 Bö_Vec
 [0]=='1' && Bin_Vec[1]=='1' && Bin_Vec[2]=='0' && Bin_Vec[3]=='0'){
 
-2622 
+2641 
 Hex_Ch¨
  = 'C';
 
-2624 if(
+2643 if(
 Bö_Vec
 [0]=='1' && Bin_Vec[1]=='1' && Bin_Vec[2]=='0' && Bin_Vec[3]=='1'){
 
-2625 
+2644 
 Hex_Ch¨
  = 'D';
 
-2627 if(
+2646 if(
 Bö_Vec
 [0]=='1' && Bin_Vec[1]=='1' && Bin_Vec[2]=='1' && Bin_Vec[3]=='0'){
 
-2628 
+2647 
 Hex_Ch¨
  = 'E';
 
-2631 
+2650 
 Hex_Ch¨
  = 'F';
 
-2634  
+2653  
 Hex_Ch¨
 ;
 
-2635 
+2654 
 	}
 }
 
-2637 
-	gScheduÀr
-::
-Bö_To_Hód_Fûe
-(c⁄° 
-°d
-::
-°rög
- &
-Bö_fName
-, c⁄° std::°rög &
-Hód_fName
-, c⁄° std::°rög &
-Aºay_Name
-, c⁄° &
-D©a_Width
-){
-
-2639 
-	gD©a_Num
- = 
-Fûe_Löe_C¡
-(
-Bö_fName
-) - 2;
-
-2640 
-	g°d
-::
-if°ªam
- 
-Bö_fH™dÀ
-;
-
-2641 
-	gBö_fH™dÀ
-.
-›í
-(
-Bö_fName
-.
-c_°r
-());
-
-2642 if(!
-	gBö_fH™dÀ
-.
-is_›í
-()){
-
-2643 
-ERROR
-("FaûedÅÿ›í %s\n", 
-Bö_fName
-.
-c_°r
-());
-
-2646 
-	g°d
-::
-of°ªam
- 
-Hód_fH™dÀ
-;
-
-2647 
-	gHód_fH™dÀ
-.
-›í
-(
-Hód_fName
-.
-c_°r
-());
-
-2648 if(!
-	gHód_fH™dÀ
-.
-is_›í
-()){
-
-2649 
-ERROR
-("FaûedÅÿ¸óã %s\n", 
-Hód_fName
-.
-c_°r
-());
-
-2652 
-	gBö_Vec
-[100];
-
-2653 
-	gi
-=0; i<100; i++){
-
-2654 
-	gBö_Vec
-[
-i
-] = '0';
-
 2656 
-	gLöe_Num
-=0;
-
-2657 
-	gHód_fH™dÀ
- << "unsig√d i¡ " << 
-	gAºay_Name
- << "[" << 
-	gD©a_Num
- <<"]={";
-
-2658 
-	gBö_fH™dÀ
-.
-gëlöe
-(
-Bö_Vec
-,100)){
-
-2659 
-	gLöe_Num
-++;
-
-2662 if(
-	gLöe_Num
-<3){
-
-2666 
-	gHód_fH™dÀ
- << "0x";
-
-2667 
-	gk
-=0; k<(
-	gD©a_Width
-+3)/4; k++){
-
-2668 
-	gIndex
- = 
-k
-*4;
-
-2669 
-	gHód_fH™dÀ
- << 
-Bö_To_Hex
-(&
-Bö_Vec
-[
-Index
-]);
-
-2671 if(
-	gLöe_Num
- =
-D©a_Num
- + 2){
-
-2672 
-Hód_fH™dÀ
- << " };";
-
-2675 
-	gHód_fH™dÀ
- << ", ";
-
-2678 
-	gi
-=
-Löe_Num
-+1; i<=
-D©a_Num
-+2; i++){
-
-2679 if(
-	gi
-==
-D©a_Num
-+2){
-
-2680 
-Hód_fH™dÀ
- << "0x00000000 };";
-
-2683 
-	gHód_fH™dÀ
- << "0x00000000, ";
-
-2686 
-	gHód_fH™dÀ
-.
-˛o£
-();
-
-2687 
-	gBö_fH™dÀ
-.
-˛o£
-();
-
-2691 
 	gScheduÀr
 ::
 Fûe_Löe_C¡
@@ -17719,11 +17613,11 @@ Fûe_Löe_C¡
 fName
 ){
 
-2692 
+2657 
 Löe_C¡
 =0;
 
-2693 
+2658 
 	g°d
 ::
 if°ªam
@@ -17731,7 +17625,7 @@ if°ªam
 fH™dÀ
 ;
 
-2694 
+2659 
 	gfH™dÀ
 .
 ›í
@@ -17741,21 +17635,21 @@ fName
 c_°r
 ());
 
-2695 if(!
+2660 if(!
 	gfH™dÀ
 .
 is_›í
 ()){
 
-2696 
+2661 
 ERROR
 ("File open failed!\n");
 
-2698 
+2663 
 	gLöe_Vec
 [200];
 
-2699 
+2664 
 	gfH™dÀ
 .
 gëlöe
@@ -17763,15 +17657,15 @@ gëlöe
 Löe_Vec
 , 200)){
 
-2700 
+2665 
 	gLöe_C¡
 ++;
 
-2702  
+2667  
 	gLöe_C¡
 ;
 
-2705 
+2670 
 	gScheduÀr
 ::
 Dec_To_Bö_Så
@@ -17787,129 +17681,147 @@ D©a_Width
 Bö_Så
 ){
 
-2706 if(
+2672 
+Dec_D©a_Tmp
+;
+
+2673 if(
+	gDec_D©a
+ < 0){
+
+2674 
+	gDec_D©a_Tmp
+ = 
+pow
+(2, 
 D©a_Width
-==2){
+Ë- 1 + 
+	gDec_D©a
+;
 
-2707 
-Dec_D©a
-){
-
-2709 
-Bö_Så
- = "00";
-
-2712 
-Bö_Så
- = "01";
-
-2715 
-Bö_Så
- = "10";
-
-2718 
-Bö_Så
- = "11";
-
-2721 
-ERROR
-("Unexpected decimal value!");
-
-2725 if(
-	gD©a_Width
-==4){
-
-2726 
-Dec_D©a
-){
-
-2728 
-Bö_Så
- = "0000";
-
-2731 
-Bö_Så
- = "0001";
-
-2734 
-Bö_Så
- = "0010";
-
-2737 
-Bö_Så
- = "0011";
-
-2740 
-Bö_Så
- = "0100";
-
-2743 
-Bö_Så
- = "0101";
-
-2746 
-Bö_Så
- = "0110";
-
-2749 
-Bö_Så
- = "0111";
-
-2752 
-Bö_Så
- = "1000";
-
-2755 
-Bö_Så
- = "1001";
-
-2758 
-Bö_Så
- = "1010";
-
-2761 
-Bö_Så
- = "1011";
-
-2764 
-Bö_Så
- = "1100";
-
-2767 
-Bö_Så
- = "1101";
-
-2770 
-Bö_Så
- = "1110";
-
-2773 
-Bö_Så
- = "1111";
-
-2776 
-ERROR
-("Unexpected Dec_Data!\n");
-
-2780 if(
-	gD©a_Width
-==8 || 
-D©a_Width
-==13){
-
-2781 
-D©a_Tmp
+2677 
+	gDec_D©a_Tmp
  = 
 Dec_D©a
 ;
 
-2782 
+2680 if(
+	gD©a_Width
+==2){
+
+2681 
+Dec_D©a_Tmp
+){
+
+2683 
+Bö_Så
+ = "00";
+
+2686 
+Bö_Så
+ = "01";
+
+2689 
+Bö_Så
+ = "10";
+
+2692 
+Bö_Så
+ = "11";
+
+2695 
+ERROR
+("Unexpected decimal value!");
+
+2699 if(
+	gD©a_Width
+==4){
+
+2700 
+Dec_D©a_Tmp
+){
+
+2702 
+Bö_Så
+ = "0000";
+
+2705 
+Bö_Så
+ = "0001";
+
+2708 
+Bö_Så
+ = "0010";
+
+2711 
+Bö_Så
+ = "0011";
+
+2714 
+Bö_Så
+ = "0100";
+
+2717 
+Bö_Så
+ = "0101";
+
+2720 
+Bö_Så
+ = "0110";
+
+2723 
+Bö_Så
+ = "0111";
+
+2726 
+Bö_Så
+ = "1000";
+
+2729 
+Bö_Så
+ = "1001";
+
+2732 
+Bö_Så
+ = "1010";
+
+2735 
+Bö_Så
+ = "1011";
+
+2738 
+Bö_Så
+ = "1100";
+
+2741 
+Bö_Så
+ = "1101";
+
+2744 
+Bö_Så
+ = "1110";
+
+2747 
+Bö_Så
+ = "1111";
+
+2750 
+ERROR
+("Unexpected Dec_Data!\n");
+
+2755 
+	gD©a_Tmp
+ = 
+Dec_D©a_Tmp
+;
+
+2756 
 	gWidth_Tmp
  = 
 D©a_Width
 ;
 
-2783 
+2757 
 	g°d
 ::
 li°
@@ -17917,7 +17829,7 @@ li°
 Bô_Li°
 ;
 
-2784 
+2758 
 	g°d
 ::
 li°
@@ -17927,13 +17839,13 @@ li°
 Rô
 ;
 
-2786 
+2760 
 	gD©a_Tmp
  !1 && 
 D©a_Tmp
  != 0){
 
-2787 
+2761 
 Bô_Li°
 .
 push_back
@@ -17941,17 +17853,17 @@ push_back
 D©a_Tmp
 %2);
 
-2788 
+2762 
 	gD©a_Tmp
  = 
 D©a_Tmp
 /2;
 
-2789 
+2763 
 	gWidth_Tmp
 --;
 
-2791 
+2765 
 	gBô_Li°
 .
 push_back
@@ -17959,25 +17871,25 @@ push_back
 D©a_Tmp
 );
 
-2792 
+2766 
 	gWidth_Tmp
 --;
 
-2794 
+2768 
 	gWidth_Tmp
  != 0){
 
-2795 
+2769 
 Bô_Li°
 .
 push_back
 (0);
 
-2796 
+2770 
 	gWidth_Tmp
 --;
 
-2799 
+2773 
 	g°d
 ::
 o°rög°ªam
@@ -17985,7 +17897,7 @@ o°rög°ªam
 os
 ;
 
-2800 
+2774 
 	gRô
 =
 Bô_Li°
@@ -17995,19 +17907,19 @@ rbegö
 ªnd
 (); Rit++){
 
-2801 
+2775 
 	gos
  << (*
 	gRô
 );
 
-2803 
+2777 
 	gBô_Li°
 .
 ˛ór
 ();
 
-2804 
+2778 
 	gBö_Så
  = 
 os
@@ -18015,9 +17927,171 @@ os
 °r
 ();
 
-2807 
-ERROR
-("Unexpected Data_Wdith!\n");
+2783 
+	gScheduÀr
+::
+	$IO_Buf„r_Dump_C€
+(){
+
+2785 
+i
+=0; i<
+CGRA
+->
+IO_Buf„r_Num
+; i++){
+
+2787 
+°d
+::
+o°rög°ªam
+ 
+oss
+;
+
+2788 
+oss
+ << "./ªsu…/IO-Buf„r-"<<
+i
+<<".coe";
+
+2789 
+°d
+::
+°rög
+ 
+fName
+=
+oss
+.
+	`°r
+();
+
+2790 
+°d
+::
+of°ªam
+ 
+fH™dÀ
+;
+
+2791 
+fH™dÀ
+.
+	`›í
+(
+fName
+.
+	`c_°r
+());
+
+2792 if(!
+fH™dÀ
+.
+	`is_›í
+()){
+
+2793 
+	`ERROR
+("FailedÅo createÅhe IO-Buffer-.coe");
+
+2795 
+fH™dÀ
+ << "mem‹y_öôüliz©i⁄_ødix=2;" << 
+°d
+::
+ídl
+;
+
+2796 
+fH™dÀ
+ << "mem‹y_öôüliz©i⁄_ve˘‹=" << 
+°d
+::
+ídl
+;
+
+2798 
+°d
+::
+ve˘‹
+<
+O≥ønd
+*>::
+ôî©‹
+ 
+Vô
+;
+
+2799 
+Vô
+ = 
+DFG
+->
+OP_Aºay
+.
+	`begö
+(); Vô !DFG->OP_Aºay.
+	`íd
+(); Vit++){
+
+2800 
+Dec_D©a
+ = (*
+Vô
+)->
+OP_VÆ
+;
+
+2801 
+D©a_Width
+ = 32;
+
+2802 if((*
+Vô
+)->
+IO_Buf„r_ID
+ =
+i
+){
+
+2803 
+°d
+::
+°rög
+ 
+Bö_Så
+;
+
+2804 
+	`Dec_To_Bö_Så
+(
+Dec_D©a
+, 
+D©a_Width
+, 
+Bö_Så
+);
+
+2805 
+fH™dÀ
+ << 
+Bö_Så
+ << 
+°d
+::
+ídl
+;
+
+2808 
+fH™dÀ
+.
+	`˛o£
+();
+
+2812 
+	}
+}
 
 	@Scheduler.h
 
@@ -18410,14 +18484,18 @@ In°_Mem_Dump_C€
 ();
 
 73 
-Addr_Buf„r_Dump_Mem
+IO_Buf„r_Dump_C€
 ();
 
 74 
-In°_Mem_Dump_Mem
+Addr_Buf„r_Dump_Mem
 ();
 
 75 
+In°_Mem_Dump_Mem
+();
+
+76 
 Lﬂd_IO_M≠pög
 (
 °d
@@ -18431,30 +18509,14 @@ Row
 Cﬁ
 );
 
-76 
+77 
 Addr_Buf„r_Dump_C€
 ();
 
-77 
+78 
 Bö_To_Hex
 (* 
 Bö_Vec
-);
-
-78 
-Bö_To_Hód_Fûe
-(c⁄° 
-°d
-::
-°rög
- &
-Bö_fName
-, c⁄° std::°rög &
-Hód_fName
-, c⁄° std::°rög &
-Aºay_Name
-, c⁄° &
-D©a_Width
 );
 
 79 
@@ -18481,25 +18543,221 @@ D©a_Width
 Bö_Så
 );
 
-	@config/io.h
+	@main.cpp
 
-3 
-	gC⁄°_In
-[1] = {0};
+18 
+	~<c°dlib
+>
 
-5 
-	gA_In
-[10][10]={
+19 
+	~"GlobÆ_Def.h
+"
 
-18 
-	gB_In
-[10][10]={
+20 
+	~"D©a_Flow_Gøph.h
+"
 
-31 
-	gC_Out
-[10][10]={
+21 
+	~"Cﬂr£_Gøö_Rec⁄_Arch.h
+"
 
-	@config/main.cpp
+22 
+	~"ScheduÀr.h
+"
+
+24 
+Lﬂd_P¨amëîs
+();
+
+26 
+	$maö
+(){
+
+28 
+°d
+::
+cout
+ << std::
+ídl
+ << "\t\tFully Pipelined Soft-CGRA Scheduling" << std::endl;
+
+29 
+°d
+::
+cout
+ << "\t(CËE.E.E Dï¨tmít, ThêUnivîsôy o‡H⁄g K⁄g" << std::
+ídl
+ << std::endl;
+
+31 
+	`Lﬂd_P¨amëîs
+();
+
+32 
+	`§™d
+(
+GL_V¨
+::
+R™dom_Sìd
+);
+
+33 
+Cﬂr£_Gøö_Rec⁄_Arch
+* 
+CGRA
+ = 
+√w
+ 
+	`Cﬂr£_Gøö_Rec⁄_Arch
+();
+
+34 
+D©a_Flow_Gøph
+* 
+DFG
+ = 
+√w
+ 
+	`D©a_Flow_Gøph
+();
+
+35 
+ScheduÀr
+* 
+Cuºít_ScheduÀr
+ = 
+√w
+ 
+	`ScheduÀr
+(
+DFG
+, 
+CGRA
+);
+
+36 
+Cuºít_ScheduÀr
+->
+	`Schedulög
+();
+
+37 
+Cuºít_ScheduÀr
+->
+	`OP_Compuèti⁄_Check
+();
+
+39 
+	}
+}
+
+41 
+	$Lﬂd_P¨amëîs
+(){
+
+43 
+°d
+::
+°rög
+ 
+C⁄fig_fName
+ = "config/configure.txt";
+
+44 
+°d
+::
+if°ªam
+ 
+C⁄fig_fH™dÀ
+;
+
+45 
+C⁄fig_fH™dÀ
+.
+	`›í
+(
+C⁄fig_fName
+.
+	`c_°r
+());
+
+46 if(!
+C⁄fig_fH™dÀ
+.
+	`is_›í
+()){
+
+47 
+	`ERROR
+("FailedÅo openÅhe configure.txt!");
+
+50 !
+C⁄fig_fH™dÀ
+.
+	`eof
+()){
+
+52 
+°d
+::
+°rög
+ 
+C⁄fig_Iãm_Key
+;
+
+53 
+C⁄fig_fH™dÀ
+ >> 
+C⁄fig_Iãm_Key
+;
+
+55 if(
+C⁄fig_Iãm_Key
+ == "Print_Level"){
+
+56 
+C⁄fig_fH™dÀ
+ >> 
+GL_V¨
+::
+Pröt_Levñ
+;
+
+58 if(
+C⁄fig_Iãm_Key
+=="Verify_On"){
+
+59 
+C⁄fig_fH™dÀ
+ >> 
+GL_V¨
+::
+Vîify_On
+;
+
+61 if(
+C⁄fig_Iãm_Key
+=="Random_Seed"){
+
+62 
+C⁄fig_fH™dÀ
+ >> 
+GL_V¨
+::
+R™dom_Sìd
+;
+
+66 
+C⁄fig_fH™dÀ
+.
+	`˛o£
+();
+
+68 
+	}
+}
+
+	@util/Link-Gen/src/link-gen.cpp
 
 1 
 	~<io°ªam
@@ -19204,244 +19462,6 @@ i
 ][
 j
 ]=0;
-
-	@main.cpp
-
-18 
-	~<c°dlib
->
-
-19 
-	~"GlobÆ_Def.h
-"
-
-20 
-	~"D©a_Flow_Gøph.h
-"
-
-21 
-	~"Cﬂr£_Gøö_Rec⁄_Arch.h
-"
-
-22 
-	~"ScheduÀr.h
-"
-
-24 
-Lﬂd_P¨amëîs
-();
-
-26 
-	$maö
-(){
-
-28 
-°d
-::
-cout
- << std::
-ídl
- << "\t\tFully Pipelined Soft-CGRA Scheduling" << std::endl;
-
-29 
-°d
-::
-cout
- << "\t(CËE.E.E Dï¨tmít, ThêUnivîsôy o‡H⁄g K⁄g" << std::
-ídl
- << std::endl;
-
-31 
-	`Lﬂd_P¨amëîs
-();
-
-32 
-	`§™d
-(
-GL_V¨
-::
-R™dom_Sìd
-);
-
-33 
-Cﬂr£_Gøö_Rec⁄_Arch
-* 
-CGRA
- = 
-√w
- 
-	`Cﬂr£_Gøö_Rec⁄_Arch
-();
-
-34 
-D©a_Flow_Gøph
-* 
-DFG
- = 
-√w
- 
-	`D©a_Flow_Gøph
-();
-
-35 
-ScheduÀr
-* 
-Cuºít_ScheduÀr
- = 
-√w
- 
-	`ScheduÀr
-(
-DFG
-, 
-CGRA
-);
-
-36 
-Cuºít_ScheduÀr
-->
-	`Schedulög
-();
-
-37 
-Cuºít_ScheduÀr
-->
-	`OP_Compuèti⁄_Check
-();
-
-39 
-	}
-}
-
-41 
-	$Lﬂd_P¨amëîs
-(){
-
-43 
-°d
-::
-°rög
- 
-C⁄fig_fName
- = "config/configure.txt";
-
-44 
-°d
-::
-if°ªam
- 
-C⁄fig_fH™dÀ
-;
-
-45 
-C⁄fig_fH™dÀ
-.
-	`›í
-(
-C⁄fig_fName
-.
-	`c_°r
-());
-
-46 if(!
-C⁄fig_fH™dÀ
-.
-	`is_›í
-()){
-
-47 
-	`ERROR
-("FailedÅo openÅhe configure.txt!");
-
-50 !
-C⁄fig_fH™dÀ
-.
-	`eof
-()){
-
-52 
-°d
-::
-°rög
- 
-C⁄fig_Iãm_Key
-;
-
-53 
-C⁄fig_fH™dÀ
- >> 
-C⁄fig_Iãm_Key
-;
-
-55 if(
-C⁄fig_Iãm_Key
- == "Print_Level"){
-
-56 
-C⁄fig_fH™dÀ
- >> 
-GL_V¨
-::
-Pröt_Levñ
-;
-
-58 if(
-C⁄fig_Iãm_Key
-=="Verify_On"){
-
-59 
-C⁄fig_fH™dÀ
- >> 
-GL_V¨
-::
-Vîify_On
-;
-
-61 if(
-C⁄fig_Iãm_Key
-=="Random_Seed"){
-
-62 
-C⁄fig_fH™dÀ
- >> 
-GL_V¨
-::
-R™dom_Sìd
-;
-
-66 
-C⁄fig_fH™dÀ
-.
-	`˛o£
-();
-
-68 
-	}
-}
-
-	@result/initialized-result.h
-
-1 
-	gResu…
-[200]={0x000000BE, 0x00000116, 0x00000091, 0x00000084, 0x000000BE, 0x00000088, 0x000000C8, 0x000000A9, 0x000000A1, 0x000000A7, 0x000000BA, 0x00000163, 0x0000009C, 0x0000009D, 0x000000CF, 0x000000D1, 0x000000B9, 0x000000A4, 0x000000D2, 0x000000F6, 0x000000BF, 0x0000014F, 0x000000E9, 0x000000B3, 0x000000C4, 0x00000101, 0x000000DC, 0x000000E3, 0x000000AE, 0x000000E8, 0x000000BF, 0x0000013F, 0x000000AC, 0x0000009C, 0x000000A7, 0x000000DA, 0x000000B6, 0x000000BA, 0x000000A5, 0x000000BA, 0x00000114, 0x000001B1, 0x000000EF, 0x000000CD, 0x000000E5, 0x00000131, 0x000000FB, 0x000000FC, 0x000000C1, 0x00000101, 0x000000E9, 0x0000017A, 0x000000DE, 0x000000B5, 0x000000DA, 0x000000F0, 0x000000E7, 0x000000D8, 0x000000B4, 0x000000E2, 0x000000E8, 0x000001AE, 0x000000DD, 0x0000009B, 0x000000FF, 0x00000112, 0x000000BB, 0x000000CB, 0x000000C1, 0x00000148, 0x000000F8, 0x0000013F, 0x000000B2, 0x00000089, 0x000000C9, 0x000000D9, 0x000000E9, 0x000000AB, 0x000000A5, 0x000000EC, 0x0000010B, 0x0000017B, 0x000000B8, 0x0000008D, 0x000000E7, 0x00000114, 0x00000103, 0x000000F7, 0x000000DA, 0x0000012D, 0x000000FC, 0x000001DD, 0x000000EF, 0x000000CC, 0x0000011A, 0x0000012E, 0x000000EF, 0x00000105, 0x000000F5, 0x0000014E, 0x00000053, 0x00000069, 0x00000024, 0x00000027, 0x00000026, 0x00000035, 0x00000053, 0x0000004C, 0x0000003C, 0x00000023, 0x00000044, 0x00000056, 0x00000013, 0x0000001F, 0x00000024, 0x00000021, 0x00000041, 0x0000003D, 0x00000030, 0x00000016, 0x0000004A, 0x0000005A, 0x00000049, 0x00000025, 0x0000000E, 0x00000059, 0x00000059, 0x00000049, 0x0000003C, 0x0000003C, 0x00000050, 0x00000073, 0x00000043, 0x0000002E, 0x00000019, 0x0000004F, 0x0000004D, 0x0000004C, 0x00000036, 0x0000002C, 0x00000072, 0x000000A1, 0x0000005B, 0x00000040, 0x00000025, 0x0000006D, 0x0000006F, 0x0000006C, 0x0000004E, 0x0000003E, 0x00000053, 0x0000007C, 0x0000004A, 0x00000032, 0x00000019, 0x00000055, 0x0000004D, 0x0000004F, 0x00000036, 0x0000002D, 0x0000001D, 0x00000048, 0x00000031, 0x0000001F, 0x00000005, 0x0000002C, 0x00000008, 0x0000001C, 0x00000006, 0x00000009, 0x00000049, 0x00000055, 0x0000003D, 0x00000022, 0x00000012, 0x0000004E, 0x00000058, 0x00000047, 0x0000003C, 0x00000037, 0x00000059, 0x0000005A, 0x00000034, 0x00000022, 0x0000001D, 0x0000004D, 0x00000071, 0x00000055, 0x0000004E, 0x0000003F, 0x00000053, 0x00000076, 0x0000002D, 0x0000002D, 0x00000025, 0x0000003A, 0x0000004A, 0x0000004C, 0x00000036, 0x0000001F };
-
-	@result/initialized-src.h
-
-1 
-	gSrc
-[301]={0x00000000, 0x00000003, 0x00000007, 0x00000003, 0x00000006, 0x00000009, 0x00000002, 0x00000000, 0x00000003, 0x00000000, 0x00000002, 0x00000001, 0x00000007, 0x00000002, 0x00000002, 0x00000007, 0x00000009, 0x00000002, 0x00000009, 0x00000003, 0x00000001, 0x00000009, 0x00000001, 0x00000004, 0x00000008, 0x00000005, 0x00000003, 0x00000001, 0x00000006, 0x00000002, 0x00000006, 0x00000005, 0x00000004, 0x00000006, 0x00000006, 0x00000003, 0x00000004, 0x00000002, 0x00000004, 0x00000004, 0x00000003, 0x00000007, 0x00000006, 0x00000008, 0x00000003, 0x00000004, 0x00000002, 0x00000006, 0x00000009, 0x00000006, 0x00000004, 0x00000005, 0x00000004, 0x00000007, 0x00000007, 0x00000007, 0x00000002, 0x00000001, 0x00000006, 0x00000005, 0x00000004, 0x00000000, 0x00000001, 0x00000007, 0x00000001, 0x00000009, 0x00000007, 0x00000007, 0x00000006, 0x00000006, 0x00000009, 0x00000008, 0x00000002, 0x00000003, 0x00000000, 0x00000008, 0x00000000, 0x00000006, 0x00000008, 0x00000006, 0x00000001, 0x00000009, 0x00000004, 0x00000001, 0x00000003, 0x00000004, 0x00000004, 0x00000007, 0x00000003, 0x00000007, 0x00000009, 0x00000002, 0x00000007, 0x00000005, 0x00000004, 0x00000008, 0x00000009, 0x00000005, 0x00000008, 0x00000003, 0x00000008, 0x00000006, 0x00000005, 0x00000005, 0x00000002, 0x00000001, 0x00000007, 0x00000009, 0x00000006, 0x00000006, 0x00000006, 0x00000008, 0x00000009, 0x00000000, 0x00000003, 0x00000005, 0x00000002, 0x00000008, 0x00000007, 0x00000006, 0x00000002, 0x00000003, 0x00000009, 0x00000007, 0x00000004, 0x00000000, 0x00000006, 0x00000000, 0x00000003, 0x00000000, 0x00000001, 0x00000005, 0x00000007, 0x00000005, 0x00000009, 0x00000007, 0x00000005, 0x00000005, 0x00000007, 0x00000004, 0x00000000, 0x00000008, 0x00000008, 0x00000004, 0x00000001, 0x00000009, 0x00000000, 0x00000008, 0x00000002, 0x00000006, 0x00000009, 0x00000000, 0x00000008, 0x00000001, 0x00000002, 0x00000002, 0x00000006, 0x00000000, 0x00000001, 0x00000009, 0x00000009, 0x00000009, 0x00000007, 0x00000001, 0x00000005, 0x00000007, 0x00000006, 0x00000003, 0x00000005, 0x00000003, 0x00000004, 0x00000001, 0x00000009, 0x00000009, 0x00000008, 0x00000005, 0x00000009, 0x00000003, 0x00000005, 0x00000001, 0x00000005, 0x00000008, 0x00000008, 0x00000000, 0x00000000, 0x00000004, 0x00000004, 0x00000006, 0x00000001, 0x00000005, 0x00000006, 0x00000001, 0x00000008, 0x00000007, 0x00000001, 0x00000005, 0x00000007, 0x00000003, 0x00000008, 0x00000001, 0x00000009, 0x0000004A, 0x0000004E, 0x0000000F, 0x0000001B, 0x00000026, 0x00000023, 0x00000053, 0x00000043, 0x0000003C, 0x00000020, 0x0000003E, 0x00000044, 0x00000005, 0x00000017, 0x00000024, 0x00000015, 0x00000041, 0x00000037, 0x00000030, 0x00000014, 0x0000003E, 0x00000036, 0x0000002D, 0x00000015, 0x0000000E, 0x00000041, 0x00000059, 0x0000003D, 0x0000003C, 0x00000038, 0x0000003E, 0x0000003D, 0x00000019, 0x00000016, 0x00000019, 0x0000002B, 0x0000004D, 0x0000003A, 0x00000036, 0x00000026, 0x0000005A, 0x00000059, 0x00000023, 0x00000020, 0x00000025, 0x0000003D, 0x0000006F, 0x00000054, 0x0000004E, 0x00000036, 0x0000003E, 0x0000003D, 0x00000019, 0x00000016, 0x00000019, 0x0000002B, 0x0000004D, 0x0000003A, 0x00000036, 0x00000026, 0x00000008, 0x00000009, 0x00000000, 0x00000003, 0x00000005, 0x00000002, 0x00000008, 0x00000007, 0x00000006, 0x00000002, 0x00000040, 0x0000003A, 0x00000028, 0x00000016, 0x00000012, 0x0000003C, 0x00000058, 0x0000003E, 0x0000003C, 0x00000034, 0x00000056, 0x00000051, 0x0000002D, 0x0000001E, 0x0000001D, 0x00000047, 0x00000071, 0x00000052, 0x0000004E, 0x0000003E, 0x00000044, 0x00000049, 0x0000000A, 0x00000019, 0x00000025, 0x0000001C, 0x0000004A, 0x0000003D, 0x00000036, 0x0000001A };
-
-	@result/result-ctrl-words.h
-
-1 
-	gResu…MemCålW‹ds
-[352]={0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0xE000, 0x2000, 0x2000, 0x2000, 0xE00A, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0xE016, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0xE005, 0xE007, 0x2000, 0x2000, 0xE001, 0x2000, 0x2000, 0xE010, 0x2000, 0xE000, 0xE007, 0xE001, 0xE007, 0x2000, 0x2000, 0xE00A, 0x2000, 0x2000, 0x2000, 0x2000, 0xE00C, 0xE001, 0x2000, 0xE007, 0xE009, 0xE00B, 0xE012, 0xE00C, 0xE00B, 0xE010, 0xE00B, 0xE006, 0xE00C, 0xE001, 0xE009, 0xE004, 0xE002, 0xE018, 0xE002, 0xE018, 0xE006, 0xE005, 0xE010, 0xE013, 0xE00E, 0xE017, 0xE015, 0xE005, 0xE000, 0xE010, 0xE004, 0xE006, 0xE00F, 0xE017, 0xE015, 0xE004, 0xE00F, 0xE015, 0xE006, 0xE00D, 0xE016, 0xE016, 0xE005, 0xE011, 0xE002, 0xE015, 0xE014, 0xE000, 0xE00A, 0xE017, 0xE017, 0xE00B, 0xE00F, 0xE00D, 0xE008, 0xE011, 0xE013, 0xE008, 0xE003, 0xE011, 0xE00E, 0xE011, 0xE00E, 0xE003, 0xE013, 0xE012, 0xE00E, 0xE014, 0xE00C, 0xE00D, 0xE012, 0xE003, 0xE018, 0x2000, 0xE008, 0xE018, 0xE014, 0xE002, 0xE00D, 0xE014, 0xE012, 0xE016, 0xE00A, 0xE00F, 0xE013, 0xE009, 0xE008, 0xE009, 0xE004, 0xE003, 0x8800 };
-
-	@result/src-ctrl-words.h
-
-1 
-	gSrcMemCålW‹ds
-[352]={0xA000, 0xA019, 0x2000, 0xA019, 0xA019, 0xA01A, 0xA01A, 0xA01A, 0xA01A, 0xA01B, 0xA01B, 0xA01B, 0xA002, 0xA005, 0xA007, 0xA00A, 0x2000, 0xA00C, 0xA00F, 0x2000, 0xA011, 0xA014, 0xA016, 0x2000, 0xA000, 0xA01B, 0x2000, 0xA01C, 0xA01C, 0xA01C, 0xA01C, 0xA01D, 0xA01D, 0xA01D, 0xA01D, 0xA01E, 0xA003, 0xA005, 0xA008, 0xA00F, 0xA00A, 0x2000, 0xA00D, 0xA014, 0x2000, 0xA000, 0xA01F, 0xA01F, 0xA012, 0xA017, 0x2000, 0xA01F, 0xA01F, 0xA020, 0xA005, 0xA01E, 0xA020, 0xA01E, 0xA00F, 0xA008, 0xA00A, 0xA014, 0xA01E, 0x2000, 0xA003, 0xA020, 0x2000, 0xA00D, 0xA017, 0x2000, 0xA001, 0xA021, 0xA012, 0xA020, 0x2000, 0xA021, 0xA023, 0xA006, 0xA022, 0xA022, 0xA008, 0xA010, 0xA00D, 0xA022, 0xA00B, 0x2000, 0xA017, 0x2000, 0xA003, 0xA022, 0xA021, 0xA015, 0xA012, 0xA021, 0xA001, 0xA023, 0x2000, 0xA00B, 0x2000, 0xA024, 0xA023, 0xA006, 0xA017, 0x2000, 0xA003, 0xA024, 0xA025, 0xA025, 0xA008, 0xA024, 0xA00D, 0xA012, 0xA015, 0xA010, 0xA025, 0xA001, 0xA025, 0x2000, 0xA024, 0xA023, 0xA00B, 0x2000, 0xA018, 0xA026, 0x2000, 0xA027, 0xA006, 0xA001, 0xA028, 0x2000, 0xA028, 0xA004, 0xA026, 0xA027, 0xA027, 0xA00E, 0xA010, 0xA009, 0xA015, 0xA027, 0xA00B, 0x2000, 0xA013, 0xA026, 0xA018, 0xA028, 0x2000, 0xA002, 0xA02A, 0x2000, 0xA026, 0xA029, 0xA00C, 0x2000, 0xA02A, 0xA006, 0xA00E, 0xA029, 0xA02A, 0xA029, 0xA010, 0xA02A, 0xA015, 0xA018, 0xA02B, 0x2000, 0xA004, 0xA002, 0xA02D, 0x2000, 0xA009, 0xA029, 0xA013, 0xA00C, 0x2000, 0xA02C, 0xA028, 0xA018, 0xA02D, 0x2000, 0xA02C, 0xA007, 0xA02D, 0xA02B, 0xA02C, 0xA00E, 0xA016, 0xA02C, 0xA011, 0xA013, 0xA009, 0xA02B, 0xA002, 0xA02F, 0x2000, 0xA004, 0xA02E, 0xA00C, 0x2000, 0xA02B, 0xA02E, 0xA011, 0xA019, 0xA030, 0x2000, 0xA007, 0xA009, 0xA02F, 0xA02E, 0xA02F, 0xA02F, 0xA02E, 0xA02D, 0x2000, 0x2000, 0xA00E, 0xA013, 0xA016, 0xA007, 0xA004, 0xA00A, 0x2000, 0xA031, 0xA030, 0x2000, 0x2000, 0xA011, 0x2000, 0x2000, 0xA031, 0x2000, 0x2000, 0xA031, 0xA032, 0xA031, 0xA005, 0xA014, 0xA00F, 0xA030, 0xA016, 0xA030, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x8800 };
 
 	@util/logcollect.cpp
 
@@ -37582,8 +37602,8 @@ __END_DECLS
 .
 1
 /usr/include
-41
-790
+36
+689
 Coarse_Grain_Recon_Arch.cpp
 Coarse_Grain_Recon_Arch.h
 Component_Activity.cpp
@@ -37602,13 +37622,8 @@ PE.cpp
 PE.h
 Scheduler.cpp
 Scheduler.h
-config/io.h
-config/main.cpp
 main.cpp
-result/initialized-result.h
-result/initialized-src.h
-result/result-ctrl-words.h
-result/src-ctrl-words.h
+util/Link-Gen/src/link-gen.cpp
 util/logcollect.cpp
 util/main.cpp
 /usr/include/limits.h

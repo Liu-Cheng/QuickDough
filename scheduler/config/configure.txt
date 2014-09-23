@@ -1,4 +1,4 @@
-Print_Level 1
+Print_Level 11
 Verify_On 1
 Random_Seed 0
 

@@ -62,6 +62,8 @@ class Coarse_Grain_Recon_Arch{
         std::vector<std::vector<std::list<int> > > CGRA_Routing_Path;
 
         void Load_Parameters();
+        void Link_Gen();
+
 };
 
 #endif
