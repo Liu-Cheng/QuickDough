@@ -1,9 +1,10 @@
 #ifndef _IO_H_
 #define _IO_H_
 
-int Const_In[1] = {0};
-int A_In[6][6];
-int B_In[6][6];
-int C_Out[6][6];
+int Const_In[2] = {0, 1};
+int Block_Samples[125][2];
+int Init_Centroids[4][2];
+int Block_Centroids_Sum[20][2];
+int Block_Centroids_Num[20];
 
 #endif

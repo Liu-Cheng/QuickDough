@@ -12,6 +12,7 @@ ALU_Opcode	Component_Activity.h	/^        Opcode ALU_Opcode;$/;"	m	class:Compone
 ALU_Output_Mux	Component_Activity.h	/^        int ALU_Output_Mux;$/;"	m	class:Component_Activity
 ALU_Output_Reserved	Component_Reserved.h	/^        bool ALU_Output_Reserved;$/;"	m	class:Component_Reserved
 ANDAND	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
+A_In	config/IO.h	/^int A_In[6][6];$/;"	v
 Add_Link	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Add_Link(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
 Addr_Buffer_Depth	Coarse_Grain_Recon_Arch.h	/^        int Addr_Buffer_Depth;$/;"	m	class:Coarse_Grain_Recon_Arch
 Addr_Buffer_Dump_Coe	Scheduler.cpp	/^void Scheduler::Addr_Buffer_Dump_Coe(){$/;"	f	class:Scheduler
@@ -24,6 +25,7 @@ Avail	Global_Def.h	/^    In_IO_Buffer, Unavail, Avail$/;"	e	enum:Operand_State
 Avg_Input_Degree	Data_Flow_Graph.h	/^        float Avg_Input_Degree;$/;"	m	class:Data_Flow_Graph
 Avg_OP_Priority	Data_Flow_Graph.h	/^        float Avg_OP_Priority;$/;"	m	class:Data_Flow_Graph
 Avg_Output_Degree	Data_Flow_Graph.h	/^        float Avg_Output_Degree;$/;"	m	class:Data_Flow_Graph
+B_In	config/IO.h	/^int B_In[6][6];$/;"	v
 Bin_To_Hex	Scheduler.cpp	/^char Scheduler::Bin_To_Hex(char* Bin_Vec){$/;"	f	class:Scheduler
 CC	Makefile	/^CC = g++$/;"	m
 CFLAGS	Makefile	/^CFLAGS= -DDEBUG -g -Wall -gdwarf-2 $/;"	m
@@ -33,10 +35,11 @@ CGRA_Routing_Dist	Coarse_Grain_Recon_Arch.h	/^        std::vector<std::vector<in
 CGRA_Routing_Path	Coarse_Grain_Recon_Arch.h	/^        std::vector<std::vector<std::list<int> > > CGRA_Routing_Path;$/;"	m	class:Coarse_Grain_Recon_Arch
 CGRA_Scale	Coarse_Grain_Recon_Arch.h	/^        int CGRA_Scale;$/;"	m	class:Coarse_Grain_Recon_Arch
 CGRA_Topology	Coarse_Grain_Recon_Arch.h	/^        Topology CGRA_Topology;$/;"	m	class:Coarse_Grain_Recon_Arch
+C_Out	config/IO.h	/^int C_Out[6][6];$/;"	v
 Coarse_Grain_Recon_Arch	Coarse_Grain_Recon_Arch.cpp	/^Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch(){$/;"	f	class:Coarse_Grain_Recon_Arch
 Coarse_Grain_Recon_Arch	Coarse_Grain_Recon_Arch.h	/^class Coarse_Grain_Recon_Arch{$/;"	c
 Col	Coarse_Grain_Recon_Arch.h	/^        int Col;$/;"	m	class:Coarse_Grain_Recon_Arch
-Combinator	util/main.cpp	/^void Combinator(const vector<int> &levelin, const int &deg, vector<int> &levelout, int&opid, ofstream &fHandle){$/;"	f
+Combinator	util/auto-stat/dfg-gen.cpp	/^void Combinator(const vector<int> &levelin, const int &deg, vector<int> &levelout, int&opid, ofstream &fHandle){$/;"	f
 Component_Activity	Component_Activity.cpp	/^Component_Activity::Component_Activity(){$/;"	f	class:Component_Activity
 Component_Activity	Component_Activity.h	/^class Component_Activity{$/;"	c
 Component_Reserved	Component_Reserved.cpp	/^Component_Reserved::Component_Reserved(){$/;"	f	class:Component_Reserved
@@ -45,7 +48,9 @@ Component_State	Component_State.cpp	/^Component_State::Component_State(){$/;"	f	
 Component_State	Component_State.h	/^class Component_State{$/;"	c
 Component_Trace	PE.h	/^        std::vector<Component_State*> Component_Trace; $/;"	m	class:PE
 Computation_Result_Dump	Scheduler.cpp	/^void Scheduler::Computation_Result_Dump(){$/;"	f	class:Scheduler
-Customized	Global_Def.h	/^    Torus, Mesh, Customized$/;"	e	enum:Topology
+Const_In	config/IO.h	/^int Const_In[1] = {0};$/;"	v
+Create_Map	Global_Def.h	/^    static std::map<Opcode, int> Create_Map(){$/;"	f	struct:GL_Var
+Customized	Global_Def.h	/^    Torus, Mesh, Full_Connect, Customized$/;"	e	enum:Topology
 DFG	Scheduler.h	/^        Data_Flow_Graph* DFG;$/;"	m	class:Scheduler
 DFG_Calculation	Data_Flow_Graph.cpp	/^void Data_Flow_Graph::DFG_Calculation(std::vector<int> &OP_Result){$/;"	f	class:Data_Flow_Graph
 DFG_Construct	Data_Flow_Graph.cpp	/^void Data_Flow_Graph::DFG_Construct(){$/;"	f	class:Data_Flow_Graph
@@ -72,13 +77,14 @@ Dynamic_Dijkstra_Routing	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_A
 Dynamic_Routing	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Dynamic_Routing(const Routing_Alg &CGRA_Routing_Alg, const int &Src_Avail_Time, const int &Src_PE_ID, const int &Dst_PE_ID, std::list<int> &Routing_Path){$/;"	f	class:Coarse_Grain_Recon_Arch
 Dynamic_Routing_Alg	Coarse_Grain_Recon_Arch.h	/^        Routing_Alg Dynamic_Routing_Alg;$/;"	m	class:Coarse_Grain_Recon_Arch
 Dynamic_XY	Global_Def.h	/^    Dynamic_Dijkstra, Dynamic_XY, Static_XY, Static_Dijkstra $/;"	e	enum:Routing_Alg
-ERROR	Global_Def.h	33;"	d
+ERROR	Global_Def.h	34;"	d
 Exe_Mode	Global_Def.h	/^enum Exe_Mode{$/;"	g
 Exe_OP_Num	PE.h	/^        int Exe_OP_Num;$/;"	m	class:PE
 Exe_PE_ID	Operand.h	/^    int Exe_PE_ID;$/;"	m	struct:Operand_Attribute
 Fetch_OP	Scheduler.cpp	/^int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, const Exe_Mode &Mode){$/;"	f	class:Scheduler
 File_Line_Cnt	Scheduler.cpp	/^int Scheduler::File_Line_Cnt(const std::string &fName){$/;"	f	class:Scheduler
-FullConnectGen	util/Link-Gen/src/link-gen.cpp	/^void FullConnectGen(int N, vector<vector<int> > &link_matrix){$/;"	f
+Full_Connect	Global_Def.h	/^    Torus, Mesh, Full_Connect, Customized$/;"	e	enum:Topology
+Full_Connect_Gen	util/link-gen/src/link-gen.cpp	/^void Full_Connect_Gen(int N, vector<vector<int> > &Link_Mat){$/;"	f
 GL_Var	Global_Def.h	/^struct GL_Var{$/;"	s
 GT	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
 Get_ALU_Util	PE.cpp	/^float PE::Get_ALU_Util(const int &Start_Time, const int &End_Time){$/;"	f	class:PE
@@ -88,10 +94,12 @@ Get_Data_Mem_WR_Util	PE.cpp	/^float PE::Get_Data_Mem_WR_Util(const int &Start_Ti
 Get_Dist	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Dist(const int &Src_PE_ID, const int &Dst_PE_ID){$/;"	f	class:Coarse_Grain_Recon_Arch
 Get_Downstream_Index	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Downstream_Index(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
 Get_Downstream_PE_ID	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Downstream_PE_ID(const int &Current_PE_ID, const int &Output_Mux){$/;"	f	class:Coarse_Grain_Recon_Arch
+Get_Opcode_Cost	Global_Def.cpp	/^int Get_Opcode_Cost(const Opcode &Inst_Opcode){$/;"	f
 Get_Output_Port_Util	PE.cpp	/^float PE::Get_Output_Port_Util(const int &Start_Time, const int &End_Time){$/;"	f	class:PE
 Get_Trace_Size	PE.cpp	/^int PE::Get_Trace_Size(){$/;"	f	class:PE
 Get_Upstream_Index	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Upstream_Index(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
 Get_Upstream_PE_ID	Coarse_Grain_Recon_Arch.cpp	/^int Coarse_Grain_Recon_Arch::Get_Upstream_PE_ID(const int &Current_PE_ID, const int &Input_Mux){$/;"	f	class:Coarse_Grain_Recon_Arch
+HF	Global_Def.h	/^    HF, LHF, MF, LF, OLD$/;"	e	enum:Pipeline_Intensity
 IM	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:Operand_Type
 IMOUT	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:Operand_Type
 IM_OP_Num	Data_Flow_Graph.h	/^        int IM_OP_Num;$/;"	m	class:Data_Flow_Graph
@@ -125,18 +133,21 @@ Is_Link_Existed	Coarse_Grain_Recon_Arch.cpp	/^bool Coarse_Grain_Recon_Arch::Is_L
 Is_OP_Scheduled	Operand.cpp	/^bool Operand::Is_OP_Scheduled(){$/;"	f	class:Operand
 Is_Scheduling_Completed	Scheduler.cpp	/^bool Scheduler::Is_Scheduling_Completed(){$/;"	f	class:Scheduler
 LET	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
+LF	Global_Def.h	/^    HF, LHF, MF, LF, OLD$/;"	e	enum:Pipeline_Intensity
+LHF	Global_Def.h	/^    HF, LHF, MF, LF, OLD$/;"	e	enum:Pipeline_Intensity
 LSFADD	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
 Least_Cost_OP_Sel	Scheduler.cpp	/^int Scheduler::Least_Cost_OP_Sel(const int &Sel_PE_ID, const std::list<int> &OP_Ready_Set){$/;"	f	class:Scheduler
 Least_Ready_OP_Attached	Global_Def.h	/^    Least_Recent_Used, Least_Ready_OP_Attached$/;"	e	enum:PE_Selection
 Least_Ready_OP_Attached_Sel	Scheduler.cpp	/^int Scheduler::Least_Ready_OP_Attached_Sel(const std::list<int> &Candidates, const std::list<int> &OP_Ready_Set){$/;"	f	class:Scheduler
 Least_Recent_Used	Global_Def.h	/^    Least_Recent_Used, Least_Ready_OP_Attached$/;"	e	enum:PE_Selection
 Least_Recent_Used_Sel	Scheduler.cpp	/^int Scheduler::Least_Recent_Used_Sel(const std::list<int> &Candidates){$/;"	f	class:Scheduler
+Link_Gen	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Link_Gen(){$/;"	f	class:Coarse_Grain_Recon_Arch
 List_Scheduling_OP_Pref	Scheduler.cpp	/^void Scheduler::List_Scheduling_OP_Pref(){}$/;"	f	class:Scheduler
 List_Scheduling_PE_OP_Together	Scheduler.cpp	/^void Scheduler::List_Scheduling_PE_OP_Together(){}$/;"	f	class:Scheduler
 List_Scheduling_PE_Pref	Scheduler.cpp	/^void Scheduler::List_Scheduling_PE_Pref(){$/;"	f	class:Scheduler
 List_Scheduling_Strategy	Scheduler.h	/^        Scheduling_Strategy List_Scheduling_Strategy; $/;"	m	class:Scheduler
-LoadParameter	util/logcollect.cpp	/^void LoadParameter(){$/;"	f
-LoadParameter	util/main.cpp	/^void LoadParameter(){$/;"	f
+LoadParameter	util/auto-stat/dfg-gen.cpp	/^void LoadParameter(){$/;"	f
+LoadParameter	util/auto-stat/logcollect.cpp	/^void LoadParameter(){$/;"	f
 Load_Balance_Factor	Scheduler.h	/^        float Load_Balance_Factor;$/;"	m	class:Scheduler
 Load_Balance_Filter	Scheduler.cpp	/^void Scheduler::Load_Balance_Filter(std::list<int> &Candidates){$/;"	f	class:Scheduler
 Load_From_IO_Buffer	Scheduler.cpp	/^int Scheduler::Load_From_IO_Buffer(const int &OP_ID, const Exe_Mode &Mode){$/;"	f	class:Scheduler
@@ -151,20 +162,21 @@ Load_Parameters	PE.cpp	/^void PE::Load_Parameters(){$/;"	f	class:PE
 Load_Parameters	Scheduler.cpp	/^void Scheduler::Load_Parameters(){$/;"	f	class:Scheduler
 Load_Parameters	main.cpp	/^void Load_Parameters(){$/;"	f
 Load_Path_Reserved	Component_Reserved.h	/^        bool Load_Path_Reserved;$/;"	m	class:Component_Reserved
+MF	Global_Def.h	/^    HF, LHF, MF, LF, OLD$/;"	e	enum:Pipeline_Intensity
 MULADD	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
 MULSUB	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
 Max_Active_Time	PE.h	/^        int Max_Active_Time; \/\/The maximum timestamp that PE is active.$/;"	m	class:PE
 Max_OP_Priority	Data_Flow_Graph.h	/^        int Max_OP_Priority;$/;"	m	class:Data_Flow_Graph
 Max_Src_OP_Num	Data_Flow_Graph.h	/^        int Max_Src_OP_Num;$/;"	m	class:Data_Flow_Graph
 Mem_Util_Filter	Global_Def.h	/^    Dist_Filter, Mem_Util_Filter, DSP_Util_Filter, Write_Mem_Util_Filter, Input_Port_Util_Filter, Output_Port_Util_Filter, Inout_Port_Util_Filter$/;"	e	enum:PE_Sel_Filter_Type
-Mesh	Global_Def.h	/^    Torus, Mesh, Customized$/;"	e	enum:Topology
-MeshGen	util/Link-Gen/src/link-gen.cpp	/^void MeshGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
+Mesh	Global_Def.h	/^    Torus, Mesh, Full_Connect, Customized$/;"	e	enum:Topology
+Mesh_Gen	util/link-gen/src/link-gen.cpp	/^void Mesh_Gen(int N, int Row, int Col, vector<vector<int> > &Link_Mat){$/;"	f
 NC	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
-NOTE	util/bmmGen.pl	/^NOTE: XDL and DATA2MEM must be installed and in the user's path.$/;"	l
-NaN	Global_Def.h	32;"	d
+NaN	Global_Def.h	33;"	d
 Nearest_Attached_PE	Scheduler.cpp	/^int Scheduler::Nearest_Attached_PE(const int &Src_OP_ID, const int &Dst_PE_ID, int &Src_Ready_Time){$/;"	f	class:Scheduler
-NetGraph	util/main.cpp	/^void NetGraph(const int &N){$/;"	f
+NetGraph	util/auto-stat/dfg-gen.cpp	/^void NetGraph(const int &N){$/;"	f
 OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
+OLD	Global_Def.h	/^    HF, LHF, MF, LF, OLD$/;"	e	enum:Pipeline_Intensity
 OP_Array	Data_Flow_Graph.h	/^        std::vector<Operand*> OP_Array;$/;"	m	class:Data_Flow_Graph
 OP_Attach_History	Operand.h	/^        std::list<Attach_History> OP_Attach_History;$/;"	m	struct:Operand
 OP_Attribute	Operand.h	/^        Operand_Attribute OP_Attribute;$/;"	m	struct:Operand
@@ -188,6 +200,8 @@ OP_Type	Operand.h	/^        Operand_Type OP_Type;$/;"	m	struct:Operand
 OP_Val	Operand.h	/^        int OP_Val;$/;"	m	struct:Operand
 OUTVAR	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:Operand_Type
 Opcode	Global_Def.h	/^enum Opcode{$/;"	g
+Opcode_To_Cost	Global_Def.cpp	/^const std::map<Opcode, int> GL_Var::Opcode_To_Cost = GL_Var::Create_Map();$/;"	m	class:GL_Var	file:
+Opcode_To_Cost	Global_Def.h	/^    static const std::map<Opcode, int> Opcode_To_Cost;$/;"	m	struct:GL_Var
 Opcode_To_Int	Global_Def.cpp	/^int Opcode_To_Int (const Opcode &Inst_Opcode){$/;"	f
 Operand	Operand.cpp	/^Operand::Operand(){$/;"	f	class:Operand
 Operand	Operand.cpp	/^Operand::Operand(int _OP_ID){$/;"	f	class:Operand
@@ -217,9 +231,11 @@ PE_Sel_Filter_Type	Global_Def.h	/^enum PE_Sel_Filter_Type{$/;"	g
 PE_Sel_Strategy	Scheduler.h	/^        PE_Selection PE_Sel_Strategy;$/;"	m	class:Scheduler
 PE_Selection	Global_Def.h	/^enum PE_Selection{$/;"	g
 PHI	Global_Def.h	/^    NC, MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND$/;"	e	enum:Opcode
-PRINT	Global_Def.h	34;"	d
+PRINT	Global_Def.h	35;"	d
 Partial_Impl	Global_Def.h	/^    Sim, Impl, Partial_Impl$/;"	e	enum:Exe_Mode
-Permutator	util/main.cpp	/^void Permutator(const vector<int> &levelin, const int &deg, vector<int> &levelout, int &opid, ofstream &fHandle){$/;"	f
+Permutator	util/auto-stat/dfg-gen.cpp	/^void Permutator(const vector<int> &levelin, const int &deg, vector<int> &levelout, int &opid, ofstream &fHandle){$/;"	f
+Pipeline	Coarse_Grain_Recon_Arch.h	/^        Pipeline_Intensity Pipeline;$/;"	m	class:Coarse_Grain_Recon_Arch
+Pipeline_Intensity	Global_Def.h	/^enum Pipeline_Intensity{$/;"	g
 Print_Level	Global_Def.cpp	/^int GL_Var::Print_Level = 0;$/;"	m	class:GL_Var	file:
 Print_Level	Global_Def.h	/^    static int Print_Level;$/;"	m	struct:GL_Var
 Priority_Level	Data_Flow_Graph.h	/^        int Priority_Level;$/;"	m	class:Data_Flow_Graph
@@ -228,7 +244,7 @@ Random_Seed	Global_Def.cpp	/^int GL_Var::Random_Seed = 0;$/;"	m	class:GL_Var	fil
 Random_Seed	Global_Def.h	/^    static int Random_Seed;$/;"	m	struct:GL_Var
 Recent_Busy_Filter	Scheduler.cpp	/^void Scheduler::Recent_Busy_Filter(std::list<int> &Candidates){$/;"	f	class:Scheduler
 Remove_Link	Coarse_Grain_Recon_Arch.cpp	/^void Coarse_Grain_Recon_Arch::Remove_Link(const int &Src, const int &Dst){$/;"	f	class:Coarse_Grain_Recon_Arch
-RingGen	util/Link-Gen/src/link-gen.cpp	/^void RingGen(int N, vector<vector<int> > &link_matrix){$/;"	f
+Ring_Gen	util/link-gen/src/link-gen.cpp	/^void Ring_Gen(int N, vector<vector<int> > &Link_Mat){$/;"	f
 Routing_Alg	Global_Def.h	/^enum Routing_Alg{$/;"	g
 Row	Coarse_Grain_Recon_Arch.h	/^        int Row;$/;"	m	class:Coarse_Grain_Recon_Arch
 SRCS	Makefile	/^SRCS = Global_Def.cpp \\$/;"	m
@@ -258,8 +274,8 @@ TARGET	Makefile	/^TARGET = cgracompiler$/;"	m
 Target_OP_Refresh	Scheduler.cpp	/^void Scheduler::Target_OP_Refresh(const std::vector<int> &Src_OP_IDs, const int &Target_OP_ID, const int &Target_PE_ID, const int &Exe_Time){$/;"	f	class:Scheduler
 Target_PE_Refresh	Scheduler.cpp	/^void Scheduler::Target_PE_Refresh(const std::vector<int> &Src_OP_IDs, const int &Target_OP_ID, const int &Start_Time, const int &Target_PE_ID){$/;"	f	class:Scheduler
 Topology	Global_Def.h	/^enum Topology{$/;"	g
-Torus	Global_Def.h	/^    Torus, Mesh, Customized$/;"	e	enum:Topology
-TorusGen	util/Link-Gen/src/link-gen.cpp	/^void TorusGen(int N, int row, int col, vector<vector<int> > &link_matrix){$/;"	f
+Torus	Global_Def.h	/^    Torus, Mesh, Full_Connect, Customized$/;"	e	enum:Topology
+Torus_Gen	util/link-gen/src/link-gen.cpp	/^void Torus_Gen(int N, int Row, int Col, vector<vector<int> > &Link_Mat){$/;"	f
 UNUSED	Global_Def.h	/^    INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT$/;"	e	enum:Operand_Type
 Unavail	Global_Def.h	/^    In_IO_Buffer, Unavail, Avail$/;"	e	enum:Operand_State
 Verify_On	Global_Def.cpp	/^int GL_Var::Verify_On = 0;$/;"	m	class:GL_Var	file:
@@ -272,21 +288,17 @@ _COMPONENT_RESERVED_H_	Component_Reserved.h	19;"	d
 _COMPONENT_STATE_H_	Component_State.h	15;"	d
 _DATA_FLOW_GRAPH_H_	Data_Flow_Graph.h	19;"	d
 _GLOBAL_DEF_H_	Global_Def.h	17;"	d
+_IO_H_	config/IO.h	2;"	d
 _OPERAND_H_	Operand.h	16;"	d
 _PE_H_	PE.h	17;"	d
 _SCHEDULER_H_	Scheduler.h	19;"	d
-example	util/bmmGen.pl	/^example: $0 -n top.ncd -o top.bmm -b top.bit$/;"	l
-example	util/bmmGen.pl	/^example: $0 -o top.bmm -t top$/;"	l
 fTrace	Scheduler.h	/^        std::ofstream fTrace;$/;"	m	class:Scheduler
-init	util/bmmGen.pl	/^sub init(){$/;"	s
 main	main.cpp	/^int main(){$/;"	f
-main	util/Link-Gen/src/link-gen.cpp	/^int main(){$/;"	f
-main	util/logcollect.cpp	/^int main(){$/;"	f
-main	util/main.cpp	/^int main(){$/;"	f
+main	util/auto-stat/dfg-gen.cpp	/^int main(){$/;"	f
+main	util/auto-stat/logcollect.cpp	/^int main(){$/;"	f
+main	util/link-gen/src/link-gen.cpp	/^int main(){$/;"	f
 operator <<	Global_Def.cpp	/^std::ostream& operator<< (std::ostream &os, Opcode Inst_Opcode){$/;"	f
 operator <<	Global_Def.cpp	/^std::ostream& operator<< (std::ostream &os, Operand_Type OP_Type){$/;"	f
-usage	util/bmmGen.pl	/^sub usage()$/;"	s
-usage	util/bmmGen.pl	/^usage: $0 [-h] [-n NCD_FILE -o BMM_FILE] [-r ROM_FILE -b BITSTREAM]$/;"	l
 ~Coarse_Grain_Recon_Arch	Coarse_Grain_Recon_Arch.cpp	/^Coarse_Grain_Recon_Arch::~Coarse_Grain_Recon_Arch(){$/;"	f	class:Coarse_Grain_Recon_Arch
 ~Component_Activity	Component_Activity.cpp	/^Component_Activity::~Component_Activity(){$/;"	f	class:Component_Activity
 ~Component_Reserved	Component_Reserved.cpp	/^Component_Reserved::~Component_Reserved(){$/;"	f	class:Component_Reserved

@@ -19,6 +19,7 @@ Component_State::Component_State(){
     PE_Component_Reserved = new Component_Reserved();
 }
 
+
 Component_State::~Component_State(){
     delete PE_Component_Activity;
     delete PE_Component_Reserved;

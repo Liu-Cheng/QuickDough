@@ -47,8 +47,6 @@ struct Operand{
         Operand();
         bool Is_OP_Scheduled();
 
-        ~Operand(){};
-
     private:
         void Load_Parameters();
 

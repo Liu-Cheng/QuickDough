@@ -1,0 +1,358 @@
+==21695== Memcheck, a memory error detector
+==21695== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==21695== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==21695== Command: ./cgracompiler
+==21695== 
+
+		Fully Pipelined Soft-CGRA Scheduling
+	(C) E.E.E Department, The University of Hong Kong
+
+File=Data_Flow_Graph.cpp, Line=189  Unused Operand 1 appears! 
+DFG Parameters: 
+OP_Num: 1204
+Input_OP_Num: 59
+Output_OP_Num: 12
+Average_Input_Degree: 3
+Average_Output_Degree: 2.88161
+Average OP priority: 5.97176
+Priority level of the DFG: 11
+OP priority distribution of the DFG: 1 12 36 104 196 108 292 104 197 126 28 
+
+Operation scheduling starts!
+Operation scheduling is completed!
+Kernel execution time: 291 cycles
+Start to dump the scheduling result for hardware implementation!
+PE    output port    Data Mem Read  Data Mem Write  ALU               
+0     0.1581         1.447          0.7079          0.2612            
+1     0.1572         1.337          0.8007          0.244             
+2     0.1486         1.258          0.7663          0.2577            
+3     0.1048         1.041          0.6082          0.2199            
+4     0.146          1.268          0.7526          0.2543            
+5     0.1546         1.168          0.7423          0.2199            
+6     0.1237         1.199          0.7457          0.2543            
+7     0.1125         1.024          0.6254          0.2165            
+8     0.1478         1.275          0.7663          0.2577            
+9     0.1177         1.179          0.7182          0.2509            
+10    0.08935        1.113          0.6804          0.2577            
+11    0.1074         1.162          0.7182          0.2612            
+12    0.122          1.182          0.6495          0.244             
+13    0.1143         1.192          0.7457          0.2646            
+14    0.08677        0.9691         0.567           0.2096            
+15    0.08505        1.11           0.6254          0.2577            
+PE minimum data memory requirements: 36 32 29 29 24 35 36 28 31 37 39 27 33 29 27 29 
+
+Scheduling result is dumpped! 
+Total compilation time: 16.74 seconds.
+Scheduling algorithm obtains the results as expected!
+==21695== 
+==21695== FILE DESCRIPTORS: 3 open at exit.
+==21695== Open file descriptor 2: /home/liucheng/gitrepo/project/scheduler/m.log
+==21695==    <inherited from parent>
+==21695== 
+==21695== Open file descriptor 1: /home/liucheng/gitrepo/project/scheduler/m.log
+==21695==    <inherited from parent>
+==21695== 
+==21695== Open file descriptor 0: /dev/pts/3
+==21695==    <inherited from parent>
+==21695== 
+==21695== 
+==21695== HEAP SUMMARY:
+==21695==     in use at exit: 17,904,259 bytes in 368,861 blocks
+==21695==   total heap usage: 812,066 allocs, 443,205 frees, 45,792,679 bytes allocated
+==21695== 
+==21695== 24 bytes in 1 blocks are indirectly lost in loss record 1 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x426F6A: __gnu_cxx::new_allocator<std::_List_node<Attach_History> >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x425E93: std::_List_base<Attach_History, std::allocator<Attach_History> >::_M_get_node() (stl_list.h:334)
+==21695==    by 0x424A9C: std::list<Attach_History, std::allocator<Attach_History> >::_M_create_node(Attach_History const&) (stl_list.h:484)
+==21695==    by 0x423DEC: std::list<Attach_History, std::allocator<Attach_History> >::_M_insert(std::_List_iterator<Attach_History>, Attach_History const&) (stl_list.h:1553)
+==21695==    by 0x423645: std::list<Attach_History, std::allocator<Attach_History> >::push_back(Attach_History const&) (stl_list.h:1016)
+==21695==    by 0x41A693: Scheduler::OP_Migration(int const&, int const&, std::list<int, std::allocator<int> > const&, Exe_Mode const&) (Scheduler.cpp:1442)
+==21695==    by 0x4174C4: Scheduler::Store_In_IO_Buffer(int const&) (Scheduler.cpp:908)
+==21695==    by 0x415C72: Scheduler::List_Scheduling_PE_Pref() (Scheduler.cpp:395)
+==21695==    by 0x414EB8: Scheduler::Scheduling() (Scheduler.cpp:140)
+==21695==    by 0x4282BC: main (main.cpp:36)
+==21695== 
+==21695== 27 bytes in 1 blocks are indirectly lost in loss record 2 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4EEC3C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.18)
+==21695==    by 0x4EECF9A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.18)
+==21695==    by 0x4EED033: std::string::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.18)
+==21695==    by 0x4EED27E: std::string::append(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.18)
+==21695==    by 0x4EA81D1: std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.18)
+==21695==    by 0x411F09: Data_Flow_Graph::Load_Parameters() (Data_Flow_Graph.cpp:41)
+==21695==    by 0x411D64: Data_Flow_Graph::Data_Flow_Graph() (Data_Flow_Graph.cpp:20)
+==21695==    by 0x428288: main (main.cpp:34)
+==21695== 
+==21695== 80 bytes in 1 blocks are indirectly lost in loss record 3 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x42827D: main (main.cpp:34)
+==21695== 
+==21695== 104 bytes in 1 blocks are possibly lost in loss record 4 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x404738: Component_State::Component_State() (Component_State.cpp:18)
+==21695==    by 0x414BAC: Scheduler::Init(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:98)
+==21695==    by 0x4145E3: Scheduler::Scheduler(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:26)
+==21695==    by 0x4282AC: main (main.cpp:35)
+==21695== 
+==21695== 128 bytes in 1 blocks are indirectly lost in loss record 5 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40F21F: __gnu_cxx::new_allocator<PE*>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40DE12: std::_Vector_base<PE*, std::allocator<PE*> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x40B889: std::vector<PE*, std::allocator<PE*> >::_M_fill_insert(__gnu_cxx::__normal_iterator<PE**, std::vector<PE*, std::allocator<PE*> > >, unsigned long, PE* const&) (vector.tcc:483)
+==21695==    by 0x40A69B: std::vector<PE*, std::allocator<PE*> >::insert(__gnu_cxx::__normal_iterator<PE**, std::vector<PE*, std::allocator<PE*> > >, unsigned long, PE* const&) (stl_vector.h:1024)
+==21695==    by 0x4097B2: std::vector<PE*, std::allocator<PE*> >::resize(unsigned long, PE*) (stl_vector.h:707)
+==21695==    by 0x40595B: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:24)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 152 bytes in 1 blocks are indirectly lost in loss record 6 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x428264: main (main.cpp:33)
+==21695== 
+==21695== 264 bytes in 11 blocks are indirectly lost in loss record 7 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x426F6A: __gnu_cxx::new_allocator<std::_List_node<Attach_History> >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x425E93: std::_List_base<Attach_History, std::allocator<Attach_History> >::_M_get_node() (stl_list.h:334)
+==21695==    by 0x424A9C: std::list<Attach_History, std::allocator<Attach_History> >::_M_create_node(Attach_History const&) (stl_list.h:484)
+==21695==    by 0x423DEC: std::list<Attach_History, std::allocator<Attach_History> >::_M_insert(std::_List_iterator<Attach_History>, Attach_History const&) (stl_list.h:1553)
+==21695==    by 0x423645: std::list<Attach_History, std::allocator<Attach_History> >::push_back(Attach_History const&) (stl_list.h:1016)
+==21695==    by 0x41C3FA: Scheduler::OP_Migration(int const&, int const&, std::list<int, std::allocator<int> > const&, Exe_Mode const&) (Scheduler.cpp:1621)
+==21695==    by 0x4174C4: Scheduler::Store_In_IO_Buffer(int const&) (Scheduler.cpp:908)
+==21695==    by 0x415C72: Scheduler::List_Scheduling_PE_Pref() (Scheduler.cpp:395)
+==21695==    by 0x414EB8: Scheduler::Scheduling() (Scheduler.cpp:140)
+==21695==    by 0x4282BC: main (main.cpp:36)
+==21695== 
+==21695== 384 bytes in 1 blocks are indirectly lost in loss record 8 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40F450: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40E19E: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x40BF71: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> >*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, unsigned long, std::vector<int, std::allocator<int> > const&) (vector.tcc:483)
+==21695==    by 0x40A983: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::insert(__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> >*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, unsigned long, std::vector<int, std::allocator<int> > const&) (stl_vector.h:1024)
+==21695==    by 0x409998: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long, std::vector<int, std::allocator<int> >) (stl_vector.h:707)
+==21695==    by 0x406312: Coarse_Grain_Recon_Arch::Load_Parameters() (Coarse_Grain_Recon_Arch.cpp:150)
+==21695==    by 0x40593A: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:22)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 384 bytes in 1 blocks are indirectly lost in loss record 9 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40F450: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40E19E: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x40BF71: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> >*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, unsigned long, std::vector<int, std::allocator<int> > const&) (vector.tcc:483)
+==21695==    by 0x40A983: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::insert(__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> >*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, unsigned long, std::vector<int, std::allocator<int> > const&) (stl_vector.h:1024)
+==21695==    by 0x409998: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long, std::vector<int, std::allocator<int> >) (stl_vector.h:707)
+==21695==    by 0x405987: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:25)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 384 bytes in 1 blocks are indirectly lost in loss record 10 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40F736: __gnu_cxx::new_allocator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40E5D4: std::_Vector_base<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >, std::allocator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > > >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x40C6B9: std::vector<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >, std::allocator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >*, std::vector<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >, std::allocator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > > > >, unsigned long, std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > const&) (vector.tcc:483)
+==21695==    by 0x40AC6B: std::vector<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >, std::allocator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > > >::insert(__gnu_cxx::__normal_iterator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >*, std::vector<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >, std::allocator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > > > >, unsigned long, std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > const&) (stl_vector.h:1024)
+==21695==    by 0x409B88: std::vector<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >, std::allocator<std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > > >::resize(unsigned long, std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >) (stl_vector.h:707)
+==21695==    by 0x4059C2: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:26)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 896 bytes in 16 blocks are indirectly lost in loss record 11 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4059E4: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:28)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 1,024 bytes in 16 blocks are indirectly lost in loss record 12 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40F279: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40DEF6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x40D1E1: std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&) (vector.tcc:483)
+==21695==    by 0x40AF65: std::vector<int, std::allocator<int> >::insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&) (stl_vector.h:1024)
+==21695==    by 0x409E5B: std::vector<int, std::allocator<int> >::resize(unsigned long, int) (stl_vector.h:707)
+==21695==    by 0x406368: Coarse_Grain_Recon_Arch::Load_Parameters() (Coarse_Grain_Recon_Arch.cpp:152)
+==21695==    by 0x40593A: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:22)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 1,024 bytes in 16 blocks are indirectly lost in loss record 13 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40F279: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40DEF6: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x40D1E1: std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&) (vector.tcc:483)
+==21695==    by 0x40AF65: std::vector<int, std::allocator<int> >::insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&) (stl_vector.h:1024)
+==21695==    by 0x409E5B: std::vector<int, std::allocator<int> >::resize(unsigned long, int) (stl_vector.h:707)
+==21695==    by 0x405A8A: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:30)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 1,392 bytes in 58 blocks are indirectly lost in loss record 14 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x426F6A: __gnu_cxx::new_allocator<std::_List_node<Attach_History> >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x425E93: std::_List_base<Attach_History, std::allocator<Attach_History> >::_M_get_node() (stl_list.h:334)
+==21695==    by 0x424A9C: std::list<Attach_History, std::allocator<Attach_History> >::_M_create_node(Attach_History const&) (stl_list.h:484)
+==21695==    by 0x423DEC: std::list<Attach_History, std::allocator<Attach_History> >::_M_insert(std::_List_iterator<Attach_History>, Attach_History const&) (stl_list.h:1553)
+==21695==    by 0x423645: std::list<Attach_History, std::allocator<Attach_History> >::push_back(Attach_History const&) (stl_list.h:1016)
+==21695==    by 0x41724E: Scheduler::Load_From_IO_Buffer(int const&, Exe_Mode const&) (Scheduler.cpp:863)
+==21695==    by 0x416643: Scheduler::Fetch_OP(int const&, int const&, Exe_Mode const&) (Scheduler.cpp:596)
+==21695==    by 0x415B6C: Scheduler::List_Scheduling_PE_Pref() (Scheduler.cpp:388)
+==21695==    by 0x414EB8: Scheduler::Scheduling() (Scheduler.cpp:140)
+==21695==    by 0x4282BC: main (main.cpp:36)
+==21695== 
+==21695== 4,096 bytes in 16 blocks are indirectly lost in loss record 15 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40F4D3: __gnu_cxx::new_allocator<std::list<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40E2AC: std::_Vector_base<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x40CD02: std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::list<int, std::allocator<int> >*, std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > >, unsigned long, std::list<int, std::allocator<int> > const&) (vector.tcc:483)
+==21695==    by 0x40AEC5: std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >::insert(__gnu_cxx::__normal_iterator<std::list<int, std::allocator<int> >*, std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > >, unsigned long, std::list<int, std::allocator<int> > const&) (stl_vector.h:1024)
+==21695==    by 0x409D8A: std::vector<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > >::resize(unsigned long, std::list<int, std::allocator<int> >) (stl_vector.h:707)
+==21695==    by 0x405A4C: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:29)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 7,520 bytes in 319 blocks are indirectly lost in loss record 16 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4142BB: __gnu_cxx::new_allocator<Operand*>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x414150: std::_Vector_base<Operand*, std::allocator<Operand*> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x413A84: std::vector<Operand*, std::allocator<Operand*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Operand**, std::vector<Operand*, std::allocator<Operand*> > >, Operand* const&) (vector.tcc:345)
+==21695==    by 0x41378F: std::vector<Operand*, std::allocator<Operand*> >::push_back(Operand* const&) (stl_vector.h:913)
+==21695==    by 0x41275E: Data_Flow_Graph::DFG_Construct() (Data_Flow_Graph.cpp:162)
+==21695==    by 0x411D70: Data_Flow_Graph::Data_Flow_Graph() (Data_Flow_Graph.cpp:21)
+==21695==    by 0x428288: main (main.cpp:34)
+==21695== 
+==21695== 11,784 bytes in 491 blocks are indirectly lost in loss record 17 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x426F6A: __gnu_cxx::new_allocator<std::_List_node<Attach_History> >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x425E93: std::_List_base<Attach_History, std::allocator<Attach_History> >::_M_get_node() (stl_list.h:334)
+==21695==    by 0x424A9C: std::list<Attach_History, std::allocator<Attach_History> >::_M_create_node(Attach_History const&) (stl_list.h:484)
+==21695==    by 0x423DEC: std::list<Attach_History, std::allocator<Attach_History> >::_M_insert(std::_List_iterator<Attach_History>, Attach_History const&) (stl_list.h:1553)
+==21695==    by 0x423645: std::list<Attach_History, std::allocator<Attach_History> >::push_back(Attach_History const&) (stl_list.h:1016)
+==21695==    by 0x41A693: Scheduler::OP_Migration(int const&, int const&, std::list<int, std::allocator<int> > const&, Exe_Mode const&) (Scheduler.cpp:1442)
+==21695==    by 0x4166ED: Scheduler::Fetch_OP(int const&, int const&, Exe_Mode const&) (Scheduler.cpp:607)
+==21695==    by 0x415B6C: Scheduler::List_Scheduling_PE_Pref() (Scheduler.cpp:388)
+==21695==    by 0x414EB8: Scheduler::Scheduling() (Scheduler.cpp:140)
+==21695==    by 0x4282BC: main (main.cpp:36)
+==21695== 
+==21695== 11,808 bytes in 345 blocks are indirectly lost in loss record 18 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4142BB: __gnu_cxx::new_allocator<Operand*>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x414150: std::_Vector_base<Operand*, std::allocator<Operand*> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x413A84: std::vector<Operand*, std::allocator<Operand*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Operand**, std::vector<Operand*, std::allocator<Operand*> > >, Operand* const&) (vector.tcc:345)
+==21695==    by 0x41378F: std::vector<Operand*, std::allocator<Operand*> >::push_back(Operand* const&) (stl_vector.h:913)
+==21695==    by 0x412798: Data_Flow_Graph::DFG_Construct() (Data_Flow_Graph.cpp:164)
+==21695==    by 0x411D70: Data_Flow_Graph::Data_Flow_Graph() (Data_Flow_Graph.cpp:21)
+==21695==    by 0x428288: main (main.cpp:34)
+==21695== 
+==21695== 12,768 bytes in 527 blocks are indirectly lost in loss record 19 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4142BB: __gnu_cxx::new_allocator<Operand*>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x414150: std::_Vector_base<Operand*, std::allocator<Operand*> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x413A84: std::vector<Operand*, std::allocator<Operand*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Operand**, std::vector<Operand*, std::allocator<Operand*> > >, Operand* const&) (vector.tcc:345)
+==21695==    by 0x41378F: std::vector<Operand*, std::allocator<Operand*> >::push_back(Operand* const&) (stl_vector.h:913)
+==21695==    by 0x41277B: Data_Flow_Graph::DFG_Construct() (Data_Flow_Graph.cpp:163)
+==21695==    by 0x411D70: Data_Flow_Graph::Data_Flow_Graph() (Data_Flow_Graph.cpp:21)
+==21695==    by 0x428288: main (main.cpp:34)
+==21695== 
+==21695== 16,384 bytes in 1 blocks are indirectly lost in loss record 20 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4142BB: __gnu_cxx::new_allocator<Operand*>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x414150: std::_Vector_base<Operand*, std::allocator<Operand*> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x413A84: std::vector<Operand*, std::allocator<Operand*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Operand**, std::vector<Operand*, std::allocator<Operand*> > >, Operand* const&) (vector.tcc:345)
+==21695==    by 0x41378F: std::vector<Operand*, std::allocator<Operand*> >::push_back(Operand* const&) (stl_vector.h:913)
+==21695==    by 0x412227: Data_Flow_Graph::DFG_Construct() (Data_Flow_Graph.cpp:83)
+==21695==    by 0x411D70: Data_Flow_Graph::Data_Flow_Graph() (Data_Flow_Graph.cpp:21)
+==21695==    by 0x428288: main (main.cpp:34)
+==21695== 
+==21695== 18,432 bytes in 768 blocks are indirectly lost in loss record 21 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x40FA22: __gnu_cxx::new_allocator<std::_List_node<int> >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x40EB75: std::_List_base<int, std::allocator<int> >::_M_get_node() (stl_list.h:334)
+==21695==    by 0x40D422: std::list<int, std::allocator<int> >::_M_create_node(int const&) (stl_list.h:484)
+==21695==    by 0x40AFD2: std::list<int, std::allocator<int> >::_M_insert(std::_List_iterator<int>, int const&) (stl_list.h:1553)
+==21695==    by 0x409EEF: std::list<int, std::allocator<int> >::push_back(int const&) (stl_list.h:1016)
+==21695==    by 0x40AE45: void std::list<int, std::allocator<int> >::_M_initialize_dispatch<std::_List_const_iterator<int> >(std::_List_const_iterator<int>, std::_List_const_iterator<int>, std::__false_type) (stl_list.h:1493)
+==21695==    by 0x40D506: std::list<int, std::allocator<int> >::list<std::_List_const_iterator<int> >(std::_List_const_iterator<int>, std::_List_const_iterator<int>, std::allocator<int> const&) (stl_list.h:636)
+==21695==    by 0x40B1CF: void std::list<int, std::allocator<int> >::insert<std::_List_const_iterator<int> >(std::_List_iterator<int>, std::_List_const_iterator<int>, std::_List_const_iterator<int>) (stl_list.h:1152)
+==21695==    by 0x40A185: std::list<int, std::allocator<int> >::operator=(std::list<int, std::allocator<int> > const&) (list.tcc:199)
+==21695==    by 0x406C40: Coarse_Grain_Recon_Arch::Static_Routing(Routing_Alg const&) (Coarse_Grain_Recon_Arch.cpp:253)
+==21695==    by 0x405AB5: Coarse_Grain_Recon_Arch::Coarse_Grain_Recon_Arch() (Coarse_Grain_Recon_Arch.cpp:33)
+==21695==    by 0x42826F: main (main.cpp:33)
+==21695== 
+==21695== 27,456 bytes in 1,144 blocks are indirectly lost in loss record 22 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x426F6A: __gnu_cxx::new_allocator<std::_List_node<Attach_History> >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x425E93: std::_List_base<Attach_History, std::allocator<Attach_History> >::_M_get_node() (stl_list.h:334)
+==21695==    by 0x424A9C: std::list<Attach_History, std::allocator<Attach_History> >::_M_create_node(Attach_History const&) (stl_list.h:484)
+==21695==    by 0x423DEC: std::list<Attach_History, std::allocator<Attach_History> >::_M_insert(std::_List_iterator<Attach_History>, Attach_History const&) (stl_list.h:1553)
+==21695==    by 0x423645: std::list<Attach_History, std::allocator<Attach_History> >::push_back(Attach_History const&) (stl_list.h:1016)
+==21695==    by 0x41D961: Scheduler::Target_OP_Refresh(std::vector<int, std::allocator<int> > const&, int const&, int const&, int const&) (Scheduler.cpp:1994)
+==21695==    by 0x41CC46: Scheduler::OP_Exe(int const&, std::vector<int, std::allocator<int> > const&, int const&, std::vector<int, std::allocator<int> > const&, Exe_Mode const&) (Scheduler.cpp:1707)
+==21695==    by 0x415BF1: Scheduler::List_Scheduling_PE_Pref() (Scheduler.cpp:391)
+==21695==    by 0x414EB8: Scheduler::Scheduling() (Scheduler.cpp:140)
+==21695==    by 0x4282BC: main (main.cpp:36)
+==21695== 
+==21695== 36,608 bytes in 1,144 blocks are indirectly lost in loss record 23 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4142BB: __gnu_cxx::new_allocator<Operand*>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x414150: std::_Vector_base<Operand*, std::allocator<Operand*> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x413A84: std::vector<Operand*, std::allocator<Operand*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Operand**, std::vector<Operand*, std::allocator<Operand*> > >, Operand* const&) (vector.tcc:345)
+==21695==    by 0x41378F: std::vector<Operand*, std::allocator<Operand*> >::push_back(Operand* const&) (stl_vector.h:913)
+==21695==    by 0x412741: Data_Flow_Graph::DFG_Construct() (Data_Flow_Graph.cpp:161)
+==21695==    by 0x411D70: Data_Flow_Graph::Data_Flow_Graph() (Data_Flow_Graph.cpp:21)
+==21695==    by 0x428288: main (main.cpp:34)
+==21695== 
+==21695== 37,440 bytes in 1,560 blocks are indirectly lost in loss record 24 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x426F6A: __gnu_cxx::new_allocator<std::_List_node<Attach_History> >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x425E93: std::_List_base<Attach_History, std::allocator<Attach_History> >::_M_get_node() (stl_list.h:334)
+==21695==    by 0x424A9C: std::list<Attach_History, std::allocator<Attach_History> >::_M_create_node(Attach_History const&) (stl_list.h:484)
+==21695==    by 0x423DEC: std::list<Attach_History, std::allocator<Attach_History> >::_M_insert(std::_List_iterator<Attach_History>, Attach_History const&) (stl_list.h:1553)
+==21695==    by 0x423645: std::list<Attach_History, std::allocator<Attach_History> >::push_back(Attach_History const&) (stl_list.h:1016)
+==21695==    by 0x41C3FA: Scheduler::OP_Migration(int const&, int const&, std::list<int, std::allocator<int> > const&, Exe_Mode const&) (Scheduler.cpp:1621)
+==21695==    by 0x4166ED: Scheduler::Fetch_OP(int const&, int const&, Exe_Mode const&) (Scheduler.cpp:607)
+==21695==    by 0x415B6C: Scheduler::List_Scheduling_PE_Pref() (Scheduler.cpp:388)
+==21695==    by 0x414EB8: Scheduler::Scheduling() (Scheduler.cpp:140)
+==21695==    by 0x4282BC: main (main.cpp:36)
+==21695== 
+==21695== 134,848 bytes in 1,204 blocks are indirectly lost in loss record 25 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x4121F8: Data_Flow_Graph::DFG_Construct() (Data_Flow_Graph.cpp:82)
+==21695==    by 0x411D70: Data_Flow_Graph::Data_Flow_Graph() (Data_Flow_Graph.cpp:21)
+==21695==    by 0x428288: main (main.cpp:34)
+==21695== 
+==21695== 963,200 bytes in 16 blocks are indirectly lost in loss record 26 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x426F1F: __gnu_cxx::new_allocator<Component_State*>::allocate(unsigned long, void const*) (new_allocator.h:104)
+==21695==    by 0x425E36: std::_Vector_base<Component_State*, std::allocator<Component_State*> >::_M_allocate(unsigned long) (in /home/liucheng/gitrepo/project/scheduler/cgracompiler)
+==21695==    by 0x42485B: std::vector<Component_State*, std::allocator<Component_State*> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Component_State**, std::vector<Component_State*, std::allocator<Component_State*> > >, unsigned long, Component_State* const&) (vector.tcc:483)
+==21695==    by 0x423D9B: std::vector<Component_State*, std::allocator<Component_State*> >::insert(__gnu_cxx::__normal_iterator<Component_State**, std::vector<Component_State*, std::allocator<Component_State*> > >, unsigned long, Component_State* const&) (stl_vector.h:1024)
+==21695==    by 0x4234B8: std::vector<Component_State*, std::allocator<Component_State*> >::resize(unsigned long, Component_State*) (stl_vector.h:707)
+==21695==    by 0x414B8E: Scheduler::Init(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:96)
+==21695==    by 0x4145E3: Scheduler::Scheduler(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:26)
+==21695==    by 0x4282AC: main (main.cpp:35)
+==21695== 
+==21695== 1,926,400 bytes in 120,400 blocks are indirectly lost in loss record 27 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x414BA1: Scheduler::Init(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:98)
+==21695==    by 0x4145E3: Scheduler::Scheduler(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:26)
+==21695==    by 0x4282AC: main (main.cpp:35)
+==21695== 
+==21695== 2,167,200 bytes in 120,400 blocks are indirectly lost in loss record 28 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x404754: Component_State::Component_State() (Component_State.cpp:19)
+==21695==    by 0x414BAC: Scheduler::Init(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:98)
+==21695==    by 0x4145E3: Scheduler::Scheduler(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:26)
+==21695==    by 0x4282AC: main (main.cpp:35)
+==21695== 
+==21695== 12,521,496 bytes in 120,399 blocks are indirectly lost in loss record 29 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x404738: Component_State::Component_State() (Component_State.cpp:18)
+==21695==    by 0x414BAC: Scheduler::Init(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:98)
+==21695==    by 0x4145E3: Scheduler::Scheduler(Data_Flow_Graph*, Coarse_Grain_Recon_Arch*) (Scheduler.cpp:26)
+==21695==    by 0x4282AC: main (main.cpp:35)
+==21695== 
+==21695== 17,904,155 (552 direct, 17,903,603 indirect) bytes in 1 blocks are definitely lost in loss record 30 of 30
+==21695==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21695==    by 0x428296: main (main.cpp:35)
+==21695== 
+==21695== LEAK SUMMARY:
+==21695==    definitely lost: 552 bytes in 1 blocks
+==21695==    indirectly lost: 17,903,603 bytes in 368,859 blocks
+==21695==      possibly lost: 104 bytes in 1 blocks
+==21695==    still reachable: 0 bytes in 0 blocks
+==21695==         suppressed: 0 bytes in 0 blocks
+==21695== 
+==21695== For counts of detected and suppressed errors, rerun with: -v
+==21695== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 2 from 2)

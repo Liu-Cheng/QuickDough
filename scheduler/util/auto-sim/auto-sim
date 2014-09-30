@@ -1,0 +1,177 @@
+#!/bin/bash
+
+###########################################################
+# Initial directories
+###########################################################
+
+DFG_Dir=/home/liucheng/gitrepo/project/benchmark
+Scheduler_Dir=/home/liucheng/gitrepo/project/scheduler
+
+###########################################################
+# Read and check input options
+###########################################################
+
+if [ ! $# -ge 8 ]; then
+    echo "$0 [-n App_Name] [-t App_Type] [-r CGRA_Row] [-c CGRA_Column][-l Pipeline] [-p Blocking and Unrolling parameters]"
+    exit 1
+fi
+
+if [ ! "$1" = "-n" ]; then
+    echo "Unknown option $1"
+    exit 1
+fi
+App_Name=$2
+
+if [ ! "$3" = "-t" ]; then
+    echo "Unknown option $3"
+    exit 1
+fi
+Type=$4
+
+if [ ! "$5" = "-r" ]; then
+    echo "Unknown option $5"
+    exit 1
+fi
+Row=$6
+
+if [ ! "$7" = "-c" ]; then
+    echo "Unknown option $7"
+    exit 1
+fi
+Col=$8
+
+if [ $# -gt 8 ]; then
+    if [ ! "$9" = "-l" ]; then
+        echo "Unknown option $9"
+        exit 1
+    fi
+    shift
+    Pipeline=$9
+
+    shift
+    if [ ! "$9" = "-p" ]; then
+        echo "Unknown option $9"
+        exit 1
+    fi
+fi
+
+CGRA_Size=$Row"x"$Col
+
+###########################################################
+# DFG Generator Configuration
+###########################################################
+
+cd $DFG_Dir"/"$App_Name
+if [ "$App_Name" = "mm" ]; then
+    if [ "$Type" = "supersmall" ]; then
+        cd mm-fully-unroll/
+        shift
+        sed -i "/^\#define N/c\\#define N $9" config.h
+    elif [ "$Type" = "small" ]; then
+        cd mm-3rd-level-unroll/
+        shift
+        sed -i "/^\#define B/c\\#define B $9" config.h
+        shift
+        sed -i "/^\#define M/c\\#define M $9" config.h
+        shift
+        sed -i "/^\#define P/c\\#define P $9" config.h
+        shift
+        sed -i "/^\#define N/c\\#define N $9" config.h
+    elif [ "$Type" = "medium" ]; then
+        cd mm-2nd-level-unroll/
+        shift
+        sed -i "/^\#define B/c\\#define B $9" config.h
+        shift
+        sed -i "/^\#define M/c\\#define M $9" config.h
+        shift
+        sed -i "/^\#define N/c\\#define N $9" config.h
+    else
+        cd mm-1st-level-unroll/
+        shift
+        sed -i "/^\#define B/c\\#define B $9" config.h
+        shift
+        sed -i "/^\#define M/c\\#define M $9" config.h
+    fi
+elif [ "$App_Name" = "fir" ]; then
+    if [ "$Type" = "small" ]; then
+        cd fir-fully-unroll/
+        shift
+        sed -i "/^\#define L/c\\#define L $9" config.h
+        shift
+        sed -i "/^\#define N/c\\#define N $9" config.h
+    else
+        cd fir-2nd-level-unroll/
+        shift
+        sed -i "/^\#define B/c\\#define B $9" config.h
+        shift
+        sed -i "/^\#define L/c\\#define L $9" config.h
+        shift
+        sed -i "/^\#define N/c\\#define N $9" config.h
+    fi
+elif [ "$App_Name" = "sobel" ]; then
+    if [ "$Type" = "small" ] && [ "$Row" = "5" ] && [ "$Col" = "5" ]; then
+        cd sobel-fully-unroll/
+        shift
+        sed -i "/^\#define R/c\\#define R $9" config.h
+        shift
+        sed -i "/^\#define C/c\\#define C $9" config.h
+    else
+        cd sobel-4th-level-unroll/
+        shift
+        sed -i "/^\#define B/c\\#define B $9" config.h
+        shift
+        sed -i "/^\#define R/c\\#define R $9" config.h
+        shift
+        sed -i "/^\#define C/c\\#define C $9" config.h
+    fi
+elif [ "$App_Name" = "kmean" ]; then
+    cd kmean-3rd-level-unroll/
+    shift
+        sed -i "/^\#define B/c\\#define B $9" config.h
+    shift
+        sed -i "/^\#define M/c\\#define M $9" config.h
+    shift
+        sed -i "/^\#define N/c\\#define N $9" config.h
+    shift
+        sed -i "/^\#define D/c\\#define D $9" config.h
+fi
+
+make clean 
+make 
+
+
+###########################################################
+# DFG Generation
+###########################################################
+
+echo "DFG generation starts..."
+Start_Time=$(date +%s%N)
+./dfg-gen 
+End_Time=$(date +%s%N)
+echo "DFG Genertion is done, time elapsed: $((($End_Time - $Start_Time)/1000000))""ms"
+echo
+
+###########################################################
+# DFG Scheduling
+###########################################################
+
+echo "DFG Scheduling starts..."
+Start_Time=$(date +%s%N)
+cp -rf dump/*.* $Scheduler_Dir"/config/"
+
+#Update configuration file
+cd $Scheduler_Dir"/config/"
+let Num=$Row*$Col 
+sed -i "/^CGRA_Scale/c\CGRA_Scale $Num" configure.txt
+sed -i "/^Row/c\Row $Row" configure.txt
+sed -i "/^Col/c\Col $Col" configure.txt
+sed -i "/^DFG_Name/c\DFG_Name $App_Name" configure.txt
+sed -i "/^Pipeline_Intensity/c\Pipeline_Intensity $Pipeline" configure.txt
+cd ..
+./cgracompiler
+End_Time=$(date +%s%N)
+
+echo "DFG scheduling completes, time elapsed $((($End_Time - $Start_Time)/1000000))""ms"
+echo
+
+

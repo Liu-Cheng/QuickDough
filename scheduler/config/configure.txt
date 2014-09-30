@@ -1,8 +1,8 @@
-Print_Level 11
+Print_Level 1
 Verify_On 1
 Random_Seed 0
 
-DFG_Name mm
+DFG_Name kmean
 Max_Src_OP_Num 3
 
 CGRA_Topology Torus
@@ -16,6 +16,7 @@ IO_Buffer_Depth 2048
 IO_Buffer_Width 32
 Addr_Buffer_Depth 4096
 Addr_Buffer_Width 18
+Pipeline_Intensity LF
 Dynamic_Routing_Alg Dynamic_Dijkstra
 Static_Routing_Alg Static_Dijkstra
 

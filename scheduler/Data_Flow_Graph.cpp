@@ -88,6 +88,7 @@ void Data_Flow_Graph::DFG_Construct(){
 
         if(_OP_Type_Str == "INCONST"){
             OP_Ptr->OP_Type = INCONST; 
+            OP_Ptr->OP_Attribute.OP_Cost = 0;
 
             // Operand 0 is a constant and it is available on each PE initially.
             if(OP_Ptr->OP_ID == 0){
@@ -154,6 +155,7 @@ void Data_Flow_Graph::DFG_Construct(){
         Operand* Src_OP1_Ptr = OP_Array[Src_OP1_ID];
         Operand* Src_OP2_Ptr = OP_Array[Src_OP2_ID];
         Dst_OP_Ptr->OP_Attribute.OP_Opcode = Str_To_Opcode(Inst_Opcode_Str);
+        Dst_OP_Ptr->OP_Attribute.OP_Cost = Get_Opcode_Cost(Str_To_Opcode(Inst_Opcode_Str));
         Dst_OP_Ptr->OP_Parents.push_back(Src_OP0_Ptr);
         Dst_OP_Ptr->OP_Parents.push_back(Src_OP1_Ptr);
         Dst_OP_Ptr->OP_Parents.push_back(Src_OP2_Ptr);
@@ -184,7 +186,7 @@ void Data_Flow_Graph::DFG_Stat(){
             OP_Num++;
             if((*Vec_It)->OP_Children.size() == 0 && (*Vec_It)->OP_Parents.size() == 0){
                 if((*Vec_It)->OP_ID!=0){
-                    ERROR("Unused Operand %d appears!", (*Vec_It)->OP_ID);
+                    PRINT("Unused Operand %d appears!", (*Vec_It)->OP_ID);
                 }
             }
             else if((*Vec_It)->OP_Type == INCONST || (*Vec_It)->OP_Type == INVAR){
@@ -208,6 +210,7 @@ void Data_Flow_Graph::DFG_Stat(){
     Avg_Input_Degree = Total_Degree*1.0/(IM_OP_Num + Output_OP_Num + IM_Output_OP_Num);
     Avg_Output_Degree = Total_Degree*1.0/(Input_OP_Num + IM_OP_Num + IM_Output_OP_Num);
     std::cout << "DFG Parameters: " << std::endl;
+    std::cout << "DFG Name: " << DFG_Name << std::endl;
     std::cout << "OP_Num: " << OP_Num << std::endl;
     std::cout << "Input_OP_Num: " << Input_OP_Num << std::endl;
     std::cout << "Output_OP_Num: " << Output_OP_Num << std::endl;
@@ -290,8 +293,8 @@ void Data_Flow_Graph::DFG_Priority_Analysis(){
 
     //DFG priority distribution
     std::vector<int> DFG_Priority_Dist;
-    DFG_Priority_Dist.resize(Max_OP_Priority);
-    for(int i=0; i<Max_OP_Priority; i++){
+    DFG_Priority_Dist.resize(Max_OP_Priority+1);
+    for(int i=0; i<Max_OP_Priority+1; i++){
         DFG_Priority_Dist[i] = NaN;
     }
 
@@ -305,7 +308,7 @@ void Data_Flow_Graph::DFG_Priority_Analysis(){
         }
     }
 
-    for(int i=0; i<Max_OP_Priority; i++){
+    for(int i=0; i<Max_OP_Priority+1; i++){
         if(DFG_Priority_Dist[i] != NaN){
             Priority_Level++;
         }
@@ -315,7 +318,7 @@ void Data_Flow_Graph::DFG_Priority_Analysis(){
     std::cout << "Average OP priority: " << Avg_OP_Priority << std::endl;
     std::cout << "Priority level of the DFG: " << Priority_Level << std::endl;
     std::cout << "OP priority distribution of the DFG: ";
-    for(int i=0; i<Max_OP_Priority; i++){
+    for(int i=0; i<Max_OP_Priority+1; i++){
         if(DFG_Priority_Dist[i] != NaN){
             std::cout << DFG_Priority_Dist[i] << " ";
         }

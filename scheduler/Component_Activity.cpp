@@ -41,6 +41,4 @@ Component_Activity::Component_Activity(){
     Store_OP = NaN;
 }
 
-Component_Activity::~Component_Activity(){
-}
 

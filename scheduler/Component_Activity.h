@@ -41,7 +41,7 @@ class Component_Activity{
         int Store_OP;
 
         Component_Activity();
-        ~Component_Activity();
+        ~Component_Activity(){};
 
 };
 

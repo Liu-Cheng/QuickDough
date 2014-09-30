@@ -34,6 +34,7 @@ class Coarse_Grain_Recon_Arch{
         int Addr_Buffer_Width;
         int IO_Buffer_Depth;
         int IO_Buffer_Width;
+        Pipeline_Intensity Pipeline;
         std::vector<PE*> PE_Array;
         Routing_Alg Dynamic_Routing_Alg;
         Routing_Alg Static_Routing_Alg;
