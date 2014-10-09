@@ -529,6 +529,7 @@ int Scheduler::Least_Cost_OP_Sel(const int &Sel_PE_ID, const std::list<int> &OP_
             if(Physical_Dist > 1){
                 OP_Exe_Cost += Physical_Dist * 2;
             }
+
             if(PE_Active_Time > (Src_Ready_Time + 100)){
                 OP_Exe_Cost += Physical_Dist;
             }
@@ -1476,7 +1477,7 @@ int Scheduler::OP_Migration(const int &Start_Time, const int &Src_OP_ID, const s
                         }
                         else if(Current_PE_Data_Mem_RD_Avail1){
                             if(CGRA->Pipeline == OLD){
-                                CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[1]=true;
+                                CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] = true;
                                 CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[1] = Src_OP_ID;
                                 CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+3]->PE_Component_Activity->PE_Output_Mux[Child_Index] = 1;
                             }
@@ -1506,7 +1507,7 @@ int Scheduler::OP_Migration(const int &Start_Time, const int &Src_OP_ID, const s
                         }
                         else{
                             if(CGRA->Pipeline == OLD){
-                                CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[2]=true;
+                                CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] = true;
                                 CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[2] = Src_OP_ID;
                                 CGRA->PE_Array[Current_PE_ID]->Component_Trace[Migration_Time+3]->PE_Component_Activity->PE_Output_Mux[Child_Index] = 2;
                             }
@@ -2305,6 +2306,7 @@ int Scheduler::OP_Exe(const int &Target_OP_ID, const std::vector<int> &Src_OP_ID
         }
     }
     int Start_Time = Last_Arrival_Time;
+    int OP_Cost = Get_Opcode_Cost(DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode);
 
     while(true){
         bool Src_RD_Avail = true;
@@ -2314,48 +2316,54 @@ int Scheduler::OP_Exe(const int &Target_OP_ID, const std::vector<int> &Src_OP_ID
         Src_RD_Avail = Src_RD_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_WR_Reserved[1] == false);
 
         bool ALU_Input_Avail;
+        bool ALU_Output_Avail;
         bool Data_Mem_WR_Avail;
         if(CGRA->Pipeline == OLD){
             ALU_Input_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->ALU_Input_Reserved == false;
-            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
+            ALU_Output_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+6+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved == false;
+            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
         }
         else if(CGRA->Pipeline == LF){
             ALU_Input_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved == false;
-            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
+            ALU_Output_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved == false;
+            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
         }
         else if(CGRA->Pipeline == MF){
             ALU_Input_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved == false;
-            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
+            ALU_Output_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved == false;
+            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
         }
         else if(CGRA->Pipeline == LHF){
             ALU_Input_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved == false;
-            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
+            ALU_Output_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved == false;
+            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
         }
         else if(CGRA->Pipeline == HF){
             ALU_Input_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->ALU_Input_Reserved == false;
-            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
-            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
+            ALU_Output_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+8+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved == false;
+            Data_Mem_WR_Avail = CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] == false;
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[0] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[1] == false);
+            Data_Mem_WR_Avail = Data_Mem_WR_Avail && (CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Reserved->Data_Mem_RD_Reserved[2] == false);
         }
         else{
             ERROR("Unknown pipeline intensity setup!\n");
         }
 
 
-        if(Src_RD_Avail && ALU_Input_Avail && Data_Mem_WR_Avail){
+        if(Src_RD_Avail && ALU_Input_Avail && ALU_Output_Avail && Data_Mem_WR_Avail){
             break;
         }
         else{
@@ -2363,19 +2371,19 @@ int Scheduler::OP_Exe(const int &Target_OP_ID, const std::vector<int> &Src_OP_ID
         }
     }
     if(CGRA->Pipeline == OLD){
-        Exe_Time = Start_Time+7;
+        Exe_Time = Start_Time+7+OP_Cost-3;
     }
     else if(CGRA->Pipeline == LF){
-        Exe_Time = Start_Time+3;
+        Exe_Time = Start_Time+3+OP_Cost-3;
     }
     else if(CGRA->Pipeline == MF){
-        Exe_Time = Start_Time+4;
+        Exe_Time = Start_Time+4+OP_Cost-3;
     }
     else if(CGRA->Pipeline == LHF){
-        Exe_Time = Start_Time+5;
+        Exe_Time = Start_Time+5+OP_Cost-3;
     }
     else if(CGRA->Pipeline == HF){
-        Exe_Time = Start_Time+9;
+        Exe_Time = Start_Time+9+OP_Cost-3;
     }
     else{
         ERROR("Unknown pipeline intensity setup!\n");
@@ -2618,110 +2626,117 @@ int Scheduler::StaticOperationSelection(){
 void Scheduler::Target_PE_Refresh(const std::vector<int> &Src_OP_IDs, const int &Target_OP_ID, const int &Start_Time, const int &Target_PE_ID){
 
     int Current_Exe_Time;
+    int OP_Cost = Get_Opcode_Cost(DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode);
+    Opcode Opcode_Tmp = DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode;
     if(CGRA->Pipeline == OLD){
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[3] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[4] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[5] = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->ALU_Input_Reserved = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
-
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
-        Opcode Opcode_Tmp = DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
-
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[3] = Src_OP_IDs[0];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[4] = Src_OP_IDs[1];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[5] = Src_OP_IDs[2];
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
 
-        Current_Exe_Time = Start_Time+7;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->ALU_Input_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Activity->ALU_Output_Mux = Opcode_Tmp;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+6+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved = true;
+
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+
+        Current_Exe_Time = Start_Time+7+OP_Cost-3;
     }
     else if(CGRA->Pipeline == LF){
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[3] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[4] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[5] = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
-
-        Opcode Opcode_Tmp = DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
-
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[3] = Src_OP_IDs[0];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[4] = Src_OP_IDs[1];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[5] = Src_OP_IDs[2];
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
 
-        Current_Exe_Time = Start_Time+3;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2+OP_Cost-3]->PE_Component_Activity->ALU_Output_Mux = Opcode_Tmp;
+
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+
+        Current_Exe_Time = Start_Time+3+OP_Cost-3;
     }
     else if(CGRA->Pipeline == MF){
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[3] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[4] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[5] = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
-
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
-        Opcode Opcode_Tmp = DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
-
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[3] = Src_OP_IDs[0];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[4] = Src_OP_IDs[1];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[5] = Src_OP_IDs[2];
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
 
-        Current_Exe_Time = Start_Time+4;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+3+OP_Cost-3]->PE_Component_Activity->ALU_Output_Mux = Opcode_Tmp;
+
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+
+        Current_Exe_Time = Start_Time+4+OP_Cost-3;
     }
     else if(CGRA->Pipeline == LHF){
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[3] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[4] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[5] = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
-
-        Opcode Opcode_Tmp = DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
-
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[3] = Src_OP_IDs[0];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[4] = Src_OP_IDs[1];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[5] = Src_OP_IDs[2];
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
 
-        Current_Exe_Time = Start_Time+5;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+2]->PE_Component_Reserved->ALU_Input_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+4+OP_Cost-3]->PE_Component_Activity->ALU_Output_Mux = Opcode_Tmp;
+
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+
+        Current_Exe_Time = Start_Time+5+OP_Cost-3;
     }
     else if(CGRA->Pipeline == HF){
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[3] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[4] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Reserved->Data_Mem_RD_Reserved[5] = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->ALU_Input_Reserved = true;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_WR_Ena[1] = 0;
-
-        Opcode Opcode_Tmp = DFG->OP_Array[Target_OP_ID]->OP_Attribute.OP_Opcode;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
-
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[3] = Src_OP_IDs[0];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[4] = Src_OP_IDs[1];
         CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+1]->PE_Component_Activity->Data_Mem_Port_OP[5] = Src_OP_IDs[2];
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
-        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
 
-        Current_Exe_Time = Start_Time+9;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Reserved->ALU_Input_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+5]->PE_Component_Activity->ALU_Opcode = Opcode_Tmp;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+8+OP_Cost-3]->PE_Component_Reserved->ALU_Output_Reserved = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+7+OP_Cost-3]->PE_Component_Activity->ALU_Output_Mux = Opcode_Tmp;
+
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Reserved->Data_Mem_WR_Reserved[0] = true;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Activity->Data_Mem_WR_Ena[0] = 1;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[0] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[1] = Target_OP_ID;
+        CGRA->PE_Array[Target_PE_ID]->Component_Trace[Start_Time+9+OP_Cost-3]->PE_Component_Activity->Data_Mem_Port_OP[2] = Target_OP_ID;
+
+        Current_Exe_Time = Start_Time+9+OP_Cost-3;
     }
     else{
         ERROR("Unknown pipeline intensity setup!\n");

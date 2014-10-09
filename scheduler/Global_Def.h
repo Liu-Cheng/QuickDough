@@ -56,7 +56,7 @@ enum Exe_Mode{
 
 // High frequency, Less high frequency, Medium frequency, Low frequency
 enum Pipeline_Intensity{
-    HF, LHF, MF, LF, OLD
+    OLD, LF, MF, LHF, HF
 };
 
 enum Routing_Alg{
@@ -92,6 +92,41 @@ struct GL_Var{
     static const std::map<Opcode, int> Opcode_To_Cost;
 
     static std::map<Opcode, int> Create_Map(){
+        Pipeline_Intensity Pipeline;
+        std::string Config_Name = "./config/configure.txt";
+        std::ifstream Config_Handle;
+        Config_Handle.open(Config_Name.c_str());
+        if(!Config_Handle.is_open()){
+            ERROR("Failed to open %s!\n", Config_Name.c_str());
+        }
+        std::string Item_Key;
+        while(!Config_Handle.eof()){
+            std::string Item_Val;
+            Config_Handle >> Item_Key;
+            Config_Handle >> Item_Val;
+            if(Item_Key == "Pipeline_Intensity"){
+                if(Item_Val == "OLD"){
+                    Pipeline = OLD;
+                }
+                else if(Item_Val == "LF"){
+                    Pipeline = LF;
+                }
+                else if(Item_Val == "MF"){
+                    Pipeline = MF;
+                }
+                else if(Item_Val == "LHF"){
+                    Pipeline = LHF;
+                }
+                else if(Item_Val == "HF"){
+                    Pipeline = HF;
+                }
+                else{
+                    ERROR("Unknown pipeline intensity configuration!\n");
+                }
+            }
+        }
+        Config_Handle.close();
+
         std::map<Opcode, int> Local_Map;
         std::string fName = "./config/opcode.txt";
         std::ifstream fHandle;
@@ -99,46 +134,50 @@ struct GL_Var{
         if(!fHandle.is_open()){
             ERROR("Failed to open %s! \n", fName.c_str());
         }
-        std::string Item_Key;
-        int Item_Val;
+
         while(!fHandle.eof()){
+            int Item_Val[5];
             fHandle >> Item_Key;
-            fHandle >> Item_Val;
+            for(int i=0; i<5; i++){
+                fHandle >> Item_Val[i];
+            }
+            int ID = (int)(Pipeline);
+
             if(Item_Key == "MULADD"){
-                Local_Map[MULADD] = Item_Val;
+                Local_Map[MULADD] = Item_Val[ID];
             }
             else if(Item_Key == "MULSUB"){
-                Local_Map[MULSUB] = Item_Val;
+                Local_Map[MULSUB] = Item_Val[ID];
             }
             else if(Item_Key == "ADDADD"){
-                Local_Map[ADDADD] = Item_Val;
+                Local_Map[ADDADD] = Item_Val[ID];
             }
             else if(Item_Key == "ADDSUB"){
-                Local_Map[ADDSUB] = Item_Val;
+                Local_Map[ADDSUB] = Item_Val[ID];
             }
             else if(Item_Key == "SUBSUB"){
-                Local_Map[SUBSUB] = Item_Val;
+                Local_Map[SUBSUB] = Item_Val[ID];
             }
             else if(Item_Key == "PHI"){
-                Local_Map[PHI] = Item_Val;
+                Local_Map[PHI] = Item_Val[ID];
             }
             else if(Item_Key == "RSFAND"){
-                Local_Map[RSFAND] = Item_Val;
+                Local_Map[RSFAND] = Item_Val[ID];
             }
             else if(Item_Key == "LSFADD"){
-                Local_Map[LSFADD] = Item_Val;
+                Local_Map[LSFADD] = Item_Val[ID];
             }
             else if(Item_Key == "ABS"){
-                Local_Map[ABS] = Item_Val;
+                Local_Map[ABS] = Item_Val[ID];
             }
             else if(Item_Key == "GT"){
-                Local_Map[GT] = Item_Val;
+                Local_Map[GT] = Item_Val[ID];
             }
             else if(Item_Key == "LET"){
-                Local_Map[LET] = Item_Val;
+                Local_Map[LET] = Item_Val[ID];
             }
             else if(Item_Key == "ANDAND"){
-                Local_Map[ANDAND] = Item_Val;
+                Local_Map[ANDAND] = Item_Val[ID];
             }
             else{
                 ERROR("Unknown opcode in %s!\n", fName.c_str());

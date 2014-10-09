@@ -6,9 +6,9 @@ DFG_Name kmean
 Max_Src_OP_Num 3
 
 CGRA_Topology Torus
-CGRA_Scale 4
-Row 2
-Col 2
+CGRA_Scale 25
+Row 5
+Col 5
 Load_PE_ID 0
 Store_PE_ID 1
 IO_Buffer_Num 2
@@ -16,7 +16,7 @@ IO_Buffer_Depth 2048
 IO_Buffer_Width 32
 Addr_Buffer_Depth 4096
 Addr_Buffer_Width 18
-Pipeline_Intensity LF
+Pipeline_Intensity OLD
 Dynamic_Routing_Alg Dynamic_Dijkstra
 Static_Routing_Alg Static_Dijkstra
 

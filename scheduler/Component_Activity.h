@@ -30,7 +30,7 @@ class Component_Activity{
         int Data_Mem_Addr[6];
         int PE_Output_Mux[4]; //0->memory port0, 1->memory port1, 2->memory port2, 3->bypass
         int Store_Mux;
-        int ALU_Output_Mux;
+        Opcode ALU_Output_Mux;
         Opcode ALU_Opcode;
 
         // It indicates input operation id that will be written into data memory.
