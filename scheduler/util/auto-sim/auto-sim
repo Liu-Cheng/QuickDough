@@ -12,7 +12,8 @@ Scheduler_Dir=/home/liucheng/gitrepo/project/scheduler
 ###########################################################
 
 if [ ! $# -ge 8 ]; then
-    echo "$0 [-n App_Name] [-t App_Type] [-r CGRA_Row] [-c CGRA_Column][-l Pipeline] [-p Blocking and Unrolling parameters]"
+    echo "The parameters must be provided in the following order!"
+    echo "$0 [-n App_Name] [-t App_Type] [-r CGRA_Row] [-c CGRA_Column][-l Pipeline] [-k Schedule_Off] [-s Sim_Only] [-p Blocking and Unrolling parameters]"
     exit 1
 fi
 
@@ -49,6 +50,23 @@ if [ $# -gt 8 ]; then
     Pipeline=$9
 
     shift
+    if [ ! "$9" = "-k" ]; then
+        echo "Unknown option $9"
+        exit 1
+    fi
+    shift
+    Schedule_Off=$9
+
+
+    shift
+    if [ ! "$9" = "-s" ]; then
+        echo "Unknown option $9"
+        exit 1
+    fi
+    shift
+    Sim_Only=$9
+
+    shift
     if [ ! "$9" = "-p" ]; then
         echo "Unknown option $9"
         exit 1
@@ -64,21 +82,19 @@ CGRA_Size=$Row"x"$Col
 cd $DFG_Dir"/"$App_Name
 if [ "$App_Name" = "mm" ]; then
     if [ "$Type" = "supersmall" ]; then
-        cd mm-fully-unroll/
+        cd mm-fu/
         shift
         sed -i "/^\#define N/c\\#define N $9" config.h
     elif [ "$Type" = "small" ]; then
-        cd mm-3rd-level-unroll/
+        cd mm-L3/
         shift
         sed -i "/^\#define B/c\\#define B $9" config.h
         shift
         sed -i "/^\#define M/c\\#define M $9" config.h
         shift
-        sed -i "/^\#define P/c\\#define P $9" config.h
-        shift
         sed -i "/^\#define N/c\\#define N $9" config.h
     elif [ "$Type" = "medium" ]; then
-        cd mm-2nd-level-unroll/
+        cd mm-L2/
         shift
         sed -i "/^\#define B/c\\#define B $9" config.h
         shift
@@ -86,7 +102,7 @@ if [ "$App_Name" = "mm" ]; then
         shift
         sed -i "/^\#define N/c\\#define N $9" config.h
     else
-        cd mm-1st-level-unroll/
+        cd mm-L1/
         shift
         sed -i "/^\#define B/c\\#define B $9" config.h
         shift
@@ -109,7 +125,8 @@ elif [ "$App_Name" = "fir" ]; then
         sed -i "/^\#define N/c\\#define N $9" config.h
     fi
 elif [ "$App_Name" = "sobel" ]; then
-    if [ "$Type" = "small" ] && [ "$Row" = "5" ] && [ "$Col" = "5" ]; then
+    #if [ "$Type" = "small" ] && [ "$Row" = "5" ] && [ "$Col" = "5" ]; then
+    if [ "$Type" = "small" ]; then
         cd sobel-fully-unroll/
         shift
         sed -i "/^\#define R/c\\#define R $9" config.h
@@ -136,42 +153,52 @@ elif [ "$App_Name" = "kmean" ]; then
         sed -i "/^\#define D/c\\#define D $9" config.h
 fi
 
-make clean 
-make 
+make clean > /dev/null 
+make > /dev/null
 
 
 ###########################################################
 # DFG Generation
 ###########################################################
 
-echo "DFG generation starts..."
+#echo "DFG generation starts..."
 Start_Time=$(date +%s%N)
-./dfg-gen 
+./dfg-gen > /dev/null 
 End_Time=$(date +%s%N)
-echo "DFG Genertion is done, time elapsed: $((($End_Time - $Start_Time)/1000000))""ms"
-echo
+#echo "DFG Genertion is done, time elapsed: $((($End_Time - $Start_Time)/1000000))""ms"
+#echo
+
+if [ $Schedule_Off -eq 1 ]; then
+    exit 1
+fi
 
 ###########################################################
 # DFG Scheduling
 ###########################################################
 
-echo "DFG Scheduling starts..."
-Start_Time=$(date +%s%N)
+#echo "DFG Scheduling starts..."
+#Start_Time=$(date +%s%N)
 cp -rf dump/*.* $Scheduler_Dir"/config/"
 
 #Update configuration file
 cd $Scheduler_Dir"/config/"
 let Num=$Row*$Col 
+let Max_IO_Buffer=65536
 sed -i "/^CGRA_Scale/c\CGRA_Scale $Num" configure.txt
 sed -i "/^Row/c\Row $Row" configure.txt
 sed -i "/^Col/c\Col $Col" configure.txt
 sed -i "/^DFG_Name/c\DFG_Name $App_Name" configure.txt
 sed -i "/^Pipeline_Intensity/c\Pipeline_Intensity $Pipeline" configure.txt
+if [ $Sim_Only -eq 1 ]; then
+    sed -i "/^In_Buffer_Depth/c\In_Buffer_Depth $Max_IO_Buffer" configure.txt
+    sed -i "/^Out_Buffer_Depth/c\Out_Buffer_Depth $Max_IO_Buffer" configure.txt
+    sed -i "/^Impl_Or_Sim/c\Impl_Or_Sim 0" configure.txt
+fi
 cd ..
-./cgracompiler
-End_Time=$(date +%s%N)
+./cgracompiler 
+#End_Time=$(date +%s%N)
 
-echo "DFG scheduling completes, time elapsed $((($End_Time - $Start_Time)/1000000))""ms"
-echo
+#echo "DFG scheduling completes, time elapsed $((($End_Time - $Start_Time)/1000000))""ms"
+#echo
 
 

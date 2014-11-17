@@ -20,7 +20,7 @@
 struct Operand_Attribute{
     int OP_Cost;
     Opcode OP_Opcode;
-    int Scheduling_Priority;
+    int Scheduling_Pri;
     int Exe_PE_ID;
     int OP_Avail_Time;
     Operand_State OP_State;

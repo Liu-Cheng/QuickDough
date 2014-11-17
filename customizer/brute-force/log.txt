@@ -1,0 +1,2954 @@
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+rm -f dfg-gen.o Operand.o common.o Instruction.o dfg-gen core.*
+g++ -c -I./ -DDEBUG -g -Wall  dfg-gen.cpp -o  dfg-gen.o
+g++ -c -I./ -DDEBUG -g -Wall  Operand.cpp -o  Operand.o
+g++ -c -I./ -DDEBUG -g -Wall  common.cpp -o  common.o
+g++ -c -I./ -DDEBUG -g -Wall  Instruction.cpp -o  Instruction.o
+g++ -I./ -DDEBUG -g -Wall  dfg-gen.o Operand.o common.o Instruction.o -o dfg-gen 2>&1 | c++filt
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+Insuffient BRAM Resource!
+4
+4
+6
+4
+4
+6
+8
+8
+8
+12
+12
+12
+12
+12
+12
+12
+12
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16

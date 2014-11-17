@@ -20,4 +20,3 @@ Scheduler.cpp
 Scheduler.h
 util/auto-stat/dfg-gen.cpp
 util/auto-stat/logcollect.cpp
-util/link-gen/src/link-gen.cpp

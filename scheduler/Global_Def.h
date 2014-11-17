@@ -64,11 +64,15 @@ enum Routing_Alg{
 };
 
 enum IO_Placement{
-    Sequential_Placement, Interleaving_Placement
+    Sequential_Placement, Interleaving_Placement, Pre_Placement
 };
 
 enum Scheduling_Strategy{
     PE_Pref, OP_Pref, PE_OP_Together
+};
+
+enum Pri_Allocation_Scheme{
+    ASAP, ALAP, Min_Slack, My_ASAP 
 };
 
 enum Opcode{
@@ -89,7 +93,9 @@ struct GL_Var{
     static int Print_Level;
     static int Verify_On;
     static int Random_Seed;
+    static int Impl_Or_Sim;
     static const std::map<Opcode, int> Opcode_To_Cost;
+    static std::ofstream fTrace;
 
     static std::map<Opcode, int> Create_Map(){
         Pipeline_Intensity Pipeline;

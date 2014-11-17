@@ -1,0 +1,12 @@
+OP_Num 4
+Input_OP_Num 3
+Output_OP_Num 1
+IM_OP_Num 0
+IMOUT_OP_Num 0
+Average_Input_Degree 2
+Average_Output_Degree 0.666667
+Avg_OP_Pri 3.5
+Pri_Level 2
+Pri_Distr 2 2 
+OP_Ready_List 1 
+Sim_Perf 22

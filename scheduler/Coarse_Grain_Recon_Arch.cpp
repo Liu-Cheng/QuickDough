@@ -47,7 +47,7 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
     while(!Config_fHandle.eof()){
         std::string Config_Item_Key;
         Config_fHandle >> Config_Item_Key;
-        
+
         if(Config_Item_Key == "CGRA_Scale"){
             Config_fHandle >> CGRA_Scale;
         }
@@ -73,17 +73,44 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
         else if(Config_Item_Key == "Col"){
             Config_fHandle >> Col;
         }
+        else if(Config_Item_Key == "In_Buffer_Num"){
+            Config_fHandle >> In_Buffer_Num;
+        }
+        else if(Config_Item_Key == "Out_Buffer_Num"){
+            Config_fHandle >> Out_Buffer_Num;
+        }
+        else if(Config_Item_Key == "IM_Buffer_Num"){
+            Config_fHandle >> IM_Buffer_Num;
+        }
         else if(Config_Item_Key == "Load_PE_ID"){
-            Config_fHandle >> Load_PE_ID;
+            Load_PE_ID.resize(In_Buffer_Num);
+            for(int i=0; i<In_Buffer_Num; i++){
+                Config_fHandle >> Load_PE_ID[i];
+            }
         }
         else if(Config_Item_Key == "Store_PE_ID"){
-            Config_fHandle >> Store_PE_ID;
+            Store_PE_ID.resize(Out_Buffer_Num);
+            for(int i=0; i<Out_Buffer_Num; i++){
+                Config_fHandle >> Store_PE_ID[i];
+            }
         }
-        else if(Config_Item_Key == "IO_Buffer_Num"){
-            Config_fHandle >> IO_Buffer_Num;
+        else if(Config_Item_Key == "IM_PE_ID"){
+            if(IM_Buffer_Num == 0){
+                continue;
+            }
+            IM_PE_ID.resize(IM_Buffer_Num);
+            for(int i=0; i<IM_Buffer_Num; i++){
+                Config_fHandle >> IM_PE_ID[i];
+            }
         }
-        else if(Config_Item_Key == "IO_Buffer_Depth"){
-            Config_fHandle >> IO_Buffer_Depth;
+        else if(Config_Item_Key == "In_Buffer_Depth"){
+            Config_fHandle >> In_Buffer_Depth;
+        }
+        else if(Config_Item_Key == "IM_Buffer_Depth"){
+            Config_fHandle >> IM_Buffer_Depth;
+        }
+        else if(Config_Item_Key == "Out_Buffer_Depth"){
+            Config_fHandle >> Out_Buffer_Depth;
         }
         else if(Config_Item_Key == "IO_Buffer_Width"){
             Config_fHandle >> IO_Buffer_Width;
@@ -417,7 +444,7 @@ int Coarse_Grain_Recon_Arch::OP_Migration_Time(const int &Start_Time, const int 
         else{
             int PE_Output_Index = Get_Downstream_Index(Src_PE_ID, Dst_PE_ID);
             int Additional_Pipeline = 0;
-            if(Dst_PE_ID == Load_PE_ID){
+            if(Is_Load_PE(Dst_PE_ID)){
                 if(Pipeline == OLD || Pipeline == HF){
                     Additional_Pipeline = 1;
                 }
@@ -475,7 +502,7 @@ int Coarse_Grain_Recon_Arch::OP_Migration_Time(const int &Start_Time, const int 
             bool Src_RD_Avail=(Src_Data_Mem_RD_Avail0 || Src_Data_Mem_RD_Avail1 || Src_Data_Mem_RD_Avail2) && Src_Data_Mem_WR_Avail0;
 
             bool Dst_Load_Path_Avail = true;
-            if(Dst_PE_ID == Load_PE_ID){
+            if(Is_Load_PE(Dst_PE_ID)){
                 if(Pipeline == OLD){
                     Dst_Load_Path_Avail = PE_Array[Dst_PE_ID]->Component_Trace[Start_Time_Tmp + 6]->PE_Component_Reserved->Load_Path_Reserved == false;
                 }
@@ -748,6 +775,26 @@ void Coarse_Grain_Recon_Arch::Link_Gen(){
     }
     fHandle.close();
 
+}
+
+bool Coarse_Grain_Recon_Arch::Is_Load_PE(const int &PE_ID){
+    std::vector<int>::iterator Vit;
+    for(Vit = Load_PE_ID.begin(); Vit != Load_PE_ID.end(); Vit++){
+        if((*Vit) == PE_ID){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Coarse_Grain_Recon_Arch::Is_Store_PE(const int &PE_ID){
+    std::vector<int>::iterator Vit;
+    for(Vit = Store_PE_ID.begin(); Vit != Store_PE_ID.end(); Vit++){
+        if((*Vit) == PE_ID){
+            return true;
+        }
+    }
+    return false;
 }
 
 Coarse_Grain_Recon_Arch::~Coarse_Grain_Recon_Arch(){

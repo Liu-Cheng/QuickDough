@@ -1,0 +1,10 @@
+DFG:
+DFG-In-Num 201
+DFG-Out-Num 100
+DFG-Operation-Num 1000
+DFG-Total-Nodes 1201
+Block:
+Block-Repeating-Num 1
+Block-Const-Num 1
+Block-In-Num 201
+Block-Out-Num 100

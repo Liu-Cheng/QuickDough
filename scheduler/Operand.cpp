@@ -24,7 +24,7 @@ Operand::Operand(int _OP_ID){
     OP_Attribute.OP_Cost = 1;
     OP_Attribute.OP_Opcode = NC;
     OP_Attribute.Exe_PE_ID = NaN;
-    OP_Attribute.Scheduling_Priority = NaN;
+    OP_Attribute.Scheduling_Pri = NaN;
     OP_Attribute.OP_Avail_Time = NaN;
     OP_Attribute.OP_State = Unavail;
     Load_Parameters();
@@ -39,7 +39,7 @@ Operand::Operand(){
     OP_Attribute.OP_Cost = 1;
     OP_Attribute.OP_Opcode = NC;
     OP_Attribute.Exe_PE_ID = NaN;
-    OP_Attribute.Scheduling_Priority = NaN;
+    OP_Attribute.Scheduling_Pri = NaN;
     OP_Attribute.OP_Avail_Time = NaN;
     OP_Attribute.OP_State = Unavail;
     Load_Parameters();

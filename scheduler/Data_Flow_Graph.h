@@ -31,25 +31,31 @@ class Data_Flow_Graph{
         int Input_OP_Num;
         int Output_OP_Num;
         int IM_OP_Num;
-        int IM_Output_OP_Num;
+        int IMOUT_OP_Num;
         int Max_Src_OP_Num;
         float Avg_Output_Degree;
         float Avg_Input_Degree;
-        float Avg_OP_Priority;
-        int Max_OP_Priority;
-        int Priority_Level;
+        float Avg_OP_Pri;
+        int Max_OP_Pri;
+        int Pri_Level;
+        Pri_Allocation_Scheme DFG_Pri_Allocation_Scheme;
         std::string DFG_Name;
         std::vector<Operand*> OP_Array;
 
         Data_Flow_Graph();
         void DFG_Calculation(std::vector<int> &OP_Result);
+        int Get_IO_Logic_Addr(const int &OP_ID);
 
     private:
         void Load_Parameters();
         void DFG_Construct();
         void DFG_Stat();
-        void DFG_Priority_Allocation();
-        void DFG_Priority_Analysis();
+        void DFG_Pri_Allocation();
+        void My_ASAP_Pri_Allocation();
+        void ASAP_Pri_Allocation();
+        void ALAP_Pri_Allocation();
+        void Min_Slack_Pri_Allocation();
+        void DFG_Pri_Analysis();
 };
 
 #endif

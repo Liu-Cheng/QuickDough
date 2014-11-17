@@ -22,12 +22,15 @@
 #include "Scheduler.h"
 
 void Load_Parameters();
+void Init();
+void Clean();
 
 int main(){
 
     std::cout << std::endl << "\t\tFully Pipelined Soft-CGRA Scheduling" << std::endl;
     std::cout << "\t(C) E.E.E Department, The University of Hong Kong" << std::endl << std::endl;
     
+    Init();
     Load_Parameters();
     srand(GL_Var::Random_Seed);
     Coarse_Grain_Recon_Arch* CGRA = new Coarse_Grain_Recon_Arch();
@@ -35,6 +38,23 @@ int main(){
     Scheduler* Current_Scheduler = new Scheduler(DFG, CGRA);
     Current_Scheduler->Scheduling();
     Current_Scheduler->OP_Computation_Check();
+    Clean();
+
+}
+
+void Init(){
+
+    std::string Trace_fName = "./result/trace.txt";
+    GL_Var::fTrace.open(Trace_fName.c_str());
+    if(!GL_Var::fTrace.is_open()){
+        ERROR("Failed to open the trace.txt!");
+    }
+
+}
+
+void Clean(){
+
+    GL_Var::fTrace.close();
 
 }
 
@@ -55,11 +75,14 @@ void Load_Parameters(){
         if(Config_Item_Key == "Print_Level"){
             Config_fHandle >> GL_Var::Print_Level;
         }
-        else if(Config_Item_Key=="Verify_On"){
+        else if(Config_Item_Key == "Verify_On"){
             Config_fHandle >> GL_Var::Verify_On;
         }
-        else if(Config_Item_Key=="Random_Seed"){
+        else if(Config_Item_Key == "Random_Seed"){
             Config_fHandle >> GL_Var::Random_Seed;
+        }
+        else if(Config_Item_Key == "Impl_Or_Sim"){
+            Config_fHandle >> GL_Var::Impl_Or_Sim;
         }
     }
 

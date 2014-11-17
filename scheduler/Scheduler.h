@@ -32,7 +32,6 @@ class Scheduler{
         PE_Selection PE_Sel_Strategy;
         Scheduling_Strategy List_Scheduling_Strategy; 
         int Scheduling_Complete_Time;
-        std::ofstream fTrace;
 
         Scheduler(Data_Flow_Graph* _DFG, Coarse_Grain_Recon_Arch* _CGRA);
         void Scheduling();
@@ -78,6 +77,8 @@ class Scheduler{
         char Bin_To_Hex(char* Bin_Vec);
         int File_Line_Cnt(const std::string &fName);
         void Dec_To_Bin_Str(const int &Dec_Data, const int &Data_Width, std::string &Bin_Str);
+        int Get_IO_Attached_PE_ID(const int &OP_ID);
+        void Resize_Trace_Vector();
 
 };
 

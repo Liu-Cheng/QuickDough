@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+C	config.h	5;"	d
+CC	Makefile	/^CC = g++$/;"	m
+CDIR	Makefile	/^CDIR=..\/..\/common\/$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -I$(CDIR) -DDEBUG -g -Wall$/;"	m
+Const_In	dfg-gen.cpp	/^int Const_In[5]={0, 8, 16, 24, 255}; \/\/The constant array is put here to make id search easier.$/;"	v
+Const_In	dump/IO.h	/^int Const_In[5] = {0, 8, 16, 24, 255};$/;"	v
+Const_Num	dfg-gen.cpp	/^const int Const_Num=5;$/;"	v
+DFG_Compute	dfg-gen.cpp	/^void DFG_Compute(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &Inst_Array){$/;"	f
+DFG_Dump	dfg-gen.cpp	/^void DFG_Dump(const std::string &DFG_Name, const std::vector<Operand*> &OP_Array, const std::vector<Instruction*> &Inst_Array){$/;"	f
+Data_To_ID	dfg-gen.cpp	/^int Data_To_ID(std::string Name, int IDx, int IDy){$/;"	f
+Fig_In	dump/IO.h	/^char Fig_In[8][8];$/;"	v
+Fig_Out	dump/IO.h	/^char Fig_Out[8][8];$/;"	v
+Gx	dump/IO.h	/^int Gx[3][3];$/;"	v
+Gy	dump/IO.h	/^int Gy[3][3];$/;"	v
+Head_File_Dump	dfg-gen.cpp	/^void Head_File_Dump(int Fig_In[R*C\/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C\/4]){$/;"	f
+IO_Init	dfg-gen.cpp	/^void IO_Init(int Fig_In[R*C\/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C\/4]){$/;"	f
+Initial_IO_Placement	dfg-gen.cpp	/^void Initial_IO_Placement(const std::string &DFG_Name){$/;"	f
+Kernel_To_DFG	dfg-gen.cpp	/^void Kernel_To_DFG(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &Inst_Array){$/;"	f
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
+OP_Array_Init	dfg-gen.cpp	/^void OP_Array_Init(std::vector<Operand*> &OP_Array, int Fig_In[R*C\/4], int Gx[3][3], int Gy[3][3], int Fig_Out[R*C\/4]){$/;"	f
+R	config.h	4;"	d
+SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
+TARGET	Makefile	/^TARGET = dfg-gen$/;"	m
+Verify	dfg-gen.cpp	/^void Verify(const std::vector<Operand*> &OP_Array, int Fig_Out[R*C\/4]){$/;"	f
+_IO_H_	dump/IO.h	2;"	d
+__CONFIG_H__	config.h	2;"	d
+main	dfg-gen.cpp	/^int main(){$/;"	f

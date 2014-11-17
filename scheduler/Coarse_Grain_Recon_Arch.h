@@ -27,12 +27,17 @@ class Coarse_Grain_Recon_Arch{
         int CGRA_Scale;
         int Row;
         int Col;
-        int IO_Buffer_Num;
-        int Load_PE_ID;
-        int Store_PE_ID;
+        int In_Buffer_Num;
+        int Out_Buffer_Num;
+        int IM_Buffer_Num;
+        std::vector<int> Load_PE_ID;
+        std::vector<int> Store_PE_ID;
+        std::vector<int> IM_PE_ID;
         int Addr_Buffer_Depth;
         int Addr_Buffer_Width;
-        int IO_Buffer_Depth;
+        int In_Buffer_Depth;
+        int Out_Buffer_Depth;
+        int IM_Buffer_Depth;
         int IO_Buffer_Width;
         Pipeline_Intensity Pipeline;
         std::vector<PE*> PE_Array;
@@ -55,6 +60,8 @@ class Coarse_Grain_Recon_Arch{
         void Add_Link(const int &Src, const int &Dst);
         void Remove_Link(const int &Src, const int &Dst);
         int Get_Dist(const int &Src_PE_ID, const int &Dst_PE_ID);
+        bool Is_Load_PE(const int &PE_ID);
+        bool Is_Store_PE(const int &PE_ID);
         ~Coarse_Grain_Recon_Arch();
 
     private:

@@ -17,7 +17,9 @@
 int GL_Var::Print_Level = 0;
 int GL_Var::Verify_On = 0;
 int GL_Var::Random_Seed = 0;
+int GL_Var::Impl_Or_Sim = 0;
 const std::map<Opcode, int> GL_Var::Opcode_To_Cost = GL_Var::Create_Map();
+std::ofstream GL_Var::fTrace;
 
 std::ostream& operator<< (std::ostream &os, Opcode Inst_Opcode){
     switch (Inst_Opcode){
