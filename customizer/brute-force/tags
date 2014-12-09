@@ -7,65 +7,74 @@
 Benchmark_Dir	Global.py	/^    Benchmark_Dir = Home + "project\/benchmark\/"$/;"	v	class:Global_Def
 Centroid_Num	Global.py	/^    Centroid_Num = 4$/;"	v	class:Kmean_Para
 Coeff_Len	Global.py	/^    Coeff_Len = 64$/;"	v	class:Fir_Para
+Col_Compare	Customizer.py	/^def Col_Compare(Sol1, Sol2):$/;"	f
+Col_Inc_Revenue_Test	Customizer.py	/^def Col_Inc_Revenue_Test(Possible_Solutions):$/;"	f
 Customizer_Dir	Global.py	/^    Customizer_Dir = Home + "project\/customizer\/brute-force\/"$/;"	v	class:Global_Def
 DFG_Check	Customizer.py	/^def DFG_Check(DFG_Info):$/;"	f
 DFG_Sim_Check	Customizer.py	/^def DFG_Sim_Check():$/;"	f
-Fig_Col	Global.py	/^    Fig_Col = 128$/;"	v	class:Sobel_Para
+Fig_Col	Global.py	/^    Fig_Col = 8$/;"	v	class:Sobel_Para
 Fig_Row	Global.py	/^    Fig_Row = 128$/;"	v	class:Sobel_Para
 Fir_Para	Global.py	/^class Fir_Para(object):$/;"	c
 Get_Block_Info	Customizer.py	/^def Get_Block_Info(App, Unrolling_Level):$/;"	f
 Get_Block_Num	Solution.py	/^    def Get_Block_Num(self):$/;"	m	class:Solution
-Get_Buffer_Depth	Solution.py	/^    def Get_Buffer_Depth(self, Data_Num, Buffer_Width):$/;"	m	class:Solution
+Get_Buffer_Depth	Solution.py	/^    def Get_Buffer_Depth(self, Data_Num, Buffer_Width, Max_Buffer_Depth):$/;"	m	class:Solution
 Get_DFG_Info	Customizer.py	/^def Get_DFG_Info(App, Unrolling_Level):$/;"	f
 Get_DFG_Num	Solution.py	/^    def Get_DFG_Num(self):$/;"	m	class:Solution
 Get_DFG_Perf	Customizer.py	/^def Get_DFG_Perf():$/;"	f
 Get_Factor_Vec	Customizer.py	/^def Get_Factor_Vec(Data):$/;"	f
 Get_Linear_Model_Lat	Solution.py	/^    def Get_Linear_Model_Lat(self, Block_Vec, Lat_Vec, Block_Size):$/;"	m	class:Solution
 Get_Loop_Structure	Customizer.py	/^def Get_Loop_Structure(App):$/;"	f
+Get_Max_SCGRA	Customizer.py	/^def Get_Max_SCGRA():$/;"	f
 Get_Next_Col	Customizer.py	/^def Get_Next_Col(Row, Col):$/;"	f
 Get_Optimal_Lat	Customizer.py	/^def Get_Optimal_Lat(CGRA_Size, OP_Ready_List):$/;"	f
 Get_Possible_Blocking_Vec	Customizer.py	/^def Get_Possible_Blocking_Vec(Loop_Unrolling_Factor, Possible_Unrolling_Vec):$/;"	f
 Get_Sim_Cmd	Customizer.py	/^def Get_Sim_Cmd(App, Row, Col, Schedule_Off, Sim_Only, Unrolling_Level, Blocking_Vec, Unrolling_Vec):$/;"	f
 Get_Syllabus	Solution.py	/^    def Get_Syllabus(self):$/;"	m	class:Solution
 Get_Target_Vec	Customizer.py	/^def Get_Target_Vec(Loop_Vec,  Target_Loop_Level,  Factor):$/;"	f
+Get_Top2_Keys	Customizer.py	/^def Get_Top2_Keys(Dict):$/;"	f
+Get_Total_Unrolling_Num	Customizer.py	/^def Get_Total_Unrolling_Num(Unrolling_Vec):$/;"	f
 Get_Trans_Time	Solution.py	/^    def Get_Trans_Time(self, Block_Size):$/;"	m	class:Solution
 Global_Def	Global.py	/^class Global_Def(object):$/;"	c
 Home	Global.py	/^    Home = "\/home\/liucheng\/gitrepo\/"$/;"	v	class:Global_Def
-In_Len	Global.py	/^    In_Len = 128$/;"	v	class:Fir_Para
+In_Len	Global.py	/^    In_Len = 1024$/;"	v	class:Fir_Para
 Is_Acceptable	Solution.py	/^    def Is_Acceptable(self):$/;"	m	class:Solution
+Is_Vec_EQ	Customizer.py	/^def Is_Vec_EQ(Vec1, Vec2):$/;"	f
 Kmean_Para	Global.py	/^class Kmean_Para(object):$/;"	c
 MM_Para	Global.py	/^class MM_Para(object):$/;"	c
 Mat_Len	Global.py	/^    Mat_Len = 128$/;"	v	class:MM_Para
+Max_Addr_Mapper_Depth	Global.py	/^    Max_Addr_Mapper_Depth = 4$/;"	v	class:SCGRA_Para
+Max_Addr_Mapper_Width	Global.py	/^    Max_Addr_Mapper_Width = 32$/;"	v	class:SCGRA_Para
 Max_Data_Mem_Depth	Global.py	/^    Max_Data_Mem_Depth = 256 # number of data that each PE can accommodate$/;"	v	class:SCGRA_Para
 Max_Data_Mem_Width	Global.py	/^    Max_Data_Mem_Width = 32$/;"	v	class:SCGRA_Para
 Max_IO_Buffer_Width	Global.py	/^    Max_IO_Buffer_Width = 32$/;"	v	class:SCGRA_Para
-Max_In_Buffer_Depth	Global.py	/^    Max_In_Buffer_Depth = 32 # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Max_In_Buffer_Depth	Global.py	/^    Max_In_Buffer_Depth = 8 # number of Ki\/1024$/;"	v	class:SCGRA_Para
 Max_Inst_Mem_Depth	Global.py	/^    Max_Inst_Mem_Depth = 4 # number of ki\/1024$/;"	v	class:SCGRA_Para
 Max_Inst_Mem_Width	Global.py	/^    Max_Inst_Mem_Width = 72$/;"	v	class:SCGRA_Para
 Max_Loop_Level	Global.py	/^    Max_Loop_Level = 2$/;"	v	class:Fir_Para
 Max_Loop_Level	Global.py	/^    Max_Loop_Level = 3 $/;"	v	class:MM_Para
 Max_Loop_Level	Global.py	/^    Max_Loop_Level = 3$/;"	v	class:Kmean_Para
 Max_Loop_Level	Global.py	/^    Max_Loop_Level = 4$/;"	v	class:Sobel_Para
+Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [3, 3, Fig_Col, Fig_Row]$/;"	v	class:Sobel_Para
 Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [Coeff_Len, In_Len]$/;"	v	class:Fir_Para
-Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [Fig_Row, Fig_Col, 3, 3]$/;"	v	class:Sobel_Para
 Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [Mat_Len, Mat_Len, Mat_Len]$/;"	v	class:MM_Para
 Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [Node_Dim, Centroid_Num, Node_Num]$/;"	v	class:Kmean_Para
-Max_Out_Buffer_Depth	Global.py	/^    Max_Out_Buffer_Depth = 32 # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Max_Out_Buffer_Depth	Global.py	/^    Max_Out_Buffer_Depth = 8 # number of Ki\/1024$/;"	v	class:SCGRA_Para
 Max_SCGRA	Global.py	/^    Max_SCGRA = 100$/;"	v	class:SCGRA_Para
 Min_Data_Mem_Depth	Global.py	/^    Min_Data_Mem_Depth = 16 # number of data that each PE can accommodate$/;"	v	class:SCGRA_Para
 Min_Data_Mem_Width	Global.py	/^    Min_Data_Mem_Width = 32$/;"	v	class:SCGRA_Para
 Min_IO_Buffer_Width	Global.py	/^    Min_IO_Buffer_Width = 32$/;"	v	class:SCGRA_Para
-Min_In_Buffer_Depth	Global.py	/^    Min_In_Buffer_Depth = 0.5 # number of Ki\/1024$/;"	v	class:SCGRA_Para
-Min_Inst_Mem_Depth	Global.py	/^    Min_Inst_Mem_Depth = 0.5 # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Min_In_Buffer_Depth	Global.py	/^    Min_In_Buffer_Depth = 1 # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Min_Inst_Mem_Depth	Global.py	/^    Min_Inst_Mem_Depth = 1 # number of Ki\/1024$/;"	v	class:SCGRA_Para
 Min_Inst_Mem_Width	Global.py	/^    Min_Inst_Mem_Width = 72$/;"	v	class:SCGRA_Para
-Min_Out_Buffer_Depth	Global.py	/^    Min_Out_Buffer_Depth = 0.5 # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Min_Out_Buffer_Depth	Global.py	/^    Min_Out_Buffer_Depth = 1 # number of Ki\/1024$/;"	v	class:SCGRA_Para
 Min_SCGRA	Global.py	/^    Min_SCGRA = 4$/;"	v	class:SCGRA_Para
 Min_SCGRA_Col	Global.py	/^    Min_SCGRA_Col = 2$/;"	v	class:SCGRA_Para
 Min_SCGRA_Row	Global.py	/^    Min_SCGRA_Row = 2$/;"	v	class:SCGRA_Para
 Node_Dim	Global.py	/^    Node_Dim = 2$/;"	v	class:Kmean_Para
-Node_Num	Global.py	/^    Node_Num = 128$/;"	v	class:Kmean_Para
-Plot_Overhead_Perf_Dist	Customizer.py	/^def Plot_Overhead_Perf_Dist(App, Possible_Solutions):$/;"	f
-Reset_Max_SCGRA	Customizer.py	/^def Reset_Max_SCGRA():$/;"	f
+Node_Num	Global.py	/^    Node_Num = 1024$/;"	v	class:Kmean_Para
+Plot_Solutions	Customizer.py	/^def Plot_Solutions(App, Possible_Solutions):$/;"	f
+Row_Compare	Customizer.py	/^def Row_Compare(Sol1, Sol2):$/;"	f
+Row_Inc_Revenue_Test	Customizer.py	/^def Row_Inc_Revenue_Test(Possible_Solutions):$/;"	f
 Run_Block_Sim	Customizer.py	/^def Run_Block_Sim(App, Row, Col, Unrolling_Level, Blocking_Vec, Unrolling_Vec):$/;"	f
 Run_DFG_Gen	Customizer.py	/^def Run_DFG_Gen(App, Row, Col, Unrolling_Level, Loop_Unrolling_Factor):$/;"	f
 Run_DFG_Sim	Customizer.py	/^def Run_DFG_Sim(App, Row, Col, Unrolling_Level, Loop_Unrolling_Factor):$/;"	f
@@ -76,12 +85,19 @@ Search_Design_Space	Customizer.py	/^def Search_Design_Space(App):$/;"	f
 Sobel_Para	Global.py	/^class Sobel_Para(object):$/;"	c
 Solution	Solution.py	/^class Solution():$/;"	c
 Solutions_Perf_Filter	Customizer.py	/^def Solutions_Perf_Filter(Possible_Solutions):$/;"	f
-Total_PBRAM	Global.py	/^    Total_PBRAM = 288 # number of 18kb primitive BRAM block$/;"	v	class:SCGRA_Para
+Total_PBRAM	Global.py	/^    Total_PBRAM = 140 # number of 18kb primitive BRAM block$/;"	v	class:SCGRA_Para
+Unrolling_Revenue_Test	Customizer.py	/^def Unrolling_Revenue_Test(Possible_Solutions):$/;"	f
+Update_Addr_Mapper	Solution.py	/^    def Update_Addr_Mapper(self):$/;"	m	class:Solution
 Update_Block_Info_To_Solution	Customizer.py	/^def Update_Block_Info_To_Solution(App, Unrolling_Level, Curr_Solution):$/;"	f
 Update_DFG_Sim_To_Solution	Customizer.py	/^def Update_DFG_Sim_To_Solution(App, Tmp_Solution, Row, Col, Unrolling_Level, Loop_Unrolling_Factor):$/;"	f
+Update_Energy_Delay_Product	Solution.py	/^    def Update_Energy_Delay_Product(self):$/;"	m	class:Solution
+Update_FF_Cost	Solution.py	/^    def Update_FF_Cost(self):$/;"	m	class:Solution
+Update_HW_Overhead	Solution.py	/^    def Update_HW_Overhead(self):$/;"	m	class:Solution
 Update_IO_Buffer	Solution.py	/^    def Update_IO_Buffer(self, Block_In_Num, Block_Out_Num):$/;"	m	class:Solution
 Update_Inst_Mem	Solution.py	/^    def Update_Inst_Mem(self):$/;"	m	class:Solution
+Update_LUT_Cost	Solution.py	/^    def Update_LUT_Cost(self):$/;"	m	class:Solution
 Update_PBRAM_Overhead	Solution.py	/^    def Update_PBRAM_Overhead(self):$/;"	m	class:Solution
 Update_Perf	Solution.py	/^    def Update_Perf(self, Block_Level_Reuse_Num, Block_In_Num, Block_Out_Num):$/;"	m	class:Solution
+Update_Power	Solution.py	/^    def Update_Power(self):$/;"	m	class:Solution
 __init__	Solution.py	/^    def __init__(self):$/;"	m	class:Solution
 main	Customizer.py	/^def main():$/;"	f

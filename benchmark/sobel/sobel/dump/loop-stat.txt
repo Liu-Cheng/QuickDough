@@ -1,0 +1,8 @@
+DFG_In_Num 283
+DFG_Out_Num 260
+DFG_Operation_Num 35100
+DFG_Total_Nodes 35383
+Block_Repeat_Num 1
+Block_Reuse_Num 27
+Block_In_Num 283
+Block_Out_Num 260

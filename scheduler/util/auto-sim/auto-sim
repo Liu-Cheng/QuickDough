@@ -109,40 +109,43 @@ if [ "$App_Name" = "mm" ]; then
         sed -i "/^\#define M/c\\#define M $9" config.h
     fi
 elif [ "$App_Name" = "fir" ]; then
-    if [ "$Type" = "small" ]; then
-        cd fir-fully-unroll/
-        shift
-        sed -i "/^\#define L/c\\#define L $9" config.h
-        shift
-        sed -i "/^\#define N/c\\#define N $9" config.h
-    else
-        cd fir-2nd-level-unroll/
+    #if [ "$Type" = "small" ]; then
+        #cd fir-fully-unroll/
+        #shift
+        #sed -i "/^\#define L/c\\#define L $9" config.h
+        #shift
+        #sed -i "/^\#define N/c\\#define N $9" config.h
+    #else
+        #cd fir-2nd-level-unroll/
+        cd fir/
         shift
         sed -i "/^\#define B/c\\#define B $9" config.h
         shift
         sed -i "/^\#define L/c\\#define L $9" config.h
         shift
         sed -i "/^\#define N/c\\#define N $9" config.h
-    fi
+    #fi
 elif [ "$App_Name" = "sobel" ]; then
     #if [ "$Type" = "small" ] && [ "$Row" = "5" ] && [ "$Col" = "5" ]; then
-    if [ "$Type" = "small" ]; then
-        cd sobel-fully-unroll/
+    #if [ "$Type" = "small" ]; then
+    #    cd sobel-fully-unroll/
+    #    shift
+    #    sed -i "/^\#define R/c\\#define R $9" config.h
+    #    shift
+    #    sed -i "/^\#define C/c\\#define C $9" config.h
+    #else
+        #cd sobel-4th-level-unroll/
+        cd sobel/
         shift
-        sed -i "/^\#define R/c\\#define R $9" config.h
+        sed -i "/^\#define B/c\\#define B ($9+2)" config.h
+        shift
+        sed -i "/^\#define R/c\\#define R ($9+2)" config.h
         shift
         sed -i "/^\#define C/c\\#define C $9" config.h
-    else
-        cd sobel-4th-level-unroll/
-        shift
-        sed -i "/^\#define B/c\\#define B $9" config.h
-        shift
-        sed -i "/^\#define R/c\\#define R $9" config.h
-        shift
-        sed -i "/^\#define C/c\\#define C $9" config.h
-    fi
+    #fi
 elif [ "$App_Name" = "kmean" ]; then
-    cd kmean-3rd-level-unroll/
+    #cd kmean-3rd-level-unroll/
+    cd kmean/
     shift
         sed -i "/^\#define B/c\\#define B $9" config.h
     shift

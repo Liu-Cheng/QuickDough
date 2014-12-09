@@ -4,6 +4,6 @@
 int Const_In[1] = {0}; 
 int Block_A_In[128];
 int Block_B_In[128];
-int Block_C_Out[128];
+int Block_C_Out[1];
 
 #endif

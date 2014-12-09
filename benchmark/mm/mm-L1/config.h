@@ -2,6 +2,6 @@
 #define __CONFIG_H__
 
 #define B 128
-#define M 1
+#define M 128
 
 #endif

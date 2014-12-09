@@ -46,6 +46,8 @@ int main(){
 
     Head_File_Dump();
 
+    Loop_Stat(OP_Array, Inst_Array);
+
 }
 
 void IO_Init(int Sig_In[N+L-1], int Coeff[N], int Sig_Out[L]){
@@ -88,7 +90,6 @@ void OP_Array_Init(std::vector<Operand*> &OP_Array, int Sig_In[N+L-1], int Coeff
         op_ptr->Set_Operand(Sig_In[i], 0, Bram0_Addr, INVAR);
         Bram0_Addr++;
         OP_Array.push_back(op_ptr);
-
     }
 
     for(int i=0; i<N; i++){
@@ -153,7 +154,7 @@ void Kernel_To_DFG(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &I
                 Last_OP = OP_Result;
             }
             else{
-                Inst_Result->Set_Instruction(Data_To_ID("Sig_Out", i-N), MULADD, Data_To_ID("Coeff", j), Data_To_ID("Sig_In", i-j), Last_OP->OP_ID);
+                Inst_Result->Set_Instruction(Data_To_ID("Sig_Out", i-N+1), MULADD, Data_To_ID("Coeff", j), Data_To_ID("Sig_In", i-j), Last_OP->OP_ID);
                 Inst_Array.push_back(Inst_Result);
             }
 
@@ -270,7 +271,7 @@ void Initial_IO_Placement(const std::string &DFG_Name){
     int Remapped_Bram0_Addr = 0;
     int Remapped_Bram1_Addr = 0;
     int Const_In_Addr[Const_Num];
-    int Sig_In_Addr[N+B];
+    int Sig_In_Addr[N-1+B];
     int Coeff_Addr[N];
     int Sig_Out_Addr[B];
     
@@ -279,7 +280,7 @@ void Initial_IO_Placement(const std::string &DFG_Name){
         Remapped_Bram0_Addr++ ;
     }
 
-    for(int i=0; i<N+B; i++){
+    for(int i=0; i<N+B-1; i++){
         Sig_In_Addr[i] = Remapped_Bram0_Addr;
         Remapped_Bram0_Addr++ ;
     }
@@ -294,7 +295,7 @@ void Initial_IO_Placement(const std::string &DFG_Name){
         Remapped_Bram1_Addr++;
     }
     
-    const int Kernel_IO_Num = Const_Num + (N+L+N) + L; 
+    const int Kernel_IO_Num = Const_Num + (N+L-1+N) + L; 
     const int Kernel_Num_Per_Block = B/L; 
     int Kernel_IO_Addr[Kernel_IO_Num][Kernel_Num_Per_Block+1]; 
 
@@ -306,7 +307,7 @@ void Initial_IO_Placement(const std::string &DFG_Name){
 
         Row_Index = 0;
 
-        // Constant work-item input
+        // Constant input of a DFG
         for(int i=0; i<Const_Num; i++){
             Kernel_IO_Addr[Row_Index][it] = Const_In_Addr[i];
             if(p==0){
@@ -315,8 +316,8 @@ void Initial_IO_Placement(const std::string &DFG_Name){
             Row_Index++;
         }
 
-        // Normal work-item input i.e. Sig_In[N+L]
-        for(int i=0; i<N+L; i++){
+        // Normal DFG input i.e. Sig_In[N+L-1]
+        for(int i=0; i<N+L-1; i++){
             Kernel_IO_Addr[Row_Index][it] = Sig_In_Addr[p*L+i];
             if(p==0){
                 Kernel_IO_Addr[Row_Index][0] = Data_To_ID("Sig_In", i);
@@ -361,11 +362,11 @@ void Initial_IO_Placement(const std::string &DFG_Name){
 
 void Head_File_Dump(){
 
-    int Block_Sig_In[N+B];
+    int Block_Sig_In[N+B-1];
     int Coeff[N];
     int Block_Sig_Out[B];
 
-    for(int i=0; i<N+B; i++){
+    for(int i=0; i<N+B-1; i++){
         if(i<N){
             Block_Sig_In[i] = 0;
         }
@@ -406,7 +407,7 @@ void Head_File_Dump(){
         }
     }
 
-    fHandle << "int Block_Sig_In[" << N+B << "];" << std::endl;
+    fHandle << "int Block_Sig_In[" << N+B-1 << "];" << std::endl;
     fHandle << "int Coeff[" << N << "];" << std::endl;
     fHandle << "int Block_Sig_Out[" << B << "];" << std::endl;
 
@@ -424,14 +425,14 @@ void Loop_Stat(const std::vector<Operand*> &OP_Array, const std::vector<Instruct
         exit(EXIT_FAILURE);
     }
 
-    fHandle << "DFG_In_Num " << Const_Num + M + M << std::endl;
-    fHandle << "DFG_Out_Num " << 1 << std::endl;
+    fHandle << "DFG_In_Num " << Const_Num + N + N - 1 + L << std::endl;
+    fHandle << "DFG_Out_Num " << L << std::endl;
     fHandle << "DFG_Operation_Num " << Inst_Array.size() << std::endl;
     fHandle << "DFG_Total_Nodes " << OP_Array.size() << std::endl;
-    fHandle << "Block_Repeat_Num " << B/M << std::endl;
-    fHandle << "Block_Reuse_Num " << Const_Num << std::endl;
-    fHandle << "Block_In_Num " << Const_Num + B + B << std::endl;
-    fHandle << "Block_Out_Num " << 1 << std::endl;
+    fHandle << "Block_Repeat_Num " << B/L << std::endl;
+    fHandle << "Block_Reuse_Num " << Const_Num + N + N - 1 << std::endl;
+    fHandle << "Block_In_Num " << Const_Num + N + N - 1 + B << std::endl;
+    fHandle << "Block_Out_Num " << B << std::endl;
     fHandle.close();
 
 }

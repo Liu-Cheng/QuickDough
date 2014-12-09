@@ -7,6 +7,7 @@ import subprocess
 import copy
 import numpy as np
 import matplotlib.pyplot as plt
+import timeit
 from math import * 
 from Global import *
 from Solution import *
@@ -16,32 +17,55 @@ def main():
     it will be used as the metric to evaluate more advanced 
     customization algorithm.
     """
-    Benchmark_List = ["mm"]
+    Start_Time = timeit.default_timer()
+    Benchmark_List = ["kmean"]
     Work_Path = os.getcwd()
     for App in Benchmark_List:
         [Avail_Config_Num, Sim_Cnt] = Search_Design_Space(App)
         print "Simulation for ", App,  " ",  Sim_Cnt, " Times, there are ", Avail_Config_Num, " available configurations!"
     os.chdir(Work_Path)
-    print "Benchmark design space exploration is completed!"
+    Elapsed_Time = timeit.default_timer() - Start_Time
+    print "It took ", Elapsed_Time/60, " min to complete the benchmark design space exploration!"
 
 
 def Search_Design_Space(App):
     Possible_Solutions = []
     Sim_Cnt = 0
     Avail_Config_Num = 0
+    Search_Std = sqrt(SCGRA_Para.Max_SCGRA)
+    Search_Gap = Search_Std/3
     
     Original_Loop_Vec = Get_Loop_Structure(App)
+    Min_Loop_Level = 0
+    if(App == "fir"):
+        Min_Loop_Level = 1 # Make sure fir will always have the inner loop fully unrolled.
+    elif(App == "sobel"):
+        Min_Loop_Level = 3
+    elif(App == "kmean"):
+        Min_Loop_Level = 2
     Max_Loop_Level = len(Original_Loop_Vec)
-    for Unrolling_Level in range(0, Max_Loop_Level):
+    for Unrolling_Level in range(Min_Loop_Level, Max_Loop_Level):
         Possible_Unrolling_Vec = Get_Factor_Vec(Original_Loop_Vec[Unrolling_Level])
         Stop_Unrolling = False
         for Loop_Unrolling_Factor in Possible_Unrolling_Vec:
+            if(App == "kmean" and Loop_Unrolling_Factor <= Original_Loop_Vec[1]):
+                continue
+            if(Unrolling_Level != 0 and Loop_Unrolling_Factor == 1):
+                continue
             Possible_Blocking_Vec = Get_Possible_Blocking_Vec(Loop_Unrolling_Factor, Possible_Unrolling_Vec)
             Row = SCGRA_Para.Min_SCGRA_Row
-            Col = SCGRA_Para.Min_SCGRA_Col
-            while (Row < (3*sqrt(SCGRA_Para.Max_SCGRA)+1)):
+            Max_SCGRA = SCGRA_Para.Max_SCGRA
+            Sim_Flag = False
+            while (Row < (Search_Std + Search_Gap)):
                 Col = SCGRA_Para.Min_SCGRA_Col
-                while (Col <= Row):
+                if(Col < (Row - Search_Gap)):
+                    Col = int(Row - Search_Gap)
+                while (Col <= Row and (Row*Col <= SCGRA_Para.Max_SCGRA)):
+                    #Stop increasing the Col
+                    if(Max_SCGRA < Row*Col):
+                        print "More than required! Max_SCGRA = ", Max_SCGRA
+                        break
+
                     Run_DFG_Gen(App,  Row,  Col,  Unrolling_Level, Loop_Unrolling_Factor)
                     
                     # Check the generated DFG to see if it is suitable
@@ -54,12 +78,13 @@ def Search_Design_Space(App):
                     Run_DFG_Sim(App,  Row,  Col,  Unrolling_Level, Loop_Unrolling_Factor)
                     Sim_Cnt = Sim_Cnt + 1
                     
-                    if(Row == 2 and Col == 2):
-                        Reset_Max_SCGRA() 
+                    #if(Sim_Flag == False):               
+                    #    Max_SCGRA = Get_Max_SCGRA()
+                    #    Sim_Flag = True
 
                     Run_Out_Of_Inst_Mem = DFG_Sim_Check()
                     if(Run_Out_Of_Inst_Mem == 1):
-                        Col = Get_Next_Col(Row, Col)
+                        Col = Col + 2 
                         continue
 
                     Tmp_Solution = Solution()
@@ -74,27 +99,95 @@ def Search_Design_Space(App):
                             print "Row =", Base_Solution.SCGRA_Row, " Col =", Base_Solution.SCGRA_Col, \
                             " Unrolling_Vec =", Base_Solution.Loop_Unrolling_Vec, \
                             " Blocking_Vec =", Base_Solution.Loop_Blocking_Vec
+                    if(Col_Inc_Revenue_Test(Possible_Solutions) == False):
+                        break
                     Col = Col + 1
                 if(Stop_Unrolling):
                     break
+                if(Row_Inc_Revenue_Test(Possible_Solutions) == False):
+                    break
                 Row = Row + 1
             if(Stop_Unrolling == False):
-                Stop_Unrolling = Marginal_Revenue_Test(Possible_Solutions);
+                Stop_Unrolling = Unrolling_Revenue_Test(Possible_Solutions);
             if(Stop_Unrolling):
                 Stop_Unrolling = False
                 break
 
     Avail_Config_Num = len(Possible_Solutions)
-    Solutions_Perf_Filter(Possible_Solutions)
     Save_Possible_Solutions(App, Possible_Solutions)
-    Plot_Overhead_Perf_Dist(App, Possible_Solutions)
+    Solutions_Perf_Filter(Possible_Solutions)
+    Plot_Solutions(App, Possible_Solutions)
     return [Avail_Config_Num, Sim_Cnt]
+
+# For current unrolling vector and specific Row, check if 
+# improvement of DFG_Perf is significant enough for further
+# increasing Col.
+def Col_Inc_Revenue_Test(Possible_Solutions):
+    Curr_Sol = Possible_Solutions[-1]
+    Curr_Perf = Curr_Sol.DFG_Perf
+    Revenue_Standard = 0.05
+    Comparison_Perf_List = []
+    for Sol in Possible_Solutions:
+        # Different blocking solutions are ignored
+        if(Is_Vec_EQ(Sol.Loop_Unrolling_Vec, Sol.Loop_Blocking_Vec)):
+            if(Col_Compare(Curr_Sol, Sol)):
+                Comparison_Perf_List.append(Sol.DFG_Perf)
+
+    if(len(Comparison_Perf_List) >= 3):
+        Best_Perf = min(Comparison_Perf_List)
+        Perf_Metric = (Best_Perf-Curr_Perf)/(1.0*Best_Perf)
+        if(Perf_Metric <= Revenue_Standard):
+            return False
+
+    return True
+
+def Col_Compare(Sol1, Sol2):
+    if(Is_Vec_EQ(Sol1.Loop_Unrolling_Vec, Sol2.Loop_Unrolling_Vec)):
+        if(Sol1.SCGRA_Row == Sol2.SCGRA_Row and Sol1.SCGRA_Col != Sol2.SCGRA_Col):
+            return True
+    return False
+
+def Row_Compare(Sol1, Sol2):
+    if(Is_Vec_EQ(Sol1.Loop_Unrolling_Vec, Sol2.Loop_Unrolling_Vec)):
+        if(Sol1.SCGRA_Row >= Sol2.SCGRA_Row and Sol1.SCGRA_Col >= Sol2.SCGRA_Col):
+            return True
+    return False
+
+def Is_Vec_EQ(Vec1, Vec2):
+    if(len(Vec1) == len(Vec2)):
+        for ID, Data in enumerate(Vec1):
+            if(Data != Vec2[ID]):
+                return False
+        return True
+    return False
+
+# For current unrolling vector and (Row, Col) pair, check if
+# improvement of DFG_Perf is significant enough for further
+# increasing Row
+def Row_Inc_Revenue_Test(Possible_Solutions):
+    Curr_Sol = Possible_Solutions[-1]
+    Curr_Perf = Curr_Sol.DFG_Perf
+    Revenue_Standard = 0.05
+    Comparison_Perf_List = []
+    for Sol in Possible_Solutions:
+        # Different blocking solutions are ignored
+        if(Is_Vec_EQ(Sol.Loop_Unrolling_Vec, Sol.Loop_Blocking_Vec)):
+            if(Row_Compare(Curr_Sol, Sol)):
+                Comparison_Perf_List.append(Sol.DFG_Perf)
+
+    if(len(Comparison_Perf_List) >= 5):
+        Best_Perf = min(Comparison_Perf_List)
+        Perf_Metric = (Best_Perf-Curr_Perf)/(1.0*Best_Perf)
+        if(Perf_Metric <= Revenue_Standard):
+            return False
+
+    return True
 
 # If there are more than two different unrolling choices, search the best
 # CGRA configuration for each unrolling choices. If best two loop unrolling 
 # achives little performance enhancement, there is no need for further loop
 # unrolling.
-def Marginal_Revenue_Test(Possible_Solutions):
+def Unrolling_Revenue_Test(Possible_Solutions):
     Stop_Unrolling = False
     Revenue_Standard = 0.05
     Dict = {}
@@ -106,8 +199,6 @@ def Marginal_Revenue_Test(Possible_Solutions):
                 Dict[Key] = Val
         else:
             Dict[Key] = Val
-    print Dict
-    sys.exit(0)
 
     # if there are less than 4 unrolling performed, skip the test
     if(len(Dict) >= 4):
@@ -142,48 +233,81 @@ def Get_Top2_Keys(Dict):
 
 
 def Get_Next_Col(Row, Col):
-    Curr_Perf = Get_DFG_Perf()
-    Min_CGRA = Curr_Perf/(SCGRA_Para.Max_Inst_Mem_Depth*1024*0.6)
-    Min_Col = int(Min_CGRA/Row)
-    if(Min_Col < (Col+1)):
-        Col = Col + 1
-    elif(Min_Col > Row):
-        Col = Row
-    else:
-        Col = Min_Col
+    Col = Col + 2
     return Col
 
 def Solutions_Perf_Filter(Possible_Solutions):
     Perf = []
     for Sol in Possible_Solutions:
         Perf.append(Sol.Loop_Perf) 
-    Worst_Perf = max(Perf)
-    Best_Perf = min(Perf)
-    Perf_Metric = Best_Perf + 0.1*(Worst_Perf-Best_Perf)
+    Perf.sort()
+    Perf_Metric = 0
+    if(len(Perf) > 100):
+        Perf_Metric = Perf[50]
+    elif(len(Perf) > 20):
+        Perf_Metric = Perf[20]
+    else:
+        Perf_Metric = Perf[-1]
+
+    #Worst_Perf = max(Perf)
+    #Best_Perf = min(Perf)
+    #Perf_Metric = Best_Perf + 0.1*(Worst_Perf-Best_Perf)
     Possible_Solutions[:] = [Sol for Sol in Possible_Solutions if Sol.Loop_Perf<Perf_Metric]
 
 
-def Plot_Overhead_Perf_Dist(App, Possible_Solutions):
-    fName = Global_Def.Customizer_Dir + "./" + App + "-dp.pdf"
+def Plot_Solutions(App, Possible_Solutions):
+    fName1 = Global_Def.Customizer_Dir + "./" + App + "-ExeTime-EDP.pdf"
+    fName2 = Global_Def.Customizer_Dir + "./" + App + "-ExeTime-Power.pdf"
+    fName3 = Global_Def.Customizer_Dir + "./" + App + "-ExeTime-Energy.pdf"
     BRAM = []
+    CGRA_Size = []
     Perf = []
+    Power = []
+    Energy_Delay_Product = []
+    Energy = []
+    Config_ID = []
+    ID = 1
     for Tmp in Possible_Solutions:
+        Config_ID.append(ID)
+        CGRA_Size.append(Tmp.SCGRA_Row * Tmp.SCGRA_Col)
         BRAM.append(Tmp.PBRAM_Overhead)
         Perf.append(Tmp.Loop_Perf)
+        Power.append(Tmp.Power)
+        Energy.append(Tmp.Energy)
+        Energy_Delay_Product.append(Tmp.Energy_Delay_Product)
+        ID += 1
 
-    A = 80
-    M = ">"
-    fig = plt.figure(figsize=(12,8))
-    plt.scatter(BRAM, Perf, s = A, marker = M)
-    plt.xlabel("PBRAM Overhead")
-    plt.ylabel("Loop Execution Time (cycles)")
-    plt.title("MM Design Space Using SCGRA Based Design Framework")
-    plt.xlim(min(BRAM)*0.8, max(BRAM)*1.1)
-    plt.ylim(min(Perf)*0.8, max(Perf)*1.1)
-    plt.grid()
-    #plt.show()
-    fig.savefig(fName, bbox_inches='tight')
 
+    #fig, ax1 = plt.subplots()
+    #ax1.plot(Config_ID, Perf, 'bp')
+    #ax1.set_xlabel("Different Design Parameters")
+    #ax1.set_ylabel("Loop Execution Time (cycles)")
+    #ax1.set_xlim(min(Config_ID)*0.8, max(Config_ID)*1.1)
+    #ax1.set_ylim(min(Perf)*0.8, max(Perf)*1.1)
+    #ax2 = ax1.twinx()
+    #ax2.plot(Config_ID, Power_Perf_Production, 'r.')
+    #ax2.set_ylabel("Power Performance Production (w)")
+
+    fig1 = plt.figure()
+    ax1 = fig1.add_subplot(1, 1, 1)
+    ax1.scatter(Perf, Energy_Delay_Product, color='red', s=8, alpha=0.5)
+    ax1.set_xlabel("Loop Execution Time (cycles)")
+    ax1.set_ylabel("Energy Delay Product (J.cycles)")
+    fig1.savefig(fName1, bbox_inches='tight')
+
+    fig2 = plt.figure()
+    ax2 = fig2.add_subplot(1, 1, 1)
+    ax2.scatter(Perf, Power, color='red', s=8, alpha=0.5)
+    ax2.set_xlabel("Loop Execution Time (cycles)")
+    ax2.set_ylabel("Power (w)")
+    fig2.savefig(fName2, bbox_inches='tight')
+
+    fig3 = plt.figure()
+    ax3 = fig3.add_subplot(1, 1, 1)
+    ax3.scatter(Perf, Energy, color='red', s=8, alpha=0.5)
+    ax3.set_xlabel("Loop Execution Time (cycles)")
+    ax3.set_ylabel("Energy (uJ)")
+    fig3.savefig(fName3, bbox_inches='tight')
 
 def Save_Possible_Solutions(App, Possible_Solutions):
     fName = Global_Def.Customizer_Dir + "./" + App + "-design-space.txt"
@@ -278,7 +402,10 @@ def Update_Block_Info_To_Solution(App, Unrolling_Level, Curr_Solution):
     [Block_Level_Reuse_Num, Block_In_Num, Block_Out_Num] = Get_Block_Info(App, Unrolling_Level)
     Curr_Solution.Update_IO_Buffer(Block_In_Num, Block_Out_Num)
     Curr_Solution.Update_Perf(Block_Level_Reuse_Num, Block_In_Num, Block_Out_Num)
-    Curr_Solution.Update_PBRAM_Overhead()
+    Curr_Solution.Update_Addr_Mapper()
+    Curr_Solution.Update_HW_Overhead()
+    Curr_Solution.Update_Power()
+    Curr_Solution.Update_Energy_Delay_Product()
 
 def Get_DFG_Info(App, Unrolling_Level):
     if(App == "mm"):
@@ -291,6 +418,12 @@ def Get_DFG_Info(App, Unrolling_Level):
         else:
             print "Unexpected unrolling level!"
             sys.exit(0)
+    elif(App == "fir" or App == "sobel" or App == "kmean"):
+        DFG_Gen_Path = Global_Def.Benchmark_Dir + App + "/" + App + "/" 
+    else:
+        print "Unknown application!"
+        sys.exit(0)
+
     DFG_Dump_Path = DFG_Gen_Path + "dump/"
     os.chdir(DFG_Dump_Path)
         
@@ -339,6 +472,11 @@ def Get_Block_Info(App, Unrolling_Level):
         else:
             print "Unexpected unrolling level!"
             sys.exit(0)
+    elif(App == "fir" or App == "sobel" or App == "kmean"):
+        DFG_Gen_Path = Global_Def.Benchmark_Dir + App + "/" + App + "/" 
+    else:
+        print "Unknown application!"
+        sys.exit(0)
 
     DFG_Dump_Path = DFG_Gen_Path + "dump/"
     os.chdir(DFG_Dump_Path)
@@ -381,7 +519,7 @@ def Get_Optimal_Lat(CGRA_Size, OP_Ready_List):
 
     return Lat
 
-def Reset_Max_SCGRA():
+def Get_Max_SCGRA():
     Sim_Path = Global_Def.Scheduler_Dir + "result/"
     os.chdir(Sim_Path)
     fHandle = open("trace.txt", "r")
@@ -406,7 +544,7 @@ def Reset_Max_SCGRA():
         Max_SCGRA = Max_SCGRA + 1
         Vec = Get_Factor_Vec(Max_SCGRA)
 
-    SCGRA_Para.Max_SCGRA = Max_SCGRA
+    return Max_SCGRA
     
 
 def Get_Target_Vec(Loop_Vec,  Target_Loop_Level,  Factor):
@@ -451,6 +589,24 @@ def Get_Sim_Cmd(App, Row, Col, Schedule_Off, Sim_Only, Unrolling_Level, Blocking
         else:
             print "Undefined unrolling level!"
             sys.exit(0)
+    elif(App == "fir"):
+        Run_Sim = "./auto-sim -n " + App + " -t small -r " + str(Row) + " -c " + str(Col) 
+        Run_Sim += " -l OLD" + " -k " + str(Schedule_Off)
+        Run_Sim += " -s " + str(Sim_Only) + " -p " 
+        Run_Sim += str(Loop_Blocking_Factor) + " " + str(Loop_Unrolling_Factor) + " " + str(Original_Loop_Vec[0])
+    elif(App == "sobel"):
+        Run_Sim = "./auto-sim -n " + App + " -t small -r " + str(Row) + " -c " + str(Col) 
+        Run_Sim += " -l OLD" + " -k " + str(Schedule_Off)
+        Run_Sim += " -s " + str(Sim_Only) + " -p " 
+        Run_Sim += str(Loop_Blocking_Factor) + " " + str(Loop_Unrolling_Factor) + " " + str(Original_Loop_Vec[2])
+    elif(App == "kmean"):
+        Run_Sim = "./auto-sim -n " + App + " -t small -r " + str(Row) + " -c " + str(Col) 
+        Run_Sim += " -l OLD" + " -k " + str(Schedule_Off)
+        Run_Sim += " -s " + str(Sim_Only) + " -p " 
+        Run_Sim += str(Loop_Blocking_Factor) + " " + str(Loop_Unrolling_Factor) + " " + str(Original_Loop_Vec[1]) + " " + str(Original_Loop_Vec[0])
+    else:
+        print "Unknown application!"
+        sys.exit(0)
 
     return Run_Sim
 
