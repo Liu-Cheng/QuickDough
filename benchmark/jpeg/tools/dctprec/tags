@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CACHE_ALIGN	arch.h	16;"	d
+CACHE_ALIGN	arch.h	28;"	d
+IDCTI_AMP	dct.c	9;"	d	file:
+O_BINARY	arch.h	29;"	d
+PI	dct.c	8;"	d	file:
+PI	main.c	/^const double PI = 3.1415926535897932384626433832795;$/;"	v
+__ARCH_H__	arch.h	2;"	d
+__DCT_H__	dct.h	2;"	d
+__rdtsc	arch.h	/^	__inline static uint64_t __rdtsc(void) {$/;"	f
+butterfly	dct.c	1239;"	d	file:
+color	arch.h	/^typedef unsigned char color;$/;"	t
+conv	arch.h	/^typedef short conv;$/;"	t
+dct	dct.c	/^void dct(conv pixel[8][8], conv data[8][8])$/;"	f
+dct0	dct.c	/^void dct0(conv pixels[8][8], conv data[8][8])$/;"	f
+dct2_i	dct.c	/^void dct2_i(conv pixel[8][8], conv data[8][8])$/;"	f
+dct2_s	dct.c	/^void dct2_s(conv pixel[8][8], conv data[8][8])$/;"	f
+dct3	dct.c	/^void dct3(conv pixels[8][8], conv data[8][8])$/;"	f
+dct31	dct.c	/^void dct31(short pixels[8][8], short data[8][8])$/;"	f
+dct4	dct.c	/^void dct4(conv pixels[8][8], conv data[8][8])$/;"	f
+dct5	dct.c	/^void dct5(conv pixels[8][8], conv data[8][8])$/;"	f
+dct_1d	dct.c	/^void dct_1d(const short pixel[8], short data[8])$/;"	f
+dct_1d_31	dct.c	/^void dct_1d_31(short pixels[8], short data[8])$/;"	f
+dct_1d_4	dct.c	/^void dct_1d_4(short pixels[8], short data[8])$/;"	f
+dct_1d_5	dct.c	/^void dct_1d_5(const short pixel[8], short data[8])$/;"	f
+dct_1d_6	dct.c	/^void dct_1d_6(const short pixel[8], short data[8])$/;"	f
+dct_1d_61	dct.c	/^void dct_1d_61(const short pixel[8], short data[8])$/;"	f
+dct_1d_62	dct.c	/^void dct_1d_62(const short pixel[8], short data[8])$/;"	f
+dct_1d_63	dct.c	/^void dct_1d_63(const short pixel[8], short data[8])$/;"	f
+dct_fill_tab	dct.c	/^void dct_fill_tab()$/;"	f
+dct_tbl	dct.c	/^double dct_tbl[8][8];$/;"	v
+dct_tbl_i	dct.c	/^int dct_tbl_i[8][8];$/;"	v
+dct_tbl_s	dct.c	/^CACHE_ALIGN short dct_tbl_s[8][8] =$/;"	v
+dctclk	dct.c	/^uint64_t dctclk = 0;$/;"	v
+idct	dct.c	/^void idct(conv data[8][8], conv pixel[8][8])$/;"	f
+idct2_s	dct.c	/^void idct2_s(conv data[8][8], conv pixel[8][8])$/;"	f
+idct3	dct.c	/^void idct3(short data[8][8], short pixel[8][8])$/;"	f
+idct_1d	dct.c	/^void idct_1d(const short data[8], short pixel[8])$/;"	f
+idct_1d_3	dct.c	/^void idct_1d_3(short data[8], short pixels[8])$/;"	f
+idct_1d_5	dct.c	/^void idct_1d_5(const short data[8], short pixel[8])$/;"	f
+idct_tbl_s	dct.c	/^CACHE_ALIGN short idct_tbl_s[8][8] =$/;"	v
+idctclk	dct.c	/^uint64_t idctclk = 0;$/;"	v
+main	main.c	/^int main (int argc, char *argv[])$/;"	f
+main0	main.c	/^int main0 (int argc, char *argv[])$/;"	f
+print_dct_coef	main.c	/^void print_dct_coef(unsigned n)$/;"	f
+rotation	dct.c	1241;"	d	file:
+rotation1	dct.c	1243;"	d	file:
+rotation2	dct.c	1245;"	d	file:
+sdiv	dct.c	/^__inline static int sdiv(const int data, const int quant, const unsigned mag)$/;"	f	file:
+uint64_t	arch.h	/^	typedef unsigned __int64 uint64_t;$/;"	t

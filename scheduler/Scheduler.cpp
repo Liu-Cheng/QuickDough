@@ -1,4 +1,4 @@
-// =====================================================================================================================
+// =================================================================================================
 // Algorithm Description:
 // Implementation of the scheduling algorithm
 //
@@ -16,7 +16,7 @@
 // st.liucheng@gmail.com, liucheng@eee.hku.hk
 // E.E.E department, The University of Hong Kong
 //
-// =====================================================================================================================
+// ================================================================================================
 
 #include "Scheduler.h"
 
@@ -24,7 +24,15 @@ Scheduler::Scheduler(Data_Flow_Graph * _DFG, Coarse_Grain_Recon_Arch* _CGRA){
 
     Load_Parameters();
     Init(_DFG, _CGRA);
+    IO_LD_ST();
 
+}
+
+// Estimate time that consumed by loading/storing data from/to 
+// single port IO buffer to multiple IO FIFO.
+void IO_LD_SW(){
+    int Load_Time;
+    int Store_Time;
 }
 
 void Scheduler::Load_Parameters(){
@@ -114,22 +122,26 @@ int Scheduler::Get_IO_Attached_PE_ID(const int &OP_ID){
     
     int Buffer_Slice_ID;
     int Buffer_Num;
-    int Buffer_Depth;
+    //int Buffer_Depth;
+    int Buffer_Used_Depth;
     if(DFG->OP_Array[OP_ID]->OP_Type == INCONST || DFG->OP_Array[OP_ID]->OP_Type == INVAR){
         Buffer_Num = CGRA->In_Buffer_Num;
-        Buffer_Depth = CGRA->In_Buffer_Depth;
+        //Buffer_Depth = CGRA->In_Buffer_Depth;
+        Buffer_Used_Depth = DFG->Input_OP_Num/Buffer_Num + 1; 
     }
     else if(DFG->OP_Array[OP_ID]->OP_Type == OUTVAR || DFG->OP_Array[OP_ID]->OP_Type == IMOUT){
         Buffer_Num = CGRA->Out_Buffer_Num;
-        Buffer_Depth = CGRA->Out_Buffer_Depth;
+        //Buffer_Depth = CGRA->Out_Buffer_Depth;
+        Buffer_Used_Depth = DFG->Output_OP_Num/Buffer_Num + 1;
     }
     else{
         Buffer_Num = CGRA->IM_Buffer_Num;
-        Buffer_Depth = CGRA->IM_Buffer_Depth;
+        //Buffer_Depth = CGRA->IM_Buffer_Depth;
+        Buffer_Used_Depth = DFG->IM_OP_Num/Buffer_Num + 1;
     }
 
     if(IO_Placement_Scheme == Sequential_Placement){
-        Buffer_Slice_ID = (int) (DFG->Get_IO_Logic_Addr(OP_ID)/Buffer_Depth);
+        Buffer_Slice_ID = (int) (DFG->Get_IO_Logic_Addr(OP_ID)/Buffer_Used_Depth);
         return CGRA->Load_PE_ID[Buffer_Slice_ID];
     }
     else if(IO_Placement_Scheme == Interleaving_Placement){
@@ -220,7 +232,9 @@ void Scheduler::Scheduling(){
         Addr_Buffer_Dump_Mem();
         std::cout << std::endl << "Scheduling result is dumpped! " << std::endl;
         End_Time = clock();
-        std::cout << "Total compilation time: " << (double)(1.0*(End_Time-Start_Time)/CLOCKS_PER_SEC) << " seconds." << std::endl;
+        std::cout << "Total compilation time: " \
+            << (double)(1.0*(End_Time-Start_Time)/CLOCKS_PER_SEC) \
+            << " seconds." << std::endl;
     }
 
 }

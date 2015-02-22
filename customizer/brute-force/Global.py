@@ -5,10 +5,11 @@ class Global_Def(object):
     Benchmark_Dir = Home + "project/benchmark/"
     Scheduler_Dir = Home + "project/scheduler/"
     Customizer_Dir = Home + "project/customizer/brute-force/"
+    Full_Search = True 
 
 class MM_Para(object):
     Mat_Len = 128
-    Max_Loop_Level = 3 
+    Max_Loop_Level = 3
     Max_Loop_Unrolling_Vec = [Mat_Len, Mat_Len, Mat_Len]
 
 class Fir_Para(object):
@@ -35,7 +36,7 @@ class SCGRA_Para(object):
     Min_SCGRA_Row = 2
     Min_SCGRA_Col = 2
     Min_SCGRA = 4
-    Max_SCGRA = 100
+    Max_SCGRA = 36 
     Min_In_Buffer_Depth = 1 # number of Ki/1024
     Max_In_Buffer_Depth = 8 # number of Ki/1024
     Min_Out_Buffer_Depth = 1 # number of Ki/1024
