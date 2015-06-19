@@ -227,6 +227,7 @@ void Data_Flow_Graph::DFG_Stat(){
     }
 
     // OP 0 is available in each PE initially, so it will not bring in any overhead.
+    // Meanwhile, it will not be stored in IO buffers.
     Total_Degree = Total_Degree - OP_Array[0]->OP_Children.size();
     Avg_Input_Degree = Total_Degree*1.0/(IM_OP_Num + Output_OP_Num + IMOUT_OP_Num);
     Avg_Output_Degree = Total_Degree*1.0/(Input_OP_Num + IM_OP_Num + IMOUT_OP_Num);
@@ -413,13 +414,15 @@ void Data_Flow_Graph::DFG_Calculation(std::vector<int> &OP_Result){
  * the block on the SCGRA accelerator.
  * ------------------------------------------------------------------*/
 int Data_Flow_Graph::Get_IO_Logic_Addr(const int &OP_ID){
-    if(OP_Array[OP_ID]->OP_Type == INCONST || OP_Array[OP_ID]->OP_Type == INVAR){
+    if(OP_Array[OP_ID]->Is_Input()){
         return (OP_ID - 1);
     }
-    else if(OP_Array[OP_ID]->OP_Type == IMOUT || OP_Array[OP_ID]->OP_Type == OUTVAR){
-        return (OP_ID - 1 - Input_OP_Num - Output_OP_Num);
+    else if(OP_Array[OP_ID]->Is_Output()){
+        return (OP_ID - Input_OP_Num);
     }
     else{
         ERROR(" OP %d is not stored in IO buffer.\n", OP_ID);
     }
 }
+
+

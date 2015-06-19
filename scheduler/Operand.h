@@ -23,6 +23,8 @@ struct Operand_Attribute{
     int Scheduling_Pri;
     int Exe_PE_ID;
     int OP_Avail_Time;
+    int OP_LD_Time;
+    int OP_ST_Time;
     Operand_State OP_State;
 };
 
@@ -37,6 +39,7 @@ struct Operand{
         int OP_Val;
         int IO_Buffer_Addr;
         int IO_Buffer_ID;
+        int Initially_Attached_PE_ID;
         std::vector<Operand*> OP_Parents;
         std::vector<Operand*> OP_Children;
         Operand_Type OP_Type;
@@ -45,7 +48,12 @@ struct Operand{
 
         Operand(int _OP_ID);
         Operand();
+        void Reset_Exe_PE_ID(const int &PE_ID);
+        void Reset_Init_PE_ID(const int &PE_ID);
         bool Is_OP_Scheduled();
+        bool Is_Input();
+        bool Is_Output();
+        bool Is_IM();
 
     private:
         void Load_Parameters();

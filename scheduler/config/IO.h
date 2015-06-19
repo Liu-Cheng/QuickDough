@@ -2,8 +2,9 @@
 #define _IO_H_
 
 int Const_In[1] = {0};
-int Block_A_In[20][20];
-int Block_B_In[20][20];
-int Block_C_Out[20][20];
+int Block_Samples[125][2];
+int Init_Centroids[4][2];
+int Block_Centroids_Sum[4][2];
+int Block_Centroids_Num[4];
 
 #endif

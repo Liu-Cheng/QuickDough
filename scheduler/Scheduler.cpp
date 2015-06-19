@@ -1,4 +1,4 @@
-// =================================================================================================
+// ============================================================================
 // Algorithm Description:
 // Implementation of the scheduling algorithm
 //
@@ -8,7 +8,8 @@
 // Mar 27th 2012, Pipeline the ALU operation
 // May 29th 2012, Support 400MHz-16bit PE based CGRA
 // July 17th 2012, Add IO model for accurate scheduling
-// July 18th 2012, Add operation transmission history and reuse data stored in intermediate PE
+// July 18th 2012, Add operation transmission history and reuse 
+// data stored in intermediate PE
 // Sep 9th 2014, Update coding style and remove useless functionality. 
 //
 // Author:
@@ -16,7 +17,7 @@
 // st.liucheng@gmail.com, liucheng@eee.hku.hk
 // E.E.E department, The University of Hong Kong
 //
-// ================================================================================================
+// ============================================================================
 
 #include "Scheduler.h"
 
@@ -24,15 +25,268 @@ Scheduler::Scheduler(Data_Flow_Graph * _DFG, Coarse_Grain_Recon_Arch* _CGRA){
 
     Load_Parameters();
     Init(_DFG, _CGRA);
-    IO_LD_ST();
 
 }
 
 // Estimate time that consumed by loading/storing data from/to 
 // single port IO buffer to multiple IO FIFO.
-void IO_LD_SW(){
-    int Load_Time;
-    int Store_Time;
+// Input/output load/store time of a DFG might be different, 
+// so we must keep a record of all of them to evaluate the 
+// load-computting-store pipeling. 
+void Scheduler::IO_LD_ST(){
+
+    std::vector<std::vector<int> > Input_Layout;
+    std::vector<std::vector<int> > Output_Layout;
+    std::vector<std::vector<int> > OP_And_LD_Time;
+    std::vector<std::vector<int> > OP_And_ST_Time;
+    Get_Group_Info(Input_Layout, Output_Layout);
+    Get_OP_LD_ST_Time(OP_And_LD_Time, OP_And_ST_Time);
+    for(int DFG_ID=0; DFG_ID<DFG_Num; DFG_ID++){
+       IO_Scheduling(DFG_ID, Input_Layout, Output_Layout, \
+               OP_And_LD_Time, OP_And_ST_Time); 
+    }
+}
+
+int Scheduler::Get_IO_Physical_Addr(const int &OP_ID, \
+        const int &DFG_ID, \
+        const std::vector<std::vector<int> > &Input_Layout, \
+        const std::vector<std::vector<int> > &Output_Layout){
+    if(OP_ID == 0){
+        return -1; // OP 0 is not in IO Buffer.
+    }
+    else if(DFG->OP_Array[OP_ID]->Is_Input()){
+        int Logic_Addr = DFG->Get_IO_Logic_Addr(OP_ID);
+        return Input_Layout[Logic_Addr][DFG_ID];
+    }
+    else if(DFG->OP_Array[OP_ID]->Is_Output()){
+        int Logic_Addr = DFG->Get_IO_Logic_Addr(OP_ID);
+        return Output_Layout[Logic_Addr][DFG_ID];
+    }
+    else{
+        ERROR("Unknown OP_ID in IO Buffer!");
+    }
+}
+
+void Scheduler::IO_Scheduling(const int &DFG_ID, \
+        const std::vector<std::vector<int> > &Input_Layout, \
+        const std::vector<std::vector<int> > &Output_Layout, \
+        const std::vector<std::vector<int> > &OP_And_LD_Time, \
+        const std::vector<std::vector<int> > &OP_And_ST_Time){
+    std::vector<std::vector<int> > Addr_And_LD_Time;
+    std::vector<std::vector<int> > Addr_And_ST_Time;
+    std::vector<std::vector<int> >::const_iterator cit;
+    for(cit=OP_And_LD_Time.begin(); cit!=OP_And_LD_Time.end(); cit++){
+        std::vector<int> tmp = *cit;
+        int OP_Tmp = tmp[0];
+        tmp[1] = Get_IO_Physical_Addr(OP_Tmp, DFG_ID, Input_Layout, Output_Layout);
+        Addr_And_LD_Time.push_back(tmp);
+    }
+
+    for(cit=OP_And_ST_Time.begin(); cit!=OP_And_ST_Time.end(); cit++){
+        std::vector<int> tmp = *cit;
+        int OP_Tmp = tmp[0];
+        tmp[1] = Get_IO_Physical_Addr(OP_Tmp, DFG_ID, Input_Layout, Output_Layout);
+        Addr_And_ST_Time.push_back(tmp);
+    }
+    
+    //FIFO_Req_Construction(LD_FIFO, Addr_And_LD_Time, FIFO_Num);
+    //FIFO_Req_Construction(ST_FIFO, Addr_And_ST_Time, FIFO_Num);
+    //Group_LD_Time[DFG_ID] = SPM_FIFO_Scheduling(LD_FIFO, SPM_Width);
+    //Group_ST_Time[DFG_ID] = SPM_FIFO_Scheduling(ST_FIFO, SPM_Width);
+
+}
+
+void Scheduler::Get_OP_LD_ST_Time(std::vector<std::vector<int> > &OP_And_LD_Time, \
+        std::vector<std::vector<int> > &OP_And_ST_Time){
+    for(int i=1; i<DFG->OP_Num; i++){
+        std::vector<int> tmp;
+        if(DFG->OP_Array[i]->Is_Input()){
+            tmp.push_back(i);
+            tmp.push_back(DFG->OP_Array[i]->OP_Attribute.OP_LD_Time);
+            OP_And_LD_Time.push_back(tmp);
+        }
+        else if(DFG->OP_Array[i]->Is_Output()){
+            tmp.push_back(i-DFG->Input_OP_Num);
+            tmp.push_back(DFG->OP_Array[i]->OP_Attribute.OP_ST_Time);
+            OP_And_ST_Time.push_back(tmp);
+        }
+    }
+
+    //VecComp MyComp(1);
+    //std::stable_sort(OP_And_LD_Time.begin(), OP_And_LD_Time.end(), MyComp);
+    //std::stable_sort(OP_And_ST_Time.begin(), OP_And_ST_Time.end(), MyComp);
+}
+
+void Scheduler::LD_ST_Schedule(const std::vector<std::vector<int> > &Input_Layout, \
+        const std::vector<std::vector<int> > &Output_Layout, \
+        const std::vector<int> &LD_Req_Seq, \
+        const std::vector<int> &ST_Req_Seq){
+    int In_SPM_Width = CGRA->In_SPM_Width;
+    int Out_SPM_Width = CGRA->Out_SPM_Width;
+    int In_FIFO_Num = CGRA->In_Buffer_Num;
+    int Out_FIFO_Num = CGRA->Out_Buffer_Num;
+
+    int Row = Input_Layout.size();
+    int Col = Input_Layout[0].size();
+    std::vector<std::vector<int> > LD_Addr_Req;
+    LD_Addr_Req.resize(Row);
+    for(int i=0; i<Row; i++){
+        LD_Addr_Req[i].resize(Col);
+    }
+
+    for(int i=0; i<Row; i++){
+        int OP_ID = LD_Req_Seq[i];
+        for(int j=0; j<Col; j++){
+           LD_Addr_Req[i][j] = Input_Layout[OP_ID][j];
+        }
+    }
+
+    Get_Scheduling_Result(LD_Addr_Req, In_SPM_Width, In_FIFO_Num);
+    Row = Output_Layout.size();
+    Col = Output_Layout[0].size();
+    std::vector<std::vector<int> > ST_Addr_Req;
+    ST_Addr_Req.resize(Row);
+    for(int i=0; i<Row; i++){
+        ST_Addr_Req[i].resize(Col);
+    }
+
+    for(int i=0; i<Row; i++){
+        int OP_ID = ST_Req_Seq[i];
+        for(int j=0; j<Col; j++){
+            ST_Addr_Req[i][j] = Output_Layout[OP_ID-1-Input_Layout.size()][j];
+        }
+    }
+
+    Get_Scheduling_Result(ST_Addr_Req, Out_SPM_Width, Out_FIFO_Num);
+
+}
+
+void Scheduler::Get_Scheduling_Result(const std::vector<std::vector<int> > &Addr_Req, 
+        const int &SPM_Width, const int &FIFO_Num){
+    for(int i=0; i<DFG_Num; i++){
+        //distribute each DFG input addr requests into input FIFOs.
+        std::vector<std::vector<int> > FIFO_Req;
+        FIFO_Req.resize(FIFO_Num);
+        for(unsigned row=0; row<Addr_Req.size(); row++){
+            unsigned FIFO_ID = row%FIFO_Num;
+            FIFO_Req[FIFO_ID].push_back(Addr_Req[row][i]);
+        }
+
+        //Set the numbe of data that lies in the same line as priority.
+        std::vector<int> SPM_Addr;
+        Group_LD_Time[i] = 0;
+        while(!Is_FIFO_Empty(FIFO_Req)){
+            Group_LD_Time[i]++;
+            int Tmp_Addr = Get_SPM_Addr(FIFO_Req, SPM_Width);
+            SPM_Addr.push_back(Tmp_Addr);
+            Update_FIFO_Content(FIFO_Req, Tmp_Addr, SPM_Width);
+        }
+    }
+
+}
+
+bool Scheduler::Is_FIFO_Empty(const std::vector<std::vector<int> > &FIFO_Req){
+    std::vector<std::vector<int> >::const_iterator cit;
+    bool All_Empty = true;
+    for(cit=FIFO_Req.begin(); cit!=FIFO_Req.end(); cit++){
+        All_Empty = All_Empty && cit->empty();
+    }
+    return All_Empty;
+}
+
+void Scheduler::Update_FIFO_Content(std::vector<std::vector<int> > &FIFO_Req, \
+        const int &SPM_Addr, const int &SPM_Width){
+    std::vector<std::vector<int> >::iterator it;
+    int Cnt = 0;
+    for(it=FIFO_Req.begin(); it!=FIFO_Req.end(); it++){
+        if(!it->empty() && Cnt<SPM_Width){
+            int Addr = (int)(it->front()/SPM_Width);
+            if(Addr == SPM_Addr){
+                it->erase(it->begin());
+                Cnt++;
+            }
+        }
+    }
+}
+
+int Scheduler::Get_SPM_Addr(const std::vector<std::vector<int> > &FIFO_Req, \
+        const int &SPM_Width){
+    int SPM_Addr;
+    std::vector<std::vector<int> >::const_iterator cit1, cit2;
+    std::vector<int> FIFO_Pri; 
+    int Max_Pri = 0;
+    for(cit1=FIFO_Req.begin(); cit1!=FIFO_Req.end(); cit1++){
+        int Pri = 0;
+        int m1 = 0;
+        int m2 = 0;
+        for(cit2=FIFO_Req.begin(); cit2!=FIFO_Req.end(); cit2++){
+            if(cit1!=cit2){
+                if(!cit1->empty()){
+                    m1 = (int)(cit1->front()/SPM_Width);
+                } 
+                if(cit2->empty()){
+                    m2 = (int)(cit2->front()/SPM_Width);
+                }
+
+                if(m1==m2){
+                    Pri++;
+                }
+            }
+        }
+        if(Pri > Max_Pri){
+            Max_Pri = Pri;
+            SPM_Addr = m1;
+        }
+    }
+    return SPM_Addr;
+}
+
+
+// 0 will not be stored in IO buffer, but it is an OP of DFG.
+void Scheduler::Get_Group_Info(std::vector<std::vector<int> > &Input_Layout, \
+        std::vector<std::vector<int> > &Output_Layout){
+    std::string Group_Info_fName = "./config/block-io.txt";
+    std::vector<std::vector<int> > Data_Array;
+    Read_2D_int_File(Group_Info_fName, Data_Array);
+
+    int Row = Data_Array.size();
+    int Col = Data_Array[0].size();
+    DFG_Num = Col - 1;
+    for(int i=0; i<Row; i++){
+        std::vector<int> Tmp;
+        if(DFG->OP_Array[i]->Is_Input()){
+            for(int j=1; j<Col; j++){
+                Tmp.push_back(Data_Array[i][j]-1);
+            }
+            Input_Layout.push_back(Tmp);
+        }
+        else if(DFG->OP_Array[i]->Is_Output()){
+            for(int j=1; j<Col; j++){
+                Tmp.push_back(Data_Array[i][j]);
+            }
+            Output_Layout.push_back(Tmp);
+        }
+        else{
+            ERROR("Unexpected IO OP!");
+        }
+    }
+
+}
+
+void Scheduler::Read_2D_int_File(const std::string &fName, \
+        std::vector<std::vector<int> > &Data){
+    std::ifstream fHandle(fName.c_str());
+    if(!fHandle.is_open()){
+        ERROR("Failed to open %s!", fName.c_str());
+    }
+    std::string Line;
+    while(std::getline(fHandle, Line)){
+        std::istringstream iss(Line);
+        Data.push_back(
+                std::vector<int>(std::istream_iterator<int>(iss),
+                    std::istream_iterator<int>()));
+    }
+    fHandle.close();
 }
 
 void Scheduler::Load_Parameters(){
@@ -57,6 +311,9 @@ void Scheduler::Load_Parameters(){
             }
             else if(Config_Item_Val == "Pre_Placement"){
                 IO_Placement_Scheme = Pre_Placement;
+            }
+            else if(Config_Item_Val == "On_Demand_Placement"){
+                IO_Placement_Scheme = On_Demand_Placement;
             }
             else{
                 ERROR("Unknown IO Placement Scheme!\n");
@@ -118,40 +375,77 @@ void Scheduler::Init(Data_Flow_Graph* _DFG, Coarse_Grain_Recon_Arch* _CGRA){
 
 }
 
+
 int Scheduler::Get_IO_Attached_PE_ID(const int &OP_ID){
     
     int Buffer_Slice_ID;
     int Buffer_Num;
-    //int Buffer_Depth;
     int Buffer_Used_Depth;
-    if(DFG->OP_Array[OP_ID]->OP_Type == INCONST || DFG->OP_Array[OP_ID]->OP_Type == INVAR){
+    if(DFG->OP_Array[OP_ID]->Is_Input()){
         Buffer_Num = CGRA->In_Buffer_Num;
-        //Buffer_Depth = CGRA->In_Buffer_Depth;
-        Buffer_Used_Depth = DFG->Input_OP_Num/Buffer_Num + 1; 
+        Buffer_Used_Depth = (DFG->Input_OP_Num-1)/Buffer_Num; 
+        if((DFG->Input_OP_Num-1)%Buffer_Num != 0){
+            Buffer_Used_Depth++;
+        }
     }
-    else if(DFG->OP_Array[OP_ID]->OP_Type == OUTVAR || DFG->OP_Array[OP_ID]->OP_Type == IMOUT){
+    else if(DFG->OP_Array[OP_ID]->Is_Output()){
         Buffer_Num = CGRA->Out_Buffer_Num;
-        //Buffer_Depth = CGRA->Out_Buffer_Depth;
-        Buffer_Used_Depth = DFG->Output_OP_Num/Buffer_Num + 1;
+        Buffer_Used_Depth = DFG->Output_OP_Num/Buffer_Num;
+        if(DFG->Output_OP_Num%Buffer_Num != 0){
+            Buffer_Used_Depth++;
+        }
     }
     else{
-        Buffer_Num = CGRA->IM_Buffer_Num;
-        //Buffer_Depth = CGRA->IM_Buffer_Depth;
-        Buffer_Used_Depth = DFG->IM_OP_Num/Buffer_Num + 1;
+        ERROR("It not an IO operand!");
     }
 
     if(IO_Placement_Scheme == Sequential_Placement){
         Buffer_Slice_ID = (int) (DFG->Get_IO_Logic_Addr(OP_ID)/Buffer_Used_Depth);
-        return CGRA->Load_PE_ID[Buffer_Slice_ID];
+        if(DFG->OP_Array[OP_ID]->Is_Input()){
+            return CGRA->Load_PE_ID[Buffer_Slice_ID];
+        }
+        else{
+            return CGRA->Store_PE_ID[Buffer_Slice_ID];
+        }
     }
     else if(IO_Placement_Scheme == Interleaving_Placement){
         Buffer_Slice_ID = (DFG->Get_IO_Logic_Addr(OP_ID))%Buffer_Num;
-        return CGRA->Store_PE_ID[Buffer_Slice_ID];
+        if(DFG->OP_Array[OP_ID]->Is_Input()){
+            return CGRA->Load_PE_ID[Buffer_Slice_ID];
+        }
+        else{
+            return CGRA->Store_PE_ID[Buffer_Slice_ID];
+        }
+    }
+    else if(IO_Placement_Scheme == On_Demand_Placement){
+        return DFG->OP_Array[OP_ID]->Initially_Attached_PE_ID;
+    }
+    else if(IO_Placement_Scheme == Pre_Placement){
+        Buffer_Slice_ID = (int) (DFG->Get_IO_Logic_Addr(OP_ID)/Buffer_Used_Depth);
+        if(DFG->OP_Array[OP_ID]->Is_Input()){
+            return CGRA->Load_PE_ID[Buffer_Slice_ID];
+        }
+        else{
+            return CGRA->Store_PE_ID[Buffer_Slice_ID];
+        }
     }
     else{
         ERROR("Undefined IO buffer partition\n");
     }
+
 }
+
+/*****************************************************
+ * This function decides the initial placement of DFG I/O
+ * There are three placement strategies are provided.
+ * 1) Place the DFG input/output sequentially
+ * 2) Place the DFG input/output interleavingly 
+ * 3) Assume all the DFG input/output are available, 
+ * however, they can only be loaded once. Then let the 
+ * operation scheduling decide which I/O should be loaded or 
+ * stored. Finally, the scheduling result is used as an initial 
+ * placement. 
+ *****************************************************/
 
 void Scheduler::IO_Placing(){
     
@@ -159,10 +453,11 @@ void Scheduler::IO_Placing(){
      * It adopts a block partition scheme on IO buffer or
      * a cyclic partition on IO buffer
      *-----------------------------------------------------*/
-    if(IO_Placement_Scheme == Sequential_Placement || IO_Placement_Scheme == Interleaving_Placement){
+    if(IO_Placement_Scheme == Sequential_Placement || \
+            IO_Placement_Scheme == Interleaving_Placement){
         std::vector<Operand*>::iterator Vit;
         for(Vit = DFG->OP_Array.begin(); Vit != DFG->OP_Array.end(); Vit++){
-            if((((*Vit)->OP_Type == INCONST) || ((*Vit)->OP_Type == INVAR)) && ((*Vit)->OP_ID !=0)){
+            if(((*Vit)->Is_Input()) && ((*Vit)->OP_ID !=0)){
                 (*Vit)->OP_Attribute.OP_Cost = 0;
                 (*Vit)->OP_Attribute.Exe_PE_ID = Get_IO_Attached_PE_ID((*Vit)->OP_ID);
                 (*Vit)->OP_Attribute.OP_Avail_Time = INT_MAX;
@@ -170,20 +465,35 @@ void Scheduler::IO_Placing(){
             }
         }
     }
-    else if(IO_Placement_Scheme == Pre_Placement){
+    else if(IO_Placement_Scheme == On_Demand_Placement){
         std::vector<Operand*>::iterator Vit;
         for(Vit = DFG->OP_Array.begin(); Vit != DFG->OP_Array.end(); Vit++){
-            if((((*Vit)->OP_Type == INCONST) || ((*Vit)->OP_Type == INVAR)) && ((*Vit)->OP_ID !=0)){
+            if(((*Vit)->Is_Input()) && ((*Vit)->OP_ID !=0)){
+                (*Vit)->OP_Attribute.OP_Cost = 0;
+                (*Vit)->OP_Attribute.Exe_PE_ID = NaN;
+                (*Vit)->OP_Attribute.OP_Avail_Time = INT_MAX;
+                (*Vit)->OP_Attribute.OP_State = In_IO_Buffer;
+            }
+        }
+    }
+    else if(IO_Placement_Scheme == Pre_Placement){
+        /*Fir test only*/
+        int tap = 32;
+        int in_len = 256;
+        int start_id = in_len+tap;
+        int end_id = in_len+tap+tap;
+        std::vector<Operand*>::iterator Vit;
+        for(Vit = DFG->OP_Array.begin(); Vit != DFG->OP_Array.end(); Vit++){
+            //if(((*Vit)->Is_Input()) && ((*Vit)->OP_ID !=0)){
+            if(((*Vit)->Is_Input()) && ((*Vit)->OP_ID >=start_id && (*Vit)->OP_ID <=end_id)){
                 (*Vit)->OP_Attribute.OP_Cost = 0;
                 (*Vit)->OP_Attribute.Exe_PE_ID = 0;
                 (*Vit)->OP_Attribute.OP_Avail_Time = 0;
                 (*Vit)->OP_Attribute.OP_State = Avail;
                 Attach_History Attach_Point;
-                for(int i=0; i<CGRA->CGRA_Scale; i++){
-                    Attach_Point.Attached_PE_ID = i;
-                    Attach_Point.Attached_Time = 0;
-                    (*Vit)->OP_Attach_History.push_back(Attach_Point);
-                }
+                Attach_Point.Attached_PE_ID = ((*Vit)->OP_ID)%CGRA->CGRA_Scale;
+                Attach_Point.Attached_Time = 0;
+                (*Vit)->OP_Attach_History.push_back(Attach_Point);
             }
         }
     }
@@ -216,12 +526,16 @@ void Scheduler::Scheduling(){
         ERROR("Unknown scheduling strategy!\n");
     }
 
+
     std::cout << "Operation scheduling is completed!" << std::endl;
-    std::cout << "Kernel execution time " << Scheduling_Complete_Time << " cycles" << std::endl;
+    std::cout << "Kernel execution time " << Scheduling_Complete_Time \
+        << " cycles" << std::endl;
     GL_Var::fTrace << "Sim_Perf " << Scheduling_Complete_Time << std::endl;
 
+    //IO_LD_ST();
     if(GL_Var::Impl_Or_Sim == 1){
-        std::cout << "Start to dump the scheduling result for hardware implementation!" << std::endl;
+        std::cout << "Start to dump the scheduling result for hardware implementation!" \
+            << std::endl;
         Scheduling_Stat();
         Computation_Result_Dump();
         IO_Buffer_Dump_Coe();
@@ -255,9 +569,13 @@ void Scheduler::Load_Balance_Filter(std::list<int> &Candidates){
         }
     }
 
-    int Threshold_Num = Min_Exe_OP_Num + (Max_Exe_OP_Num - Min_Exe_OP_Num) * Load_Balance_Factor;
+    int Threshold_Num = Min_Exe_OP_Num + \
+                        (Max_Exe_OP_Num - Min_Exe_OP_Num) * \
+                        Load_Balance_Factor;
+
     for(Lit = Candidates.begin(); Lit != Candidates.end(); ){
-        if(CGRA->PE_Array[*Lit]->Exe_OP_Num > 1.3*Min_Exe_OP_Num && CGRA->PE_Array[*Lit]->Exe_OP_Num > Threshold_Num){
+        if(CGRA->PE_Array[*Lit]->Exe_OP_Num > 1.3*Min_Exe_OP_Num && \
+                CGRA->PE_Array[*Lit]->Exe_OP_Num > Threshold_Num){
             Lit = Candidates.erase(Lit);
         }
         else{
@@ -382,7 +700,8 @@ void Scheduler::List_Scheduling_PE_Pref(){
         OP_Exe(Sel_OP_ID, Src_OP_IDs, Sel_PE_ID, Src_OP_Arrival_Time, Impl);
 
         //output operation that has been executed should be moved to output PE
-        if(DFG->OP_Array[Sel_OP_ID]->OP_Type == OUTVAR || DFG->OP_Array[Sel_OP_ID]->OP_Type == IMOUT){
+        if(DFG->OP_Array[Sel_OP_ID]->OP_Type == OUTVAR || \
+                DFG->OP_Array[Sel_OP_ID]->OP_Type == IMOUT){
             Store_In_IO_Buffer(Sel_OP_ID);
         }
 
@@ -419,8 +738,9 @@ void Scheduler::OP_Ready_Set_Update(std::list<int> &OP_Ready_Set, const int &Sel
     }
 
     std::vector<Operand*>::iterator Vit;
-    for(Vit=DFG->OP_Array[Sel_OP_ID]->OP_Children.begin(); Vit!=DFG->OP_Array[Sel_OP_ID]->OP_Children.end(); Vit++){
-
+    for(Vit=DFG->OP_Array[Sel_OP_ID]->OP_Children.begin(); \
+            Vit!=DFG->OP_Array[Sel_OP_ID]->OP_Children.end(); \
+            Vit++){
         bool All_Src_Ready = true;
         bool Is_In_Ready_List = false;
         std::vector<Operand*>::iterator it;
@@ -502,8 +822,8 @@ void Scheduler::PEOPPairSelection(int &selected_PE_id, int &selected_op_id, cons
 */
 
 
-int Scheduler::Least_Cost_OP_Sel(const int &Sel_PE_ID, const std::list<int> &OP_Ready_Set){
-
+int Scheduler::Least_Cost_OP_Sel(const int &Sel_PE_ID, \
+        const std::list<int> &OP_Ready_Set){
     int Sel_OP_ID = NaN;
     std::list<int>::const_iterator Lcit;
     int Min_Exe_Cost = INT_MAX; 
@@ -512,7 +832,9 @@ int Scheduler::Least_Cost_OP_Sel(const int &Sel_PE_ID, const std::list<int> &OP_
     for(Lcit = OP_Ready_Set.begin(); Lcit != OP_Ready_Set.end(); Lcit++){
         float OP_Exe_Cost = 0;
         std::vector<Operand*>::iterator Vit;
-        for(Vit = DFG->OP_Array[*Lcit]->OP_Parents.begin(); Vit != DFG->OP_Array[*Lcit]->OP_Parents.end(); Vit++){
+        for(Vit = DFG->OP_Array[*Lcit]->OP_Parents.begin(); \
+                Vit != DFG->OP_Array[*Lcit]->OP_Parents.end(); \
+                Vit++){
             int Src_OP_ID = (*Vit)->OP_ID;
             int Attached_PE_ID;
             int Src_Ready_Time;
@@ -521,6 +843,9 @@ int Scheduler::Least_Cost_OP_Sel(const int &Sel_PE_ID, const std::list<int> &OP_
             }
             else{
                 Attached_PE_ID = Get_IO_Attached_PE_ID(Src_OP_ID);
+                if(Attached_PE_ID == NaN){
+                    Attached_PE_ID = CGRA->Get_Min_Load_PE(Sel_PE_ID);
+                }
                 Src_Ready_Time = CGRA->PE_Array[Attached_PE_ID]->Max_Active_Time;
             }
 
@@ -561,10 +886,12 @@ void Scheduler::OP_Ready_Set_Init(std::list<int> &OP_Ready_Set){
 
     for(int i=0; i<DFG->OP_Num; i++){
         Operand* OP_Ptr = DFG->OP_Array[i];
-        if((OP_Ptr->OP_Type != INCONST) && (OP_Ptr->OP_Type != INVAR)){
+        if(!OP_Ptr->Is_Input()){
             std::vector<Operand*>::iterator OP_It;
             bool Is_Src_OP_Ready = true;
-            for(OP_It = OP_Ptr->OP_Parents.begin(); OP_It != OP_Ptr->OP_Parents.end(); OP_It++){
+            for(OP_It = OP_Ptr->OP_Parents.begin(); \
+                    OP_It != OP_Ptr->OP_Parents.end(); \
+                    OP_It++){
                 if((*OP_It)->OP_Attribute.OP_State == Unavail){
                     Is_Src_OP_Ready = false;
                     break;
@@ -579,8 +906,8 @@ void Scheduler::OP_Ready_Set_Init(std::list<int> &OP_Ready_Set){
 
 }
 
-int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, const Exe_Mode &Mode){
-
+int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, \
+        const Exe_Mode &Mode){
     int Expected_Complete_Time = 0;
     int Src_Avail_Time;
     int Src_Attached_PE_ID;
@@ -588,6 +915,7 @@ int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, const Exe
     // Const 0 is always available on each PE
     if(Src_OP_ID == 0){
         DFG->OP_Array[0]->OP_Attribute.OP_State = Avail;
+        DFG->OP_Array[0]->OP_Attribute.OP_LD_Time = 0;
         Src_Attached_PE_ID = Target_PE_ID;
         Src_Avail_Time = 0;
     }
@@ -595,8 +923,12 @@ int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, const Exe
         Src_Attached_PE_ID = Nearest_Attached_PE(Src_OP_ID, Target_PE_ID, Src_Avail_Time);
     }
     else if(DFG->OP_Array[Src_OP_ID]->OP_Attribute.OP_State == In_IO_Buffer){
-        Src_Avail_Time = Load_From_IO_Buffer(Src_OP_ID, Mode);
         Src_Attached_PE_ID = Get_IO_Attached_PE_ID(Src_OP_ID);
+        if(Src_Attached_PE_ID == NaN){
+            Src_Attached_PE_ID = CGRA->Get_Min_Load_PE(Target_PE_ID);
+            DFG->OP_Array[Src_OP_ID]->Reset_Init_PE_ID(Src_Attached_PE_ID);
+        }
+        Src_Avail_Time = Load_From_IO_Buffer(Src_OP_ID, Mode);
     }
     else{
         ERROR("Unexpected operation fectching!");
@@ -605,8 +937,12 @@ int Scheduler::Fetch_OP(const int &Src_OP_ID, const int &Target_PE_ID, const Exe
     // Move source operand to target PE.
     if(Src_Attached_PE_ID != Target_PE_ID){
         std::list<int> Routing_Path;
-        CGRA->Dynamic_Routing(CGRA->Dynamic_Routing_Alg, Src_Avail_Time, Src_Attached_PE_ID, Target_PE_ID, Routing_Path);
-        Expected_Complete_Time = OP_Migration(Src_Avail_Time, Src_OP_ID, Routing_Path, Mode);
+        CGRA->Dynamic_Routing(CGRA->Dynamic_Routing_Alg, \
+                Src_Avail_Time, Src_Attached_PE_ID, \
+                Target_PE_ID, Routing_Path);
+
+        Expected_Complete_Time = OP_Migration(Src_Avail_Time, \
+                Src_OP_ID, Routing_Path, Mode);
     }
     else{
         Expected_Complete_Time = Src_Avail_Time;
@@ -794,6 +1130,7 @@ int Scheduler::Load_From_IO_Buffer(const int &OP_ID, const Exe_Mode &Mode){
 
     //Load the operation from IO Buffer
     int Expected_Complete_Time = NaN;
+    int Load_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
     for(int i=0; i<INT_MAX; i++){
         bool Load_Path_Avail;
         bool WR_Port1_Avail;
@@ -802,168 +1139,172 @@ int Scheduler::Load_From_IO_Buffer(const int &OP_ID, const Exe_Mode &Mode){
         bool RD_Port5_Avail;
 
         if(CGRA->Pipeline == OLD){
-            Load_Path_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_Load_Path_Avail(i+1); 
-            WR_Port1_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_WR_Port_Avail(i+2, 1);
-            RD_Port3_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 3);
-            RD_Port4_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 4);
-            RD_Port5_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 5);
+            Load_Path_Avail = CGRA->PE_Array[Load_PE_ID]->Is_Load_Path_Avail(i+1); 
+            WR_Port1_Avail = CGRA->PE_Array[Load_PE_ID]->Is_WR_Port_Avail(i+2, 1);
+            RD_Port3_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 3);
+            RD_Port4_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 4);
+            RD_Port5_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 5);
         }
         else if(CGRA->Pipeline == LF){
-            Load_Path_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_Load_Path_Avail(i+1);
-            WR_Port1_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_WR_Port_Avail(i+1, 1);
-            RD_Port3_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+1, 3);
-            RD_Port4_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+1, 4);
-            RD_Port5_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+1, 5);
+            Load_Path_Avail = CGRA->PE_Array[Load_PE_ID]->Is_Load_Path_Avail(i+1);
+            WR_Port1_Avail = CGRA->PE_Array[Load_PE_ID]->Is_WR_Port_Avail(i+1, 1);
+            RD_Port3_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+1, 3);
+            RD_Port4_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+1, 4);
+            RD_Port5_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+1, 5);
         }
         else if(CGRA->Pipeline == MF){
-            Load_Path_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_Load_Path_Avail(i+1);
-            WR_Port1_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_WR_Port_Avail(i+1, 1);
-            RD_Port3_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+1, 3);
-            RD_Port4_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+1, 4);
-            RD_Port5_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+1, 5);
+            Load_Path_Avail = CGRA->PE_Array[Load_PE_ID]->Is_Load_Path_Avail(i+1);
+            WR_Port1_Avail = CGRA->PE_Array[Load_PE_ID]->Is_WR_Port_Avail(i+1, 1);
+            RD_Port3_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+1, 3);
+            RD_Port4_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+1, 4);
+            RD_Port5_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+1, 5);
         }
         else if(CGRA->Pipeline == LHF){
-            Load_Path_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_Load_Path_Avail(i+1);
-            WR_Port1_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_WR_Port_Avail(i+2, 1);
-            RD_Port3_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 3);
-            RD_Port4_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 4);
-            RD_Port5_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 5);
+            Load_Path_Avail = CGRA->PE_Array[Load_PE_ID]->Is_Load_Path_Avail(i+1);
+            WR_Port1_Avail = CGRA->PE_Array[Load_PE_ID]->Is_WR_Port_Avail(i+2, 1);
+            RD_Port3_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 3);
+            RD_Port4_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 4);
+            RD_Port5_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 5);
         }
         else if(CGRA->Pipeline == HF){
-            Load_Path_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_Load_Path_Avail(i+1);
-            WR_Port1_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_WR_Port_Avail(i+2, 1);
-            RD_Port3_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 3);
-            RD_Port4_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 4);
-            RD_Port5_Avail = CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Is_RD_Port_Avail(i+2, 5);
+            Load_Path_Avail = CGRA->PE_Array[Load_PE_ID]->Is_Load_Path_Avail(i+1);
+            WR_Port1_Avail = CGRA->PE_Array[Load_PE_ID]->Is_WR_Port_Avail(i+2, 1);
+            RD_Port3_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 3);
+            RD_Port4_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 4);
+            RD_Port5_Avail = CGRA->PE_Array[Load_PE_ID]->Is_RD_Port_Avail(i+2, 5);
         }
         else{
             ERROR("Unknown pipeline intensity setup!\n");
         }
 
-        if(Load_Path_Avail && WR_Port1_Avail && RD_Port3_Avail && RD_Port4_Avail && RD_Port5_Avail){
+        if(Load_Path_Avail && WR_Port1_Avail && RD_Port3_Avail && \
+                RD_Port4_Avail && RD_Port5_Avail){
             if(Mode == Impl){
                 if(CGRA->Pipeline == OLD){
                     //update corresponding PE component state
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_Load_Path(i+1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_WR_Port(i+2, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_Load_Path(i+1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_WR_Port(i+2, 1);
 
                     //update corresponding PE component activity
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_OP(i, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_Mux(i+1, 0);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_WR_Ena(i+2, 1, 1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 3, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 4, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 5, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_OP(i, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_Mux(i+1, 0);
+                    CGRA->PE_Array[Load_PE_ID]->Set_WR_Ena(i+2, 1, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 3, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 4, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 5, OP_ID);
 
                     //Update operation state
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_State = Avail;
-                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time = i+2;
 
                     Attach_History Attach_Point;
                     Attach_Point.Attached_Time = i+2;
-                    Attach_Point.Attached_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    Attach_Point.Attached_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attach_History.push_back(Attach_Point);
                 }
                 else if(CGRA->Pipeline == LF){
                     //update corresponding PE component state
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_Load_Path(i+1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_WR_Port(i+1, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_Load_Path(i+1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_WR_Port(i+1, 1);
 
                     //update corresponding PE component activity
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_OP(i, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_Mux(i+1, 0);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_WR_Ena(i+1, 1, 1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+1, 3, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+1, 4, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+1, 5, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_OP(i, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_Mux(i+1, 0);
+                    CGRA->PE_Array[Load_PE_ID]->Set_WR_Ena(i+1, 1, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+1, 3, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+1, 4, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+1, 5, OP_ID);
 
                     //Update operation state
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_State = Avail;
-                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time = i+1;
 
                     Attach_History Attach_Point;
                     Attach_Point.Attached_Time = i+1;
-                    Attach_Point.Attached_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    Attach_Point.Attached_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attach_History.push_back(Attach_Point);
                 }
                 else if(CGRA->Pipeline == MF){
                     //update corresponding PE component state
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_Load_Path(i+1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_WR_Port(i+1, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_Load_Path(i+1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_WR_Port(i+1, 1);
 
                     //update corresponding PE component activity
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_OP(i, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_Mux(i+1, 0);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_WR_Ena(i+1, 1, 1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+1, 3, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+1, 4, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+1, 5, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_OP(i, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_Mux(i+1, 0);
+                    CGRA->PE_Array[Load_PE_ID]->Set_WR_Ena(i+1, 1, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+1, 3, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+1, 4, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+1, 5, OP_ID);
 
                     //Update operation state
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_State = Avail;
-                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time = i+1;
 
                     Attach_History Attach_Point;
                     Attach_Point.Attached_Time = i+1;
-                    Attach_Point.Attached_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    Attach_Point.Attached_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attach_History.push_back(Attach_Point);
                 }
                 else if(CGRA->Pipeline == LHF){
                     //update corresponding PE component state
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_Load_Path(i+1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_WR_Port(i+2, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_Load_Path(i+1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_WR_Port(i+2, 1);
 
                     //update corresponding PE component activity
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_OP(i, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_Mux(i+1, 0);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_WR_Ena(i+2, 1, 1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 3, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 4, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 5, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_OP(i, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_Mux(i+1, 0);
+                    CGRA->PE_Array[Load_PE_ID]->Set_WR_Ena(i+2, 1, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 3, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 4, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 5, OP_ID);
 
                     //Update operation state
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_State = Avail;
-                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time = i+2;
 
                     Attach_History Attach_Point;
                     Attach_Point.Attached_Time = i+2;
-                    Attach_Point.Attached_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    Attach_Point.Attached_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attach_History.push_back(Attach_Point);
                 }
                 else if(CGRA->Pipeline == HF){
                     //update corresponding PE component state
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_Load_Path(i+1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Reserve_WR_Port(i+2, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_Load_Path(i+1);
+                    CGRA->PE_Array[Load_PE_ID]->Reserve_WR_Port(i+2, 1);
 
                     //update corresponding PE component activity
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_OP(i, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Load_Mux(i+1, 0);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_WR_Ena(i+2, 1, 1);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 3, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 4, OP_ID);
-                    CGRA->PE_Array[Get_IO_Attached_PE_ID(OP_ID)]->Set_Mem_Port(i+2, 5, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_OP(i, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Load_Mux(i+1, 0);
+                    CGRA->PE_Array[Load_PE_ID]->Set_WR_Ena(i+2, 1, 1);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 3, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 4, OP_ID);
+                    CGRA->PE_Array[Load_PE_ID]->Set_Mem_Port(i+2, 5, OP_ID);
 
                     //Update operation state
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_State = Avail;
-                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time = i+2;
 
                     Attach_History Attach_Point;
                     Attach_Point.Attached_Time = i+2;
-                    Attach_Point.Attached_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+                    Attach_Point.Attached_PE_ID = Load_PE_ID;
                     DFG->OP_Array[OP_ID]->OP_Attach_History.push_back(Attach_Point);
                 }
                 else{
                     ERROR("Undefined pipeline intensity setup!\n");
                 }
 
+                DFG->OP_Array[OP_ID]->OP_Attribute.OP_LD_Time = i;
+
                 //Dump the trace
                 if(GL_Var::Print_Level>10){
-                    GL_Var::fTrace << "Load " << OP_ID << " through " << Get_IO_Attached_PE_ID(OP_ID) << " at time " << i << std::endl;
+                    GL_Var::fTrace << "Load " << OP_ID << " through " \
+                        << Load_PE_ID << " at time " << i << std::endl;
                 }
             }
 
@@ -1003,8 +1344,13 @@ void Scheduler::Store_In_IO_Buffer(const int &OP_ID){
     // If not, pull it out of the data memory first and then send it to store PE.
     int OP_Avail_Time = DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time + 1;
     int Src_PE_ID = DFG->OP_Array[OP_ID]->OP_Attribute.Exe_PE_ID;
-    int Dst_PE_ID = CGRA->Store_PE_ID[0];
-
+    //int Dst_PE_ID = CGRA->Store_PE_ID[0];
+    int Dst_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
+    if(Dst_PE_ID == NaN){
+        Dst_PE_ID = CGRA->Get_Min_Store_PE(Src_PE_ID);
+        DFG->OP_Array[OP_ID]->Reset_Init_PE_ID(Dst_PE_ID);
+    }
+    
     if(Src_PE_ID == Dst_PE_ID){
         WR_To_IO_Buffer(OP_ID, OP_Avail_Time);
     }
@@ -1012,7 +1358,10 @@ void Scheduler::Store_In_IO_Buffer(const int &OP_ID){
         //Find a routing path from src to dst
         std::list<int> Routing_Path;
         int OP_Ready_Time = DFG->OP_Array[OP_ID]->OP_Attribute.OP_Avail_Time;
-        CGRA->Dynamic_Routing(CGRA->Dynamic_Routing_Alg, OP_Ready_Time, Src_PE_ID, Dst_PE_ID, Routing_Path);
+
+        CGRA->Dynamic_Routing(CGRA->Dynamic_Routing_Alg, \
+                OP_Ready_Time, Src_PE_ID, \
+                Dst_PE_ID, Routing_Path);
 
         //Transfer data from src to dst
         int OP_Arrival_Time = OP_Migration(OP_Ready_Time, OP_ID, Routing_Path, Impl) + 1;
@@ -1026,56 +1375,60 @@ void Scheduler::Store_In_IO_Buffer(const int &OP_ID){
 void Scheduler::WR_To_IO_Buffer(const int &OP_ID, const int &Start_Time){
 
     int Store_Ready_Time = Start_Time;
+    int Store_PE_ID = Get_IO_Attached_PE_ID(OP_ID);
 
     while(true){
-        bool Data_Mem_WR_Avail0 = CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Is_WR_Port_Avail(Store_Ready_Time, 0);
-        bool Data_Mem_RD_Avail0 = CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Is_RD_Port_Avail(Store_Ready_Time, 0);
-        bool Data_Mem_RD_Avail1 = CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Is_RD_Port_Avail(Store_Ready_Time, 1);
-        bool Data_Mem_RD_Avail2 = CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Is_RD_Port_Avail(Store_Ready_Time, 2);
-        bool Store_Path_Avail = CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Is_Store_Path_Avail(Store_Ready_Time+2);
+        bool Data_Mem_WR_Avail0 = CGRA->PE_Array[Store_PE_ID]->Is_WR_Port_Avail(Store_Ready_Time, 0);
+        bool Data_Mem_RD_Avail0 = CGRA->PE_Array[Store_PE_ID]->Is_RD_Port_Avail(Store_Ready_Time, 0);
+        bool Data_Mem_RD_Avail1 = CGRA->PE_Array[Store_PE_ID]->Is_RD_Port_Avail(Store_Ready_Time, 1);
+        bool Data_Mem_RD_Avail2 = CGRA->PE_Array[Store_PE_ID]->Is_RD_Port_Avail(Store_Ready_Time, 2);
+        bool Store_Path_Avail = CGRA->PE_Array[Store_PE_ID]->Is_Store_Path_Avail(Store_Ready_Time+2);
 
         if(Data_Mem_WR_Avail0 && Data_Mem_RD_Avail0 && Store_Path_Avail){
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Reserve_RD_Port(Store_Ready_Time,0);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Reserve_Store_Path(Store_Ready_Time+2);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_WR_Ena(Store_Ready_Time, 0, 0);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Mem_Port(Store_Ready_Time, 0, OP_ID);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Store_OP(Store_Ready_Time+2, OP_ID);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Store_Mux(Store_Ready_Time+2, 0);
+            CGRA->PE_Array[Store_PE_ID]->Reserve_RD_Port(Store_Ready_Time,0);
+            CGRA->PE_Array[Store_PE_ID]->Reserve_Store_Path(Store_Ready_Time+2);
+            CGRA->PE_Array[Store_PE_ID]->Set_WR_Ena(Store_Ready_Time, 0, 0);
+            CGRA->PE_Array[Store_PE_ID]->Set_Mem_Port(Store_Ready_Time, 0, OP_ID);
+            CGRA->PE_Array[Store_PE_ID]->Set_Store_OP(Store_Ready_Time+2, OP_ID);
+            CGRA->PE_Array[Store_PE_ID]->Set_Store_Mux(Store_Ready_Time+2, 0);
 
             //Dump the trace
             if(GL_Var::Print_Level>10){
-                GL_Var::fTrace << "Store " << OP_ID << " in IO Buffer " << " at time " << Store_Ready_Time+3 << std::endl;
+                GL_Var::fTrace << "Store " << OP_ID << " in IO Buffer " \
+                    << " at time " << Store_Ready_Time+3 << std::endl;
             }
 
             break;
 
         }
         else if(Data_Mem_WR_Avail0 && Data_Mem_RD_Avail1 && Store_Path_Avail){
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Reserve_RD_Port(Store_Ready_Time, 1);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Reserve_Store_Path(Store_Ready_Time+2);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_WR_Ena(Store_Ready_Time, 0, 0);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Mem_Port(Store_Ready_Time, 1, OP_ID);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Store_OP(Store_Ready_Time+2, OP_ID);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Store_Mux(Store_Ready_Time+2, 1);
+            CGRA->PE_Array[Store_PE_ID]->Reserve_RD_Port(Store_Ready_Time, 1);
+            CGRA->PE_Array[Store_PE_ID]->Reserve_Store_Path(Store_Ready_Time+2);
+            CGRA->PE_Array[Store_PE_ID]->Set_WR_Ena(Store_Ready_Time, 0, 0);
+            CGRA->PE_Array[Store_PE_ID]->Set_Mem_Port(Store_Ready_Time, 1, OP_ID);
+            CGRA->PE_Array[Store_PE_ID]->Set_Store_OP(Store_Ready_Time+2, OP_ID);
+            CGRA->PE_Array[Store_PE_ID]->Set_Store_Mux(Store_Ready_Time+2, 1);
 
             //Dump the trace
             if(GL_Var::Print_Level>10){
-                GL_Var::fTrace << "Store " << OP_ID << " in IO Buffer " << " at time " << Store_Ready_Time+3 << std::endl;
+                GL_Var::fTrace << "Store " << OP_ID << " in IO Buffer " \
+                    << " at time " << Store_Ready_Time+3 << std::endl;
             }
 
             break;
         }
         else if(Data_Mem_WR_Avail0 && Data_Mem_RD_Avail2 && Store_Path_Avail){
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Reserve_RD_Port(Store_Ready_Time, 2);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Reserve_Store_Path(Store_Ready_Time+2);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_WR_Ena(Store_Ready_Time, 0, 0);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Mem_Port(Store_Ready_Time, 2, OP_ID);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Store_OP(Store_Ready_Time+2, OP_ID);
-            CGRA->PE_Array[CGRA->Store_PE_ID[0]]->Set_Store_Mux(Store_Ready_Time+2, 2);
+            CGRA->PE_Array[Store_PE_ID]->Reserve_RD_Port(Store_Ready_Time, 2);
+            CGRA->PE_Array[Store_PE_ID]->Reserve_Store_Path(Store_Ready_Time+2);
+            CGRA->PE_Array[Store_PE_ID]->Set_WR_Ena(Store_Ready_Time, 0, 0);
+            CGRA->PE_Array[Store_PE_ID]->Set_Mem_Port(Store_Ready_Time, 2, OP_ID);
+            CGRA->PE_Array[Store_PE_ID]->Set_Store_OP(Store_Ready_Time+2, OP_ID);
+            CGRA->PE_Array[Store_PE_ID]->Set_Store_Mux(Store_Ready_Time+2, 2);
 
             //Dump the trace
             if(GL_Var::Print_Level>10){
-                GL_Var::fTrace << "Store " << OP_ID << " in IO Buffer " << " at time " << Store_Ready_Time+3 << std::endl;
+                GL_Var::fTrace << "Store " << OP_ID << " in IO Buffer " \
+                    << " at time " << Store_Ready_Time+3 << std::endl;
             }
 
             break;
@@ -1084,7 +1437,8 @@ void Scheduler::WR_To_IO_Buffer(const int &OP_ID, const int &Start_Time){
             Store_Ready_Time++;
         }
     }
-
+    
+    DFG->OP_Array[OP_ID]->OP_Attribute.OP_ST_Time = Store_Ready_Time + 3;
     if(Scheduling_Complete_Time < (Store_Ready_Time+3)){
         Scheduling_Complete_Time = Store_Ready_Time+3;
     }
@@ -1230,7 +1584,8 @@ void Scheduler::UtilizationFilter(vector<int> &candidate_PE_id, const vector<flo
 */
 
 
-int Scheduler::OP_Migration(const int &Start_Time, const int &Src_OP_ID, const std::list<int> &Routing_Path, const Exe_Mode &Mode){
+int Scheduler::OP_Migration(const int &Start_Time, const int &Src_OP_ID, \
+        const std::list<int> &Routing_Path, const Exe_Mode &Mode){
 
     int Complete_Time = Start_Time;
     int Migration_Time = Start_Time;
@@ -1239,14 +1594,8 @@ int Scheduler::OP_Migration(const int &Start_Time, const int &Src_OP_ID, const s
     if(PE_Num_On_Path==0){
         ERROR("Empty routing path!\n");
     }
-    std::vector<int> Routing_Path_Copy;
-    Routing_Path_Copy.resize(PE_Num_On_Path);
-    std::list<int>::const_iterator C_Lit;
-    int VID=0;
-    for(C_Lit=Routing_Path.begin(); C_Lit!=Routing_Path.end(); C_Lit++){
-        Routing_Path_Copy[VID] = *C_Lit;
-        VID++;
-    }
+    std::vector<int> Routing_Path_Copy(PE_Num_On_Path);
+    std::copy(Routing_Path.begin(), Routing_Path.end(), Routing_Path_Copy.begin());
 
     //IO load brings additional mux and pipeline.
     int Current_PE_Additional_Pipeline = 0;
@@ -1284,7 +1633,7 @@ int Scheduler::OP_Migration(const int &Start_Time, const int &Src_OP_ID, const s
             Current_PE_Additional_Pipeline = 0;
         }
 
-        int Next_PE_ID =NaN;
+        int Next_PE_ID = NaN;
         if(i<PE_Num_On_Path){
             if(i==PE_Num_On_Path-1){
                 Next_PE_ID = NaN;
@@ -2297,7 +2646,11 @@ int Scheduler::OP_Migration(const int &Start_Time, const int &Src_OP_ID, const s
 
 }
 
-int Scheduler::OP_Exe(const int &Target_OP_ID, const std::vector<int> &Src_OP_IDs, const int &Target_PE_ID, const std::vector<int> &Arrival_Time, const Exe_Mode &Mode){
+int Scheduler::OP_Exe(const int &Target_OP_ID, \
+        const std::vector<int> &Src_OP_IDs, \
+        const int &Target_PE_ID, \
+        const std::vector<int> &Arrival_Time, \
+        const Exe_Mode &Mode){
 
     int Exe_Time;
     int Last_Arrival_Time = 0;
@@ -2421,7 +2774,8 @@ int Scheduler::OP_Exe(const int &Target_OP_ID, const std::vector<int> &Src_OP_ID
 
 }
 
-int Scheduler::Nearest_Attached_PE(const int &Src_OP_ID, const int &Dst_PE_ID, int &Src_Ready_Time){
+int Scheduler::Nearest_Attached_PE(const int &Src_OP_ID, \
+        const int &Dst_PE_ID, int &Src_Ready_Time){
 
     int Nearest_Attached_PE_ID = NaN;
     int Min_Dist = INT_MAX;
@@ -2913,7 +3267,7 @@ void Scheduler::Data_Mem_Analysis(){
                     if(Destroy_Time[RD_OP]==NaN || Destroy_Time[RD_OP]<j){
                         Destroy_Time[RD_OP] = j;
                     }
-                    if( IO_Placement_Scheme == Pre_Placement && (DFG->OP_Array[RD_OP]->OP_Type == INCONST || DFG->OP_Array[RD_OP]->OP_Type == INVAR)){
+                    if(IO_Placement_Scheme == Pre_Placement && (DFG->OP_Array[RD_OP]->Is_Input())){
                         Create_Time[RD_OP] = 0;
                     }
 
@@ -2927,7 +3281,7 @@ void Scheduler::Data_Mem_Analysis(){
                 std::cout << "OP ID is " << j << " , it has " << DFG->OP_Array[j]->OP_Children.size() << "children and " << DFG->OP_Array[j]->OP_Parents.size() << "parents!";
                 std::cout << "Execution PE id is " << DFG->OP_Array[j]->OP_Attribute.Exe_PE_ID << std::endl;
                 std::cout << "Executed time is " << DFG->OP_Array[j]->OP_Attribute.OP_Avail_Time << std::endl;
-                if(DFG->OP_Array[j]->OP_Type == INVAR || DFG->OP_Array[j]->OP_Type == INCONST){
+                if(DFG->OP_Array[j]->Is_Input()){
                     std::cout << "Input Operation" << std::endl;
                 }
                 else if(DFG->OP_Array[j]->OP_Type == OUTVAR){

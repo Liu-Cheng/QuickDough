@@ -2,8 +2,8 @@
 #define _IO_H_
 
 int Const_In[1] = {0};
-int Block_Sig_In[1087];
-int Coeff[64];
-int Block_Sig_Out[1024];
+int Block_Sig_In[99];
+int Coeff[50];
+int Block_Sig_Out[50];
 
 #endif

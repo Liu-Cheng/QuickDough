@@ -1,8 +1,8 @@
-DFG_In_Num 8321
-DFG_Out_Num 64
-DFG_Operation_Num 12352
-DFG_Total_Nodes 20673
+DFG_In_Num 601
+DFG_Out_Num 5
+DFG_Operation_Num 750
+DFG_Total_Nodes 1351
 Block_Repeat_Num 1
-Block_Reuse_Num 129
-Block_In_Num 8321
-Block_Out_Num 64
+Block_Reuse_Num 101
+Block_In_Num 601
+Block_Out_Num 5

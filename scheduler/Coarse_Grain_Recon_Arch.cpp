@@ -73,6 +73,12 @@ void Coarse_Grain_Recon_Arch::Load_Parameters(){
         else if(Config_Item_Key == "Col"){
             Config_fHandle >> Col;
         }
+        else if(Config_Item_Key == "In_SPM_Width"){
+            Config_fHandle >> In_SPM_Width;
+        }
+        else if(Config_Item_Key == "Out_SPM_Width"){
+            Config_fHandle >> Out_SPM_Width;
+        }
         else if(Config_Item_Key == "In_Buffer_Num"){
             Config_fHandle >> In_Buffer_Num;
         }
@@ -299,9 +305,73 @@ void Coarse_Grain_Recon_Arch::Static_Routing(const Routing_Alg &CGRA_Routing_Alg
 }
 
 int Coarse_Grain_Recon_Arch::Get_Dist(const int &Src_PE_ID, const int &Dst_PE_ID){
-
-    return CGRA_Routing_Dist[Src_PE_ID][Dst_PE_ID];
+    if(Src_PE_ID == NaN){
+        return Get_Min_Load_Dist(Dst_PE_ID);
+    }
+    else if(Dst_PE_ID == NaN){
+        return Get_Min_Store_Dist(Src_PE_ID);
+    }
+    else{
+        return CGRA_Routing_Dist[Src_PE_ID][Dst_PE_ID];
+    }
 }
+
+int Coarse_Grain_Recon_Arch::Get_Min_Load_PE(const int &Dst_PE_ID){
+    int Min_Load_PE_ID = 0;
+    std::vector<int>::iterator it;
+    int Min_Dist = INT_MAX;
+    for(it=Load_PE_ID.begin(); it!=Load_PE_ID.end(); it++){
+        int tmp = CGRA_Routing_Dist[*it][Dst_PE_ID]*10+PE_Array[*it]->Max_Active_Time;
+        if(tmp < Min_Dist){
+            Min_Dist = tmp;
+            Min_Load_PE_ID = *it;
+        }
+    }
+    return Min_Load_PE_ID; 
+}
+
+int Coarse_Grain_Recon_Arch::Get_Min_Store_PE(const int &Src_PE_ID){
+    int Min_Store_PE_ID;
+    std::vector<int>::iterator it;
+    int Min_Dist = INT_MAX;
+    for(it=Store_PE_ID.begin(); it!=Store_PE_ID.end(); it++){
+        int tmp = CGRA_Routing_Dist[Src_PE_ID][*it]*10+PE_Array[*it]->Max_Active_Time;
+        if(tmp < Min_Dist){
+            Min_Dist = tmp;
+            Min_Store_PE_ID = *it;
+        }
+    }
+    return Min_Store_PE_ID; 
+}
+
+int Coarse_Grain_Recon_Arch::Get_Min_Load_Dist(const int &Dst_PE_ID){
+    std::vector<int>::iterator it;
+    int Min_Dist = INT_MAX;
+    int Min_Load_PE_ID = 0;
+    for(it=Load_PE_ID.begin(); it!=Load_PE_ID.end(); it++){
+        int tmp = CGRA_Routing_Dist[*it][Dst_PE_ID]*10+PE_Array[*it]->Max_Active_Time;
+        if(tmp < Min_Dist){
+            Min_Dist = tmp;
+            Min_Load_PE_ID = *it;
+        }
+    }
+    return CGRA_Routing_Dist[Min_Load_PE_ID][Dst_PE_ID]; 
+}
+
+int Coarse_Grain_Recon_Arch::Get_Min_Store_Dist(const int &Src_PE_ID){
+    std::vector<int>::iterator it;
+    int Min_Dist = INT_MAX;
+    int Min_Store_PE_ID = 0;
+    for(it=Store_PE_ID.begin(); it!=Store_PE_ID.end(); it++){
+        int tmp = CGRA_Routing_Dist[Src_PE_ID][*it]*10+PE_Array[*it]->Max_Active_Time;
+        if(tmp < Min_Dist){
+            Min_Dist = tmp;
+            Min_Store_PE_ID = *it;
+        }
+    }
+    return CGRA_Routing_Dist[Src_PE_ID][Min_Store_PE_ID]; 
+}
+
 
 void Coarse_Grain_Recon_Arch::Add_Link(const int &Src, const int &Dst){
 
@@ -323,7 +393,9 @@ void Coarse_Grain_Recon_Arch::Remove_Link(const int &Src, const int &Dst){
     }
 }
 
-void Coarse_Grain_Recon_Arch::Dynamic_Routing(const Routing_Alg &CGRA_Routing_Alg, const int &Src_Avail_Time, const int &Src_PE_ID, const int &Dst_PE_ID, std::list<int> &Routing_Path){
+void Coarse_Grain_Recon_Arch::Dynamic_Routing(const Routing_Alg &CGRA_Routing_Alg, \
+        const int &Src_Avail_Time, const int &Src_PE_ID, const int &Dst_PE_ID, \
+        std::list<int> &Routing_Path){
 
     if(CGRA_Routing_Alg == Dynamic_Dijkstra){
         Dynamic_Dijkstra_Routing(Src_Avail_Time, Src_PE_ID, Dst_PE_ID, Routing_Path);
@@ -344,7 +416,8 @@ void Coarse_Grain_Recon_Arch::Dynamic_Routing(const Routing_Alg &CGRA_Routing_Al
  * time, we will stop the searching once routing path from Src_PE_ID to Dst_PE_ID
  * is found.
  * -----------------------------------------------------------------------*/
-void Coarse_Grain_Recon_Arch::Dynamic_Dijkstra_Routing(const int &Src_Avail_Time, const int &Src_PE_ID, const int &Dst_PE_ID, std::list<int> &Routing_Path){
+void Coarse_Grain_Recon_Arch::Dynamic_Dijkstra_Routing(const int &Src_Avail_Time, \
+        const int &Src_PE_ID, const int &Dst_PE_ID, std::list<int> &Routing_Path){
 
     std::vector<bool> PEs_Routing_Flag;
     std::vector<int> PEs_Routing_Time;

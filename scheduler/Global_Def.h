@@ -31,8 +31,12 @@
 
 // Global definition
 #define NaN -1
-#define ERROR(FMT, ARG...) do {fprintf(stderr,"File=%s, Line=%d: "FMT" \n",__FILE__, __LINE__,##ARG); exit(1);} while(0)
-#define PRINT(FMT, ARG...) do {fprintf(stdout,"File=%s, Line=%d  "FMT" \n",__FILE__, __LINE__,##ARG);} while(0)
+
+#define ERROR(FMT, ARG...) do {fprintf(stderr,"File=%s, Line=%d: \
+        "FMT" \n",__FILE__, __LINE__,##ARG); exit(1);} while(0)
+
+#define PRINT(FMT, ARG...) do {fprintf(stdout,"File=%s, Line=%d  \
+        "FMT" \n",__FILE__, __LINE__,##ARG);} while(0)
 
 enum Topology{
     Torus, Mesh, Full_Connect, Customized
@@ -43,7 +47,9 @@ enum Operand_State {
 };
 
 enum PE_Sel_Filter_Type{
-    Dist_Filter, Mem_Util_Filter, DSP_Util_Filter, Write_Mem_Util_Filter, Input_Port_Util_Filter, Output_Port_Util_Filter, Inout_Port_Util_Filter
+    Dist_Filter, Mem_Util_Filter, DSP_Util_Filter, \
+    Write_Mem_Util_Filter, Input_Port_Util_Filter, \
+    Output_Port_Util_Filter, Inout_Port_Util_Filter
 };
 
 enum PE_Selection{
@@ -64,7 +70,7 @@ enum Routing_Alg{
 };
 
 enum IO_Placement{
-    Sequential_Placement, Interleaving_Placement, Pre_Placement
+    Sequential_Placement, Interleaving_Placement, Pre_Placement, On_Demand_Placement
 };
 
 enum Scheduling_Strategy{
@@ -96,6 +102,24 @@ struct GL_Var{
     static int Impl_Or_Sim;
     static const std::map<Opcode, int> Opcode_To_Cost;
     static std::ofstream fTrace;
+    static void Print2DInt(const std::vector<std::vector<int> > &Array){
+        std::vector<std::vector<int> >::const_iterator cit2;
+        std::vector<int>::const_iterator cit1;
+        for(cit2=Array.begin(); cit2!=Array.end(); cit2++){
+            for(cit1=cit2->begin(); cit1!=cit2->end(); cit1++){
+                std::cout << *cit1 << "  ";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    static void Print1DInt(const std::vector<int> &Array){
+        std::vector<int>::const_iterator cit;
+        for(cit=Array.begin(); cit!=Array.end(); cit++){
+            std::cout << *cit << "  ";
+        }
+        std::cout << std::endl;
+    }
 
     static std::map<Opcode, int> Create_Map(){
         Pipeline_Intensity Pipeline;

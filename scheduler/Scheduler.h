@@ -20,9 +20,22 @@
 
 #include <iomanip>
 #include <map>
+#include <algorithm>
+#include <iterator>
 #include "Global_Def.h"
 #include "Data_Flow_Graph.h"
 #include "Coarse_Grain_Recon_Arch.h"
+
+struct VecComp{
+    int CompID;
+    VecComp(int ID){
+        CompID = ID;
+    }
+
+    bool operator()(const std::vector<int> &Vec1, const std::vector<int> &Vec2){
+        return (Vec1[CompID] < Vec2[CompID]);
+    }
+};
 
 class Scheduler{
     public:
@@ -30,6 +43,14 @@ class Scheduler{
         Coarse_Grain_Recon_Arch* CGRA;
         IO_Placement IO_Placement_Scheme;
         PE_Selection PE_Sel_Strategy;
+
+        // Each group includes a number of DFG and 
+        // all the DFG LD and ST time overhead will be
+        // recorded in the following two arrays.
+        std::vector<int> Group_LD_Time; 
+        std::vector<int> Group_ST_Time; 
+        int DFG_Num;
+
         Scheduling_Strategy List_Scheduling_Strategy; 
         int Scheduling_Complete_Time;
 
@@ -44,6 +65,49 @@ class Scheduler{
 
         void Load_Parameters();
         void IO_Placing();
+        void IO_LD_ST();
+        bool Is_FIFO_Empty(const std::vector<std::vector<int> > &FIFO_Req);
+
+        int Get_SPM_Addr(const std::vector<std::vector<int> > &FIFO_Req, \
+                const int &SPM_Width);
+
+        void Get_Group_Info(std::vector<std::vector<int> > &Input_Layout, \
+                std::vector<std::vector<int> > &Output_Layout);
+
+        void Get_LD_ST_Req(std::vector<int> &LD_Req_Seq, \
+                std::vector<int> &ST_Req_Seq);
+
+        void LD_ST_Schedule(const std::vector<std::vector<int> > &Input_Layout, \
+                const std::vector<std::vector<int> > &Output_Layout, \
+                const std::vector<int> &LD_Req_Seq, \
+                const std::vector<int> &ST_Req_Seq);
+
+        void LD_ST_Schedule(const std::vector<std::vector<int> > &Input_Layout, \
+                const std::vector<std::vector<int> > &Output_Layout, \
+                const std::vector<std::vector<int> > &OP_And_LD_Time, \
+                const std::vector<std::vector<int> > &OP_And_ST_Time);
+
+        void Update_FIFO_Content(std::vector<std::vector<int> > &FIFO_Req, \
+                const int &SPM_Addr, const int &SPM_Width);
+
+        void Read_2D_int_File(const std::string &fName, \
+                std::vector<std::vector<int> > &Data);
+
+        void Get_Scheduling_Result(const std::vector<std::vector<int> > &Addr_Req, \
+                const int &SPM_Width, const int &FIFO_Num);
+        void Get_OP_LD_ST_Time(std::vector<std::vector<int> > &OP_And_LD_Time, \
+                std::vector<std::vector<int> > &OP_And_ST_Time);
+
+        int Get_IO_Physical_Addr(const int &OP_ID, \
+                const int &DFG_ID, \
+                const std::vector<std::vector<int> > &Input_Layout, \
+                const std::vector<std::vector<int> > &Output_Layout);
+
+        void IO_Scheduling(const int &DFG_ID, \
+                const std::vector<std::vector<int> > &Input_Layout, \
+                const std::vector<std::vector<int> > &Output_Layout, \
+                const std::vector<std::vector<int> > &OP_And_LD_Time, \
+                const std::vector<std::vector<int> > &OP_And_ST_Time);
 
         void Init(Data_Flow_Graph* _DFG, \
                 Coarse_Grain_Recon_Arch* _CGRA);
