@@ -1,0 +1,13 @@
+	component facc is
+		port (
+			clk    : in  std_logic                     := 'X';             -- clk
+			areset : in  std_logic                     := 'X';             -- reset
+			x      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- x
+			n      : in  std_logic                     := 'X';             -- n
+			r      : out std_logic_vector(31 downto 0);                    -- r
+			xo     : out std_logic;                                        -- xo
+			xu     : out std_logic;                                        -- xu
+			ao     : out std_logic                                         -- ao
+		);
+	end component facc;
+

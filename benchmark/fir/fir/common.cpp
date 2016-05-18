@@ -1,7 +1,7 @@
 #include "common.h"
 
-std::ostream& operator<< (std::ostream &os, Opcode Inst_Opcode){
-    switch(Inst_Opcode){
+std::ostream& operator<< (std::ostream &os, Opcode instOpcode){
+    switch(instOpcode){
         case MULSUB:
             os << "MULSUB";
             break;
@@ -45,8 +45,8 @@ std::ostream& operator<< (std::ostream &os, Opcode Inst_Opcode){
     return os;
 }
 
-std::ostream& operator<< (std::ostream &os, Operand_Type OP_Type){
-    switch(OP_Type){
+std::ostream& operator<< (std::ostream &os, OperandType opType){
+    switch(opType){
         case INCONST:
             os << "INCONST";
             break;
@@ -71,3 +71,4 @@ std::ostream& operator<< (std::ostream &os, Operand_Type OP_Type){
     }
     return os;
 }
+

@@ -530,7 +530,7 @@ void Scheduler::Scheduling(){
     std::cout << "Operation scheduling is completed!" << std::endl;
     std::cout << "Kernel execution time " << Scheduling_Complete_Time \
         << " cycles" << std::endl;
-    GL_Var::fTrace << "Sim_Perf " << Scheduling_Complete_Time << std::endl;
+    GL_Var::fTrace << "Sim_Lat " << Scheduling_Complete_Time << std::endl;
 
     //IO_LD_ST();
     if(GL_Var::Impl_Or_Sim == 1){

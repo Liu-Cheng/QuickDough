@@ -4,38 +4,96 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-Col_Compare	Customizer.py	/^def Col_Compare(Sol1, Sol2):$/;"	f
-Col_Inc_Revenue_Test	Customizer.py	/^def Col_Inc_Revenue_Test(Possible_Solutions):$/;"	f
+Array_Check	Customizer.py	/^def Array_Check(OP_Num, Row, Col, Max_OPC):$/;"	f
+BRAM_Check	Customizer.py	/^def BRAM_Check(Row, Col, DFG_Lat, IO_Buffers):$/;"	f
+Benchmark_Dir	Global.py	/^    Benchmark_Dir = Home + "project\/benchmark\/"$/;"	v	class:Global_Def
+CGRA_Set_Init	Customizer.py	/^def CGRA_Set_Init():$/;"	f
+Centroid_Num	Global.py	/^    Centroid_Num = 4$/;"	v	class:Kmean_Para
+Coeff_Len	Global.py	/^    Coeff_Len = 50$/;"	v	class:Fir_Para
+Create_Solution	Customizer.py	/^def Create_Solution(App, Row, Col, Unrolling_Vec, Blocking_Vec, IO_Buffers, DFG_Lat):$/;"	f
+Customizer_Dir	Global.py	/^    Customizer_Dir = Home + "project\/customizer\/brute-force\/"$/;"	v	class:Global_Def
 DFG_Check	Customizer.py	/^def DFG_Check(DFG_Info):$/;"	f
 DFG_Sim_Check	Customizer.py	/^def DFG_Sim_Check():$/;"	f
+Fig_Col	Global.py	/^    Fig_Col = 128$/;"	v	class:Sobel_Para
+Fig_Row	Global.py	/^    Fig_Row = 128$/;"	v	class:Sobel_Para
+Fir_Para	Global.py	/^class Fir_Para(object):$/;"	c
+Full_Search	Global.py	/^    Full_Search = True $/;"	v	class:Global_Def
+Get_Addr_Buffer	Customizer.py	/^def Get_Addr_Buffer(Unrolling_Vec, Blocking_Vec, DFG_Info):$/;"	f
 Get_Block_Info	Customizer.py	/^def Get_Block_Info(App, Unrolling_Level):$/;"	f
-Get_DFG_Info	Customizer.py	/^def Get_DFG_Info(App, Unrolling_Level):$/;"	f
-Get_DFG_Perf	Customizer.py	/^def Get_DFG_Perf():$/;"	f
+Get_DFG_Dump_Path	Customizer.py	/^def Get_DFG_Dump_Path(App, Unrolling_Vec):$/;"	f
+Get_DFG_Info	Customizer.py	/^def Get_DFG_Info(App, Dump_Path):$/;"	f
+Get_DFG_Lat	Customizer.py	/^def Get_DFG_Lat():$/;"	f
+Get_DMA_Lat	Solution.py	/^    def Get_DMA_Lat(self, TF_Size):$/;"	m	class:Solution
 Get_Factor_Vec	Customizer.py	/^def Get_Factor_Vec(Data):$/;"	f
-Get_Loop_Structure	Customizer.py	/^def Get_Loop_Structure(App):$/;"	f
+Get_IO_Buffer	Customizer.py	/^def Get_IO_Buffer(App, Unrolling_Vec, Blocking_Vec):$/;"	f
+Get_Linear_Avg	Solution.py	/^    def Get_Linear_Avg(self, vec0, vec1, x):$/;"	m	class:Solution
+Get_Linear_Model_Lat	Solution.py	/^    def Get_Linear_Model_Lat(self, Block_Vec, Lat_Vec, Block_Size):$/;"	m	class:Solution
+Get_Loop_Transfer_Vec	Customizer.py	/^def Get_Loop_Transfer_Vec(App, Unrolling_Vec, Blocking_Vec):$/;"	f
+Get_Loop_Vec	Customizer.py	/^def Get_Loop_Vec(App):$/;"	f
 Get_Max_SCGRA	Customizer.py	/^def Get_Max_SCGRA():$/;"	f
-Get_Min_Loop_Level	Customizer.py	/^def Get_Min_Loop_Level(App):$/;"	f
-Get_Next_Col	Customizer.py	/^def Get_Next_Col(Row, Col):$/;"	f
+Get_Min_Inst_Mem	Customizer.py	/^def Get_Min_Inst_Mem(DFG_Lat):$/;"	f
 Get_Optimal_Lat	Customizer.py	/^def Get_Optimal_Lat(CGRA_Size, OP_Ready_List):$/;"	f
 Get_Pareto_Points	Customizer.py	/^def Get_Pareto_Points(XArray, YArray, Pareto_XArray, Pareto_YArray):$/;"	f
 Get_Possible_Blocking_Vec	Customizer.py	/^def Get_Possible_Blocking_Vec(Loop_Unrolling_Factor, Possible_Unrolling_Vec):$/;"	f
-Get_Sim_Cmd	Customizer.py	/^def Get_Sim_Cmd(App, Row, Col, Schedule_Off, Sim_Only, Unrolling_Level,$/;"	f
+Get_Potential_Blocking_Set	Customizer.py	/^def Get_Potential_Blocking_Set(App, Unrolling_Vec):$/;"	f
+Get_SB_Num	Customizer.py	/^def Get_SB_Num(Sub_Vec, Hyper_Vec):$/;"	f
+Get_Sim_Cmd	Customizer.py	/^def Get_Sim_Cmd(App, Row, Col, Sim_Only):$/;"	f
+Get_Syllabus	Solution.py	/^    def Get_Syllabus(self):$/;"	m	class:Solution
 Get_Target_Vec	Customizer.py	/^def Get_Target_Vec(Loop_Vec,  Target_Loop_Level,  Factor):$/;"	f
-Get_Top2_Keys	Customizer.py	/^def Get_Top2_Keys(Dict):$/;"	f
-Get_Total_Unrolling_Num	Customizer.py	/^def Get_Total_Unrolling_Num(Unrolling_Vec):$/;"	f
+Get_Trans_Time	Solution.py	/^    def Get_Trans_Time(self, Block_Size):$/;"	m	class:Solution
+Global_Def	Global.py	/^class Global_Def(object):$/;"	c
+Home	Global.py	/^    Home = "\/home\/liucheng\/gitrepo\/"$/;"	v	class:Global_Def
+IO_Buffer_Analysis	Customizer.py	/^def IO_Buffer_Analysis(App, Unrolling_Vec, Blocking_Vec, DFG_Info):$/;"	f
+In_Len	Global.py	/^    In_Len = 10000$/;"	v	class:Fir_Para
 Is_Pareto_Point	Customizer.py	/^def Is_Pareto_Point(XData, YData, XArray, YArray):$/;"	f
-Is_Vec_EQ	Customizer.py	/^def Is_Vec_EQ(Vec1, Vec2):$/;"	f
+Kmean_Para	Global.py	/^class Kmean_Para(object):$/;"	c
+MM_Para	Global.py	/^class MM_Para(object):$/;"	c
+Mat_Len	Global.py	/^    Mat_Len = 100$/;"	v	class:MM_Para
+Max_Data_Mem	Global.py	/^    Max_Data_Mem = 256  # number of data that each PE can accommodate$/;"	v	class:SCGRA_Para
+Max_In_Buffer	Global.py	/^    Max_In_Buffer = 64  # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Max_Inst_Mem	Global.py	/^    Max_Inst_Mem = 8    # number of ki\/1024$/;"	v	class:SCGRA_Para
+Max_Loop_Level	Global.py	/^    Max_Loop_Level = 2$/;"	v	class:Fir_Para
+Max_Loop_Level	Global.py	/^    Max_Loop_Level = 3$/;"	v	class:Kmean_Para
+Max_Loop_Level	Global.py	/^    Max_Loop_Level = 3$/;"	v	class:MM_Para
+Max_Loop_Level	Global.py	/^    Max_Loop_Level = 4$/;"	v	class:Sobel_Para
+Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [3, 3, Fig_Col, Fig_Row]$/;"	v	class:Sobel_Para
+Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [Coeff_Len, In_Len]$/;"	v	class:Fir_Para
+Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [Mat_Len, Mat_Len, Mat_Len]$/;"	v	class:MM_Para
+Max_Loop_Unrolling_Vec	Global.py	/^    Max_Loop_Unrolling_Vec = [Node_Dim, Centroid_Num, Node_Num]$/;"	v	class:Kmean_Para
+Max_Out_Buffer	Global.py	/^    Max_Out_Buffer = 64 # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Max_SCGRA	Global.py	/^    Max_SCGRA = 36 $/;"	v	class:SCGRA_Para
+Min_Data_Mem	Global.py	/^    Min_Data_Mem = 16   # number of data that each PE can accommodate$/;"	v	class:SCGRA_Para
+Min_In_Buffer	Global.py	/^    Min_In_Buffer = 1   # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Min_Inst_Mem	Global.py	/^    Min_Inst_Mem = 0.5  # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Min_Out_Buffer	Global.py	/^    Min_Out_Buffer = 1  # number of Ki\/1024$/;"	v	class:SCGRA_Para
+Min_SCGRA	Global.py	/^    Min_SCGRA = 4$/;"	v	class:SCGRA_Para
+Min_SCGRA_Col	Global.py	/^    Min_SCGRA_Col = 2$/;"	v	class:SCGRA_Para
+Min_SCGRA_Row	Global.py	/^    Min_SCGRA_Row = 2$/;"	v	class:SCGRA_Para
+Node_Dim	Global.py	/^    Node_Dim = 2$/;"	v	class:Kmean_Para
+Node_Num	Global.py	/^    Node_Num = 5000$/;"	v	class:Kmean_Para
 Plot_Solutions	Customizer.py	/^def Plot_Solutions(App, Possible_Solutions):$/;"	f
-Row_Compare	Customizer.py	/^def Row_Compare(Sol1, Sol2):$/;"	f
-Row_Inc_Revenue_Test	Customizer.py	/^def Row_Inc_Revenue_Test(Possible_Solutions):$/;"	f
-Run_Block_Sim	Customizer.py	/^def Run_Block_Sim(App, Row, Col, Unrolling_Level, Blocking_Vec, Unrolling_Vec):$/;"	f
-Run_DFG_Gen	Customizer.py	/^def Run_DFG_Gen(App, Row, Col, Unrolling_Level, Loop_Unrolling_Factor):$/;"	f
-Run_DFG_Sim	Customizer.py	/^def Run_DFG_Sim(App, Row, Col, Unrolling_Level, Loop_Unrolling_Factor):$/;"	f
+Run_DFG_Gen	Customizer.py	/^def Run_DFG_Gen(App, Unrolling_Vec):$/;"	f
+Run_DFG_Sim	Customizer.py	/^def Run_DFG_Sim(App, Row, Col, Unrolling_Vec):$/;"	f
+SCGRA_Para	Global.py	/^class SCGRA_Para(object):$/;"	c
+Save_Arrays	Customizer.py	/^def Save_Arrays(App, fName, Array1, Array2):$/;"	f
 Save_Possible_Solutions	Customizer.py	/^def Save_Possible_Solutions(App, Possible_Solutions):$/;"	f
+Scheduler_Dir	Global.py	/^    Scheduler_Dir = Home + "project\/scheduler\/"$/;"	v	class:Global_Def
 Search_Design_Space	Customizer.py	/^def Search_Design_Space(App):$/;"	f
-Solutions_Perf_Filter	Customizer.py	/^def Solutions_Perf_Filter(Possible_Solutions):$/;"	f
+Sobel_Para	Global.py	/^class Sobel_Para(object):$/;"	c
+Solution	Solution.py	/^class Solution():$/;"	c
+Solutions_Lat_Filter	Customizer.py	/^def Solutions_Lat_Filter(Possible_Solutions):$/;"	f
 Sort_Two_Arrays	Customizer.py	/^def Sort_Two_Arrays(XArray, YArray):$/;"	f
-Unrolling_Revenue_Test	Customizer.py	/^def Unrolling_Revenue_Test(Possible_Solutions):$/;"	f
-Update_Block_Info_To_Solution	Customizer.py	/^def Update_Block_Info_To_Solution(App, Unrolling_Level, Curr_Solution):$/;"	f
-Update_DFG_Sim_To_Solution	Customizer.py	/^def Update_DFG_Sim_To_Solution(App, Tmp_Solution, Row, Col, Unrolling_Level,$/;"	f
+Total_BRAM	Global.py	/^    Total_BRAM = 140   # number of 36kb primitive BRAM block$/;"	v	class:SCGRA_Para
+Unrolling_Set_Init	Customizer.py	/^def Unrolling_Set_Init(App):$/;"	f
+Update_BRAM_Cost	Solution.py	/^    def Update_BRAM_Cost(self):$/;"	m	class:Solution
+Update_EDP	Solution.py	/^    def Update_EDP(self):$/;"	m	class:Solution
+Update_FF_Cost	Solution.py	/^    def Update_FF_Cost(self):$/;"	m	class:Solution
+Update_HW_Cost	Solution.py	/^    def Update_HW_Cost(self):$/;"	m	class:Solution
+Update_LUT_Cost	Solution.py	/^    def Update_LUT_Cost(self):$/;"	m	class:Solution
+Update_Lat	Solution.py	/^    def Update_Lat(self, DFG_Num, Block_Num, Loop_Transfer_Vec):$/;"	m	class:Solution
+Update_Power	Solution.py	/^    def Update_Power(self):$/;"	m	class:Solution
+Vec_Cmp	Customizer.py	/^def Vec_Cmp(Vec1, Vec2):$/;"	f
+__init__	Solution.py	/^    def __init__(self):$/;"	m	class:Solution
 main	Customizer.py	/^def main():$/;"	f
+project_opened	.ropeproject/config.py	/^def project_opened(project):$/;"	f
+set_prefs	.ropeproject/config.py	/^def set_prefs(prefs):$/;"	f

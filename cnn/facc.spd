@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="facc_sim/dspba_library_package.vhd" type="VHDL" />
+ <file path="facc_sim/dspba_library.vhd" type="VHDL" />
+ <file path="facc_sim/facc.vhd" type="VHDL" />
+ <topLevel name="facc" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

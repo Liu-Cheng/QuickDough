@@ -4,7 +4,6 @@
 # Initial directories
 ###########################################################
 
-DFG_Dir=/home/liucheng/gitrepo/project/benchmark
 Scheduler_Dir=/home/liucheng/gitrepo/project/scheduler
 
 ###########################################################
@@ -13,7 +12,7 @@ Scheduler_Dir=/home/liucheng/gitrepo/project/scheduler
 
 if [ ! $# -ge 8 ]; then
     echo "The parameters must be provided in the following order!"
-    echo "$0 [-n App_Name] [-t App_Type] [-r CGRA_Row] [-c CGRA_Column][-l Pipeline] [-k Schedule_Off] [-s Sim_Only] [-p Blocking and Unrolling parameters]"
+    echo "$0 [-n App_Name] [-r CGRA_Row] [-c CGRA_Column] [-l Pipeline] [-s Sim_Only]"
     exit 1
 fi
 
@@ -23,42 +22,25 @@ if [ ! "$1" = "-n" ]; then
 fi
 App_Name=$2
 
-if [ ! "$3" = "-t" ]; then
+if [ ! "$3" = "-r" ]; then
     echo "Unknown option $3"
     exit 1
 fi
-Type=$4
+Row=$4
 
-if [ ! "$5" = "-r" ]; then
+if [ ! "$5" = "-c" ]; then
     echo "Unknown option $5"
     exit 1
 fi
-Row=$6
+Col=$6
 
-if [ ! "$7" = "-c" ]; then
+if [ ! "$7" = "-l" ]; then
     echo "Unknown option $7"
     exit 1
 fi
-Col=$8
+Pipeline=$8
 
 if [ $# -gt 8 ]; then
-    if [ ! "$9" = "-l" ]; then
-        echo "Unknown option $9"
-        exit 1
-    fi
-    shift
-    Pipeline=$9
-
-    shift
-    if [ ! "$9" = "-k" ]; then
-        echo "Unknown option $9"
-        exit 1
-    fi
-    shift
-    Schedule_Off=$9
-
-
-    shift
     if [ ! "$9" = "-s" ]; then
         echo "Unknown option $9"
         exit 1
@@ -66,124 +48,15 @@ if [ $# -gt 8 ]; then
     shift
     Sim_Only=$9
 
-    shift
-    if [ ! "$9" = "-p" ]; then
-        echo "Unknown option $9"
-        exit 1
-    fi
 fi
 
 CGRA_Size=$Row"x"$Col
 
 ###########################################################
-# DFG Generator Configuration
-###########################################################
-
-cd $DFG_Dir"/"$App_Name
-if [ "$App_Name" = "mm" ]; then
-    if [ "$Type" = "supersmall" ]; then
-        cd mm-fu/
-        shift
-        sed -i "/^\#define N/c\\#define N $9" config.h
-    elif [ "$Type" = "small" ]; then
-        cd mm-L3/
-        shift
-        sed -i "/^\#define B/c\\#define B $9" config.h
-        shift
-        sed -i "/^\#define M/c\\#define M $9" config.h
-        shift
-        sed -i "/^\#define N/c\\#define N $9" config.h
-    elif [ "$Type" = "medium" ]; then
-        cd mm-L2/
-        shift
-        sed -i "/^\#define B/c\\#define B $9" config.h
-        shift
-        sed -i "/^\#define M/c\\#define M $9" config.h
-        shift
-        sed -i "/^\#define N/c\\#define N $9" config.h
-    else
-        cd mm-L1/
-        shift
-        sed -i "/^\#define B/c\\#define B $9" config.h
-        shift
-        sed -i "/^\#define M/c\\#define M $9" config.h
-    fi
-elif [ "$App_Name" = "fir" ]; then
-    #if [ "$Type" = "small" ]; then
-        #cd fir-fully-unroll/
-        #shift
-        #sed -i "/^\#define L/c\\#define L $9" config.h
-        #shift
-        #sed -i "/^\#define N/c\\#define N $9" config.h
-    #else
-        #cd fir-2nd-level-unroll/
-        cd fir/
-        shift
-        sed -i "/^\#define B/c\\#define B $9" config.h
-        shift
-        sed -i "/^\#define L/c\\#define L $9" config.h
-        shift
-        sed -i "/^\#define N/c\\#define N $9" config.h
-    #fi
-elif [ "$App_Name" = "sobel" ]; then
-    #if [ "$Type" = "small" ] && [ "$Row" = "5" ] && [ "$Col" = "5" ]; then
-    #if [ "$Type" = "small" ]; then
-    #    cd sobel-fully-unroll/
-    #    shift
-    #    sed -i "/^\#define R/c\\#define R $9" config.h
-    #    shift
-    #    sed -i "/^\#define C/c\\#define C $9" config.h
-    #else
-        #cd sobel-4th-level-unroll/
-        cd sobel/
-        shift
-        sed -i "/^\#define B/c\\#define B ($9+2)" config.h
-        shift
-        sed -i "/^\#define R/c\\#define R ($9+2)" config.h
-        shift
-        sed -i "/^\#define C/c\\#define C $9" config.h
-    #fi
-elif [ "$App_Name" = "kmean" ]; then
-    #cd kmean-3rd-level-unroll/
-    cd kmean/
-    shift
-        sed -i "/^\#define B/c\\#define B $9" config.h
-    shift
-        sed -i "/^\#define M/c\\#define M $9" config.h
-    shift
-        sed -i "/^\#define N/c\\#define N $9" config.h
-    shift
-        sed -i "/^\#define D/c\\#define D $9" config.h
-fi
-
-make clean > /dev/null 
-make > /dev/null
-
-
-###########################################################
-# DFG Generation
-###########################################################
-
-#echo "DFG generation starts..."
-Start_Time=$(date +%s%N)
-./dfg-gen > /dev/null 
-End_Time=$(date +%s%N)
-#echo "DFG Genertion is done, time elapsed: $((($End_Time - $Start_Time)/1000000))""ms"
-#echo
-
-if [ $Schedule_Off -eq 1 ]; then
-    exit 1
-fi
-
-###########################################################
 # DFG Scheduling
 ###########################################################
 
-#echo "DFG Scheduling starts..."
 #Start_Time=$(date +%s%N)
-cp -rf dump/*.* $Scheduler_Dir"/config/"
-
-#Update configuration file
 cd $Scheduler_Dir"/config/"
 let Num=$Row*$Col 
 let Max_IO_Buffer=65536
@@ -199,9 +72,7 @@ if [ $Sim_Only -eq 1 ]; then
 fi
 cd ..
 ./cgracompiler 
-#End_Time=$(date +%s%N)
 
 #echo "DFG scheduling completes, time elapsed $((($End_Time - $Start_Time)/1000000))""ms"
-#echo
 
 

@@ -9,108 +9,33 @@ class Solution():
     def __init__(self):
         self.Loop_Vec = []
         self.Loop_Unrolling_Vec = []
-        self.Loop_Unrolling_Level = 0 # Assume it is the same with Loop_Blocking_Level
         self.SCGRA_Row = SCGRA_Para.Min_SCGRA_Row
         self.SCGRA_Col = SCGRA_Para.Min_SCGRA_Col
 
-        self.DFG_Perf = 0
-        self.Block_Perf = 0
-        self.Loop_Perf = 0
-        self.PBRAM_Overhead = 0
+        self.DFG_Lat = 0
+        self.Loop_Lat = 0
+        self.Compu_Lat = 0
+        self.Commu_Lat = 0
+        self.BRAM_Cost = 0
         self.FF_Cost = 0
         self.LUT_Cost = 0
         self.Power = 0
-        self.Compu_Time = 0
-        self.Commu_Time = 0
         self.Energy = 0
-        self.Energy_Delay_Product = 0
+        self.EDP = 0
 
         self.Loop_Blocking_Vec = []
         self.SCGRA_Size = SCGRA_Para.Min_SCGRA
-        self.In_Buffer_Depth = SCGRA_Para.Min_In_Buffer_Depth
-        self.Out_Buffer_Depth = SCGRA_Para.Min_Out_Buffer_Depth
-        self.IO_Buffer_Width = SCGRA_Para.Min_IO_Buffer_Width
-        self.Inst_Mem_Depth = SCGRA_Para.Min_Inst_Mem_Depth
-        self.Inst_Mem_Width = SCGRA_Para.Min_Inst_Mem_Width
-        self.Data_Mem_Depth = SCGRA_Para.Max_Data_Mem_Depth
-        self.Data_Mem_Width = SCGRA_Para.Max_Data_Mem_Width
-        self.Addr_Mapper_Depth = SCGRA_Para.Max_Addr_Mapper_Depth
-        self.Addr_Mapper_Width = SCGRA_Para.Max_Addr_Mapper_Width
+        self.In_Buffer = SCGRA_Para.Min_In_Buffer
+        self.Out_Buffer = SCGRA_Para.Min_Out_Buffer
+        self.In_Addr_Buffer = 2 * SCGRA_Para.Min_In_Buffer
+        self.Out_Addr_Buffer = 2 * SCGRA_Para.Min_Out_Buffer
+        self.Inst_Mem = SCGRA_Para.Min_Inst_Mem
+        self.Data_Mem = SCGRA_Para.Max_Data_Mem
 
-    def Is_Acceptable(self):
-        if(self.In_Buffer_Depth > SCGRA_Para.Max_In_Buffer_Depth):
-            print "Insuffient input buffer!"
-            return 0
-        elif(self.Out_Buffer_Depth > SCGRA_Para.Max_Out_Buffer_Depth):
-            print "Insuffient output buffer!"
-            return 0
-        elif(self.Inst_Mem_Depth > SCGRA_Para.Max_Inst_Mem_Depth):
-            print "Insuffient Inst Mem!"
-            return 0
-        elif(self.Data_Mem_Depth > SCGRA_Para.Max_Data_Mem_Depth):
-            print "Data Mem overflow!"
-            return 0
-        elif(self.PBRAM_Overhead > SCGRA_Para.Total_PBRAM):
-            print "Insuffient BRAM Resource!"
-            return 0
-        elif(self.Block_Perf > SCGRA_Para.Max_Addr_Mapper_Depth * 1024 * SCGRA_Para.Max_Addr_Mapper_Width):
-            print "Insufficient Addr Mapper capacity!"
-            return 0
-        else:
-            return 1
 
-    def Get_Block_Num(self):
-        Block_Num = 1
-        for i in range(0, len(self.Loop_Blocking_Vec)):
-            Block_Num = Block_Num * self.Loop_Vec[i]/self.Loop_Blocking_Vec[i]
-        return Block_Num
-   
-    # Return the number of DFG per Block
-    def Get_DFG_Num(self):
-        DFG_Num = 1
-        for i in range(0, len(self.Loop_Blocking_Vec)):
-            DFG_Num = DFG_Num * self.Loop_Blocking_Vec[i]/self.Loop_Unrolling_Vec[i]
 
-        return DFG_Num
-
-    def Update_Inst_Mem(self):
-        Possible_Depth = [1]
-        Curr_Max_Depth = 2
-        while(SCGRA_Para.Max_Inst_Mem_Depth >= Curr_Max_Depth):
-            Possible_Depth.append(Curr_Max_Depth)
-            Curr_Max_Depth += 2
-
-        self.Inst_Mem_Depth = 0
-        for Inst_Depth in Possible_Depth:
-            if(self.DFG_Perf/1024.0 < Inst_Depth):
-                self.Inst_Mem_Depth = Inst_Depth
-                break
-
-        if(self.Inst_Mem_Depth == 0):
-            print "Instruction memory depth is out of range!"
-
-        return Inst_Depth
-
-    def Update_Addr_Mapper(self):
-        Possible_Depth = [1]
-        Curr_Max_Depth = 2
-        while(SCGRA_Para.Max_Addr_Mapper_Depth >= Curr_Max_Depth):
-            Possible_Depth.append(Curr_Max_Depth)
-            Curr_Max_Depth += 2
-
-        self.Addr_Mapper_Depth = 0
-        for Mapper_Depth in Possible_Depth:
-            if(self.Block_Perf/1024.0/32 < Mapper_Depth):
-                self.Addr_Mapper_Depth = Mapper_Depth
-                break
-        
-        if(self.Addr_Mapper_Depth ==0):
-            print "Addr bit mapper depth is out of range!"
-
-        return Mapper_Depth
-
-    def Update_HW_Overhead(self):
-        self.Update_PBRAM_Overhead()
+    def Update_HW_Cost(self):
+        self.Update_BRAM_Cost()
         self.Update_LUT_Cost()
         self.Update_FF_Cost()
 
@@ -118,6 +43,7 @@ class Solution():
         LUT_Slope = 726.44
         LUT_Intercept = 2676.4
         LUT_Cost = LUT_Slope * self.SCGRA_Row * self.SCGRA_Col + LUT_Intercept
+        self.LUT_Cost = LUT_Cost
 
         return LUT_Cost
 
@@ -125,67 +51,68 @@ class Solution():
         FF_Slope = 1329
         FF_Intercept = 2802
         FF_Cost = FF_Slope * self.SCGRA_Row * self.SCGRA_Col + FF_Intercept
+        self.FF_Cost = FF_Cost
 
         return FF_Cost
 
 
     # Update overhead of RAM36B 
-    def Update_PBRAM_Overhead(self):
-        # IO Buffer
-        In_Buffer = self.In_Buffer_Depth * self.IO_Buffer_Width/32.0
-        Out_Buffer = self.Out_Buffer_Depth * self.IO_Buffer_Width/32.0
-        IO_Buffer = In_Buffer + Out_Buffer
+    def Update_BRAM_Cost(self):
+        tmp = (self.In_Buffer + self.Out_Buffer) 
+        tmp = tmp + (self.In_Addr_Buffer + self.Out_Addr_Buffer)/2.0
+        tmp = tmp + (self.Inst_Mem * 2 + 3) * self.SCGRA_Size 
+        self.BRAM_Cost = tmp
 
-        In_Addr_Buffer = In_Buffer
-        Out_Addr_Buffer = Out_Buffer
-        Addr_Buffer = In_Addr_Buffer/2 + Out_Addr_Buffer/2
+        return self.BRAM_Cost
 
-        In_Addr_Bitmap = self.Addr_Mapper_Depth
-        Out_Addr_Bitmap = In_Addr_Bitmap
-        Addr_Bitmap = In_Addr_Bitmap + Out_Addr_Bitmap
+    ''' The DMA transmission data is obtained from Zedboard using DMA through HP port. 
+    The clock runs at 333.333MHz. Since the function returns ns in the end, clock cycle is 
+    calculated as well. '''
+    def Get_DMA_Lat(self, TF_Size):
 
-        # Data Memory
-        Single_Data_Mem = self.Data_Mem_Depth/1024.0 * self.Data_Mem_Width/32
-        if(Single_Data_Mem < 1):
-            Single_Data_Mem = 1
-        Single_Data_Mem = 3 * int(Single_Data_Mem + 0.5)
-        Data_Mem = self.SCGRA_Size * Single_Data_Mem
+        Clock_Cycle = 3
+        Avg_Lat = 0
+        if(TF_Size <= 8):
+            Avg_Lat = 21
+        elif(TF_Size > 8 and TF_Size <= 16):
+            Avg_Lat = self.Get_Linear_Avg([8, 21], [16, 12.08], TF_Size)
+        elif(TF_Size > 16 and TF_Size <= 32):
+            Avg_Lat = self.Get_Linear_Avg([16, 12.08], [32, 7.15], TF_Size)
+        elif(TF_Size > 32 and TF_Size <= 64):
+            Avg_Lat = self.Get_Linear_Avg([32, 7.15], [64, 5.06], TF_Size)
+        elif(TF_Size > 64 and TF_Size <= 128):
+            Avg_Lat = self.Get_Linear_Avg([64, 5.06], [128, 4.44], TF_Size)
+        elif(TF_Size > 128 and TF_Size <= 256):
+            Avg_Lat = self.Get_Linear_Avg([128, 4.44], [256, 3.76], TF_Size)
+        elif(TF_Size > 256 and TF_Size <= 512):
+            Avg_Lat = self.Get_Linear_Avg([256, 3.76], [512, 3.36], TF_Size)
+        else:
+            Avg_Lat = 3.36
+            
+        return Clock_Cycle * Avg_Lat
 
-        # Inst. Memory
-        Single_Inst_Mem = self.Inst_Mem_Depth * self.Inst_Mem_Width/36
-        Inst_Mem = self.SCGRA_Size * int(Single_Inst_Mem)
-        self.PBRAM_Overhead = IO_Buffer + Addr_Buffer + Addr_Bitmap + Data_Mem + Inst_Mem
+    def Get_Linear_Avg(self, vec0, vec1, x):
+        a1 = vec0[0]
+        b1 = vec0[1]
+        a2 = vec1[0]
+        b2 = vec1[1]
+        slope = (b2 - b1) / (a2 - a1)
+        return (b1 + slope * (x - a1))
 
-        return self.PBRAM_Overhead
+   
+    def Update_Lat(self, DFG_Num, Block_Num, Loop_Transfer_Vec):
+        CGRA_Clock_Cycle = 4
+        Block_Compu_Lat = DFG_Num * (self.DFG_Lat + 5) * 4
+        self.Compu_Lat = Block_Num * Block_Compu_Lat * CGRA_Clock_Cycle
 
-    def Update_IO_Buffer(self, Block_In_Num, Block_Out_Num):
-        self.In_Buffer_Depth = self.Get_Buffer_Depth(Block_In_Num, self.IO_Buffer_Width, SCGRA_Para.Max_In_Buffer_Depth)
-        self.Out_Buffer_Depth = self.Get_Buffer_Depth(Block_Out_Num, self.IO_Buffer_Width, SCGRA_Para.Max_Out_Buffer_Depth)
+        Loop_Commu_Lat = 0
+        for x in Loop_Transfer_Vec:
+            Loop_Commu_Lat += x * self.Get_DMA_Lat(x)
 
-    def Get_Buffer_Depth(self, Data_Num, Buffer_Width, Max_Buffer_Depth):
-        Possible_Depth = [1]
-        Buffer_Depth = 2
-        while(Buffer_Depth <= Max_Buffer_Depth):
-            Possible_Depth.append(Buffer_Depth)
-            Buffer_Depth += 2
+        self.Commu_Lat = Loop_Commu_Lat 
+        self.Loop_Lat = self.Commu_Lat + self.Compu_Lat
+        return self.Loop_Lat
 
-        for Buffer_Depth in Possible_Depth:
-            if((Data_Num/1024.0) <= Buffer_Depth):
-                return Buffer_Depth
-
-        return 0
-
-    def Update_Perf(self, Block_Level_Reuse_Num, Block_In_Num, Block_Out_Num):
-        DFG_Switch_Time = 5
-        Block_Compu_Time = self.Get_DFG_Num()*(self.DFG_Perf + DFG_Switch_Time) - DFG_Switch_Time
-        self.Block_Perf = Block_Compu_Time
-
-        Compu_Time = self.Get_Block_Num()*Block_Compu_Time
-        Commu_Time = self.Get_Block_Num()*(self.Get_Trans_Time(Block_In_Num - Block_Level_Reuse_Num) + self.Get_Trans_Time(Block_Out_Num)) + self.Get_Trans_Time(Block_Level_Reuse_Num)
-        self.Compu_Time = Compu_Time
-        self.Commu_Time = Commu_Time
-        Loop_Sim_Perf = Compu_Time + Commu_Time 
-        self.Loop_Perf = Loop_Sim_Perf
 
     def Get_Trans_Time(self, Block_Size):
         GPIO_Lat_Per_Data = 79
@@ -212,30 +139,27 @@ class Solution():
 
         return int(Block_Trans_Time)
 
-    def Update_Energy_Delay_Product(self):
-        Delay = self.Loop_Perf*5/1000000000.0
+    def Update_EDP(self):
+        Delay = self.Loop_Lat/1000000000.0
         self.Energy = self.Power * Delay * 1000000
-        self.Energy_Delay_Product = self.Power * Delay * self.Loop_Perf
-        return self.Energy_Delay_Product
+        self.EDP = self.Power * Delay * self.Loop_Lat
+        return self.EDP
 
 
     def Update_Power(self):
-
         Base_Power_Slope = 0.0166
         Base_Power_Intercept = 0.1566
         CGRA_Size = self.SCGRA_Row * self.SCGRA_Col
-        Bit_Mapper_Power = 0.00415 #per RAMB32
-        IO_Buffer_Power = 0.0025 #per RAM18+RAM32
+        Addr_Buffer_Power = 0.00225 #per RAMB18
+        IO_Buffer_Power = 0.00405 #per RAM32
         Inst_Mem_Power = 0.00425 #per RAM32
         Data_Mem_Power = 0.0077 #per 3x RAM32
-        Data_Mem_Depth = 1
 
         Base_Power = Base_Power_Slope * CGRA_Size + Base_Power_Intercept
-        Power = Base_Power + self.Addr_Mapper_Depth*2*Bit_Mapper_Power
-        Power += (self.In_Buffer_Depth + self.Out_Buffer_Depth)*IO_Buffer_Power
-        Power += self.Inst_Mem_Depth * 2 * CGRA_Size * Inst_Mem_Power
-        Power += Data_Mem_Depth * CGRA_Size * Data_Mem_Power
-        #pdb.set_trace()
+        Power = Base_Power + (self.In_Addr_Buffer + self.Out_Addr_Buffer)*Addr_Buffer_Power
+        Power += (self.In_Buffer + self.Out_Buffer)*IO_Buffer_Power
+        Power += self.Inst_Mem * 2 * CGRA_Size * Inst_Mem_Power
+        Power += CGRA_Size * Data_Mem_Power
 
         self.Power = Power
 
@@ -250,20 +174,65 @@ class Solution():
         return Lat
 
     def Get_Syllabus(self):
-        Solution_Str = str(self.Loop_Blocking_Vec) + " "
-        Solution_Str += str(self.Loop_Unrolling_Vec) + " "
-        Solution_Str += str(self.SCGRA_Row) + " "
-        Solution_Str += str(self.SCGRA_Col) + " "
-        Solution_Str += str(self.In_Buffer_Depth) + "k "
-        Solution_Str += str(self.Out_Buffer_Depth) + "k "
-        Solution_Str += str(self.Inst_Mem_Depth) + "k "
-        Solution_Str += str(self.Data_Mem_Depth) + " "
-        Solution_Str += str(self.DFG_Perf) + " "
-        Solution_Str += str(self.Block_Perf) + " " 
-        Solution_Str += str(self.Commu_Time) + " "
-        Solution_Str += str(self.Compu_Time) + " "
-        Solution_Str += str(self.Loop_Perf) + " "
-        Solution_Str += str(self.PBRAM_Overhead) + "\n"
+        Solution_Str = "Loop_Blocking_Vec" + " "
+        Solution_Str += str(self.Loop_Blocking_Vec) + " " + "\n"
+
+        Solution_Str += "Loop_Unrolling_Vec" + " "
+        Solution_Str += str(self.Loop_Unrolling_Vec) + " " + "\n"
+
+        Solution_Str += "SCGRA_Row" + " "
+        Solution_Str += str(self.SCGRA_Row) + " " + "\n"
+
+        Solution_Str += "SCGRA_Col" + " "
+        Solution_Str += str(self.SCGRA_Col) + " " + "\n"
+
+        Solution_Str += "In_Buffer" + " "
+        Solution_Str += str(self.In_Buffer) + "k " + "\n"
+
+        Solution_Str += "In_Addr_Buffer" + " "
+        Solution_Str += str(self.In_Addr_Buffer) + "k " + "\n"
+
+        Solution_Str += "Out_Buffer" + " "
+        Solution_Str += str(self.Out_Buffer) + "k " + "\n"
+
+        Solution_Str += "Out_Addr_Buffer" + " "
+        Solution_Str += str(self.Out_Addr_Buffer) + "k " + "\n"
+
+        Solution_Str += "Inst_Mem" + " "
+        Solution_Str += str(self.Inst_Mem) + "k " + "\n"
+
+        Solution_Str += "Data_Mem" + " "
+        Solution_Str += str(self.Data_Mem) + " " + "\n"
+
+        Solution_Str += "DFG_Lat" + " "
+        Solution_Str += str(self.DFG_Lat) + " " + "\n"
+
+        Solution_Str += "Commu_Lat" + " "
+        Solution_Str += str(self.Commu_Lat) + " " + "\n"
+
+        Solution_Str += "Compu_Lat" + " "
+        Solution_Str += str(self.Compu_Lat) + " " + "\n"
+
+        Solution_Str += "Loop_Lat" + " "
+        Solution_Str += str(self.Loop_Lat) + " " + "\n"
+
+        Solution_Str += "BRAM_Cost" + " "
+        Solution_Str += str(self.BRAM_Cost) + " " + "\n"
+
+        Solution_Str += "LUT_Cost" + " "
+        Solution_Str += str(self.LUT_Cost) + " " + "\n"
+
+        Solution_Str += "FF_Cost" + " "
+        Solution_Str += str(self.FF_Cost) + " " + "\n"
+
+        Solution_Str += "Power" + " "
+        Solution_Str += str(self.Power) + " " + "\n"
+
+        Solution_Str += "Energy" + " "
+        Solution_Str += str(self.Energy) + " " + "\n"
+
+        Solution_Str += "EDP" + " "
+        Solution_Str += str(self.EDP) + " " + "\n"
 
         return Solution_Str
 

@@ -1,12 +1,9 @@
-#include "common.h"
-#include "Operand.h"
-#include "Instruction.h"
 #include "config.h"
+#include "lib.h"
 #include <cstdlib>
 #include <list>
 
 // To calculate the L fir output, N-1 0 should be inserted in the head of the input sequence.
-void IO_Init(int Sig_In[N-1+L], int Coeff[N], int Sig_Out[L]);
 void OP_Array_Init(std::vector<Operand*> &OP_Array, int Sig_In[N-1+L], int Coeff[N], int Sig_Out[L]);
 void Kernel_To_DFG(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &Inst_Array);
 void DFG_Compute(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &Inst_Array);
@@ -17,24 +14,29 @@ void Initial_IO_Placement(const std::string &DFG_Name);
 void Head_File_Dump();
 void Loop_Stat(const std::vector<Operand*> &OP_Array, const std::vector<Instruction*> &Inst_Array);
 
-const int Const_Num = 1;
-int Const_In[Const_Num]={0};
+
+void ioInit(int sigIn[N+L-1], int coeff[N]);
+void firStd(int sigIn[N+L-1], int coeff[N], int sigOut[L]);
+
+// Operands and operations/instructions of the generated DFG
+std::vector<Operand*> operandSet;
+std::vector<Instruction*> instSet;
 
 int main(){
 
-    int Sig_In[N-1+L];
-    int Coeff[N];
-    int Sig_Out[L];
+    std::string DFG_Name = "fir";
 
-    std::vector<Operand*> OP_Array;
-    std::vector<Instruction*> Inst_Array;
-    std::string DFG_Name="fir";
+    // Declare the input/output of the loop kernel
+    int sigIn[N-1+L];
+    int coeff[N];
+    int sigOut[L];
 
-    IO_Init(Sig_In, Coeff, Sig_Out);
+    // Input initialization  
+    ioInit(sigIn, coeff);
+    firStd(sigIn, coeff, sigOut);
 
-    OP_Array_Init(OP_Array, Sig_In, Coeff, Sig_Out);
-
-    Kernel_To_DFG(OP_Array, Inst_Array);
+    // Kernel to DFG
+    loopKernelToDFG(sigIn, coeff, sigOut);
 
     DFG_Compute(OP_Array, Inst_Array);
 
@@ -50,23 +52,28 @@ int main(){
 
 }
 
-void IO_Init(int Sig_In[N+L-1], int Coeff[N], int Sig_Out[L]){
+void ioInit(int sigIn[N+L-1], int coeff[N]){
 
-    for(int i=N-1; i<N-1+L; i++){
-        Sig_In[i] = rand()%10;
+    for(int i=0; i<N+L-1; i++){
+        if(i<N-1){
+            sigIn[i] = 0;
+        } else {
+            sigIn[i] = rand()%10;
+        }
     }
 
     for(int i=0; i<N-1; i++){
-        Sig_In[i] = 0;
-        Coeff[i] = rand()%10;
+        coeff[i] = rand()%10;
     }
 
-    for(int i=N-1; i<N+L-1; i++){
-        Sig_Out[i-N+1] = 0;
+}
+
+void firStd(int sigIn[N+L-1], int coeff[N], int sigOut[L]){
+
+    for(int i=0; i<L; i++){
+        sigOut[i] = 0;
         for(int j=0; j<N; j++){
-            if(i>=j){
-                Sig_Out[i-N+1] += Coeff[j] * Sig_In[i-j];
-            }
+            sigOut[i] += coeff[j] * sigIn[i-j+N-1];
         }
     }
 
@@ -130,7 +137,7 @@ int Data_To_ID(std::string Name, int IDx){
 
 }
 
-void Kernel_To_DFG(std::vector<Operand*> &OP_Array, std::vector<Instruction*> &Inst_Array){
+void LoopKernelToDFG(){
 
     for(int i=N-1; i<N+L-1; i++){
 

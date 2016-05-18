@@ -13,11 +13,11 @@ enum Opcode {
     MULADD, MULSUB, ADDADD, ADDSUB, SUBSUB, PHI, RSFAND, LSFADD, ABS, GT, LET, ANDAND
 };
 
-enum Operand_Type {
+enum OperandType {
     INCONST, INVAR, UNUSED, OUTVAR, IM, IMOUT 
 };
 
-std::ostream& operator<< (std::ostream &os, Opcode Inst_Opcode);
-std::ostream& operator<< (std::ostream &os, Operand_Type OP_Type);
+std::ostream& operator<< (std::ostream &os, Opcode instOpcode);
+std::ostream& operator<< (std::ostream &os, OperandType opType);
 
 #endif

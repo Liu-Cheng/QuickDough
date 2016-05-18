@@ -1,6 +1,6 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-#define N 20
+#define N 128
 
 #endif
