@@ -1,0 +1,6 @@
+23:22:11 **** Auto Build of project sobel-medium_bsp ****
+make -k all 
+'Finished building libraries'
+
+23:22:11 Build Finished (took 128ms)
+

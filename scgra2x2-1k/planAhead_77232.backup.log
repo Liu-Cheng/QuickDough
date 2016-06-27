@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Mon Aug 11 16:24:36 2014
+# Process ID: 21312
+# Log file: D:/minibench/scgra/scgra2x2-1k/planAhead.log
+# Journal file: D:/minibench/scgra/scgra2x2-1k\planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+open_project {D:\minibench\scgra\scgra2x2-1k\scgra2x2_1k.ppr}
+Scanning sources...
+Finished scanning sources
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Mon Aug 11 16:33:27 2014...
+INFO: [Common 17-83] Releasing license: PlanAhead

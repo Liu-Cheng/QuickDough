@@ -1,0 +1,6 @@
+19:33:51 **** Incremental Build of configuration Debug for project sobel-small ****
+make all 
+make: Nothing to be done for `all'.
+
+19:33:51 Build Finished (took 122ms)
+

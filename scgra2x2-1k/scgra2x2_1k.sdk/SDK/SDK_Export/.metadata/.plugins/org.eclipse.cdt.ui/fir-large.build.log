@@ -1,0 +1,6 @@
+19:33:46 **** Incremental Build of configuration Debug for project fir-large ****
+make all 
+make: Nothing to be done for `all'.
+
+19:33:46 Build Finished (took 136ms)
+

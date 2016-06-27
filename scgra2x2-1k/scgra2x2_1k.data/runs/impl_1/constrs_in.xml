@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="26">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/constrains.ucf">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/Liucheng/Documents/scgra_high_freq/scgra2x2_high_freq/scgra2x2_high_freq.srcs/constrs_1/new/constrains.ucf"/>
+        <Attr Name="ImportTime" Val="1388370228"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/constrains.ucf"/>
+      <Option Name="ConstrsType" Val="UCF"/>
+    </Config>
+  </FileSet>
+</DARoots>

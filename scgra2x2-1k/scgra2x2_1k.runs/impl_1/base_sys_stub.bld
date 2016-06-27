@@ -1,0 +1,170 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\EDA\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe -intstyle
+ise -p xc7z020clg484-1 -dd _ngo -uc base_sys_stub.ucf -bm base_sys_stub.bmm
+base_sys_stub.edf
+
+Executing edif2ngd -quiet "base_sys_stub.edf" "_ngo\base_sys_stub.ngo"
+Release 14.7 - edif2ngd P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading NGO file
+"D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.runs/impl_1/_ngo/base_sys_stub.ngo"
+...
+Gathering constraint information from source properties...
+Done.
+INFO:NgdBuild:649 - Removing redundant 'IBUF' symbol
+   'processing_system7_0_PS_PORB_IBUF'.  All constraints associated with this
+   symbol will be ignored.
+INFO:NgdBuild:649 - Removing redundant 'IBUF' symbol
+   'processing_system7_0_PS_CLK_IBUF'.  All constraints associated with this
+   symbol will be ignored.
+INFO:NgdBuild:649 - Removing redundant 'IBUF' symbol
+   'processing_system7_0_PS_SRSTB_IBUF'.  All constraints associated with this
+   symbol will be ignored.
+
+Annotating constraints to design from ucf file "base_sys_stub.ucf" ...
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/ramb36e
+   1_0' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/ramb36e
+   1_1' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/ramb36e
+   1_0' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/ramb36e
+   1_1' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e
+   1_0' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e
+   1_1' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e
+   1_2' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e
+   1_3' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e
+   1_0' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e
+   1_1' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e
+   1_2' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+WARNING:NgdBuild:931 - The value of SIM_DEVICE on instance
+   'base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e
+   1_3' of type RAMB36E1 has been changed from 'VIRTEX6' to '7SERIES' to correct
+   post-ngdbuild and timing simulation for this primitive.  In order for
+   functional simulation to be correct, the value of SIM_DEVICE should be
+   changed in this same manner in the source netlist or constraint file. For
+   additional information on retargeting this primitive to 7SERIES, please see
+   http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migratio
+   n.pdf.
+Resolving constraint associations...
+Checking Constraint Associations...
+WARNING:ConstraintSystem:58 - Constraint <TIMEGRP
+   axi_interconnect_1_reset_source =   FFS  PADS  CPUS;>
+   [base_sys_stub.ucf(547)]: CPUS "*" does not match any design objects.
+
+WARNING:ConstraintSystem:58 - Constraint <TIMEGRP
+   axi_interconnect_2_reset_source =   FFS  PADS  CPUS;>
+   [base_sys_stub.ucf(555)]: CPUS "*" does not match any design objects.
+
+Done...
+
+Processing BMM file "base_sys_stub.bmm" ...
+
+Checking expanded design ...
+WARNING:NgdBuild:478 - clock net base_sys_i/cgra2x2_0_PORT0_BRAM_Rst with clock
+   driver base_sys_i/cgra2x2_0/Port0_Rst_BUFG drives no clock pins
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  15
+
+Total memory usage is 302260 kilobytes
+
+Writing NGD file "base_sys_stub.ngd" ...
+Total REAL time to NGDBUILD completion: 1 min  13 sec
+Total CPU time to NGDBUILD completion:   39 sec
+
+Writing NGDBUILD log file "base_sys_stub.bld"...

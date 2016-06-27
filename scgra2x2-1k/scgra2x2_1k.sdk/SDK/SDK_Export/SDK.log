@@ -1,0 +1,983 @@
+21:25:28.133 INFO  - Processing command line option -hwspec C:/Users/Liucheng/Documents/scgra_high_freq/scgra2x2_high_freq/scgra2x2_high_freq.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+23:01:01.641 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:01:01.742 INFO  - PS initialization will be done as it is not done before. 
+23:01:01.742 INFO  - Running PS initialization.... 
+23:01:02.110 INFO  - ps7_init is completed. 
+23:01:02.210 INFO  - ps7_post_config is completed. 
+23:01:02.310 INFO  - PS Initialization is complete. 
+23:03:49.539 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:03:49.639 INFO  - PS initialization will be done as it is not done before. 
+23:03:49.639 INFO  - Running PS initialization.... 
+23:03:49.812 INFO  - ps7_init is completed. 
+23:03:49.912 INFO  - ps7_post_config is completed. 
+23:03:50.122 INFO  - PS Initialization is complete. 
+23:04:57.604 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:04:57.704 INFO  - PS initialization will be done as it is not done before. 
+23:04:57.704 INFO  - Running PS initialization.... 
+23:04:57.898 INFO  - ps7_init is completed. 
+23:04:57.998 INFO  - ps7_post_config is completed. 
+23:04:58.098 INFO  - PS Initialization is complete. 
+23:08:30.811 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:51:02.279 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+15:51:04.743 INFO  - The hardware specification for project 'base_sys_hw_platform' is different from D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+15:51:05.459 INFO  - Copied contents of D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml into \base_sys_hw_platform\system.xml. 
+15:51:05.474 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\base_sys_stub.bit into \base_sys_hw_platform\system.bit. 
+15:51:05.476 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\base_sys_stub_bd.bmm into \base_sys_hw_platform\system_bd.bmm. 
+15:51:05.481 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.c into \base_sys_hw_platform\ps7_init.c. 
+15:51:05.482 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.h into \base_sys_hw_platform\ps7_init.h. 
+15:51:05.485 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.html into \base_sys_hw_platform\ps7_init.html. 
+15:51:05.486 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.tcl into \base_sys_hw_platform\ps7_init.tcl. 
+15:51:05.797 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+15:51:08.529 INFO  - Updating hardware inferred compiler options for mm2x2. 
+15:51:08.535 INFO  - Clearing existing target manager status. 
+16:04:36.101 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:04:36.201 INFO  - PS initialization will be done as it is not done before. 
+16:04:36.201 INFO  - Running PS initialization.... 
+16:04:36.651 INFO  - ps7_init is completed. 
+16:04:36.751 INFO  - ps7_post_config is completed. 
+16:04:36.851 INFO  - PS Initialization is complete. 
+16:06:18.319 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:06:18.419 INFO  - PS initialization will be done as it is not done before. 
+16:06:18.419 INFO  - Running PS initialization.... 
+16:06:18.618 INFO  - ps7_init is completed. 
+16:06:18.718 INFO  - ps7_post_config is completed. 
+16:06:18.818 INFO  - PS Initialization is complete. 
+16:10:25.825 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+16:10:25.839 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+16:10:25.845 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+12:44:42.619 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+12:47:25.599 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:47:25.699 INFO  - PS initialization will be done as it is not done before. 
+12:47:25.699 INFO  - Running PS initialization.... 
+12:47:26.060 INFO  - ps7_init is completed. 
+12:47:26.160 INFO  - ps7_post_config is completed. 
+12:47:26.260 INFO  - PS Initialization is complete. 
+12:51:16.882 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+20:59:29.228 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+20:59:31.614 INFO  - The hardware specification for project 'base_sys_hw_platform' is different from D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+20:59:32.180 INFO  - Copied contents of D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml into \base_sys_hw_platform\system.xml. 
+20:59:32.387 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\base_sys_stub.bit into \base_sys_hw_platform\system.bit. 
+20:59:32.474 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\base_sys_stub_bd.bmm into \base_sys_hw_platform\system_bd.bmm. 
+20:59:32.482 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.c into \base_sys_hw_platform\ps7_init.c. 
+20:59:32.485 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.h into \base_sys_hw_platform\ps7_init.h. 
+20:59:32.490 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.html into \base_sys_hw_platform\ps7_init.html. 
+20:59:32.493 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.tcl into \base_sys_hw_platform\ps7_init.tcl. 
+20:59:33.004 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+20:59:35.552 INFO  - Updating hardware inferred compiler options for mm2x2. 
+20:59:35.558 INFO  - Clearing existing target manager status. 
+21:00:14.537 INFO  - Processor reset is completed for ps7_cortexa9_0 
+21:00:14.637 INFO  - PS initialization will be done as it is not done before. 
+21:00:14.637 INFO  - Running PS initialization.... 
+21:00:14.985 INFO  - ps7_init is completed. 
+21:00:15.085 INFO  - ps7_post_config is completed. 
+21:00:15.185 INFO  - PS Initialization is complete. 
+21:48:30.188 INFO  - Processor reset is completed for ps7_cortexa9_0 
+21:48:30.288 INFO  - PS initialization will be done as it is not done before. 
+21:48:30.288 INFO  - Running PS initialization.... 
+21:48:30.467 INFO  - ps7_init is completed. 
+21:48:30.567 INFO  - ps7_post_config is completed. 
+21:48:30.807 INFO  - PS Initialization is complete. 
+21:52:57.800 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:48:21.667 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+15:48:24.257 INFO  - The hardware specification for project 'base_sys_hw_platform' is different from D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+15:48:24.823 INFO  - Copied contents of D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml into \base_sys_hw_platform\system.xml. 
+15:48:24.956 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\base_sys_stub.bit into \base_sys_hw_platform\system.bit. 
+15:48:24.968 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\base_sys_stub_bd.bmm into \base_sys_hw_platform\system_bd.bmm. 
+15:48:24.971 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.c into \base_sys_hw_platform\ps7_init.c. 
+15:48:24.973 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.h into \base_sys_hw_platform\ps7_init.h. 
+15:48:24.975 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.html into \base_sys_hw_platform\ps7_init.html. 
+15:48:24.977 INFO  - Copied contents of D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.sdk\SDK\SDK_Export\hw\ps7_init.tcl into \base_sys_hw_platform\ps7_init.tcl. 
+15:48:25.586 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+15:48:53.252 INFO  - Updating hardware inferred compiler options for mm2x2. 
+15:48:53.282 INFO  - Clearing existing target manager status. 
+16:40:39.402 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:41:39.468 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:41:39.568 INFO  - PS initialization will be done as it is not done before. 
+16:41:39.568 INFO  - Running PS initialization.... 
+16:41:39.804 INFO  - ps7_init is completed. 
+16:41:39.811 INFO  - ps7_post_config is completed. 
+16:41:39.911 INFO  - PS Initialization is complete. 
+16:50:52.275 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:50:52.375 INFO  - PS initialization will be done as it is not done before. 
+16:50:52.375 INFO  - Running PS initialization.... 
+16:50:52.556 INFO  - ps7_init is completed. 
+16:50:52.656 INFO  - ps7_post_config is completed. 
+16:50:52.756 INFO  - PS Initialization is complete. 
+16:59:04.685 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:03:39.951 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:04:11.235 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:04:33.740 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:07:08.241 INFO  - Project mm2x2_bsp was a BSP project. Please update references. 
+17:07:08.241 ERROR - SDK has detected that project mm2x2_bsp has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references. 
+17:08:03.607 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:08:28.991 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:06:36.794 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+21:39:11.916 INFO  - Processor reset is completed for ps7_cortexa9_0 
+21:39:12.016 INFO  - PS initialization will be done as it is not done before. 
+21:39:12.016 INFO  - Running PS initialization.... 
+21:39:12.194 INFO  - ps7_init is completed. 
+21:39:12.294 INFO  - ps7_post_config is completed. 
+21:39:12.394 INFO  - PS Initialization is complete. 
+21:46:42.604 INFO  - Processor reset is completed for ps7_cortexa9_0 
+21:46:42.704 INFO  - PS initialization will be done as it is not done before. 
+21:46:42.704 INFO  - Running PS initialization.... 
+21:46:42.876 INFO  - ps7_init is completed. 
+21:46:42.976 INFO  - ps7_post_config is completed. 
+21:46:43.220 INFO  - PS Initialization is complete. 
+21:59:28.682 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:04:24.632 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:05:51.131 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:05:51.231 INFO  - PS initialization will be done as it is not done before. 
+22:05:51.231 INFO  - Running PS initialization.... 
+22:05:51.422 INFO  - ps7_init is completed. 
+22:05:51.522 INFO  - ps7_post_config is completed. 
+22:05:51.622 INFO  - PS Initialization is complete. 
+22:12:35.152 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:17:35.048 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+21:45:41.945 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+23:04:00.418 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:04:00.518 INFO  - PS initialization will be done as it is not done before. 
+23:04:00.519 INFO  - Running PS initialization.... 
+23:04:00.693 INFO  - ps7_init is completed. 
+23:04:00.793 INFO  - ps7_post_config is completed. 
+23:04:00.893 INFO  - PS Initialization is complete. 
+10:37:53.727 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:40:12.702 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+10:50:33.801 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+10:51:37.305 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:51:37.405 INFO  - PS initialization will be done as it is not done before. 
+10:51:37.405 INFO  - Running PS initialization.... 
+10:51:37.578 INFO  - ps7_init is completed. 
+10:51:37.678 INFO  - ps7_post_config is completed. 
+10:51:37.778 INFO  - PS Initialization is complete. 
+10:55:27.676 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:56:43.438 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:58:37.538 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:08:53.595 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:09:27.464 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:12:45.175 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:13:54.063 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:15:00.005 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:16:13.264 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:16:13.364 INFO  - PS initialization will be done as it is not done before. 
+11:16:13.364 INFO  - Running PS initialization.... 
+11:16:13.541 INFO  - ps7_init is completed. 
+11:16:13.641 INFO  - ps7_post_config is completed. 
+11:16:13.741 INFO  - PS Initialization is complete. 
+11:19:15.466 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+11:20:01.066 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:22:29.744 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+11:23:04.010 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:23:04.110 INFO  - PS initialization will be done as it is not done before. 
+11:23:04.110 INFO  - Running PS initialization.... 
+11:23:04.290 INFO  - ps7_init is completed. 
+11:23:04.390 INFO  - ps7_post_config is completed. 
+11:23:04.490 INFO  - PS Initialization is complete. 
+18:02:42.769 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:02:42.771 INFO  - PS initialization will be done as it is not done before. 
+18:02:42.772 INFO  - Running PS initialization.... 
+18:02:42.975 INFO  - ps7_init is completed. 
+18:02:43.075 INFO  - ps7_post_config is completed. 
+18:02:43.175 INFO  - PS Initialization is complete. 
+18:11:57.588 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:14:34.673 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:15:21.545 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:17:38.897 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+18:17:58.984 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:20:15.756 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+18:20:56.820 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:20:56.920 INFO  - PS initialization will be done as it is not done before. 
+18:20:56.920 INFO  - Running PS initialization.... 
+18:20:57.123 INFO  - ps7_init is completed. 
+18:20:57.223 INFO  - ps7_post_config is completed. 
+18:20:57.323 INFO  - PS Initialization is complete. 
+09:42:48.107 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:45:56.056 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:47:23.468 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:48:58.158 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:17:00.786 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:20:05.345 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:48:13.343 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:52:03.710 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:55:12.050 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:01:51.873 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:03:33.164 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+21:26:47.979 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+21:29:25.310 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:24:06.673 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+14:24:06.707 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+18:30:57.935 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+18:32:25.369 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:32:25.469 INFO  - PS initialization will be done as it is not done before. 
+18:32:25.469 INFO  - Running PS initialization.... 
+18:32:25.917 INFO  - ps7_init is completed. 
+18:32:26.017 INFO  - ps7_post_config is completed. 
+18:32:26.117 INFO  - PS Initialization is complete. 
+18:33:09.663 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:35:34.436 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:37:49.954 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:39:18.279 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+18:39:33.876 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:39:33.976 INFO  - PS initialization will be done as it is not done before. 
+18:39:33.976 INFO  - Running PS initialization.... 
+18:39:34.154 INFO  - ps7_init is completed. 
+18:39:34.254 INFO  - ps7_post_config is completed. 
+18:39:34.354 INFO  - PS Initialization is complete. 
+18:47:10.842 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:49:23.716 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:51:33.014 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+18:51:53.146 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:52:46.246 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+18:53:07.015 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:53:07.115 INFO  - PS initialization will be done as it is not done before. 
+18:53:07.115 INFO  - Running PS initialization.... 
+18:53:07.293 INFO  - ps7_init is completed. 
+18:53:07.393 INFO  - ps7_post_config is completed. 
+18:53:07.493 INFO  - PS Initialization is complete. 
+18:53:56.176 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:55:55.606 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+18:56:04.967 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:57:31.536 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+18:57:52.713 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:57:52.813 INFO  - PS initialization will be done as it is not done before. 
+18:57:52.813 INFO  - Running PS initialization.... 
+18:57:53.266 INFO  - ps7_init is completed. 
+18:57:53.367 INFO  - ps7_post_config is completed. 
+18:57:53.467 INFO  - PS Initialization is complete. 
+18:59:05.450 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:59:50.830 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:00:55.166 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:10:08.496 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+19:55:21.729 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+19:59:15.749 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+19:59:58.199 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:05:26.530 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:06:54.403 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+20:07:17.329 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+20:08:27.338 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+20:08:49.956 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:08:50.056 INFO  - PS initialization will be done as it is not done before. 
+20:08:50.056 INFO  - Running PS initialization.... 
+20:08:50.238 INFO  - ps7_init is completed. 
+20:08:50.338 INFO  - ps7_post_config is completed. 
+20:08:50.438 INFO  - PS Initialization is complete. 
+21:41:28.087 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:11:55.484 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+09:35:23.877 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:36:17.244 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:39:46.824 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:40:29.182 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+09:41:59.079 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:41:59.179 INFO  - PS initialization will be done as it is not done before. 
+09:41:59.179 INFO  - Running PS initialization.... 
+09:41:59.640 INFO  - ps7_init is completed. 
+09:41:59.740 INFO  - ps7_post_config is completed. 
+09:41:59.840 INFO  - PS Initialization is complete. 
+09:42:13.325 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+09:42:13.385 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+09:42:13.389 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+09:44:11.905 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+09:45:27.284 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:45:27.384 INFO  - PS initialization will be done as it is not done before. 
+09:45:27.384 INFO  - Running PS initialization.... 
+09:45:27.578 INFO  - ps7_init is completed. 
+09:45:27.678 INFO  - ps7_post_config is completed. 
+09:45:27.778 INFO  - PS Initialization is complete. 
+09:46:52.174 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:48:35.685 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:50:58.525 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:51:38.852 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:03:02.292 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+23:03:02.456 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+23:20:39.445 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+09:41:31.983 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:41:32.083 INFO  - PS initialization will be done as it is not done before. 
+09:41:32.083 INFO  - Running PS initialization.... 
+09:41:32.271 INFO  - ps7_init is completed. 
+09:41:32.371 INFO  - ps7_post_config is completed. 
+09:41:32.374 INFO  - PS Initialization is complete. 
+10:16:01.027 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:20:41.121 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:22:04.825 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:28:35.977 INFO  - Processor reset is completed for ps7_cortexa9_0 
+10:41:22.374 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+10:42:17.333 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+11:15:49.724 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:15:49.825 INFO  - PS initialization will be done as it is not done before. 
+11:15:49.825 INFO  - Running PS initialization.... 
+11:15:50.030 INFO  - ps7_init is completed. 
+11:15:50.130 INFO  - ps7_post_config is completed. 
+11:15:50.230 INFO  - PS Initialization is complete. 
+11:18:33.604 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:18:33.704 INFO  - PS initialization will be done as it is not done before. 
+11:18:33.705 INFO  - Running PS initialization.... 
+11:18:33.929 INFO  - ps7_init is completed. 
+11:18:33.936 INFO  - ps7_post_config is completed. 
+11:18:34.036 INFO  - PS Initialization is complete. 
+11:28:02.199 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:32:02.688 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+13:30:10.903 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+13:31:52.379 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:32:57.925 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:43:00.583 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+13:43:26.583 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+13:44:16.258 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+13:44:37.308 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:44:37.408 INFO  - PS initialization will be done as it is not done before. 
+13:44:37.408 INFO  - Running PS initialization.... 
+13:44:37.621 INFO  - ps7_init is completed. 
+13:44:37.721 INFO  - ps7_post_config is completed. 
+13:44:37.821 INFO  - PS Initialization is complete. 
+13:45:42.835 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:49:49.215 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+17:52:38.518 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:54:15.572 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:54:15.672 INFO  - PS initialization will be done as it is not done before. 
+17:54:15.672 INFO  - Running PS initialization.... 
+17:54:15.941 INFO  - ps7_init is completed. 
+17:54:16.041 INFO  - ps7_post_config is completed. 
+17:54:16.302 INFO  - PS Initialization is complete. 
+18:08:15.172 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:23:53.583 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:41:11.873 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+23:42:40.637 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:42:40.737 INFO  - PS initialization will be done as it is not done before. 
+23:42:40.737 INFO  - Running PS initialization.... 
+23:42:41.014 INFO  - ps7_init is completed. 
+23:42:41.114 INFO  - ps7_post_config is completed. 
+23:42:41.214 INFO  - PS Initialization is complete. 
+11:25:34.014 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:25:34.114 INFO  - PS initialization will be done as it is not done before. 
+11:25:34.115 INFO  - Running PS initialization.... 
+11:25:34.303 INFO  - ps7_init is completed. 
+11:25:34.403 INFO  - ps7_post_config is completed. 
+11:25:34.503 INFO  - PS Initialization is complete. 
+11:34:51.668 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:34:51.897 INFO  - PS initialization will be done as it is not done before. 
+11:34:51.898 INFO  - Running PS initialization.... 
+11:34:52.084 INFO  - ps7_init is completed. 
+11:34:52.184 INFO  - ps7_post_config is completed. 
+11:34:52.284 INFO  - PS Initialization is complete. 
+11:43:43.649 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
+11:44:21.118 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:44:21.218 INFO  - PS initialization will be done as it is not done before. 
+11:44:21.218 INFO  - Running PS initialization.... 
+11:44:21.406 INFO  - ps7_init is completed. 
+11:44:21.413 INFO  - ps7_post_config is completed. 
+11:44:21.416 INFO  - PS Initialization is complete. 
+11:46:51.354 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:46:51.356 INFO  - PS initialization will be done as it is not done before. 
+11:46:51.356 INFO  - Running PS initialization.... 
+11:46:51.542 INFO  - ps7_init is completed. 
+11:46:51.642 INFO  - ps7_post_config is completed. 
+11:46:51.742 INFO  - PS Initialization is complete. 
+11:48:44.285 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:48:44.287 INFO  - PS initialization will be done as it is not done before. 
+11:48:44.287 INFO  - Running PS initialization.... 
+11:48:44.470 INFO  - ps7_init is completed. 
+11:48:44.570 INFO  - ps7_post_config is completed. 
+11:48:44.670 INFO  - PS Initialization is complete. 
+11:50:36.970 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
+11:50:36.973 WARN  - Terminating existing sessions on processor ps7_cortexa9_0 
+11:50:44.610 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:51:12.860 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+11:51:46.826 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:51:46.926 INFO  - PS initialization will be done as it is not done before. 
+11:51:46.926 INFO  - Running PS initialization.... 
+11:51:47.122 INFO  - ps7_init is completed. 
+11:51:47.222 INFO  - ps7_post_config is completed. 
+11:51:47.322 INFO  - PS Initialization is complete. 
+11:52:43.999 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:52:44.099 INFO  - PS initialization will be done as it is not done before. 
+11:52:44.099 INFO  - Running PS initialization.... 
+11:52:44.287 INFO  - ps7_init is completed. 
+11:52:44.387 INFO  - ps7_post_config is completed. 
+11:52:44.559 INFO  - PS Initialization is complete. 
+11:54:10.944 INFO  - Processor reset is completed for ps7_cortexa9_0 
+00:24:17.825 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+00:24:17.852 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+11:48:18.936 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+13:14:55.119 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+16:58:52.260 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:58:52.360 INFO  - PS initialization will be done as it is not done before. 
+16:58:52.360 INFO  - Running PS initialization.... 
+16:58:52.539 INFO  - ps7_init is completed. 
+16:58:52.639 INFO  - ps7_post_config is completed. 
+16:58:52.739 INFO  - PS Initialization is complete. 
+17:04:51.586 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:04:51.833 INFO  - PS initialization will be done as it is not done before. 
+17:04:51.833 INFO  - Running PS initialization.... 
+17:04:52.015 INFO  - ps7_init is completed. 
+17:04:52.115 INFO  - ps7_post_config is completed. 
+17:04:52.215 INFO  - PS Initialization is complete. 
+17:06:27.770 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:10:24.544 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:16:39.425 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:19:16.968 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:19:53.285 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:22:19.500 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:26:56.849 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:26:56.949 INFO  - PS initialization will be done as it is not done before. 
+17:26:56.949 INFO  - Running PS initialization.... 
+17:26:57.378 INFO  - ps7_init is completed. 
+17:26:57.384 INFO  - ps7_post_config is completed. 
+17:26:57.484 INFO  - PS Initialization is complete. 
+17:27:06.358 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
+17:28:16.836 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:28:16.936 INFO  - PS initialization will be done as it is not done before. 
+17:28:16.937 INFO  - Running PS initialization.... 
+17:28:17.119 INFO  - ps7_init is completed. 
+17:28:17.219 INFO  - ps7_post_config is completed. 
+17:28:17.319 INFO  - PS Initialization is complete. 
+17:34:34.953 INFO  - ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:35:24.309 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:36:21.889 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:36:21.989 INFO  - PS initialization will be done as it is not done before. 
+17:36:21.989 INFO  - Running PS initialization.... 
+17:36:22.180 INFO  - ps7_init is completed. 
+17:36:22.280 INFO  - ps7_post_config is completed. 
+17:36:22.451 INFO  - PS Initialization is complete. 
+17:38:19.465 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:38:19.565 INFO  - PS initialization will be done as it is not done before. 
+17:38:19.565 INFO  - Running PS initialization.... 
+17:38:19.954 INFO  - ps7_init is completed. 
+17:38:19.962 INFO  - ps7_post_config is completed. 
+17:38:19.965 INFO  - PS Initialization is complete. 
+17:42:45.833 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:42:46.069 INFO  - PS initialization will be done as it is not done before. 
+17:42:46.069 INFO  - Running PS initialization.... 
+17:42:46.242 INFO  - ps7_init is completed. 
+17:42:46.342 INFO  - ps7_post_config is completed. 
+17:42:46.442 INFO  - PS Initialization is complete. 
+17:45:23.261 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+17:45:23.265 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+17:47:06.639 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+17:47:26.293 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:36:55.090 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:36:55.093 INFO  - PS initialization will be done as it is not done before. 
+18:36:55.093 INFO  - Running PS initialization.... 
+18:36:55.303 INFO  - ps7_init is completed. 
+18:36:55.310 INFO  - ps7_post_config is completed. 
+18:36:55.410 INFO  - PS Initialization is complete. 
+18:39:11.426 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:40:49.691 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:42:02.784 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:44:21.103 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:45:00.690 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:29:18.948 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+17:29:18.949 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+18:32:03.608 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+18:35:31.235 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:37:08.293 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:37:08.393 INFO  - PS initialization will be done as it is not done before. 
+18:37:08.393 INFO  - Running PS initialization.... 
+18:37:08.570 INFO  - ps7_init is completed. 
+18:37:08.670 INFO  - ps7_post_config is completed. 
+18:37:08.770 INFO  - PS Initialization is complete. 
+18:38:10.944 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:20:37.759 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+15:50:35.574 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:50:35.674 INFO  - PS initialization will be done as it is not done before. 
+15:50:35.675 INFO  - Running PS initialization.... 
+15:50:35.866 INFO  - ps7_init is completed. 
+15:50:35.966 INFO  - ps7_post_config is completed. 
+15:50:36.172 INFO  - PS Initialization is complete. 
+18:36:15.619 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:36:58.834 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:39:18.091 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:39:18.191 INFO  - PS initialization will be done as it is not done before. 
+18:39:18.191 INFO  - Running PS initialization.... 
+18:39:18.385 INFO  - ps7_init is completed. 
+18:39:18.485 INFO  - ps7_post_config is completed. 
+18:39:18.585 INFO  - PS Initialization is complete. 
+18:42:59.310 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:45:00.699 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:45:00.799 INFO  - PS initialization will be done as it is not done before. 
+18:45:00.799 INFO  - Running PS initialization.... 
+18:45:00.988 INFO  - ps7_init is completed. 
+18:45:01.088 INFO  - ps7_post_config is completed. 
+18:45:01.091 INFO  - PS Initialization is complete. 
+18:53:10.663 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:01:12.942 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:12:35.664 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:12:35.764 INFO  - PS initialization will be done as it is not done before. 
+22:12:35.764 INFO  - Running PS initialization.... 
+22:12:35.965 INFO  - ps7_init is completed. 
+22:12:35.972 INFO  - ps7_post_config is completed. 
+22:12:35.975 INFO  - PS Initialization is complete. 
+22:13:23.090 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:14:10.975 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:14:11.076 INFO  - PS initialization will be done as it is not done before. 
+22:14:11.076 INFO  - Running PS initialization.... 
+22:14:11.452 INFO  - ps7_init is completed. 
+22:14:11.459 INFO  - ps7_post_config is completed. 
+22:14:11.559 INFO  - PS Initialization is complete. 
+22:26:50.528 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:27:42.967 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:27:43.067 INFO  - PS initialization will be done as it is not done before. 
+22:27:43.067 INFO  - Running PS initialization.... 
+22:27:43.254 INFO  - ps7_init is completed. 
+22:27:43.354 INFO  - ps7_post_config is completed. 
+22:27:43.544 INFO  - PS Initialization is complete. 
+22:30:25.910 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:31:20.254 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:31:20.354 INFO  - PS initialization will be done as it is not done before. 
+22:31:20.354 INFO  - Running PS initialization.... 
+22:31:20.542 INFO  - ps7_init is completed. 
+22:31:20.549 INFO  - ps7_post_config is completed. 
+22:31:20.649 INFO  - PS Initialization is complete. 
+22:32:31.468 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:35:31.511 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+02:53:43.019 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+02:54:08.493 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+02:55:22.272 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+02:55:22.273 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+02:56:18.509 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+02:56:35.853 INFO  - Processor reset is completed for ps7_cortexa9_0 
+02:56:35.953 INFO  - PS initialization will be done as it is not done before. 
+02:56:35.953 INFO  - Running PS initialization.... 
+02:56:36.136 INFO  - ps7_init is completed. 
+02:56:36.236 INFO  - ps7_post_config is completed. 
+02:56:36.430 INFO  - PS Initialization is complete. 
+02:58:42.101 INFO  - Processor reset is completed for ps7_cortexa9_0 
+03:00:21.824 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:08:36.291 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:08:36.391 INFO  - PS initialization will be done as it is not done before. 
+11:08:36.391 INFO  - Running PS initialization.... 
+11:08:36.565 INFO  - ps7_init is completed. 
+11:08:36.665 INFO  - ps7_post_config is completed. 
+11:08:36.765 INFO  - PS Initialization is complete. 
+11:09:50.326 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:12:36.517 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:17:45.071 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+11:19:35.255 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:22:35.700 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+11:23:08.852 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+11:58:10.329 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+12:06:38.665 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+12:08:12.341 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:08:12.441 INFO  - PS initialization will be done as it is not done before. 
+12:08:12.441 INFO  - Running PS initialization.... 
+12:08:12.622 INFO  - ps7_init is completed. 
+12:08:12.723 INFO  - ps7_post_config is completed. 
+12:08:12.726 INFO  - PS Initialization is complete. 
+12:08:36.868 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:16:26.448 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:16:26.548 INFO  - PS initialization will be done as it is not done before. 
+15:16:26.548 INFO  - Running PS initialization.... 
+15:16:26.728 INFO  - ps7_init is completed. 
+15:16:26.735 INFO  - ps7_post_config is completed. 
+15:16:26.739 INFO  - PS Initialization is complete. 
+15:27:15.945 INFO  - Processor reset is completed for ps7_cortexa9_0 
+15:28:47.342 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:17:28.201 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:17:28.301 INFO  - PS initialization will be done as it is not done before. 
+17:17:28.302 INFO  - Running PS initialization.... 
+17:17:28.487 INFO  - ps7_init is completed. 
+17:17:28.587 INFO  - ps7_post_config is completed. 
+17:17:28.687 INFO  - PS Initialization is complete. 
+17:18:43.554 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:18:43.654 INFO  - PS initialization will be done as it is not done before. 
+17:18:43.654 INFO  - Running PS initialization.... 
+17:18:43.841 INFO  - ps7_init is completed. 
+17:18:43.848 INFO  - ps7_post_config is completed. 
+17:18:43.948 INFO  - PS Initialization is complete. 
+17:24:07.147 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:24:07.247 INFO  - PS initialization will be done as it is not done before. 
+17:24:07.247 INFO  - Running PS initialization.... 
+17:24:07.439 INFO  - ps7_init is completed. 
+17:24:07.539 INFO  - ps7_post_config is completed. 
+17:24:07.639 INFO  - PS Initialization is complete. 
+17:59:01.254 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:01:54.695 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+18:03:16.572 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:04:02.648 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+18:04:39.211 INFO  - Processor reset is completed for ps7_cortexa9_0 
+18:04:39.311 INFO  - PS initialization will be done as it is not done before. 
+18:04:39.311 INFO  - Running PS initialization.... 
+18:04:39.498 INFO  - ps7_init is completed. 
+18:04:39.598 INFO  - ps7_post_config is completed. 
+18:04:39.848 INFO  - PS Initialization is complete. 
+19:20:56.285 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:20:56.385 INFO  - PS initialization will be done as it is not done before. 
+19:20:56.385 INFO  - Running PS initialization.... 
+19:20:56.573 INFO  - ps7_init is completed. 
+19:20:56.581 INFO  - ps7_post_config is completed. 
+19:20:56.681 INFO  - PS Initialization is complete. 
+20:46:40.651 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:46:40.751 INFO  - PS initialization will be done as it is not done before. 
+20:46:40.751 INFO  - Running PS initialization.... 
+20:46:40.940 INFO  - ps7_init is completed. 
+20:46:41.040 INFO  - ps7_post_config is completed. 
+20:46:41.140 INFO  - PS Initialization is complete. 
+22:09:47.475 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:09:47.575 INFO  - PS initialization will be done as it is not done before. 
+22:09:47.575 INFO  - Running PS initialization.... 
+22:09:47.753 INFO  - ps7_init is completed. 
+22:09:47.853 INFO  - ps7_post_config is completed. 
+22:09:47.953 INFO  - PS Initialization is complete. 
+22:18:02.277 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:18:49.292 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:18:49.294 INFO  - PS initialization will be done as it is not done before. 
+22:18:49.295 INFO  - Running PS initialization.... 
+22:18:49.469 INFO  - ps7_init is completed. 
+22:18:49.569 INFO  - ps7_post_config is completed. 
+22:18:49.669 INFO  - PS Initialization is complete. 
+22:21:57.417 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:22:53.157 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+22:23:03.525 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+22:25:05.635 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+22:25:47.725 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:25:47.826 INFO  - PS initialization will be done as it is not done before. 
+22:25:47.826 INFO  - Running PS initialization.... 
+22:25:48.267 INFO  - ps7_init is completed. 
+22:25:48.367 INFO  - ps7_post_config is completed. 
+22:25:48.467 INFO  - PS Initialization is complete. 
+22:31:34.376 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+10:31:17.677 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+12:13:13.676 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:13:13.776 INFO  - PS initialization will be done as it is not done before. 
+12:13:13.776 INFO  - Running PS initialization.... 
+12:13:13.989 INFO  - ps7_init is completed. 
+12:13:14.089 INFO  - ps7_post_config is completed. 
+12:13:14.189 INFO  - PS Initialization is complete. 
+12:14:24.162 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:14:24.262 INFO  - PS initialization will be done as it is not done before. 
+12:14:24.262 INFO  - Running PS initialization.... 
+12:14:24.462 INFO  - ps7_init is completed. 
+12:14:24.562 INFO  - ps7_post_config is completed. 
+12:14:24.663 INFO  - PS Initialization is complete. 
+13:15:18.662 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:17:02.928 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:20:01.489 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:21:47.291 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:30:18.614 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:32:13.004 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:32:46.422 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:32:46.522 INFO  - PS initialization will be done as it is not done before. 
+13:32:46.522 INFO  - Running PS initialization.... 
+13:32:46.726 INFO  - ps7_init is completed. 
+13:32:46.826 INFO  - ps7_post_config is completed. 
+13:32:46.926 INFO  - PS Initialization is complete. 
+13:39:50.519 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:40:44.287 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:40:44.387 INFO  - PS initialization will be done as it is not done before. 
+13:40:44.387 INFO  - Running PS initialization.... 
+13:40:44.606 INFO  - ps7_init is completed. 
+13:40:44.706 INFO  - ps7_post_config is completed. 
+13:40:44.806 INFO  - PS Initialization is complete. 
+19:44:45.856 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:44:45.956 INFO  - PS initialization will be done as it is not done before. 
+19:44:45.956 INFO  - Running PS initialization.... 
+19:44:46.159 INFO  - ps7_init is completed. 
+19:44:46.259 INFO  - ps7_post_config is completed. 
+19:44:46.359 INFO  - PS Initialization is complete. 
+19:47:19.950 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:48:50.542 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:03:33.033 INFO  - Processor reset is completed for ps7_cortexa9_0 
+20:06:26.330 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:46:11.807 INFO  - Processor reset is completed for ps7_cortexa9_0 
+22:46:11.907 INFO  - PS initialization will be done as it is not done before. 
+22:46:11.907 INFO  - Running PS initialization.... 
+22:46:12.104 INFO  - ps7_init is completed. 
+22:46:12.204 INFO  - ps7_post_config is completed. 
+22:46:12.304 INFO  - PS Initialization is complete. 
+23:10:04.380 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:13:53.220 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:14:40.687 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:18:17.502 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:19:19.449 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:19:19.549 INFO  - PS initialization will be done as it is not done before. 
+23:19:19.549 INFO  - Running PS initialization.... 
+23:19:19.749 INFO  - ps7_init is completed. 
+23:19:19.849 INFO  - ps7_post_config is completed. 
+23:19:19.949 INFO  - PS Initialization is complete. 
+23:20:31.269 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:21:21.996 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:22:43.469 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:22:43.569 INFO  - PS initialization will be done as it is not done before. 
+23:22:43.569 INFO  - Running PS initialization.... 
+23:22:43.772 INFO  - ps7_init is completed. 
+23:22:43.872 INFO  - ps7_post_config is completed. 
+23:22:43.972 INFO  - PS Initialization is complete. 
+23:23:18.821 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:23:55.814 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:25:12.046 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:26:13.244 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:26:49.682 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:27:26.019 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:28:06.329 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:28:44.741 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:31:10.787 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2_1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+23:34:17.344 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:34:17.444 INFO  - PS initialization will be done as it is not done before. 
+23:34:17.444 INFO  - Running PS initialization.... 
+23:34:17.653 INFO  - ps7_init is completed. 
+23:34:17.753 INFO  - ps7_post_config is completed. 
+23:34:17.853 INFO  - PS Initialization is complete. 
+23:35:40.283 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:50:01.561 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:55:34.155 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:50:04.775 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+11:58:34.897 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:58:34.997 INFO  - PS initialization will be done as it is not done before. 
+11:58:34.997 INFO  - Running PS initialization.... 
+11:58:35.184 INFO  - ps7_init is completed. 
+11:58:35.284 INFO  - ps7_post_config is completed. 
+11:58:35.384 INFO  - PS Initialization is complete. 
+12:00:50.783 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:00:50.883 INFO  - PS initialization will be done as it is not done before. 
+12:00:50.883 INFO  - Running PS initialization.... 
+12:00:51.066 INFO  - ps7_init is completed. 
+12:00:51.166 INFO  - ps7_post_config is completed. 
+12:00:51.366 INFO  - PS Initialization is complete. 
+12:10:26.835 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:11:51.594 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:23:25.631 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:24:14.440 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:24:14.540 INFO  - PS initialization will be done as it is not done before. 
+12:24:14.540 INFO  - Running PS initialization.... 
+12:24:14.715 INFO  - ps7_init is completed. 
+12:24:14.815 INFO  - ps7_post_config is completed. 
+12:24:14.818 INFO  - PS Initialization is complete. 
+12:26:48.254 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:26:48.354 INFO  - PS initialization will be done as it is not done before. 
+12:26:48.354 INFO  - Running PS initialization.... 
+12:26:48.543 INFO  - ps7_init is completed. 
+12:26:48.550 INFO  - ps7_post_config is completed. 
+12:26:48.650 INFO  - PS Initialization is complete. 
+12:27:38.717 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:27:38.719 INFO  - PS initialization will be done as it is not done before. 
+12:27:38.719 INFO  - Running PS initialization.... 
+12:27:38.895 INFO  - ps7_init is completed. 
+12:27:38.995 INFO  - ps7_post_config is completed. 
+12:27:39.239 INFO  - PS Initialization is complete. 
+12:29:20.748 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+12:29:49.359 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:29:49.459 INFO  - PS initialization will be done as it is not done before. 
+12:29:49.459 INFO  - Running PS initialization.... 
+12:29:49.641 INFO  - ps7_init is completed. 
+12:29:49.741 INFO  - ps7_post_config is completed. 
+12:29:49.841 INFO  - PS Initialization is complete. 
+12:36:09.428 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:36:52.267 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:41:33.988 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+13:55:40.018 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+13:58:48.250 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:58:48.350 INFO  - PS initialization will be done as it is not done before. 
+13:58:48.350 INFO  - Running PS initialization.... 
+13:58:48.550 INFO  - ps7_init is completed. 
+13:58:48.650 INFO  - ps7_post_config is completed. 
+13:58:48.750 INFO  - PS Initialization is complete. 
+13:59:43.912 INFO  - Processor reset is completed for ps7_cortexa9_0 
+13:59:44.012 INFO  - PS initialization will be done as it is not done before. 
+13:59:44.012 INFO  - Running PS initialization.... 
+13:59:44.217 INFO  - ps7_init is completed. 
+13:59:44.317 INFO  - ps7_post_config is completed. 
+13:59:44.418 INFO  - PS Initialization is complete. 
+14:15:58.038 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+14:16:07.293 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+14:21:03.951 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+14:21:27.540 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:21:27.645 INFO  - PS initialization will be done as it is not done before. 
+14:21:27.646 INFO  - Running PS initialization.... 
+14:21:28.544 INFO  - ps7_init is completed. 
+14:21:28.644 INFO  - ps7_post_config is completed. 
+14:21:28.871 INFO  - PS Initialization is complete. 
+14:22:38.962 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:22:39.062 INFO  - PS initialization will be done as it is not done before. 
+14:22:39.062 INFO  - Running PS initialization.... 
+14:22:39.250 INFO  - ps7_init is completed. 
+14:22:39.350 INFO  - ps7_post_config is completed. 
+14:22:39.450 INFO  - PS Initialization is complete. 
+14:23:08.567 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:28:05.457 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:57:07.309 INFO  - Processor reset is completed for ps7_cortexa9_0 
+14:57:07.409 INFO  - PS initialization will be done as it is not done before. 
+14:57:07.409 INFO  - Running PS initialization.... 
+14:57:07.590 INFO  - ps7_init is completed. 
+14:57:07.691 INFO  - ps7_post_config is completed. 
+14:57:07.791 INFO  - PS Initialization is complete. 
+15:04:51.621 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:19:07.674 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+23:22:06.495 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/kmean-small/scgra2x2-kmean-small.bit" 
+23:22:56.602 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:25:15.738 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:30:02.065 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:32:00.690 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:37:08.946 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/kmean-small/scgra2x2-kmean-small.bit" 
+23:37:33.588 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:40:14.278 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+08:49:26.729 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+08:51:39.859 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/kmean-medium/scgra2x2-kmean-medium.bit" 
+08:52:48.337 INFO  - Processor reset is completed for ps7_cortexa9_0 
+08:59:03.278 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/kmean-large/scgra2x2-kmean-medium.bit" 
+08:59:27.746 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:41:51.204 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/kmean-large/scgra2x2-kmean-medium.bit" 
+09:42:20.400 INFO  - Processor reset is completed for ps7_cortexa9_0 
+09:55:26.310 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:29:07.961 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+23:30:01.820 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/sobel-small/scgra2x2-sobel-small.bit" 
+23:30:38.902 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:31:57.385 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/kmean-small/scgra2x2-kmean-small.bit" 
+23:32:26.806 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:33:14.222 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/kmean-medium/scgra2x2-kmean-medium.bit" 
+23:33:43.306 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:34:48.156 INFO  - Processor reset is completed for ps7_cortexa9_0 
+23:35:34.812 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:44:27.045 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+11:45:29.824 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/sobel-small/scgra2x2-sobel-small.bit" 
+11:46:10.743 INFO  - Processor reset is completed for ps7_cortexa9_0 
+11:46:10.853 INFO  - PS initialization will be done as it is not done before. 
+11:46:10.853 INFO  - Running PS initialization.... 
+11:46:11.071 INFO  - ps7_init is completed. 
+11:46:11.180 INFO  - ps7_post_config is completed. 
+11:46:11.289 INFO  - PS Initialization is complete. 
+11:47:04.317 INFO  - Processor reset is completed for ps7_cortexa9_0 
+12:55:39.730 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:47:27.169 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+16:53:38.569 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/mm-small/scgra2x2-mm-small.bit" 
+16:54:51.934 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:56:01.572 INFO  - Processor reset is completed for ps7_cortexa9_0 
+16:56:14.831 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+16:58:37.002 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+16:59:24.456 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/mm-small/scgra2x2-mm-small.bit" 
+16:59:55.955 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:00:30.034 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:07:21.449 INFO  - Processor reset is completed for ps7_cortexa9_0 
+17:07:48.978 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:53:05.804 INFO  - Processing command line option -hwspec D:/minibench/scgra/scgra2x2-1k/scgra2x2_1k.sdk/SDK/SDK_Export/hw/base_sys.xml. 
+19:04:34.525 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/mm-small/scgra2x2-mm-small.bit" 
+19:04:57.705 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:04:57.805 INFO  - PS initialization will be done as it is not done before. 
+19:04:57.805 INFO  - Running PS initialization.... 
+19:04:57.994 INFO  - ps7_init is completed. 
+19:04:58.094 INFO  - ps7_post_config is completed. 
+19:04:58.194 INFO  - PS Initialization is complete. 
+19:25:12.430 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/mm-small/scgra2x2-mm-small.bit" 
+19:25:34.108 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:25:34.209 INFO  - PS initialization will be done as it is not done before. 
+19:25:34.209 INFO  - Running PS initialization.... 
+19:25:34.577 INFO  - ps7_init is completed. 
+19:25:34.677 INFO  - ps7_post_config is completed. 
+19:25:34.777 INFO  - PS Initialization is complete. 
+19:29:46.653 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/mm-small/scgra2x2-mm-small.bit" 
+19:30:14.965 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:30:15.065 INFO  - PS initialization will be done as it is not done before. 
+19:30:15.065 INFO  - Running PS initialization.... 
+19:30:15.241 INFO  - ps7_init is completed. 
+19:30:15.341 INFO  - ps7_post_config is completed. 
+19:30:15.441 INFO  - PS Initialization is complete. 
+19:33:39.473 INFO  - FPGA configured successfully with bitstream "D:/minibench/scgra/scgra2x2-1k/DFG-IF/mm-small/scgra2x2-mm-small.bit" 
+19:33:58.568 INFO  - Processor reset is completed for ps7_cortexa9_0 
+19:33:58.668 INFO  - PS initialization will be done as it is not done before. 
+19:33:58.668 INFO  - Running PS initialization.... 
+19:33:58.845 INFO  - ps7_init is completed. 
+19:33:58.945 INFO  - ps7_post_config is completed. 
+19:33:59.045 INFO  - PS Initialization is complete. 
