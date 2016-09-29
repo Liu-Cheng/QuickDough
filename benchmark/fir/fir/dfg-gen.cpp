@@ -27,9 +27,9 @@ int main(){
     std::string DFG_Name = "fir";
 
     // Declare the input/output of the loop kernel
-    int sigIn[N-1+L];
+    int sig_in[N-1+L];
+    int sig_out[L];
     int coeff[N];
-    int sigOut[L];
 
     // Input initialization  
     ioInit(sigIn, coeff);
