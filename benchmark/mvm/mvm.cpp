@@ -1,4 +1,4 @@
-#include "mmm.h"
+#include "mvm.h"
 
 DFG::DFG(){
     ioInit();
@@ -16,15 +16,11 @@ void DFG::ioInit(){
     }
 
     for(int i = 0; i < N; i++){
-        for(int j = 0; j < P; j++){
-            bIn[j][i] = (rand()%100)/100.0;
-        }
+        bIn[i] = (rand()%100)/100.0;
     }
 
     for(int i = 0; i < M; i++){
-        for(int j = 0; j < P; j++){
-            cOut[i][j] = 0; 
-        }
+        cOut[i] = 0; 
     }
 
 }
@@ -68,47 +64,43 @@ void DFG::kernelToDFG(){
     }
 
     for(int i = 0; i < N; i++){
-        for(int j = 0; j < P; j++){
-            int idx = GL::getIdx();
-            Opcode op = MULADD;
-            VertexType type = IN;
-            Vertex* vptr = new Vertex(idx, op, type);
-            vptr->val = bIn[i][j];
-            vertices.push_back(vptr);
-            int bInIdx = i * P + j;
-            bInIdxToVidx[bInIdx] = idx;
-        }
+        int idx = GL::getIdx();
+        Opcode op = MULADD;
+        VertexType type = IN;
+        Vertex* vptr = new Vertex(idx, op, type);
+        vptr->val = bIn[i];
+        vertices.push_back(vptr);
+        int bInIdx = i;
+        bInIdxToVidx[bInIdx] = idx;
     }
 
     for(int i = 0; i < M; i++){
-        for(int j = 0; j < P; j++){
-            Vertex* v0 = vertices[aInIdxToVidx[i*N]];
-            Vertex* v1 = vertices[bInIdxToVidx[j]];
-            Vertex* vptr = createVertex(v0, v1, NULL, MUL, IM);
-            vertices.push_back(vptr);
+        Vertex* v0 = vertices[aInIdxToVidx[i*N]];
+        Vertex* v1 = vertices[bInIdxToVidx[0]];
+        Vertex* vptr = createVertex(v0, v1, NULL, MUL, IM);
+        vertices.push_back(vptr);
 
-            Vertex* vtmp = new Vertex(false);
-            for(int k = 1; k < N; k++){
-                v0 = vertices[aInIdxToVidx[i*N+k]];
-                v1 = vertices[bInIdxToVidx[k*P+j]];
-                Vertex* vmul = createVertex(v0, v1, NULL, MUL, IM);
-                vertices.push_back(vmul);
-                
-                // Create output vertices
-                if(k == N -1){
-                    Vertex* vout = createVertex(vmul, vtmp, NULL, ADD, OUT);
-                    vout->val = cOut[i][j];
-                    vertices.push_back(vout);
-                    cOutIdxToVidx[i*P+j] = vout->idx;
-                }
-                else if(k == 1){
-                    vtmp = createVertex(vptr, vmul, NULL, ADD, IM);
-                    vertices.push_back(vtmp);
-                }
-                else{
-                    vtmp = createVertex(vtmp, vmul, NULL, ADD, IM);
-                    vertices.push_back(vtmp);
-                }
+        Vertex* vtmp = new Vertex(false);
+        for(int j = 1; j < N; j++){
+            v0 = vertices[aInIdxToVidx[i*N+j]];
+            v1 = vertices[bInIdxToVidx[j]];
+            Vertex* vmul = createVertex(v0, v1, NULL, MUL, IM);
+            vertices.push_back(vmul);
+
+            // Create output vertices
+            if(j == N -1){
+                Vertex* vout = createVertex(vmul, vtmp, NULL, ADD, OUT);
+                vout->val = cOut[i];
+                vertices.push_back(vout);
+                cOutIdxToVidx[i] = vout->idx;
+            }
+            else if(j == 1){
+                vtmp = createVertex(vptr, vmul, NULL, ADD, IM);
+                vertices.push_back(vtmp);
+            }
+            else{
+                vtmp = createVertex(vtmp, vmul, NULL, ADD, IM);
+                vertices.push_back(vtmp);
             }
         }
     }
@@ -127,8 +119,8 @@ void DFG::iodump(){
     fhandle << "#ifndef _IO_H_" << std::endl;
     fhandle << "#define _IO_H_" << std::endl << std::endl;
     fhandle << "int aIn[" << M << "][" << N << "];" << std::endl;
-    fhandle << "int bIn[" << N << "][" << P << "];" << std::endl;
-    fhandle << "int cOut[" << M << "][" << P << "];" << std::endl;
+    fhandle << "int bIn[" << N << "];" << std::endl;
+    fhandle << "int cOut[" << M << "];" << std::endl;
 
     fhandle << std::endl << "#endif" << std::endl;
     fhandle.close();
@@ -151,34 +143,28 @@ void DFG::compute(){
 
 void DFG::verify(){
 
-    double computedCout[M][M];
-    double expectedCout[M][M];
+    double computedCout[M];
+    double expectedCout[M];
     for(int i = 0; i < M; i++){
-        for(int j = 0; j < P; j++){
-            int vidx = cOutIdxToVidx[i*P+j];
-            computedCout[i][j] = vertices[vidx]->val;
-        }
+        int vidx = cOutIdxToVidx[i];
+        computedCout[i] = vertices[vidx]->val;
     }
 
     for(int i = 0; i < M; i++){
-        for(int j = 0; j < P; j++){
-            expectedCout[i][j] = 0;
-            for(int k = 0; k < N; k++){
-                expectedCout[i][j] += aIn[i][k] * bIn[k][j];
-            }
+        expectedCout[i] = 0;
+        for(int j = 0; j < N; j++){
+            expectedCout[i] += aIn[i][j] * bIn[j];
         }
     }
 
     for(int i=0; i < M; i++){
-        for(int j=0; j < P; j++){
-            if(expectedCout[i][j] != computedCout[i][j]){
-                HERE;
-                std::cout << "DFG computation is wrong!" << std::endl;
-                std::cout << "expectedCout[" << i << "][" << j <<"] = " << expectedCout[i][j] << " ";
-                std::cout << "computedCout[" << i << "][" << j <<"] = " << computedCout[i][j] << " ";
-                std::cout << std::endl;
-                exit(EXIT_FAILURE);
-            }
+        if(expectedCout[i] != computedCout[i]){
+            HERE;
+            std::cout << "DFG computation is wrong!" << std::endl;
+            std::cout << "expectedCout[" << i << "] = " << expectedCout[i] << " ";
+            std::cout << "computedCout[" << i << "] = " << computedCout[i] << " ";
+            std::cout << std::endl;
+            exit(EXIT_FAILURE);
         }
     }
 
@@ -342,6 +328,9 @@ double DFG::getAvgDegree(){
 
 void DFG::dumpDot(const std::string& fname){
 
+    std::map<int, std::string> idToLabel;
+    createLabelMap(idToLabel);
+
     std::ofstream fhandle(fname.c_str());
     if(!fhandle.is_open()){
         HERE;
@@ -352,19 +341,22 @@ void DFG::dumpDot(const std::string& fname){
     // created directed graph
     fhandle << "digraph G {" << std::endl;
     for(auto it = vertices.begin(); it != vertices.end(); it++){
+        fhandle << (*it)->idx << "[label=\"" << idToLabel[(*it)->idx] << "\"];" << std::endl;
+    }
+    for(auto it = vertices.begin(); it != vertices.end(); it++){
         if((*it)->inNgb[0] != -1){
-            fhandle << "  V" << (*it)->inNgb[0] << " -> "; 
-            fhandle << "V" << (*it)->idx << ";" << std::endl;
+            fhandle << (*it)->inNgb[0] << " -> "; 
+            fhandle << (*it)->idx << ";" << std::endl;
         }
 
         if((*it)->inNgb[1] != -1){
-            fhandle << " V" << (*it)->inNgb[1] << " -> ";
-            fhandle << "V" << (*it)->idx << ";" << std::endl;
+            fhandle << (*it)->inNgb[1] << " -> ";
+            fhandle << (*it)->idx << ";" << std::endl;
         }
 
         if((*it)->inNgb[2] != -1){
-            fhandle << " V" << (*it)->inNgb[2] << " -> ";
-            fhandle << "V" << (*it)->idx << ";" << std::endl;
+            fhandle << (*it)->inNgb[2] << " -> ";
+            fhandle << (*it)->idx << ";" << std::endl;
         }
     }
 
@@ -374,4 +366,39 @@ void DFG::dumpDot(const std::string& fname){
 
 }
 
+void DFG::createLabelMap(std::map<int, std::string> &idToLabel){
+    for(int i = 0; i < M; i++){
+        for(int j = 0; j < N; j++){
+            std::ostringstream oss;
+            oss << "aIn[" << i << "][" << j << "]";
+            int aInIdx = i * N + j;
+            int vidx = aInIdxToVidx[aInIdx];
+            idToLabel[vidx] = oss.str();
+        }
+    }
+
+    for(int i = 0; i < N; i++){
+        std::ostringstream oss;
+        oss << "bIn[" << i << "]";
+        int bInIdx = i;
+        int vidx = bInIdxToVidx[bInIdx];
+        idToLabel[vidx] = oss.str();
+    }
+
+    for(int i = 0; i < M; i++){
+        std::ostringstream oss;
+        oss << "cOut[" << i << "]";
+        int cOutIdx = i;
+        int vidx = cOutIdxToVidx[cOutIdx];
+        idToLabel[vidx] = oss.str();
+    }
+
+    for(auto it = vertices.begin(); it!= vertices.end(); it++){
+        if((*it)->type == IM){
+            std::ostringstream oss;
+            oss << (*it)->op;
+            idToLabel[(*it)->idx] = oss.str();
+        }
+    }
+}
 

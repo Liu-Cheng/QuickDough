@@ -1,6 +1,6 @@
 #include "common.h"
 #include "vertex.h"
-#include "mmm.h"
+#include "mvm.h"
 #include <cstdlib>
 
 int main(){
@@ -10,7 +10,7 @@ int main(){
   dfg->compute();
   dfg->verify();
   dfg->dump();
-  dfg->dumpDot("./dump/mmm.dot");
+  dfg->dumpDot("./dump/mvm.dot");
 
   return 0;
 

@@ -8,7 +8,6 @@
 
 #define M 8
 #define N 4
-#define P 6
 
 class DFG{
     public:
@@ -30,8 +29,8 @@ class DFG{
 
     private:
         double aIn[M][N];
-        double bIn[N][P];
-        double cOut[M][P];
+        double bIn[N];
+        double cOut[M];
 
         Vertex* createVertex(
                 Vertex* v0, 
@@ -47,6 +46,7 @@ class DFG{
         int getOutNum();
         void iodump();
         void ioInit();
+        void createLabelMap(std::map<int, std::string> &idToLabel);
 };
 
 #endif
