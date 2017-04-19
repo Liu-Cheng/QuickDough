@@ -7,9 +7,5 @@ Getting started
 $ make
 $ ./dfg-gen
 
-If you want to view the DFG generated with dot file.
-$ cd dump
-$ dot -Tpdf mmm.dot > mmm.pdf
-
 Contributors:
 Cheng Liu (st.liucheng@gmail.com, The University of Hong Kong)

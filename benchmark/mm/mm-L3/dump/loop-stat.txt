@@ -1,8 +1,0 @@
-DFG_In_Num 201
-DFG_Out_Num 100
-DFG_Operation_Num 1000
-DFG_Total_Nodes 1201
-Block_Repeat_Num 1
-Block_Reuse_Num 101
-Block_In_Num 201
-Block_Out_Num 100

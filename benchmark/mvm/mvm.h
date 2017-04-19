@@ -6,9 +6,9 @@
 #include <fstream>
 #include <map>
 
-#define M 2
-#define N 3
-#define P 4
+#define M 8
+#define N 4
+#define P 6
 
 class DFG{
     public:
@@ -47,7 +47,6 @@ class DFG{
         int getOutNum();
         void iodump();
         void ioInit();
-        void createLabelMap(std::map<int, std::string> &idToLabel);
 };
 
 #endif

@@ -151,8 +151,8 @@ void DFG::compute(){
 
 void DFG::verify(){
 
-    double computedCout[M][P];
-    double expectedCout[M][P];
+    double computedCout[M][M];
+    double expectedCout[M][M];
     for(int i = 0; i < M; i++){
         for(int j = 0; j < P; j++){
             int vidx = cOutIdxToVidx[i*P+j];
@@ -342,9 +342,6 @@ double DFG::getAvgDegree(){
 
 void DFG::dumpDot(const std::string& fname){
 
-    std::map<int, std::string> idToLabel;
-    createLabelMap(idToLabel);
-
     std::ofstream fhandle(fname.c_str());
     if(!fhandle.is_open()){
         HERE;
@@ -355,22 +352,19 @@ void DFG::dumpDot(const std::string& fname){
     // created directed graph
     fhandle << "digraph G {" << std::endl;
     for(auto it = vertices.begin(); it != vertices.end(); it++){
-        fhandle << (*it)->idx << "[label=\"" << idToLabel[(*it)->idx] << "\"];" << std::endl;
-    }
-    for(auto it = vertices.begin(); it != vertices.end(); it++){
         if((*it)->inNgb[0] != -1){
-            fhandle << (*it)->inNgb[0] << " -> "; 
-            fhandle << (*it)->idx << ";" << std::endl;
+            fhandle << "  V" << (*it)->inNgb[0] << " -> "; 
+            fhandle << "V" << (*it)->idx << ";" << std::endl;
         }
 
         if((*it)->inNgb[1] != -1){
-            fhandle << (*it)->inNgb[1] << " -> ";
-            fhandle << (*it)->idx << ";" << std::endl;
+            fhandle << " V" << (*it)->inNgb[1] << " -> ";
+            fhandle << "V" << (*it)->idx << ";" << std::endl;
         }
 
         if((*it)->inNgb[2] != -1){
-            fhandle << (*it)->inNgb[2] << " -> ";
-            fhandle << (*it)->idx << ";" << std::endl;
+            fhandle << " V" << (*it)->inNgb[2] << " -> ";
+            fhandle << "V" << (*it)->idx << ";" << std::endl;
         }
     }
 
@@ -380,43 +374,4 @@ void DFG::dumpDot(const std::string& fname){
 
 }
 
-void DFG::createLabelMap(std::map<int, std::string> &idToLabel){
-    for(int i = 0; i < M; i++){
-        for(int j = 0; j < N; j++){
-            std::ostringstream oss;
-            oss << "aIn[" << i << "][" << j << "]";
-            int aInIdx = i * N + j;
-            int vidx = aInIdxToVidx[aInIdx];
-            idToLabel[vidx] = oss.str();
-        }
-    }
-
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < P; j++){
-            std::ostringstream oss;
-            oss << "bIn[" << i << "][" << j << "]";
-            int bInIdx = i * P + j;
-            int vidx = bInIdxToVidx[bInIdx];
-            idToLabel[vidx] = oss.str();
-        }
-    }
-
-    for(int i = 0; i < M; i++){
-        for(int j = 0; j < P; j++){
-            std::ostringstream oss;
-            oss << "cOut[" << i << "][" << j << "]";
-            int cOutIdx = i * P + j;
-            int vidx = cOutIdxToVidx[cOutIdx];
-            idToLabel[vidx] = oss.str();
-        }
-    }
-
-    for(auto it = vertices.begin(); it!= vertices.end(); it++){
-        if((*it)->type == IM){
-            std::ostringstream oss;
-            oss << (*it)->op;
-            idToLabel[(*it)->idx] = oss.str();
-        }
-    }
-}
 
