@@ -9,7 +9,7 @@
 
 #define S 16 // # of data tuples
 #define N 4  // # of centroids 
-#define D 2  // # of data dimension
+#define D 4  // # of data dimension
 
 class DFG{
     public:

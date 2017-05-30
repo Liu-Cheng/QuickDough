@@ -111,8 +111,8 @@ void DFG::kernelToDFG(){
             Vertex* vinit = vertices[initIdxToVidx[j * D + 0]];
             Vertex* vsub = createVertex(vsample, vinit, NULL, SUB, IM);
             vertices.push_back(vsub);
-            Vertex* vmul = createVertex(vsub, vsub, NULL, MUL, IM);
-            vertices.push_back(vmul);
+            Vertex* vacc = createVertex(vsub, vsub, NULL, MUL, IM);
+            vertices.push_back(vacc);
             for(int k = 1; k < D; k++){
                 Vertex* vsk = vertices[samplesIdxToVidx[i * D + k]];
                 Vertex* vik = vertices[initIdxToVidx[j * D + k]];
@@ -120,7 +120,7 @@ void DFG::kernelToDFG(){
                 vertices.push_back(vsubTmp);
                 Vertex* vmulTmp = createVertex(vsubTmp, vsubTmp, NULL, MUL, IM);
                 vertices.push_back(vmulTmp);
-                Vertex* vacc = createVertex(vmul, vmulTmp, NULL, ADD, IM);
+                vacc = createVertex(vacc, vmulTmp, NULL, ADD, IM);
                 vertices.push_back(vacc);
                 if(k == D - 1){
                     distIdxToVidx[j] = vacc->idx;
