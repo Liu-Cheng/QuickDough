@@ -1,0 +1,4133 @@
+cscope 15 $HOME/gitrepo/QuickDough/benchmark/kmean               0000020479
+	@common.cpp
+
+1 
+	~"commÚ.h
+"
+
+3 
+	gGL
+::
+idx
+ = -1;
+
+5 
+	gGL
+::
+	$g‘Idx
+(){
+
+6 
+idx
+++;
+
+7  
+idx
+;
+
+8 
+	}
+}
+
+10 
+	g¡d
+::
+o¡»am
+& 
+İ”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+Opcode
+ 
+	gİ
+){
+
+11 
+	gİ
+){
+
+12 
+	gMULSUB
+:
+
+13 
+os
+ << "MULSUB";
+
+15 
+	gMULADD
+:
+
+16 
+os
+ << "MULADD";
+
+18 
+	gMUL
+:
+
+19 
+os
+ << "MUL";
+
+21 
+	gADD
+:
+
+22 
+os
+ << "ADD";
+
+24 
+	gSUB
+:
+
+25 
+os
+ << "SUB";
+
+27 
+	gPHI
+:
+
+28 
+os
+ << "PHI";
+
+30 
+	gABS
+:
+
+31 
+os
+ << "ABS";
+
+33 
+	gGT
+:
+
+34 
+os
+ << "GT";
+
+36 
+	gLET
+:
+
+37 
+os
+ << "LET";
+
+39 
+	gAND
+:
+
+40 
+os
+ << "AND";
+
+42 
+	gGET
+:
+
+43 
+os
+ << "GET";
+
+46 
+HERE
+;
+
+47 
+	g¡d
+::
+cout
+ << "Undefšed Opcode. " << 
+¡d
+::
+’dl
+;
+
+48 
+ex™
+(
+EXIT_FAILURE
+);
+
+51  
+	gos
+;
+
+54 
+	g¡d
+::
+o¡»am
+& 
+İ”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+V”‹xTy³
+ 
+	gvty³
+){
+
+55 
+	gvty³
+){
+
+56 
+	gIN
+:
+
+57 
+os
+ << "IM";
+
+59 
+	gOUT
+:
+
+60 
+os
+ << "OUT";
+
+62 
+	gIM
+:
+
+63 
+os
+ << "IM";
+
+66 
+HERE
+;
+
+67 
+	g¡d
+::
+cout
+ << "Undefšed v”‹xy³. " << 
+¡d
+::
+’dl
+;
+
+68 
+ex™
+(
+EXIT_FAILURE
+);
+
+71  
+	gos
+;
+
+	@common.h
+
+1 #iâdeà
+__COMMON_H__
+
+
+2 
+	#__COMMON_H__
+
+
+	)
+
+4 
+	~<io¡»am
+>
+
+5 
+	~<s¡»am
+>
+
+6 
+	~<c¡dlib
+>
+
+8 
+	#MAX_IN_DEG
+ 3
+
+	)
+
+10 
+	sGL
+{
+
+11 
+	mpublic
+:
+
+12 
+g‘Idx
+();
+
+14 
+	m´iv©e
+:
+
+15 
+idx
+;
+
+18 
+	eOpcode
+ {
+
+19 
+	mMULADD
+,
+
+20 
+	mMULSUB
+,
+
+21 
+	mMUL
+,
+
+22 
+	mADD
+,
+
+23 
+	mSUB
+,
+
+24 
+	mPHI
+,
+
+25 
+	mABS
+,
+
+26 
+	mGT
+,
+
+27 
+	mLET
+,
+
+28 
+	mAND
+,
+
+29 
+	mGET
+
+
+32 
+	eV”‹xTy³
+ {
+
+33 
+	mIN
+,
+
+34 
+	mIM
+,
+
+35 
+	mOUT
+
+
+38 
+	g¡d
+::
+o¡»am
+& 
+İ”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+Opcode
+ 
+	gİ
+);
+
+39 
+	g¡d
+::
+o¡»am
+& 
+İ”©Ü
+<< (
+¡d
+::o¡»am &
+os
+, 
+V”‹xTy³
+ 
+	gvty³
+);
+
+41 
+	#HERE
+ dØ{
+¡d
+::
+cout
+ <<"Fe: " << 
+__FILE__
+ << " Lše: " << 
+__LINE__
+ << std::
+’dl
+;} 0)
+
+	)
+
+	@dfg-gen.cpp
+
+1 
+	~"commÚ.h
+"
+
+2 
+	~"v”‹x.h
+"
+
+3 
+	~"km—n.h
+"
+
+4 
+	~<c¡dlib
+>
+
+6 
+	$maš
+(){
+
+8 
+DFG
+* 
+dfg
+ = 
+Ãw
+ 
+	`DFG
+();
+
+9 
+dfg
+->
+	`k”ÃlToDFG
+();
+
+10 
+dfg
+->
+	`compu‹
+();
+
+11 
+dfg
+->
+	`v”ify
+();
+
+12 
+dfg
+->
+	`dump
+();
+
+13 
+dfg
+->
+	`dumpDÙ
+("./dump/sobel.dot");
+
+17 
+	}
+}
+
+	@kmean.cpp
+
+1 
+	~"km—n.h
+"
+
+3 
+	gDFG
+::
+	$DFG
+(){
+
+4 
+	`ioIn™
+();
+
+5 
+¡d
+::
+cout
+ << "DFG i š™Ÿlized." << std::
+’dl
+;
+
+6 
+	}
+}
+
+8 
+	gDFG
+::
+	$ioIn™
+(){
+
+10 
+cÚ¡s
+[0] = 0;
+
+11 
+cÚ¡s
+[1] = 1;
+
+14 
+i
+ = 0; i < 
+S
+; i++){
+
+15 
+j
+ = 0; j < 
+D
+; j++){
+
+16 
+§m¶es
+[
+i
+][
+j
+] = (
+	`¿nd
+()%100)/10.0;
+
+21 
+i
+ = 0; i < 
+N
+; i++){
+
+22 
+j
+ = 0; j < 
+D
+; j++){
+
+23 
+š™C’Œoids
+[
+i
+][
+j
+] = 
+§m¶es
+[i][j];
+
+28 
+j
+ = 0; j < 
+N
+; j++){
+
+29 
+ûÁroidNum
+[
+j
+] = 0;
+
+30 
+gŞdC’ŒoidNum
+[
+j
+] = 0;
+
+31 
+k
+ = 0; k < 
+D
+; k++){
+
+32 
+ûÁroidSum
+[
+j
+][
+k
+] = 0;
+
+33 
+gŞdC’ŒoidSum
+[
+j
+][
+k
+] = 0;
+
+37 
+	}
+}
+
+39 
+V”‹x
+* 
+	gDFG
+::
+	$ü—‹V”‹x
+(
+
+40 
+V”‹x
+* 
+v0
+,
+
+41 
+V”‹x
+* 
+v1
+,
+
+42 
+V”‹x
+* 
+v2
+,
+
+43 
+Opcode
+ 
+İ
+,
+
+44 
+V”‹xTy³
+ 
+ty³
+)
+
+46 
+idx
+ = 
+GL
+::
+	`g‘Idx
+();
+
+47 
+V”‹x
+* 
+v±r
+ = 
+Ãw
+ 
+	`V”‹x
+(
+idx
+, 
+İ
+, 
+ty³
+);
+
+49 if(
+v0
+ !ğ
+NULL
+){
+
+50 
+v±r
+->
+šNgb
+[0] = 
+v0
+->
+idx
+;
+
+52 if(
+v1
+ !ğ
+NULL
+){
+
+53 
+v±r
+->
+šNgb
+[1] = 
+v1
+->
+idx
+;
+
+55 if(
+v2
+ !ğ
+NULL
+){
+
+56 
+v±r
+->
+šNgb
+[2] = 
+v2
+->
+idx
+;
+
+59  
+v±r
+;
+
+60 
+	}
+}
+
+62 
+	gDFG
+::
+	$k”ÃlToDFG
+(){
+
+65 
+i
+ = 0; i < 
+S
+; i++){
+
+66 
+j
+ = 0; j < 
+D
+; j++){
+
+67 
+idx
+ = 
+GL
+::
+	`g‘Idx
+();
+
+68 
+Opcode
+ 
+İ
+ = 
+MULADD
+;
+
+69 
+V”‹xTy³
+ 
+ty³
+ = 
+IN
+;
+
+70 
+V”‹x
+* 
+v±r
+ = 
+Ãw
+ 
+	`V”‹x
+(
+idx
+, 
+İ
+, 
+ty³
+);
+
+71 
+v±r
+->
+v®
+ = ()(
+§m¶es
+[
+i
+][
+j
+]);
+
+72 
+v”tiûs
+.
+	`push_back
+(
+v±r
+);
+
+73 
+§m¶esIdx
+ = 
+i
+ * 
+D
+ + 
+j
+;
+
+74 
+§m¶esIdxToVidx
+[
+§m¶esIdx
+] = 
+idx
+;
+
+79 
+i
+ = 0; i < 
+N
+; i++){
+
+80 
+j
+ = 0; j < 
+D
+; j++){
+
+81 
+idx
+ = 
+GL
+::
+	`g‘Idx
+();
+
+82 
+Opcode
+ 
+İ
+ = 
+MULADD
+;
+
+83 
+V”‹xTy³
+ 
+ty³
+ = 
+IN
+;
+
+84 
+V”‹x
+* 
+v±r
+ = 
+Ãw
+ 
+	`V”‹x
+(
+idx
+, 
+İ
+, 
+ty³
+);
+
+85 
+v±r
+->
+v®
+ = 
+š™C’Œoids
+[
+i
+][
+j
+];
+
+86 
+v”tiûs
+.
+	`push_back
+(
+v±r
+);
+
+87 
+š™Idx
+ = 
+i
+ * 
+D
+ + 
+j
+;
+
+88 
+š™IdxToVidx
+[
+š™Idx
+] = 
+idx
+;
+
+93 autØ
+c
+ : 
+cÚ¡s
+){
+
+94 
+idx
+ = 
+GL
+::
+	`g‘Idx
+();
+
+95 
+Opcode
+ 
+İ
+ = 
+MULADD
+;
+
+96 
+V”‹xTy³
+ 
+ty³
+ = 
+IN
+;
+
+97 
+V”‹x
+* 
+v±r
+ = 
+Ãw
+ 
+	`V”‹x
+(
+idx
+, 
+İ
+, 
+ty³
+);
+
+98 
+v±r
+->
+v®
+ = 
+c
+;
+
+99 
+v”tiûs
+.
+	`push_back
+(
+v±r
+);
+
+100 
+cÚ¡sToVidx
+[
+c
+] = 
+idx
+;
+
+104 
+i
+ = 0; i < 
+S
+; i++){
+
+106 
+¡d
+::
+m­
+<, > 
+di¡IdxToVidx
+;
+
+107 
+j
+ = 0; j < 
+N
+; j++){
+
+108 
+V”‹x
+* 
+v§m¶e
+ = 
+v”tiûs
+[
+§m¶esIdxToVidx
+[
+i
+ * 
+D
+ + 0]];
+
+109 
+V”‹x
+* 
+vš™
+ = 
+v”tiûs
+[
+š™IdxToVidx
+[
+j
+ * 
+D
+ + 0]];
+
+110 
+V”‹x
+* 
+vsub
+ = 
+	`ü—‹V”‹x
+(
+v§m¶e
+, 
+vš™
+, 
+NULL
+, 
+SUB
+, 
+IM
+);
+
+111 
+v”tiûs
+.
+	`push_back
+(
+vsub
+);
+
+112 
+V”‹x
+* 
+vmul
+ = 
+	`ü—‹V”‹x
+(
+vsub
+, vsub, 
+NULL
+, 
+MUL
+, 
+IM
+);
+
+113 
+v”tiûs
+.
+	`push_back
+(
+vmul
+);
+
+114 
+k
+ = 1; k < 
+D
+; k++){
+
+115 
+V”‹x
+* 
+vsk
+ = 
+v”tiûs
+[
+§m¶esIdxToVidx
+[
+i
+ * 
+D
+ + 
+k
+]];
+
+116 
+V”‹x
+* 
+vik
+ = 
+v”tiûs
+[
+š™IdxToVidx
+[
+j
+ * 
+D
+ + 
+k
+]];
+
+117 
+V”‹x
+* 
+vsubTmp
+ = 
+	`ü—‹V”‹x
+(
+vsk
+, 
+vik
+, 
+NULL
+, 
+MUL
+, 
+IM
+);
+
+118 
+v”tiûs
+.
+	`push_back
+(
+vsubTmp
+);
+
+119 
+V”‹x
+* 
+vmulTmp
+ = 
+	`ü—‹V”‹x
+(
+vsubTmp
+, vsubTmp, 
+NULL
+, 
+MUL
+, 
+IM
+);
+
+120 
+v”tiûs
+.
+	`push_back
+(
+vmulTmp
+);
+
+121 
+V”‹x
+* 
+vacc
+ = 
+	`ü—‹V”‹x
+(
+vmul
+, 
+vmulTmp
+, 
+NULL
+, 
+ADD
+, 
+IM
+);
+
+122 
+v”tiûs
+.
+	`push_back
+(
+vacc
+);
+
+123 if(
+k
+ =ğ
+D
+ - 1){
+
+124 
+di¡IdxToVidx
+[
+j
+] = 
+vacc
+->
+idx
+;
+
+130 
+V”‹x
+* 
+ı
+[
+N
+][N-1];
+
+131 
+x
+ = 0; x < 
+N
+; x++){
+
+132 
+y
+ = 0; y < 
+N
+; y++){
+
+133 if(
+x
+ =ğ
+y
+) ;
+
+134 
+V”‹x
+* 
+vx
+ = 
+v”tiûs
+[
+di¡IdxToVidx
+[
+x
+]];
+
+135 
+V”‹x
+* 
+vy
+ = 
+v”tiûs
+[
+di¡IdxToVidx
+[
+y
+]];
+
+136 if(
+x
+ < 
+y
+){
+
+137 
+ı
+[
+x
+][
+y
+] = 
+	`ü—‹V”‹x
+(
+vx
+, 
+vy
+, 
+NULL
+, 
+GET
+, 
+IM
+);
+
+138 
+v”tiûs
+.
+	`push_back
+(
+ı
+[
+x
+][
+y
+]);
+
+141 
+ı
+[
+x
+][
+y
+-1] = 
+	`ü—‹V”‹x
+(
+vx
+, 
+vy
+, 
+NULL
+, 
+GT
+, 
+IM
+);
+
+142 
+v”tiûs
+.
+	`push_back
+(
+ı
+[
+x
+][
+y
+-1]);
+
+147 
+¡d
+::
+m­
+<, > 
+isMaxIdxToVidx
+;
+
+148 
+x
+ = 0; x < 
+N
+; x++){
+
+149 
+V”‹x
+* 
+tmp1
+ = 
+ı
+[
+x
+][0];
+
+150 
+y
+ = 1; y < 
+N
+ -1; y++){
+
+151 
+V”‹x
+* 
+tmp2
+ = 
+ı
+[
+x
+][
+y
+];
+
+152 
+tmp1
+ = 
+	`ü—‹V”‹x
+Ñmp1, 
+tmp2
+, 
+NULL
+, 
+AND
+, 
+IM
+);
+
+153 
+v”tiûs
+.
+	`push_back
+(
+tmp1
+);
+
+154 if(
+y
+ =ğ
+N
+-2){
+
+155 
+isMaxIdxToVidx
+[
+x
+] = 
+tmp1
+->
+idx
+;
+
+161 
+V”‹x
+* 
+num
+[
+N
+];
+
+162 
+j
+ = 0; j < 
+N
+; j++){
+
+163 
+V”‹x
+* 
+£l
+ = 
+v”tiûs
+[
+isMaxIdxToVidx
+[
+j
+]];
+
+164 
+V”‹x
+* 
+c1
+ = 
+v”tiûs
+[
+cÚ¡sToVidx
+[1]];
+
+165 
+V”‹x
+* 
+c0
+ = 
+v”tiûs
+[
+cÚ¡sToVidx
+[0]];
+
+166 
+V”‹x
+* 
+addNum
+ = 
+	`ü—‹V”‹x
+(
+£l
+, 
+c1
+, 
+c0
+, 
+PHI
+, 
+IM
+);
+
+167 
+v”tiûs
+.
+	`push_back
+(
+addNum
+);
+
+168 if(
+i
+ == 0){
+
+169 
+num
+[
+j
+] = 
+addNum
+;
+
+171 if(
+i
+ < 
+N
+-1){
+
+172 
+num
+[
+j
+] = 
+	`ü—‹V”‹x
+(
+addNum
+,‚um[j], 
+NULL
+, 
+ADD
+, 
+IM
+);
+
+173 
+v”tiûs
+.
+	`push_back
+(
+num
+[
+j
+]);
+
+176 
+num
+[
+j
+] = 
+	`ü—‹V”‹x
+(
+addNum
+,‚um[j], 
+NULL
+, 
+ADD
+, 
+OUT
+);
+
+177 
+v”tiûs
+.
+	`push_back
+(
+num
+[
+j
+]);
+
+178 
+numIdxToVidx
+[
+j
+] = 
+num
+[j]->
+idx
+;
+
+183 
+V”‹x
+* 
+sum
+[
+N
+][
+D
+];
+
+184 
+j
+ = 0; j < 
+N
+; j++){
+
+185 
+V”‹x
+* 
+£l
+ = 
+v”tiûs
+[
+isMaxIdxToVidx
+[
+j
+]];
+
+186 
+k
+ = 0; k < 
+D
+; k++){
+
+187 
+V”‹x
+* 
+d©a
+ = 
+v”tiûs
+[
+§m¶esIdxToVidx
+[
+i
+ * 
+D
+ + 
+k
+]];
+
+188 
+V”‹x
+* 
+c0
+ = 
+v”tiûs
+[
+cÚ¡sToVidx
+[0]];
+
+189 
+V”‹x
+* 
+toBeAdded
+ = 
+	`ü—‹V”‹x
+(
+£l
+, 
+d©a
+, 
+c0
+, 
+PHI
+, 
+IM
+);
+
+190 
+v”tiûs
+.
+	`push_back
+(
+toBeAdded
+);
+
+191 if(
+i
+ == 0){
+
+192 
+sum
+[
+j
+][
+k
+] = 
+toBeAdded
+;
+
+194 if(
+i
+ < 
+N
+-1){
+
+195 
+sum
+[
+j
+][
+k
+] = 
+	`ü—‹V”‹x
+(sum[j][k], 
+toBeAdded
+, 
+NULL
+, 
+ADD
+, 
+IM
+);
+
+196 
+v”tiûs
+.
+	`push_back
+(
+sum
+[
+j
+][
+k
+]);
+
+199 
+sum
+[
+j
+][
+k
+] = 
+	`ü—‹V”‹x
+(sum[j][k], 
+toBeAdded
+, 
+NULL
+, 
+ADD
+, 
+OUT
+);
+
+200 
+v”tiûs
+.
+	`push_back
+(
+sum
+[
+j
+][
+k
+]);
+
+201 
+sumIdxToVidx
+[
+j
+ * 
+D
+ + 
+k
+] = 
+sum
+[j][k]->
+idx
+;
+
+206 
+	}
+}
+
+208 
+	gDFG
+::
+	$iodump
+(){
+
+210 
+¡d
+::
+¡ršg
+ 
+fName
+ = "./dump/io.h";
+
+211 
+¡d
+::
+of¡»am
+ 
+fhªdË
+;
+
+212 
+fhªdË
+.
+	`İ’
+(
+fName
+.
+	`c_¡r
+());
+
+213 if(!
+fhªdË
+.
+	`is_İ’
+()){
+
+214 
+¡d
+::
+cout
+ << 
+fName
+ << "İ’ƒ¼Ü!" << std::
+’dl
+;
+
+215 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+218 
+fhªdË
+ << "#iâdeà_IO_H_" << 
+¡d
+::
+’dl
+;
+
+219 
+fhªdË
+ << "#defš_IO_H_" << 
+¡d
+::
+’dl
+ << std::endl;
+
+220 
+fhªdË
+ << "æßˆ§m¶es[" << 
+S
+ << "][" << 
+D
+ << "];" << 
+¡d
+::
+’dl
+;
+
+221 
+fhªdË
+ << "æßˆš™C’Œoids[" << 
+N
+ << "][" << 
+D
+ << "];" << 
+¡d
+::
+’dl
+;
+
+223 
+fhªdË
+ << "šˆûÁroidNum[" << 
+N
+ << "];" << 
+¡d
+::
+’dl
+;
+
+224 
+fhªdË
+ << "æßˆûÁroidSum[" << 
+N
+ << "][" << 
+D
+ << "];" << 
+¡d
+::
+’dl
+;
+
+225 
+fhªdË
+ << 
+¡d
+::
+’dl
+ << "#endif" << std::endl;
+
+226 
+fhªdË
+.
+	`şo£
+();
+
+228 
+	}
+}
+
+233 
+	gDFG
+::
+	$compu‹
+(){
+
+235 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+236 if((*
+™
+)->
+ty³
+ !ğ
+IN
+){
+
+237 (*
+™
+)->
+	`compu‹
+(
+v”tiûs
+);
+
+241 
+i
+ = 0; i < 
+N
+; i++){
+
+242 
+j
+ = 0; j < 
+D
+; j++){
+
+243 
+idx
+ = 
+sumIdxToVidx
+[
+i
+ * 
+D
+ + 
+j
+];
+
+244 
+ûÁroidSum
+[
+i
+][
+j
+] = 
+v”tiûs
+[
+idx
+]->
+v®
+;
+
+248 
+i
+ = 0; i < 
+N
+; i++){
+
+249 
+idx
+ = 
+numIdxToVidx
+[
+i
+];
+
+250 
+ûÁroidNum
+[
+i
+] = 
+v”tiûs
+[
+idx
+]->
+v®
+;
+
+253 
+	}
+}
+
+256 
+	gDFG
+::
+	$v”ify
+(){
+
+259 
+	`¡ªd¬dKm—n
+();
+
+262 
+i
+ = 0; i < 
+N
+; i++){
+
+263 if(
+gŞdC’ŒoidNum
+[
+i
+] !ğ
+ûÁroidNum
+[i]){
+
+264 
+HERE
+;
+
+265 
+¡d
+::
+cout
+ << "DFG computiÚ i wrÚg!" << std::
+’dl
+;
+
+266 
+¡d
+::
+cout
+ << "ex³ùedOut[" << 
+i
+ << "] = " << 
+gŞdC’ŒoidNum
+[i] << " ";
+
+267 
+¡d
+::
+cout
+ << "compu‹dOut[" << 
+i
+ << "] = " << 
+ûÁroidNum
+[i] << " ";
+
+268 
+¡d
+::
+cout
+ << std::
+’dl
+;
+
+269 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+271 
+j
+ = 0; j < 
+D
+; j++){
+
+272 if(
+gŞdC’ŒoidSum
+[
+i
+][
+j
+] !ğ
+ûÁroidSum
+[i][j]){
+
+273 
+HERE
+;
+
+274 
+¡d
+::
+cout
+ << "DFG computiÚ i wrÚg!" << std::
+’dl
+;
+
+275 
+¡d
+::
+cout
+ << "ex³ùedOut[" << 
+i
+ << "][" << 
+j
+ << "] = " << 
+gŞdC’ŒoidSum
+[i][j] << " ";
+
+276 
+¡d
+::
+cout
+ << "compu‹dOut[" << 
+i
+ << "][" << 
+j
+ << "] = " << 
+ûÁroidSum
+[i][j] << " ";
+
+277 
+¡d
+::
+cout
+ << std::
+’dl
+;
+
+278 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+283 
+¡d
+::
+cout
+ << "DFG v”ifiÿtiÚ…as£d!" << std::
+’dl
+;
+
+285 
+	}
+}
+
+287 
+	gDFG
+::
+	$dump
+(){
+
+290 
+¡d
+::
+o¡ršg¡»am
+ 
+oss
+;
+
+291 
+¡d
+::
+of¡»am
+ 
+fhªdË
+;
+
+292 
+oss
+ << "./dump/dfg.s";
+
+293 
+fhªdË
+.
+	`İ’
+(
+oss
+.
+	`¡r
+().
+	`c_¡r
+());
+
+294 if(!
+fhªdË
+.
+	`is_İ’
+()){
+
+295 
+¡d
+::
+cout
+ << "FaedØİ’" << 
+oss
+.
+	`¡r
+() << "\n";
+
+296 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+299 
+¡d
+::
+m­
+<
+Opcode
+, > 
+İSt
+;
+
+300 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+301 if((*
+™
+)->
+ty³
+ !ğ
+IN
+){
+
+302 
+fhªdË
+ << (*
+™
+)->
+idx
+ << " ";
+
+303 
+fhªdË
+ << (*
+™
+)->
+İ
+ << " ";
+
+304 if((*
+™
+)->
+šNgb
+[0] != -1){
+
+305 
+fhªdË
+ << (*
+™
+)->
+šNgb
+[0] << " ";
+
+308 if((*
+™
+)->
+šNgb
+[1] != -1){
+
+309 
+fhªdË
+ << (*
+™
+)->
+šNgb
+[1] << " ";
+
+312 if((*
+™
+)->
+šNgb
+[2] != -1){
+
+313 
+fhªdË
+ << (*
+™
+)->
+šNgb
+[2] << " ";
+
+315 
+fhªdË
+ << 
+¡d
+::
+’dl
+;
+
+317 
+Opcode
+ 
+İ
+ = (*
+™
+)->op;
+
+318 if(
+İSt
+.
+	`fšd
+(
+İ
+è=ğİSt.
+	`’d
+()){
+
+319 
+İSt
+[
+İ
+] = 1;
+
+322 
+İSt
+[
+İ
+] += 1;
+
+326 
+fhªdË
+.
+	`şo£
+();
+
+329 
+oss
+.
+	`ş—r
+();
+
+330 
+oss
+.
+	`¡r
+("");
+
+331 
+oss
+ << "./dump/opcode.txt";
+
+332 
+fhªdË
+.
+	`İ’
+(
+oss
+.
+	`¡r
+().
+	`c_¡r
+());
+
+333 if(!
+fhªdË
+.
+	`is_İ’
+()){
+
+334 
+¡d
+::
+cout
+ << "FaedØİ’" << 
+oss
+.
+	`¡r
+() << "\n";
+
+335 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+338 autØ
+™
+ = 
+İSt
+.
+	`begš
+(); iˆ!ğİSt.
+	`’d
+(); it++){
+
+339 
+fhªdË
+ << 
+™
+->
+fœ¡
+ << 
+¡d
+::
+’dl
+;;
+
+341 
+fhªdË
+.
+	`şo£
+();
+
+344 
+oss
+.
+	`ş—r
+();
+
+345 
+oss
+.
+	`¡r
+("");
+
+346 
+oss
+ << "./dump/Stat.txt";
+
+347 
+fhªdË
+.
+	`İ’
+(
+oss
+.
+	`¡r
+().
+	`c_¡r
+());
+
+348 if(!
+fhªdË
+.
+	`is_İ’
+()){
+
+349 
+¡d
+::
+cout
+ << "FaedØİ’" <<
+oss
+.
+	`¡r
+() << "\n";
+
+350 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+353 
+fhªdË
+ << "DFG Sti¡ic:" << 
+¡d
+::
+’dl
+;
+
+354 
+fhªdË
+ << "v”‹xNum: " << 
+v”tiûs
+.
+	`size
+(è<< 
+¡d
+::
+’dl
+;
+
+355 
+fhªdË
+ << "šNum " << 
+	`g‘InNum
+(è<< 
+¡d
+::
+’dl
+;
+
+356 
+fhªdË
+ << "outNum " << 
+	`g‘OutNum
+(è<< 
+¡d
+::
+’dl
+;
+
+357 
+fhªdË
+ << "imNum " << 
+	`g‘ImNum
+(è<< 
+¡d
+::
+’dl
+;
+
+358 
+fhªdË
+ << "avgDeg»" << 
+	`g‘AvgDeg»e
+(è<< 
+¡d
+::
+’dl
+;
+
+359 
+fhªdË
+.
+	`şo£
+();
+
+362 
+	`iodump
+();
+
+364 
+	}
+}
+
+366 
+	gDFG
+::
+	$g‘InNum
+(){
+
+367 
+num
+ = 0;
+
+368 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+369 if((*
+™
+)->
+ty³
+ =ğ
+IN
+){
+
+370 
+num
+++;
+
+373  
+num
+;
+
+374 
+	}
+}
+
+376 
+	gDFG
+::
+	$g‘OutNum
+(){
+
+377 
+num
+ = 0;
+
+378 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+379 if((*
+™
+)->
+ty³
+ =ğ
+OUT
+){
+
+380 
+num
+++;
+
+383  
+num
+;
+
+384 
+	}
+}
+
+386 
+	gDFG
+::
+	$g‘ImNum
+(){
+
+387 
+num
+ = 0;
+
+388 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+389 if((*
+™
+)->
+ty³
+ =ğ
+IM
+){
+
+390 
+num
+++;
+
+393  
+num
+;
+
+394 
+	}
+}
+
+396 
+	gDFG
+::
+	$g‘AvgDeg»e
+(){
+
+397 
+sum
+ = 0;
+
+398 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+399 if((*
+™
+)->
+šNgb
+[0] != -1){
+
+400 
+sum
+++;
+
+403 if((*
+™
+)->
+šNgb
+[1] != -1){
+
+404 
+sum
+++;
+
+407 if((*
+™
+)->
+šNgb
+[2] != -1){
+
+408 
+sum
+++;
+
+412 
+avgDeg»e
+ = 1.0 * 
+sum
+/(
+	`g‘ImNum
+(è+ 
+	`g‘OutNum
+());
+
+414  
+avgDeg»e
+;
+
+415 
+	}
+}
+
+418 
+	gDFG
+::
+	$dumpDÙ
+(cÚ¡ 
+¡d
+::
+¡ršg
+& 
+âame
+){
+
+420 
+¡d
+::
+m­
+<, std::
+¡ršg
+> 
+idToLab–
+;
+
+421 
+	`ü—‹Lab–M­
+(
+idToLab–
+);
+
+423 
+¡d
+::
+of¡»am
+ 
+	`fhªdË
+(
+âame
+.
+	`c_¡r
+());
+
+424 if(!
+fhªdË
+.
+	`is_İ’
+()){
+
+425 
+HERE
+;
+
+426 
+¡d
+::
+cout
+ << "FaedØİ’ " << 
+âame
+.
+	`c_¡r
+(è<< "." << std::
+’dl
+;
+
+427 
+	`ex™
+(
+EXIT_FAILURE
+);
+
+431 
+fhªdË
+ << "dig¿ph G {" << 
+¡d
+::
+’dl
+;
+
+432 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+433 
+fhªdË
+ << (*
+™
+)->
+idx
+ << "[Ïb–=\"" << 
+idToLab–
+[(*™)->idx] << "\"];" << 
+¡d
+::
+’dl
+;
+
+435 autØ
+™
+ = 
+v”tiûs
+.
+	`begš
+(); iˆ!ğv”tiûs.
+	`’d
+(); it++){
+
+436 if((*
+™
+)->
+šNgb
+[0] != -1){
+
+437 
+fhªdË
+ << (*
+™
+)->
+šNgb
+[0] << " -> ";
+
+438 
+fhªdË
+ << (*
+™
+)->
+idx
+ << ";" << 
+¡d
+::
+’dl
+;
+
+441 if((*
+™
+)->
+šNgb
+[1] != -1){
+
+442 
+fhªdË
+ << (*
+™
+)->
+šNgb
+[1] << " -> ";
+
+443 
+fhªdË
+ << (*
+™
+)->
+idx
+ << ";" << 
+¡d
+::
+’dl
+;
+
+446 if((*
+™
+)->
+šNgb
+[2] != -1){
+
+447 
+fhªdË
+ << (*
+™
+)->
+šNgb
+[2] << " -> ";
+
+448 
+fhªdË
+ << (*
+™
+)->
+idx
+ << ";" << 
+¡d
+::
+’dl
+;
+
+452 
+fhªdË
+ << "}" << 
+¡d
+::
+’dl
+;
+
+454 
+fhªdË
+.
+	`şo£
+();
+
+456 
+	}
+}
+
+458 
+	gDFG
+::
+ü—‹Lab–M­
+(
+¡d
+::
+m­
+<, std::
+¡ršg
+> &
+idToLab–
+){
+
+459 
+i
+ = 0; 
+	gi
+ < 
+	gS
+; i++){
+
+460 
+	gj
+ = 0; j < 
+	gD
+; j++){
+
+461 
+	g¡d
+::
+o¡ršg¡»am
+ 
+oss
+;
+
+462 
+	goss
+ << "§m¶es[" << 
+	gi
+ << "][" << 
+	gj
+ << "]";
+
+463 
+	gidx
+ = 
+i
+ * 
+D
+ + 
+j
+;
+
+464 
+	gvidx
+ = 
+§m¶esIdxToVidx
+[
+idx
+];
+
+465 
+	gidToLab–
+[
+vidx
+] = 
+oss
+.
+¡r
+();
+
+469 
+	gi
+ = 0; i < 
+	gN
+; i++){
+
+470 
+	gj
+ = 0; j < 
+	gD
+; j++){
+
+471 
+	g¡d
+::
+o¡ršg¡»am
+ 
+oss
+;
+
+472 
+	goss
+ << "š™C’Œoids[" << 
+	gi
+ << "][" << 
+	gj
+ << "]";
+
+473 
+	gidx
+ = 
+i
+ * 
+D
+ + 
+j
+;
+
+474 
+	gvidx
+ = 
+š™IdxToVidx
+[
+idx
+];
+
+475 
+	gidToLab–
+[
+vidx
+] = 
+oss
+.
+¡r
+();
+
+479 
+	gi
+ = 0; i < 
+	gN
+; i++){
+
+480 
+	gj
+ = 0; j < 
+	gD
+; j++){
+
+481 
+	g¡d
+::
+o¡ršg¡»am
+ 
+oss
+;
+
+482 
+	goss
+ << "ûÁroidSum[" << 
+	gi
+ << "][" << 
+	gj
+ <<"]";
+
+483 
+	gidx
+ = 
+i
+ * 
+D
+ + 
+j
+;
+
+484 
+	gvidx
+ = 
+sumIdxToVidx
+[
+idx
+];
+
+485 
+	gidToLab–
+[
+vidx
+] = 
+oss
+.
+¡r
+();
+
+489 
+	gi
+ = 0; i < 
+	gN
+; i++){
+
+490 
+	g¡d
+::
+o¡ršg¡»am
+ 
+oss
+;
+
+491 
+	goss
+ << "ûÁroidNum[" << 
+	gi
+ << "]";
+
+492 
+	gvidx
+ = 
+numIdxToVidx
+[
+i
+];
+
+493 
+	gidToLab–
+[
+vidx
+] = 
+oss
+.
+¡r
+();
+
+496 
+	gi
+ = 0; i < 2; i++){
+
+497 
+	g¡d
+::
+o¡ršg¡»am
+ 
+oss
+;
+
+498 
+	goss
+ << 
+	gcÚ¡s
+[
+i
+];
+
+499 
+	gvidx
+ = 
+cÚ¡sToVidx
+[
+cÚ¡s
+[
+i
+]];
+
+500 
+	gidToLab–
+[
+vidx
+] = 
+oss
+.
+¡r
+();
+
+503 autØ
+	g™
+ = 
+v”tiûs
+.
+begš
+(); it!ğv”tiûs.
+’d
+(); it++){
+
+504 if((*
+	g™
+)->
+	gty³
+ =ğ
+IM
+){
+
+505 
+¡d
+::
+o¡ršg¡»am
+ 
+oss
+;
+
+506 
+	goss
+ << (*
+	g™
+)->
+	gİ
+;
+
+507 
+	gidToLab–
+[(*
+™
+)->
+idx
+] = 
+oss
+.
+¡r
+();
+
+512 
+	gDFG
+::
+	$¡ªd¬dKm—n
+(){
+
+515 
+i
+ = 0; i < 
+S
+; i++){
+
+517 
+di¡
+[
+N
+];
+
+518 
+j
+ = 0; j < 
+N
+; j++){
+
+519 
+di¡
+[
+j
+] = 0;
+
+520 
+k
+ = 0; k < 
+D
+; k++){
+
+521 
+di¡
+[
+j
+] +ğ(
+§m¶es
+[
+i
+][
+k
+] - 
+š™C’Œoids
+[j][k]) * (samples[i][k] - initCentroids[j][k]);
+
+526 
+boŞ
+ 
+isMax
+[
+N
+];
+
+527 if(
+N
+ == 2){
+
+528 
+isMax
+[0] = (
+di¡
+[0] >= dist[1]);
+
+529 
+isMax
+[1] = (
+di¡
+[1] > dist[0]);
+
+531 if(
+N
+ == 3){
+
+532 
+isMax
+[0] = (
+di¡
+[0] >= dist[1]) && (dist[0] >= dist[2]);
+
+533 
+isMax
+[1] = (
+di¡
+[1] > dist[0]) && (dist[1] >= dist[2]);
+
+534 
+isMax
+[2] = (
+di¡
+[2] > dist[0]) && (dist[2] > dist[1]);
+
+536 if(
+N
+ == 4){
+
+537 
+isMax
+[0] = (
+di¡
+[0] >= dist[1]) && (dist[0] >= dist[2]) && (dist[0] >= dist[3]);
+
+538 
+isMax
+[1] = (
+di¡
+[1] > dist[0]) && (dist[1] >= dist[2]) && (dist[1] >= dist[3]);
+
+539 
+isMax
+[2] = (
+di¡
+[2] > dist[0]) && (dist[2] > dist[1]) && (dist[2] >= dist[3]);
+
+540 
+isMax
+[3] = (
+di¡
+[3] > dist[0]) && (dist[3] > dist[1]) && (dist[3] > dist[2]);
+
+542 if(
+N
+ == 5){
+
+543 
+isMax
+[0] = (
+di¡
+[0] >= dist[1]) && (dist[0] >= dist[2]) && (dist[0] >= dist[3]) && (dist[0] >= dist[4]);
+
+544 
+isMax
+[1] = (
+di¡
+[1] > dist[0]) && (dist[1] >= dist[2]) && (dist[1] >= dist[3]) && (dist[1] >= dist[4]);
+
+545 
+isMax
+[2] = (
+di¡
+[2] > dist[0]) && (dist[2] > dist[1]) && (dist[2] >= dist[3]) && (dist[2] >= dist[4]);
+
+546 
+isMax
+[3] = (
+di¡
+[3] > dist[0]) && (dist[3] > dist[1]) && (dist[3] > dist[2]) && (dist[3] >= dist[4]);
+
+547 
+isMax
+[4] = (
+di¡
+[4] > dist[0]) && (dist[4] > dist[1]) && (dist[4] > dist[2]) && (dist[4] > dist[3]);
+
+549 if(
+N
+ == 6){
+
+550 
+isMax
+[0] = (
+di¡
+[0] >= dist[1]) && (dist[0] >= dist[2]) && (dist[0] >= dist[3]) && (dist[0] >= dist[4]) && (dist[0] >= dist[5]);
+
+551 
+isMax
+[1] = (
+di¡
+[1] > dist[0]) && (dist[1] >= dist[2]) && (dist[1] >= dist[3]) && (dist[1] >= dist[4]) && (dist[1] >= dist[5]);
+
+552 
+isMax
+[2] = (
+di¡
+[2] > dist[0]) && (dist[2] > dist[1]) && (dist[2] >= dist[3]) && (dist[2] >= dist[4]) && (dist[2] >= dist[5]);
+
+553 
+isMax
+[3] = (
+di¡
+[3] > dist[0]) && (dist[3] > dist[1]) && (dist[3] > dist[2]) && (dist[3] >= dist[4]) && (dist[3] >= dist[5]);
+
+554 
+isMax
+[4] = (
+di¡
+[4] > dist[0]) && (dist[4] > dist[1]) && (dist[4] > dist[2]) && (dist[4] > dist[3]) && (dist[4] >= dist[5]);
+
+555 
+isMax
+[5] = (
+di¡
+[5] > dist[0]) && (dist[5] > dist[1]) && (dist[5] > dist[2]) && (dist[5] > dist[3]) && (dist[5] > dist[4]);
+
+558 
+HERE
+;
+
+559 
+¡d
+::
+cout
+ << "N i nÙ suµÜ‹d." << std::
+’dl
+;
+
+563 
+j
+ = 0; j < 
+N
+; j++){
+
+564 if(
+isMax
+[
+j
+]){
+
+565 
+gŞdC’ŒoidNum
+[
+j
+] += 1;
+
+568 
+gŞdC’ŒoidNum
+[
+j
+] += 0;
+
+573 
+j
+ = 0; j < 
+N
+; j++){
+
+574 
+k
+ = 0; k < 
+D
+; k++){
+
+575 if(
+isMax
+[
+j
+]){
+
+576 
+gŞdC’ŒoidSum
+[
+j
+][
+k
+] +ğ
+§m¶es
+[
+i
+][k];
+
+579 
+gŞdC’ŒoidSum
+[
+j
+][
+k
+] += 0;
+
+585 
+	}
+}
+
+	@kmean.h
+
+1 #iâdeà
+__SOBEL_H__
+
+
+2 
+	#__SOBEL_H__
+
+
+	)
+
+4 
+	~"v”‹x.h
+"
+
+5 
+	~"commÚ.h
+"
+
+6 
+	~<f¡»am
+>
+
+7 
+	~<m­
+>
+
+8 
+	~<c¡dlib
+>
+
+10 
+	#S
+ 16
+
+11 
+	#N
+ 4
+
+12 
+	#D
+ 2
+
+13 
+
+	)
+
+14 şas 
+	cDFG
+{
+
+15 
+	mpublic
+:
+
+16 
+¡d
+::
+veùÜ
+<
+V”‹x
+*> 
+v”tiûs
+;
+
+20 
+	m¡d
+::
+m­
+<, > 
+	m§m¶esIdxToVidx
+;
+
+21 
+	m¡d
+::
+m­
+<, > 
+	mš™IdxToVidx
+;
+
+22 
+	m¡d
+::
+m­
+<, > 
+	msumIdxToVidx
+;
+
+23 
+	m¡d
+::
+m­
+<, > 
+	mnumIdxToVidx
+;
+
+24 
+	m¡d
+::
+m­
+<, > 
+	mcÚ¡sToVidx
+;
+
+26 
+dump
+();
+
+27 
+dumpDÙ
+(cÚ¡ 
+¡d
+::
+¡ršg
+ &
+âame
+);
+
+28 
+v”ify
+();
+
+29 
+compu‹
+();
+
+30 
+k”ÃlToDFG
+();
+
+31 
+¡ªd¬dKm—n
+();
+
+33 
+DFG
+();
+
+35 
+	m´iv©e
+:
+
+37 
+cÚ¡s
+[2];
+
+38 
+	m§m¶es
+[
+S
+][
+D
+];
+
+39 
+	mš™C’Œoids
+[
+N
+][
+D
+];
+
+42 
+	mûÁroidSum
+[
+N
+][
+D
+];
+
+43 
+	mûÁroidNum
+[
+N
+];
+
+44 
+	mgŞdC’ŒoidSum
+[
+N
+][
+D
+];
+
+45 
+	mgŞdC’ŒoidNum
+[
+N
+];
+
+47 
+V”‹x
+* 
+ü—‹V”‹x
+(
+
+48 
+V”‹x
+* 
+v0
+,
+
+49 
+V”‹x
+* 
+v1
+,
+
+50 
+V”‹x
+* 
+v2
+,
+
+51 
+Opcode
+ 
+İ
+,
+
+52 
+V”‹xTy³
+ 
+ty³
+
+
+55 
+g‘AvgDeg»e
+();
+
+56 
+g‘InNum
+();
+
+57 
+g‘ImNum
+();
+
+58 
+g‘OutNum
+();
+
+59 
+iodump
+();
+
+60 
+ioIn™
+();
+
+61 
+ü—‹Lab–M­
+(
+¡d
+::
+m­
+<, std::
+¡ršg
+> &
+idToLab–
+);
+
+	@vertex.cpp
+
+1 
+	~"v”‹x.h
+"
+
+3 
+	gV”‹x
+::
+	$V”‹x
+(
+_idx
+, 
+Opcode
+ 
+_İ
+, 
+V”‹xTy³
+ 
+_ty³
+){
+
+5 
+v®id
+ = 
+Œue
+;
+
+6 
+idx
+ = 
+_idx
+;
+
+7 
+ty³
+ = 
+_ty³
+;
+
+8 
+İ
+ = 
+_İ
+;
+
+10 
+i
+ = 0; i < 
+MAX_IN_DEG
+; i++){
+
+11 
+šNgb
+[
+i
+] = -1;
+
+14 
+	}
+}
+
+16 
+	gV”‹x
+::
+	$V”‹x
+(
+boŞ
+ 
+_v®id
+){
+
+17 
+v®id
+ = 
+_v®id
+;
+
+18 
+idx
+ = 0;
+
+19 
+ty³
+ = 
+IN
+;
+
+20 
+İ
+ = 
+MULADD
+;
+
+22 
+i
+ = 0; i < 
+MAX_IN_DEG
+; i++){
+
+23 
+šNgb
+[
+i
+] = -1;
+
+25 
+	}
+}
+
+27 
+	gV”‹x
+::
+compu‹
+(cÚ¡ 
+¡d
+::
+veùÜ
+<
+V”‹x
+*> &
+v”tiûs
+){
+
+28 
+İ
+){
+
+29 
+MULADD
+:
+
+30 
+v®
+ = 
+v”tiûs
+[
+šNgb
+[0]]->val * vertices[inNgb[1]]->val + vertices[inNgb[2]]->val;
+
+33 
+	gMULSUB
+:
+
+34 
+v®
+ = 
+v”tiûs
+[
+šNgb
+[0]]->val * vertices[inNgb[1]]->val - vertices[inNgb[2]]->val;
+
+37 
+	gADD
+:
+
+38 
+v®
+ = 
+v”tiûs
+[
+šNgb
+[0]]->val + vertices[inNgb[1]]->val;
+
+41 
+	gSUB
+:
+
+42 
+v®
+ = 
+v”tiûs
+[
+šNgb
+[0]]->val - vertices[inNgb[1]]->val;
+
+45 
+	gPHI
+:
+
+46 
+v®
+ = (
+v”tiûs
+[
+šNgb
+[0]]->val != 0)? vertices[inNgb[1]]->val : vertices[inNgb[2]]->val;
+
+49 
+	gMUL
+:
+
+50 
+v®
+ = 
+v”tiûs
+[
+šNgb
+[0]]->val * vertices[inNgb[1]]->val;
+
+53 
+	gABS
+:
+
+54 
+v®
+ = 
+abs
+(
+v”tiûs
+[
+šNgb
+[0]]->val);
+
+57 
+	gGT
+:
+
+58 
+v®
+ = (
+v”tiûs
+[
+šNgb
+[0]]->val > vertices[inNgb[1]]->val) ? 1 : 0;
+
+61 
+	gLET
+:
+
+62 
+v®
+ = (
+v”tiûs
+[
+šNgb
+[0]]->val <= vertices[inNgb[1]]->val) ? 1 : 0;
+
+65 
+	gAND
+:
+
+66 
+v®
+ = ((
+v”tiûs
+[
+šNgb
+[0]]->val == 1) && (vertices[inNgb[1]]->val == 1)) ? 1: 0;
+
+69 
+	gGTE
+:
+
+70 
+v®
+ = (
+v”tiûs
+[
+šNgb
+[0]]->val >= vertices[inNgb[1]]->val) ? 1 : 0;
+
+74 
+HERE
+;
+
+75 
+	g¡d
+::
+cout
+ << " Opcodi nÙ„ecognized." << 
+¡d
+::
+’dl
+;
+
+76 
+ex™
+(
+EXIT_FAILURE
+);
+
+	@vertex.h
+
+1 #iâdeà
+__VERTEX_H__
+
+
+2 
+	#__VERTEX_H__
+
+
+	)
+
+4 
+	~"commÚ.h
+"
+
+5 
+	~<veùÜ
+>
+
+7 
+	sV”‹x
+{
+
+9 
+	mpublic
+:
+
+10 
+boŞ
+ 
+v®id
+;
+
+11 
+	midx
+;
+
+12 
+Opcode
+ 
+	mİ
+;
+
+13 
+	mv®
+;
+
+14 
+V”‹xTy³
+ 
+	mty³
+;
+
+15 
+	mšNgb
+[
+MAX_IN_DEG
+];
+
+16 
+compu‹
+(cÚ¡ 
+¡d
+::
+veùÜ
+<
+V”‹x
+*> &
+v”tiûs
+);
+
+18 
+V”‹x
+(
+_idx
+, 
+Opcode
+ 
+_İ
+, 
+V”‹xTy³
+ 
+_ty³
+);
+
+19 
+V”‹x
+(
+boŞ
+ 
+_v®id
+);
+
+	@
+1
+.
+1
+/usr/include
+7
+70
+common.cpp
+common.h
+dfg-gen.cpp
+kmean.cpp
+kmean.h
+vertex.cpp
+vertex.h

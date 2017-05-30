@@ -1,0 +1,82 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABS	common.h	/^    ABS, $/;"	e	enum:Opcode
+ADD	common.h	/^    ADD, $/;"	e	enum:Opcode
+C	sobel.h	11;"	d
+CC	Makefile	/^CC = g++$/;"	m
+CDIR	Makefile	/^CDIR=.\/$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -I$(CDIR) -std=c++11 -DDEBUG -g -Wall $/;"	m
+DFG	sobel.cpp	/^DFG::DFG(){$/;"	f	class:DFG
+DFG	sobel.h	/^class DFG{$/;"	c
+GL	common.h	/^struct GL{$/;"	s
+GT	common.h	/^    GT, $/;"	e	enum:Opcode
+HERE	common.h	39;"	d
+IM	common.h	/^    IM, $/;"	e	enum:VertexType
+IN	common.h	/^    IN, $/;"	e	enum:VertexType
+LET	common.h	/^    LET$/;"	e	enum:Opcode
+MAX_IN_DEG	common.h	8;"	d
+MUL	common.h	/^    MUL,$/;"	e	enum:Opcode
+MULADD	common.h	/^    MULADD, $/;"	e	enum:Opcode
+MULSUB	common.h	/^    MULSUB, $/;"	e	enum:Opcode
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
+OUT	common.h	/^    OUT $/;"	e	enum:VertexType
+Opcode	common.h	/^enum Opcode {$/;"	g
+PHI	common.h	/^    PHI, $/;"	e	enum:Opcode
+R	sobel.h	10;"	d
+SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
+SUB	common.h	/^    SUB, $/;"	e	enum:Opcode
+TARGET	Makefile	/^TARGET = dfg-gen$/;"	m
+Vertex	vertex.cpp	/^Vertex::Vertex(bool _valid){$/;"	f	class:Vertex
+Vertex	vertex.cpp	/^Vertex::Vertex(int _idx, Opcode _op, VertexType _type){$/;"	f	class:Vertex
+Vertex	vertex.h	/^struct Vertex{$/;"	s
+VertexType	common.h	/^enum VertexType {$/;"	g
+_IO_H_	dump/io.h	2;"	d
+__COMMON_H__	common.h	2;"	d
+__SOBEL_H__	sobel.h	2;"	d
+__VERTEX_H__	vertex.h	2;"	d
+aIn	dump/io.h	/^int aIn[8][4];$/;"	v
+bIn	dump/io.h	/^int bIn[4];$/;"	v
+cOut	dump/io.h	/^int cOut[8];$/;"	v
+compute	sobel.cpp	/^void DFG::compute(){$/;"	f	class:DFG
+compute	vertex.cpp	/^void Vertex::compute(const std::vector<Vertex*> &vertices){$/;"	f	class:Vertex
+consts	sobel.h	/^        int consts[2] = {0, 255};$/;"	m	class:DFG
+constsToVidx	sobel.h	/^        std::map<int, int> constsToVidx;$/;"	m	class:DFG
+createLabelMap	sobel.cpp	/^void DFG::createLabelMap(std::map<int, std::string> &idToLabel){$/;"	f	class:DFG
+createVertex	sobel.cpp	/^Vertex* DFG::createVertex($/;"	f	class:DFG
+dump	sobel.cpp	/^void DFG::dump(){$/;"	f	class:DFG
+dumpDot	sobel.cpp	/^void DFG::dumpDot(const std::string& fname){$/;"	f	class:DFG
+figIn	sobel.h	/^        unsigned char figIn[R][C];$/;"	m	class:DFG
+figInIdxToVidx	sobel.h	/^        std::map<int, int> figInIdxToVidx;$/;"	m	class:DFG
+figOut	sobel.h	/^        unsigned char figOut[R][C];$/;"	m	class:DFG
+figOutIdxToVidx	sobel.h	/^        std::map<int, int> figOutIdxToVidx;$/;"	m	class:DFG
+getAvgDegree	sobel.cpp	/^double DFG::getAvgDegree(){$/;"	f	class:DFG
+getIdx	common.cpp	/^int GL::getIdx(){$/;"	f	class:GL
+getImNum	sobel.cpp	/^int DFG::getImNum(){$/;"	f	class:DFG
+getInNum	sobel.cpp	/^int DFG::getInNum(){$/;"	f	class:DFG
+getOutNum	sobel.cpp	/^int DFG::getOutNum(){$/;"	f	class:DFG
+goldOut	sobel.h	/^        unsigned char goldOut[R][C];$/;"	m	class:DFG
+gx	sobel.h	/^        int gx[3][3] = {{1, 0 , -1}, {2, 0, -2}, {1, 0, -1}};$/;"	m	class:DFG
+gxIdxToVidx	sobel.h	/^        std::map<int, int> gxIdxToVidx;$/;"	m	class:DFG
+gy	sobel.h	/^        int gy[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};$/;"	m	class:DFG
+gyIdxToVidx	sobel.h	/^        std::map<int, int> gyIdxToVidx;$/;"	m	class:DFG
+idx	common.cpp	/^int GL::idx = -1;$/;"	m	class:GL	file:
+idx	common.h	/^        static int idx;$/;"	m	struct:GL
+idx	vertex.h	/^        int idx;$/;"	m	struct:Vertex
+inNgb	vertex.h	/^        int inNgb[MAX_IN_DEG];$/;"	m	struct:Vertex
+ioInit	sobel.cpp	/^void DFG::ioInit(){$/;"	f	class:DFG
+iodump	sobel.cpp	/^void DFG::iodump(){$/;"	f	class:DFG
+kernelToDFG	sobel.cpp	/^void DFG::kernelToDFG(){$/;"	f	class:DFG
+main	dfg-gen.cpp	/^int main(){$/;"	f
+op	vertex.h	/^        Opcode op;$/;"	m	struct:Vertex
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, Opcode op){$/;"	f
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, VertexType vtype){$/;"	f
+standardSobel	sobel.cpp	/^void DFG::standardSobel(){$/;"	f	class:DFG
+type	vertex.h	/^        VertexType type;$/;"	m	struct:Vertex
+val	vertex.h	/^        int val;$/;"	m	struct:Vertex
+valid	vertex.h	/^        bool valid;$/;"	m	struct:Vertex
+verify	sobel.cpp	/^void DFG::verify(){$/;"	f	class:DFG
+vertices	sobel.h	/^        std::vector<Vertex*> vertices;$/;"	m	class:DFG

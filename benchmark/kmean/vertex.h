@@ -10,7 +10,7 @@ struct Vertex{
         bool valid;
         int idx;
         Opcode op;
-        int val;
+        float val;
         VertexType type;
         int inNgb[MAX_IN_DEG];
         void compute(const std::vector<Vertex*> &vertices);

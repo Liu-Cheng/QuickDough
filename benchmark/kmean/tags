@@ -1,0 +1,82 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABS	common.h	/^    ABS, $/;"	e	enum:Opcode
+ADD	common.h	/^    ADD, $/;"	e	enum:Opcode
+AND	common.h	/^    AND,$/;"	e	enum:Opcode
+CC	Makefile	/^CC = g++$/;"	m
+CDIR	Makefile	/^CDIR=.\/$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -I$(CDIR) -std=c++11 -DDEBUG -g -Wall $/;"	m
+D	kmean.h	12;"	d
+DFG	kmean.cpp	/^DFG::DFG(){$/;"	f	class:DFG
+DFG	kmean.h	/^class DFG{$/;"	c
+GET	common.h	/^    GET$/;"	e	enum:Opcode
+GL	common.h	/^struct GL{$/;"	s
+GT	common.h	/^    GT, $/;"	e	enum:Opcode
+HERE	common.h	41;"	d
+IM	common.h	/^    IM, $/;"	e	enum:VertexType
+IN	common.h	/^    IN, $/;"	e	enum:VertexType
+LET	common.h	/^    LET,$/;"	e	enum:Opcode
+MAX_IN_DEG	common.h	8;"	d
+MUL	common.h	/^    MUL,$/;"	e	enum:Opcode
+MULADD	common.h	/^    MULADD, $/;"	e	enum:Opcode
+MULSUB	common.h	/^    MULSUB, $/;"	e	enum:Opcode
+N	kmean.h	11;"	d
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/;"	m
+OUT	common.h	/^    OUT $/;"	e	enum:VertexType
+Opcode	common.h	/^enum Opcode {$/;"	g
+PHI	common.h	/^    PHI, $/;"	e	enum:Opcode
+S	kmean.h	10;"	d
+SRCS	Makefile	/^SRCS = dfg-gen.cpp \\$/;"	m
+SUB	common.h	/^    SUB, $/;"	e	enum:Opcode
+TARGET	Makefile	/^TARGET = dfg-gen$/;"	m
+Vertex	vertex.cpp	/^Vertex::Vertex(bool _valid){$/;"	f	class:Vertex
+Vertex	vertex.cpp	/^Vertex::Vertex(int _idx, Opcode _op, VertexType _type){$/;"	f	class:Vertex
+Vertex	vertex.h	/^struct Vertex{$/;"	s
+VertexType	common.h	/^enum VertexType {$/;"	g
+__COMMON_H__	common.h	2;"	d
+__SOBEL_H__	kmean.h	2;"	d
+__VERTEX_H__	vertex.h	2;"	d
+centroidNum	kmean.h	/^        float centroidNum[N];$/;"	m	class:DFG
+centroidSum	kmean.h	/^        float centroidSum[N][D];$/;"	m	class:DFG
+compute	kmean.cpp	/^void DFG::compute(){$/;"	f	class:DFG
+compute	vertex.cpp	/^void Vertex::compute(const std::vector<Vertex*> &vertices){$/;"	f	class:Vertex
+consts	kmean.h	/^        float consts[2];$/;"	m	class:DFG
+constsToVidx	kmean.h	/^        std::map<int, int> constsToVidx;$/;"	m	class:DFG
+createLabelMap	kmean.cpp	/^void DFG::createLabelMap(std::map<int, std::string> &idToLabel){$/;"	f	class:DFG
+createVertex	kmean.cpp	/^Vertex* DFG::createVertex($/;"	f	class:DFG
+dump	kmean.cpp	/^void DFG::dump(){$/;"	f	class:DFG
+dumpDot	kmean.cpp	/^void DFG::dumpDot(const std::string& fname){$/;"	f	class:DFG
+getAvgDegree	kmean.cpp	/^double DFG::getAvgDegree(){$/;"	f	class:DFG
+getIdx	common.cpp	/^int GL::getIdx(){$/;"	f	class:GL
+getImNum	kmean.cpp	/^int DFG::getImNum(){$/;"	f	class:DFG
+getInNum	kmean.cpp	/^int DFG::getInNum(){$/;"	f	class:DFG
+getOutNum	kmean.cpp	/^int DFG::getOutNum(){$/;"	f	class:DFG
+goldCentroidNum	kmean.h	/^        float goldCentroidNum[N];$/;"	m	class:DFG
+goldCentroidSum	kmean.h	/^        float goldCentroidSum[N][D];$/;"	m	class:DFG
+idx	common.cpp	/^int GL::idx = -1;$/;"	m	class:GL	file:
+idx	common.h	/^        static int idx;$/;"	m	struct:GL
+idx	vertex.h	/^        int idx;$/;"	m	struct:Vertex
+inNgb	vertex.h	/^        int inNgb[MAX_IN_DEG];$/;"	m	struct:Vertex
+initCentroids	kmean.h	/^        float initCentroids[N][D];$/;"	m	class:DFG
+initIdxToVidx	kmean.h	/^        std::map<int, int> initIdxToVidx;$/;"	m	class:DFG
+ioInit	kmean.cpp	/^void DFG::ioInit(){$/;"	f	class:DFG
+iodump	kmean.cpp	/^void DFG::iodump(){$/;"	f	class:DFG
+kernelToDFG	kmean.cpp	/^void DFG::kernelToDFG(){$/;"	f	class:DFG
+main	dfg-gen.cpp	/^int main(){$/;"	f
+numIdxToVidx	kmean.h	/^        std::map<int, int> numIdxToVidx;$/;"	m	class:DFG
+op	vertex.h	/^        Opcode op;$/;"	m	struct:Vertex
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, Opcode op){$/;"	f
+operator <<	common.cpp	/^std::ostream& operator<< (std::ostream &os, VertexType vtype){$/;"	f
+samples	kmean.h	/^        float samples[S][D];$/;"	m	class:DFG
+samplesIdxToVidx	kmean.h	/^        std::map<int, int> samplesIdxToVidx;$/;"	m	class:DFG
+standardKmean	kmean.cpp	/^void DFG::standardKmean(){$/;"	f	class:DFG
+sumIdxToVidx	kmean.h	/^        std::map<int, int> sumIdxToVidx;$/;"	m	class:DFG
+type	vertex.h	/^        VertexType type;$/;"	m	struct:Vertex
+val	vertex.h	/^        int val;$/;"	m	struct:Vertex
+valid	vertex.h	/^        bool valid;$/;"	m	struct:Vertex
+verify	kmean.cpp	/^void DFG::verify(){$/;"	f	class:DFG
+vertices	kmean.h	/^        std::vector<Vertex*> vertices;$/;"	m	class:DFG

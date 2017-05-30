@@ -10,7 +10,7 @@ void DFG::ioInit(){
         for(int j = 0; j < C; j++){
             figIn[i][j] = rand()%256;
             figOut[i][j] = 0;
-            goldFigOut[i][j] = 0;
+            goldOut[i][j] = 0;
         }
     }
 }
@@ -47,7 +47,7 @@ void DFG::kernelToDFG(){
             Opcode op = MULADD; // meaningless
             VertexType type = IN;
             Vertex* vptr = new Vertex(idx, op, type);
-            vptr->val = figIn[i][j];
+            vptr->val = (int)(figIn[i][j]);
             vertices.push_back(vptr);
             int figInIdx = i * C + j;
             figInIdxToVidx[figInIdx] = idx;
@@ -61,7 +61,7 @@ void DFG::kernelToDFG(){
             Opcode op = MULADD;
             VertexType type = IN;
             Vertex* vptr = new Vertex(idx, op, type);
-            vptr->val = gx[i];
+            vptr->val = gx[i][j];
             vertices.push_back(vptr);
             int gxIdx = i * 3 + j;
             gxIdxToVidx[gxIdx] = idx;
@@ -75,7 +75,7 @@ void DFG::kernelToDFG(){
             Opcode op = MULADD;
             VertexType type = IN;
             Vertex* vptr = new Vertex(idx, op, type);
-            vptr->val = gy[i];
+            vptr->val = gy[i][j];
             vertices.push_back(vptr);
             int gyIdx = i * 3 + j;
             gyIdxToVidx[gyIdx] = idx;
@@ -86,20 +86,13 @@ void DFG::kernelToDFG(){
     for(auto c : consts){
         int idx = GL::getIdx();
         Opcode op = MULADD;
-        VertexType = IN;
+        VertexType type = IN;
         Vertex* vptr = new Vertex(idx, op, type);
         vptr->val = c;
         vertices.push_back(vptr);
         constsToVidx[c] = idx;
     }
     
-
-    Vertex* v0 = vertices[aInIdxToVidx[i*N]];
-    Vertex* v1 = vertices[bInIdxToVidx[0]];
-    Vertex* vptr = createVertex(v0, v1, NULL, MUL, IM);
-    vertices.push_back(vptr);
-    Vertex* vtmp = new Vertex(false);
-
     for(int i = 0; i < R; i++){
         for(int j = 0; j < C; j++){
             if(i == 0 || j == 0 || i == R-1 || j == C-1){
@@ -112,17 +105,16 @@ void DFG::kernelToDFG(){
                     for(int q = -1; q <= 1; q++){
                         Vertex* v0 = vertices[figInIdxToVidx[(i+p)*C+(j+q)]];
                         Vertex* v1 = vertices[gxIdxToVidx[(p+1)*3+q+1]];
-                        Vertex* v2 = vertices[figInIdxToVidx[(i+p)*C+(j+q)]];
-                        Vertex* v3 = vertices[gyIdxToVidx[(p+1)*3+q+1]];
+                        Vertex* v2 = vertices[gyIdxToVidx[(p+1)*3+q+1]];
                         if(p == -1 && q== -1){
-                            Vertex* sumx = createVertex(v0, v1, NULL, MUL, IM);
-                            Vertex* sumy = createVertex(v2, v3, NULL, MUL, IM);
+                            sumx = createVertex(v0, v1, NULL, MUL, IM);
+                            sumy = createVertex(v0, v2, NULL, MUL, IM);
                             vertices.push_back(sumx);
                             vertices.push_back(sumy);
                         }
                         else{
                             Vertex* mulx = createVertex(v0, v1, NULL, MUL, IM);
-                            Vertex* muly = createVertex(v2, v3, NULL, MUL, IM);
+                            Vertex* muly = createVertex(v0, v2, NULL, MUL, IM);
                             sumx = createVertex(mulx, sumx, NULL, ADD, IM);
                             sumy = createVertex(muly, sumy, NULL, ADD, IM);
                             vertices.push_back(mulx);
@@ -135,18 +127,18 @@ void DFG::kernelToDFG(){
                 Vertex* absSumx = createVertex(sumx, NULL, NULL, ABS, IM);
                 Vertex* absSumy = createVertex(sumy, NULL, NULL, ABS, IM);
                 Vertex* sum = createVertex(absSumx, absSumy, NULL, ADD, IM);
-                Vertex* c255 = vertices[constToVidx[255]];
-                Vertex* c0 = vertices[constToVidx[0]];
+                Vertex* c255 = vertices[constsToVidx[255]];
+                Vertex* c0 = vertices[constsToVidx[0]];
                 Vertex* sum_compl = createVertex(c255, sum, NULL, SUB, IM);
                 Vertex* cp = createVertex(sum, c255, NULL, GT, IM);
                 vertices.push_back(absSumx);
                 vertices.push_back(absSumy);
                 vertices.push_back(sum);
-                vertices.push_back(sum_comp1);
+                vertices.push_back(sum_compl);
                 vertices.push_back(cp);
                 Vertex* out = createVertex(cp, c0, sum_compl, PHI, OUT);
                 vertices.push_back(out);
-                figOutIdxToVidx[i*C+j] = out->vidx;
+                figOutIdxToVidx[i*C+j] = out->idx;
             }
         }
     }
@@ -164,10 +156,10 @@ void DFG::iodump(){
 
     fhandle << "#ifndef _IO_H_" << std::endl;
     fhandle << "#define _IO_H_" << std::endl << std::endl;
-    fhandle << "int aIn[" << M << "][" << N << "];" << std::endl;
-    fhandle << "int bIn[" << N << "];" << std::endl;
-    fhandle << "int cOut[" << M << "];" << std::endl;
-
+    fhandle << "unsigned char figIn[" << R << "][" << C << "];" << std::endl;
+    fhandle << "int gx[3][3];" << std::endl;
+    fhandle << "int gy[3][3];" << std::endl;
+    fhandle << "unsigned char figOut[" << R << "][" << C << "];" << std::endl;
     fhandle << std::endl << "#endif" << std::endl;
     fhandle.close();
 
@@ -184,33 +176,36 @@ void DFG::compute(){
         }
     }
 
+    for(int i = 0; i < R; i++){
+        for(int j = 0; j < C; j++){
+            if(i == 0 || j == 0 || i == R - 1 || j == C - 1) continue;
+            int idx = figOutIdxToVidx[i * C + j];
+            figOut[i][j] = (unsigned char)(vertices[idx]->val);
+        }
+    }
+
 }
 
 
 void DFG::verify(){
 
-    double computedCout[M];
-    double expectedCout[M];
-    for(int i = 0; i < M; i++){
-        int vidx = cOutIdxToVidx[i];
-        computedCout[i] = vertices[vidx]->val;
-    }
+    // calculate the standard sobel output
+    standardSobel();
 
-    for(int i = 0; i < M; i++){
-        expectedCout[i] = 0;
-        for(int j = 0; j < N; j++){
-            expectedCout[i] += aIn[i][j] * bIn[j];
-        }
-    }
-
-    for(int i=0; i < M; i++){
-        if(expectedCout[i] != computedCout[i]){
-            HERE;
-            std::cout << "DFG computation is wrong!" << std::endl;
-            std::cout << "expectedCout[" << i << "] = " << expectedCout[i] << " ";
-            std::cout << "computedCout[" << i << "] = " << computedCout[i] << " ";
-            std::cout << std::endl;
-            exit(EXIT_FAILURE);
+    // Compare the result.
+    for(int i = 0; i < R; i++){
+        for(int j = 0; j < C; j++){
+            if(i == 0 || j == 0 || i == R -1 || j == C -1){
+                continue;
+            }
+            else if(goldOut[i][j] != figOut[i][j]){
+                HERE;
+                std::cout << "DFG computation is wrong!" << std::endl;
+                std::cout << "expectedOut[" << i << "][" << j << "] = " << (int)(goldOut[i][j]) << " ";
+                std::cout << "computedOut[" << i << "][" << j << "] = " << (int)(figOut[i][j]) << " ";
+                std::cout << std::endl;
+                exit(EXIT_FAILURE);
+            }
         }
     }
 
@@ -220,31 +215,9 @@ void DFG::verify(){
 
 void DFG::dump(){
 
-    // Dump io data buffer address.
-    std::ostringstream oss;
-    oss << "./dump/io-buffer-addr.txt";
-    std::ofstream fhandle;
-    fhandle.open(oss.str().c_str());
-    if(!fhandle.is_open()){
-        std::cout << "Failed to open " << oss.str() << "\n";
-        exit(EXIT_FAILURE);
-    }
-
-    // bufferAddr - vertxIdx - bufferTag
-    for(auto it = aInIdxToVidx.begin(); it != aInIdxToVidx.end(); it++){
-        fhandle << it->first << " " << it->second << " aIn " << std::endl;
-    }
-    for(auto it = bInIdxToVidx.begin(); it != bInIdxToVidx.end(); it++){
-        fhandle << it->first << " " << it->second << " bIn " << std::endl;
-    }
-    for(auto it = cOutIdxToVidx.begin(); it != cOutIdxToVidx.end(); it++){
-        fhandle << it->first << " " << it->second << " cOut " << std::endl;
-    }
-    fhandle.close();
-
     // Dump DFG
-    oss.clear();
-    oss.str("");
+    std::ostringstream oss;
+    std::ofstream fhandle;
     oss << "./dump/dfg.s";
     fhandle.open(oss.str().c_str());
     if(!fhandle.is_open()){
@@ -257,7 +230,6 @@ void DFG::dump(){
         if((*it)->type != IN){
             fhandle << (*it)->idx << " ";
             fhandle << (*it)->op << " ";
-            fhandle << (*it)->type << " ";
             if((*it)->inNgb[0] != -1){
                 fhandle << (*it)->inNgb[0] << " ";
             }
@@ -413,29 +385,50 @@ void DFG::dumpDot(const std::string& fname){
 }
 
 void DFG::createLabelMap(std::map<int, std::string> &idToLabel){
-    for(int i = 0; i < M; i++){
-        for(int j = 0; j < N; j++){
+    for(int i = 0; i < R; i++){
+        for(int j = 0; j < C; j++){
             std::ostringstream oss;
-            oss << "aIn[" << i << "][" << j << "]";
-            int aInIdx = i * N + j;
-            int vidx = aInIdxToVidx[aInIdx];
+            oss << "figIn[" << i << "][" << j << "]";
+            int figInIdx = i * C + j;
+            int vidx = figInIdxToVidx[figInIdx];
             idToLabel[vidx] = oss.str();
         }
     }
 
-    for(int i = 0; i < N; i++){
-        std::ostringstream oss;
-        oss << "bIn[" << i << "]";
-        int bInIdx = i;
-        int vidx = bInIdxToVidx[bInIdx];
-        idToLabel[vidx] = oss.str();
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            std::ostringstream oss;
+            oss << "gx[" << i << "][" << j << "]";
+            int gxIdx = i * 3 + j;
+            int vidx = gxIdxToVidx[gxIdx];
+            idToLabel[vidx] = oss.str();
+        }
     }
 
-    for(int i = 0; i < M; i++){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            std::ostringstream oss;
+            oss << "gy[" << i << "][" << j <<"]";
+            int gyIdx = i * 3 + j;
+            int vidx = gyIdxToVidx[gyIdx];
+            idToLabel[vidx] = oss.str();
+        }
+    }
+
+    for(int i = 0; i < R; i++){
+        for(int j = 0; j < C; j++){
+            std::ostringstream oss;
+            oss << "figOut[" << i << "][" << j << "]";
+            int figOutIdx = i * C + j;
+            int vidx = figOutIdxToVidx[figOutIdx];
+            idToLabel[vidx] = oss.str();
+        }
+    }
+    
+    for(int i = 0; i < 2; i++){
         std::ostringstream oss;
-        oss << "cOut[" << i << "]";
-        int cOutIdx = i;
-        int vidx = cOutIdxToVidx[cOutIdx];
+        oss << consts[i];
+        int vidx = constsToVidx[consts[i]];
         idToLabel[vidx] = oss.str();
     }
 
@@ -462,18 +455,17 @@ void DFG::standardSobel(){
             else{
                 for(int p = -1; p <= 1; p++){
                     for(int q = -1; q <= 1; q++){
-                        sumx += figIn[(i+p)*C+(j+q)]*gx[p+1][q+1];
-                        sumy += figIn[(i+p)*C+(j+q)]*gy[p+1][q+1];
+                        sumx += (int)figIn[i+p][j+q] * gx[p+1][q+1];
+                        sumy += (int)figIn[i+p][j+q] * gy[p+1][q+1];
                     }
                 }
 
                 int sum=abs(sumx) + abs(sumy);
-
                 if(sum > 255){
-                    goldFigOut[i][j] = 0;
+                    goldOut[i][j] = 0;
                 }
                 else{
-                    goldFigOut[i][j] = 255-sum;
+                    goldOut[i][j] = (unsigned char)(255-sum);
                 }
             }
         }

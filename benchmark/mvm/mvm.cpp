@@ -176,29 +176,7 @@ void DFG::dump(){
 
     // Dump io data buffer address.
     std::ostringstream oss;
-    oss << "./dump/io-buffer-addr.txt";
     std::ofstream fhandle;
-    fhandle.open(oss.str().c_str());
-    if(!fhandle.is_open()){
-        std::cout << "Failed to open " << oss.str() << "\n";
-        exit(EXIT_FAILURE);
-    }
-
-    // bufferAddr - vertxIdx - bufferTag
-    for(auto it = aInIdxToVidx.begin(); it != aInIdxToVidx.end(); it++){
-        fhandle << it->first << " " << it->second << " aIn " << std::endl;
-    }
-    for(auto it = bInIdxToVidx.begin(); it != bInIdxToVidx.end(); it++){
-        fhandle << it->first << " " << it->second << " bIn " << std::endl;
-    }
-    for(auto it = cOutIdxToVidx.begin(); it != cOutIdxToVidx.end(); it++){
-        fhandle << it->first << " " << it->second << " cOut " << std::endl;
-    }
-    fhandle.close();
-
-    // Dump DFG
-    oss.clear();
-    oss.str("");
     oss << "./dump/dfg.s";
     fhandle.open(oss.str().c_str());
     if(!fhandle.is_open()){
@@ -211,7 +189,6 @@ void DFG::dump(){
         if((*it)->type != IN){
             fhandle << (*it)->idx << " ";
             fhandle << (*it)->op << " ";
-            fhandle << (*it)->type << " ";
             if((*it)->inNgb[0] != -1){
                 fhandle << (*it)->inNgb[0] << " ";
             }

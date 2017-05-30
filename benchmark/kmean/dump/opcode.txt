@@ -2,5 +2,6 @@ MUL
 ADD
 SUB
 PHI
-ABS
 GT
+AND
+GET

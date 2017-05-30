@@ -7,8 +7,9 @@
 #include <map>
 #include <cstdlib>
 
-#define R 4
-#define C 8
+#define S 16 // # of data tuples
+#define N 4  // # of centroids 
+#define D 2  // # of data dimension
 
 class DFG{
     public:
@@ -16,10 +17,10 @@ class DFG{
 
         // The mappers are used to enusre each input/output 
         // corresponds to only a single vertex in the graph.
-        std::map<int, int> figInIdxToVidx;
-        std::map<int, int> figOutIdxToVidx;
-        std::map<int, int> gxIdxToVidx;
-        std::map<int, int> gyIdxToVidx;
+        std::map<int, int> samplesIdxToVidx;
+        std::map<int, int> initIdxToVidx;
+        std::map<int, int> sumIdxToVidx;
+        std::map<int, int> numIdxToVidx;
         std::map<int, int> constsToVidx;
 
         void dump();
@@ -27,17 +28,21 @@ class DFG{
         void verify();
         void compute();
         void kernelToDFG();
-        void standardSobel();
+        void standardKmean();
 
         DFG();
 
     private:
-        unsigned char figIn[R][C];
-        int gx[3][3] = {{1, 0 , -1}, {2, 0, -2}, {1, 0, -1}};
-        int gy[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
-        int consts[2] = {0, 255};
-        unsigned char figOut[R][C];
-        unsigned char goldOut[R][C];
+        // input
+        float consts[2];
+        float samples[S][D];
+        float initCentroids[N][D];
+
+        // output
+        float centroidSum[N][D];
+        float centroidNum[N];
+        float goldCentroidSum[N][D];
+        float goldCentroidNum[N];
 
         Vertex* createVertex(
                 Vertex* v0, 

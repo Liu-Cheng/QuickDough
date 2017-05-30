@@ -8,7 +8,7 @@ TARGET = dfg-gen
 SRCS = dfg-gen.cpp \
 	   vertex.cpp \
 	   common.cpp \
-	   sobel.cpp
+	   kmean.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -22,6 +22,9 @@ $(TARGET): $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(TARGET) core.*
+
+dot:
+	dot -Tpdf ./dump/kmean.dot > ./dump/kmean.pdf
 
 depend:
 	makedepend $(SRCS)

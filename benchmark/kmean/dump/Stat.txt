@@ -1,0 +1,6 @@
+DFG Statistic:
+vertexNum: 1054
+inNum 42
+outNum 12
+imNum 1000
+avgDegree 2.18972
