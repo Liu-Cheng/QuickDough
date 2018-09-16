@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Aug 17 14:16:13 2017
+# Process ID: 11462
+# Current directory: /home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k
+# Command line: vivado new_scgra2x2_on_adm.xpr
+# Log file: /home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/vivado.log
+# Journal file: /home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project new_scgra2x2_on_adm.xpr
+update_compile_order -fileset sources_1

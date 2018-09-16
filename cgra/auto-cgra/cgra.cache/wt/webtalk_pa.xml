@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Wed Aug 16 00:37:38 2017">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="404495f1ac7b4825a5491a101f6f34c2" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="FileExit" value="1" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="FINISH, Finish" value="1" type="GuiResourceData"/>
+<property name="NEXT, Next " value="7" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_EXIT, Exit" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints, constrs_1], 1, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 0, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, Create New Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_EXPORT, Export" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_BOARDS, Boards" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_BOARDS, Virtex-7 VC709 Evaluation Platform ; xilinx.com ; 1.0 ; xc7vx690tffg1761-2 ; 1761 ; 1.0 ; 1470 ; 3600 ; 866400 ; 0 ; 36 ; 850 ; 433200 ; 20 ; 3 ; 85 ; 0 ; 85 ; C ; 1.03 ; 0.97 ; 0.97 ; 0 ; 0 ; 0 ; 36 ; 0, 21, Virtex-7 VC709 Evaluation Platform, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_BOARDS, Virtex-7 VC709 Evaluation Platform ; xilinx.com ; 1.0 ; xc7vx690tffg1761-2 ; 1761 ; 1.1 ; 1470 ; 3600 ; 866400 ; 0 ; 36 ; 850 ; 433200 ; 20 ; 3 ; 85 ; 0 ; 85 ; C ; 1.03 ; 0.97 ; 0.97 ; 0 ; 0 ; 0 ; 36 ; 0, 22, Virtex-7 VC709 Evaluation Platform, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_BOARD_REV_CHOOSER, All, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, cgra" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 129, 15" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 266, 52" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 441, 35" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 559, 34" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="15" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="14" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>
