@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Aug 17 14:16:13 2017
+# Process ID: 11462
+# Current directory: /home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k
+# Command line: vivado new_scgra2x2_on_adm.xpr
+# Log file: /home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/vivado.log
+# Journal file: /home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project new_scgra2x2_on_adm.xpr
+INFO: [Project 1-313] Project file moved from '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm' since last save.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/TDP_Data_Mem.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/TDP_Data_Mem.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/SP_Inst_Mem.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/SP_Inst_Mem.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/MulAdd.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/MulAdd.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/Inst_Mem.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/Inst_Mem.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/Data_Mem.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/Data_Mem.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/ALU.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/ALU.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/PEIO.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/PEIO.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/PE.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/PE.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/Torus2x2.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/Torus2x2.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/BramIF.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/BramIF.v' instead.
+WARNING: [Project 1-312] File not found as '/home/liucheng/gitrepo/QuickDough/new_scgra2x2-1k/src/cgra2x2.v'; using path '/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/cgra2x2.v' instead.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 5822.797 ; gain = 73.664 ; free physical = 120 ; free virtual = 11541
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 17 14:17:05 2017...

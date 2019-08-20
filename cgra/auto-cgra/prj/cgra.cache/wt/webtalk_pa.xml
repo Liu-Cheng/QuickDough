@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Wed Aug 16 10:55:32 2017">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="81e5298f3a9f4161b7857b30ef775043" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="1" type="JavaHandler"/>
+<property name="CoreView" value="2" type="JavaHandler"/>
+<property name="CustomizeCore" value="4" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="ALU.v, 123, 281" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 160, 431" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 178, 380" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 183, 274" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 200, 443" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 208, 369" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 212, 307" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 215, 270" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 232, 364" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 244, 313" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 246, 264" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 255, 430" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 258, 261" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 259, 402" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 276, 314" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 284, 385" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 298, 246" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 312, 338" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 320, 254, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 325, 483, true, false, false, false, false" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 328, 309" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 335, 329" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 335, 329, true, false, false, false, false" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 335, 329, true, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 335, 352" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 335, 352, true, false, false, false, false" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 336, 295" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 370, 276" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 396, 382" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 441, 351" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 448, 308" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 449, 313" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 455, 270, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 478, 249" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 97, 495" value="1" type="GuiResourceData"/>
+<property name="ALU.v, 99, 485" value="1" type="GuiResourceData"/>
+<property name="Component Name, ADDSUB" value="1" type="GuiResourceData"/>
+<property name="Implement using (Implementation" value="2" type="GuiResourceData"/>
+<property name="MulAdd.v, 121, 259" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 153, 243" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 161, 381" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 193, 380" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 194, 355" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 211, 174" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 231, 186" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 251, 361" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 305, 358" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 315, 326" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 322, 461" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 364, 459" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 398, 464" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 448, 458" value="1" type="GuiResourceData"/>
+<property name="MulAdd.v, 487, 459" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Adder/Subtracter ;  ; Production ; Included ; xilinx.com:ip:c_addsub:12.0, 5" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Adder/Subtracter ;  ; Production ; Included ; xilinx.com:ip:c_addsub:12.0, 5, Adder/Subtracter, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Adder/Subtracter ;  ; Production ; Included ; xilinx.com:ip:c_addsub:12.0, 5, Adder/Subtracter, 0, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Adders  Subtracters ;  ;  ;  ; , 4, Adders  Subtracters, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, DSP48 Macro ;  ; Production ; Included ; xilinx.com:ip:xbip_dsp48_macro:3.0, 2, DSP48 Macro, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, DSP48 Macro ;  ; Production ; Included ; xilinx.com:ip:xbip_dsp48_macro:3.0, 2, DSP48 Macro, 0, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Multiply Adder ;  ; Production ; Included ; xilinx.com:ip:xbip_multadd:3.0, 2, Multiply Adder, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, MulAdd (MulAdd.v" value="5" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, cgra2x2 (cgra2x2.v" value="13" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, mac (mac.xci" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, IP Catalog], 4, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, IP Documentation" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="2" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="2" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="16" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="15" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

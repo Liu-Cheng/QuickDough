@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Wed Aug 16 00:39:43 2017
+# Process ID: 27674
+# Current directory: /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj
+# Command line: vivado
+# Log file: /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/vivado.log
+# Journal file: /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project cgra . -part xc7vx690tffg1761-2
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'.
+set_property board_part xilinx.com:vc709:part0:1.8 [current_project]
+add_files -norecurse {/home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/Data_Mem.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/Inst_Mem.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/PEIO.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/Torus2x2.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/cgra2x2.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/ALU.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/MulAdd.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/BramIF.v /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/cgra/PE.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+NOT OK!
+create_ip -name xbip_dsp48_macro -vendor xilinx.com -library ip -version 3.0 -module_name mac
+set_property -dict [list CONFIG.instruction2 {A*B-C} CONFIG.instruction3 {#} CONFIG.areg_1 {false} CONFIG.areg_2 {false} CONFIG.areg_3 {true} CONFIG.areg_4 {true} CONFIG.breg_1 {false} CONFIG.breg_2 {false} CONFIG.breg_3 {true} CONFIG.breg_4 {true} CONFIG.creg_1 {false} CONFIG.creg_2 {false} CONFIG.creg_3 {true} CONFIG.creg_4 {true} CONFIG.creg_5 {true} CONFIG.opreg_1 {false} CONFIG.opreg_2 {false} CONFIG.opreg_3 {true} CONFIG.opreg_4 {true} CONFIG.opreg_5 {true} CONFIG.cinreg_1 {false} CONFIG.cinreg_2 {false} CONFIG.cinreg_3 {false} CONFIG.cinreg_4 {false} CONFIG.cinreg_5 {false} CONFIG.mreg_5 {true} CONFIG.preg_6 {true} CONFIG.d_width {18} CONFIG.a_width {18} CONFIG.a_binarywidth {0} CONFIG.b_width {18} CONFIG.b_binarywidth {0} CONFIG.concat_width {48} CONFIG.concat_binarywidth {0} CONFIG.c_width {48} CONFIG.c_binarywidth {0} CONFIG.pcin_binarywidth {0}] [get_ips mac]
+generate_target {instantiation_template} [get_files /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.srcs/sources_1/ip/mac/mac.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'mac'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.srcs/sources_1/ip/mac/mac.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mac'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'mac'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'mac'...
+export_ip_user_files -of_objects [get_files /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.srcs/sources_1/ip/mac/mac.xci] -no_script -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.srcs/sources_1/ip/mac/mac.xci]
+launch_run -jobs 2 mac_synth_1
+[Wed Aug 16 00:57:09 2017] Launched mac_synth_1...
+Run output will be captured here: /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.runs/mac_synth_1/runme.log
+export_simulation -of_objects [get_files /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.srcs/sources_1/ip/mac/mac.xci] -directory /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.ip_user_files/sim_scripts -ip_user_files_dir /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.ip_user_files -ipstatic_source_dir /home/liucheng/gitrepo/QuickDough/cgra/auto-cgra/prj/cgra.ip_user_files/ipstatic -force -quiet
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 16 10:55:34 2017...

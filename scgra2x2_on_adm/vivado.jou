@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Wed Aug 16 16:32:10 2017
+# Process ID: 9542
+# Current directory: /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm
+# Command line: vivado
+# Log file: /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/vivado.log
+# Journal file: /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project cgra2x2-1k . -part xc7vx690tffg1157-2
+add_files -norecurse {/home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/ALU.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/Data_Mem.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/user_logic.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/MulAdd.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/Inst_Mem.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/SP_Inst_Mem.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/acc_ctrl.vhd /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/cgra2x2.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/PE.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/Torus2x2.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/BramIF.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/PEIO.v /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/TDP_Data_Mem.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+remove_files /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/acc_ctrl.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+remove_files /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm/src/user_logic.v
+save_project_as new_scgra2x2_on_adm /home/liucheng/gitrepo/QuickDough/scgra2x2_on_adm -force
