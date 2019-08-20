@@ -1,0 +1,14 @@
+set -tmpdir D:\minibench\scgra-v1\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\synthesis\xst_temp_dir\
+run
+-opt_mode speed
+-netlist_hierarchy as_optimized
+-opt_level 1
+-p xc7z020clg484-1
+-top base_sys_axi_interconnect_1_wrapper
+-ifmt MIXED
+-ifn base_sys_axi_interconnect_1_wrapper_xst.prj
+-ofn ../implementation/base_sys_axi_interconnect_1_wrapper.ngc
+-hierarchy_separator /
+-iobuf NO
+-sd {../implementation}
+-vlgincdir {"D:\minibench\scgra-v1\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\" "C:\EDA\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }

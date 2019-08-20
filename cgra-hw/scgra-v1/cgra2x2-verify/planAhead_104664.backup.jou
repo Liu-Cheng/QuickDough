@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Aug 15 23:14:49 2014
+# Process ID: 91360
+# Log file: D:/minibench/scgra-v1/cgra2x2-verify/planAhead.log
+# Journal file: D:/minibench/scgra-v1/cgra2x2-verify\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra-v1\cgra2x2-verify\cgra2x2-verify.ppr}
+update_compile_order -fileset sources_1
+generate_target  synthesis  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/Addr_Buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/Addr_Buffer1.xci}]
+generate_target  simulation  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/Addr_Buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/Addr_Buffer1.xci}]
+launch_isim -simset sim_1 -mode behavioral

@@ -1,0 +1,103 @@
+@I [LIC-101] Checked out feature [HLS]
+@I [HLS-10] Running '/opt/Xilinx/Vivado_HLS/2015.1/bin/unwrapped/lnx64.o/vivado_hls'
+            for user 'mhho' on host 'mhho-VirtualBox' (Linux_x86_64 version 3.16.0-38-generic) on Thu Jun 18 16:27:23 HKT 2015
+            in directory '/home/mhho/wrk/SparkAccel/hls/hls_linearRegression'
+@I [HLS-10] Opening project '/home/mhho/wrk/SparkAccel/hls/hls_linearRegression/axi_interfaces_prj'.
+@I [HLS-10] Adding design file 'axi_interfaces.cpp' to the project
+@I [HLS-10] Adding test bench file 'result.golden.dat' to the project
+@I [HLS-10] Adding test bench file 'axi_interfaces_test.c' to the project
+@I [HLS-10] Opening solution '/home/mhho/wrk/SparkAccel/hls/hls_linearRegression/axi_interfaces_prj/solution1'.
+@I [SYN-201] Setting up clock 'default' with a period of 4ns.
+@I [HLS-10] Setting target device to 'xc7k325tffg900-2'
+@I [HLS-10] Analyzing design file 'axi_interfaces.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [XFORM-602] Inlining function 'reverseBytes32' into 'axi_interfaces' (axi_interfaces.cpp:35) automatically.
+@I [XFORM-602] Inlining function 'reverseBytes64' into 'axi_interfaces' (axi_interfaces.cpp:43) automatically.
+@I [XFORM-502] Unrolling all loops for pipelining in function 'axi_interfaces' (axi_interfaces.cpp:10).
+@W [XFORM-505] Ignored pipeline directive for loop 'Elem_Mult_Loop' (axi_interfaces.cpp:55) because its parent loop or function is pipelined.
+@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop32' (axi_interfaces.cpp:99) because its parent loop or function is pipelined.
+@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop16' (axi_interfaces.cpp:110) because its parent loop or function is pipelined.
+@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop8' (axi_interfaces.cpp:121) because its parent loop or function is pipelined.
+@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop4' (axi_interfaces.cpp:132) because its parent loop or function is pipelined.
+@W [XFORM-505] Ignored pipeline directive for loop 'Scalar_Product_Loop' (axi_interfaces.cpp:150) because its parent loop or function is pipelined.
+@W [XFORM-503] Ignored partial unroll directive for loop 'Scalar_Product_Loop' (axi_interfaces.cpp:150) because its parent loop or function is pipelined.
+@I [XFORM-501] Unrolling loop 'Elem_Mult_Loop' (axi_interfaces.cpp:55) in function 'axi_interfaces' completely.
+@I [XFORM-501] Unrolling loop 'Add_Loop32' (axi_interfaces.cpp:99) in function 'axi_interfaces' completely.
+@I [XFORM-501] Unrolling loop 'Add_Loop16' (axi_interfaces.cpp:110) in function 'axi_interfaces' completely.
+@I [XFORM-501] Unrolling loop 'Add_Loop8' (axi_interfaces.cpp:121) in function 'axi_interfaces' completely.
+@I [XFORM-501] Unrolling loop 'Add_Loop4' (axi_interfaces.cpp:132) in function 'axi_interfaces' completely.
+@I [XFORM-501] Unrolling loop 'Scalar_Product_Loop' (axi_interfaces.cpp:150) in function 'axi_interfaces' completely.
+@I [XFORM-101] Partitioning array 'doutc' (axi_interfaces.cpp:10) in dimension 1 with a cyclic factor 2.
+@I [XFORM-101] Partitioning array 'dinb' (axi_interfaces.cpp:10) in dimension 1 with a cyclic factor 2.
+@I [XFORM-101] Partitioning array 'dina' (axi_interfaces.cpp:10) in dimension 1 with a cyclic factor 2.
+@I [XFORM-101] Partitioning array 'elem_mult' (axi_interfaces.cpp:19) in dimension 1 completely.
+@I [XFORM-602] Inlining function 'reverseBytes32' into 'axi_interfaces' (axi_interfaces.cpp:47) automatically.
+@I [XFORM-401] Performing if-conversion on hyperblock from (axi_interfaces.cpp:101:2) to (axi_interfaces.cpp:153:2) in function 'axi_interfaces'... converting 121 basic blocks.
+@I [XFORM-11] Balancing expressions in function 'reverseBytes64' (axi_interfaces.cpp:173)...6 expression(s) balanced.
+@I [HLS-111] Elapsed time: 32.1109 seconds; current memory usage: 112 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'axi_interfaces' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'axi_interfaces_reverseBytes64' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining function 'axi_interfaces_reverseBytes64'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 5.1334 seconds; current memory usage: 122 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'axi_interfaces_reverseBytes64' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.023782 seconds; current memory usage: 122 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'axi_interfaces' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining function 'axi_interfaces'.
+@I [SCHED-61] Pipelining result: Target II: 128, Final II: 128, Depth: 238.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 157.331 seconds; current memory usage: 147 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'axi_interfaces' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] After resource sharing, estimated clock period (4.42ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns).
+@I [BIND-100] The critical path consists of the following:
+	'dmul' operation ('tmp_12_14', axi_interfaces.cpp:66) (4.42 ns)
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 4.95078 seconds; current memory usage: 164 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'axi_interfaces_reverseBytes64' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'axi_interfaces_reverseBytes64'.
+@I [HLS-111] Elapsed time: 3.24951 seconds; current memory usage: 164 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'axi_interfaces' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'axi_interfaces/doutc_0' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'axi_interfaces/doutc_1' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'axi_interfaces/dina_0' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'axi_interfaces/dina_1' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'axi_interfaces/dinb_0' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'axi_interfaces/dinb_1' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'axi_interfaces' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'axi_interfaces_dadddsub_64ns_64ns_64_9_full_dsp': 1 instance(s).
+@I [RTGEN-100] Generating core module 'axi_interfaces_dmul_64ns_64ns_64_10_max_dsp': 2 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'axi_interfaces'.
+@I [HLS-111] Elapsed time: 2.29897 seconds; current memory usage: 179 MB.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'axi_interfaces'.
+@I [WVHDL-304] Generating RTL VHDL for 'axi_interfaces'.
+@I [WVLOG-307] Generating RTL Verilog for 'axi_interfaces'.
+@I [HLS-112] Total elapsed time: 227.817 seconds; peak memory usage: 179 MB.
+@I [LIC-101] Checked in feature [HLS]

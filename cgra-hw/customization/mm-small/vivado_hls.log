@@ -1,0 +1,353 @@
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 14:01:29 +0800 2015
+            in directory 'D:/minibench/customization/mm-small'
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+@E [LIC-104] License feature [HLS_BETA] is not available.
+command 'license_checkout' returned error code
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/mm-small/@I [LIC-101] Checked in feature [VIVADO_HLS]
+d out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:30:21 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/mm-small'.
+@I [HLS-10] Adding design file 'mm-small/src/mm_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/main.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/mm_ip.h' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/mm-small/unroll_2x10x10'.
+@I [SYN-201] Setting up clock 'default' with a period of 5ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'mm-small/src/mm_ip.h' ... 
+@I [HLS-10] Importing test bench file 'mm-small/src/main.c' ... 
+@I [HLS-10] Analyzing design file 'mm-small/src/mm_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip' partially with a factor of 8.
+@I [XFORM-11] Balancing expressions in function 'mm_ip' (mm-small/src/mm_ip.c:3)...8 expression(s) balanced.
+@I [HLS-111] Elapsed time: 18.892 seconds; current memory usage: 39.2 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'mm_ip' ...
+@W [RTGEN-101] Legalizing port name 'mm_ip/in' to 'mm_ip/in_r'.
+@W [RTGEN-101] Legalizing port name 'mm_ip/out' to 'mm_ip/out_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.579 seconds; current memory usage: 41.2 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.289 seconds; current memory usage: 41.2 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/in_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/out_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'mm_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'mm_ip_mul_32s_32s_32_7': 4 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'mm_ip'.
+@I [HLS-111] Elapsed time: 0.254 seconds; current memory usage: 41.5 MB.
+@I [RTMG-282] Generating pipelined core: 'mm_ip_mul_32s_32s_32_7_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'mm_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'mm_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'mm_ip'.
+@I [HLS-112] Total elapsed time: 21.406 seconds; peak memory usage: 41.5 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/mm-small/unroll_2x10x10/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:32:43 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/mm-small'.
+@I [HLS-10] Adding design file 'mm-small/src/mm_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/mm_ip.h' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/main.c' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/mm-small/unroll_2x10x10'.
+@I [SYN-201] Setting up clock 'default' with a period of 5ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'mm-small/src/main.c' ... 
+@I [HLS-10] Importing test bench file 'mm-small/src/mm_ip.h' ... 
+@I [HLS-10] Analyzing design file 'mm-small/src/mm_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip' partially with a factor of 16.
+@I [XFORM-11] Balancing expressions in function 'mm_ip' (mm-small/src/mm_ip.c:3)...16 expression(s) balanced.
+@I [HLS-111] Elapsed time: 8.555 seconds; current memory usage: 40.2 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'mm_ip' ...
+@W [RTGEN-101] Legalizing port name 'mm_ip/in' to 'mm_ip/in_r'.
+@W [RTGEN-101] Legalizing port name 'mm_ip/out' to 'mm_ip/out_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.784 seconds; current memory usage: 44.3 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.164 seconds; current memory usage: 44.4 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/in_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/out_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'mm_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'mm_ip_mul_32s_32s_32_7': 4 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'mm_ip'.
+@I [HLS-111] Elapsed time: 0.234 seconds; current memory usage: 45.5 MB.
+@I [RTMG-282] Generating pipelined core: 'mm_ip_mul_32s_32s_32_7_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'mm_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'mm_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'mm_ip'.
+@I [HLS-112] Total elapsed time: 10.561 seconds; peak memory usage: 45.5 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/mm-small/unroll_2x10x10/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:33:13 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/mm-small'.
+@I [HLS-10] Adding design file 'mm-small/src/mm_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/main.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/mm_ip.h' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/mm-small/unroll_2x10x10'.
+@I [SYN-201] Setting up clock 'default' with a period of 5ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'mm-small/src/mm_ip.h' ... 
+@I [HLS-10] Importing test bench file 'mm-small/src/main.c' ... 
+@I [HLS-10] Analyzing design file 'mm-small/src/mm_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip' partially with a factor of 32.
+@I [XFORM-11] Balancing expressions in function 'mm_ip' (mm-small/src/mm_ip.c:3)...32 expression(s) balanced.
+@I [HLS-111] Elapsed time: 9.261 seconds; current memory usage: 42.7 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'mm_ip' ...
+@W [RTGEN-101] Legalizing port name 'mm_ip/in' to 'mm_ip/in_r'.
+@W [RTGEN-101] Legalizing port name 'mm_ip/out' to 'mm_ip/out_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 1.515 seconds; current memory usage: 47.1 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.293 seconds; current memory usage: 48.3 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/in_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/out_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'mm_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'mm_ip_mul_32s_32s_32_7': 4 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'mm_ip'.
+@I [HLS-111] Elapsed time: 0.607 seconds; current memory usage: 51.2 MB.
+@I [RTMG-282] Generating pipelined core: 'mm_ip_mul_32s_32s_32_7_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'mm_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'mm_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'mm_ip'.
+@I [HLS-112] Total elapsed time: 12.681 seconds; peak memory usage: 51.2 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/mm-small/unroll_2x10x10/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:33:44 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/mm-small'.
+@I [HLS-10] Adding design file 'mm-small/src/mm_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/mm_ip.h' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/main.c' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/mm-small/unroll_2x10x10'.
+@I [SYN-201] Setting up clock 'default' with a period of 5ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'mm-small/src/main.c' ... 
+@I [HLS-10] Importing test bench file 'mm-small/src/mm_ip.h' ... 
+@I [HLS-10] Analyzing design file 'mm-small/src/mm_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip': changing partial unrolling into complete unrolling since the unrolling factor (=128) is no less than the loop trip count (=128).
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip' completely.
+@I [XFORM-11] Balancing expressions in function 'mm_ip' (mm-small/src/mm_ip.c:3)...127 expression(s) balanced.
+@I [HLS-111] Elapsed time: 13.241 seconds; current memory usage: 50.5 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'mm_ip' ...
+@W [RTGEN-101] Legalizing port name 'mm_ip/in' to 'mm_ip/in_r'.
+@W [RTGEN-101] Legalizing port name 'mm_ip/out' to 'mm_ip/out_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 6.086 seconds; current memory usage: 59.8 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 1.326 seconds; current memory usage: 63.6 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/in_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/out_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'mm_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'mm_ip_mul_32s_32s_32_7': 4 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'mm_ip'.
+@I [HLS-111] Elapsed time: 1.441 seconds; current memory usage: 71.9 MB.
+@I [RTMG-282] Generating pipelined core: 'mm_ip_mul_32s_32s_32_7_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'mm_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'mm_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'mm_ip'.
+@I [HLS-112] Total elapsed time: 24.23 seconds; peak memory usage: 71.9 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/mm-small/unroll_2x10x10/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:34:49 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/mm-small'.
+@I [HLS-10] Adding design file 'mm-small/src/mm_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/main.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/mm_ip.h' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/mm-small/unroll_2x10x10'.
+@I [SYN-201] Setting up clock 'default' with a period of 5ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'mm-small/src/mm_ip.h' ... 
+@I [HLS-10] Importing test bench file 'mm-small/src/main.c' ... 
+@I [HLS-10] Analyzing design file 'mm-small/src/mm_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip': changing partial unrolling into complete unrolling since the unrolling factor (=128) is no less than the loop trip count (=128).
+@I [XFORM-501] Unrolling loop 'mm_label1' (mm-small/src/mm_ip.c:8) in function 'mm_ip' partially with a factor of 2.
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip' completely.
+@I [XFORM-11] Balancing expressions in function 'mm_ip' (mm-small/src/mm_ip.c:3)...254 expression(s) balanced.
+@I [HLS-111] Elapsed time: 22.645 seconds; current memory usage: 57.7 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'mm_ip' ...
+@W [RTGEN-101] Legalizing port name 'mm_ip/in' to 'mm_ip/in_r'.
+@W [RTGEN-101] Legalizing port name 'mm_ip/out' to 'mm_ip/out_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 12.277 seconds; current memory usage: 72.5 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 3.141 seconds; current memory usage: 81.5 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/in_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/out_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'mm_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'mm_ip_mul_32s_32s_32_7': 256 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'mm_ip'.
+@I [HLS-111] Elapsed time: 4.349 seconds; current memory usage: 102 MB.
+@I [RTMG-282] Generating pipelined core: 'mm_ip_mul_32s_32s_32_7_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'mm_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'mm_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'mm_ip'.
+@I [HLS-112] Total elapsed time: 51.851 seconds; peak memory usage: 105 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/mm-small/unroll_2x10x10/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:36:35 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/mm-small'.
+@I [HLS-10] Adding design file 'mm-small/src/mm_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/mm_ip.h' to the project.
+@I [HLS-10] Adding test bench file 'mm-small/src/main.c' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/mm-small/unroll_2x10x10'.
+@I [SYN-201] Setting up clock 'default' with a period of 5ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'mm-small/src/main.c' ... 
+@I [HLS-10] Importing test bench file 'mm-small/src/mm_ip.h' ... 
+@I [HLS-10] Analyzing design file 'mm-small/src/mm_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip': changing partial unrolling into complete unrolling since the unrolling factor (=128) is no less than the loop trip count (=128).
+@I [XFORM-501] Unrolling loop 'mm_label0' (mm-small/src/mm_ip.c:10) in function 'mm_ip' completely.
+@I [XFORM-11] Balancing expressions in function 'mm_ip' (mm-small/src/mm_ip.c:3)...127 expression(s) balanced.
+@I [HLS-111] Elapsed time: 17.725 seconds; current memory usage: 50.5 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'mm_ip' ...
+@W [RTGEN-101] Legalizing port name 'mm_ip/in' to 'mm_ip/in_r'.
+@W [RTGEN-101] Legalizing port name 'mm_ip/out' to 'mm_ip/out_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 6.481 seconds; current memory usage: 59.8 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 1.501 seconds; current memory usage: 63.7 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'mm_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/in_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'mm_ip/out_r' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'mm_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'mm_ip_mul_32s_32s_32_7': 4 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'mm_ip'.
+@I [HLS-111] Elapsed time: 1.442 seconds; current memory usage: 71.9 MB.
+@I [RTMG-282] Generating pipelined core: 'mm_ip_mul_32s_32s_32_7_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'mm_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'mm_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'mm_ip'.

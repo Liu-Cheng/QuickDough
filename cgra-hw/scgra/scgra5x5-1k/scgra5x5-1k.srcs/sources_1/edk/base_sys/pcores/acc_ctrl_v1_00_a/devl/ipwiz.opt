@@ -1,0 +1,10 @@
+-batch 
+-create acc_ctrl 
+-ver 1.00.a 
+-dir "C:\Users\Liucheng\Documents\scgra_high_freq\scgra2x2_high_freq\scgra2x2_high_freq.srcs\sources_1\edk\base_sys" 
+-lang verilog 
+-bus axi4lite s 
+-reg 2 
+-xps 
+-ise 
+-driver 

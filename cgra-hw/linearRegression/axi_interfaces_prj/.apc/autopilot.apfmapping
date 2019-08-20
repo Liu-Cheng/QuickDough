@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="axi_interfaces.cpp" path="D:\minibench\linearRegression\axi_interfaces.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="axi_interfaces_test.c" path="D:\minibench\linearRegression\axi_interfaces_test.c"/>
+    <originFiles name="result.golden.dat" path="D:\minibench\linearRegression\result.golden.dat"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

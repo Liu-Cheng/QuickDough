@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="system_bd.bmm" key="base_sys_hw_platform-bmmFile"/>
+	<item value="C:\Users\Liucheng\Documents\vmshare\scgra2x2-mm-supersmall.bit" key="base_sys_hw_platform-bitFile"/>
+</section>

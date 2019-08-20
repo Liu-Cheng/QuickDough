@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Oct 03 15:50:00 2014
+# Process ID: 52136
+# Log file: D:/minibench/scgra-v1/cgra2x2-verify/planAhead.log
+# Journal file: D:/minibench/scgra-v1/cgra2x2-verify\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra-v1\cgra2x2-verify\cgra2x2-verify.ppr}
+update_compile_order -fileset sources_1

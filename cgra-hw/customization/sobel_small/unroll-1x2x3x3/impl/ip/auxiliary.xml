@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xd" xd:functionName="sobel_ip" xd:componentRef="sobel_ip" xd:clockPeriod="10.000000">
+  <xd:controlReg xd:name="control" xd:interfaceRef="S_AXI_SLV0" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="sub_in[]" xd:originalName="sub_in" xd:direction="in" xd:interfaceRef="sub_in_PORTA" xd:busTypeRef="bram"/>
+  <xd:arg xd:name="sub_out[]" xd:originalName="sub_out" xd:direction="out" xd:interfaceRef="sub_out_PORTA" xd:busTypeRef="bram"/>
+  <xd:latencyEstimates xd:best-case="260" xd:worst-case="260" xd:average-case="260"/>
+  <xd:resourceEstimates xd:LUT="9551" xd:FF="6038" xd:BRAM="2" xd:DSP="216"/>
+</xd:acceleratorMap>

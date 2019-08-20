@@ -1,0 +1,6 @@
+11:29:40 **** Auto Build of project fir-large_bsp ****
+make -k all 
+'Finished building libraries'
+
+11:29:41 Build Finished (took 1s.251ms)
+

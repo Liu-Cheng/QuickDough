@@ -1,0 +1,270 @@
+Running: C:\EDA\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle pa -incremental -L work -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip -o top_testbench.exe --prj D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.sim/sim_1/behav/top_testbench.prj -top work.top_testbench -top work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/MulAdd.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_9/SP_Inst_Mem00.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_8/TDP_Data_Mem.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/SP_Inst_Mem13.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_29/SP_Inst_Mem32.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_28/SP_Inst_Mem33.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_27/SP_Inst_Mem34.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_26/SP_Inst_Mem40.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_25/SP_Inst_Mem41.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_24/SP_Inst_Mem42.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_23/SP_Inst_Mem43.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_22/SP_Inst_Mem44.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_21/SP_Inst_Mem31.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_20/SP_Inst_Mem30.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/SP_Inst_Mem04.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_19/SP_Inst_Mem24.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_18/SP_Inst_Mem23.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_17/SP_Inst_Mem14.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_16/SP_Inst_Mem22.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_15/SP_Inst_Mem21.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_14/SP_Inst_Mem20.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_13/SP_Inst_Mem12.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_12/SP_Inst_Mem11.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_11/SP_Inst_Mem10.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_10/SP_Inst_Mem02.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/SP_Inst_Mem03.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/SP_Inst_Mem01.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem44.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem43.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem42.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem41.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem40.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem34.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem33.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem32.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem31.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem30.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem24.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem23.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem22.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem21.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem20.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem14.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem13.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem12.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem11.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem10.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem04.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem03.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem02.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem01.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem00.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/data_mem.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/ALU.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE44.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE43.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE42.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE41.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE40.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE34.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE33.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE32.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE31.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE30.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE24.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE23.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE22.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE21.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE20.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE14.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE13.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE12.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE11.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE10.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE04.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE03.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE02.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE01.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE00.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Torus5x5.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/BramIF.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/cgra5x5.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/addr_buffer1.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/addr_buffer0.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_5/data_buffer1.v" into library work
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_4/data_buffer0.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/new/acc_ctrl.v" into library work
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" into library work
+Analyzing Verilog file "C:/EDA/14.7/ISE_DS/PlanAhead/data/verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 153: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 154: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 162: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 163: Size mismatch in connection of port <addra>. Formal port size is 11-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 171: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 172: Size mismatch in connection of port <addra>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 180: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sim_1/imports/src/top_testbench.v" Line 181: Size mismatch in connection of port <addra>. Formal port size is 12-bit while actual signal size is 32-bit.
+Completed static elaboration
+Compiling module acc_ctrl
+Compiling module MulAdd
+Compiling module ALU(DWIDTH=32)
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module TDP_Data_Mem
+Compiling module Data_Mem
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem00
+Compiling module Inst_Mem00
+Compiling module PE00
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem01
+Compiling module Inst_Mem01
+Compiling module PE01
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem02
+Compiling module Inst_Mem02
+Compiling module PE02
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem03
+Compiling module Inst_Mem03
+Compiling module PE03
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem04
+Compiling module Inst_Mem04
+Compiling module PE04
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem10
+Compiling module Inst_Mem10
+Compiling module PE10
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem11
+Compiling module Inst_Mem11
+Compiling module PE11
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem12
+Compiling module Inst_Mem12
+Compiling module PE12
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem13
+Compiling module Inst_Mem13
+Compiling module PE13
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem14
+Compiling module Inst_Mem14
+Compiling module PE14
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem20
+Compiling module Inst_Mem20
+Compiling module PE20
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem21
+Compiling module Inst_Mem21
+Compiling module PE21
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem22
+Compiling module Inst_Mem22
+Compiling module PE22
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem23
+Compiling module Inst_Mem23
+Compiling module PE23
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem24
+Compiling module Inst_Mem24
+Compiling module PE24
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem30
+Compiling module Inst_Mem30
+Compiling module PE30
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem31
+Compiling module Inst_Mem31
+Compiling module PE31
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem32
+Compiling module Inst_Mem32
+Compiling module PE32
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem33
+Compiling module Inst_Mem33
+Compiling module PE33
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem34
+Compiling module Inst_Mem34
+Compiling module PE34
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem40
+Compiling module Inst_Mem40
+Compiling module PE40
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem41
+Compiling module Inst_Mem41
+Compiling module PE41
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem42
+Compiling module Inst_Mem42
+Compiling module PE42
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem43
+Compiling module Inst_Mem43
+Compiling module PE43
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module SP_Inst_Mem44
+Compiling module Inst_Mem44
+Compiling module PE44
+Compiling module Torus5x5(DWIDTH=32,SYS_DWIDTH=32...
+Compiling module BramIF(SYS_DWIDTH=32,BYTE_LEN=4)
+Compiling module cgra5x5
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module data_buffer0
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module data_buffer1
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module addr_buffer0
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module addr_buffer1
+Compiling module top_testbench
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 153 sub-compilation(s) to finish...
+Compiled 160 Verilog Units
+Built simulation executable top_testbench.exe
+Fuse Memory Usage: 53856 KB
+Fuse CPU Usage: 5740 ms

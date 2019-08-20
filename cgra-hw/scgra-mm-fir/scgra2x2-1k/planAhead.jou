@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue Sep 02 16:35:20 2014
+# Process ID: 19228
+# Log file: D:/minibench/scgra-mm-fir/scgra2x2-1k/planAhead.log
+# Journal file: D:/minibench/scgra-mm-fir/scgra2x2-1k\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.ppr}
+save_project_as scgra2x2 D:/minibench/scgra-pipeline2/scgra2x2 -force

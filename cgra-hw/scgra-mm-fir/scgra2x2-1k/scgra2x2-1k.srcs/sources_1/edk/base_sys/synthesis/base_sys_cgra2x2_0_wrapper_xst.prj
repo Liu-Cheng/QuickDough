@@ -1,0 +1,12 @@
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/TDP_Data_Mem.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/SP_Inst_Mem.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/MulAdd.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/Inst_Mem.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/Data_Mem.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/ALU.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/PEIO.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/PE.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/Torus2x2.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/BramIF.v
+verilog cgra2x2_v3_00_a D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\pcores\cgra2x2_v3_00_a/hdl/verilog/cgra2x2.v
+verilog work ../hdl/base_sys_cgra2x2_0_wrapper.v

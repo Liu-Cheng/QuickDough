@@ -1,0 +1,225 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Mon Aug 18 11:56:33 2014
+
+drc -z base_sys_stub_routed.ncd base_sys_stub.pcf
+
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/cgra2x2_0_PORT1_BRAM_Addr[17]> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/cgra2x2_0_PORT1_BRAM_Addr[18]> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM8_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7
+   _RAMB_D1_DPO> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7
+   _RAMC_D1_DPO> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/cgra2x2_0_PORT0_BRAM_Addr[17]> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/cgra2x2_0_PORT0_BRAM_Addr[18]> is incomplete. The signal does not
+   drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7
+   _RAMB_D1_DPO> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7
+   _RAMC_D1_DPO> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1
+   _RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM7_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM8_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+WARNING:PhysDesignRules:367 - The signal
+   <base_sys_i/axi_interconnect_1/axi_interconnect_1/mi_data_fifo_bank/gen_fifo_
+   slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_
+   RAMD_D1_O> is incomplete. The signal does not drive any load pins in the
+   design.
+DRC detected 0 errors and 38 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

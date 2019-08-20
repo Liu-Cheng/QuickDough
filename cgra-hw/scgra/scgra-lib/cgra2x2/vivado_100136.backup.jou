@@ -1,0 +1,51 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Wed Jul 23 14:50:23 2014
+# Process ID: 97168
+# Log file: D:/minibench/scgra/scgra-lib/cgra2x2/vivado.log
+# Journal file: D:/minibench/scgra/scgra-lib/cgra2x2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra\scgra-lib\cgra2x2\cgra2x2.xpr}
+ipx::open_core -upgrade true {D:/minibench/scgra/scgra-lib/cgra2x2/component.xml}
+ipx::remove_all_port [ipx::current_core]
+ipx::add_ports_from_hdl [ipx::current_core] -top_level_hdl_file {D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/cgra2x2.v} -top_module_name {cgra2x2}
+ipx::infer_bus_interfaces {{xilinx.com:interface:bram:1.0}} [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::add_port_map {DOUT} [ipx::get_bus_interface Port0 [ipx::current_core]]
+set_property physical_name {Port0_Data_From_Bram} [ipx::get_port_map DOUT [ipx::get_bus_interface Port0 [ipx::current_core]]]
+ipx::add_port_map {WE} [ipx::get_bus_interface Port0 [ipx::current_core]]
+set_property physical_name {Port0_Wen} [ipx::get_port_map WE [ipx::get_bus_interface Port0 [ipx::current_core]]]
+ipx::add_port_map {DIN} [ipx::get_bus_interface Port0 [ipx::current_core]]
+set_property physical_name {Port0_Data_To_Bram} [ipx::get_port_map DIN [ipx::get_bus_interface Port0 [ipx::current_core]]]
+ipx::add_port_map {DOUT} [ipx::get_bus_interface Port1 [ipx::current_core]]
+set_property physical_name {Port2_Data_From_Bram} [ipx::get_port_map DOUT [ipx::get_bus_interface Port1 [ipx::current_core]]]
+ipx::add_port_map {WE} [ipx::get_bus_interface Port1 [ipx::current_core]]
+set_property physical_name {Port1_Wen} [ipx::get_port_map WE [ipx::get_bus_interface Port1 [ipx::current_core]]]
+ipx::add_port_map {DIN} [ipx::get_bus_interface Port1 [ipx::current_core]]
+set_property physical_name {Port1_Data_To_Bram} [ipx::get_port_map DIN [ipx::get_bus_interface Port1 [ipx::current_core]]]
+ipx::add_port_map {DOUT} [ipx::get_bus_interface Port2 [ipx::current_core]]
+set_property physical_name {Port2_Data_From_Bram} [ipx::get_port_map DOUT [ipx::get_bus_interface Port2 [ipx::current_core]]]
+ipx::add_port_map {WE} [ipx::get_bus_interface Port2 [ipx::current_core]]
+set_property physical_name {Port2_Wen} [ipx::get_port_map WE [ipx::get_bus_interface Port2 [ipx::current_core]]]
+ipx::add_port_map {DIN} [ipx::get_bus_interface Port2 [ipx::current_core]]
+set_property physical_name {Port2_Data_To_Bram} [ipx::get_port_map DIN [ipx::get_bus_interface Port2 [ipx::current_core]]]
+ipx::add_port_map {DOUT} [ipx::get_bus_interface Port3 [ipx::current_core]]
+set_property physical_name {Port3_Data_From_Bram} [ipx::get_port_map DOUT [ipx::get_bus_interface Port3 [ipx::current_core]]]
+ipx::add_port_map {WE} [ipx::get_bus_interface Port3 [ipx::current_core]]
+set_property physical_name {Port3_Wen} [ipx::get_port_map WE [ipx::get_bus_interface Port3 [ipx::current_core]]]
+ipx::add_port_map {DIN} [ipx::get_bus_interface Port3 [ipx::current_core]]
+set_property physical_name {Port3_Data_To_Bram} [ipx::get_port_map DIN [ipx::get_bus_interface Port3 [ipx::current_core]]]
+ipx::add_address_space {Port0} [ipx::current_core]
+set_property master_address_space_ref {Port0} [ipx::get_bus_interface Port0 [ipx::current_core]]
+ipx::add_address_space {Port1} [ipx::current_core]
+set_property master_address_space_ref {Port1} [ipx::get_bus_interface Port1 [ipx::current_core]]
+ipx::add_address_space {Port2} [ipx::current_core]
+set_property master_address_space_ref {Port2} [ipx::get_bus_interface Port2 [ipx::current_core]]
+ipx::add_address_space {Port3} [ipx::current_core]
+set_property master_address_space_ref {Port3} [ipx::get_bus_interface Port3 [ipx::current_core]]
+ipx::create_xgui_files [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::save_core [ipx::current_core]

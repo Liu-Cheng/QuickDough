@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/projects/prj2016/dma_demo/dma_demo.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="5210001fs"></ZoomEndTime>
+      <Cursor1Time time="1690000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="23" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_ARLEN" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_ARLEN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_ARLEN[7:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_ARADDR" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_ARADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_ARADDR[31:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_BRESP" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_BRESP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_BRESP[1:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_WDATA" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_WDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_WDATA[31:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_WVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_WVALID</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_WVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_RDATA" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_RDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_RDATA[31:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_RVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_RVALID</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_RVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_AWADDR" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_AWADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_AWADDR[31:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_AWLEN" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_AWLEN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_AWLEN[7:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_RRESP" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_RRESP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_RRESP[1:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_interrupt" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_interrupt</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_interrupt</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_ARREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_ARREADY</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_ARREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_ARVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_ARVALID</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_ARVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_AWREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_AWREADY</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_AWREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_AWVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_AWVALID</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_AWVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_BID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_BID</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_BID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_BREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_BREADY</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_BREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_BVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_BVALID</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_BVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_RID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_RID</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_RID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_RLAST" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_RLAST</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_RLAST</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_RREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_RREADY</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_RREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_WLAST" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_WLAST</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_WLAST</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="base_sys_i/usr_dma_0_M0_AXI_WREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">base_sys_i/usr_dma_0_M0_AXI_WREADY</obj_property>
+      <obj_property name="ObjectShortName">usr_dma_0_M0_AXI_WREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+</wave_config>

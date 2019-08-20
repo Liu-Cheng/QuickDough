@@ -1,0 +1,1 @@
+-intstyle "pa" -incremental -L "work" -L "unisims_ver" -L "unimacro_ver" -L "xilinxcorelib_ver" -L "secureip" -o "top_testbench.exe" --prj "D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.sim/sim_1/behav/top_testbench.prj" -top "work.top_testbench" -top "work.glbl" 

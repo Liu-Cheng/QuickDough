@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="sobel_ip.c" path="D:\minibench\customization\sobel_small\src\sobel_ip.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="D:\minibench\customization\sobel_small\src\main.c"/>
+    <originFiles name="sobel.h" path="D:\minibench\customization\sobel_small\src\sobel.h"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Thu Jun 12 18:07:31 2014
+# Process ID: 29032
+# Log file: D:/minibench/scgra/zc706/cgra2x2-tuning/planAhead.log
+# Journal file: D:/minibench/scgra/zc706/cgra2x2-tuning\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra\zc706\cgra2x2-tuning\cgra2x2-tuning.ppr}
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+open_run synth_1 -name netlist_1
+set_property strategy {PlanAhead Defaults} [get_runs synth_1]
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+refresh_design

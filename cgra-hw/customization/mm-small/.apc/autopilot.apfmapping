@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mm_ip.c" path="D:\minibench\customization\mm-small\src\mm_ip.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="D:\minibench\customization\mm-small\src\main.c"/>
+    <originFiles name="mm_ip.h" path="D:\minibench\customization\mm-small\src\mm_ip.h"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

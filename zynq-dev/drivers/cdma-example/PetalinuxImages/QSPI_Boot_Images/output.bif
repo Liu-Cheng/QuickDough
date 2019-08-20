@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+	[bootloader]C:\designs\CDMA\CDMA.sdk\fsbl\Debug\fsbl.elf
+	C:\designs\CDMA\CDMA.sdk\QSPI_Boot_Images\u-boot.elf
+	[offset = 0x520000]C:\designs\CDMA\CDMA.sdk\QSPI_Boot_Images\image.ub
+}

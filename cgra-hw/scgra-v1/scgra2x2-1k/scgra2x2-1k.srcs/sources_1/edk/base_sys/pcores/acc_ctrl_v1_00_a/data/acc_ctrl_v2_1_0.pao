@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          C:/Users/Liucheng/Documents/scgra_high_freq/scgra2x2_high_freq/scgra2x2_high_freq.srcs/sources_1/edk/base_sys/pcores/acc_ctrl_v1_00_a/data/acc_ctrl_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Dec 20 15:19:21 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib acc_ctrl_v1_00_a user_logic verilog
+lib acc_ctrl_v1_00_a acc_ctrl vhdl

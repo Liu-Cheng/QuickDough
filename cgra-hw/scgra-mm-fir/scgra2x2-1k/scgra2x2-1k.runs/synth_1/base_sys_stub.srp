@@ -1,0 +1,705 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: base_sys_stub.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "base_sys_stub.prj"
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "base_sys_stub.ngc"
+
+---- Source Options
+Top Module Name                    : base_sys_stub
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+---- Other Options
+Cores Search Directories           : {..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra2x2-1k/scgra2x2-1k.srcs/sources_1/edk/base_sys/hdl/base_sys.v" into library work
+Parsing module <base_sys>.
+Parsing module <base_sys_processing_system7_0_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_0_wrapper>.
+Parsing module <base_sys_axi_interconnect_1_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_0_bram_block_1_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_1_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_1_bram_block_1_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_2_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_2_bram_block_1_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_3_wrapper>.
+Parsing module <base_sys_axi_bram_ctrl_3_bram_block_1_wrapper>.
+Parsing module <base_sys_acc_ctrl_0_wrapper>.
+Parsing module <base_sys_axi_interconnect_2_wrapper>.
+Parsing module <base_sys_cgra2x2_0_wrapper>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra2x2-1k/scgra2x2-1k.srcs/sources_1/edk/base_sys/base_sys_stub.v" into library work
+Parsing module <base_sys_stub>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <base_sys_stub>.
+
+Elaborating module <base_sys>.
+WARNING:HDLCompiler:1499 - "D:/minibench/scgra-mm-fir/scgra2x2-1k/scgra2x2-1k.srcs/sources_1/edk/base_sys/hdl/base_sys.v" Line 5: Empty module <base_sys> remains a black box.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <base_sys_stub>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra2x2-1k/scgra2x2-1k.srcs/sources_1/edk/base_sys/base_sys_stub.v".
+    Set property "BOX_TYPE = user_black_box" for instance <base_sys_i>.
+    Summary:
+	no macro.
+Unit <base_sys_stub> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_processing_system7_0_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_interconnect_1_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_interconnect_2_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_cgra2x2_0_wrapper.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_0_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_1_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_2_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_3_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_acc_ctrl_0_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_0_bram_block_1_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_1_bram_block_1_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_2_bram_block_1_wrapper.ngc>.
+Reading core <..\..\scgra2x2-1k.srcs\sources_1\edk\base_sys\implementation/base_sys_axi_bram_ctrl_3_bram_block_1_wrapper.ngc>.
+Loading core <base_sys_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
+Loading core <base_sys_axi_interconnect_1_wrapper> for timing and area information for instance <axi_interconnect_1>.
+Loading core <base_sys_axi_interconnect_2_wrapper> for timing and area information for instance <axi_interconnect_2>.
+Loading core <base_sys_cgra2x2_0_wrapper> for timing and area information for instance <cgra2x2_0>.
+Loading core <base_sys_axi_bram_ctrl_0_wrapper> for timing and area information for instance <axi_bram_ctrl_0>.
+Loading core <base_sys_axi_bram_ctrl_1_wrapper> for timing and area information for instance <axi_bram_ctrl_1>.
+Loading core <base_sys_axi_bram_ctrl_2_wrapper> for timing and area information for instance <axi_bram_ctrl_2>.
+Loading core <base_sys_axi_bram_ctrl_3_wrapper> for timing and area information for instance <axi_bram_ctrl_3>.
+Loading core <base_sys_acc_ctrl_0_wrapper> for timing and area information for instance <acc_ctrl_0>.
+Loading core <base_sys_axi_bram_ctrl_0_bram_block_1_wrapper> for timing and area information for instance <axi_bram_ctrl_0_bram_block_1>.
+Loading core <base_sys_axi_bram_ctrl_1_bram_block_1_wrapper> for timing and area information for instance <axi_bram_ctrl_1_bram_block_1>.
+Loading core <base_sys_axi_bram_ctrl_2_bram_block_1_wrapper> for timing and area information for instance <axi_bram_ctrl_2_bram_block_1>.
+Loading core <base_sys_axi_bram_ctrl_3_bram_block_1_wrapper> for timing and area information for instance <axi_bram_ctrl_3_bram_block_1>.
+Loading core <base_sys> for timing and area information for instance <base_sys_i>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_SRSTB>
+   Output port PS7:PSSRSTB of instance <base_sys_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_CLK>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_CLK>
+   Output port PS7:PSCLK of instance <base_sys_i/processing_system7_0/processing_system7_0/PS7_i>
+
+WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <processing_system7_0_PS_PORB>
+   Output port PS7:PSPORB of instance <base_sys_i/processing_system7_0/processing_system7_0/PS7_i>
+
+Optimizing unit <base_sys_stub> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block base_sys_stub, actual ratio is 5.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_2> is equivalent to the following FF/Latch : <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_2> is equivalent to the following FF/Latch : <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_0> is equivalent to the following FF/Latch : <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_0> is equivalent to the following FF/Latch : <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_1> is equivalent to the following FF/Latch : <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_1> is equivalent to the following FF/Latch : <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_2> is equivalent to the following FF/Latch : <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_2> is equivalent to the following FF/Latch : <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_3> is equivalent to the following FF/Latch : <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_3> is equivalent to the following FF/Latch : <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <acc_ctrl_0> is equivalent to the following FF/Latch : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1> in Unit <acc_ctrl_0> is equivalent to the following FF/Latch : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> in Unit <acc_ctrl_0> is equivalent to the following 2 FFs/Latches : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1> <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_2> is equivalent to the following FF/Latch : <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_2> is equivalent to the following FF/Latch : <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_0> is equivalent to the following FF/Latch : <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_0> is equivalent to the following FF/Latch : <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_1> is equivalent to the following FF/Latch : <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_1> is equivalent to the following FF/Latch : <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_2> is equivalent to the following FF/Latch : <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_2> is equivalent to the following FF/Latch : <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_3> is equivalent to the following FF/Latch : <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_3> is equivalent to the following FF/Latch : <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <acc_ctrl_0> is equivalent to the following FF/Latch : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1> in Unit <acc_ctrl_0> is equivalent to the following FF/Latch : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> in Unit <acc_ctrl_0> is equivalent to the following 2 FFs/Latches : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1> <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[0].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[1].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[2].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/grstd1.grst_full.rst_d1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi_interconnect_1/mi_data_fifo_bank/gen_fifo_slot[3].data_fifo_inst/gen_fifo.fifo_gen_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi_interconnect_2> is equivalent to the following FF/Latch : <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> 
+INFO:Xst:2260 - The FF/Latch <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi_interconnect_2> is equivalent to the following FF/Latch : <axi_interconnect_2/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_0> is equivalent to the following FF/Latch : <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_0> is equivalent to the following FF/Latch : <axi_bram_ctrl_0/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_1> is equivalent to the following FF/Latch : <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_1> is equivalent to the following FF/Latch : <axi_bram_ctrl_1/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_2> is equivalent to the following FF/Latch : <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_2> is equivalent to the following FF/Latch : <axi_bram_ctrl_2/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active> in Unit <axi_bram_ctrl_3> is equivalent to the following FF/Latch : <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/aw_active_1> 
+INFO:Xst:2260 - The FF/Latch <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3> in Unit <axi_bram_ctrl_3> is equivalent to the following FF/Latch : <axi_bram_ctrl_3/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_data_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> in Unit <acc_ctrl_0> is equivalent to the following 2 FFs/Latches : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1> <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <acc_ctrl_0> is equivalent to the following FF/Latch : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
+INFO:Xst:2260 - The FF/Latch <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1> in Unit <acc_ctrl_0> is equivalent to the following FF/Latch : <acc_ctrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1_1> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : base_sys_stub.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 5351
+#      GND                         : 42
+#      INV                         : 193
+#      LUT1                        : 39
+#      LUT2                        : 568
+#      LUT3                        : 527
+#      LUT4                        : 422
+#      LUT5                        : 439
+#      LUT6                        : 2240
+#      MUXCY                       : 368
+#      MUXCY_L                     : 16
+#      MUXF7                       : 96
+#      VCC                         : 35
+#      XORCY                       : 366
+# FlipFlops/Latches                : 9313
+#      FD                          : 150
+#      FDC                         : 3926
+#      FDCE                        : 166
+#      FDE                         : 2555
+#      FDP                         : 104
+#      FDPE                        : 8
+#      FDR                         : 507
+#      FDRE                        : 1885
+#      FDS                         : 9
+#      FDSE                        : 3
+# RAMS                             : 100
+#      RAM32M                      : 64
+#      RAM32X1D                    : 4
+#      RAMB36E1                    : 32
+# Shift Registers                  : 65
+#      SRL16E                      : 48
+#      SRLC16E                     : 14
+#      SRLC32E                     : 3
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 3
+#      IBUF                        : 3
+# DSPs                             : 16
+#      DSP48E1                     : 16
+# Others                           : 1
+#      PS7                         : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            9313  out of  106400     8%  
+ Number of Slice LUTs:                 4757  out of  53200     8%  
+    Number used as Logic:              4428  out of  53200     8%  
+    Number used as Memory:              329  out of  17400     1%  
+       Number used as RAM:              264
+       Number used as SRL:               65
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  11130
+   Number with an unused Flip Flop:    1817  out of  11130    16%  
+   Number with an unused LUT:          6373  out of  11130    57%  
+   Number of fully used LUT-FF pairs:  2940  out of  11130    26%  
+   Number of unique control sets:       269
+
+IO Utilization: 
+ Number of IOs:                         130
+ Number of bonded IOBs:                   3  out of    200     1%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               32  out of    140    22%  
+    Number using Block RAM only:         32
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
+ Number of DSP48E1s:                     16  out of    220     7%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                               | Clock buffer(FF name)  | Load  |
+---------------------------------------------------------------------------+------------------------+-------+
+base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>| BUFG                   | 4718  |
+base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>| BUFG                   | 4788  |
+---------------------------------------------------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                                                                                                               | Buffer(FF name)                                                                                                                                                                                        | Load  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/net_gnd0(base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/XST_GND:G)| NONE(base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e1_0)                                                                                                                  | 16    |
+base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/net_gnd0(base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/XST_GND:G)| NONE(base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e1_3)                                                                                                                  | 16    |
+base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/net_gnd0(base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/XST_GND:G)| NONE(base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/ramb36e1_1)                                                                                                                  | 8     |
+base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/net_gnd0(base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/XST_GND:G)| NONE(base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/ramb36e1_1)                                                                                                                  | 8     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Inst_Mem/Inst_Rom/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Inst_Mem/Inst_Rom/XST_GND:G)                  | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Inst_Mem/Inst_Rom/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Inst_Mem/Inst_Rom/XST_GND:G)                  | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Inst_Mem/Inst_Rom/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Inst_Mem/Inst_Rom/XST_GND:G)                  | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Inst_Mem/Inst_Rom/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Inst_Mem/Inst_Rom/XST_GND:G)                  | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem0/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem0/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem1/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem1/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem2/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem2/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE00/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem0/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem0/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem1/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem1/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem2/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem2/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE01/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem0/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem0/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem1/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem1/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem2/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem2/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE10/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem0/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem0/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem1/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem1/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem2/N1(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem2/XST_GND:G)                          | NONE(base_sys_i/cgra2x2_0/cgra2x2_0/Torus2x2/PE11/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 4.347ns (Maximum Frequency: 230.044MHz)
+   Minimum input arrival time before clock: 5.383ns
+   Maximum output required time after clock: 2.616ns
+   Maximum combinational path delay: 0.000ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Clock period: 4.347ns (frequency: 230.044MHz)
+  Total number of paths / destination ports: 117420 / 10692
+-------------------------------------------------------------------------
+Delay:               4.347ns (Levels of Logic = 6)
+  Source:            base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.arbiter_resp_inst/chosen_3 (FF)
+  Destination:       base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_cnt_27 (FF)
+  Source Clock:      base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+  Destination Clock: base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.arbiter_resp_inst/chosen_3 to base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_cnt_27
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            10   0.282   0.694  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.arbiter_resp_inst/chosen_3 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.arbiter_resp_inst/chosen<3>)
+     LUT4:I0->O           14   0.053   0.570  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.arbiter_resp_inst/out31 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.resp_select<1>)
+     LUT6:I4->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.mux_resp_multi_thread/gen_fpga.l<9>1 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.mux_resp_multi_thread/gen_fpga.l<9>)
+     MUXF7:I0->O           9   0.214   0.655  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.mux_resp_multi_thread/gen_fpga.gen_mux_5_8[9].mux_s2_inst (DEBUG_SF_CB_BRESP<13>)
+     LUT6:I3->O            1   0.053   0.635  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.cmd_pop<3>2_SW0 (N94)
+     LUT6:I2->O            4   0.053   0.433  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.cmd_pop<3>5 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.cmd_pop<3>)
+     LUT6:I5->O            1   0.053   0.399  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/_n1483_inv1 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/_n1483_inv)
+     FDRE:CE                   0.200          axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_cnt_27
+    ----------------------------------------
+    Total                      4.347ns (0.961ns logic, 3.386ns route)
+                                       (22.1% logic, 77.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>'
+  Clock period: 2.022ns (frequency: 494.560MHz)
+  Total number of paths / destination ports: 23676 / 5937
+-------------------------------------------------------------------------
+Delay:               2.022ns (Levels of Logic = 16)
+  Source:            base_sys_i/cgra2x2_0/cgra2x2_0/BramIF/CGRA_Cnt_2 (FF)
+  Destination:       base_sys_i/cgra2x2_0/cgra2x2_0/BramIF/CGRA_Cnt_15 (FF)
+  Source Clock:      base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+  Destination Clock: base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1> rising
+
+  Data Path: base_sys_i/cgra2x2_0/cgra2x2_0/BramIF/CGRA_Cnt_2 to base_sys_i/cgra2x2_0/cgra2x2_0/BramIF/CGRA_Cnt_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.282   0.405  cgra2x2_0/BramIF/CGRA_Cnt_2 (cgra2x2_0/BramIF/CGRA_Cnt<2>)
+     INV:I->O              1   0.067   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_lut<2>_INV_0 (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_lut<2>)
+     MUXCY:S->O            1   0.291   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<2> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<3> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<4> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<5> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<6> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<7> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<8> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<9> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<10> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<11> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<12> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<13> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<13>)
+     MUXCY:CI->O           0   0.015   0.000  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<14> (cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<14>)
+     XORCY:CI->O           1   0.320   0.413  cgra2x2_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_xor<15> (cgra2x2_0/BramIF/CGRA_Cnt[15]_GND_12_o_add_13_OUT<15>)
+     LUT5:I4->O            1   0.053   0.000  cgra2x2_0/BramIF/Mmux_GND_12_o_CGRA_Cnt[15]_mux_17_OUT71 (cgra2x2_0/BramIF/GND_12_o_CGRA_Cnt[15]_mux_17_OUT<15>)
+     FDCE:D                    0.011          cgra2x2_0/BramIF/CGRA_Cnt_15
+    ----------------------------------------
+    Total                      2.022ns (1.204ns logic, 0.818ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 82387 / 1328
+-------------------------------------------------------------------------
+Offset:              5.383ns (Levels of Logic = 11)
+  Source:            base_sys_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0ARADDR16 (PAD)
+  Destination:       base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/m_target_hot_i_4 (FF)
+  Destination Clock: base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: base_sys_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0ARADDR16 to base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/m_target_hot_i_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    PS7:MAXIGP0ARADDR16    5   0.000   0.000  processing_system7_0/PS7_i (M_AXI_GP0_ARADDR<16>)
+     end scope: 'base_sys_i/processing_system7_0:M_AXI_GP0_ARADDR<16>'
+     begin scope: 'base_sys_i/axi_interconnect_1:S_AXI_ARADDR<16>'
+     LUT6:I0->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_addr_decoder.addr_decoder_inst/gen_target[3].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator/sel<1><7>1 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_addr_decoder.addr_decoder_inst/gen_target[3].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator/sel<1>)
+     MUXCY:S->O            1   0.291   0.000  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_addr_decoder.addr_decoder_inst/gen_target[3].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator/LUT_LEVEL[1].compare_inst/USE_FPGA.and_inst (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_addr_decoder.addr_decoder_inst/gen_target[3].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator/carry_local<2>)
+     MUXCY:CI->O           1   0.015   0.000  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_addr_decoder.addr_decoder_inst/gen_target[3].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator/LUT_LEVEL[2].compare_inst/USE_FPGA.and_inst (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_addr_decoder.addr_decoder_inst/gen_target[3].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator/carry_local<3>)
+     MUXCY:CI->O          22   0.178   0.621  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_addr_decoder.addr_decoder_inst/gen_target[3].gen_region[0].gen_comparator_static.gen_addr_range.addr_decode_comparator/LUT_LEVEL[3].compare_inst/USE_FPGA.and_inst (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/st_aa_artarget_hot<3>)
+     LUT2:I0->O           16   0.053   0.823  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/Mmux_n089811 (DEBUG_AR_TARGET<0>)
+     LUT6:I1->O            3   0.053   0.616  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/_n0054_inv23 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/_n0054_inv23)
+     LUT6:I3->O            1   0.053   0.635  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/_n0054_inv24_SW1 (N179)
+     LUT6:I2->O            3   0.053   0.616  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/_n0054_inv24 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/_n0054_inv24)
+     LUT4:I1->O            5   0.053   0.440  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/_n0054_inv227_rstpot (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/_n0054_inv227_rstpot)
+     LUT4:I3->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/m_target_hot_i_0_dpot1 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/m_target_hot_i_0_dpot1)
+     FDE:D                     0.011          axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.addr_arbiter_ar/m_target_hot_i_0
+    ----------------------------------------
+    Total                      5.383ns (1.632ns logic, 3.751ns route)
+                                       (30.3% logic, 69.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>'
+  Total number of paths / destination ports: 1041 / 132
+-------------------------------------------------------------------------
+Offset:              2.616ns (Levels of Logic = 4)
+  Source:            base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_master_slots[3].reg_slice_mi/r_pipe/state_FSM_FFd2 (FF)
+  Destination:       base_sys_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0RDATA31 (PAD)
+  Source Clock:      base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0> rising
+
+  Data Path: base_sys_i/axi_interconnect_1/axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_master_slots[3].reg_slice_mi/r_pipe/state_FSM_FFd2 to base_sys_i/processing_system7_0/processing_system7_0/PS7_i:MAXIGP0RDATA31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q             19   0.282   0.721  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_master_slots[3].reg_slice_mi/r_pipe/state_FSM_FFd2 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_master_slots[3].reg_slice_mi/r_pipe/state_FSM_FFd2)
+     LUT4:I1->O           43   0.053   0.894  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.arbiter_resp_inst/out21 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.resp_select<0>)
+     LUT6:I0->O            1   0.053   0.000  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.mux_resp_multi_thread/gen_fpga.l<46>1 (axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.mux_resp_multi_thread/gen_fpga.l<46>)
+     MUXF7:I0->O           1   0.214   0.399  axi_interconnect_1/crossbar_samd/gen_samd.crossbar_samd/gen_crossbar.gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.mux_resp_multi_thread/gen_fpga.gen_mux_5_8[46].mux_s2_inst (DEBUG_SF_CB_RDATA<31>)
+     end scope: 'base_sys_i/axi_interconnect_1:S_AXI_RDATA<31>'
+     begin scope: 'base_sys_i/processing_system7_0:M_AXI_GP0_RDATA<31>'
+    PS7:MAXIGP0RDATA31         0.000          processing_system7_0/PS7_i
+    ----------------------------------------
+    Total                      2.616ns (0.602ns logic, 2.014ns route)
+                                       (23.0% logic, 77.0% route)
+
+=========================================================================
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    4.347|         |         |         |
+base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>|    0.698|         |         |         |
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<0>|    1.891|         |         |         |
+base_sys_i/processing_system7_0/processing_system7_0/FCLK_CLK_unbuffered<1>|    2.022|         |         |         |
+---------------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 47.00 secs
+Total CPU time to Xst completion: 46.90 secs
+ 
+--> 
+
+Total memory usage is 572804 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :  215 (   0 filtered)
+

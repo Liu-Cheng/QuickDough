@@ -1,0 +1,122 @@
+ISim log file
+Running: D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.sim/sim_1/behav/top_testbench.exe -intstyle pa -gui -tclbatch isim.cmd -wdb top_testbench.wdb 
+ISim P.20131013 (signature 0x7708f090)
+This is a Full version of ISim.
+WARNING: File "D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sim_1/imports/src/top_testbench.v" Line 40.  For instance top_testbench/data_buffer0/, width 1 of formal port wea is not equal to width 4 of actual signal Port0_Wen.
+WARNING: File "D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sim_1/imports/src/top_testbench.v" Line 41.  For instance top_testbench/data_buffer0/, width 11 of formal port addra is not equal to width 32 of actual signal Port0_Addr.
+WARNING: File "D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sim_1/imports/src/top_testbench.v" Line 46.  For instance top_testbench/data_buffer1/, width 1 of formal port wea is not equal to width 4 of actual signal Port1_Wen.
+WARNING: File "D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sim_1/imports/src/top_testbench.v" Line 47.  For instance top_testbench/data_buffer1/, width 11 of formal port addra is not equal to width 32 of actual signal Port1_Addr.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000ns
+Simulator is doing circuit initialization process.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE00.data_mem.mem0.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE00.data_mem.mem1.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE00.data_mem.mem2.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE00.Inst_Mem.rom1024.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE01.data_mem.mem0.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE01.data_mem.mem1.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE01.data_mem.mem2.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE01.Inst_Mem.rom1024.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE10.data_mem.mem0.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE10.data_mem.mem1.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE10.data_mem.mem2.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE10.Inst_Mem.rom1024.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE11.data_mem.mem0.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE11.data_mem.mem1.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE11.data_mem.mem2.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.uut.torus2x2.PE11.Inst_Mem.rom1024.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.uut.BramIF.Addr_Buffer0.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.uut.BramIF.Addr_Buffer1.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.data_buffer0.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module top_testbench.data_buffer1.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Finished circuit initialization process.
+CGRA writes        127 to output buffer[         0]!
+
+CGRA writes        139 to output buffer[         4]!
+
+CGRA writes         74 to output buffer[         6]!
+
+CGRA writes        129 to output buffer[        12]!
+
+CGRA writes        200 to output buffer[        16]!
+
+CGRA writes        146 to output buffer[         1]!
+
+CGRA writes         73 to output buffer[        18]!
+
+CGRA writes         77 to output buffer[         7]!
+
+CGRA writes        123 to output buffer[        24]!
+
+CGRA writes        148 to output buffer[         5]!
+
+CGRA writes        129 to output buffer[        14]!
+
+CGRA writes        122 to output buffer[        30]!
+
+CGRA writes        109 to output buffer[        20]!
+
+CGRA writes        136 to output buffer[        13]!
+
+CGRA writes        146 to output buffer[        22]!
+
+CGRA writes        100 to output buffer[         2]!
+
+CGRA writes        164 to output buffer[        17]!
+
+CGRA writes         59 to output buffer[         8]!
+
+CGRA writes         96 to output buffer[        26]!
+
+CGRA writes        141 to output buffer[        23]!
+
+CGRA writes         71 to output buffer[        11]!
+
+CGRA writes        121 to output buffer[        28]!
+
+CGRA writes        125 to output buffer[        31]!
+
+CGRA writes        117 to output buffer[        32]!
+
+CGRA writes         87 to output buffer[        10]!
+
+CGRA writes        130 to output buffer[        19]!
+
+CGRA writes        112 to output buffer[        25]!
+
+CGRA writes        125 to output buffer[        29]!
+
+CGRA writes        123 to output buffer[        21]!
+
+CGRA writes        155 to output buffer[        34]!
+
+CGRA writes        160 to output buffer[        35]!
+
+CGRA writes        144 to output buffer[        27]!
+
+CGRA writes        198 to output buffer[        15]!
+
+CGRA writes        102 to output buffer[         9]!
+
+CGRA writes        145 to output buffer[        33]!
+
+CGRA writes        153 to output buffer[         3]!
+

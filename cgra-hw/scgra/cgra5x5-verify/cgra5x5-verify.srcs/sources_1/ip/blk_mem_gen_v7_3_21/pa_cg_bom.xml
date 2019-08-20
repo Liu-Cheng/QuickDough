@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+  <IPInstance name="SP_Inst_Mem31">
+    <FileSets>
+      <FileSet generator="apply_current_project_options_generator">
+        <File name="./apply_current_project_options_generator.xlog" type="ignore" timestamp="Thu May 22 02:57:08 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="model_parameter_resolution_generator">
+        <File name="./SP_Inst_Mem31.mif" type="mif" timestamp="Thu May 22 02:56:02 GMT 2014" checksum="0x91826585"></File>
+        <File name="./summary.log" type="unknown" timestamp="Thu May 22 02:56:01 GMT 2014" checksum="0x0C6BFA05"></File>
+      </FileSet>
+      <FileSet generator="ip_xco_generator">
+        <File name="./SP_Inst_Mem31.xco" type="xco" timestamp="Thu May 22 02:56:02 GMT 2014" checksum="0xD7D76E46"></File>
+      </FileSet>
+      <FileSet generator="associated_files_generator">
+        <File name="./SP_Inst_Mem31/blk_mem_gen_v7_3_readme.txt" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xF95F2A26"></File>
+        <File name="./SP_Inst_Mem31/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0x702C7FA8"></File>
+        <File name="./SP_Inst_Mem31/doc/pg058-blk-mem-gen.pdf" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xC1E42F23"></File>
+      </FileSet>
+      <FileSet generator="ejava_generator">
+        <File name="./SP_Inst_Mem31/example_design/SP_Inst_Mem31_exdes.ucf" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xC44C6B6D"></File>
+        <File name="./SP_Inst_Mem31/example_design/SP_Inst_Mem31_exdes.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x37899516"></File>
+        <File name="./SP_Inst_Mem31/example_design/SP_Inst_Mem31_exdes.xdc" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x7684D6D4"></File>
+        <File name="./SP_Inst_Mem31/example_design/SP_Inst_Mem31_prod.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xD98B2703"></File>
+        <File name="./SP_Inst_Mem31/implement/implement.bat" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x2063B503"></File>
+        <File name="./SP_Inst_Mem31/implement/implement.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x159D576A"></File>
+        <File name="./SP_Inst_Mem31/implement/planAhead_ise.bat" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xEEF5E8BA"></File>
+        <File name="./SP_Inst_Mem31/implement/planAhead_ise.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x722FFCC6"></File>
+        <File name="./SP_Inst_Mem31/implement/planAhead_ise.tcl" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xF29B8516"></File>
+        <File name="./SP_Inst_Mem31/implement/xst.prj" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x071AE10B"></File>
+        <File name="./SP_Inst_Mem31/implement/xst.scr" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xAB4CC9BA"></File>
+        <File name="./SP_Inst_Mem31/simulation/SP_Inst_Mem31_synth.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x220256EB"></File>
+        <File name="./SP_Inst_Mem31/simulation/SP_Inst_Mem31_tb.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x594C8C14"></File>
+        <File name="./SP_Inst_Mem31/simulation/addr_gen.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x0500E48D"></File>
+        <File name="./SP_Inst_Mem31/simulation/bmg_stim_gen.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x0E5D7858"></File>
+        <File name="./SP_Inst_Mem31/simulation/bmg_tb_pkg.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xE0D93E5B"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/simcmds.tcl" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x1A34BD19"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/simulate_isim.bat" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x11C8F582"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/simulate_mti.bat" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/simulate_mti.do" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xD4685C9F"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/simulate_mti.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xB5CE451A"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x37798D4C"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/ucli_commands.key" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xE2479E49"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x014B28D3"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/wave_mti.do" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xD0704D58"></File>
+        <File name="./SP_Inst_Mem31/simulation/functional/wave_ncsim.sv" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x55C43148"></File>
+        <File name="./SP_Inst_Mem31/simulation/random.vhd" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x2939160A"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/simcmds.tcl" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x1A34BD19"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/simulate_isim.bat" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x70EDF06B"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/simulate_mti.bat" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/simulate_mti.do" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x392B8A9A"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/simulate_mti.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/simulate_ncsim.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xA0D5CD43"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/simulate_vcs.sh" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x7CC17A77"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/ucli_commands.key" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0xE2479E49"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/vcs_session.tcl" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x6B1EED77"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/wave_mti.do" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x28657122"></File>
+        <File name="./SP_Inst_Mem31/simulation/timing/wave_ncsim.sv" type="ignore" timestamp="Thu May 22 02:56:03 GMT 2014" checksum="0x2CB49380"></File>
+      </FileSet>
+      <FileSet generator="ngc_netlist_generator">
+        <File name="./SP_Inst_Mem31.ngc" type="ngc" timestamp="Thu May 22 02:56:55 GMT 2014" checksum="0x27675364"></File>
+      </FileSet>
+      <FileSet generator="obfuscate_netlist_generator">
+        <File name="./obfuscate_netlist_generator.xlog" type="ignore" timestamp="Thu May 22 02:57:08 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="padded_implementation_netlist_generator">
+        <File name="./padded_implementation_netlist_generator.xlog" type="ignore" timestamp="Thu May 22 02:57:08 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="instantiation_template_generator">
+        <File name="./SP_Inst_Mem31.veo" type="veo" timestamp="Thu May 22 02:56:55 GMT 2014" checksum="0x9DEC525E"></File>
+      </FileSet>
+      <FileSet generator="structural_simulation_model_generator">
+        <File name="./SP_Inst_Mem31.v" type="verilog" timestamp="Thu May 22 02:56:56 GMT 2014" checksum="0x00A02ED0"></File>
+      </FileSet>
+      <FileSet generator="all_documents_generator">
+        <File name="./SP_Inst_Mem31/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Thu May 22 02:56:56 GMT 2014" checksum="0x702C7FA8"></File>
+      </FileSet>
+      <FileSet generator="asy_generator">
+        <File name="./SP_Inst_Mem31.asy" type="asy" timestamp="Thu May 22 02:57:03 GMT 2014" checksum="0x1EBD67F4"></File>
+        <File name="./SP_Inst_Mem31.mif" type="mif" timestamp="Thu May 22 02:57:02 GMT 2014" checksum="0x91826585"></File>
+        <File name="./summary.log" type="unknown" timestamp="Thu May 22 02:57:01 GMT 2014" checksum="0x0C6BFA05"></File>
+      </FileSet>
+      <FileSet generator="xmdf_generator">
+        <File name="./SP_Inst_Mem31_xmdf.tcl" type="tclXmdf" timestamp="Thu May 22 02:57:03 GMT 2014" checksum="0x032B40ED"></File>
+      </FileSet>
+      <FileSet generator="synthesis_ise_generator">
+        <File name="./SP_Inst_Mem31.gise" type="ignore" timestamp="Thu May 22 02:57:05 GMT 2014" checksum="0x806C60B2"></File>
+        <File name="./SP_Inst_Mem31.xise" type="ignore" timestamp="Thu May 22 02:57:05 GMT 2014" checksum="0x91FD5867"></File>
+      </FileSet>
+      <FileSet generator="ise_generator">
+        <File name="./SP_Inst_Mem31.gise" type="ignore" timestamp="Thu May 22 02:57:08 GMT 2014" checksum="0x5CCA0BBB"></File>
+        <File name="./SP_Inst_Mem31.xise" type="ignore" timestamp="Thu May 22 02:57:08 GMT 2014" checksum="0x66804E71"></File>
+      </FileSet>
+      <FileSet generator="deliver_readme_generator">
+        <File name="./deliver_readme_generator.xlog" type="ignore" timestamp="Thu May 22 02:57:08 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="flist_generator">
+        <File name="./SP_Inst_Mem31_flist.txt" type="ignore" timestamp="Thu May 22 02:57:08 GMT 2014" checksum="0xA728DFE9"></File>
+      </FileSet>
+    </FileSets>
+  </IPInstance>
+</BillOfMaterials>

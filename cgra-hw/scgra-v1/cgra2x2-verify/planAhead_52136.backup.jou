@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Mon Sep 22 17:32:48 2014
+# Process ID: 24100
+# Log file: D:/minibench/scgra-v1/cgra2x2-verify/planAhead.log
+# Journal file: D:/minibench/scgra-v1/cgra2x2-verify\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra-v1\cgra2x2-verify\cgra2x2-verify.ppr}
+update_compile_order -fileset sources_1
+file delete -force D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/new/MulAdd.v
+remove_files D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/new/MulAdd.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_target  instantiation_template  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/rom00.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/rom00.xci]
+reset_target  instantiation_template  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_4/rom01.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_4/rom01.xci]
+reset_target  instantiation_template  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_5/rom10.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_5/rom10.xci]
+reset_target  instantiation_template  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/rom11.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/rom11.xci]
+file delete -force D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6 D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7
+remove_files {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/Addr_Buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/Addr_Buffer1.xci}
+file delete -force D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1 D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2
+remove_files {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/data_buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/data_buffer1.xci}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+generate_target  synthesis  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci}]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+generate_target  synthesis  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/data_buffer1.xci}]
+reset_target  instantiation_template  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci]
+generate_target  {synthesis simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci]
+launch_isim -simset sim_1 -mode behavioral
+launch_isim -simset sim_1 -mode behavioral
+launch_isim -simset sim_1 -mode behavioral
+launch_isim -simset sim_1 -mode behavioral
+reset_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/rom00.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/rom00.xci]
+reset_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_4/rom01.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_4/rom01.xci]
+reset_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_5/rom10.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_5/rom10.xci]
+reset_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/rom11.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/rom11.xci]
+reset_target  instantiation_template  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/data_buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci}]
+reset_target  synthesis  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/data_buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci}]
+reset_target  simulation  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/data_buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci}]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/data_buffer0.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/data_buffer1.xci]
+launch_isim -simset sim_1 -mode behavioral
+reset_target  instantiation_template  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci}]
+generate_target  instantiation_template  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci}]
+generate_target  synthesis  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci}]
+generate_target  simulation  [get_files  {D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci}]
+launch_isim -simset sim_1 -mode behavioral
+launch_isim -simset sim_1 -mode behavioral
+reset_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/Addr_Buffer0.xci]
+launch_isim -simset sim_1 -mode behavioral
+reset_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra-v1/cgra2x2-verify/cgra2x2-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/Addr_Buffer1.xci]
+launch_isim -simset sim_1 -mode behavioral

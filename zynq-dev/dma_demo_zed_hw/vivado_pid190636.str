@@ -1,0 +1,408 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+Process ID: 190636
+
+Current time: 	9/6/16 4:50:44 PM CST
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 7
+Version: 6.1
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=SimSun,name=ËÎÌו,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	D:/software/xilinx/Vivado/2016.2/tps/win64/jre
+
+User name: 	admin
+User home directory: C:/Users/admin
+User working directory: D:/projects/prj2016/dma_demo
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI Base root directory: D:/software/xilinx/Vivado
+RDI Data directory: D:/software/xilinx/Vivado/2016.2/data
+RDI Bin directory: D:/software/xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	216 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 512 MB
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: D:\projects\prj2016\dma_demo\dma_demo.xpr. Version: Vivado v2016.2 
+// bL:g (cv:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 46 MB (+45968kb) [00:00:03]
+// [Engine Memory]: 457 MB (+327940kb) [00:00:03]
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 52 MB (+3257kb) [00:00:05]
+// [Engine Memory]: 584 MB (+108881kb) [00:00:05]
+// [GUI Memory]: 57 MB (+2876kb) [00:00:05]
+// [GUI Memory]: 60 MB (+1kb) [00:00:06]
+// [Engine Memory]: 613 MB (+312kb) [00:00:06]
+// [GUI Memory]: 64 MB (+1200kb) [00:00:06]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project D:/projects/prj2016/dma_demo/dma_demo.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from '/home/liucheng/projects/prj2016/dma_demo' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/projects/prj2016/ip_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/software/xilinx/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 43 MB. Current time: 9/6/16 4:50:46 PM CST
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: dma_demo; location: D:/projects/prj2016/dma_demo; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 902.734 ; gain = 215.703 
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v)]", 1); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v), base_sys_i - base_sys (base_sys.bd)]", 2, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v), base_sys_i - base_sys (base_sys.bd), base_sys (base_sys.v)]", 3, true); // z:k (G:JPanel, cv:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v), base_sys_i - base_sys (base_sys.bd), base_sys (base_sys.v)]", 3); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v), base_sys_i - base_sys (base_sys.bd), base_sys (base_sys.v)]", 3, true); // z:k (G:JPanel, cv:JFrame) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v), base_sys_i - base_sys (base_sys.bd), base_sys (base_sys.v)]", 3); // z:k (G:JPanel, cv:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v)]", 1, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v), base_sys_i - base_sys (base_sys.bd)]", 2, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_sys_wrapper (base_sys_wrapper.v), base_sys_i - base_sys (base_sys.bd), base_sys (base_sys.v)]", 3, true); // z:k (G:JPanel, cv:JFrame) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bL:g (cv:JFrame):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 650 MB (+5752kb) [00:00:18]
+// Tcl Message: open_bd_design {D:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/base_sys.bd} 
+// TclEventType: RSB_OPEN_DIAGRAM
+// [GUI Memory]: 70 MB (+2362kb) [00:00:20]
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+dismissDialog("Open Block Design"); // bL:g (cv:JFrame)
+// [Engine Memory]: 682 MB (+181kb) [00:00:25]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectTreeTable(PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, "usr_dma_0 ; S_AXI ; reg0 ; 0x43C0_0000 ; 64K ; 0x43C0_FFFF", 5, "usr_dma_0", 0, false); // c:as (JViewport:JComponent, cv:JFrame)
+// [GUI Memory]: 74 MB (+943kb) [00:01:06]
+// [GUI Memory]: 79 MB (+1301kb) [00:01:21]
+// [GUI Memory]: 83 MB (+194kb) [00:03:11]
+// [GUI Memory]: 88 MB (+705kb) [00:14:36]
+// [GUI Memory]: 93 MB (+533kb) [00:30:02]
+// HMemoryUtils.trashcanNow. Engine heap size: 689 MB. GUI used memory: 48 MB. Current time: 9/6/16 5:20:46 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 689 MB. GUI used memory: 44 MB. Current time: 9/6/16 5:50:47 PM CST
+// [GUI Memory]: 98 MB (+741kb) [01:26:24]
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 6:20:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 6:50:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 45 MB. Current time: 9/6/16 7:20:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 7:50:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 45 MB. Current time: 9/6/16 8:20:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 8:50:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 9:20:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 9:50:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 10:20:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 10:50:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 11:20:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/6/16 11:50:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 12:20:51 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 12:50:52 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 1:20:52 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 1:50:52 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 2:20:53 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 2:50:53 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 3:20:53 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 45 MB. Current time: 9/7/16 3:50:54 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 4:20:54 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 4:50:54 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 5:20:55 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 5:50:55 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 6:20:55 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 6:50:56 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 7:20:56 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 7:50:57 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 8:20:57 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 695 MB. GUI used memory: 44 MB. Current time: 9/7/16 8:50:57 AM CST
+// Elapsed time: 58952 seconds
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 700 MB. GUI used memory: 44 MB. Current time: 9/7/16 9:13:43 AM CST
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // h:JCheckBox (JPanel:JComponent, cv:JFrame): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [DRC 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus FIXED_IO_mio[53:0] with more than one IO standard is found. Components associated with this bus are: LVCMOS18 (FIXED_IO_mio[53], FIXED_IO_mio[52], FIXED_IO_mio[51], FIXED_IO_mio[50], FIXED_IO_mio[49], FIXED_IO_mio[48], FIXED_IO_mio[47], FIXED_IO_mio[46], FIXED_IO_mio[45], FIXED_IO_mio[44], FIXED_IO_mio[43], FIXED_IO_mio[42], FIXED_IO_mio[41], FIXED_IO_mio[40], FIXED_IO_mio[39] (the first 15 of 38 listed)); LVCMOS33 (FIXED_IO_mio[15], FIXED_IO_mio[14], FIXED_IO_mio[13], FIXED_IO_mio[12], FIXED_IO_mio[11], FIXED_IO_mio[10], FIXED_IO_mio[9], FIXED_IO_mio[8], FIXED_IO_mio[7], FIXED_IO_mio[6], FIXED_IO_mio[5], FIXED_IO_mio[4], FIXED_IO_mio[3], FIXED_IO_mio[2], FIXED_IO_mio[1] (the first 15 of 16 listed)); . ]", 11, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 9, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.. ]", 8, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.. ]", 8, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 9, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.. ]", 8, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 9, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.. ]", 8, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 9, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.. ]", 8, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, (String) null, 9, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.. ]", 8, false); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.. ]", 8, false, false, false, false, false, true); // al:k (JViewport:JComponent, cv:JFrame) - Double Click
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design]", 7); // al:k (JViewport:JComponent, cv:JFrame)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design]", 8); // al:k (JViewport:JComponent, cv:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'auto_pc' of module 'base_sys_auto_pc_1' requires 87 connections, but only 83 given [D:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/hdl/base_sys.v:2217]. ]", 1); // al:k (JViewport:JComponent, cv:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'auto_pc' of module 'base_sys_auto_pc_1' requires 87 connections, but only 83 given [D:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/hdl/base_sys.v:2217]. , [Synth 8-350] instance 'usr_dma_0' of module 'base_sys_usr_dma_0_0' requires 68 connections, but only 67 given [D:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/hdl/base_sys.v:536]. ]", 5, false); // al:k (JViewport:JComponent, cv:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (1) of port connection 'M0_AXI_AWUSER' does not match port width (2) of module 'face_ip_top' [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ip/base_sys_usr_dma_0_0/synth/base_sys_usr_dma_0_0.v:309]. ]", 6); // al:k (JViewport:JComponent, cv:JFrame)
+// Elapsed time: 21 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11); // al:k (JViewport:JComponent, cv:JFrame)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11); // al:k (JViewport:JComponent, cv:JFrame)
+// [GUI Memory]: 103 MB (+224kb) [16:24:28]
+// HMemoryUtils.trashcanNow. Engine heap size: 724 MB. GUI used memory: 45 MB. Current time: 9/7/16 9:23:08 AM CST
+// [Engine Memory]: 724 MB (+7589kb) [16:32:29]
+// Elapsed time: 603 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// P:bL (cv:JFrame):  Re-customize IP : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 747 MB. GUI used memory: 44 MB. Current time: 9/7/16 9:25:13 AM CST
+// p:g (cv:JFrame): Re-customize IP: addNotify
+// cn:x (p:g): Configuration Presets: addNotify
+dismissDialog("Re-customize IP"); // P:bL (cv:JFrame)
+// [Engine Memory]: 776 MB (+17208kb) [16:34:38]
+// Elapsed time: 12 seconds
+dismissDialog("Re-customize IP"); // p:g (cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 65 MB. Current time: 9/7/16 9:25:28 AM CST
+// [GUI Memory]: 110 MB (+1511kb) [17:03:28]
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 60 MB. Current time: 9/7/16 9:55:28 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/7/16 10:25:28 AM CST
+// [GUI Memory]: 116 MB (+106kb) [18:03:23]
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 10:55:29 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/7/16 11:25:29 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 11:55:29 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 12:25:30 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 12:55:30 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 1:25:31 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 1:55:31 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 2:25:31 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 2:55:32 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 3:25:32 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/7/16 3:55:32 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 4:25:33 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 4:55:33 PM CST
+// Elapsed time: 27701 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ipshared/xilinx.com/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v:1117]. ]", 13, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ipshared/xilinx.com/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v:1117]. ]", 13, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ipshared/xilinx.com/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v:1117]. ]", 13, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ipshared/xilinx.com/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v:1117]. ]", 13, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ipshared/xilinx.com/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v:1117]. ]", 13, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ipshared/xilinx.com/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v:1117]. ]", 13, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [d:/projects/prj2016/dma_demo/dma_demo.srcs/sources_1/bd/base_sys/ipshared/xilinx.com/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v:1117]. ]", 13, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design xlconcat has unconnected port In2[0]. ]", 11, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]) is unused and will be removed from module fifo_generator_v13_1_1__1.. ]", 12, true); // al:k (JViewport:JComponent, cv:JFrame) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/7/16 5:25:33 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/7/16 5:55:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 6:25:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 6:55:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 7:25:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 7:55:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 8:25:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 8:55:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 9:25:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 9:55:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 10:25:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 10:55:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 11:25:38 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/7/16 11:55:38 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 12:25:38 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 12:55:39 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 1:25:39 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 1:55:39 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 2:25:40 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 2:55:40 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 3:25:40 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 3:55:41 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 4:25:41 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 4:55:42 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 5:25:42 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 5:55:42 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 6:25:43 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 6:55:43 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 7:25:43 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 7:55:44 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 8:25:44 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 8:55:44 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 9:25:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 58 MB. Current time: 9/8/16 9:55:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 60 MB. Current time: 9/8/16 10:25:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 60 MB. Current time: 9/8/16 10:55:46 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 11:25:46 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 11:55:47 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 12:25:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 12:55:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 1:25:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 1:55:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 2:25:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 2:55:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 3:25:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 3:55:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 4:25:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 4:55:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 5:25:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 5:55:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 6:25:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 6:55:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 60 MB. Current time: 9/8/16 7:25:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 7:55:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 8:25:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 8:55:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 9:25:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 9:55:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 10:25:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 10:55:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 11:25:55 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/8/16 11:55:55 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 12:25:55 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 12:55:56 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 1:25:56 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 1:55:56 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 2:25:57 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 2:55:57 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 3:25:58 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 3:55:58 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 4:25:58 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 4:55:59 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 60 MB. Current time: 9/9/16 5:25:59 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 5:55:59 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 6:26:00 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 6:56:00 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 7:26:00 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 7:56:01 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 8:26:01 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 8:56:01 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 9:26:02 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 9:56:02 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 10:26:03 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 10:56:03 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 11:26:03 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 60 MB. Current time: 9/9/16 11:56:04 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 12:26:04 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 12:56:04 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 1:26:05 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 1:56:05 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 2:26:05 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 2:56:06 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 3:26:06 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 3:56:06 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 4:26:07 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 809 MB. GUI used memory: 59 MB. Current time: 9/9/16 4:56:07 PM CST
+// Elapsed time: 172938 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// P:bL (cv:JFrame):  Re-customize IP : addNotify
+// [Engine Memory]: 827 MB (+12426kb) [72:19:03]
+// p:g (cv:JFrame): Re-customize IP: addNotify
+// cn:x (p:g): Configuration Presets: addNotify
+dismissDialog("Re-customize IP"); // P:bL (cv:JFrame)
+// Elapsed time: 14 seconds
+dismissDialog("Re-customize IP"); // p:g (cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 827 MB. GUI used memory: 67 MB. Current time: 9/9/16 5:26:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 827 MB. GUI used memory: 67 MB. Current time: 9/9/16 5:56:08 PM CST
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// P:bL (cv:JFrame):  Re-customize IP : addNotify
+// p:g (cv:JFrame): Re-customize IP: addNotify
+// cn:x (p:g): Configuration Presets: addNotify
+// Elapsed time: 3187 seconds
+dismissDialog("Re-customize IP"); // P:bL (cv:JFrame)
+selectButton("MIO Configuration", "MIO Configuration"); // l:JideButton (cj:ButtonPanel, p:g)
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug", 3, "Programmable Logic Test and Debug", 0, true); // aX:cw (JViewport:JComponent, p:g) - Node
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug ; Programmable Logic Test and Debug", 3); // aX:cw (JViewport:JComponent, p:g)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "Application Processor Unit ; Application Processor Unit ; Application Processor Unit ; Application Processor Unit ; Application Processor Unit ; Application Processor Unit ; Application Processor Unit ; Application Processor Unit", 2); // aX:cw (JViewport:JComponent, p:g)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals", 1); // aX:cw (JViewport:JComponent, p:g)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "Memory Interfaces ; Memory Interfaces ; Memory Interfaces ; Memory Interfaces ; Memory Interfaces ; Memory Interfaces ; Memory Interfaces ; Memory Interfaces", 0); // aX:cw (JViewport:JComponent, p:g)
+dismissDialog("Re-customize IP"); // p:g (cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 83 MB. Current time: 9/9/16 6:03:33 PM CST
+// [GUI Memory]: 122 MB (+487kb) [73:38:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 83 MB. Current time: 9/9/16 6:33:33 PM CST
+// [GUI Memory]: 128 MB (+147kb) [73:47:02]
+// [GUI Memory]: 135 MB (+426kb) [74:05:28]
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 7:03:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 7:33:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 8:03:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 8:33:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 9:03:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 9:33:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 10:03:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 10:33:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 11:03:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/9/16 11:33:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 12:03:37 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 12:33:38 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 1:03:38 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 1:33:38 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 2:03:39 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 83 MB. Current time: 9/10/16 2:33:39 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 3:03:39 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 3:33:40 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 4:03:40 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 4:33:40 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 5:03:41 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 5:33:41 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 6:03:42 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 83 MB. Current time: 9/10/16 6:33:42 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 7:03:42 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 7:33:43 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 8:03:43 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 8:33:43 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 9:03:44 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 9:33:44 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 10:03:44 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 10:33:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 11:03:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 11:33:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 12:03:46 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 12:33:46 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 1:03:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 1:33:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 83 MB. Current time: 9/10/16 2:03:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 2:33:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 3:03:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 3:33:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 4:03:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 4:33:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 83 MB. Current time: 9/10/16 5:03:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 5:33:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 6:03:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 6:33:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 7:03:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 7:33:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 8:03:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 8:33:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 9:03:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 82 MB. Current time: 9/10/16 9:33:53 PM CST

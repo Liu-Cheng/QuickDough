@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Nov 14 15:17:52 2014
+# Process ID: 8216
+# Log file: D:/minibench/scgra-v1/scgra2x2-1k/planAhead.log
+# Journal file: D:/minibench/scgra-v1/scgra2x2-1k\planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+open_project {D:\minibench\scgra-v1\scgra2x2-1k\scgra2x2-1k.ppr}
+Scanning sources...
+Finished scanning sources
+open_project: Time (s): elapsed = 00:00:06 . Memory (MB): peak = 455.578 ; gain = 65.594
+save_project_as scgra2x2-1k D:/minibench/HW-analysis/scgra2x2-1k -force
+INFO: [Designutils 20-1107] Saved project location 'D:/minibench/HW-analysis/scgra2x2-1k'
+INFO: [Designutils 20-1102] Composite file path 'D:/minibench/scgra-v1/scgra2x2-1k/scgra2x2-1k.srcs/sources_1/edk/base_sys'
+save_project_as: Time (s): elapsed = 00:00:26 . Memory (MB): peak = 528.148 ; gain = 54.547
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Fri Nov 14 15:20:06 2014...
+INFO: [Common 17-83] Releasing license: PlanAhead

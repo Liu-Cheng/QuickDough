@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "C:\Users\Liucheng\Documents\scgra_high_freq\scgra2x2_high_freq\scgra2x2_high_freq.srcs\sources_1\edk\base_sys\pcores\acc_ctrl_v1_00_a\devl\synthesis\acc_ctrl_xst.prj"
+-top acc_ctrl
+-p virtex6
+-ofn "C:\Users\Liucheng\Documents\scgra_high_freq\scgra2x2_high_freq\scgra2x2_high_freq.srcs\sources_1\edk\base_sys\pcores\acc_ctrl_v1_00_a\devl\synthesis\acc_ctrl_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib acc_ctrl_v1_00_a

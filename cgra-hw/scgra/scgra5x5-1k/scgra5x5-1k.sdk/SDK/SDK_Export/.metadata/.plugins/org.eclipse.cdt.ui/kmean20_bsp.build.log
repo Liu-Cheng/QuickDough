@@ -1,0 +1,6 @@
+19:59:49 **** Build of project kmean20_bsp ****
+make -k all 
+'Finished building libraries'
+
+19:59:49 Build Finished (took 124ms)
+

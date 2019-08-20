@@ -1,0 +1,5 @@
+the_ROM_image:
+{
+	[bootloader]C:\designs\edt_tutorial\edt_tutorial.sdk\fsbl\Debug\fsbl.elf
+	C:\designs\CDMA\CDMA.sdk\SD_Boot_Images\u-boot.elf
+}

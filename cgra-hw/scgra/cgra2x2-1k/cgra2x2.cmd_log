@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/minibench/scgra/cgra2x2-1k/cgra2x2.xst" -ofn "D:/minibench/scgra/cgra2x2-1k/cgra2x2.syr" 

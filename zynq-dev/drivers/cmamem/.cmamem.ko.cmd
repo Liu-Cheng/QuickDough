@@ -1,0 +1,1 @@
+cmd_/software/drivers/cmamem/cmamem.ko := arm-linux-gnueabi-ld -EL -r  -T /software/linux-xlnx/scripts/module-common.lds --build-id  -o /software/drivers/cmamem/cmamem.ko /software/drivers/cmamem/cmamem.o /software/drivers/cmamem/cmamem.mod.o

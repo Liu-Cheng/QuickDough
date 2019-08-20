@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "D:/minibench/scgra-v1/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-v1/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 

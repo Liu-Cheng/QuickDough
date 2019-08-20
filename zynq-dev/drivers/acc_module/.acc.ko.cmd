@@ -1,0 +1,1 @@
+cmd_/software/drivers/acc_module/acc.ko := arm-linux-gnueabi-ld -EL -r  -T /software/linux-xlnx/scripts/module-common.lds --build-id  -o /software/drivers/acc_module/acc.ko /software/drivers/acc_module/acc.o /software/drivers/acc_module/acc.mod.o

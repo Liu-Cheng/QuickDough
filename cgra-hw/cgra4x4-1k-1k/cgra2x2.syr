@@ -1,0 +1,893 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: cgra2x2.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cgra2x2.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cgra2x2"
+Output Format                      : NGC
+Target Device                      : xc7z020-1-clg400
+
+---- Source Options
+Top Module Name                    : cgra2x2
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\TDP_Data_Mem.v" into library work
+Parsing module <TDP_Data_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\SP_Inst_Mem.v" into library work
+Parsing module <SP_Inst_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\Mul.v" into library work
+Parsing module <Mul>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\Inst_Mem.v" into library work
+Parsing module <Inst_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\Data_Mem.v" into library work
+Parsing module <Data_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\PEIO.v" into library work
+Parsing module <PEIO>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\PE.v" into library work
+Parsing module <PE>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\Addr_Buffer1.v" into library work
+Parsing module <Addr_Buffer1>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\Addr_Buffer0.v" into library work
+Parsing module <Addr_Buffer0>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\Torus2x2.v" into library work
+Parsing module <Torus2x2>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\BramIF.v" into library work
+Parsing module <BramIF>.
+Analyzing Verilog file "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\cgra2x2.v" into library work
+Parsing module <cgra2x2>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <cgra2x2>.
+
+Elaborating module <Torus2x2(DWIDTH=32,SYS_DWIDTH=32)>.
+
+Elaborating module <PEIO>.
+
+Elaborating module <ALU(DWIDTH=32)>.
+
+Elaborating module <Mul>.
+
+Elaborating module <Data_Mem>.
+
+Elaborating module <TDP_Data_Mem>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\TDP_Data_Mem.v" Line 39: Empty module <TDP_Data_Mem> remains a black box.
+
+Elaborating module <Inst_Mem>.
+
+Elaborating module <SP_Inst_Mem>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\SP_Inst_Mem.v" Line 39: Empty module <SP_Inst_Mem> remains a black box.
+
+Elaborating module <PE>.
+
+Elaborating module <BramIF(SYS_DWIDTH=32,BYTE_LEN=4)>.
+WARNING:HDLCompiler:413 - "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\BramIF.v" Line 181: Result of 13-bit expression is truncated to fit in 12-bit target.
+
+Elaborating module <Addr_Buffer0>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\Addr_Buffer0.v" Line 39: Empty module <Addr_Buffer0> remains a black box.
+
+Elaborating module <Addr_Buffer1>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\ipcore_dir\Addr_Buffer1.v" Line 39: Empty module <Addr_Buffer1> remains a black box.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <cgra2x2>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\cgra2x2.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        DWIDTH = 32
+    Summary:
+	no macro.
+Unit <cgra2x2> synthesized.
+
+Synthesizing Unit <Torus2x2>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\Torus2x2.v".
+        DWIDTH = 32
+        SYS_DWIDTH = 32
+    Summary:
+	no macro.
+Unit <Torus2x2> synthesized.
+
+Synthesizing Unit <PEIO>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\PEIO.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Load_Data_Reg>.
+    Found 32-bit register for signal <PE_Load_Reg>.
+    Found 32-bit register for signal <PE_Load_Reg1>.
+    Found 32-bit register for signal <Data_In_Reg1>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_Store>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 69-bit register for signal <Inst_Mem_Out_Reg1<68:0>>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 68.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 74.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 120.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 121.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 122.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 123.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Store_Wire> created at line 124.
+    Summary:
+	inferred 845 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <PEIO> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\ALU.v".
+        DWIDTH = 32
+    Found 32-bit register for signal <Data_In1_Reg>.
+    Found 32-bit register for signal <Data_In2_Reg>.
+    Found 32-bit register for signal <Data_In2_Reg1>.
+    Found 32-bit register for signal <Data_In2_Reg2>.
+    Found 32-bit register for signal <Data_In2_Reg3>.
+    Found 32-bit register for signal <ADD_Result>.
+    Found 32-bit register for signal <SUB_Result>.
+    Found 32-bit register for signal <LS8ADD_Result>.
+    Found 32-bit register for signal <LS16ADD_Result>.
+    Found 32-bit register for signal <LS24ADD_Result>.
+    Found 32-bit register for signal <RS8AND_Result>.
+    Found 32-bit register for signal <RS16AND_Result>.
+    Found 32-bit register for signal <RS24AND_Result>.
+    Found 32-bit register for signal <PHI_Result>.
+    Found 32-bit register for signal <GT_Result>.
+    Found 32-bit register for signal <LET_Result>.
+    Found 32-bit register for signal <ANDAND_Result>.
+    Found 32-bit register for signal <Data_Out>.
+    Found 32-bit register for signal <MULADD_Result>.
+    Found 32-bit register for signal <MULSUB_Result>.
+    Found 32-bit register for signal <ADDADD_Result>.
+    Found 32-bit register for signal <ADDSUB_Result>.
+    Found 32-bit register for signal <SUBSUB_Result>.
+    Found 32-bit register for signal <Data_In0_Reg>.
+    Found 4-bit register for signal <OP_Sel_Reg>.
+    Found 32-bit subtractor for signal <Data_In0_Reg[31]_Data_In1_Reg[31]_sub_11_OUT> created at line 112.
+    Found 32-bit subtractor for signal <MUL_Result[31]_Data_In2_Reg3[31]_sub_42_OUT> created at line 162.
+    Found 32-bit subtractor for signal <ADD_Result[31]_Data_In2_Reg3[31]_sub_44_OUT> created at line 164.
+    Found 32-bit subtractor for signal <SUB_Result[31]_Data_In2_Reg3[31]_sub_45_OUT> created at line 165.
+    Found 32-bit adder for signal <Data_In0_Reg[31]_Data_In1_Reg[31]_add_9_OUT> created at line 111.
+    Found 32-bit adder for signal <Data_In1_Reg[23]_Data_In2_Reg[31]_add_11_OUT> created at line 113.
+    Found 32-bit adder for signal <Data_In1_Reg[15]_Data_In2_Reg[31]_add_12_OUT> created at line 114.
+    Found 32-bit adder for signal <Data_In1_Reg[7]_Data_In2_Reg[31]_add_13_OUT> created at line 115.
+    Found 32-bit adder for signal <MUL_Result[31]_Data_In2_Reg3[31]_add_40_OUT> created at line 161.
+    Found 32-bit adder for signal <ADD_Result[31]_Data_In2_Reg3[31]_add_42_OUT> created at line 163.
+    Found 32-bit comparator greater for signal <Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o> created at line 120
+    Summary:
+	inferred  10 Adder/Subtractor(s).
+	inferred 772 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  15 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <Data_Mem>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\Data_Mem.v".
+        DWIDTH = 32
+        AWIDTH = 8
+    Summary:
+	no macro.
+Unit <Data_Mem> synthesized.
+
+Synthesizing Unit <Inst_Mem>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\Inst_Mem.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_8_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem> synthesized.
+
+Synthesizing Unit <PE>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\PE.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE> synthesized.
+
+Synthesizing Unit <BramIF>.
+    Related source file is "D:\minibench\scgra-250MHz\cgra2x2-1k-hf\src\BramIF.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        DBUF_AWIDTH = 13
+        ABUF_DWIDTH = 18
+        ABUF_AWIDTH = 12
+    Found 1-bit register for signal <Computation_Start_Reg1>.
+    Found 1-bit register for signal <Computation_Start_Reg2>.
+    Found 1-bit register for signal <Computation_Start_Reg3>.
+    Found 1-bit register for signal <Computation_Done_Reg1>.
+    Found 1-bit register for signal <Computation_Done_Reg2>.
+    Found 1-bit register for signal <Computation_Done_Reg3>.
+    Found 1-bit register for signal <PE_Array_Busy>.
+    Found 1-bit register for signal <Computation_Done_Reg0>.
+    Found 1-bit register for signal <Computation_Start_Reg0>.
+    Found 3-bit register for signal <PE_Array_Status>.
+    Found 12-bit register for signal <CGRA_Cnt>.
+    Found 12-bit register for signal <CGRA_Cnt_Reg0>.
+    Found 12-bit register for signal <CGRA_Cnt_Reg1>.
+    Found 12-bit adder for signal <CGRA_Cnt[11]_GND_11_o_add_13_OUT> created at line 181.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BramIF> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 45
+ 10-bit adder                                          : 4
+ 12-bit adder                                          : 1
+ 32-bit adder                                          : 24
+ 32-bit subtractor                                     : 16
+# Registers                                            : 203
+ 1-bit register                                        : 9
+ 10-bit register                                       : 4
+ 12-bit register                                       : 3
+ 3-bit register                                        : 1
+ 32-bit register                                       : 174
+ 4-bit register                                        : 4
+ 66-bit register                                       : 2
+ 69-bit register                                       : 2
+ 72-bit register                                       : 4
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 93
+ 10-bit 2-to-1 multiplexer                             : 4
+ 12-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 62
+ 32-bit 4-to-1 multiplexer                             : 26
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/Addr_Buffer0.ngc>.
+Reading core <ipcore_dir/Addr_Buffer1.ngc>.
+Reading core <ipcore_dir/Mul.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <ipcore_dir/TDP_Data_Mem.ngc>.
+Reading core <ipcore_dir/SP_Inst_Mem.ngc>.
+Loading core <Addr_Buffer0> for timing and area information for instance <Addr_Buffer0>.
+Loading core <Addr_Buffer1> for timing and area information for instance <Addr_Buffer1>.
+Loading core <Mul> for timing and area information for instance <Mul>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem0>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem1>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem2>.
+Loading core <SP_Inst_Mem> for timing and area information for instance <Inst_Rom>.
+INFO:Xst:2261 - The FF/Latch <RS8AND_Result_24> in Unit <ALU> is equivalent to the following 109 FFs/Latches, which will be removed : <RS8AND_Result_25> <RS8AND_Result_26> <RS8AND_Result_27> <RS8AND_Result_28> <RS8AND_Result_29> <RS8AND_Result_30> <RS8AND_Result_31> <RS16AND_Result_16> <RS16AND_Result_17> <RS16AND_Result_18> <RS16AND_Result_19> <RS16AND_Result_20> <RS16AND_Result_21> <RS16AND_Result_22> <RS16AND_Result_23> <RS16AND_Result_24> <RS16AND_Result_25> <RS16AND_Result_26> <RS16AND_Result_27> <RS16AND_Result_28> <RS16AND_Result_29> <RS16AND_Result_30> <RS16AND_Result_31> <RS24AND_Result_8> <RS24AND_Result_9> <RS24AND_Result_10> <RS24AND_Result_11> <RS24AND_Result_12> <RS24AND_Result_13> <RS24AND_Result_14> <RS24AND_Result_15> <RS24AND_Result_16> <RS24AND_Result_17> <RS24AND_Result_18> <RS24AND_Result_19> <RS24AND_Result_20> <RS24AND_Result_21> <RS24AND_Result_22> <RS24AND_Result_23> <RS24AND_Result_24> <RS24AND_Result_25> <RS24AND_Result_26> <RS24AND_Result_27> <RS24AND_Result_28> <RS24AND_Result_29>
+   <RS24AND_Result_30> <RS24AND_Result_31> <LET_Result_1> <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28> <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <RS8AND_Result_24> in Unit <ALU> is equivalent to the following 109 FFs/Latches, which will be removed : <RS8AND_Result_25> <RS8AND_Result_26> <RS8AND_Result_27> <RS8AND_Result_28> <RS8AND_Result_29> <RS8AND_Result_30> <RS8AND_Result_31> <RS16AND_Result_16> <RS16AND_Result_17> <RS16AND_Result_18> <RS16AND_Result_19> <RS16AND_Result_20> <RS16AND_Result_21> <RS16AND_Result_22> <RS16AND_Result_23> <RS16AND_Result_24> <RS16AND_Result_25> <RS16AND_Result_26> <RS16AND_Result_27> <RS16AND_Result_28> <RS16AND_Result_29> <RS16AND_Result_30> <RS16AND_Result_31> <RS24AND_Result_8> <RS24AND_Result_9> <RS24AND_Result_10> <RS24AND_Result_11> <RS24AND_Result_12> <RS24AND_Result_13> <RS24AND_Result_14> <RS24AND_Result_15> <RS24AND_Result_16> <RS24AND_Result_17> <RS24AND_Result_18> <RS24AND_Result_19> <RS24AND_Result_20> <RS24AND_Result_21> <RS24AND_Result_22> <RS24AND_Result_23> <RS24AND_Result_24> <RS24AND_Result_25> <RS24AND_Result_26> <RS24AND_Result_27> <RS24AND_Result_28> <RS24AND_Result_29>
+   <RS24AND_Result_30> <RS24AND_Result_31> <LET_Result_1> <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28> <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <RS8AND_Result_24> in Unit <ALU> is equivalent to the following 109 FFs/Latches, which will be removed : <RS8AND_Result_25> <RS8AND_Result_26> <RS8AND_Result_27> <RS8AND_Result_28> <RS8AND_Result_29> <RS8AND_Result_30> <RS8AND_Result_31> <RS16AND_Result_16> <RS16AND_Result_17> <RS16AND_Result_18> <RS16AND_Result_19> <RS16AND_Result_20> <RS16AND_Result_21> <RS16AND_Result_22> <RS16AND_Result_23> <RS16AND_Result_24> <RS16AND_Result_25> <RS16AND_Result_26> <RS16AND_Result_27> <RS16AND_Result_28> <RS16AND_Result_29> <RS16AND_Result_30> <RS16AND_Result_31> <RS24AND_Result_8> <RS24AND_Result_9> <RS24AND_Result_10> <RS24AND_Result_11> <RS24AND_Result_12> <RS24AND_Result_13> <RS24AND_Result_14> <RS24AND_Result_15> <RS24AND_Result_16> <RS24AND_Result_17> <RS24AND_Result_18> <RS24AND_Result_19> <RS24AND_Result_20> <RS24AND_Result_21> <RS24AND_Result_22> <RS24AND_Result_23> <RS24AND_Result_24> <RS24AND_Result_25> <RS24AND_Result_26> <RS24AND_Result_27> <RS24AND_Result_28> <RS24AND_Result_29>
+   <RS24AND_Result_30> <RS24AND_Result_31> <LET_Result_1> <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28> <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <RS8AND_Result_24> in Unit <ALU> is equivalent to the following 109 FFs/Latches, which will be removed : <RS8AND_Result_25> <RS8AND_Result_26> <RS8AND_Result_27> <RS8AND_Result_28> <RS8AND_Result_29> <RS8AND_Result_30> <RS8AND_Result_31> <RS16AND_Result_16> <RS16AND_Result_17> <RS16AND_Result_18> <RS16AND_Result_19> <RS16AND_Result_20> <RS16AND_Result_21> <RS16AND_Result_22> <RS16AND_Result_23> <RS16AND_Result_24> <RS16AND_Result_25> <RS16AND_Result_26> <RS16AND_Result_27> <RS16AND_Result_28> <RS16AND_Result_29> <RS16AND_Result_30> <RS16AND_Result_31> <RS24AND_Result_8> <RS24AND_Result_9> <RS24AND_Result_10> <RS24AND_Result_11> <RS24AND_Result_12> <RS24AND_Result_13> <RS24AND_Result_14> <RS24AND_Result_15> <RS24AND_Result_16> <RS24AND_Result_17> <RS24AND_Result_18> <RS24AND_Result_19> <RS24AND_Result_20> <RS24AND_Result_21> <RS24AND_Result_22> <RS24AND_Result_23> <RS24AND_Result_24> <RS24AND_Result_25> <RS24AND_Result_26> <RS24AND_Result_27> <RS24AND_Result_28> <RS24AND_Result_29>
+   <RS24AND_Result_30> <RS24AND_Result_31> <LET_Result_1> <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28> <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+WARNING:Xst:1710 - FF/Latch <RS8AND_Result_24> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RS8AND_Result_24> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RS8AND_Result_24> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <RS8AND_Result_24> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2404 -  FFs/Latches <GT_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+WARNING:Xst:2404 -  FFs/Latches <RS8AND_Result<31:24>> (without init value) have a constant value of 0 in block <ALU>.
+WARNING:Xst:2404 -  FFs/Latches <RS16AND_Result<31:16>> (without init value) have a constant value of 0 in block <ALU>.
+WARNING:Xst:2404 -  FFs/Latches <RS24AND_Result<31:8>> (without init value) have a constant value of 0 in block <ALU>.
+WARNING:Xst:2404 -  FFs/Latches <LET_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+
+Synthesizing (advanced) Unit <BramIF>.
+The following registers are absorbed into counter <CGRA_Cnt>: 1 register on signal <CGRA_Cnt>.
+Unit <BramIF> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem> synthesized (advanced).
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 40
+ 32-bit adder                                          : 24
+ 32-bit subtractor                                     : 16
+# Counters                                             : 5
+ 10-bit up counter                                     : 4
+ 12-bit up counter                                     : 1
+# Registers                                            : 5720
+ Flip-Flops                                            : 5720
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 336
+ 1-bit 4-to-1 multiplexer                              : 256
+ 32-bit 2-to-1 multiplexer                             : 62
+ 32-bit 4-to-1 multiplexer                             : 18
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_10> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_10> <ALU/Data_In2_Reg1_10> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_8> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_8> <ALU/Data_In2_Reg1_8> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_11> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_11> <ALU/Data_In2_Reg1_11> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_9> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_9> <ALU/Data_In2_Reg1_9> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_12> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_12> <ALU/Data_In2_Reg1_12> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_13> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_13> <ALU/Data_In2_Reg1_13> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_14> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_14> <ALU/Data_In2_Reg1_14> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_15> in Unit <PEIO> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_15> <ALU/Data_In2_Reg1_15> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_20> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_20> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_21> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_21> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_16> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_16> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_22> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_22> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_17> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_17> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_23> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_23> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_18> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_18> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_19> in Unit <PEIO> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_19> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_0> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_0> <ALU/LS24ADD_Result_0> <ALU/Data_In2_Reg1_0> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_1> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_1> <ALU/LS24ADD_Result_1> <ALU/Data_In2_Reg1_1> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_2> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_2> <ALU/LS24ADD_Result_2> <ALU/Data_In2_Reg1_2> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_3> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_3> <ALU/LS24ADD_Result_3> <ALU/Data_In2_Reg1_3> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_4> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_4> <ALU/LS24ADD_Result_4> <ALU/Data_In2_Reg1_4> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_5> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_5> <ALU/LS24ADD_Result_5> <ALU/Data_In2_Reg1_5> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_6> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_6> <ALU/LS24ADD_Result_6> <ALU/Data_In2_Reg1_6> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_7> in Unit <PEIO> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_7> <ALU/LS24ADD_Result_7> <ALU/Data_In2_Reg1_7> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_10> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_10> <ALU/Data_In2_Reg1_10> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_8> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_8> <ALU/Data_In2_Reg1_8> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_11> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_11> <ALU/Data_In2_Reg1_11> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_9> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_9> <ALU/Data_In2_Reg1_9> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_12> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_12> <ALU/Data_In2_Reg1_12> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_13> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_13> <ALU/Data_In2_Reg1_13> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_14> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_14> <ALU/Data_In2_Reg1_14> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_15> in Unit <PE> is equivalent to the following 2 FFs/Latches, which will be removed : <ALU/LS24ADD_Result_15> <ALU/Data_In2_Reg1_15> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_20> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_20> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_21> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_21> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_16> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_16> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_22> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_22> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_17> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_17> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_23> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_23> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_18> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_18> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS24ADD_Result_19> in Unit <PE> is equivalent to the following FF/Latch, which will be removed : <ALU/Data_In2_Reg1_19> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_0> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_0> <ALU/LS24ADD_Result_0> <ALU/Data_In2_Reg1_0> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_1> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_1> <ALU/LS24ADD_Result_1> <ALU/Data_In2_Reg1_1> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_2> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_2> <ALU/LS24ADD_Result_2> <ALU/Data_In2_Reg1_2> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_3> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_3> <ALU/LS24ADD_Result_3> <ALU/Data_In2_Reg1_3> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_4> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_4> <ALU/LS24ADD_Result_4> <ALU/Data_In2_Reg1_4> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_5> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_5> <ALU/LS24ADD_Result_5> <ALU/Data_In2_Reg1_5> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_6> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_6> <ALU/LS24ADD_Result_6> <ALU/Data_In2_Reg1_6> 
+INFO:Xst:2261 - The FF/Latch <ALU/LS16ADD_Result_7> in Unit <PE> is equivalent to the following 3 FFs/Latches, which will be removed : <ALU/LS8ADD_Result_7> <ALU/LS24ADD_Result_7> <ALU/Data_In2_Reg1_7> 
+
+Optimizing unit <cgra2x2> ...
+
+Optimizing unit <BramIF> ...
+
+Optimizing unit <PEIO> ...
+
+Optimizing unit <PE> ...
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE01/ALU/MULADD_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE01/ALU/MULSUB_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE01/ALU/SUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE01/ALU/ADD_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE10/ALU/SUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE10/ALU/ADD_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE00/ALU/MULADD_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE00/ALU/MULSUB_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE00/ALU/SUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE00/ALU/ADD_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE10/ALU/MULADD_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE10/ALU/MULSUB_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE11/ALU/SUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE11/ALU/ADD_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE11/ALU/MULADD_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE11/ALU/MULSUB_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE00/ALU/SUBSUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE00/ALU/ADDADD_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE01/ALU/SUBSUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE01/ALU/ADDADD_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE10/ALU/SUBSUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE10/ALU/ADDADD_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus2x2/PE11/ALU/SUBSUB_Result_0> in Unit <cgra2x2> is equivalent to the following FF/Latch, which will be removed : <Torus2x2/PE11/ALU/ADDADD_Result_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cgra2x2, actual ratio is 15.
+FlipFlop Torus2x2/PE00/ALU/Data_In0_Reg_0 has been replicated 1 time(s)
+FlipFlop Torus2x2/PE01/ALU/Data_In0_Reg_0 has been replicated 1 time(s)
+FlipFlop Torus2x2/PE10/ALU/Data_In0_Reg_0 has been replicated 1 time(s)
+FlipFlop Torus2x2/PE11/ALU/Data_In0_Reg_0 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 5572
+ Flip-Flops                                            : 5572
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : cgra2x2.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 5610
+#      GND                         : 23
+#      INV                         : 5
+#      LUT2                        : 1320
+#      LUT3                        : 415
+#      LUT4                        : 194
+#      LUT5                        : 177
+#      LUT6                        : 1117
+#      MUXCY                       : 1163
+#      MUXF7                       : 41
+#      MUXF8                       : 4
+#      VCC                         : 23
+#      XORCY                       : 1128
+# FlipFlops/Latches                : 6152
+#      FD                          : 128
+#      FDC                         : 5432
+#      FDCE                        : 140
+#      FDRE                        : 452
+# RAMS                             : 24
+#      RAMB36E1                    : 24
+# Shift Registers                  : 128
+#      SRL16E                      : 128
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 210
+#      IBUF                        : 67
+#      OBUF                        : 143
+# DSPs                             : 16
+#      DSP48E1                     : 16
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg400-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            6152  out of  106400     5%  
+ Number of Slice LUTs:                 3356  out of  53200     6%  
+    Number used as Logic:              3228  out of  53200     6%  
+    Number used as Memory:              128  out of  17400     0%  
+       Number used as SRL:              128
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   6877
+   Number with an unused Flip Flop:     725  out of   6877    10%  
+   Number with an unused LUT:          3521  out of   6877    51%  
+   Number of fully used LUT-FF pairs:  2631  out of   6877    38%  
+   Number of unique control sets:        13
+
+IO Utilization: 
+ Number of IOs:                         211
+ Number of bonded IOBs:                 211  out of    125   168% (*) 
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               24  out of    140    17%  
+    Number using Block RAM only:         24
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
+ Number of DSP48E1s:                     16  out of    220     7%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk                                | IBUF+BUFG              | 6317  |
+LowClk                             | BUFGP                  | 3     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                               | Buffer(FF name)                                                                                                                                                         | Load  |
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+BramIF/Addr_Buffer0/N1(BramIF/Addr_Buffer0/XST_GND:G)                        | NONE(BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)             | 4     |
+BramIF/Addr_Buffer1/N1(BramIF/Addr_Buffer1/XST_GND:G)                        | NONE(BramIF/Addr_Buffer1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)             | 4     |
+Torus2x2/PE00/Inst_Mem/Inst_Rom/N1(Torus2x2/PE00/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus2x2/PE00/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus2x2/PE01/Inst_Mem/Inst_Rom/N1(Torus2x2/PE01/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus2x2/PE01/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus2x2/PE10/Inst_Mem/Inst_Rom/N1(Torus2x2/PE10/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus2x2/PE10/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus2x2/PE11/Inst_Mem/Inst_Rom/N1(Torus2x2/PE11/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus2x2/PE11/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus2x2/PE00/Data_Mem/Mem0/N1(Torus2x2/PE00/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus2x2/PE00/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE00/Data_Mem/Mem1/N1(Torus2x2/PE00/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus2x2/PE00/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE00/Data_Mem/Mem2/N1(Torus2x2/PE00/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus2x2/PE00/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE01/Data_Mem/Mem0/N1(Torus2x2/PE01/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus2x2/PE01/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE01/Data_Mem/Mem1/N1(Torus2x2/PE01/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus2x2/PE01/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE01/Data_Mem/Mem2/N1(Torus2x2/PE01/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus2x2/PE01/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE10/Data_Mem/Mem0/N1(Torus2x2/PE10/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus2x2/PE10/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE10/Data_Mem/Mem1/N1(Torus2x2/PE10/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus2x2/PE10/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE10/Data_Mem/Mem2/N1(Torus2x2/PE10/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus2x2/PE10/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE11/Data_Mem/Mem0/N1(Torus2x2/PE11/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus2x2/PE11/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE11/Data_Mem/Mem1/N1(Torus2x2/PE11/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus2x2/PE11/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus2x2/PE11/Data_Mem/Mem2/N1(Torus2x2/PE11/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus2x2/PE11/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.421ns (Maximum Frequency: 413.053MHz)
+   Minimum input arrival time before clock: 0.410ns
+   Maximum output required time after clock: 0.701ns
+   Maximum combinational path delay: 0.871ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 2.421ns (frequency: 413.053MHz)
+  Total number of paths / destination ports: 64959 / 7292
+-------------------------------------------------------------------------
+Delay:               2.421ns (Levels of Logic = 18)
+  Source:            Torus2x2/PE01/ALU/Data_In1_Reg_1 (FF)
+  Destination:       Torus2x2/PE01/ALU/LET_Result (FF)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: Torus2x2/PE01/ALU/Data_In1_Reg_1 to Torus2x2/PE01/ALU/LET_Result
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.282   0.701  Torus2x2/PE01/ALU/Data_In1_Reg_1 (Torus2x2/PE01/ALU/Data_In1_Reg_1)
+     LUT4:I0->O            0   0.053   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_lutdi (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_lutdi)
+     MUXCY:DI->O           1   0.278   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<0> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<1> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<2> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<3> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<4> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<5> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<6> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<7> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<8> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<9> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<10> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<11> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<12> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<13> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<14> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<14>)
+     MUXCY:CI->O           2   0.015   0.405  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<15> (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<15>)
+     INV:I->O              1   0.067   0.399  Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<15>_inv_INV_0 (Torus2x2/PE01/ALU/Mcompar_Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_19_o_cy<15>_inv)
+     FDC:D                     0.011          Torus2x2/PE01/ALU/LET_Result
+    ----------------------------------------
+    Total                      2.421ns (0.916ns logic, 1.505ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'LowClk'
+  Clock period: 0.692ns (frequency: 1445.087MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               0.692ns (Levels of Logic = 0)
+  Source:            BramIF/Computation_Done_Reg2 (FF)
+  Destination:       BramIF/Computation_Done_Reg3 (FF)
+  Source Clock:      LowClk rising
+  Destination Clock: LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg2 to BramIF/Computation_Done_Reg3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  BramIF/Computation_Done_Reg2 (BramIF/Computation_Done_Reg2)
+     FDC:D                     0.011          BramIF/Computation_Done_Reg3
+    ----------------------------------------
+    Total                      0.692ns (0.293ns logic, 0.399ns route)
+                                       (42.3% logic, 57.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 65 / 65
+-------------------------------------------------------------------------
+Offset:              0.410ns (Levels of Logic = 1)
+  Source:            Computation_Start (PAD)
+  Destination:       BramIF/Computation_Start_Reg0 (FF)
+  Destination Clock: Clk rising
+
+  Data Path: Computation_Start to BramIF/Computation_Start_Reg0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.000   0.399  Computation_Start_IBUF (Computation_Start_IBUF)
+     FDC:D                     0.011          BramIF/Computation_Start_Reg0
+    ----------------------------------------
+    Total                      0.410ns (0.011ns logic, 0.399ns route)
+                                       (2.7% logic, 97.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 100 / 100
+-------------------------------------------------------------------------
+Offset:              0.701ns (Levels of Logic = 2)
+  Source:            BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i_16 (FF)
+  Destination:       Port0_Wen<3> (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i_16 to Port0_Wen<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.282   0.419  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i_16 (douta<16>)
+     end scope: 'BramIF/Addr_Buffer0:douta<16>'
+     OBUF:I->O                 0.000          Port0_Wen_3_OBUF (Port0_Wen<3>)
+    ----------------------------------------
+    Total                      0.701ns (0.282ns logic, 0.419ns route)
+                                       (40.2% logic, 59.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'LowClk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.681ns (Levels of Logic = 1)
+  Source:            BramIF/Computation_Done_Reg3 (FF)
+  Destination:       Computation_Done (PAD)
+  Source Clock:      LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg3 to Computation_Done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  BramIF/Computation_Done_Reg3 (BramIF/Computation_Done_Reg3)
+     OBUF:I->O                 0.000          Computation_Done_OBUF (Computation_Done)
+    ----------------------------------------
+    Total                      0.681ns (0.282ns logic, 0.399ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               0.871ns (Levels of Logic = 3)
+  Source:            Resetn (PAD)
+  Destination:       Port0_Rst (PAD)
+
+  Data Path: Resetn to Port0_Rst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.000   0.399  Resetn_IBUF (Resetn_IBUF)
+     INV:I->O              2   0.067   0.405  BramIF/Port0_Rst1_INV_0 (Port0_Rst_OBUF)
+     OBUF:I->O                 0.000          Port0_Rst_OBUF (Port0_Rst)
+    ----------------------------------------
+    Total                      0.871ns (0.067ns logic, 0.804ns route)
+                                       (7.7% logic, 92.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    2.421|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock LowClk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    0.698|         |         |         |
+LowClk         |    0.692|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 28.00 secs
+Total CPU time to Xst completion: 27.98 secs
+ 
+--> 
+
+Total memory usage is 476272 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   42 (   0 filtered)
+Number of infos    :   64 (   0 filtered)
+

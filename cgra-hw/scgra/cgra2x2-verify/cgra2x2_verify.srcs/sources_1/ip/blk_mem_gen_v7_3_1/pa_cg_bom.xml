@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+  <IPInstance name="rom01">
+    <FileSets>
+      <FileSet generator="apply_current_project_options_generator">
+        <File name="./apply_current_project_options_generator.xlog" type="ignore" timestamp="Sun May 18 16:06:25 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="model_parameter_resolution_generator">
+        <File name="./rom01.mif" type="mif" timestamp="Sun May 18 16:05:05 GMT 2014" checksum="0xDD9DEF7B"></File>
+        <File name="./summary.log" type="unknown" timestamp="Sun May 18 16:05:02 GMT 2014" checksum="0x0C6BFA05"></File>
+      </FileSet>
+      <FileSet generator="ip_xco_generator">
+        <File name="./rom01.xco" type="xco" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x96B96B6D"></File>
+      </FileSet>
+      <FileSet generator="associated_files_generator">
+        <File name="./rom01/blk_mem_gen_v7_3_readme.txt" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xF95F2A26"></File>
+        <File name="./rom01/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0x702C7FA8"></File>
+        <File name="./rom01/doc/pg058-blk-mem-gen.pdf" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xC1E42F23"></File>
+      </FileSet>
+      <FileSet generator="ejava_generator">
+        <File name="./rom01/example_design/rom01_exdes.ucf" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xC44C6B6D"></File>
+        <File name="./rom01/example_design/rom01_exdes.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xE0DA983B"></File>
+        <File name="./rom01/example_design/rom01_exdes.xdc" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x7684D6D4"></File>
+        <File name="./rom01/example_design/rom01_prod.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x8080CA7B"></File>
+        <File name="./rom01/implement/implement.bat" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x2A8E19DC"></File>
+        <File name="./rom01/implement/implement.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x46246432"></File>
+        <File name="./rom01/implement/planAhead_ise.bat" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x60CEDE27"></File>
+        <File name="./rom01/implement/planAhead_ise.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xF2421204"></File>
+        <File name="./rom01/implement/planAhead_ise.tcl" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x33ED763D"></File>
+        <File name="./rom01/implement/xst.prj" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x7A10662F"></File>
+        <File name="./rom01/implement/xst.scr" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xBE1EC9EB"></File>
+        <File name="./rom01/simulation/addr_gen.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x0500E48D"></File>
+        <File name="./rom01/simulation/bmg_stim_gen.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x590CC7DE"></File>
+        <File name="./rom01/simulation/bmg_tb_pkg.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xE0D93E5B"></File>
+        <File name="./rom01/simulation/functional/simcmds.tcl" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x359D8BB5"></File>
+        <File name="./rom01/simulation/functional/simulate_isim.bat" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xE5666805"></File>
+        <File name="./rom01/simulation/functional/simulate_mti.bat" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./rom01/simulation/functional/simulate_mti.do" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x816A91F3"></File>
+        <File name="./rom01/simulation/functional/simulate_mti.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./rom01/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x5B03AFD4"></File>
+        <File name="./rom01/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x3C9A0759"></File>
+        <File name="./rom01/simulation/functional/ucli_commands.key" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x5932C423"></File>
+        <File name="./rom01/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xE85FD844"></File>
+        <File name="./rom01/simulation/functional/wave_mti.do" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x740DF15E"></File>
+        <File name="./rom01/simulation/functional/wave_ncsim.sv" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xDC3F7CEE"></File>
+        <File name="./rom01/simulation/random.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x2939160A"></File>
+        <File name="./rom01/simulation/rom01_synth.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xED969D95"></File>
+        <File name="./rom01/simulation/rom01_tb.vhd" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x734BD986"></File>
+        <File name="./rom01/simulation/timing/simcmds.tcl" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x359D8BB5"></File>
+        <File name="./rom01/simulation/timing/simulate_isim.bat" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x909EAB02"></File>
+        <File name="./rom01/simulation/timing/simulate_mti.bat" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./rom01/simulation/timing/simulate_mti.do" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x92E5CAA7"></File>
+        <File name="./rom01/simulation/timing/simulate_mti.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./rom01/simulation/timing/simulate_ncsim.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xD7B23684"></File>
+        <File name="./rom01/simulation/timing/simulate_vcs.sh" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xB904CCD6"></File>
+        <File name="./rom01/simulation/timing/ucli_commands.key" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x5932C423"></File>
+        <File name="./rom01/simulation/timing/vcs_session.tcl" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x5CD547DE"></File>
+        <File name="./rom01/simulation/timing/wave_mti.do" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0x6B89BA29"></File>
+        <File name="./rom01/simulation/timing/wave_ncsim.sv" type="ignore" timestamp="Sun May 18 16:05:06 GMT 2014" checksum="0xC2C724DF"></File>
+      </FileSet>
+      <FileSet generator="ngc_netlist_generator">
+        <File name="./rom01.ngc" type="ngc" timestamp="Sun May 18 16:06:02 GMT 2014" checksum="0x45F07B31"></File>
+      </FileSet>
+      <FileSet generator="obfuscate_netlist_generator">
+        <File name="./obfuscate_netlist_generator.xlog" type="ignore" timestamp="Sun May 18 16:06:25 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="padded_implementation_netlist_generator">
+        <File name="./padded_implementation_netlist_generator.xlog" type="ignore" timestamp="Sun May 18 16:06:25 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="instantiation_template_generator">
+        <File name="./rom01.veo" type="veo" timestamp="Sun May 18 16:06:02 GMT 2014" checksum="0x73714148"></File>
+      </FileSet>
+      <FileSet generator="structural_simulation_model_generator">
+        <File name="./rom01.v" type="verilog" timestamp="Sun May 18 16:06:02 GMT 2014" checksum="0xF01DA537"></File>
+      </FileSet>
+      <FileSet generator="all_documents_generator">
+        <File name="./rom01/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Sun May 18 16:06:03 GMT 2014" checksum="0x702C7FA8"></File>
+      </FileSet>
+      <FileSet generator="asy_generator">
+        <File name="./rom01.asy" type="asy" timestamp="Sun May 18 16:06:12 GMT 2014" checksum="0xCF8F0C51"></File>
+        <File name="./rom01.mif" type="mif" timestamp="Sun May 18 16:06:12 GMT 2014" checksum="0xDD9DEF7B"></File>
+        <File name="./summary.log" type="unknown" timestamp="Sun May 18 16:06:09 GMT 2014" checksum="0x0C6BFA05"></File>
+      </FileSet>
+      <FileSet generator="xmdf_generator">
+        <File name="./rom01_xmdf.tcl" type="tclXmdf" timestamp="Sun May 18 16:06:12 GMT 2014" checksum="0x3B331A84"></File>
+      </FileSet>
+      <FileSet generator="synthesis_ise_generator">
+        <File name="./rom01.gise" type="ignore" timestamp="Sun May 18 16:06:17 GMT 2014" checksum="0xFEA2794A"></File>
+        <File name="./rom01.xise" type="ignore" timestamp="Sun May 18 16:06:17 GMT 2014" checksum="0xC5D04187"></File>
+      </FileSet>
+      <FileSet generator="ise_generator">
+        <File name="./rom01.gise" type="ignore" timestamp="Sun May 18 16:06:23 GMT 2014" checksum="0xD71F3458"></File>
+        <File name="./rom01.xise" type="ignore" timestamp="Sun May 18 16:06:23 GMT 2014" checksum="0xD78EB10B"></File>
+      </FileSet>
+      <FileSet generator="deliver_readme_generator">
+        <File name="./deliver_readme_generator.xlog" type="ignore" timestamp="Sun May 18 16:06:25 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="flist_generator">
+        <File name="./rom01_flist.txt" type="ignore" timestamp="Sun May 18 16:06:24 GMT 2014" checksum="0xDE51638C"></File>
+      </FileSet>
+    </FileSets>
+  </IPInstance>
+</BillOfMaterials>

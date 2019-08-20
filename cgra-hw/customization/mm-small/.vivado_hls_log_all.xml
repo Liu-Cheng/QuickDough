@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [RTGEN-101] Legalizing port name 'mm_ip/out' to 'mm_ip/out_r'." projectName="mm-small" solutionName="unroll_2x10x10" date="2015-03-24T15:36:45.054+0800" type="Warning"/>
+        <logs message="@W [RTGEN-101] Legalizing port name 'mm_ip/in' to 'mm_ip/in_r'." projectName="mm-small" solutionName="unroll_2x10x10" date="2015-03-24T15:36:45.047+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

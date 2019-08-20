@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sat Aug 16 20:30:41 2014
+# Process ID: 104664
+# Log file: D:/minibench/scgra-v1/cgra2x2-verify/planAhead.log
+# Journal file: D:/minibench/scgra-v1/cgra2x2-verify\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra-v1\cgra2x2-verify\cgra2x2-verify.ppr}
+update_compile_order -fileset sources_1
+launch_isim -simset sim_1 -mode behavioral

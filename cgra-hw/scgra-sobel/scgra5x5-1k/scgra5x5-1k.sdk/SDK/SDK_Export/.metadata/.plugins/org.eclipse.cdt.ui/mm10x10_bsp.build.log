@@ -1,0 +1,6 @@
+19:59:50 **** Build of project mm10x10_bsp ****
+make -k all 
+'Finished building libraries'
+
+19:59:50 Build Finished (took 128ms)
+

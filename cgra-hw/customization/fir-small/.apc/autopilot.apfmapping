@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="fir_ip.c" path="D:\minibench\customization\fir-small\src\fir_ip.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="D:\minibench\customization\fir-small\src\main.c"/>
+    <originFiles name="fir_ip.h" path="D:\minibench\customization\fir-small\src\fir_ip.h"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

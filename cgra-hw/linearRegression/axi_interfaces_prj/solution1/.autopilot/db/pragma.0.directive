@@ -1,0 +1,63 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="PIPELINE">
+<option name="II" value="128"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="doutc"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="2"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="dinb"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="2"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="dina"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="2"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="elem_mult"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="UNROLL">
+<option name="factor" value="2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="axi_interfaces" label="">
+<pragma name="PIPELINE"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

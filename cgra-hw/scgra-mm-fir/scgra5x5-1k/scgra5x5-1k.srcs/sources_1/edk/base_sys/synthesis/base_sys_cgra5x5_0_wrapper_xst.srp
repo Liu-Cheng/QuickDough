@@ -1,0 +1,694 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\synthesis\xst_temp_dir\
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "base_sys_cgra5x5_0_wrapper_xst.prj"
+Verilog Include Directory          : {"D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\pcores\" "C:\EDA\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "../implementation/base_sys_cgra5x5_0_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : base_sys_cgra5x5_0_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {../implementation}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/TDP_Data_Mem.v" into library cgra5x5_v3_00_a
+Parsing module <TDP_Data_Mem>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/SP_Inst_Mem.v" into library cgra5x5_v3_00_a
+Parsing module <SP_Inst_Mem>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/MulAdd.v" into library cgra5x5_v3_00_a
+Parsing module <MulAdd>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/Inst_Mem.v" into library cgra5x5_v3_00_a
+Parsing module <Inst_Mem>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/Data_Mem.v" into library cgra5x5_v3_00_a
+Parsing module <Data_Mem>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/ALU.v" into library cgra5x5_v3_00_a
+Parsing module <ALU>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/PEIO.v" into library cgra5x5_v3_00_a
+Parsing module <PEIO>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/PE.v" into library cgra5x5_v3_00_a
+Parsing module <PE>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/Torus5x5.v" into library cgra5x5_v3_00_a
+Parsing module <Torus5x5>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/BramIF.v" into library cgra5x5_v3_00_a
+Parsing module <BramIF>.
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/cgra5x5.v" into library cgra5x5_v3_00_a
+Parsing module <cgra5x5>.
+Analyzing Verilog file "D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\hdl\base_sys_cgra5x5_0_wrapper.v" into library work
+Parsing module <base_sys_cgra5x5_0_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <base_sys_cgra5x5_0_wrapper>.
+
+Elaborating module <cgra5x5(SYS_DWIDTH=32'b0100000,BYTE_LEN=32'b0100,DWIDTH=32'b0100000)>.
+
+Elaborating module <Torus5x5(DWIDTH=32'b0100000,SYS_DWIDTH=32'b0100000)>.
+
+Elaborating module <PEIO>.
+
+Elaborating module <ALU(DWIDTH=32)>.
+
+Elaborating module <MulAdd>.
+
+Elaborating module <Data_Mem>.
+
+Elaborating module <TDP_Data_Mem>.
+WARNING:HDLCompiler:1499 - "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/TDP_Data_Mem.v" Line 39: Empty module <TDP_Data_Mem> remains a black box.
+
+Elaborating module <Inst_Mem>.
+
+Elaborating module <SP_Inst_Mem>.
+WARNING:HDLCompiler:1499 - "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/SP_Inst_Mem.v" Line 39: Empty module <SP_Inst_Mem> remains a black box.
+
+Elaborating module <PE>.
+
+Elaborating module <BramIF(SYS_DWIDTH=32'b0100000,BYTE_LEN=32'b0100)>.
+WARNING:HDLCompiler:413 - "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/BramIF.v" Line 214: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <base_sys_cgra5x5_0_wrapper>.
+    Related source file is "D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\hdl\base_sys_cgra5x5_0_wrapper.v".
+    Summary:
+	no macro.
+Unit <base_sys_cgra5x5_0_wrapper> synthesized.
+
+Synthesizing Unit <cgra5x5>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/cgra5x5.v".
+        SYS_DWIDTH = 32'b00000000000000000000000000100000
+        BYTE_LEN = 32'b00000000000000000000000000000100
+        DWIDTH = 32'b00000000000000000000000000100000
+    Summary:
+	no macro.
+Unit <cgra5x5> synthesized.
+
+Synthesizing Unit <Torus5x5>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/Torus5x5.v".
+        DWIDTH = 32'b00000000000000000000000000100000
+        SYS_DWIDTH = 32'b00000000000000000000000000100000
+    Summary:
+	no macro.
+Unit <Torus5x5> synthesized.
+
+Synthesizing Unit <PEIO>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/PEIO.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Load_Data_Reg>.
+    Found 32-bit register for signal <Data_In_Reg1>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_Store>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 69-bit register for signal <Inst_Mem_Out_Reg1<68:0>>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 68.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 74.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 118.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 119.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 120.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 121.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Store_Wire> created at line 122.
+    Summary:
+	inferred 781 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <PEIO> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/ALU.v".
+        DWIDTH = 32
+INFO:Xst:3210 - "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/ALU.v" line 85: Output port <pcout> of the instance <MulAdd> is unconnected or connected to loadless signal.
+    Found 32-bit register for signal <ALU_In1_Reg0>.
+    Found 32-bit register for signal <ALU_In2_Reg0>.
+    Found 32-bit register for signal <ALU_In2_Reg1>.
+    Found 32-bit register for signal <ADD_Result>.
+    Found 32-bit register for signal <ADDADD_Result>.
+    Found 32-bit register for signal <ALU_Out>.
+    Found 32-bit register for signal <ALU_In0_Reg0>.
+    Found 4-bit register for signal <Opcode_Reg0>.
+    Found 32-bit adder for signal <ALU_In0_Reg0[31]_ALU_In1_Reg0[31]_add_2_OUT> created at line 112.
+    Found 32-bit adder for signal <ADD_Result[31]_ALU_In2_Reg1[31]_add_3_OUT> created at line 113.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 228 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <Data_Mem>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/Data_Mem.v".
+        DWIDTH = 32
+        AWIDTH = 8
+    Summary:
+	no macro.
+Unit <Data_Mem> synthesized.
+
+Synthesizing Unit <Inst_Mem>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/Inst_Mem.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_9_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem> synthesized.
+
+Synthesizing Unit <PE>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/PE.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE> synthesized.
+
+Synthesizing Unit <BramIF>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/pcores/cgra5x5_v3_00_a/hdl/verilog/BramIF.v".
+        SYS_DWIDTH = 32'b00000000000000000000000000100000
+        BYTE_LEN = 32'b00000000000000000000000000000100
+        CTRL_WORDS_NUM = 1024
+        DBUF_ADDR_WIDTH = 16
+WARNING:Xst:647 - Input <Port2_Data_From_Bram<23:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Port3_Data_From_Bram<26:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <Computation_Start_Reg1>.
+    Found 1-bit register for signal <Computation_Start_Reg2>.
+    Found 1-bit register for signal <Computation_Start_Reg3>.
+    Found 1-bit register for signal <Computation_Done_Reg1>.
+    Found 1-bit register for signal <Computation_Done_Reg2>.
+    Found 1-bit register for signal <Computation_Done_Reg3>.
+    Found 1-bit register for signal <PE_Array_Busy>.
+    Found 1-bit register for signal <Computation_Done_Reg0>.
+    Found 1-bit register for signal <Computation_Start_Reg0>.
+    Found 3-bit register for signal <PE_Array_Status>.
+    Found 16-bit register for signal <CGRA_Cnt>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg0>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg1>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg2>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg3>.
+    Found 16-bit adder for signal <CGRA_Cnt[15]_GND_12_o_add_13_OUT> created at line 214.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  92 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BramIF> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 76
+ 10-bit adder                                          : 25
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 50
+# Registers                                            : 721
+ 1-bit register                                        : 9
+ 10-bit register                                       : 25
+ 16-bit register                                       : 5
+ 3-bit register                                        : 1
+ 32-bit register                                       : 606
+ 4-bit register                                        : 25
+ 66-bit register                                       : 23
+ 69-bit register                                       : 2
+ 72-bit register                                       : 25
+# Multiplexers                                         : 205
+ 10-bit 2-to-1 multiplexer                             : 25
+ 16-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 27
+ 32-bit 4-to-1 multiplexer                             : 152
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <Inst_Mem>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem> synthesized (advanced).
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 51
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 50
+# Counters                                             : 25
+ 10-bit up counter                                     : 25
+# Registers                                            : 22896
+ Flip-Flops                                            : 22896
+# Multiplexers                                         : 1730
+ 1-bit 4-to-1 multiplexer                              : 1600
+ 16-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 27
+ 32-bit 4-to-1 multiplexer                             : 102
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <CGRA_Cnt_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg0_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg0_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg1_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg1_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg2_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg2_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg3_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg3_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <base_sys_cgra5x5_0_wrapper> ...
+
+Optimizing unit <Torus5x5> ...
+
+Optimizing unit <BramIF> ...
+
+Optimizing unit <PEIO> ...
+
+Optimizing unit <PE> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block base_sys_cgra5x5_0_wrapper, actual ratio is 60.
+
+Final Macro Processing ...
+
+Processing Unit <base_sys_cgra5x5_0_wrapper> :
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_15>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_14>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_13>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_12>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_11>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_10>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_9>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_8>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_7>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_6>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_5>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_4>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_3>.
+	Found 4-bit shift register for signal <cgra5x5_0/BramIF/CGRA_Cnt_Reg3_2>.
+Unit <base_sys_cgra5x5_0_wrapper> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 23080
+ Flip-Flops                                            : 23080
+# Shift Registers                                      : 14
+ 4-bit shift register                                  : 14
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : base_sys_cgra5x5_0_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 11278
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 13
+#      LUT2                        : 1864
+#      LUT3                        : 64
+#      LUT4                        : 2
+#      LUT5                        : 14
+#      LUT6                        : 5665
+#      MUXCY                       : 1788
+#      VCC                         : 1
+#      XORCY                       : 1864
+# FlipFlops/Latches                : 23111
+#      FDC                         : 23066
+#      FDCE                        : 31
+#      FDE                         : 14
+# Shift Registers                  : 14
+#      SRLC16E                     : 14
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# Others                           : 125
+#      MulAdd                      : 25
+#      SP_Inst_Mem                 : 25
+#      TDP_Data_Mem                : 75
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:           23111  out of  106400    21%  
+ Number of Slice LUTs:                 7638  out of  53200    14%  
+    Number used as Logic:              7624  out of  53200    14%  
+    Number used as Memory:               14  out of  17400     0%  
+       Number used as SRL:               14
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  23126
+   Number with an unused Flip Flop:      15  out of  23126     0%  
+   Number with an unused LUT:         15488  out of  23126    66%  
+   Number of fully used LUT-FF pairs:  7623  out of  23126    32%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                         417
+ Number of bonded IOBs:                   0  out of    200     0%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                        | Load  |
+-----------------------------------+----------------------------------------------+-------+
+LowClk                             | NONE(cgra5x5_0/BramIF/Computation_Done_Reg3) | 3     |
+Port3_Clk                          | NONE(cgra5x5_0/BramIF/Computation_Start_Reg3)| 23122 |
+-----------------------------------+----------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.022ns (Maximum Frequency: 494.560MHz)
+   Minimum input arrival time before clock: 0.477ns
+   Maximum output required time after clock: 0.681ns
+   Maximum combinational path delay: 0.000ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'LowClk'
+  Clock period: 0.692ns (frequency: 1445.087MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               0.692ns (Levels of Logic = 0)
+  Source:            cgra5x5_0/BramIF/Computation_Done_Reg2 (FF)
+  Destination:       cgra5x5_0/BramIF/Computation_Done_Reg3 (FF)
+  Source Clock:      LowClk rising
+  Destination Clock: LowClk rising
+
+  Data Path: cgra5x5_0/BramIF/Computation_Done_Reg2 to cgra5x5_0/BramIF/Computation_Done_Reg3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  cgra5x5_0/BramIF/Computation_Done_Reg2 (cgra5x5_0/BramIF/Computation_Done_Reg2)
+     FDC:D                     0.011          cgra5x5_0/BramIF/Computation_Done_Reg3
+    ----------------------------------------
+    Total                      0.692ns (0.293ns logic, 0.399ns route)
+                                       (42.3% logic, 57.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Port3_Clk'
+  Clock period: 2.022ns (frequency: 494.560MHz)
+  Total number of paths / destination ports: 123220 / 16611
+-------------------------------------------------------------------------
+Delay:               2.022ns (Levels of Logic = 16)
+  Source:            cgra5x5_0/BramIF/CGRA_Cnt_2 (FF)
+  Destination:       cgra5x5_0/BramIF/CGRA_Cnt_15 (FF)
+  Source Clock:      Port3_Clk rising
+  Destination Clock: Port3_Clk rising
+
+  Data Path: cgra5x5_0/BramIF/CGRA_Cnt_2 to cgra5x5_0/BramIF/CGRA_Cnt_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.282   0.405  cgra5x5_0/BramIF/CGRA_Cnt_2 (cgra5x5_0/BramIF/CGRA_Cnt_2)
+     INV:I->O              1   0.067   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_lut<2>_INV_0 (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_lut<2>)
+     MUXCY:S->O            1   0.291   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<2> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<3> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<4> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<5> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<6> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<7> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<8> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<9> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<10> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<11> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<12> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<13> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<13>)
+     MUXCY:CI->O           0   0.015   0.000  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<14> (cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_cy<14>)
+     XORCY:CI->O           1   0.320   0.413  cgra5x5_0/BramIF/Madd_CGRA_Cnt[15]_GND_12_o_add_13_OUT_xor<15> (cgra5x5_0/BramIF/CGRA_Cnt[15]_GND_12_o_add_13_OUT<15>)
+     LUT5:I4->O            1   0.053   0.000  cgra5x5_0/BramIF/Mmux_GND_12_o_CGRA_Cnt[15]_mux_17_OUT71 (cgra5x5_0/BramIF/GND_12_o_CGRA_Cnt[15]_mux_17_OUT<15>)
+     FDCE:D                    0.011          cgra5x5_0/BramIF/CGRA_Cnt_15
+    ----------------------------------------
+    Total                      2.022ns (1.204ns logic, 0.818ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Port3_Clk'
+  Total number of paths / destination ports: 7324 / 7324
+-------------------------------------------------------------------------
+Offset:              0.477ns (Levels of Logic = 1)
+  Source:            cgra5x5_0/Torus5x5/PE01/ALU/MulAdd:p<0> (PAD)
+  Destination:       cgra5x5_0/Torus5x5/PE01/ALU/ALU_Out_0 (FF)
+  Destination Clock: Port3_Clk rising
+
+  Data Path: cgra5x5_0/Torus5x5/PE01/ALU/MulAdd:p<0> to cgra5x5_0/Torus5x5/PE01/ALU/ALU_Out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    MulAdd:p<0>            1   0.000   0.413  cgra5x5_0/Torus5x5/PE01/ALU/MulAdd (cgra5x5_0/Torus5x5/PE01/ALU/MULADD_Result<0>)
+     LUT6:I5->O            1   0.053   0.000  cgra5x5_0/Torus5x5/PE01/ALU/Mmux_ADDADD_Result[31]_MULADD_Result[31]_mux_12_OUT110 (cgra5x5_0/Torus5x5/PE01/ALU/ADDADD_Result[31]_MULADD_Result[31]_mux_12_OUT<0>)
+     FDC:D                     0.011          cgra5x5_0/Torus5x5/PE01/ALU/ALU_Out_0
+    ----------------------------------------
+    Total                      0.477ns (0.064ns logic, 0.413ns route)
+                                       (13.4% logic, 86.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Port3_Clk'
+  Total number of paths / destination ports: 8892 / 8892
+-------------------------------------------------------------------------
+Offset:              0.681ns (Levels of Logic = 0)
+  Source:            cgra5x5_0/Torus5x5/PE01/Inst_Mem/Inst_Mem_Addr_9 (FF)
+  Destination:       cgra5x5_0/Torus5x5/PE01/Inst_Mem/Inst_Rom:addra<9> (PAD)
+  Source Clock:      Port3_Clk rising
+
+  Data Path: cgra5x5_0/Torus5x5/PE01/Inst_Mem/Inst_Mem_Addr_9 to cgra5x5_0/Torus5x5/PE01/Inst_Mem/Inst_Rom:addra<9>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  cgra5x5_0/Torus5x5/PE01/Inst_Mem/Inst_Mem_Addr_9 (cgra5x5_0/Torus5x5/PE01/Inst_Mem/Inst_Mem_Addr_9)
+    SP_Inst_Mem:addra<9>        0.000          cgra5x5_0/Torus5x5/PE01/Inst_Mem/Inst_Rom
+    ----------------------------------------
+    Total                      0.681ns (0.282ns logic, 0.399ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'LowClk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.282ns (Levels of Logic = 0)
+  Source:            cgra5x5_0/BramIF/Computation_Done_Reg3 (FF)
+  Destination:       Computation_Done (PAD)
+  Source Clock:      LowClk rising
+
+  Data Path: cgra5x5_0/BramIF/Computation_Done_Reg3 to Computation_Done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              0   0.282   0.000  cgra5x5_0/BramIF/Computation_Done_Reg3 (cgra5x5_0/BramIF/Computation_Done_Reg3)
+    ----------------------------------------
+    Total                      0.282ns (0.282ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 246 / 246
+-------------------------------------------------------------------------
+Delay:               0.000ns (Levels of Logic = 0)
+  Source:            Port2_Data_From_Bram<30> (PAD)
+  Destination:       Port0_Wen<3> (PAD)
+
+  Data Path: Port2_Data_From_Bram<30> to Port0_Wen<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    ----------------------------------------
+    Total                      0.000ns (0.000ns logic, 0.000ns route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock LowClk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+LowClk         |    0.692|         |         |         |
+Port3_Clk      |    0.698|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Port3_Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Port3_Clk      |    2.022|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 45.00 secs
+Total CPU time to Xst completion: 45.18 secs
+ 
+--> 
+
+Total memory usage is 538884 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   24 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

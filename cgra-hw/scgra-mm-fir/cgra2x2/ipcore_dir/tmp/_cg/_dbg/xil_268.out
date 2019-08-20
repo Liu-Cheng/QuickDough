@@ -1,0 +1,17 @@
+SET_PARAMETER c_a_type 0
+SET_PARAMETER c_verbosity 0
+SET_PARAMETER c_ce_overrides_sclr 0
+SET_PARAMETER c_b_type 0
+SET_PARAMETER c_out_low 0
+SET_PARAMETER c_use_pcin false
+SET_PARAMETER c_c_latency -1
+SET_PARAMETER c_c_type 0
+SET_PARAMETER component_name MulAdd
+SET_PARAMETER c_c_width 32
+SET_PARAMETER c_b_width 32
+SET_PARAMETER c_a_width 32
+SET_PARAMETER c_out_high 31
+SET_PARAMETER c_ab_latency -1
+SET_ERROR_CODE 2
+SET_ERROR_MSG  CANCEL: Customization cancelled.
+SET_ERROR_TEXT Finished initializing IP model.	

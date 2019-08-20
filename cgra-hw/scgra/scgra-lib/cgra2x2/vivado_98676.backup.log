@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Mon Jul 21 19:18:54 2014
+# Process ID: 94124
+# Log file: D:/minibench/scgra/scgra-lib/cgra2x2/vivado.log
+# Journal file: D:/minibench/scgra/scgra-lib/cgra2x2\vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/Xilinx/Vivado/2013.3/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+open_project {D:\minibench\scgra\scgra-lib\cgra2x2\cgra2x2.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado repository 'C:/EDA/Xilinx/Vivado/2013.3/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 731.742 ; gain = 11.121
+ipx::package_project -root_dir {D:/minibench/scgra/scgra-lib/cgra2x2} -generated_files
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem.xml' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem_ooc.xdc' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_synth_comp.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_defaults.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_pkg.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_getinit_pkg.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_min_area_pkg.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_bindec.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_mux.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_prim_wrapper_v6.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_prim_wrapper_v6_init.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_prim_width.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_generic_cstr.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_ecc_encoder.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_ecc_decoder.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_input_block.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_output_block.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_axi_read_fsm.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_axi_read_wrapper.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_axi_write_fsm.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_axi_write_wrapper.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_axi_regs_fwd.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_top.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_synth.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/synth/TDP_Data_Mem.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/SP_Inst_Mem.xml' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/SP_Inst_Mem_ooc.xdc' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_synth_comp.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_defaults.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_pkg.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_getinit_pkg.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_min_area_pkg.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_bindec.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_mux.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_prim_wrapper_v6.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_prim_wrapper_v6_init.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_prim_width.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_generic_cstr.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_ecc_encoder.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_ecc_decoder.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_input_block.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_output_block.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_axi_read_fsm.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_axi_read_wrapper.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_axi_write_fsm.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_axi_write_wrapper.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_axi_regs_fwd.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_top.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0_synth.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/blk_mem_gen_v8_0.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/synth/SP_Inst_Mem.vhd' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem.xml' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/blk_mem_gen_v8_0/simulation/blk_mem_gen_v8_0.v' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/sim/TDP_Data_Mem.v' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/SP_Inst_Mem.xml' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/blk_mem_gen_v8_0/simulation/blk_mem_gen_v8_0.v' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+CRITICAL WARNING: [IP_Flow 19-459] IP file 'd:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/sim/SP_Inst_Mem.v' appears to be outside of the project area D:/minibench/scgra/scgra-lib/cgra2x2.
+INFO: [IP_Flow 19-1793] Cannot infer any bus interface that matches bus definition xilinx.com:interface:aximm:1.0.
+set_property library {user} [ipx::current_core]
+launch_runs synth_1
+[Mon Jul 21 19:20:20 2014] Launched synth_1...
+Run output will be captured here: D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/runme.log
+set_property is_include true [ipx::get_file cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem_ooc.xdc [ipx::get_file_group xilinx_anylanguagesynthesis [ipx::current_core]]]
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 21 19:23:21 2014...

@@ -1,0 +1,6 @@
+11:29:46 **** Auto Build of project kmean-small_bsp ****
+make -k all 
+'Finished building libraries'
+
+11:29:46 Build Finished (took 141ms)
+

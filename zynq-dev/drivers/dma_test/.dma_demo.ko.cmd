@@ -1,0 +1,1 @@
+cmd_/software/drivers/dma_test/dma_demo.ko := arm-linux-gnueabihf-ld -EL -r  -T /software/linux-xlnx/scripts/module-common.lds --build-id  -o /software/drivers/dma_test/dma_demo.ko /software/drivers/dma_test/dma_demo.o /software/drivers/dma_test/dma_demo.mod.o

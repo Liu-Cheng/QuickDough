@@ -1,0 +1,20 @@
+// File: D:\minibench\scgra-v1\scgra2x2-1k\scgra2x2-1k.srcs\sources_1\edk\base_sys\base_sys_stub.bmm
+
+ADDRESS_MAP processing_system7_0 ARM 100
+	ADDRESS_SPACE axi_bram_ctrl_0_bram_block_1_combined COMBINED [0x40000000:0x40001fff]
+		ADDRESS_RANGE RAMB32
+		BUS_BLOCK
+			base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/ramb36e1_0 [31:16] INPUT = axi_bram_ctrl_0_bram_block_1_combined_0.mem ;
+			base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/ramb36e1_1 [15:0] INPUT = axi_bram_ctrl_0_bram_block_1_combined_1.mem ;
+		END_BUS_BLOCK;
+		END_ADDRESS_RANGE;
+	END_ADDRESS_SPACE;
+	ADDRESS_SPACE axi_bram_ctrl_1_bram_block_1_combined COMBINED [0x40010000:0x40011fff]
+		ADDRESS_RANGE RAMB32
+		BUS_BLOCK
+			base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/ramb36e1_0 [31:16] INPUT = axi_bram_ctrl_1_bram_block_1_combined_0.mem ;
+			base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/ramb36e1_1 [15:0] INPUT = axi_bram_ctrl_1_bram_block_1_combined_1.mem ;
+		END_BUS_BLOCK;
+		END_ADDRESS_RANGE;
+	END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

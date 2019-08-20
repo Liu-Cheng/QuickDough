@@ -1,0 +1,1146 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: cgra3x3.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cgra3x3.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cgra3x3"
+Output Format                      : NGC
+Target Device                      : xc7z020-1-clg400
+
+---- Source Options
+Top Module Name                    : cgra3x3
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\TDP_Data_Mem.v" into library work
+Parsing module <TDP_Data_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\SP_Inst_Mem.v" into library work
+Parsing module <SP_Inst_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\Mul.v" into library work
+Parsing module <Mul>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\Inst_Mem.v" into library work
+Parsing module <Inst_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\Data_Mem.v" into library work
+Parsing module <Data_Mem>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\PEIO.v" into library work
+Parsing module <PEIO>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\PE.v" into library work
+Parsing module <PE>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\Addr_Buffer1.v" into library work
+Parsing module <Addr_Buffer1>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\Addr_Buffer0.v" into library work
+Parsing module <Addr_Buffer0>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\Torus3x3.v" into library work
+Parsing module <Torus3x3>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\BramIF.v" into library work
+Parsing module <BramIF>.
+Analyzing Verilog file "D:\minibench\scgra-200MHz\cgra3x3\src\cgra3x3.v" into library work
+Parsing module <cgra3x3>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <cgra3x3>.
+
+Elaborating module <Torus3x3(DWIDTH=32,SYS_DWIDTH=32)>.
+
+Elaborating module <PEIO>.
+
+Elaborating module <ALU(DWIDTH=32)>.
+
+Elaborating module <Mul>.
+
+Elaborating module <Data_Mem>.
+
+Elaborating module <TDP_Data_Mem>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\TDP_Data_Mem.v" Line 39: Empty module <TDP_Data_Mem> remains a black box.
+
+Elaborating module <Inst_Mem>.
+
+Elaborating module <SP_Inst_Mem>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\SP_Inst_Mem.v" Line 39: Empty module <SP_Inst_Mem> remains a black box.
+
+Elaborating module <PE>.
+WARNING:HDLCompiler:1127 - "D:\minibench\scgra-200MHz\cgra3x3\src\PE.v" Line 159: Assignment to Data_In_Reg ignored, since the identifier is never used
+
+Elaborating module <BramIF(SYS_DWIDTH=32,BYTE_LEN=4)>.
+WARNING:HDLCompiler:413 - "D:\minibench\scgra-200MHz\cgra3x3\src\BramIF.v" Line 181: Result of 13-bit expression is truncated to fit in 12-bit target.
+
+Elaborating module <Addr_Buffer0>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\Addr_Buffer0.v" Line 39: Empty module <Addr_Buffer0> remains a black box.
+
+Elaborating module <Addr_Buffer1>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra-200MHz\cgra3x3\ipcore_dir\Addr_Buffer1.v" Line 39: Empty module <Addr_Buffer1> remains a black box.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <cgra3x3>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\cgra3x3.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        DWIDTH = 32
+    Summary:
+	no macro.
+Unit <cgra3x3> synthesized.
+
+Synthesizing Unit <Torus3x3>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\Torus3x3.v".
+        DWIDTH = 32
+        SYS_DWIDTH = 32
+    Summary:
+	no macro.
+Unit <Torus3x3> synthesized.
+
+Synthesizing Unit <PEIO>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\PEIO.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Load_Data_Reg>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_Store>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 69-bit register for signal <Inst_Mem_Out_Reg1<68:0>>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 68.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 73.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 108.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 109.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 110.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Store_Wire> created at line 112.
+    Summary:
+	inferred 493 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <PEIO> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\ALU.v".
+        DWIDTH = 32
+    Found 32-bit register for signal <Data_In0_Reg>.
+    Found 32-bit register for signal <Data_In1_Reg>.
+    Found 32-bit register for signal <Data_In2_Reg>.
+    Found 32-bit register for signal <Data_In2_Reg1>.
+    Found 32-bit register for signal <Data_In2_Reg2>.
+    Found 32-bit register for signal <Data_In2_Reg3>.
+    Found 32-bit register for signal <Data_In2_Reg4>.
+    Found 32-bit register for signal <Data_In2_Reg5>.
+    Found 32-bit register for signal <Data_Out>.
+    Found 32-bit register for signal <Add_Result>.
+    Found 32-bit register for signal <Sub_Result>.
+    Found 32-bit register for signal <And_Result>.
+    Found 32-bit register for signal <PHI_Result>.
+    Found 32-bit register for signal <GT_Result>.
+    Found 32-bit register for signal <LET_Result>.
+    Found 32-bit register for signal <MulAdd_Result>.
+    Found 32-bit register for signal <Shift4_Result>.
+    Found 4-bit register for signal <OP_Sel_Reg>.
+    Found 32-bit subtractor for signal <Data_In0_Reg[31]_Data_In1_Reg[31]_sub_32_OUT> created at line 133.
+    Found 32-bit adder for signal <Data_In0_Reg[31]_Data_In1_Reg[31]_add_30_OUT> created at line 132.
+    Found 32-bit adder for signal <Mul_Result[31]_Data_In2_Reg5[31]_add_46_OUT> created at line 146.
+    Found 32-bit 4-to-1 multiplexer for signal <_n0114> created at line 69.
+    Found 32-bit comparator greater for signal <Data_In1_Reg[31]_Data_In0_Reg[31]_LessThan_36_o> created at line 136
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 548 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <Data_Mem>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\Data_Mem.v".
+        DWIDTH = 32
+        AWIDTH = 8
+    Summary:
+	no macro.
+Unit <Data_Mem> synthesized.
+
+Synthesizing Unit <Inst_Mem>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\Inst_Mem.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_8_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem> synthesized.
+
+Synthesizing Unit <PE>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\PE.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 102.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 103.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 104.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 105.
+    Summary:
+	inferred 394 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE> synthesized.
+
+Synthesizing Unit <BramIF>.
+    Related source file is "D:\minibench\scgra-200MHz\cgra3x3\src\BramIF.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        DBUF_AWIDTH = 13
+        ABUF_DWIDTH = 18
+        ABUF_AWIDTH = 12
+    Found 1-bit register for signal <Computation_Start_Reg1>.
+    Found 1-bit register for signal <Computation_Start_Reg2>.
+    Found 1-bit register for signal <Computation_Start_Reg3>.
+    Found 1-bit register for signal <Computation_Done_Reg1>.
+    Found 1-bit register for signal <Computation_Done_Reg2>.
+    Found 1-bit register for signal <Computation_Done_Reg3>.
+    Found 1-bit register for signal <PE_Array_Busy>.
+    Found 1-bit register for signal <Computation_Done_Reg0>.
+    Found 1-bit register for signal <Computation_Start_Reg0>.
+    Found 3-bit register for signal <PE_Array_Status>.
+    Found 12-bit register for signal <CGRA_Cnt>.
+    Found 12-bit register for signal <CGRA_Cnt_Reg0>.
+    Found 12-bit register for signal <CGRA_Cnt_Reg1>.
+    Found 12-bit adder for signal <CGRA_Cnt[11]_GND_11_o_add_13_OUT> created at line 181.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BramIF> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 37
+ 10-bit adder                                          : 9
+ 12-bit adder                                          : 1
+ 32-bit adder                                          : 18
+ 32-bit subtractor                                     : 9
+# Registers                                            : 280
+ 1-bit register                                        : 9
+ 10-bit register                                       : 9
+ 12-bit register                                       : 3
+ 3-bit register                                        : 1
+ 32-bit register                                       : 231
+ 4-bit register                                        : 9
+ 66-bit register                                       : 7
+ 69-bit register                                       : 2
+ 72-bit register                                       : 9
+# Comparators                                          : 9
+ 32-bit comparator greater                             : 9
+# Multiplexers                                         : 95
+ 10-bit 2-to-1 multiplexer                             : 9
+ 12-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 20
+ 32-bit 4-to-1 multiplexer                             : 65
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/Addr_Buffer0.ngc>.
+Reading core <ipcore_dir/Addr_Buffer1.ngc>.
+Reading core <ipcore_dir/Mul.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <ipcore_dir/TDP_Data_Mem.ngc>.
+Reading core <ipcore_dir/SP_Inst_Mem.ngc>.
+Loading core <Addr_Buffer0> for timing and area information for instance <Addr_Buffer0>.
+Loading core <Addr_Buffer1> for timing and area information for instance <Addr_Buffer1>.
+Loading core <Mul> for timing and area information for instance <Mul>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem0>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem1>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem2>.
+Loading core <SP_Inst_Mem> for timing and area information for instance <Inst_Rom>.
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2404 -  FFs/Latches <GT_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+WARNING:Xst:2404 -  FFs/Latches <LET_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+
+Synthesizing (advanced) Unit <BramIF>.
+The following registers are absorbed into counter <CGRA_Cnt>: 1 register on signal <CGRA_Cnt>.
+Unit <BramIF> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem> synthesized (advanced).
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 27
+ 32-bit adder                                          : 18
+ 32-bit subtractor                                     : 9
+# Counters                                             : 10
+ 10-bit up counter                                     : 9
+ 12-bit up counter                                     : 1
+# Registers                                            : 8106
+ Flip-Flops                                            : 8106
+# Comparators                                          : 9
+ 32-bit comparator greater                             : 9
+# Multiplexers                                         : 922
+ 1-bit 2-to-1 multiplexer                              : 288
+ 1-bit 4-to-1 multiplexer                              : 576
+ 32-bit 2-to-1 multiplexer                             : 11
+ 32-bit 4-to-1 multiplexer                             : 47
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <cgra3x3> ...
+
+Optimizing unit <Torus3x3> ...
+
+Optimizing unit <BramIF> ...
+
+Optimizing unit <PEIO> ...
+
+Optimizing unit <PE> ...
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE01/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE01/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE12/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE12/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE10/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE10/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE00/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE00/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE11/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE11/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE22/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE22/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE20/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE20/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE02/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE02/ALU/Sub_Result_0> 
+INFO:Xst:2261 - The FF/Latch <Torus3x3/PE21/ALU/Add_Result_0> in Unit <cgra3x3> is equivalent to the following FF/Latch, which will be removed : <Torus3x3/PE21/ALU/Sub_Result_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cgra3x3, actual ratio is 23.
+
+Final Macro Processing ...
+
+Processing Unit <cgra3x3> :
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE01/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE00/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE22/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE21/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE20/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE12/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE11/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE10/ALU/Data_In2_Reg5_31>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_0>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_1>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_2>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_3>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_4>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_5>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_6>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_7>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_8>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_9>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_10>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_11>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_12>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_13>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_14>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_15>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_16>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_17>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_18>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_19>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_20>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_21>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_22>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_23>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_24>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_25>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_26>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_27>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_28>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_29>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_30>.
+	Found 5-bit shift register for signal <Torus3x3/PE02/ALU/Data_In2_Reg5_31>.
+Unit <cgra3x3> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 6759
+ Flip-Flops                                            : 6759
+# Shift Registers                                      : 288
+ 5-bit shift register                                  : 288
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : cgra3x3.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 7635
+#      GND                         : 48
+#      INV                         : 1
+#      LUT2                        : 1539
+#      LUT3                        : 613
+#      LUT4                        : 561
+#      LUT5                        : 345
+#      LUT6                        : 2459
+#      MUXCY                       : 1064
+#      VCC                         : 48
+#      XORCY                       : 957
+# FlipFlops/Latches                : 8446
+#      FD                          : 270
+#      FDC                         : 6747
+#      FDCE                        : 304
+#      FDE                         : 288
+#      FDRE                        : 837
+# RAMS                             : 49
+#      RAMB36E1                    : 49
+# Shift Registers                  : 441
+#      SRL16E                      : 153
+#      SRLC16E                     : 288
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 210
+#      IBUF                        : 67
+#      OBUF                        : 143
+# DSPs                             : 36
+#      DSP48E1                     : 36
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg400-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            8446  out of  106400     7%  
+ Number of Slice LUTs:                 5959  out of  53200    11%  
+    Number used as Logic:              5518  out of  53200    10%  
+    Number used as Memory:              441  out of  17400     2%  
+       Number used as SRL:              441
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  10191
+   Number with an unused Flip Flop:    1745  out of  10191    17%  
+   Number with an unused LUT:          4232  out of  10191    41%  
+   Number of fully used LUT-FF pairs:  4214  out of  10191    41%  
+   Number of unique control sets:        16
+
+IO Utilization: 
+ Number of IOs:                         211
+ Number of bonded IOBs:                 211  out of    125   168% (*) 
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               49  out of    140    35%  
+    Number using Block RAM only:         49
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
+ Number of DSP48E1s:                     36  out of    220    16%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk                                | IBUF+BUFG              | 8969  |
+LowClk                             | BUFGP                  | 3     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                               | Buffer(FF name)                                                                                                                                                         | Load  |
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+BramIF/Addr_Buffer0/N1(BramIF/Addr_Buffer0/XST_GND:G)                        | NONE(BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)             | 4     |
+BramIF/Addr_Buffer1/N1(BramIF/Addr_Buffer1/XST_GND:G)                        | NONE(BramIF/Addr_Buffer1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)             | 4     |
+Torus3x3/PE00/Inst_Mem/Inst_Rom/N1(Torus3x3/PE00/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE00/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE01/Inst_Mem/Inst_Rom/N1(Torus3x3/PE01/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE01/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE02/Inst_Mem/Inst_Rom/N1(Torus3x3/PE02/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE02/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE10/Inst_Mem/Inst_Rom/N1(Torus3x3/PE10/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE10/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE11/Inst_Mem/Inst_Rom/N1(Torus3x3/PE11/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE11/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE12/Inst_Mem/Inst_Rom/N1(Torus3x3/PE12/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE12/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE20/Inst_Mem/Inst_Rom/N1(Torus3x3/PE20/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE20/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE21/Inst_Mem/Inst_Rom/N1(Torus3x3/PE21/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE21/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE22/Inst_Mem/Inst_Rom/N1(Torus3x3/PE22/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus3x3/PE22/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus3x3/PE00/Data_Mem/Mem0/N1(Torus3x3/PE00/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE00/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE00/Data_Mem/Mem1/N1(Torus3x3/PE00/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE00/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE00/Data_Mem/Mem2/N1(Torus3x3/PE00/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE00/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE01/Data_Mem/Mem0/N1(Torus3x3/PE01/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE01/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE01/Data_Mem/Mem1/N1(Torus3x3/PE01/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE01/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE01/Data_Mem/Mem2/N1(Torus3x3/PE01/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE01/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE02/Data_Mem/Mem0/N1(Torus3x3/PE02/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE02/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE02/Data_Mem/Mem1/N1(Torus3x3/PE02/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE02/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE02/Data_Mem/Mem2/N1(Torus3x3/PE02/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE02/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE10/Data_Mem/Mem0/N1(Torus3x3/PE10/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE10/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE10/Data_Mem/Mem1/N1(Torus3x3/PE10/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE10/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE10/Data_Mem/Mem2/N1(Torus3x3/PE10/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE10/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE11/Data_Mem/Mem0/N1(Torus3x3/PE11/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE11/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE11/Data_Mem/Mem1/N1(Torus3x3/PE11/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE11/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE11/Data_Mem/Mem2/N1(Torus3x3/PE11/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE11/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE12/Data_Mem/Mem0/N1(Torus3x3/PE12/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE12/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE12/Data_Mem/Mem1/N1(Torus3x3/PE12/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE12/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE12/Data_Mem/Mem2/N1(Torus3x3/PE12/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE12/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE20/Data_Mem/Mem0/N1(Torus3x3/PE20/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE20/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE20/Data_Mem/Mem1/N1(Torus3x3/PE20/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE20/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE20/Data_Mem/Mem2/N1(Torus3x3/PE20/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE20/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE21/Data_Mem/Mem0/N1(Torus3x3/PE21/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE21/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE21/Data_Mem/Mem1/N1(Torus3x3/PE21/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE21/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE21/Data_Mem/Mem2/N1(Torus3x3/PE21/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE21/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE22/Data_Mem/Mem0/N1(Torus3x3/PE22/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus3x3/PE22/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE22/Data_Mem/Mem1/N1(Torus3x3/PE22/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus3x3/PE22/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus3x3/PE22/Data_Mem/Mem2/N1(Torus3x3/PE22/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus3x3/PE22/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 3.811ns (Maximum Frequency: 262.398MHz)
+   Minimum input arrival time before clock: 0.410ns
+   Maximum output required time after clock: 0.701ns
+   Maximum combinational path delay: 0.871ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 3.811ns (frequency: 262.398MHz)
+  Total number of paths / destination ports: 119540 / 11422
+-------------------------------------------------------------------------
+Delay:               3.811ns (Levels of Logic = 0)
+  Source:            sec_inst (DSP)
+  Destination:       sec_inst (DSP)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: sec_inst to sec_inst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:CLK->out          1   2.411   0.000  sec_inst (sec_net)
+     SEC:in                    1.400          sec_inst
+    ----------------------------------------
+    Total                      3.811ns (3.811ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'LowClk'
+  Clock period: 0.692ns (frequency: 1445.087MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               0.692ns (Levels of Logic = 0)
+  Source:            BramIF/Computation_Done_Reg2 (FF)
+  Destination:       BramIF/Computation_Done_Reg3 (FF)
+  Source Clock:      LowClk rising
+  Destination Clock: LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg2 to BramIF/Computation_Done_Reg3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  BramIF/Computation_Done_Reg2 (BramIF/Computation_Done_Reg2)
+     FDC:D                     0.011          BramIF/Computation_Done_Reg3
+    ----------------------------------------
+    Total                      0.692ns (0.293ns logic, 0.399ns route)
+                                       (42.3% logic, 57.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 65 / 65
+-------------------------------------------------------------------------
+Offset:              0.410ns (Levels of Logic = 1)
+  Source:            Computation_Start (PAD)
+  Destination:       BramIF/Computation_Start_Reg0 (FF)
+  Destination Clock: Clk rising
+
+  Data Path: Computation_Start to BramIF/Computation_Start_Reg0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.000   0.399  Computation_Start_IBUF (Computation_Start_IBUF)
+     FDC:D                     0.011          BramIF/Computation_Start_Reg0
+    ----------------------------------------
+    Total                      0.410ns (0.011ns logic, 0.399ns route)
+                                       (2.7% logic, 97.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 100 / 100
+-------------------------------------------------------------------------
+Offset:              0.701ns (Levels of Logic = 2)
+  Source:            BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i_16 (FF)
+  Destination:       Port0_Wen<3> (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: BramIF/Addr_Buffer0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i_16 to Port0_Wen<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.282   0.419  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i_16 (douta<16>)
+     end scope: 'BramIF/Addr_Buffer0:douta<16>'
+     OBUF:I->O                 0.000          Port0_Wen_3_OBUF (Port0_Wen<3>)
+    ----------------------------------------
+    Total                      0.701ns (0.282ns logic, 0.419ns route)
+                                       (40.2% logic, 59.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'LowClk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.681ns (Levels of Logic = 1)
+  Source:            BramIF/Computation_Done_Reg3 (FF)
+  Destination:       Computation_Done (PAD)
+  Source Clock:      LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg3 to Computation_Done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  BramIF/Computation_Done_Reg3 (BramIF/Computation_Done_Reg3)
+     OBUF:I->O                 0.000          Computation_Done_OBUF (Computation_Done)
+    ----------------------------------------
+    Total                      0.681ns (0.282ns logic, 0.399ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               0.871ns (Levels of Logic = 3)
+  Source:            Resetn (PAD)
+  Destination:       Port0_Rst (PAD)
+
+  Data Path: Resetn to Port0_Rst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.000   0.399  Resetn_IBUF (Resetn_IBUF)
+     INV:I->O              2   0.067   0.405  BramIF/Port0_Rst1_INV_0 (Port0_Rst_OBUF)
+     OBUF:I->O                 0.000          Port0_Rst_OBUF (Port0_Rst)
+    ----------------------------------------
+    Total                      0.871ns (0.067ns logic, 0.804ns route)
+                                       (7.7% logic, 92.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    3.811|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock LowClk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    0.698|         |         |         |
+LowClk         |    0.692|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 35.00 secs
+Total CPU time to Xst completion: 34.52 secs
+ 
+--> 
+
+Total memory usage is 515844 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   75 (   0 filtered)
+Number of infos    :   18 (   0 filtered)
+

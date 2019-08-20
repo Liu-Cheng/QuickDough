@@ -1,0 +1,1 @@
+cmd_/software/drivers/intrtest/intrtest.ko := arm-linux-gnueabi-ld -EL -r  -T /software/linux-xlnx/scripts/module-common.lds --build-id  -o /software/drivers/intrtest/intrtest.ko /software/drivers/intrtest/intrtest.o /software/drivers/intrtest/intrtest.mod.o

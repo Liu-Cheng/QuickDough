@@ -1,0 +1,2694 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: cgra5x5.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cgra5x5.prj"
+
+---- Target Parameters
+Target Device                      : xc7vx485tffg1157-1
+Output File Name                   : "cgra5x5.ngc"
+
+---- Source Options
+Top Module Name                    : cgra5x5
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+---- Other Options
+Cores Search Directories           : {d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_9 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_8 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_29 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_28 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_27 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_26 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_25 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_24 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_23 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_22
+d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_21 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_20 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_19 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_18 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_17 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_16 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_15 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_14 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_13 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_12
+d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_11 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_10 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1 d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/MulAdd.v" into library work
+Parsing module <MulAdd>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_9/SP_Inst_Mem00.v" into library work
+Parsing module <SP_Inst_Mem00>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_8/TDP_Data_Mem.v" into library work
+Parsing module <TDP_Data_Mem>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/SP_Inst_Mem13.v" into library work
+Parsing module <SP_Inst_Mem13>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_29/SP_Inst_Mem32.v" into library work
+Parsing module <SP_Inst_Mem32>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_28/SP_Inst_Mem33.v" into library work
+Parsing module <SP_Inst_Mem33>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_27/SP_Inst_Mem34.v" into library work
+Parsing module <SP_Inst_Mem34>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_26/SP_Inst_Mem40.v" into library work
+Parsing module <SP_Inst_Mem40>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_25/SP_Inst_Mem41.v" into library work
+Parsing module <SP_Inst_Mem41>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_24/SP_Inst_Mem42.v" into library work
+Parsing module <SP_Inst_Mem42>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_23/SP_Inst_Mem43.v" into library work
+Parsing module <SP_Inst_Mem43>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_22/SP_Inst_Mem44.v" into library work
+Parsing module <SP_Inst_Mem44>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_21/SP_Inst_Mem31.v" into library work
+Parsing module <SP_Inst_Mem31>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_20/SP_Inst_Mem30.v" into library work
+Parsing module <SP_Inst_Mem30>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/SP_Inst_Mem04.v" into library work
+Parsing module <SP_Inst_Mem04>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_19/SP_Inst_Mem24.v" into library work
+Parsing module <SP_Inst_Mem24>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_18/SP_Inst_Mem23.v" into library work
+Parsing module <SP_Inst_Mem23>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_17/SP_Inst_Mem14.v" into library work
+Parsing module <SP_Inst_Mem14>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_16/SP_Inst_Mem22.v" into library work
+Parsing module <SP_Inst_Mem22>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_15/SP_Inst_Mem21.v" into library work
+Parsing module <SP_Inst_Mem21>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_14/SP_Inst_Mem20.v" into library work
+Parsing module <SP_Inst_Mem20>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_13/SP_Inst_Mem12.v" into library work
+Parsing module <SP_Inst_Mem12>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_12/SP_Inst_Mem11.v" into library work
+Parsing module <SP_Inst_Mem11>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_11/SP_Inst_Mem10.v" into library work
+Parsing module <SP_Inst_Mem10>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_10/SP_Inst_Mem02.v" into library work
+Parsing module <SP_Inst_Mem02>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/SP_Inst_Mem03.v" into library work
+Parsing module <SP_Inst_Mem03>.
+Analyzing Verilog file "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/SP_Inst_Mem01.v" into library work
+Parsing module <SP_Inst_Mem01>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem44.v" into library work
+Parsing module <Inst_Mem44>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem43.v" into library work
+Parsing module <Inst_Mem43>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem42.v" into library work
+Parsing module <Inst_Mem42>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem41.v" into library work
+Parsing module <Inst_Mem41>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem40.v" into library work
+Parsing module <Inst_Mem40>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem34.v" into library work
+Parsing module <Inst_Mem34>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem33.v" into library work
+Parsing module <Inst_Mem33>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem32.v" into library work
+Parsing module <Inst_Mem32>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem31.v" into library work
+Parsing module <Inst_Mem31>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem30.v" into library work
+Parsing module <Inst_Mem30>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem24.v" into library work
+Parsing module <Inst_Mem24>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem23.v" into library work
+Parsing module <Inst_Mem23>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem22.v" into library work
+Parsing module <Inst_Mem22>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem21.v" into library work
+Parsing module <Inst_Mem21>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem20.v" into library work
+Parsing module <Inst_Mem20>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem14.v" into library work
+Parsing module <Inst_Mem14>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem13.v" into library work
+Parsing module <Inst_Mem13>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem12.v" into library work
+Parsing module <Inst_Mem12>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem11.v" into library work
+Parsing module <Inst_Mem11>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem10.v" into library work
+Parsing module <Inst_Mem10>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem04.v" into library work
+Parsing module <Inst_Mem04>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem03.v" into library work
+Parsing module <Inst_Mem03>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem02.v" into library work
+Parsing module <Inst_Mem02>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem01.v" into library work
+Parsing module <Inst_Mem01>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem00.v" into library work
+Parsing module <Inst_Mem00>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/data_mem.v" into library work
+Parsing module <Data_Mem>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE44.v" into library work
+Parsing module <PE44>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE43.v" into library work
+Parsing module <PE43>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE42.v" into library work
+Parsing module <PE42>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE41.v" into library work
+Parsing module <PE41>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE40.v" into library work
+Parsing module <PE40>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE34.v" into library work
+Parsing module <PE34>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE33.v" into library work
+Parsing module <PE33>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE32.v" into library work
+Parsing module <PE32>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE31.v" into library work
+Parsing module <PE31>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE30.v" into library work
+Parsing module <PE30>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE24.v" into library work
+Parsing module <PE24>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE23.v" into library work
+Parsing module <PE23>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE22.v" into library work
+Parsing module <PE22>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE21.v" into library work
+Parsing module <PE21>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE20.v" into library work
+Parsing module <PE20>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE14.v" into library work
+Parsing module <PE14>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE13.v" into library work
+Parsing module <PE13>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE12.v" into library work
+Parsing module <PE12>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE11.v" into library work
+Parsing module <PE11>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE10.v" into library work
+Parsing module <PE10>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE04.v" into library work
+Parsing module <PE04>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE03.v" into library work
+Parsing module <PE03>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE02.v" into library work
+Parsing module <PE02>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE01.v" into library work
+Parsing module <PE01>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE00.v" into library work
+Parsing module <PE00>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Torus5x5.v" into library work
+Parsing module <Torus5x5>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/BramIF.v" into library work
+Parsing module <BramIF>.
+Analyzing Verilog file "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/cgra5x5.v" into library work
+Parsing module <cgra5x5>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <cgra5x5>.
+
+Elaborating module <Torus5x5(DWIDTH=32,SYS_DWIDTH=32)>.
+
+Elaborating module <PE00>.
+
+Elaborating module <ALU(DWIDTH=32)>.
+
+Elaborating module <MulAdd>.
+
+Elaborating module <Data_Mem>.
+
+Elaborating module <TDP_Data_Mem>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_8/TDP_Data_Mem.v" Line 39: Empty module <TDP_Data_Mem> remains a black box.
+
+Elaborating module <Inst_Mem00>.
+
+Elaborating module <SP_Inst_Mem00>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_9/SP_Inst_Mem00.v" Line 39: Empty module <SP_Inst_Mem00> remains a black box.
+
+Elaborating module <PE01>.
+
+Elaborating module <Inst_Mem01>.
+
+Elaborating module <SP_Inst_Mem01>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/SP_Inst_Mem01.v" Line 39: Empty module <SP_Inst_Mem01> remains a black box.
+
+Elaborating module <PE02>.
+
+Elaborating module <Inst_Mem02>.
+
+Elaborating module <SP_Inst_Mem02>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_10/SP_Inst_Mem02.v" Line 39: Empty module <SP_Inst_Mem02> remains a black box.
+
+Elaborating module <PE03>.
+
+Elaborating module <Inst_Mem03>.
+
+Elaborating module <SP_Inst_Mem03>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/SP_Inst_Mem03.v" Line 39: Empty module <SP_Inst_Mem03> remains a black box.
+
+Elaborating module <PE04>.
+
+Elaborating module <Inst_Mem04>.
+
+Elaborating module <SP_Inst_Mem04>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/SP_Inst_Mem04.v" Line 39: Empty module <SP_Inst_Mem04> remains a black box.
+
+Elaborating module <PE10>.
+
+Elaborating module <Inst_Mem10>.
+
+Elaborating module <SP_Inst_Mem10>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_11/SP_Inst_Mem10.v" Line 39: Empty module <SP_Inst_Mem10> remains a black box.
+
+Elaborating module <PE11>.
+
+Elaborating module <Inst_Mem11>.
+
+Elaborating module <SP_Inst_Mem11>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_12/SP_Inst_Mem11.v" Line 39: Empty module <SP_Inst_Mem11> remains a black box.
+
+Elaborating module <PE12>.
+
+Elaborating module <Inst_Mem12>.
+
+Elaborating module <SP_Inst_Mem12>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_13/SP_Inst_Mem12.v" Line 39: Empty module <SP_Inst_Mem12> remains a black box.
+
+Elaborating module <PE13>.
+
+Elaborating module <Inst_Mem13>.
+
+Elaborating module <SP_Inst_Mem13>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/SP_Inst_Mem13.v" Line 39: Empty module <SP_Inst_Mem13> remains a black box.
+
+Elaborating module <PE14>.
+
+Elaborating module <Inst_Mem14>.
+
+Elaborating module <SP_Inst_Mem14>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_17/SP_Inst_Mem14.v" Line 39: Empty module <SP_Inst_Mem14> remains a black box.
+
+Elaborating module <PE20>.
+
+Elaborating module <Inst_Mem20>.
+
+Elaborating module <SP_Inst_Mem20>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_14/SP_Inst_Mem20.v" Line 39: Empty module <SP_Inst_Mem20> remains a black box.
+
+Elaborating module <PE21>.
+
+Elaborating module <Inst_Mem21>.
+
+Elaborating module <SP_Inst_Mem21>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_15/SP_Inst_Mem21.v" Line 39: Empty module <SP_Inst_Mem21> remains a black box.
+
+Elaborating module <PE22>.
+
+Elaborating module <Inst_Mem22>.
+
+Elaborating module <SP_Inst_Mem22>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_16/SP_Inst_Mem22.v" Line 39: Empty module <SP_Inst_Mem22> remains a black box.
+
+Elaborating module <PE23>.
+
+Elaborating module <Inst_Mem23>.
+
+Elaborating module <SP_Inst_Mem23>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_18/SP_Inst_Mem23.v" Line 39: Empty module <SP_Inst_Mem23> remains a black box.
+
+Elaborating module <PE24>.
+
+Elaborating module <Inst_Mem24>.
+
+Elaborating module <SP_Inst_Mem24>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_19/SP_Inst_Mem24.v" Line 39: Empty module <SP_Inst_Mem24> remains a black box.
+
+Elaborating module <PE30>.
+
+Elaborating module <Inst_Mem30>.
+
+Elaborating module <SP_Inst_Mem30>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_20/SP_Inst_Mem30.v" Line 39: Empty module <SP_Inst_Mem30> remains a black box.
+
+Elaborating module <PE31>.
+
+Elaborating module <Inst_Mem31>.
+
+Elaborating module <SP_Inst_Mem31>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_21/SP_Inst_Mem31.v" Line 39: Empty module <SP_Inst_Mem31> remains a black box.
+
+Elaborating module <PE32>.
+
+Elaborating module <Inst_Mem32>.
+
+Elaborating module <SP_Inst_Mem32>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_29/SP_Inst_Mem32.v" Line 39: Empty module <SP_Inst_Mem32> remains a black box.
+
+Elaborating module <PE33>.
+
+Elaborating module <Inst_Mem33>.
+
+Elaborating module <SP_Inst_Mem33>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_28/SP_Inst_Mem33.v" Line 39: Empty module <SP_Inst_Mem33> remains a black box.
+
+Elaborating module <PE34>.
+
+Elaborating module <Inst_Mem34>.
+
+Elaborating module <SP_Inst_Mem34>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_27/SP_Inst_Mem34.v" Line 39: Empty module <SP_Inst_Mem34> remains a black box.
+
+Elaborating module <PE40>.
+
+Elaborating module <Inst_Mem40>.
+
+Elaborating module <SP_Inst_Mem40>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_26/SP_Inst_Mem40.v" Line 39: Empty module <SP_Inst_Mem40> remains a black box.
+
+Elaborating module <PE41>.
+
+Elaborating module <Inst_Mem41>.
+
+Elaborating module <SP_Inst_Mem41>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_25/SP_Inst_Mem41.v" Line 39: Empty module <SP_Inst_Mem41> remains a black box.
+
+Elaborating module <PE42>.
+
+Elaborating module <Inst_Mem42>.
+
+Elaborating module <SP_Inst_Mem42>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_24/SP_Inst_Mem42.v" Line 39: Empty module <SP_Inst_Mem42> remains a black box.
+
+Elaborating module <PE43>.
+
+Elaborating module <Inst_Mem43>.
+
+Elaborating module <SP_Inst_Mem43>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_23/SP_Inst_Mem43.v" Line 39: Empty module <SP_Inst_Mem43> remains a black box.
+
+Elaborating module <PE44>.
+
+Elaborating module <Inst_Mem44>.
+
+Elaborating module <SP_Inst_Mem44>.
+WARNING:HDLCompiler:1499 - "d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_22/SP_Inst_Mem44.v" Line 39: Empty module <SP_Inst_Mem44> remains a black box.
+
+Elaborating module <BramIF(SYS_DWIDTH=32,BYTE_LEN=4)>.
+WARNING:HDLCompiler:413 - "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/BramIF.v" Line 216: Result of 25-bit expression is truncated to fit in 24-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <cgra5x5>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/cgra5x5.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        DWIDTH = 32
+    Summary:
+	no macro.
+Unit <cgra5x5> synthesized.
+
+Synthesizing Unit <Torus5x5>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Torus5x5.v".
+        DWIDTH = 32
+        SYS_DWIDTH = 32
+    Summary:
+	no macro.
+Unit <Torus5x5> synthesized.
+
+Synthesizing Unit <PE00>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE00.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Load_Data_Reg>.
+    Found 32-bit register for signal <Data_In_Reg1>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_Store>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 69-bit register for signal <Inst_Mem_Out_Reg1<68:0>>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 68.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 74.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 118.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 119.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 120.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 121.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Store_Wire> created at line 122.
+    Summary:
+	inferred 781 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <PE00> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/ALU.v".
+        DWIDTH = 32
+    Found 1-bit register for signal <ADDSUB_2st_Sel_Reg>.
+    Found 1-bit register for signal <Is_LSFADD_Reg>.
+    Found 1-bit register for signal <Is_ANDAND_Reg>.
+    Found 1-bit register for signal <Is_MULADDSUB_Reg1>.
+    Found 1-bit register for signal <Is_MULADDSUB_Reg2>.
+    Found 32-bit register for signal <ALU_In1_Reg0>.
+    Found 32-bit register for signal <ALU_In2_Reg0>.
+    Found 32-bit register for signal <ALU_In2_Reg1>.
+    Found 32-bit register for signal <ADDSUB_Result>.
+    Found 32-bit register for signal <AND_Result>.
+    Found 32-bit register for signal <ABS_Result>.
+    Found 32-bit register for signal <GT_Result>.
+    Found 32-bit register for signal <LET_Result>.
+    Found 32-bit register for signal <PHI_Result>.
+    Found 32-bit register for signal <RSF_Result>.
+    Found 32-bit register for signal <LSF_Result>.
+    Found 32-bit register for signal <Custom_Result>.
+    Found 32-bit register for signal <ALU_In0_Reg0>.
+    Found 4-bit register for signal <Opcode_Reg0>.
+    Found 4-bit register for signal <Single_Cycle_OP_Sel_Reg>.
+    Found 3-bit register for signal <Custom_Out_Sel_Reg>.
+    Found 32-bit subtractor for signal <ALU_In0_Reg0[31]_ALU_In1_Reg0[31]_sub_23_OUT> created at line 165.
+    Found 32-bit subtractor for signal <ALU_In0_Reg0[31]_unary_minus_26_OUT> created at line 167.
+    Found 32-bit subtractor for signal <ADDSUB_2st_OP0[31]_ALU_In2_Reg1[31]_sub_69_OUT> created at line 233.
+    Found 32-bit adder for signal <ALU_In0_Reg0[31]_ALU_In1_Reg0[31]_add_21_OUT> created at line 165.
+    Found 32-bit adder for signal <ADDSUB_2st_OP0[31]_ALU_In2_Reg1[31]_add_67_OUT> created at line 233.
+    Found 32-bit comparator greater for signal <ALU_In1_Reg0[31]_ALU_In0_Reg0[31]_LessThan_28_o> created at line 168
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 432 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <MulAdd>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/MulAdd.v".
+        DWIDTH1 = 16
+        DWIDTH2 = 16
+        DWIDTH = 32
+    Found 16-bit register for signal <b_reg0>.
+    Found 32-bit register for signal <c_reg0>.
+    Found 1-bit register for signal <subtract_reg>.
+    Found 32-bit register for signal <c_reg1>.
+    Found 32-bit register for signal <mul_result>.
+    Found 32-bit register for signal <p>.
+    Found 16-bit register for signal <a_reg0>.
+    Found 32-bit subtractor for signal <mul_result[31]_c_reg1[31]_sub_26_OUT> created at line 135.
+    Found 32-bit adder for signal <mul_result[31]_c_reg1[31]_add_26_OUT> created at line 135.
+    Found 16x16-bit multiplier for signal <a_reg0[15]_b_reg0[15]_MuLt_20_OUT> created at line 126.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 161 D-type flip-flop(s).
+Unit <MulAdd> synthesized.
+
+Synthesizing Unit <Data_Mem>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/data_mem.v".
+        DWIDTH = 32
+        AWIDTH = 8
+    Summary:
+	no macro.
+Unit <Data_Mem> synthesized.
+
+Synthesizing Unit <Inst_Mem00>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem00.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_10_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem00> synthesized.
+
+Synthesizing Unit <PE01>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE01.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Load_Data_Reg>.
+    Found 32-bit register for signal <Data_In_Reg1>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_Store>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 69-bit register for signal <Inst_Mem_Out_Reg1<68:0>>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 68.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 74.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 118.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 119.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 120.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 121.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Store_Wire> created at line 122.
+    Summary:
+	inferred 781 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <PE01> synthesized.
+
+Synthesizing Unit <Inst_Mem01>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem01.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_13_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem01> synthesized.
+
+Synthesizing Unit <PE02>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE02.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE02> synthesized.
+
+Synthesizing Unit <Inst_Mem02>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem02.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_16_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem02> synthesized.
+
+Synthesizing Unit <PE03>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE03.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE03> synthesized.
+
+Synthesizing Unit <Inst_Mem03>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem03.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_19_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem03> synthesized.
+
+Synthesizing Unit <PE04>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE04.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE04> synthesized.
+
+Synthesizing Unit <Inst_Mem04>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem04.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_22_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem04> synthesized.
+
+Synthesizing Unit <PE10>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE10.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE10> synthesized.
+
+Synthesizing Unit <Inst_Mem10>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem10.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_25_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem10> synthesized.
+
+Synthesizing Unit <PE11>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE11.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE11> synthesized.
+
+Synthesizing Unit <Inst_Mem11>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem11.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_28_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem11> synthesized.
+
+Synthesizing Unit <PE12>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE12.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE12> synthesized.
+
+Synthesizing Unit <Inst_Mem12>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem12.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_31_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem12> synthesized.
+
+Synthesizing Unit <PE13>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE13.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE13> synthesized.
+
+Synthesizing Unit <Inst_Mem13>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem13.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_34_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem13> synthesized.
+
+Synthesizing Unit <PE14>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE14.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE14> synthesized.
+
+Synthesizing Unit <Inst_Mem14>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem14.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_37_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem14> synthesized.
+
+Synthesizing Unit <PE20>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE20.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE20> synthesized.
+
+Synthesizing Unit <Inst_Mem20>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem20.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_40_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem20> synthesized.
+
+Synthesizing Unit <PE21>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE21.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE21> synthesized.
+
+Synthesizing Unit <Inst_Mem21>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem21.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_43_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem21> synthesized.
+
+Synthesizing Unit <PE22>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE22.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE22> synthesized.
+
+Synthesizing Unit <Inst_Mem22>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem22.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_46_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem22> synthesized.
+
+Synthesizing Unit <PE23>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE23.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE23> synthesized.
+
+Synthesizing Unit <Inst_Mem23>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem23.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_49_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem23> synthesized.
+
+Synthesizing Unit <PE24>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE24.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE24> synthesized.
+
+Synthesizing Unit <Inst_Mem24>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem24.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_52_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem24> synthesized.
+
+Synthesizing Unit <PE30>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE30.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE30> synthesized.
+
+Synthesizing Unit <Inst_Mem30>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem30.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_55_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem30> synthesized.
+
+Synthesizing Unit <PE31>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE31.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE31> synthesized.
+
+Synthesizing Unit <Inst_Mem31>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem31.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_58_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem31> synthesized.
+
+Synthesizing Unit <PE32>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE32.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE32> synthesized.
+
+Synthesizing Unit <Inst_Mem32>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem32.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_61_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem32> synthesized.
+
+Synthesizing Unit <PE33>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE33.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE33> synthesized.
+
+Synthesizing Unit <Inst_Mem33>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem33.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_64_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem33> synthesized.
+
+Synthesizing Unit <PE34>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE34.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE34> synthesized.
+
+Synthesizing Unit <Inst_Mem34>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem34.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_67_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem34> synthesized.
+
+Synthesizing Unit <PE40>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE40.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE40> synthesized.
+
+Synthesizing Unit <Inst_Mem40>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem40.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_70_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem40> synthesized.
+
+Synthesizing Unit <PE41>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE41.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE41> synthesized.
+
+Synthesizing Unit <Inst_Mem41>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem41.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_73_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem41> synthesized.
+
+Synthesizing Unit <PE42>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE42.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE42> synthesized.
+
+Synthesizing Unit <Inst_Mem42>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem42.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_76_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem42> synthesized.
+
+Synthesizing Unit <PE43>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE43.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE43> synthesized.
+
+Synthesizing Unit <Inst_Mem43>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem43.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_79_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem43> synthesized.
+
+Synthesizing Unit <PE44>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/PE44.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE44> synthesized.
+
+Synthesizing Unit <Inst_Mem44>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/Inst_Mem44.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_82_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem44> synthesized.
+
+Synthesizing Unit <BramIF>.
+    Related source file is "D:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/new/BramIF.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        CTRL_WORDS_NUM = 1024
+        DBUF_ADDR_WIDTH = 24
+WARNING:Xst:647 - Input <Port3_Data_From_Bram<26:24>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <Computation_Start_Reg1>.
+    Found 1-bit register for signal <Computation_Start_Reg2>.
+    Found 1-bit register for signal <Computation_Start_Reg3>.
+    Found 1-bit register for signal <Computation_Done_Reg1>.
+    Found 1-bit register for signal <Computation_Done_Reg2>.
+    Found 1-bit register for signal <Computation_Done_Reg3>.
+    Found 1-bit register for signal <PE_Array_Busy>.
+    Found 1-bit register for signal <Computation_Done_Reg0>.
+    Found 1-bit register for signal <Computation_Start_Reg0>.
+    Found 3-bit register for signal <PE_Array_Status>.
+    Found 24-bit register for signal <CGRA_Cnt>.
+    Found 24-bit register for signal <CGRA_Cnt_Reg0>.
+    Found 24-bit register for signal <CGRA_Cnt_Reg1>.
+    Found 24-bit register for signal <CGRA_Cnt_Reg2>.
+    Found 24-bit register for signal <CGRA_Cnt_Reg3>.
+    Found 24-bit adder for signal <CGRA_Cnt[23]_GND_84_o_add_13_OUT> created at line 216.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 132 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BramIF> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 25
+ 16x16-bit multiplier                                  : 25
+# Adders/Subtractors                                   : 126
+ 10-bit adder                                          : 25
+ 24-bit adder                                          : 1
+ 32-bit addsub                                         : 75
+ 32-bit subtractor                                     : 25
+# Registers                                            : 1221
+ 1-bit register                                        : 159
+ 10-bit register                                       : 25
+ 16-bit register                                       : 50
+ 24-bit register                                       : 5
+ 3-bit register                                        : 26
+ 32-bit register                                       : 856
+ 4-bit register                                        : 50
+ 66-bit register                                       : 23
+ 69-bit register                                       : 2
+ 72-bit register                                       : 25
+# Comparators                                          : 25
+ 32-bit comparator greater                             : 25
+# Multiplexers                                         : 305
+ 10-bit 2-to-1 multiplexer                             : 25
+ 24-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 127
+ 32-bit 4-to-1 multiplexer                             : 152
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_8/TDP_Data_Mem.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_9/SP_Inst_Mem00.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/SP_Inst_Mem01.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_10/SP_Inst_Mem02.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/SP_Inst_Mem03.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/SP_Inst_Mem04.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_11/SP_Inst_Mem10.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_12/SP_Inst_Mem11.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_13/SP_Inst_Mem12.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/SP_Inst_Mem13.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_17/SP_Inst_Mem14.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_14/SP_Inst_Mem20.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_15/SP_Inst_Mem21.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_16/SP_Inst_Mem22.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_18/SP_Inst_Mem23.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_19/SP_Inst_Mem24.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_20/SP_Inst_Mem30.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_21/SP_Inst_Mem31.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_29/SP_Inst_Mem32.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_28/SP_Inst_Mem33.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_27/SP_Inst_Mem34.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_26/SP_Inst_Mem40.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_25/SP_Inst_Mem41.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_24/SP_Inst_Mem42.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_23/SP_Inst_Mem43.ngc>.
+Reading core <d:/minibench/scgra/cgra5x5-verify/cgra5x5-verify.srcs/sources_1/ip/blk_mem_gen_v7_3_22/SP_Inst_Mem44.ngc>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem0>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem1>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem2>.
+Loading core <SP_Inst_Mem00> for timing and area information for instance <SP_Inst_Mem00>.
+Loading core <SP_Inst_Mem01> for timing and area information for instance <SP_Inst_Mem01>.
+Loading core <SP_Inst_Mem02> for timing and area information for instance <SP_Inst_Mem02>.
+Loading core <SP_Inst_Mem03> for timing and area information for instance <SP_Inst_Mem03>.
+Loading core <SP_Inst_Mem04> for timing and area information for instance <SP_Inst_Mem04>.
+Loading core <SP_Inst_Mem10> for timing and area information for instance <SP_Inst_Mem10>.
+Loading core <SP_Inst_Mem11> for timing and area information for instance <SP_Inst_Mem11>.
+Loading core <SP_Inst_Mem12> for timing and area information for instance <SP_Inst_Mem12>.
+Loading core <SP_Inst_Mem13> for timing and area information for instance <SP_Inst_Mem13>.
+Loading core <SP_Inst_Mem14> for timing and area information for instance <SP_Inst_Mem14>.
+Loading core <SP_Inst_Mem20> for timing and area information for instance <SP_Inst_Mem20>.
+Loading core <SP_Inst_Mem21> for timing and area information for instance <SP_Inst_Mem21>.
+Loading core <SP_Inst_Mem22> for timing and area information for instance <SP_Inst_Mem22>.
+Loading core <SP_Inst_Mem23> for timing and area information for instance <SP_Inst_Mem23>.
+Loading core <SP_Inst_Mem24> for timing and area information for instance <SP_Inst_Mem24>.
+Loading core <SP_Inst_Mem30> for timing and area information for instance <SP_Inst_Mem30>.
+Loading core <SP_Inst_Mem31> for timing and area information for instance <SP_Inst_Mem31>.
+Loading core <SP_Inst_Mem32> for timing and area information for instance <SP_Inst_Mem32>.
+Loading core <SP_Inst_Mem33> for timing and area information for instance <SP_Inst_Mem33>.
+Loading core <SP_Inst_Mem34> for timing and area information for instance <SP_Inst_Mem34>.
+Loading core <SP_Inst_Mem40> for timing and area information for instance <SP_Inst_Mem40>.
+Loading core <SP_Inst_Mem41> for timing and area information for instance <SP_Inst_Mem41>.
+Loading core <SP_Inst_Mem42> for timing and area information for instance <SP_Inst_Mem42>.
+Loading core <SP_Inst_Mem43> for timing and area information for instance <SP_Inst_Mem43>.
+Loading core <SP_Inst_Mem44> for timing and area information for instance <SP_Inst_Mem44>.
+WARNING:Xst:2404 -  FFs/Latches <GT_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+WARNING:Xst:2404 -  FFs/Latches <LET_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+
+Synthesizing (advanced) Unit <BramIF>.
+The following registers are absorbed into counter <CGRA_Cnt>: 1 register on signal <CGRA_Cnt>.
+Unit <BramIF> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem00>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem00> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem01>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem01> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem02>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem02> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem03>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem03> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem04>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem04> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem10>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem10> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem11>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem11> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem12>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem12> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem13>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem13> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem14>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem14> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem20>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem20> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem21>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem21> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem22>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem22> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem23>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem23> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem24>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem24> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem30>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem30> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem31>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem31> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem32>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem32> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem33>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem33> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem34>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem34> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem40>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem40> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem41>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem41> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem42>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem42> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem43>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem43> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Inst_Mem44>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem44> synthesized (advanced).
+
+Synthesizing (advanced) Unit <MulAdd>.
+	Found pipelined multiplier on signal <a_reg0[15]_b_reg0[15]_MuLt_20_OUT>:
+		- 1 pipeline level(s) found in a register connected to the multiplier macro output.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT by adding 1 register level(s).
+Unit <MulAdd> synthesized (advanced).
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE44>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 25
+ 16x16-bit registered multiplier                       : 25
+# Adders/Subtractors                                   : 100
+ 32-bit addsub                                         : 75
+ 32-bit subtractor                                     : 25
+# Counters                                             : 26
+ 10-bit up counter                                     : 25
+ 24-bit up counter                                     : 1
+# Registers                                            : 29687
+ Flip-Flops                                            : 29687
+# Comparators                                          : 25
+ 32-bit comparator greater                             : 25
+# Multiplexers                                         : 2604
+ 1-bit 2-to-1 multiplexer                              : 800
+ 1-bit 4-to-1 multiplexer                              : 1600
+ 32-bit 2-to-1 multiplexer                             : 102
+ 32-bit 4-to-1 multiplexer                             : 102
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <cgra5x5> ...
+
+Optimizing unit <Torus5x5> ...
+
+Optimizing unit <BramIF> ...
+
+Optimizing unit <PE00> ...
+
+Optimizing unit <MulAdd> ...
+
+Optimizing unit <PE01> ...
+
+Optimizing unit <PE02> ...
+
+Optimizing unit <PE03> ...
+
+Optimizing unit <PE04> ...
+
+Optimizing unit <PE10> ...
+
+Optimizing unit <PE11> ...
+
+Optimizing unit <PE12> ...
+
+Optimizing unit <PE13> ...
+
+Optimizing unit <PE14> ...
+
+Optimizing unit <PE20> ...
+
+Optimizing unit <PE21> ...
+
+Optimizing unit <PE22> ...
+
+Optimizing unit <PE23> ...
+
+Optimizing unit <PE24> ...
+
+Optimizing unit <PE30> ...
+
+Optimizing unit <PE31> ...
+
+Optimizing unit <PE32> ...
+
+Optimizing unit <PE33> ...
+
+Optimizing unit <PE34> ...
+
+Optimizing unit <PE40> ...
+
+Optimizing unit <PE41> ...
+
+Optimizing unit <PE42> ...
+
+Optimizing unit <PE43> ...
+
+Optimizing unit <PE44> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block cgra5x5, actual ratio is 7.
+FlipFlop Torus5x5/PE00/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE01/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE02/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE03/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE04/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE10/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE11/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE12/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE13/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE14/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE20/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE21/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE22/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE23/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE24/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE30/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE31/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE32/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE33/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE34/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE40/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE41/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE42/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE43/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE44/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <cgra5x5> :
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_23>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_22>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_21>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_20>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_19>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_18>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_17>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_16>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_15>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_14>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_13>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_12>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_11>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_10>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_9>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_8>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_7>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_6>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_5>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_4>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_3>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_2>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_1>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_0>.
+Unit <cgra5x5> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 29090
+ Flip-Flops                                            : 29090
+# Shift Registers                                      : 24
+ 4-bit shift register                                  : 24
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : cgra5x5.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 25883
+#      GND                         : 177
+#      INV                         : 852
+#      LUT2                        : 1124
+#      LUT3                        : 5189
+#      LUT4                        : 1528
+#      LUT5                        : 2024
+#      LUT6                        : 7590
+#      MUXCY                       : 3773
+#      VCC                         : 152
+#      XORCY                       : 3474
+# FlipFlops/Latches                : 30941
+#      FDC                         : 26641
+#      FDCE                        : 51
+#      FDE                         : 24
+#      FDR                         : 2425
+#      FDRE                        : 1800
+# RAMS                             : 125
+#      RAMB36E1                    : 125
+# Shift Registers                  : 24
+#      SRLC16E                     : 24
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 413
+#      IBUF                        : 128
+#      OBUF                        : 285
+# DSPs                             : 25
+#      DSP48E1                     : 25
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7vx485tffg1157-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:           30941  out of  607200     5%  
+ Number of Slice LUTs:                18331  out of  303600     6%  
+    Number used as Logic:             18307  out of  303600     6%  
+    Number used as Memory:               24  out of  130800     0%  
+       Number used as SRL:               24
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  37345
+   Number with an unused Flip Flop:    6404  out of  37345    17%  
+   Number with an unused LUT:         19014  out of  37345    50%  
+   Number of fully used LUT-FF pairs: 11927  out of  37345    31%  
+   Number of unique control sets:       131
+
+IO Utilization: 
+ Number of IOs:                         417
+ Number of bonded IOBs:                 414  out of    600    69%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:              125  out of   1030    12%  
+    Number using Block RAM only:        125
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
+ Number of DSP48E1s:                     25  out of   2800     0%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk                                | IBUF+BUFG              | 31112 |
+LowClk                             | BUFGP                  | 3     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+FindSrcOfAsyncThruGates : 100 (1)
+-------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                                             | Buffer(FF name)                                                                                                                                                             | Load  |
+-------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Torus5x5/PE00/Inst_Mem00/SP_Inst_Mem00/N1(Torus5x5/PE00/Inst_Mem00/SP_Inst_Mem00/XST_GND:G)| NONE(Torus5x5/PE00/Inst_Mem00/SP_Inst_Mem00/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE01/Inst_Mem01/SP_Inst_Mem01/N1(Torus5x5/PE01/Inst_Mem01/SP_Inst_Mem01/XST_GND:G)| NONE(Torus5x5/PE01/Inst_Mem01/SP_Inst_Mem01/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE02/Inst_Mem02/SP_Inst_Mem02/N1(Torus5x5/PE02/Inst_Mem02/SP_Inst_Mem02/XST_GND:G)| NONE(Torus5x5/PE02/Inst_Mem02/SP_Inst_Mem02/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE03/Inst_Mem03/SP_Inst_Mem03/N1(Torus5x5/PE03/Inst_Mem03/SP_Inst_Mem03/XST_GND:G)| NONE(Torus5x5/PE03/Inst_Mem03/SP_Inst_Mem03/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE04/Inst_Mem04/SP_Inst_Mem04/N1(Torus5x5/PE04/Inst_Mem04/SP_Inst_Mem04/XST_GND:G)| NONE(Torus5x5/PE04/Inst_Mem04/SP_Inst_Mem04/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE10/Inst_Mem10/SP_Inst_Mem10/N1(Torus5x5/PE10/Inst_Mem10/SP_Inst_Mem10/XST_GND:G)| NONE(Torus5x5/PE10/Inst_Mem10/SP_Inst_Mem10/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE11/Inst_Mem11/SP_Inst_Mem11/N1(Torus5x5/PE11/Inst_Mem11/SP_Inst_Mem11/XST_GND:G)| NONE(Torus5x5/PE11/Inst_Mem11/SP_Inst_Mem11/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE12/Inst_Mem12/SP_Inst_Mem12/N1(Torus5x5/PE12/Inst_Mem12/SP_Inst_Mem12/XST_GND:G)| NONE(Torus5x5/PE12/Inst_Mem12/SP_Inst_Mem12/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE13/Inst_Mem13/SP_Inst_Mem13/N1(Torus5x5/PE13/Inst_Mem13/SP_Inst_Mem13/XST_GND:G)| NONE(Torus5x5/PE13/Inst_Mem13/SP_Inst_Mem13/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE14/Inst_Mem14/SP_Inst_Mem14/N1(Torus5x5/PE14/Inst_Mem14/SP_Inst_Mem14/XST_GND:G)| NONE(Torus5x5/PE14/Inst_Mem14/SP_Inst_Mem14/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE20/Inst_Mem20/SP_Inst_Mem20/N1(Torus5x5/PE20/Inst_Mem20/SP_Inst_Mem20/XST_GND:G)| NONE(Torus5x5/PE20/Inst_Mem20/SP_Inst_Mem20/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE21/Inst_Mem21/SP_Inst_Mem21/N1(Torus5x5/PE21/Inst_Mem21/SP_Inst_Mem21/XST_GND:G)| NONE(Torus5x5/PE21/Inst_Mem21/SP_Inst_Mem21/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE22/Inst_Mem22/SP_Inst_Mem22/N1(Torus5x5/PE22/Inst_Mem22/SP_Inst_Mem22/XST_GND:G)| NONE(Torus5x5/PE22/Inst_Mem22/SP_Inst_Mem22/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE23/Inst_Mem23/SP_Inst_Mem23/N1(Torus5x5/PE23/Inst_Mem23/SP_Inst_Mem23/XST_GND:G)| NONE(Torus5x5/PE23/Inst_Mem23/SP_Inst_Mem23/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE24/Inst_Mem24/SP_Inst_Mem24/N1(Torus5x5/PE24/Inst_Mem24/SP_Inst_Mem24/XST_GND:G)| NONE(Torus5x5/PE24/Inst_Mem24/SP_Inst_Mem24/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE30/Inst_Mem30/SP_Inst_Mem30/N1(Torus5x5/PE30/Inst_Mem30/SP_Inst_Mem30/XST_GND:G)| NONE(Torus5x5/PE30/Inst_Mem30/SP_Inst_Mem30/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE31/Inst_Mem31/SP_Inst_Mem31/N1(Torus5x5/PE31/Inst_Mem31/SP_Inst_Mem31/XST_GND:G)| NONE(Torus5x5/PE31/Inst_Mem31/SP_Inst_Mem31/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE32/Inst_Mem32/SP_Inst_Mem32/N1(Torus5x5/PE32/Inst_Mem32/SP_Inst_Mem32/XST_GND:G)| NONE(Torus5x5/PE32/Inst_Mem32/SP_Inst_Mem32/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE33/Inst_Mem33/SP_Inst_Mem33/N1(Torus5x5/PE33/Inst_Mem33/SP_Inst_Mem33/XST_GND:G)| NONE(Torus5x5/PE33/Inst_Mem33/SP_Inst_Mem33/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE34/Inst_Mem34/SP_Inst_Mem34/N1(Torus5x5/PE34/Inst_Mem34/SP_Inst_Mem34/XST_GND:G)| NONE(Torus5x5/PE34/Inst_Mem34/SP_Inst_Mem34/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE40/Inst_Mem40/SP_Inst_Mem40/N1(Torus5x5/PE40/Inst_Mem40/SP_Inst_Mem40/XST_GND:G)| NONE(Torus5x5/PE40/Inst_Mem40/SP_Inst_Mem40/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE41/Inst_Mem41/SP_Inst_Mem41/N1(Torus5x5/PE41/Inst_Mem41/SP_Inst_Mem41/XST_GND:G)| NONE(Torus5x5/PE41/Inst_Mem41/SP_Inst_Mem41/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE42/Inst_Mem42/SP_Inst_Mem42/N1(Torus5x5/PE42/Inst_Mem42/SP_Inst_Mem42/XST_GND:G)| NONE(Torus5x5/PE42/Inst_Mem42/SP_Inst_Mem42/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE43/Inst_Mem43/SP_Inst_Mem43/N1(Torus5x5/PE43/Inst_Mem43/SP_Inst_Mem43/XST_GND:G)| NONE(Torus5x5/PE43/Inst_Mem43/SP_Inst_Mem43/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE44/Inst_Mem44/SP_Inst_Mem44/N1(Torus5x5/PE44/Inst_Mem44/SP_Inst_Mem44/XST_GND:G)| NONE(Torus5x5/PE44/Inst_Mem44/SP_Inst_Mem44/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+Torus5x5/PE00/Data_Mem/Mem0/N1(Torus5x5/PE00/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE00/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE00/Data_Mem/Mem1/N1(Torus5x5/PE00/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE00/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE00/Data_Mem/Mem2/N1(Torus5x5/PE00/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE00/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE01/Data_Mem/Mem0/N1(Torus5x5/PE01/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE01/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE01/Data_Mem/Mem1/N1(Torus5x5/PE01/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE01/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE01/Data_Mem/Mem2/N1(Torus5x5/PE01/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE01/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE02/Data_Mem/Mem0/N1(Torus5x5/PE02/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE02/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE02/Data_Mem/Mem1/N1(Torus5x5/PE02/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE02/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE02/Data_Mem/Mem2/N1(Torus5x5/PE02/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE02/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE03/Data_Mem/Mem0/N1(Torus5x5/PE03/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE03/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE03/Data_Mem/Mem1/N1(Torus5x5/PE03/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE03/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE03/Data_Mem/Mem2/N1(Torus5x5/PE03/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE03/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE04/Data_Mem/Mem0/N1(Torus5x5/PE04/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE04/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE04/Data_Mem/Mem1/N1(Torus5x5/PE04/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE04/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE04/Data_Mem/Mem2/N1(Torus5x5/PE04/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE04/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE10/Data_Mem/Mem0/N1(Torus5x5/PE10/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE10/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE10/Data_Mem/Mem1/N1(Torus5x5/PE10/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE10/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE10/Data_Mem/Mem2/N1(Torus5x5/PE10/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE10/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE11/Data_Mem/Mem0/N1(Torus5x5/PE11/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE11/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE11/Data_Mem/Mem1/N1(Torus5x5/PE11/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE11/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE11/Data_Mem/Mem2/N1(Torus5x5/PE11/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE11/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE12/Data_Mem/Mem0/N1(Torus5x5/PE12/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE12/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE12/Data_Mem/Mem1/N1(Torus5x5/PE12/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE12/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE12/Data_Mem/Mem2/N1(Torus5x5/PE12/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE12/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE13/Data_Mem/Mem0/N1(Torus5x5/PE13/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE13/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE13/Data_Mem/Mem1/N1(Torus5x5/PE13/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE13/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE13/Data_Mem/Mem2/N1(Torus5x5/PE13/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE13/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE14/Data_Mem/Mem0/N1(Torus5x5/PE14/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE14/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE14/Data_Mem/Mem1/N1(Torus5x5/PE14/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE14/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE14/Data_Mem/Mem2/N1(Torus5x5/PE14/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE14/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE20/Data_Mem/Mem0/N1(Torus5x5/PE20/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE20/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE20/Data_Mem/Mem1/N1(Torus5x5/PE20/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE20/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE20/Data_Mem/Mem2/N1(Torus5x5/PE20/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE20/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE21/Data_Mem/Mem0/N1(Torus5x5/PE21/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE21/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE21/Data_Mem/Mem1/N1(Torus5x5/PE21/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE21/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE21/Data_Mem/Mem2/N1(Torus5x5/PE21/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE21/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE22/Data_Mem/Mem0/N1(Torus5x5/PE22/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE22/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE22/Data_Mem/Mem1/N1(Torus5x5/PE22/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE22/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE22/Data_Mem/Mem2/N1(Torus5x5/PE22/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE22/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE23/Data_Mem/Mem0/N1(Torus5x5/PE23/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE23/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE23/Data_Mem/Mem1/N1(Torus5x5/PE23/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE23/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE23/Data_Mem/Mem2/N1(Torus5x5/PE23/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE23/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE24/Data_Mem/Mem0/N1(Torus5x5/PE24/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE24/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE24/Data_Mem/Mem1/N1(Torus5x5/PE24/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE24/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE24/Data_Mem/Mem2/N1(Torus5x5/PE24/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE24/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE30/Data_Mem/Mem0/N1(Torus5x5/PE30/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE30/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE30/Data_Mem/Mem1/N1(Torus5x5/PE30/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE30/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE30/Data_Mem/Mem2/N1(Torus5x5/PE30/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE30/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE31/Data_Mem/Mem0/N1(Torus5x5/PE31/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE31/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE31/Data_Mem/Mem1/N1(Torus5x5/PE31/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE31/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE31/Data_Mem/Mem2/N1(Torus5x5/PE31/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE31/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE32/Data_Mem/Mem0/N1(Torus5x5/PE32/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE32/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE32/Data_Mem/Mem1/N1(Torus5x5/PE32/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE32/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE32/Data_Mem/Mem2/N1(Torus5x5/PE32/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE32/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE33/Data_Mem/Mem0/N1(Torus5x5/PE33/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE33/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE33/Data_Mem/Mem1/N1(Torus5x5/PE33/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE33/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE33/Data_Mem/Mem2/N1(Torus5x5/PE33/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE33/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE34/Data_Mem/Mem0/N1(Torus5x5/PE34/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE34/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE34/Data_Mem/Mem1/N1(Torus5x5/PE34/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE34/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE34/Data_Mem/Mem2/N1(Torus5x5/PE34/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE34/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE40/Data_Mem/Mem0/N1(Torus5x5/PE40/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE40/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE40/Data_Mem/Mem1/N1(Torus5x5/PE40/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE40/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE40/Data_Mem/Mem2/N1(Torus5x5/PE40/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE40/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE41/Data_Mem/Mem0/N1(Torus5x5/PE41/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE41/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE41/Data_Mem/Mem1/N1(Torus5x5/PE41/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE41/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE41/Data_Mem/Mem2/N1(Torus5x5/PE41/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE41/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE42/Data_Mem/Mem0/N1(Torus5x5/PE42/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE42/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE42/Data_Mem/Mem1/N1(Torus5x5/PE42/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE42/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE42/Data_Mem/Mem2/N1(Torus5x5/PE42/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE42/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE43/Data_Mem/Mem0/N1(Torus5x5/PE43/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE43/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE43/Data_Mem/Mem1/N1(Torus5x5/PE43/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE43/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE43/Data_Mem/Mem2/N1(Torus5x5/PE43/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE43/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE44/Data_Mem/Mem0/N1(Torus5x5/PE44/Data_Mem/Mem0/XST_GND:G)                      | NONE(Torus5x5/PE44/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE44/Data_Mem/Mem1/N1(Torus5x5/PE44/Data_Mem/Mem1/XST_GND:G)                      | NONE(Torus5x5/PE44/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+Torus5x5/PE44/Data_Mem/Mem2/N1(Torus5x5/PE44/Data_Mem/Mem2/XST_GND:G)                      | NONE(Torus5x5/PE44/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)    | 2     |
+-------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.604ns (Maximum Frequency: 384.025MHz)
+   Minimum input arrival time before clock: 1.494ns
+   Maximum output required time after clock: 0.687ns
+   Maximum combinational path delay: 1.031ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 2.604ns (frequency: 384.025MHz)
+  Total number of paths / destination ports: 421266 / 30192
+-------------------------------------------------------------------------
+Delay:               2.604ns (Levels of Logic = 34)
+  Source:            Torus5x5/PE00/ALU/ADDSUB_Result_0 (FF)
+  Destination:       Torus5x5/PE00/ALU/Custom_Result_31 (FF)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: Torus5x5/PE00/ALU/ADDSUB_Result_0 to Torus5x5/PE00/ALU/Custom_Result_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.282   0.731  ADDSUB_Result_0 (ADDSUB_Result_0)
+     LUT5:I0->O            1   0.053   0.000  Maddsub_ADDSUB_2st_Result_lut<0> (Maddsub_ADDSUB_2st_Result_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  Maddsub_ADDSUB_2st_Result_cy<0> (Maddsub_ADDSUB_2st_Result_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<1> (Maddsub_ADDSUB_2st_Result_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<2> (Maddsub_ADDSUB_2st_Result_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<3> (Maddsub_ADDSUB_2st_Result_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<4> (Maddsub_ADDSUB_2st_Result_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<5> (Maddsub_ADDSUB_2st_Result_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<6> (Maddsub_ADDSUB_2st_Result_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<7> (Maddsub_ADDSUB_2st_Result_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<8> (Maddsub_ADDSUB_2st_Result_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<9> (Maddsub_ADDSUB_2st_Result_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<10> (Maddsub_ADDSUB_2st_Result_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<11> (Maddsub_ADDSUB_2st_Result_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<12> (Maddsub_ADDSUB_2st_Result_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<13> (Maddsub_ADDSUB_2st_Result_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<14> (Maddsub_ADDSUB_2st_Result_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<15> (Maddsub_ADDSUB_2st_Result_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<16> (Maddsub_ADDSUB_2st_Result_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<17> (Maddsub_ADDSUB_2st_Result_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<18> (Maddsub_ADDSUB_2st_Result_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<19> (Maddsub_ADDSUB_2st_Result_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<20> (Maddsub_ADDSUB_2st_Result_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<21> (Maddsub_ADDSUB_2st_Result_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<22> (Maddsub_ADDSUB_2st_Result_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<23> (Maddsub_ADDSUB_2st_Result_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<24> (Maddsub_ADDSUB_2st_Result_cy<24>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<25> (Maddsub_ADDSUB_2st_Result_cy<25>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<26> (Maddsub_ADDSUB_2st_Result_cy<26>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<27> (Maddsub_ADDSUB_2st_Result_cy<27>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<28> (Maddsub_ADDSUB_2st_Result_cy<28>)
+     MUXCY:CI->O           1   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<29> (Maddsub_ADDSUB_2st_Result_cy<29>)
+     MUXCY:CI->O           0   0.015   0.000  Maddsub_ADDSUB_2st_Result_cy<30> (Maddsub_ADDSUB_2st_Result_cy<30>)
+     XORCY:CI->O           1   0.320   0.413  Maddsub_ADDSUB_2st_Result_xor<31> (ADDSUB_2st_Result<31>)
+     LUT3:I2->O            1   0.053   0.000  Custom_Out_Sel_Reg[0]_Custom_Out_Sel_Reg[2]_or_75_OUT<31>3 (Custom_Out_Sel_Reg[0]_Custom_Out_Sel_Reg[2]_or_75_OUT<31>)
+     FDC:D                     0.011          Custom_Result_31
+    ----------------------------------------
+    Total                      2.604ns (1.460ns logic, 1.144ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'LowClk'
+  Clock period: 0.692ns (frequency: 1445.087MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               0.692ns (Levels of Logic = 0)
+  Source:            BramIF/Computation_Done_Reg2 (FF)
+  Destination:       BramIF/Computation_Done_Reg3 (FF)
+  Source Clock:      LowClk rising
+  Destination Clock: LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg2 to BramIF/Computation_Done_Reg3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  Computation_Done_Reg2 (Computation_Done_Reg2)
+     FDC:D                     0.011          Computation_Done_Reg3
+    ----------------------------------------
+    Total                      0.692ns (0.293ns logic, 0.399ns route)
+                                       (42.3% logic, 57.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 203 / 203
+-------------------------------------------------------------------------
+Offset:              1.494ns (Levels of Logic = 4)
+  Source:            Resetn (PAD)
+  Destination:       Torus5x5/PE00/ALU/MulAdd/Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT (DSP)
+  Destination Clock: Clk rising
+
+  Data Path: Resetn to Torus5x5/PE00/ALU/MulAdd/Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.405  Resetn_IBUF (Resetn_IBUF)
+     begin scope: 'Torus5x5:Resetn'
+     begin scope: 'Torus5x5/PE00:Resetn'
+     begin scope: 'Torus5x5/PE00/ALU:Resetn'
+     INV:I->O             75   0.067   0.561  Resetn_inv1_INV_0 (Resetn_inv)
+     end scope: 'Torus5x5/PE00/ALU:Resetn_inv'
+     end scope: 'Torus5x5/PE00:Resetn_inv'
+     begin scope: 'Torus5x5/PE01:Resetn_inv'
+     begin scope: 'Torus5x5/PE01/ALU:Resetn_inv'
+     begin scope: 'Torus5x5/PE01/ALU/MulAdd:Resetn_inv'
+     DSP48E1:RSTB              0.461          Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT
+    ----------------------------------------
+    Total                      1.494ns (0.528ns logic, 0.966ns route)
+                                       (35.3% logic, 64.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'LowClk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              1.356ns (Levels of Logic = 3)
+  Source:            Resetn (PAD)
+  Destination:       BramIF/Computation_Done_Reg3 (FF)
+  Destination Clock: LowClk rising
+
+  Data Path: Resetn to BramIF/Computation_Done_Reg3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.405  Resetn_IBUF (Resetn_IBUF)
+     begin scope: 'BramIF:Resetn'
+     INV:I->O             67   0.067   0.559  Port0_Rst1_INV_0 (Port0_Rst)
+     FDC:CLR                   0.325          Computation_Done_Reg2
+    ----------------------------------------
+    Total                      1.356ns (0.392ns logic, 0.964ns route)
+                                       (28.9% logic, 71.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 112 / 112
+-------------------------------------------------------------------------
+Offset:              0.687ns (Levels of Logic = 2)
+  Source:            BramIF/CGRA_Cnt_Reg3_23 (FF)
+  Destination:       Port2_Addr<23> (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: BramIF/CGRA_Cnt_Reg3_23 to Port2_Addr<23>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.282   0.405  CGRA_Cnt_Reg3_23 (CGRA_Cnt_Reg3_23)
+     end scope: 'BramIF:Port2_Addr<23>'
+     OBUF:I->O                 0.000          Port2_Addr_23_OBUF (Port2_Addr<23>)
+    ----------------------------------------
+    Total                      0.687ns (0.282ns logic, 0.405ns route)
+                                       (41.0% logic, 59.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'LowClk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.681ns (Levels of Logic = 2)
+  Source:            BramIF/Computation_Done_Reg3 (FF)
+  Destination:       Computation_Done (PAD)
+  Source Clock:      LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg3 to Computation_Done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  Computation_Done_Reg3 (Computation_Done_Reg3)
+     end scope: 'BramIF:Computation_Done'
+     OBUF:I->O                 0.000          Computation_Done_OBUF (Computation_Done)
+    ----------------------------------------
+    Total                      0.681ns (0.282ns logic, 0.399ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 66 / 66
+-------------------------------------------------------------------------
+Delay:               1.031ns (Levels of Logic = 4)
+  Source:            Resetn (PAD)
+  Destination:       Port0_Rst (PAD)
+
+  Data Path: Resetn to Port0_Rst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.405  Resetn_IBUF (Resetn_IBUF)
+     begin scope: 'BramIF:Resetn'
+     INV:I->O             67   0.067   0.559  Port0_Rst1_INV_0 (Port0_Rst)
+     end scope: 'BramIF:Port0_Rst'
+     OBUF:I->O                 0.000          Port0_Rst_OBUF (Port0_Rst)
+    ----------------------------------------
+    Total                      1.031ns (0.067ns logic, 0.964ns route)
+                                       (6.5% logic, 93.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    2.604|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock LowClk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    0.698|         |         |         |
+LowClk         |    0.692|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 155.00 secs
+Total CPU time to Xst completion: 154.93 secs
+ 
+--> 
+
+Total memory usage is 742528 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  174 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

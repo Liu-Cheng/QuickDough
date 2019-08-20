@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [XFORM-503] Ignored partial unroll directive for loop 'Scalar_Product_Loop' (axi_interfaces.cpp:150) because its parent loop or function is pipelined." projectName="axi_interfaces_prj" solutionName="solution1" date="2015-06-18T16:27:41.911+0800" type="Warning"/>
+        <logs message="@W [XFORM-505] Ignored pipeline directive for loop 'Scalar_Product_Loop' (axi_interfaces.cpp:150) because its parent loop or function is pipelined." projectName="axi_interfaces_prj" solutionName="solution1" date="2015-06-18T16:27:41.871+0800" type="Warning"/>
+        <logs message="@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop4' (axi_interfaces.cpp:132) because its parent loop or function is pipelined." projectName="axi_interfaces_prj" solutionName="solution1" date="2015-06-18T16:27:41.840+0800" type="Warning"/>
+        <logs message="@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop8' (axi_interfaces.cpp:121) because its parent loop or function is pipelined." projectName="axi_interfaces_prj" solutionName="solution1" date="2015-06-18T16:27:41.827+0800" type="Warning"/>
+        <logs message="@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop16' (axi_interfaces.cpp:110) because its parent loop or function is pipelined." projectName="axi_interfaces_prj" solutionName="solution1" date="2015-06-18T16:27:41.793+0800" type="Warning"/>
+        <logs message="@W [XFORM-505] Ignored pipeline directive for loop 'Add_Loop32' (axi_interfaces.cpp:99) because its parent loop or function is pipelined." projectName="axi_interfaces_prj" solutionName="solution1" date="2015-06-18T16:27:41.716+0800" type="Warning"/>
+        <logs message="@W [XFORM-505] Ignored pipeline directive for loop 'Elem_Mult_Loop' (axi_interfaces.cpp:55) because its parent loop or function is pipelined." projectName="axi_interfaces_prj" solutionName="solution1" date="2015-06-18T16:27:41.678+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

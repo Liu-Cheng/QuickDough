@@ -1,0 +1,1 @@
+cmd_/software/drivers/zynqtimer/zynqtimer.ko := arm-linux-gnueabi-ld -EL -r  -T /software/linux-xlnx/scripts/module-common.lds --build-id  -o /software/drivers/zynqtimer/zynqtimer.ko /software/drivers/zynqtimer/zynqtimer.o /software/drivers/zynqtimer/zynqtimer.mod.o

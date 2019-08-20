@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Mon Jul 21 19:36:03 2014
+# Process ID: 91080
+# Log file: D:/minibench/scgra/scgra-lib/cgra2x2/vivado.log
+# Journal file: D:/minibench/scgra/scgra-lib/cgra2x2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra\scgra-lib\cgra2x2\cgra2x2.xpr}
+ipx::open_core -upgrade true {D:/minibench/scgra/scgra-lib/cgra2x2/component.xml}

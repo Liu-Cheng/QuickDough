@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+  <IPInstance name="TrueDualPortBram256">
+    <FileSets>
+      <FileSet generator="apply_current_project_options_generator">
+        <File name="./apply_current_project_options_generator.xlog" type="ignore" timestamp="Thu Nov 14 07:40:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="model_parameter_resolution_generator">
+        <File name="./summary.log" type="unknown" timestamp="Thu Nov 14 07:39:45 GMT 2013" checksum="0xED169D30"></File>
+      </FileSet>
+      <FileSet generator="ip_xco_generator">
+        <File name="./TrueDualPortBram256.xco" type="xco" timestamp="Thu Nov 14 07:39:45 GMT 2013" checksum="0x0B7CD56D"></File>
+      </FileSet>
+      <FileSet generator="associated_files_generator">
+        <File name="./TrueDualPortBram256/blk_mem_gen_v7_3_readme.txt" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xF95F2A26"></File>
+        <File name="./TrueDualPortBram256/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0x702C7FA8"></File>
+        <File name="./TrueDualPortBram256/doc/pg058-blk-mem-gen.pdf" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xC1E42F23"></File>
+      </FileSet>
+      <FileSet generator="ejava_generator">
+        <File name="./TrueDualPortBram256/example_design/TrueDualPortBram256_exdes.ucf" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x8915DFA1"></File>
+        <File name="./TrueDualPortBram256/example_design/TrueDualPortBram256_exdes.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x69BCE9D5"></File>
+        <File name="./TrueDualPortBram256/example_design/TrueDualPortBram256_exdes.xdc" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x78E2D49A"></File>
+        <File name="./TrueDualPortBram256/example_design/TrueDualPortBram256_prod.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x820CBD73"></File>
+        <File name="./TrueDualPortBram256/implement/implement.bat" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x9DBF596E"></File>
+        <File name="./TrueDualPortBram256/implement/implement.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xA638B7D2"></File>
+        <File name="./TrueDualPortBram256/implement/planAhead_ise.bat" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x784EFFB8"></File>
+        <File name="./TrueDualPortBram256/implement/planAhead_ise.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x5F4F6CC9"></File>
+        <File name="./TrueDualPortBram256/implement/planAhead_ise.tcl" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x19FDC497"></File>
+        <File name="./TrueDualPortBram256/implement/xst.prj" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x2EE1F132"></File>
+        <File name="./TrueDualPortBram256/implement/xst.scr" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x098D9ABA"></File>
+        <File name="./TrueDualPortBram256/simulation/TrueDualPortBram256_synth.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x98F9FABC"></File>
+        <File name="./TrueDualPortBram256/simulation/TrueDualPortBram256_tb.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xDE89E319"></File>
+        <File name="./TrueDualPortBram256/simulation/addr_gen.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x0500E48D"></File>
+        <File name="./TrueDualPortBram256/simulation/bmg_stim_gen.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x789C4B84"></File>
+        <File name="./TrueDualPortBram256/simulation/bmg_tb_pkg.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xE0D93E5B"></File>
+        <File name="./TrueDualPortBram256/simulation/checker.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x3EC35020"></File>
+        <File name="./TrueDualPortBram256/simulation/data_gen.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xD9F7C4A0"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/simcmds.tcl" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x4FBAF425"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/simulate_isim.bat" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x5EBCADC6"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/simulate_mti.bat" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x86EA5D67"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/simulate_mti.do" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x1F9799FC"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/simulate_mti.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x86EA5D67"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x2BE750F8"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x529EA386"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/ucli_commands.key" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x663DF9EB"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x3A8A0E6B"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/wave_mti.do" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xD41F75F1"></File>
+        <File name="./TrueDualPortBram256/simulation/functional/wave_ncsim.sv" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x796A1B7B"></File>
+        <File name="./TrueDualPortBram256/simulation/random.vhd" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x2939160A"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/simcmds.tcl" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x4FBAF425"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/simulate_isim.bat" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x603E2B36"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/simulate_mti.bat" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x86EA5D67"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/simulate_mti.do" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xE29A7D62"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/simulate_mti.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x86EA5D67"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/simulate_ncsim.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x39E43B09"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/simulate_vcs.sh" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xE3E9B7C5"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/ucli_commands.key" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x663DF9EB"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/vcs_session.tcl" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0x3912C066"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/wave_mti.do" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xA36FF4FD"></File>
+        <File name="./TrueDualPortBram256/simulation/timing/wave_ncsim.sv" type="ignore" timestamp="Thu Nov 14 07:39:46 GMT 2013" checksum="0xF8FA7C57"></File>
+      </FileSet>
+      <FileSet generator="ngc_netlist_generator">
+        <File name="./TrueDualPortBram256.ngc" type="ngc" timestamp="Thu Nov 14 07:40:43 GMT 2013" checksum="0x8D30C5AC"></File>
+      </FileSet>
+      <FileSet generator="obfuscate_netlist_generator">
+        <File name="./obfuscate_netlist_generator.xlog" type="ignore" timestamp="Thu Nov 14 07:40:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="padded_implementation_netlist_generator">
+        <File name="./padded_implementation_netlist_generator.xlog" type="ignore" timestamp="Thu Nov 14 07:40:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="instantiation_template_generator">
+        <File name="./TrueDualPortBram256.veo" type="veo" timestamp="Thu Nov 14 07:40:44 GMT 2013" checksum="0x8165AA77"></File>
+      </FileSet>
+      <FileSet generator="structural_simulation_model_generator">
+        <File name="./TrueDualPortBram256.v" type="verilog" timestamp="Thu Nov 14 07:40:44 GMT 2013" checksum="0xAA372AD3"></File>
+      </FileSet>
+      <FileSet generator="all_documents_generator">
+        <File name="./TrueDualPortBram256/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Thu Nov 14 07:40:44 GMT 2013" checksum="0x702C7FA8"></File>
+      </FileSet>
+      <FileSet generator="asy_generator">
+        <File name="./TrueDualPortBram256.asy" type="asy" timestamp="Thu Nov 14 07:40:51 GMT 2013" checksum="0x90DA765C"></File>
+        <File name="./summary.log" type="unknown" timestamp="Thu Nov 14 07:40:51 GMT 2013" checksum="0xED169D30"></File>
+      </FileSet>
+      <FileSet generator="xmdf_generator">
+        <File name="./TrueDualPortBram256_xmdf.tcl" type="tclXmdf" timestamp="Thu Nov 14 07:40:51 GMT 2013" checksum="0x41FD1AFD"></File>
+      </FileSet>
+      <FileSet generator="synthesis_ise_generator">
+        <File name="./TrueDualPortBram256.gise" type="ignore" timestamp="Thu Nov 14 07:40:54 GMT 2013" checksum="0x4DCF0B66"></File>
+        <File name="./TrueDualPortBram256.xise" type="ignore" timestamp="Thu Nov 14 07:40:54 GMT 2013" checksum="0xE63DD870"></File>
+      </FileSet>
+      <FileSet generator="ise_generator">
+        <File name="./TrueDualPortBram256.gise" type="ignore" timestamp="Thu Nov 14 07:40:57 GMT 2013" checksum="0x3033F403"></File>
+        <File name="./TrueDualPortBram256.xise" type="ignore" timestamp="Thu Nov 14 07:40:57 GMT 2013" checksum="0x4E464B0B"></File>
+      </FileSet>
+      <FileSet generator="deliver_readme_generator">
+        <File name="./deliver_readme_generator.xlog" type="ignore" timestamp="Thu Nov 14 07:40:58 GMT 2013" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="flist_generator">
+        <File name="./TrueDualPortBram256_flist.txt" type="ignore" timestamp="Thu Nov 14 07:40:58 GMT 2013" checksum="0x7B1B7D34"></File>
+      </FileSet>
+    </FileSets>
+  </IPInstance>
+</BillOfMaterials>

@@ -1,0 +1,49 @@
+SET_FLAG DEBUG FALSE
+SET_FLAG MODE INTERACTIVE
+SET_FLAG STANDALONE_MODE FALSE
+SET_PREFERENCE devicefamily zynq
+SET_PREFERENCE device xc7z020
+SET_PREFERENCE speedgrade -1
+SET_PREFERENCE package clg400
+SET_PREFERENCE verilogsim true
+SET_PREFERENCE vhdlsim false
+SET_PREFERENCE simulationfiles Structural
+SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
+SET_PREFERENCE outputdirectory D:/minibench/scgra-mm-fir/cgra2x2/ipcore_dir/
+SET_PREFERENCE workingdirectory D:/minibench/scgra-mm-fir/cgra2x2/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory D:/minibench/scgra-mm-fir/cgra2x2/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory D:/minibench/scgra-mm-fir/cgra2x2/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE designentry Verilog
+SET_PREFERENCE flowvendor Other
+SET_PREFERENCE addpads false
+SET_PREFERENCE projectname coregen
+SET_PREFERENCE formalverification false
+SET_PREFERENCE asysymbol false
+SET_PREFERENCE implementationfiletype Ngc
+SET_PREFERENCE foundationsym false
+SET_PREFERENCE createndf false
+SET_PREFERENCE removerpms false
+SET_PARAMETER Component_Name MulAdd
+SET_PARAMETER c_verbosity 0
+SET_PARAMETER c_a_type 0
+SET_PARAMETER c_b_type 0
+SET_PARAMETER c_c_type 0
+SET_PARAMETER c_use_pcin false
+SET_PARAMETER c_a_width 32
+SET_PARAMETER c_b_width 32
+SET_PARAMETER c_c_width 32
+SET_PARAMETER c_out_high 31
+SET_PARAMETER c_out_low 0
+SET_PARAMETER c_ab_latency -1
+SET_PARAMETER c_c_latency -1
+SET_PARAMETER c_ce_overrides_sclr 0
+SET_CORE_NAME Multiply Adder
+SET_CORE_VERSION 2.0
+SET_CORE_VLNV xilinx.com:ip:xbip_multadd:2.0
+SET_CORE_CLASS com.xilinx.ip.xbip_multadd_v2_0.xbip_multadd_v2_0
+SET_CORE_PATH C:/EDA/14.7/ISE_DS/ISE/coregen/ip/xilinx/dsp/com/xilinx/ip/xbip_multadd_v2_0
+SET_CORE_GUIPATH C:/EDA/14.7/ISE_DS/ISE/coregen/ip/xilinx/dsp/com/xilinx/ip/xbip_multadd_v2_0/gui/xbip_multadd_v2_0.tcl
+SET_CORE_DATASHEET C:\EDA\14.7\ISE_DS\ISE\coregen\ip\xilinx\dsp\com\xilinx\ip\xbip_multadd_v2_0\doc\xbip_multadd_ds717.pdf
+ADD_CORE_DOCUMENT <C:\EDA\14.7\ISE_DS\ISE\coregen\ip\xilinx\dsp\com\xilinx\ip\xbip_multadd_v2_0\doc\xbip_multadd_v2_0_readme.txt><xbip_multadd_v2_0_readme.txt>
+ADD_CORE_DOCUMENT <C:\EDA\14.7\ISE_DS\ISE\coregen\ip\xilinx\dsp\com\xilinx\ip\xbip_multadd_v2_0\doc\xbip_multadd_v2_0_vinfo.html><xbip_multadd_v2_0_vinfo.html>
+ADD_CORE_DOCUMENT <C:\EDA\14.7\ISE_DS\ISE\coregen\ip\xilinx\dsp\com\xilinx\ip\xbip_multadd_v2_0\doc\xbip_multadd_ds717.pdf><xbip_multadd_ds717.pdf>

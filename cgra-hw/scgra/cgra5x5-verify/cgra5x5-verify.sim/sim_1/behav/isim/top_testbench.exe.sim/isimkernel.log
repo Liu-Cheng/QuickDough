@@ -1,0 +1,28 @@
+Command line:
+   top_testbench.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50511
+
+Thu May 22 11:43:56 2014
+
+
+ Elaboration Time: 0.639604 sec
+
+ Current Memory Usage: 820.625 Meg
+
+ Total Signals          : 18177
+ Total Nets             : 95271
+ Total Signal Drivers   : 7556
+ Total Blocks           : 1899
+ Total Primitive Blocks : 1484
+ Total Processes        : 9546
+ Total Traceable Variables  : 34627
+ Total Scalar Nets and Variables : 5164076
+
+ Total Simulation Time: 2.10601 sec
+
+ Current Memory Usage: 820.625 Meg
+
+Thu May 22 11:51:29 2014
+

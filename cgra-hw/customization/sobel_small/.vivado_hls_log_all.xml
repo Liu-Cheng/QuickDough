@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [SCHED-69] Unable to schedule 'load' operation ('sub_in_load_3', sobel_small/src/sobel_ip.c:67) on array 'sub_in' due to limited memory ports." projectName="sobel_small" solutionName="unroll-1x2x3x3" date="2015-03-24T16:11:14.971+0800" type="Warning"/>
+        <logs message="@W [XFORM-503] Ignored partial unroll directive for loop 'sobel_ip_label2' (sobel_small/src/sobel_ip.c:23) because its parent loop or function is pipelined." projectName="sobel_small" solutionName="unroll-1x2x3x3" date="2015-03-24T16:11:09.834+0800" type="Warning"/>
+        <logs message="@W [SYNCHK-23] sobel_small/src/sobel_ip.c:44: variable-indexed range selection may cause suboptimal QoR." projectName="sobel_small" solutionName="unroll-1x2x3x3" date="2015-03-24T16:11:09.764+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

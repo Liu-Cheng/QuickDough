@@ -1,0 +1,113 @@
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/translate -ofmt verilog -sim top.ngd top_translate.v 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top_preroute.twx top_map.ncd -o top_preroute.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z045-fbg676-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z045-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z045-fbg676-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z045-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z045-fbg676-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z045-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z045-fbg676-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z045-fbg676-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.xst" -ofn "D:/minibench/scgra-250MHz/cgra2x2-1k-hf/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/Accel-impl/cgra4x4-1k-1k/top.xst" -ofn "D:/minibench/Accel-impl/cgra4x4-1k-1k/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/cgra4x4-1k-1k/top.xst" -ofn "D:/minibench/cgra4x4-1k-1k/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd  
+map -intstyle ise -p xc7z020-clg400-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+xst -intstyle ise -ifn "D:/minibench/cgra4x4-1k-1k/top.xst" -ofn "D:/minibench/cgra4x4-1k-1k/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7k325t-ffg900-2 top.ngc top.ngd  
+map -intstyle ise -p xc7k325t-ffg900-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 

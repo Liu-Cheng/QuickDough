@@ -1,0 +1,127 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Thu Jun 12 18:07:31 2014
+# Process ID: 29032
+# Log file: D:/minibench/scgra/zc706/cgra2x2-tuning/planAhead.log
+# Journal file: D:/minibench/scgra/zc706/cgra2x2-tuning\planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+open_project {D:\minibench\scgra\zc706\cgra2x2-tuning\cgra2x2-tuning.ppr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user repositories specified
+INFO: [IP_Flow 19-816] Loaded Xilinx IP repository 'C:/EDA/14.7/ISE_DS/ISE/'
+open_project: Time (s): elapsed = 00:00:15 . Memory (MB): peak = 483.961 ; gain = 94.246
+reset_run synth_1
+launch_runs synth_1
+[Thu Jun 12 18:10:38 2014] Launched synth_1...
+Run output will be captured here: D:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.runs/synth_1/runme.log
+open_run synth_1 -name netlist_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z045ffg900-2
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design scgra_top.ngc ...
+WARNING:NetListWriters:298 - No output is written to scgra_top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file scgra_top.edif ...
+ngc2edif: Total memory usage is 99152 kilobytes
+
+Parsing EDIF File [./cgra2x2-tuning.data/cache/scgra_top_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/scgra_top_ngc_zx.edif]
+Reading core file 'd:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/ip/blk_mem_gen_v7_3_2/SP_Inst_Mem.ngc' for (cell view 'SP_Inst_Mem', library 'scgra_top_lib', file 'scgra_top.ngc')
+Parsing EDIF File [./cgra2x2-tuning.data/cache/SP_Inst_Mem_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/SP_Inst_Mem_ngc_zx.edif]
+Reading core file 'd:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/ip/blk_mem_gen_v7_3_1/TDP_Data_Mem.ngc' for (cell view 'TDP_Data_Mem', library 'scgra_top_lib', file 'scgra_top.ngc')
+Parsing EDIF File [./cgra2x2-tuning.data/cache/TDP_Data_Mem_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/TDP_Data_Mem_ngc_zx.edif]
+Reading core file 'd:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/ip/blk_mem_gen_v7_3_0/IO_Buffer.ngc' for (cell view 'IO_Buffer', library 'scgra_top_lib', file 'scgra_top.ngc')
+Parsing EDIF File [./cgra2x2-tuning.data/cache/IO_Buffer_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/IO_Buffer_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 4866 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'scgra_top' is not ideal for floorplanning, since the cellview 'scgra_top' defined in file 'scgra_top.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Loading clock regions from C:/EDA/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z045/ClockRegion.xml
+Loading clock buffers from C:/EDA/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z045/ClockBuffers.xml
+Loading clock placement rules from C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from C:/EDA/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/PinFunctions.xml...
+Loading package from C:/EDA/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z045/ffg900/Package.xml
+Loading io standards from C:/EDA/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/zynq/IOStandards.xml
+Loading list of drcs for the architecture : C:/EDA/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/zynq/drc.xml
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4988 instances were transformed.
+  BUFGP => BUFGP (IBUF, BUFG): 2 instances
+  FDC => FDCE: 4444 instances
+  FDE => FDCE: 8 instances
+  FDR => FDRE: 388 instances
+  INV => LUT1: 138 instances
+  SRLC16E => SRL16E: 8 instances
+
+Phase 0 | Netlist Checksum: 51497354
+open_run: Time (s): elapsed = 00:00:36 . Memory (MB): peak = 989.438 ; gain = 470.203
+set_property strategy {PlanAhead Defaults} [get_runs synth_1]
+reset_run synth_1
+reset_run: Time (s): elapsed = 00:00:05 . Memory (MB): peak = 1081.422 ; gain = 0.000
+launch_runs synth_1
+[Thu Jun 12 18:14:37 2014] Launched synth_1...
+Run output will be captured here: D:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.runs/synth_1/runme.log
+refresh_design
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design scgra_top.ngc ...
+WARNING:NetListWriters:298 - No output is written to scgra_top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO3 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block
+   PE_NO1 is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE_NO1 is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO2 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block PE is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO1 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU is not
+   reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file scgra_top.edif ...
+ngc2edif: Total memory usage is 98064 kilobytes
+
+Parsing EDIF File [./cgra2x2-tuning.data/cache/scgra_top_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/scgra_top_ngc_zx.edif]
+Reading core file 'd:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/ip/blk_mem_gen_v7_3_2/SP_Inst_Mem.ngc' for (cell view 'SP_Inst_Mem', library 'scgra_top_lib', file 'scgra_top.ngc')
+Parsing EDIF File [./cgra2x2-tuning.data/cache/SP_Inst_Mem_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/SP_Inst_Mem_ngc_zx.edif]
+Reading core file 'd:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/ip/blk_mem_gen_v7_3_1/TDP_Data_Mem.ngc' for (cell view 'TDP_Data_Mem', library 'scgra_top_lib', file 'scgra_top.ngc')
+Parsing EDIF File [./cgra2x2-tuning.data/cache/TDP_Data_Mem_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/TDP_Data_Mem_ngc_zx.edif]
+Reading core file 'd:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/ip/blk_mem_gen_v7_3_0/IO_Buffer.ngc' for (cell view 'IO_Buffer', library 'scgra_top_lib', file 'scgra_top.ngc')
+Parsing EDIF File [./cgra2x2-tuning.data/cache/IO_Buffer_ngc_zx.edif]
+Finished Parsing EDIF File [./cgra2x2-tuning.data/cache/IO_Buffer_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 4866 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+refresh_design: Time (s): elapsed = 00:00:29 . Memory (MB): peak = 1081.422 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Thu Jun 12 18:22:58 2014...
+INFO: [Common 17-83] Releasing license: PlanAhead

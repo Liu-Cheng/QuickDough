@@ -1,0 +1,6 @@
+23:40:01 **** Incremental Build of configuration Debug for project sobel-large ****
+make all 
+make: Nothing to be done for `all'.
+
+23:40:01 Build Finished (took 120ms)
+

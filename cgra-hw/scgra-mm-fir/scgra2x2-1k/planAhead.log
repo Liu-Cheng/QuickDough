@@ -1,0 +1,77 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue Sep 02 16:35:20 2014
+# Process ID: 19228
+# Log file: D:/minibench/scgra-mm-fir/scgra2x2-1k/planAhead.log
+# Journal file: D:/minibench/scgra-mm-fir/scgra2x2-1k\planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+open_project {D:\minibench\scgra-mm-fir\scgra2x2-1k\scgra2x2-1k.ppr}
+Scanning sources...
+Finished scanning sources
+save_project_as scgra2x2 D:/minibench/scgra-pipeline2/scgra2x2 -force
+INFO: [Designutils 20-1107] Saved project location 'D:/minibench/scgra-pipeline2/scgra2x2'
+INFO: [Designutils 20-1102] Composite file path 'D:/minibench/scgra-mm-fir/scgra2x2-1k/scgra2x2-1k.srcs/sources_1/edk/base_sys'
+save_project_as: Time (s): elapsed = 00:00:23 . Memory (MB): peak = 474.484 ; gain = 26.277
+INFO: [Edk 24-184] Launching XPS (Xilinx Platform Studio) for configuring XPS sub-design source 'base_sys'...
+
+Xilinx Platform Studio
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Launching XPS GUI...
+INFO:EDK - Simulation, Implementation and Device configuration flows are
+   disabled in XPS when launched from PlanAhead. All these features are
+   available in PlanAhead.
+MainWindow
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 155 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 181 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 207 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 233 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 155 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 181 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 207 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\ba
+   se_sys.mhs line 233 
+ZynqConfig: Terminated for gui mode
+Writing filter settings....
+Done writing filter settings to:
+	D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\etc\
+base_sys.filters
+Done writing Tab View settings to:
+	D:\minibench\scgra-pipeline2\scgra2x2\scgra2x2.srcs\sources_1\edk\base_sys\etc\
+base_sys.gui
+INFO: [Edk 24-128] XPS launched
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Tue Sep 02 16:41:07 2014...
+INFO: [Common 17-83] Releasing license: PlanAhead

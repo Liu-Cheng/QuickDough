@@ -1,0 +1,302 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\synthesis\xst_temp_dir\
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "base_sys_axi_bram_ctrl_0_bram_block_1_wrapper_xst.prj"
+Verilog Include Directory          : {"D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\pcores\" "C:\EDA\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "../implementation/base_sys_axi_bram_ctrl_0_bram_block_1_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : base_sys_axi_bram_ctrl_0_bram_block_1_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {../implementation}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/hdl/elaborate/axi_bram_ctrl_0_bram_block_1_elaborate_v1_00_a/hdl/verilog/axi_bram_ctrl_0_bram_block_1_elaborate.v" into library axi_bram_ctrl_0_bram_block_1_elaborate_v1_00_a
+Parsing module <axi_bram_ctrl_0_bram_block_1_elaborate>.
+Analyzing Verilog file "D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\hdl\base_sys_axi_bram_ctrl_0_bram_block_1_wrapper.v" into library work
+Parsing module <base_sys_axi_bram_ctrl_0_bram_block_1_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <base_sys_axi_bram_ctrl_0_bram_block_1_wrapper>.
+
+Elaborating module <axi_bram_ctrl_0_bram_block_1_elaborate(C_MEMSIZE=32'b010000000000000,C_PORT_DWIDTH=32,C_PORT_AWIDTH=32,C_NUM_WE=4,C_FAMILY="zynq")>.
+WARNING:HDLCompiler:1127 - "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/hdl/elaborate/axi_bram_ctrl_0_bram_block_1_elaborate_v1_00_a/hdl/verilog/axi_bram_ctrl_0_bram_block_1_elaborate.v" Line 70: Assignment to pgassign1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/hdl/elaborate/axi_bram_ctrl_0_bram_block_1_elaborate_v1_00_a/hdl/verilog/axi_bram_ctrl_0_bram_block_1_elaborate.v" Line 71: Assignment to pgassign2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/hdl/elaborate/axi_bram_ctrl_0_bram_block_1_elaborate_v1_00_a/hdl/verilog/axi_bram_ctrl_0_bram_block_1_elaborate.v" Line 72: Assignment to pgassign3 ignored, since the identifier is never used
+
+Elaborating module <RAMB36E1(WRITE_MODE_A="WRITE_FIRST",WRITE_MODE_B="WRITE_FIRST",INIT_FILE="axi_bram_ctrl_0_bram_block_1_combined_0.mem",READ_WIDTH_A=18,READ_WIDTH_B=18,WRITE_WIDTH_A=18,WRITE_WIDTH_B=18,RAM_EXTENSION_A="NONE",RAM_EXTENSION_B="NONE")>.
+
+Elaborating module <RAMB36E1(WRITE_MODE_A="WRITE_FIRST",WRITE_MODE_B="WRITE_FIRST",INIT_FILE="axi_bram_ctrl_0_bram_block_1_combined_1.mem",READ_WIDTH_A=18,READ_WIDTH_B=18,WRITE_WIDTH_A=18,WRITE_WIDTH_B=18,RAM_EXTENSION_A="NONE",RAM_EXTENSION_B="NONE")>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <base_sys_axi_bram_ctrl_0_bram_block_1_wrapper>.
+    Related source file is "D:\minibench\scgra-mm-fir\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_sys\hdl\base_sys_axi_bram_ctrl_0_bram_block_1_wrapper.v".
+    Set property "KEEP_HIERARCHY = YES".
+    Summary:
+	no macro.
+Unit <base_sys_axi_bram_ctrl_0_bram_block_1_wrapper> synthesized.
+
+Synthesizing Unit <axi_bram_ctrl_0_bram_block_1_elaborate>.
+    Related source file is "D:/minibench/scgra-mm-fir/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/hdl/elaborate/axi_bram_ctrl_0_bram_block_1_elaborate_v1_00_a/hdl/verilog/axi_bram_ctrl_0_bram_block_1_elaborate.v".
+        C_MEMSIZE = 32'b00000000000000000010000000000000
+        C_PORT_DWIDTH = 32
+        C_PORT_AWIDTH = 32
+        C_NUM_WE = 4
+        C_FAMILY = "zynq"
+    Set property "KEEP_HIERARCHY = YES".
+    Set property "BMM_INFO =  " for instance <ramb36e1_0>.
+    Set property "BMM_INFO =  " for instance <ramb36e1_1>.
+WARNING:Xst:647 - Input <BRAM_Addr_A<0:18>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <BRAM_Addr_A<30:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <BRAM_Addr_B<0:18>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <BRAM_Addr_B<30:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <axi_bram_ctrl_0_bram_block_1_elaborate> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <base_sys_axi_bram_ctrl_0_bram_block_1_wrapper> ...
+
+Optimizing unit <axi_bram_ctrl_0_bram_block_1_elaborate> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block base_sys_axi_bram_ctrl_0_bram_block_1_wrapper, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : base_sys_axi_bram_ctrl_0_bram_block_1_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2
+#      GND                         : 1
+#      VCC                         : 1
+# RAMS                             : 2
+#      RAMB36E1                    : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                         206
+ Number of bonded IOBs:                   0  out of    200     0%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of    140     1%  
+    Number using Block RAM only:          2
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                        | Load  |
+-----------------------------------+----------------------------------------------+-------+
+BRAM_Clk_B                         | NONE(axi_bram_ctrl_0_bram_block_1/ramb36e1_0)| 2     |
+BRAM_Clk_A                         | NONE(axi_bram_ctrl_0_bram_block_1/ramb36e1_0)| 2     |
+-----------------------------------+----------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------+----------------------------------------------+-------+
+Control Signal                                                               | Buffer(FF name)                              | Load  |
+-----------------------------------------------------------------------------+----------------------------------------------+-------+
+axi_bram_ctrl_0_bram_block_1/net_gnd0(axi_bram_ctrl_0_bram_block_1/XST_GND:G)| NONE(axi_bram_ctrl_0_bram_block_1/ramb36e1_0)| 8     |
+-----------------------------------------------------------------------------+----------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 0.737ns
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'BRAM_Clk_A'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              0.737ns (Levels of Logic = 1)
+  Source:            BRAM_Dout_A<0> (PAD)
+  Destination:       axi_bram_ctrl_0_bram_block_1/ramb36e1_0 (RAM)
+  Destination Clock: BRAM_Clk_A rising
+
+  Data Path: BRAM_Dout_A<0> to axi_bram_ctrl_0_bram_block_1/ramb36e1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'axi_bram_ctrl_0_bram_block_1:BRAM_Dout_A<0>'
+     RAMB36E1:DIADI15          0.737          ramb36e1_0
+    ----------------------------------------
+    Total                      0.737ns (0.737ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'BRAM_Clk_B'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              0.737ns (Levels of Logic = 1)
+  Source:            BRAM_Dout_B<0> (PAD)
+  Destination:       axi_bram_ctrl_0_bram_block_1/ramb36e1_0 (RAM)
+  Destination Clock: BRAM_Clk_B rising
+
+  Data Path: BRAM_Dout_B<0> to axi_bram_ctrl_0_bram_block_1/ramb36e1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'axi_bram_ctrl_0_bram_block_1:BRAM_Dout_B<0>'
+     RAMB36E1:DIBDI15          0.737          ramb36e1_0
+    ----------------------------------------
+    Total                      0.737ns (0.737ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.84 secs
+ 
+--> 
+
+Total memory usage is 458052 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

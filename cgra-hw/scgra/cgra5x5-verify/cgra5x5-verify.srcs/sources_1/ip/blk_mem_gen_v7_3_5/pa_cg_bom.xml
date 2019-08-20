@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+  <IPInstance name="data_buffer1">
+    <FileSets>
+      <FileSet generator="apply_current_project_options_generator">
+        <File name="./apply_current_project_options_generator.xlog" type="ignore" timestamp="Thu May 22 02:38:56 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="model_parameter_resolution_generator">
+        <File name="./data_buffer1.mif" type="mif" timestamp="Thu May 22 02:37:51 GMT 2014" checksum="0x329D59ED"></File>
+        <File name="./summary.log" type="unknown" timestamp="Thu May 22 02:37:51 GMT 2014" checksum="0xAD08406D"></File>
+      </FileSet>
+      <FileSet generator="ip_xco_generator">
+        <File name="./data_buffer1.xco" type="xco" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xDB07E119"></File>
+      </FileSet>
+      <FileSet generator="associated_files_generator">
+        <File name="./data_buffer1/blk_mem_gen_v7_3_readme.txt" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xF95F2A26"></File>
+        <File name="./data_buffer1/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0x702C7FA8"></File>
+        <File name="./data_buffer1/doc/pg058-blk-mem-gen.pdf" type="ignore" timestamp="Sun Oct 13 18:11:47 GMT 2013" checksum="0xC1E42F23"></File>
+      </FileSet>
+      <FileSet generator="ejava_generator">
+        <File name="./data_buffer1/example_design/data_buffer1_exdes.ucf" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xC44C6B6D"></File>
+        <File name="./data_buffer1/example_design/data_buffer1_exdes.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x27C88735"></File>
+        <File name="./data_buffer1/example_design/data_buffer1_exdes.xdc" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x7684D6D4"></File>
+        <File name="./data_buffer1/example_design/data_buffer1_prod.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x1AB04C4A"></File>
+        <File name="./data_buffer1/implement/implement.bat" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x4FA9BCD1"></File>
+        <File name="./data_buffer1/implement/implement.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xBAA7D0BD"></File>
+        <File name="./data_buffer1/implement/planAhead_ise.bat" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x23AA6340"></File>
+        <File name="./data_buffer1/implement/planAhead_ise.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x4B4B87E9"></File>
+        <File name="./data_buffer1/implement/planAhead_ise.tcl" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xA739ABFC"></File>
+        <File name="./data_buffer1/implement/xst.prj" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x7745B6D8"></File>
+        <File name="./data_buffer1/implement/xst.scr" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x9D5269D0"></File>
+        <File name="./data_buffer1/simulation/addr_gen.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x0500E48D"></File>
+        <File name="./data_buffer1/simulation/bmg_stim_gen.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x85803AA4"></File>
+        <File name="./data_buffer1/simulation/bmg_tb_pkg.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xE0D93E5B"></File>
+        <File name="./data_buffer1/simulation/checker.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x3EC35020"></File>
+        <File name="./data_buffer1/simulation/data_buffer1_synth.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xA155E052"></File>
+        <File name="./data_buffer1/simulation/data_buffer1_tb.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xA06C3704"></File>
+        <File name="./data_buffer1/simulation/data_gen.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xD9F7C4A0"></File>
+        <File name="./data_buffer1/simulation/functional/simcmds.tcl" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xCCC7D0BF"></File>
+        <File name="./data_buffer1/simulation/functional/simulate_isim.bat" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xF60892D8"></File>
+        <File name="./data_buffer1/simulation/functional/simulate_mti.bat" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./data_buffer1/simulation/functional/simulate_mti.do" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x5A5FE937"></File>
+        <File name="./data_buffer1/simulation/functional/simulate_mti.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./data_buffer1/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x5BB9257D"></File>
+        <File name="./data_buffer1/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xB4AD4EA2"></File>
+        <File name="./data_buffer1/simulation/functional/ucli_commands.key" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xC8C8A5EC"></File>
+        <File name="./data_buffer1/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x12573324"></File>
+        <File name="./data_buffer1/simulation/functional/wave_mti.do" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xB9ACC987"></File>
+        <File name="./data_buffer1/simulation/functional/wave_ncsim.sv" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x57E2C037"></File>
+        <File name="./data_buffer1/simulation/random.vhd" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x2939160A"></File>
+        <File name="./data_buffer1/simulation/timing/simcmds.tcl" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xCCC7D0BF"></File>
+        <File name="./data_buffer1/simulation/timing/simulate_isim.bat" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xD2111F0D"></File>
+        <File name="./data_buffer1/simulation/timing/simulate_mti.bat" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./data_buffer1/simulation/timing/simulate_mti.do" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xF0079701"></File>
+        <File name="./data_buffer1/simulation/timing/simulate_mti.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x86EA5D67"></File>
+        <File name="./data_buffer1/simulation/timing/simulate_ncsim.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x7702AB1C"></File>
+        <File name="./data_buffer1/simulation/timing/simulate_vcs.sh" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x7789919F"></File>
+        <File name="./data_buffer1/simulation/timing/ucli_commands.key" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xC8C8A5EC"></File>
+        <File name="./data_buffer1/simulation/timing/vcs_session.tcl" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x82F6BD63"></File>
+        <File name="./data_buffer1/simulation/timing/wave_mti.do" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0x73599854"></File>
+        <File name="./data_buffer1/simulation/timing/wave_ncsim.sv" type="ignore" timestamp="Thu May 22 02:37:52 GMT 2014" checksum="0xC02CC4F5"></File>
+      </FileSet>
+      <FileSet generator="ngc_netlist_generator">
+        <File name="./data_buffer1.ngc" type="ngc" timestamp="Thu May 22 02:38:44 GMT 2014" checksum="0x335E1994"></File>
+      </FileSet>
+      <FileSet generator="obfuscate_netlist_generator">
+        <File name="./obfuscate_netlist_generator.xlog" type="ignore" timestamp="Thu May 22 02:38:56 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="padded_implementation_netlist_generator">
+        <File name="./padded_implementation_netlist_generator.xlog" type="ignore" timestamp="Thu May 22 02:38:56 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="instantiation_template_generator">
+        <File name="./data_buffer1.veo" type="veo" timestamp="Thu May 22 02:38:44 GMT 2014" checksum="0x8B838190"></File>
+      </FileSet>
+      <FileSet generator="structural_simulation_model_generator">
+        <File name="./data_buffer1.v" type="verilog" timestamp="Thu May 22 02:38:44 GMT 2014" checksum="0xE0BC59B5"></File>
+      </FileSet>
+      <FileSet generator="all_documents_generator">
+        <File name="./data_buffer1/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Thu May 22 02:38:44 GMT 2014" checksum="0x702C7FA8"></File>
+      </FileSet>
+      <FileSet generator="asy_generator">
+        <File name="./data_buffer1.asy" type="asy" timestamp="Thu May 22 02:38:50 GMT 2014" checksum="0x25645DFA"></File>
+        <File name="./data_buffer1.mif" type="mif" timestamp="Thu May 22 02:38:50 GMT 2014" checksum="0x329D59ED"></File>
+        <File name="./summary.log" type="unknown" timestamp="Thu May 22 02:38:50 GMT 2014" checksum="0xAD08406D"></File>
+      </FileSet>
+      <FileSet generator="xmdf_generator">
+        <File name="./data_buffer1_xmdf.tcl" type="tclXmdf" timestamp="Thu May 22 02:38:50 GMT 2014" checksum="0x7ECAB2DF"></File>
+      </FileSet>
+      <FileSet generator="synthesis_ise_generator">
+        <File name="./data_buffer1.gise" type="ignore" timestamp="Thu May 22 02:38:53 GMT 2014" checksum="0x59820EF5"></File>
+        <File name="./data_buffer1.xise" type="ignore" timestamp="Thu May 22 02:38:53 GMT 2014" checksum="0x441C6EC5"></File>
+      </FileSet>
+      <FileSet generator="ise_generator">
+        <File name="./data_buffer1.gise" type="ignore" timestamp="Thu May 22 02:38:56 GMT 2014" checksum="0x70610DBD"></File>
+        <File name="./data_buffer1.xise" type="ignore" timestamp="Thu May 22 02:38:56 GMT 2014" checksum="0xBBF35C3A"></File>
+      </FileSet>
+      <FileSet generator="deliver_readme_generator">
+        <File name="./deliver_readme_generator.xlog" type="ignore" timestamp="Thu May 22 02:38:56 GMT 2014" checksum="0xFFFFFFFF"></File>
+      </FileSet>
+      <FileSet generator="flist_generator">
+        <File name="./data_buffer1_flist.txt" type="ignore" timestamp="Thu May 22 02:38:56 GMT 2014" checksum="0x0369429E"></File>
+      </FileSet>
+    </FileSets>
+  </IPInstance>
+</BillOfMaterials>

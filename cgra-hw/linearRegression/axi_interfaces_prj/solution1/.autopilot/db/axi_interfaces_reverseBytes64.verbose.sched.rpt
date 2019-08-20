@@ -1,0 +1,179 @@
+
+
+================================================================
+== Vivado HLS Report for 'axi_interfaces_reverseBytes64'
+================================================================
+* Date:           Thu Jun 18 16:28:16 2015
+
+* Version:        2015.1 (Build 1215546 on Mon Apr 27 19:24:50 PM 2015)
+* Project:        axi_interfaces_prj
+* Solution:       solution1
+* Product family: kintex7
+* Target device:  xc7k325tffg900-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   4.00|      1.45|        0.50|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    0|    0|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|Expression       |        -|      -|       -|       -|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        -|      -|       -|       -|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|       -|
+|Register         |        -|      -|       -|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|      0|       0|       0|
++-----------------+---------+-------+--------+--------+
+|Available        |      890|    840|  407600|  203800|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|      0|       0|       0|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 1
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+* FSM state operations: 
+
+ <State 1>: 1.45ns
+ST_1: in_read [1/1] 1.45ns
+:0  %in_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %in_r) nounwind
+
+ST_1: tmp [1/1] 0.00ns
+:1  %tmp = trunc i64 %in_read to i8
+
+ST_1: tmp_1 [1/1] 0.00ns
+:2  %tmp_1 = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %in_read, i32 8, i32 15)
+
+ST_1: tmp_2 [1/1] 0.00ns
+:3  %tmp_2 = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %in_read, i32 16, i32 23)
+
+ST_1: tmp_9 [1/1] 0.00ns
+:4  %tmp_9 = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %in_read, i32 24, i32 31)
+
+ST_1: tmp_s [1/1] 0.00ns
+:5  %tmp_s = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %in_read, i32 40, i32 47)
+
+ST_1: tmp_3 [1/1] 0.00ns
+:6  %tmp_3 = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %in_read, i32 48, i32 55)
+
+ST_1: tmp_4 [1/1] 0.00ns
+:7  %tmp_4 = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %in_read, i32 56, i32 63)
+
+ST_1: tmp_5 [1/1] 0.00ns
+:8  %tmp_5 = call i8 @_ssdm_op_PartSelect.i8.i64.i32.i32(i64 %in_read, i32 32, i32 39)
+
+ST_1: out [1/1] 0.00ns
+:9  %out = call i64 @_ssdm_op_BitConcatenate.i64.i8.i8.i8.i8.i8.i8.i8.i8(i8 %tmp, i8 %tmp_1, i8 %tmp_2, i8 %tmp_9, i8 %tmp_5, i8 %tmp_s, i8 %tmp_3, i8 %tmp_4)
+
+ST_1: stg_12 [1/1] 0.00ns
+:10  ret i64 %out
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="NgdBuild" num="649" delta="new" >Removing redundant &apos;<arg fmt="%s" index="1">IBUF</arg>&apos; symbol &apos;<arg fmt="%s" index="2">processing_system7_0_PS_PORB_IBUF</arg>&apos;.  All constraints associated with this symbol will be ignored.
+</msg>
+
+<msg type="info" file="NgdBuild" num="649" delta="new" >Removing redundant &apos;<arg fmt="%s" index="1">IBUF</arg>&apos; symbol &apos;<arg fmt="%s" index="2">processing_system7_0_PS_CLK_IBUF</arg>&apos;.  All constraints associated with this symbol will be ignored.
+</msg>
+
+<msg type="info" file="NgdBuild" num="649" delta="new" >Removing redundant &apos;<arg fmt="%s" index="1">IBUF</arg>&apos; symbol &apos;<arg fmt="%s" index="2">processing_system7_0_PS_SRSTB_IBUF</arg>&apos;.  All constraints associated with this symbol will be ignored.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/ramb36e1_0</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_0_bram_block_1/axi_bram_ctrl_0_bram_block_1/ramb36e1_1</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/ramb36e1_0</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_1_bram_block_1/axi_bram_ctrl_1_bram_block_1/ramb36e1_1</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e1_0</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e1_1</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e1_2</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_2_bram_block_1/axi_bram_ctrl_2_bram_block_1/ramb36e1_3</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e1_0</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e1_1</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e1_2</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="931" delta="new" >The value of SIM_DEVICE on instance &apos;<arg fmt="%s" index="1">base_sys_i/axi_bram_ctrl_3_bram_block_1/axi_bram_ctrl_3_bram_block_1/ramb36e1_3</arg>&apos; of type <arg fmt="%s" index="2">RAMB36E1</arg> has been changed from &apos;<arg fmt="%s" index="3">VIRTEX6</arg>&apos; to &apos;<arg fmt="%s" index="4">7SERIES</arg>&apos; to correct post-ngdbuild and timing simulation for this primitive.  In order for functional simulation to be correct, the value of SIM_DEVICE should be changed in this same manner in the source netlist or constraint file. For additional information on retargeting this primitive to 7SERIES, please see http://www.xilinx.com/support/documentation/sw_manuals/ug429_7Series_Migration.pdf.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="58" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMEGRP axi_interconnect_1_reset_source =   FFS  PADS  CPUS;&gt; [base_sys_stub.ucf(547)]</arg>: <arg fmt="%s" index="2">CPUS &quot;*&quot;</arg> does not match any design objects.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="58" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMEGRP axi_interconnect_2_reset_source =   FFS  PADS  CPUS;&gt; [base_sys_stub.ucf(555)]</arg>: <arg fmt="%s" index="2">CPUS &quot;*&quot;</arg> does not match any design objects.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="478" delta="new" >clock net <arg fmt="%s" index="1">base_sys_i/cgra5x5_0_PORT0_BRAM_Rst</arg> with clock driver <arg fmt="%s" index="2">base_sys_i/cgra5x5_0/Port0_Rst_BUFG</arg> drives no clock pins
+</msg>
+
+</messages>
+

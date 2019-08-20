@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [SCHED-69] Unable to schedule 'load' operation ('sub_in_load_1', fir-small/src/fir_ip.c:10) on array 'sub_in' due to limited memory ports." projectName="fir-small" solutionName="unroll-2x50" date="2015-03-24T15:50:13.026+0800" type="Warning"/>
+        <logs message="@W [HLS-40] Directive 'RESOURCE' for core 'RAM_1P_BRAM' cannot be applied: Variable 'out' is not declared in 'fir_ip'." projectName="fir-small" solutionName="unroll-2x50" date="2015-03-24T15:50:04.709+0800" type="Warning"/>
+        <logs message="@W [RTGEN-101] Legalizing port name 'fir_ip/out' to 'fir_ip/out_r'." projectName="fir_small" solutionName="unroll_2x20" date="2014-01-14T11:40:15.916+0800" type="Warning"/>
+        <logs message="@W [XFORM-561] Ignored invalid trip count directive (MAX (= 2) &lt; AVE (= 3)) for loop 'fir_ip_label0' in function 'fir_ip'." projectName="fir_small" solutionName="unroll_2x20" date="2014-01-14T11:40:15.541+0800" type="Warning"/>
+        <logs message="@W [XFORM-561] Updating loop upper bound from 3 to 2 for loop 'fir_ip_label0' in function 'fir_ip'." projectName="fir_small" solutionName="unroll_2x20" date="2014-01-14T11:40:15.460+0800" type="Warning"/>
+        <logs message="@W [XFORM-561] Ignored invalid trip count directive (MAX (= 2) &lt; AVE (= 3)) for loop 'fir_ip_label0' in function 'fir_ip'." projectName="fir_small" solutionName="unroll_2x20" date="2014-01-14T11:40:15.450+0800" type="Warning"/>
+        <logs message="@W [XFORM-561] Updating loop upper bound from 3 to 2 for loop 'fir_ip_label0' in function 'fir_ip'." projectName="fir_small" solutionName="unroll_2x20" date="2014-01-14T11:40:15.441+0800" type="Warning"/>
+        <logs message="@W [RTGEN-101] Legalizing port name 'fir_ip/out' to 'fir_ip/out_r'." projectName="fir_small" solutionName="unroll_1x20" date="2014-01-14T11:39:10.310+0800" type="Warning"/>
+        <logs message="@W [XFORM-561] Ignored invalid trip count directive (MAX (= 2) &lt; AVE (= 3)) for loop 'fir_ip_label0' in function 'fir_ip'." projectName="fir_small" solutionName="unroll_1x20" date="2014-01-14T11:39:10.101+0800" type="Warning"/>
+        <logs message="@W [XFORM-561] Updating loop upper bound from 3 to 2 for loop 'fir_ip_label0' in function 'fir_ip'." projectName="fir_small" solutionName="unroll_1x20" date="2014-01-14T11:39:10.042+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

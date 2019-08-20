@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Mon Jul 21 19:18:54 2014
+# Process ID: 94124
+# Log file: D:/minibench/scgra/scgra-lib/cgra2x2/vivado.log
+# Journal file: D:/minibench/scgra/scgra-lib/cgra2x2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra\scgra-lib\cgra2x2\cgra2x2.xpr}
+ipx::package_project -root_dir {D:/minibench/scgra/scgra-lib/cgra2x2} -generated_files
+set_property library {user} [ipx::current_core]
+launch_runs synth_1
+wait_on_run synth_1
+set_property is_include true [ipx::get_file cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem_ooc.xdc [ipx::get_file_group xilinx_anylanguagesynthesis [ipx::current_core]]]

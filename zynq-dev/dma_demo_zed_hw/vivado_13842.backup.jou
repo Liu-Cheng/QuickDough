@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Sep  6 15:23:50 2016
+# Process ID: 13842
+# Current directory: /home/liucheng/projects/prj2016/dma_demo
+# Command line: vivado dma_demo.xpr
+# Log file: /home/liucheng/projects/prj2016/dma_demo/vivado.log
+# Journal file: /home/liucheng/projects/prj2016/dma_demo/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project dma_demo.xpr
+update_compile_order -fileset sources_1
+file copy -force /home/liucheng/projects/prj2016/dma_demo/dma_demo.runs/impl_1/base_sys_wrapper.sysdef /home/liucheng/projects/prj2016/dma_demo/dma_demo.sdk/base_sys_wrapper.hdf
+
+launch_sdk -workspace /home/liucheng/projects/prj2016/dma_demo/dma_demo.sdk -hwspec /home/liucheng/projects/prj2016/dma_demo/dma_demo.sdk/base_sys_wrapper.hdf

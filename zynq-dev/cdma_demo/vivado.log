@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon Oct  3 19:27:29 2016
+# Process ID: 8428
+# Current directory: /home/liucheng/research/zynq-dev/cdma_demo
+# Command line: vivado cdma_demo.xpr
+# Log file: /home/liucheng/research/zynq-dev/cdma_demo/vivado.log
+# Journal file: /home/liucheng/research/zynq-dev/cdma_demo/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project cdma_demo.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:01:45 ; elapsed = 00:00:44 . Memory (MB): peak = 5914.980 ; gain = 174.223 ; free physical = 3316 ; free virtual = 13646
+update_compile_order -fileset sources_1
+launch_sdk -workspace /home/liucheng/research/zynq-dev/cdma_demo/cdma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/cdma_demo/cdma_demo.sdk/base_sys_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/liucheng/research/zynq-dev/cdma_demo/cdma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/cdma_demo/cdma_demo.sdk/base_sys_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  3 19:33:04 2016...

@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Building Linux System Using Petalinux}{2}
+\contentsline {section}{\numberline {3}Building Linux System Step by Step}{3}
+\contentsline {subsection}{\numberline {3.1}Preparation}{3}
+\contentsline {subsection}{\numberline {3.2}Build u-boot}{4}
+\contentsline {subsection}{\numberline {3.3}Build Kernel}{4}
+\contentsline {subsection}{\numberline {3.4}Create fsbl}{5}
+\contentsline {subsection}{\numberline {3.5}Create Device Tree}{5}
+\contentsline {subsection}{\numberline {3.6}Create BOOT.bin}{6}
+\contentsline {subsection}{\numberline {3.7}Create the root file system}{7}
+\contentsline {subsubsection}{\numberline {3.7.1}Create rootfs from scratch}{7}
+\contentsline {subsubsection}{\numberline {3.7.2}Create rootfs based on existing rootfs}{13}
+\contentsline {section}{\numberline {4}Driver Module Compilation}{15}
+\contentsline {section}{\numberline {5}Continuous Physical Memory Allocation}{18}
+\contentsline {section}{\numberline {6}Statically Reserve Main Memory}{18}
+\contentsline {subsection}{\numberline {6.1}UIO}{18}
+\contentsline {subsection}{\numberline {6.2}mmap in user space}{19}
+\contentsline {subsection}{\numberline {6.3}How to reserve the main memory?}{19}
+\contentsline {subsection}{\numberline {6.4}Move data across user space and kernel space}{19}
+\contentsline {subsection}{\numberline {6.5}Cache coherence}{19}
+\contentsline {subsection}{\numberline {6.6}How to access the reserved memory block?}{19}
+\contentsline {section}{\numberline {7}BOOT Setup}{19}
+\contentsline {section}{References}{19}

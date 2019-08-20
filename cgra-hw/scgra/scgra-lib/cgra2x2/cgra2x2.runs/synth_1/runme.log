@@ -1,0 +1,1857 @@
+
+*** Running vivado
+    with args -log cgra2x2.rds -m64 -mode batch -messageDb vivado.pb -source cgra2x2.tcl
+
+
+****** Vivado v2013.3 (64-bit)
+  **** SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+  **** IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/Xilinx/Vivado/2013.3/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+source cgra2x2.tcl
+# set_param gui.test TreeTableDev
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# set_msg_config -id {HDL-1065} -limit 10000
+# create_project -in_memory -part xc7z020clg484-1
+# set_property target_language Verilog [current_project]
+# set_property board em.avnet.com:zynq:zed:d [current_project]
+# set_param project.compositeFile.enableAutoGeneration 0
+# read_ip D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem.xci
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado repository 'C:/EDA/Xilinx/Vivado/2013.3/data/ip'.
+# set_property used_in_implementation false [get_files d:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem.dcp]
+# set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
+# set_property is_locked true [get_files D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/TDP_Data_Mem/TDP_Data_Mem.xci]
+# read_ip D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/SP_Inst_Mem.xci
+# set_property used_in_implementation false [get_files d:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/SP_Inst_Mem.dcp]
+# set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
+# set_property is_locked true [get_files D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/ip/SP_Inst_Mem/SP_Inst_Mem.xci]
+# read_verilog {
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/MulAdd.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Inst_Mem.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Data_Mem.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/ALU.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/PEIO.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/PE.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Torus2x2.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/BramIF.v
+#   D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/cgra2x2.v
+# }
+# read_xdc dont_touch.xdc
+# set_property used_in_implementation false [get_files dont_touch.xdc]
+# read_xdc dont_buffer.xdc
+# set_property used_in_implementation false [get_files dont_buffer.xdc]
+# set_param synth.vivado.isSynthRun true
+# set_property webtalk.parent_dir D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.data/wt [current_project]
+# set_property parent.project_dir D:/minibench/scgra/scgra-lib/cgra2x2 [current_project]
+# synth_design -top cgra2x2 -part xc7z020clg484-1
+Command: synth_design -top cgra2x2 -part xc7z020clg484-1
+
+Starting synthesis...
+
+INFO: [IP_Flow 19-2162] IP 'TDP_Data_Mem' is locked. Locked reason: Property 'IS_LOCKED' is set to true by the system or user
+INFO: [IP_Flow 19-2162] IP 'SP_Inst_Mem' is locked. Locked reason: Property 'IS_LOCKED' is set to true by the system or user
+INFO: [Common 17-347] Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 241.965 ; gain = 77.797
+INFO: [Synth 8-638] synthesizing module 'cgra2x2' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/cgra2x2.v:22]
+	Parameter SYS_DWIDTH bound to: 32 - type: integer 
+	Parameter BYTE_LEN bound to: 4 - type: integer 
+	Parameter DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'Torus2x2' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Torus2x2.v:3]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter SYS_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'PEIO' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/PEIO.v:22]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter INST_DWIDTH bound to: 72 - type: integer 
+	Parameter INST_AWIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'ALU' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/ALU.v:38]
+	Parameter DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'MulAdd' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/MulAdd.v:23]
+	Parameter DWIDTH1 bound to: 16 - type: integer 
+	Parameter DWIDTH2 bound to: 16 - type: integer 
+	Parameter DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'MulAdd' (1#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/MulAdd.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'a' does not match port width (16) of module 'MulAdd' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/ALU.v:125]
+WARNING: [Synth 8-689] width (32) of port connection 'b' does not match port width (16) of module 'MulAdd' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/ALU.v:126]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (2#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/ALU.v:38]
+INFO: [Synth 8-638] synthesizing module 'Data_Mem' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Data_Mem.v:22]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TDP_Data_Mem' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/Vivado-89572-Liuchengstudent/realtime/TDP_Data_Mem_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'TDP_Data_Mem' (3#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/Vivado-89572-Liuchengstudent/realtime/TDP_Data_Mem_stub.v:6]
+WARNING: [Synth 8-350] instance 'Mem0' of module 'TDP_Data_Mem' requires 11 connections, but only 10 given [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Data_Mem.v:68]
+WARNING: [Synth 8-350] instance 'Mem1' of module 'TDP_Data_Mem' requires 11 connections, but only 10 given [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Data_Mem.v:81]
+WARNING: [Synth 8-350] instance 'Mem2' of module 'TDP_Data_Mem' requires 11 connections, but only 10 given [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Data_Mem.v:94]
+INFO: [Synth 8-256] done synthesizing module 'Data_Mem' (4#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Data_Mem.v:22]
+INFO: [Synth 8-638] synthesizing module 'Inst_Mem' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Inst_Mem.v:21]
+	Parameter INST_DWIDTH bound to: 72 - type: integer 
+	Parameter INST_AWIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'SP_Inst_Mem' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/Vivado-89572-Liuchengstudent/realtime/SP_Inst_Mem_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'SP_Inst_Mem' (5#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/Vivado-89572-Liuchengstudent/realtime/SP_Inst_Mem_stub.v:6]
+WARNING: [Synth 8-350] instance 'Inst_Rom' of module 'SP_Inst_Mem' requires 4 connections, but only 3 given [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Inst_Mem.v:51]
+INFO: [Synth 8-256] done synthesizing module 'Inst_Mem' (6#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Inst_Mem.v:21]
+INFO: [Synth 8-256] done synthesizing module 'PEIO' (7#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/PEIO.v:22]
+INFO: [Synth 8-638] synthesizing module 'PE' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/PE.v:22]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter INST_DWIDTH bound to: 72 - type: integer 
+	Parameter INST_AWIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'PE' (8#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/PE.v:22]
+INFO: [Synth 8-256] done synthesizing module 'Torus2x2' (9#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/Torus2x2.v:3]
+INFO: [Synth 8-638] synthesizing module 'BramIF' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/BramIF.v:21]
+	Parameter SYS_DWIDTH bound to: 32 - type: integer 
+	Parameter BYTE_LEN bound to: 4 - type: integer 
+	Parameter CTRL_WORDS_NUM bound to: 1024 - type: integer 
+	Parameter DBUF_ADDR_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'BramIF' (10#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/BramIF.v:21]
+INFO: [Synth 8-256] done synthesizing module 'cgra2x2' (11#1) [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/cgra2x2.v:22]
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 274.148 ; gain = 109.980
+Start RTL Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 274.148 ; gain = 109.980
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+Loading clock regions from C:/EDA/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from C:/EDA/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from C:/EDA/Xilinx/Vivado/2013.3/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from C:/EDA/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/PinFunctions.xml...
+Loading package from C:/EDA/Xilinx/Vivado/2013.3/data\parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from C:/EDA/Xilinx/Vivado/2013.3/data\./parts/xilinx/zynq/IOStandards.xml
+INFO: [Common 17-78] Attempting to get a license: Internal_bitstream
+WARNING: [Common 17-301] Failed to get a license: Internal_bitstream
+
+Processing XDC Constraints
+Parsing XDC File [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/cgra2x2_propImpl.xdc].
+Resolution: To avoid this warning, exclude constraints listed in [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/cgra2x2_propImpl.xdc] from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc]
+Finished Parsing XDC File [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/cgra2x2_propImpl.xdc].
+Resolution: To avoid this warning, exclude constraints listed in [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/.Xil/cgra2x2_propImpl.xdc] from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Memdata 28-143] Successfully populated the BRAM INIT strings from the following elf files: 
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Start RTL Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 525.395 ; gain = 361.227
+
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 8).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 8).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 8).
+Applied set_property DONT_TOUCH = true. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_touch.xdc, line 8).
+Applied set_property BUFFER_TYPE = NONE. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc, line 5).
+Applied set_property BUFFER_TYPE = NONE. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc, line 5).
+Applied set_property BUFFER_TYPE = NONE. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc, line 5).
+Applied set_property BUFFER_TYPE = NONE. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc, line 5).
+Applied set_property BUFFER_TYPE = NONE. (constraint file  D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.runs/synth_1/dont_buffer.xdc, line 5).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 525.395 ; gain = 361.227
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Finished RTL Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 525.395 ; gain = 361.227
+---------------------------------------------------------------------------------
+
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/MulAdd.v:113]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/ALU.v:178]
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB8 0 RAMB16 0 RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 584.871 ; gain = 420.703
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 8     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 4     
++---Registers : 
+	               72 Bit    Registers := 8     
+	               32 Bit    Registers := 126   
+	               16 Bit    Registers := 5     
+	               10 Bit    Registers := 4     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 8     
+	                1 Bit    Registers := 33    
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 26    
+	   2 Input     32 Bit        Muxes := 34    
+	   2 Input      1 Bit        Muxes := 7     
+
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module cgra2x2 
+Detailed RTL Component Info : 
+Module Inst_Mem 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 11    
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 1     
+Module Data_Mem__xdcDup__2 
+Detailed RTL Component Info : 
+Module MulAdd 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Torus2x2 
+Detailed RTL Component Info : 
+Module Data_Mem__xdcDup__1 
+Detailed RTL Component Info : 
+Module BramIF 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 5     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module PE__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               72 Bit    Registers := 2     
+	               32 Bit    Registers := 17    
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 6     
+Module PEIO__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               72 Bit    Registers := 2     
+	               32 Bit    Registers := 20    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 7     
+Module Data_Mem 
+Detailed RTL Component Info : 
+Module Inst_Mem__xdcDup__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+Module PE 
+Detailed RTL Component Info : 
++---Registers : 
+	               72 Bit    Registers := 2     
+	               32 Bit    Registers := 17    
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 6     
+Module Inst_Mem__xdcDup__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+Module Inst_Mem__xdcDup__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+Module PEIO 
+Detailed RTL Component Info : 
++---Registers : 
+	               72 Bit    Registers := 2     
+	               32 Bit    Registers := 20    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 7     
+Module Data_Mem__xdcDup__3 
+Detailed RTL Component Info : 
+
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'subtract_reg_reg' into 'subtract_reg_reg' [D:/minibench/scgra/scgra-lib/cgra2x2/cgra2x2.srcs/sources_1/imports/src/MulAdd.v:83]
+DSP Report: Generating DSP p_reg, operation Mode is: (C+(A2*B2)'+CarryIn')'.
+DSP Report: register b_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register a_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register p_reg is absorbed into DSP p_reg.
+DSP Report: register subtract_reg_reg is absorbed into DSP p_reg.
+DSP Report: register mul_result_reg is absorbed into DSP p_reg.
+DSP Report: operator p0 is absorbed into DSP p_reg.
+DSP Report: operator mul_result0 is absorbed into DSP p_reg.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PEIO__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PEIO__xdcDup__1.
+DSP Report: Generating DSP p_reg, operation Mode is: (C+(A2*B2)'+CarryIn')'.
+DSP Report: register b_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register a_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register p_reg is absorbed into DSP p_reg.
+DSP Report: register subtract_reg_reg is absorbed into DSP p_reg.
+DSP Report: register mul_result_reg is absorbed into DSP p_reg.
+DSP Report: operator p0 is absorbed into DSP p_reg.
+DSP Report: operator mul_result0 is absorbed into DSP p_reg.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PEIO.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PEIO.
+DSP Report: Generating DSP p_reg, operation Mode is: (C+(A2*B2)'+CarryIn')'.
+DSP Report: register b_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register a_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register p_reg is absorbed into DSP p_reg.
+DSP Report: register subtract_reg_reg is absorbed into DSP p_reg.
+DSP Report: register mul_result_reg is absorbed into DSP p_reg.
+DSP Report: operator p0 is absorbed into DSP p_reg.
+DSP Report: operator mul_result0 is absorbed into DSP p_reg.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[68] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[9] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[8] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[68] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[9] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[8] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[68] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[9] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[8] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[68] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[9] ) is unused and will be removed from module PE__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[8] ) is unused and will be removed from module PE__xdcDup__1.
+DSP Report: Generating DSP p_reg, operation Mode is: (C+(A2*B2)'+CarryIn')'.
+DSP Report: register b_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register a_reg0_reg is absorbed into DSP p_reg.
+DSP Report: register p_reg is absorbed into DSP p_reg.
+DSP Report: register subtract_reg_reg is absorbed into DSP p_reg.
+DSP Report: register mul_result_reg is absorbed into DSP p_reg.
+DSP Report: operator p0 is absorbed into DSP p_reg.
+DSP Report: operator mul_result0 is absorbed into DSP p_reg.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[68] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[9] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[8] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[68] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[9] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[8] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[71] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[70] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[69] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[68] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[9] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg1_reg[8] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[71] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[70] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[69] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[68] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[9] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3332] Sequential element (\Inst_Mem_Out_Reg0_reg[8] ) is unused and will be removed from module PE.
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[31] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[30] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[29] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[28] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[27] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[26] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[25] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[24] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[23] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[22] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[21] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[20] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[19] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[18] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[1] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port0_Addr[0] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[31] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[30] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[29] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[28] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[27] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[26] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[25] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[24] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[23] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[22] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[21] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[20] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[19] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[18] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[1] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port1_Addr[0] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_En driven by constant 1
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Wen[3] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Wen[2] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Wen[1] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Wen[0] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[31] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[30] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[29] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[28] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[27] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[26] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[25] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[24] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[23] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[22] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[21] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[20] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[19] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[18] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[17] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Addr[16] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[31] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[30] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[29] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[28] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[27] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[26] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[25] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[24] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[23] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[22] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[21] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[20] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[19] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[18] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[17] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[16] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[15] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[14] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[13] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[12] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[11] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[10] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[9] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[8] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[7] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[6] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[5] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[4] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[3] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[2] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[1] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port2_Data_To_Bram[0] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_En driven by constant 1
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Wen[3] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Wen[2] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Wen[1] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Wen[0] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[31] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[30] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[29] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[28] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[27] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[26] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[25] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[24] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[23] driven by constant 0
+WARNING: [Synth 8-3917] design cgra2x2 has port Port3_Addr[22] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[23]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[22]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[21]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[20]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[19]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[18]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[17]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port2_Data_From_Bram[16]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[26]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[25]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[24]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[23]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[22]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[21]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[20]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[19]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[18]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[17]
+WARNING: [Synth 8-3331] design cgra2x2 has unconnected port Port3_Data_From_Bram[16]
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 588.000 ; gain = 423.832
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP:
++------------+------------------------+--------------+------------------+--------+--------+--------+--------+------+------+------+------+------+
+|Module Name | OP MODE                | Neg Edge Clk | A Size (Signed?) | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | PREG | 
++------------+------------------------+--------------+------------------+--------+--------+--------+--------+------+------+------+------+------+
+|MulAdd      | (C+(A2*B2)'+CarryIn')' | No           | 16 (Y)           | 16 (Y) | 32 (N) | 25 (N) | 32 (N) | 1    | 1    | 0    | 1    | 1    | 
+|MulAdd      | (C+(A2*B2)'+CarryIn')' | No           | 16 (Y)           | 16 (Y) | 32 (N) | 25 (N) | 32 (N) | 1    | 1    | 0    | 1    | 1    | 
+|MulAdd      | (C+(A2*B2)'+CarryIn')' | No           | 16 (Y)           | 16 (Y) | 32 (N) | 25 (N) | 32 (N) | 1    | 1    | 0    | 1    | 1    | 
+|MulAdd      | (C+(A2*B2)'+CarryIn')' | No           | 16 (Y)           | 16 (Y) | 32 (N) | 25 (N) | 32 (N) | 1    | 1    | 0    | 1    | 1    | 
++------------+------------------------+--------------+------------------+--------+--------+--------+--------+------+------+------+------+------+
+
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\BramIF/CGRA_Cnt_reg[0] ) is unused and will be removed from module cgra2x2.
+WARNING: [Synth 8-3332] Sequential element (\BramIF/CGRA_Cnt_Reg3_reg[0] ) is unused and will be removed from module cgra2x2.
+WARNING: [Synth 8-3332] Sequential element (\BramIF/CGRA_Cnt_Reg2_reg[0] ) is unused and will be removed from module cgra2x2.
+WARNING: [Synth 8-3332] Sequential element (\BramIF/CGRA_Cnt_Reg1_reg[0] ) is unused and will be removed from module cgra2x2.
+WARNING: [Synth 8-3332] Sequential element (\BramIF/CGRA_Cnt_Reg0_reg[0] ) is unused and will be removed from module cgra2x2.
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[71]
+info: *** Multidriven port on net douta[70]
+info: *** Multidriven port on net douta[69]
+info: *** Multidriven port on net douta[68]
+info: *** Multidriven port on net douta[67]
+info: *** Multidriven port on net douta[66]
+info: *** Multidriven port on net douta[65]
+info: *** Multidriven port on net douta[64]
+info: *** Multidriven port on net douta[63]
+info: *** Multidriven port on net douta[62]
+info: *** Multidriven port on net douta[61]
+info: *** Multidriven port on net douta[60]
+info: *** Multidriven port on net douta[59]
+info: *** Multidriven port on net douta[58]
+info: *** Multidriven port on net douta[57]
+info: *** Multidriven port on net douta[56]
+info: *** Multidriven port on net douta[55]
+info: *** Multidriven port on net douta[54]
+info: *** Multidriven port on net douta[53]
+info: *** Multidriven port on net douta[52]
+info: *** Multidriven port on net douta[51]
+info: *** Multidriven port on net douta[50]
+info: *** Multidriven port on net douta[49]
+info: *** Multidriven port on net douta[48]
+info: *** Multidriven port on net douta[47]
+info: *** Multidriven port on net douta[46]
+info: *** Multidriven port on net douta[45]
+info: *** Multidriven port on net douta[44]
+info: *** Multidriven port on net douta[43]
+info: *** Multidriven port on net douta[42]
+info: *** Multidriven port on net douta[41]
+info: *** Multidriven port on net douta[40]
+info: *** Multidriven port on net douta[39]
+info: *** Multidriven port on net douta[38]
+info: *** Multidriven port on net douta[37]
+info: *** Multidriven port on net douta[36]
+info: *** Multidriven port on net douta[35]
+info: *** Multidriven port on net douta[34]
+info: *** Multidriven port on net douta[33]
+info: *** Multidriven port on net douta[32]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[71]
+info: *** Multidriven port on net douta[70]
+info: *** Multidriven port on net douta[69]
+info: *** Multidriven port on net douta[68]
+info: *** Multidriven port on net douta[67]
+info: *** Multidriven port on net douta[66]
+info: *** Multidriven port on net douta[65]
+info: *** Multidriven port on net douta[64]
+info: *** Multidriven port on net douta[63]
+info: *** Multidriven port on net douta[62]
+info: *** Multidriven port on net douta[61]
+info: *** Multidriven port on net douta[60]
+info: *** Multidriven port on net douta[59]
+info: *** Multidriven port on net douta[58]
+info: *** Multidriven port on net douta[57]
+info: *** Multidriven port on net douta[56]
+info: *** Multidriven port on net douta[55]
+info: *** Multidriven port on net douta[54]
+info: *** Multidriven port on net douta[53]
+info: *** Multidriven port on net douta[52]
+info: *** Multidriven port on net douta[51]
+info: *** Multidriven port on net douta[50]
+info: *** Multidriven port on net douta[49]
+info: *** Multidriven port on net douta[48]
+info: *** Multidriven port on net douta[47]
+info: *** Multidriven port on net douta[46]
+info: *** Multidriven port on net douta[45]
+info: *** Multidriven port on net douta[44]
+info: *** Multidriven port on net douta[43]
+info: *** Multidriven port on net douta[42]
+info: *** Multidriven port on net douta[41]
+info: *** Multidriven port on net douta[40]
+info: *** Multidriven port on net douta[39]
+info: *** Multidriven port on net douta[38]
+info: *** Multidriven port on net douta[37]
+info: *** Multidriven port on net douta[36]
+info: *** Multidriven port on net douta[35]
+info: *** Multidriven port on net douta[34]
+info: *** Multidriven port on net douta[33]
+info: *** Multidriven port on net douta[32]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[71]
+info: *** Multidriven port on net douta[70]
+info: *** Multidriven port on net douta[69]
+info: *** Multidriven port on net douta[68]
+info: *** Multidriven port on net douta[67]
+info: *** Multidriven port on net douta[66]
+info: *** Multidriven port on net douta[65]
+info: *** Multidriven port on net douta[64]
+info: *** Multidriven port on net douta[63]
+info: *** Multidriven port on net douta[62]
+info: *** Multidriven port on net douta[61]
+info: *** Multidriven port on net douta[60]
+info: *** Multidriven port on net douta[59]
+info: *** Multidriven port on net douta[58]
+info: *** Multidriven port on net douta[57]
+info: *** Multidriven port on net douta[56]
+info: *** Multidriven port on net douta[55]
+info: *** Multidriven port on net douta[54]
+info: *** Multidriven port on net douta[53]
+info: *** Multidriven port on net douta[52]
+info: *** Multidriven port on net douta[51]
+info: *** Multidriven port on net douta[50]
+info: *** Multidriven port on net douta[49]
+info: *** Multidriven port on net douta[48]
+info: *** Multidriven port on net douta[47]
+info: *** Multidriven port on net douta[46]
+info: *** Multidriven port on net douta[45]
+info: *** Multidriven port on net douta[44]
+info: *** Multidriven port on net douta[43]
+info: *** Multidriven port on net douta[42]
+info: *** Multidriven port on net douta[41]
+info: *** Multidriven port on net douta[40]
+info: *** Multidriven port on net douta[39]
+info: *** Multidriven port on net douta[38]
+info: *** Multidriven port on net douta[37]
+info: *** Multidriven port on net douta[36]
+info: *** Multidriven port on net douta[35]
+info: *** Multidriven port on net douta[34]
+info: *** Multidriven port on net douta[33]
+info: *** Multidriven port on net douta[32]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+info: *** Multidriven port on net doutb[31]
+info: *** Multidriven port on net doutb[30]
+info: *** Multidriven port on net doutb[29]
+info: *** Multidriven port on net doutb[28]
+info: *** Multidriven port on net doutb[27]
+info: *** Multidriven port on net doutb[26]
+info: *** Multidriven port on net doutb[25]
+info: *** Multidriven port on net doutb[24]
+info: *** Multidriven port on net doutb[23]
+info: *** Multidriven port on net doutb[22]
+info: *** Multidriven port on net doutb[21]
+info: *** Multidriven port on net doutb[20]
+info: *** Multidriven port on net doutb[19]
+info: *** Multidriven port on net doutb[18]
+info: *** Multidriven port on net doutb[17]
+info: *** Multidriven port on net doutb[16]
+info: *** Multidriven port on net doutb[15]
+info: *** Multidriven port on net doutb[14]
+info: *** Multidriven port on net doutb[13]
+info: *** Multidriven port on net doutb[12]
+info: *** Multidriven port on net doutb[11]
+info: *** Multidriven port on net doutb[10]
+info: *** Multidriven port on net doutb[9]
+info: *** Multidriven port on net doutb[8]
+info: *** Multidriven port on net doutb[7]
+info: *** Multidriven port on net doutb[6]
+info: *** Multidriven port on net doutb[5]
+info: *** Multidriven port on net doutb[4]
+info: *** Multidriven port on net doutb[3]
+info: *** Multidriven port on net doutb[2]
+info: *** Multidriven port on net doutb[1]
+info: *** Multidriven port on net doutb[0]
+info: *** Multidriven port on net douta[71]
+info: *** Multidriven port on net douta[70]
+info: *** Multidriven port on net douta[69]
+info: *** Multidriven port on net douta[68]
+info: *** Multidriven port on net douta[67]
+info: *** Multidriven port on net douta[66]
+info: *** Multidriven port on net douta[65]
+info: *** Multidriven port on net douta[64]
+info: *** Multidriven port on net douta[63]
+info: *** Multidriven port on net douta[62]
+info: *** Multidriven port on net douta[61]
+info: *** Multidriven port on net douta[60]
+info: *** Multidriven port on net douta[59]
+info: *** Multidriven port on net douta[58]
+info: *** Multidriven port on net douta[57]
+info: *** Multidriven port on net douta[56]
+info: *** Multidriven port on net douta[55]
+info: *** Multidriven port on net douta[54]
+info: *** Multidriven port on net douta[53]
+info: *** Multidriven port on net douta[52]
+info: *** Multidriven port on net douta[51]
+info: *** Multidriven port on net douta[50]
+info: *** Multidriven port on net douta[49]
+info: *** Multidriven port on net douta[48]
+info: *** Multidriven port on net douta[47]
+info: *** Multidriven port on net douta[46]
+info: *** Multidriven port on net douta[45]
+info: *** Multidriven port on net douta[44]
+info: *** Multidriven port on net douta[43]
+info: *** Multidriven port on net douta[42]
+info: *** Multidriven port on net douta[41]
+info: *** Multidriven port on net douta[40]
+info: *** Multidriven port on net douta[39]
+info: *** Multidriven port on net douta[38]
+info: *** Multidriven port on net douta[37]
+info: *** Multidriven port on net douta[36]
+info: *** Multidriven port on net douta[35]
+info: *** Multidriven port on net douta[34]
+info: *** Multidriven port on net douta[33]
+info: *** Multidriven port on net douta[32]
+info: *** Multidriven port on net douta[31]
+info: *** Multidriven port on net douta[30]
+info: *** Multidriven port on net douta[29]
+info: *** Multidriven port on net douta[28]
+info: *** Multidriven port on net douta[27]
+info: *** Multidriven port on net douta[26]
+info: *** Multidriven port on net douta[25]
+info: *** Multidriven port on net douta[24]
+info: *** Multidriven port on net douta[23]
+info: *** Multidriven port on net douta[22]
+info: *** Multidriven port on net douta[21]
+info: *** Multidriven port on net douta[20]
+info: *** Multidriven port on net douta[19]
+info: *** Multidriven port on net douta[18]
+info: *** Multidriven port on net douta[17]
+info: *** Multidriven port on net douta[16]
+info: *** Multidriven port on net douta[15]
+info: *** Multidriven port on net douta[14]
+info: *** Multidriven port on net douta[13]
+info: *** Multidriven port on net douta[12]
+info: *** Multidriven port on net douta[11]
+info: *** Multidriven port on net douta[10]
+info: *** Multidriven port on net douta[9]
+info: *** Multidriven port on net douta[8]
+info: *** Multidriven port on net douta[7]
+info: *** Multidriven port on net douta[6]
+info: *** Multidriven port on net douta[5]
+info: *** Multidriven port on net douta[4]
+info: *** Multidriven port on net douta[3]
+info: *** Multidriven port on net douta[2]
+info: *** Multidriven port on net douta[1]
+info: *** Multidriven port on net douta[0]
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 628.387 ; gain = 464.219
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:52 . Memory (MB): peak = 646.410 ; gain = 482.242
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:53 . Memory (MB): peak = 652.273 ; gain = 488.105
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 703.867 ; gain = 539.699
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE00/Data_Mem/Mem0  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE00/Data_Mem/Mem1  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE00/Data_Mem/Mem2  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE00/Inst_Mem/Inst_Rom  has unconnected pin ena
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE01/Data_Mem/Mem0  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE01/Data_Mem/Mem1  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE01/Data_Mem/Mem2  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE01/Inst_Mem/Inst_Rom  has unconnected pin ena
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE10/Data_Mem/Mem0  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE10/Data_Mem/Mem1  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE10/Data_Mem/Mem2  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE10/Inst_Mem/Inst_Rom  has unconnected pin ena
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE11/Data_Mem/Mem0  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE11/Data_Mem/Mem1  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE11/Data_Mem/Mem2  has unconnected pin enb
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Torus2x2/PE11/Inst_Mem/Inst_Rom  has unconnected pin ena
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:58 . Memory (MB): peak = 703.867 ; gain = 539.699
+---------------------------------------------------------------------------------
+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:58 . Memory (MB): peak = 703.867 ; gain = 539.699
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 703.867 ; gain = 539.699
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register:
++------------+------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|cgra2x2     | BramIF/CGRA_Cnt_Reg3_reg[15] | 4      | 15    | YES          | NO                 | NO                | 15     | 0       | 
++------------+------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |SP_Inst_Mem   |         4|
+|2     |TDP_Data_Mem  |        12|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |SP_Inst_Mem      |     1|
+|2     |SP_Inst_Mem__4   |     1|
+|3     |SP_Inst_Mem__5   |     1|
+|4     |SP_Inst_Mem__6   |     1|
+|5     |TDP_Data_Mem     |     1|
+|6     |TDP_Data_Mem__10 |     1|
+|7     |TDP_Data_Mem__11 |     1|
+|8     |TDP_Data_Mem__12 |     1|
+|9     |TDP_Data_Mem__13 |     1|
+|10    |TDP_Data_Mem__14 |     1|
+|11    |TDP_Data_Mem__4  |     1|
+|12    |TDP_Data_Mem__5  |     1|
+|13    |TDP_Data_Mem__6  |     1|
+|14    |TDP_Data_Mem__7  |     1|
+|15    |TDP_Data_Mem__8  |     1|
+|16    |TDP_Data_Mem__9  |     1|
+|17    |BUFG             |     1|
+|18    |CARRY4           |   164|
+|19    |DSP48E1_1        |     4|
+|20    |LUT1             |   148|
+|21    |LUT2             |   419|
+|22    |LUT3             |   588|
+|23    |LUT4             |   646|
+|24    |LUT5             |   403|
+|25    |LUT6             |  1281|
+|26    |SRL16E           |    15|
+|27    |FDCE             |  4473|
+|28    |FDRE             |   275|
+|29    |IBUF             |   112|
+|30    |OBUF             |   281|
++------+-----------------+------+
+
+Report Instance Areas: 
++------+---------------+--------------------+------+
+|      |Instance       |Module              |Cells |
++------+---------------+--------------------+------+
+|1     |top            |                    | 19178|
+|2     |  BramIF       |BramIF              |   131|
+|3     |  Torus2x2     |Torus2x2            | 18649|
+|4     |    PE11       |PE                  |  4579|
+|5     |      Inst_Mem |Inst_Mem            |   309|
+|6     |      ALU      |ALU_4               |  1098|
+|7     |        MulAdd |MulAdd_5            |    98|
+|8     |      Data_Mem |Data_Mem            |  2304|
+|9     |    PE00       |PEIO__xdcDup__1     |  4746|
+|10    |      Inst_Mem |Inst_Mem__xdcDup__1 |   309|
+|11    |      ALU      |ALU_2               |  1099|
+|12    |        MulAdd |MulAdd_3            |    99|
+|13    |      Data_Mem |Data_Mem__xdcDup__1 |  2304|
+|14    |    PE01       |PEIO                |  4745|
+|15    |      Inst_Mem |Inst_Mem__xdcDup__2 |   309|
+|16    |      ALU      |ALU_0               |  1098|
+|17    |        MulAdd |MulAdd_1            |    98|
+|18    |      Data_Mem |Data_Mem__xdcDup__2 |  2304|
+|19    |    PE10       |PE__xdcDup__1       |  4579|
+|20    |      Inst_Mem |Inst_Mem__xdcDup__3 |   309|
+|21    |      ALU      |ALU                 |  1098|
+|22    |        MulAdd |MulAdd              |    98|
+|23    |      Data_Mem |Data_Mem__xdcDup__3 |  2304|
++------+---------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:59 . Memory (MB): peak = 703.867 ; gain = 539.699
+---------------------------------------------------------------------------------
+
+Synthesis finished with 0 errors, 16 critical warnings and 234 warnings.
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:59 . Memory (MB): peak = 703.867 ; gain = 539.699
+INFO: [Netlist 29-17] Analyzing 116 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s).
+INFO: [Memdata 28-143] Successfully populated the BRAM INIT strings from the following elf files: 
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+42 Infos, 203 Warnings, 16 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:04 ; elapsed = 00:01:11 . Memory (MB): peak = 948.797 ; gain = 748.418
+# write_checkpoint cgra2x2.dcp
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+# report_utilization -file cgra2x2_utilization_synth.rpt -pb cgra2x2_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.150 . Memory (MB): peak = 948.797 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 21 19:21:42 2014...

@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Thu Jun 12 15:16:53 2014
+# Process ID: 32512
+# Log file: D:/minibench/scgra/zc706/cgra2x2-tuning/planAhead.log
+# Journal file: D:/minibench/scgra/zc706/cgra2x2-tuning\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra\zc706\cgra2x2-tuning\cgra2x2-tuning.ppr}
+file delete -force D:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/constrs_1/new/top.ucf
+remove_files -fileset constrs_1 D:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/constrs_1/new/top.ucf
+delete_fileset constrs_2
+remove_files D:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/new/scgra-top.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+open_run synth_1 -name netlist_1
+add_files -norecurse D:/minibench/scgra/zc706/cgra2x2-tuning/cgra2x2-tuning.srcs/sources_1/new/scgra_top.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close_design
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+open_run synth_1 -name netlist_1
+set_property strategy {XST Defaults} [get_runs synth_1]
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+close_design
+open_run synth_1 -name netlist_1

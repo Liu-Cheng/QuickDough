@@ -1,0 +1,6 @@
+19:59:51 **** Build of project sobel4x8_bsp ****
+make -k all 
+'Finished building libraries'
+
+19:59:51 Build Finished (took 122ms)
+

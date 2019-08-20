@@ -1,0 +1,38 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\EDA\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe -intstyle
+ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc7z020-clg400-1 top.ngc top.ngd
+
+Reading NGO file "D:/minibench/scgra-v1/cgra2x2-1k-hf/top.ngc" ...
+Loading design module "ipcore_dir/TDP_Data_Mem.ngc"...
+Loading design module "ipcore_dir/SP_Inst_Mem.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:478 - clock net Resetn_inv_BUFG with clock driver
+   Resetn_inv_BUFG drives no clock pins
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 232900 kilobytes
+
+Writing NGD file "top.ngd" ...
+Total REAL time to NGDBUILD completion:  17 sec
+Total CPU time to NGDBUILD completion:   17 sec
+
+Writing NGDBUILD log file "top.bld"...

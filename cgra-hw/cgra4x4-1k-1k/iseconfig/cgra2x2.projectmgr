@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="cgra2x2" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/PE00 C:|Users|Liucheng|Documents|project|cgra2x2|src|PE00.v/Inst_Mem - Inst_Mem00</ClosedNode>
+         <ClosedNode>/PE00 C:|Users|Liucheng|Documents|project|cgra2x2|src|PE00.v/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/PE01 C:|Users|Liucheng|Documents|project|cgra2x2|src|PE01.v</ClosedNode>
+         <ClosedNode>/PE10 C:|Users|Liucheng|Documents|project|cgra2x2|src|PE10.v</ClosedNode>
+         <ClosedNode>/PE11 C:|Users|Liucheng|Documents|project|cgra2x2|src|PE11.v</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/cgra - torus2x2/PE00 - PE00</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/cgra - torus2x2/PE01 - PE01</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/cgra - torus2x2/PE10 - PE10</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/cgra - torus2x2/PE11 - PE11</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE00 - PE00/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE00 - PE00/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE01 - PE01/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE01 - PE01/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE10 - PE10/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE10 - PE10/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE11 - PE11/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|project|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE11 - PE11/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE00 - PE00</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE00 - PE00/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE00 - PE00/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE01 - PE01</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE01 - PE01/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE01 - PE01/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE10 - PE</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE10 - PE/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE10 - PE/Inst_Mem - Inst_Mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE10 - PE/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE11 - PE</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE11 - PE/ALU - ALU</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE11 - PE/Inst_Mem - Inst_Mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra2x2.v/torus2x2 - torus2x2/PE11 - PE/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/cgra2x2 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus2x2 - torus2x2</ClosedNode>
+         <ClosedNode>/cgra2x2 D:|minibench|scgra-pipeline0|cgra2x2|src|cgra2x2.v/BramIF - BramIF</ClosedNode>
+         <ClosedNode>/cgra2x2 D:|minibench|scgra-pipeline0|cgra2x2|src|cgra2x2.v/Torus2x2 - Torus2x2/PE00 - PEIO/Inst_Mem - Inst_Mem</ClosedNode>
+         <ClosedNode>/cgra2x2 D:|minibench|scgra-pipeline0|cgra2x2|src|cgra2x2.v/Torus2x2 - Torus2x2/PE01 - PEIO</ClosedNode>
+         <ClosedNode>/cgra2x2 D:|minibench|scgra-pipeline0|cgra2x2|src|cgra2x2.v/Torus2x2 - Torus2x2/PE10 - PE</ClosedNode>
+         <ClosedNode>/cgra2x2 D:|minibench|scgra-pipeline0|cgra2x2|src|cgra2x2.v/Torus2x2 - Torus2x2/PE11 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE00 - PE00</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE01 - PE01</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE02 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE03 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE10 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE11 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE12 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE13 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE20 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE21 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE22 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE23 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE30 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE31 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE32 - PE</ClosedNode>
+         <ClosedNode>/cgra4x4 C:|Users|Liucheng|Documents|scgra|cgra2x2|src|cgra4x4.v/torus4x4 - torus4x4/PE33 - PE</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE00 - PE00</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE01 - PE01</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE01 - PE01/ALU - ALU</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE01 - PE01/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE10 - PE10/ALU - ALU</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE10 - PE10/Inst_Mem - Inst_Mem10</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE10 - PE10/data_mem - data_mem</ClosedNode>
+         <ClosedNode>/top C:|Users|Liucheng|Documents|project|cgra2x2|src|top.v/cgra - torus2x2/PE11 - PE11</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Mul - Mul (D:/minibench/scgra-250MHz/cgra2x2/ipcore_dir/Mul.xco)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000116000000020000000000000000000000000200000064ffffffff000000810000000300000002000001160000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>Mul - Mul (D:/minibench/scgra-250MHz/cgra2x2/ipcore_dir/Mul.xco)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000190000000010000000100000000000000000000000064ffffffff000000810000000000000001000001900000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000303000000040101000100000000000000000000000064ffffffff000000810000000000000004000001540000000100000000000000c40000000100000000000000660000000100000000000000850000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>D:\minibench\scgra-250MHz\cgra2x2\ipcore_dir\Addr_Buffer0.xco</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>CORE Generator</ClosedNode>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000018c000000010000000100000000000000000000000064ffffffff0000008100000000000000010000018c0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>CORE Generator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000018c000000010000000100000000000000000000000064ffffffff0000008100000000000000010000018c0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <SourceProcessView>000000ff0000000000000002000000da0000012101000000050100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
+   <CopyAdditionalFiles/>
+</Project>

@@ -1,0 +1,17 @@
+##############################################################################
+## Filename:          D:\minibench\scgra\scgra2x2_1k\scgra2x2_1k.srcs\sources_1\edk\base_sys\pcores/cgra2x2_v1_00_a/data/cgra2x2_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed Apr 16 15:10:35 2014 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib cgra2x2_v1_00_a MulAdd verilog
+lib cgra2x2_v1_00_a TDP_Data_Mem verilog
+lib cgra2x2_v1_00_a SP_Inst_Mem verilog
+lib cgra2x2_v1_00_a Inst_Mem verilog
+lib cgra2x2_v1_00_a Data_Mem verilog
+lib cgra2x2_v1_00_a ALU verilog
+lib cgra2x2_v1_00_a PEIO verilog
+lib cgra2x2_v1_00_a PE verilog
+lib cgra2x2_v1_00_a Torus2x2 verilog
+lib cgra2x2_v1_00_a BramIF verilog
+lib cgra2x2_v1_00_a cgra2x2 verilog

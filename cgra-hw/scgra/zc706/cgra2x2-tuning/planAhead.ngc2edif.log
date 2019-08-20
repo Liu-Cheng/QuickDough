@@ -1,0 +1,115 @@
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design cgra2x2.ngc ...
+WARNING:NetListWriters:298 - No output is written to cgra2x2.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO3 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block
+   PE_NO1 is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE_NO1 is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO2 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block PE is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO1 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU is not
+   reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file cgra2x2.edif ...
+ngc2edif: Total memory usage is 98832 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design scgra_top.ngc ...
+WARNING:NetListWriters:298 - No output is written to scgra_top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO3 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block
+   PE_NO1 is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE_NO1 is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO2 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block PE is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO1 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU is not
+   reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file scgra_top.edif ...
+ngc2edif: Total memory usage is 98128 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design scgra_top.ngc ...
+WARNING:NetListWriters:298 - No output is written to scgra_top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file scgra_top.edif ...
+ngc2edif: Total memory usage is 99216 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design scgra_top.ngc ...
+WARNING:NetListWriters:298 - No output is written to scgra_top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file scgra_top.edif ...
+ngc2edif: Total memory usage is 99152 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design scgra_top.ngc ...
+WARNING:NetListWriters:298 - No output is written to scgra_top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO3 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block
+   PE_NO1 is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE_NO1 is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO2 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out_Reg0<67 : 0> on block PE is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus Inst_Mem_Out<67 : 0> on block PE is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU_NO1 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ALU_In0_Reg0[31]_Shift_Sel[0]_and_39_OUT<31 : 0> on block ALU is not
+   reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file scgra_top.edif ...
+ngc2edif: Total memory usage is 98064 kilobytes
+

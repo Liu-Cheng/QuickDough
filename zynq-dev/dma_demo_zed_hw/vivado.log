@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon Oct  3 16:59:53 2016
+# Process ID: 2151
+# Current directory: /home/liucheng/research/zynq-dev/dma_demo_zed_hw
+# Command line: vivado dma_demo.xpr
+# Log file: /home/liucheng/research/zynq-dev/dma_demo_zed_hw/vivado.log
+# Journal file: /home/liucheng/research/zynq-dev/dma_demo_zed_hw/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project dma_demo.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory '/home/liucheng/research/zynq-dev/ip_repo'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/liucheng/research/zynq-dev/ip_repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'base_sys.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+base_sys_acc_ip_0_0
+base_sys_usr_dma_0_0
+
+open_project: Time (s): cpu = 00:01:58 ; elapsed = 00:01:09 . Memory (MB): peak = 5895.359 ; gain = 148.805 ; free physical = 4833 ; free virtual = 14323
+update_compile_order -fileset sources_1
+launch_sdk -workspace /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk/base_sys_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk/base_sys_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk/base_sys_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk/base_sys_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  3 17:07:11 2016...

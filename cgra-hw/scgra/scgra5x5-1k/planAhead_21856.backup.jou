@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sat Jun 21 23:35:45 2014
+# Process ID: 172944
+# Log file: D:/minibench/scgra/scgra5x5-1k/planAhead.log
+# Journal file: D:/minibench/scgra/scgra5x5-1k\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra\scgra5x5-1k\scgra5x5-1k.ppr}
+launch_sdk -workspace D:/minibench/scgra/scgra5x5-1k/scgra5x5-1k.sdk/SDK/SDK_Export -hwspec D:/minibench/scgra/scgra5x5-1k/scgra5x5-1k.sdk/SDK/SDK_Export/hw/base_sys.xml

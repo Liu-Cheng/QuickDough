@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Thu Jun 19 15:40:07 2014
+# Process ID: 142876
+# Log file: D:/minibench/vivado_hls/hls-ip/fir-small/unroll-2x50/impl/ip/vivado.log
+# Journal file: D:/minibench/vivado_hls/hls-ip/fir-small/unroll-2x50/impl/ip\vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

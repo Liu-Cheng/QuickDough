@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed May 21 17:06:12 2014
+# Process ID: 111236
+# Log file: D:/minibench/scgra/cgra2x2_verify/planAhead.log
+# Journal file: D:/minibench/scgra/cgra2x2_verify\planAhead.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:\minibench\scgra\cgra2x2_verify\cgra2x2_verify.ppr}
+update_compile_order -fileset sources_1
+save_project_as cgra3x3_verify D:/minibench/scgra/cgra3x3_verify -force
+remove_files D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/cgra2x2.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files {D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE10.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE11.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE00.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE01.v}
+update_compile_order -fileset sources_1
+remove_files {D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem11.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem10.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem01.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/inst_mem00.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/ALU.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/data_mem.v}
+remove_files D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/torus2x2.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/New_ALU.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files {D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/MulAdd.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/BramIF.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse {D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/ALU.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/BramIF.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem00.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem01.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem10.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem11.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/MulAdd.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE00.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE01.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE02.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE10.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE11.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE12.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE20.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE21.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/PE22.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Torus3x3.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/cgra3x3.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/data_mem.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file delete -force D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_13
+remove_files D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_13/TrueDualPortBram256.xci
+update_compile_order -fileset sources_1
+file delete -force D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0
+remove_files D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_0/rom00.xci
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse {D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem02.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem12.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem20.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem21.v D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem22.v}
+update_compile_order -fileset sources_1
+add_files -norecurse D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/new/Inst_Mem02.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file delete -force D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1 D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2 D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3
+remove_files {D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_1/rom01.xci D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_2/rom10.xci D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_3/rom11.xci}
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+reset_target  instantiation_template  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/addr_buffer0.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_6/addr_buffer0.xci]
+reset_target  instantiation_template  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/addr_buffer1.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_7/addr_buffer1.xci]
+reset_target  instantiation_template  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_4/data_buffer0.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_4/data_buffer0.xci]
+reset_target  instantiation_template  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_5/data_buffer1.xci]
+generate_target  {synthesis instantiation_template simulation}  [get_files  D:/minibench/scgra/cgra3x3_verify/cgra3x3_verify.srcs/sources_1/ip/blk_mem_gen_v7_3_5/data_buffer1.xci]
+launch_isim -simset sim_1 -mode behavioral
+launch_isim -simset sim_1 -mode behavioral

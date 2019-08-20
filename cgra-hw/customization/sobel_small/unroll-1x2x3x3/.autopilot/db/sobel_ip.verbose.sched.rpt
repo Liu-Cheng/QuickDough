@@ -1,0 +1,4175 @@
+
+
+================================================================
+== Vivado HLS Report for 'sobel_ip'
+================================================================
+* Date:           Tue Mar 24 16:11:15 2015
+
+* Version:        2013.3 (build date: Wed Oct 16 18:12:55 PM 2013)
+* Project:        sobel_small
+* Solution:       unroll-1x2x3x3
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.73|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  3261|  3261|  3262|  3262|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+------+------+----------+-----------+-----------+------+----------+
+        |                   |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1           |    33|    33|        11|          -|          -|     3|    no    |
+        | + Loop 1.1        |     9|     9|         3|          -|          -|     3|    no    |
+        |- sobel_ip_label3  |  3220|  3220|        46|         25|          1|   128|    yes   |
+        +-------------------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 25, depth = 46
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 57
+* Pipeline: 1
+  Pipeline-0: II = 25, D = 46, States = { 11 48 49 50 51 52 53 54 55 56 57 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	6  / (exitcond1)
+	3  / (!exitcond1)
+3 --> 
+	2  / (exitcond3)
+	4  / (!exitcond3)
+4 --> 
+	5  / true
+5 --> 
+	3  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	47  / (exitcond2)
+	48  / (!exitcond2)
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	11  / true
+47 --> 
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	12  / true
+* FSM state operations: 
+
+ <State 1>: 1.30ns
+ST_1: stg_48 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([274 x i32]* %sub_in) nounwind, !map !0
+
+ST_1: stg_49 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap([256 x i32]* %sub_out) nounwind, !map !6
+
+ST_1: stg_50 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @str) nounwind
+
+ST_1: Gx [1/1] 0.00ns
+:3  %Gx = alloca [9 x i32], align 4
+
+ST_1: Gy [1/1] 0.00ns
+:4  %Gy = alloca [9 x i32], align 4
+
+ST_1: stg_53 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecMemCore([256 x i32]* %sub_out, [1 x i8]* @p_str, [12 x i8]* @p_str1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
+
+ST_1: stg_54 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecMemCore([274 x i32]* %sub_in, [1 x i8]* @p_str, [12 x i8]* @p_str1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
+
+ST_1: stg_55 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecIFCore(i32 0, [1 x i8]* @p_str, [10 x i8]* @p_str2, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [17 x i8]* @p_str3) nounwind
+
+ST_1: stg_56 [1/1] 1.30ns
+:8  br label %.loopexit
+
+
+ <State 2>: 2.39ns
+ST_2: i [1/1] 0.00ns
+.loopexit:0  %i = phi i2 [ 0, %0 ], [ %i_2, %1 ]
+
+ST_2: i_cast [1/1] 0.00ns
+.loopexit:1  %i_cast = zext i2 %i to i5
+
+ST_2: exitcond1 [1/1] 1.36ns
+.loopexit:2  %exitcond1 = icmp eq i2 %i, -1
+
+ST_2: empty [1/1] 0.00ns
+.loopexit:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind
+
+ST_2: i_2 [1/1] 0.80ns
+.loopexit:4  %i_2 = add i2 %i, 1
+
+ST_2: stg_62 [1/1] 0.00ns
+.loopexit:5  br i1 %exitcond1, label %.preheader.preheader, label %.preheader10
+
+ST_2: p_shl [1/1] 0.00ns
+.preheader10:0  %p_shl = call i4 @_ssdm_op_BitConcatenate.i4.i2.i2(i2 %i, i2 0)
+
+ST_2: p_shl_cast [1/1] 0.00ns
+.preheader10:1  %p_shl_cast = zext i4 %p_shl to i5
+
+ST_2: tmp [1/1] 0.80ns
+.preheader10:2  %tmp = sub i5 %p_shl_cast, %i_cast
+
+ST_2: tmp_cast [1/1] 0.00ns
+.preheader10:3  %tmp_cast = sext i5 %tmp to i9
+
+ST_2: stg_67 [1/1] 1.30ns
+.preheader10:4  br label %1
+
+ST_2: Gx_addr_1 [1/1] 0.00ns
+.preheader.preheader:0  %Gx_addr_1 = getelementptr [9 x i32]* %Gx, i64 0, i64 0
+
+ST_2: Gx_load [2/2] 2.39ns
+.preheader.preheader:1  %Gx_load = load i32* %Gx_addr_1, align 16
+
+ST_2: Gy_addr_1 [1/1] 0.00ns
+.preheader.preheader:2  %Gy_addr_1 = getelementptr [9 x i32]* %Gy, i64 0, i64 0
+
+ST_2: Gy_load [2/2] 2.39ns
+.preheader.preheader:3  %Gy_load = load i32* %Gy_addr_1, align 16
+
+
+ <State 3>: 4.23ns
+ST_3: j [1/1] 0.00ns
+:0  %j = phi i2 [ %j_1, %2 ], [ 0, %.preheader10 ]
+
+ST_3: j_cast [1/1] 0.00ns
+:1  %j_cast = zext i2 %j to i9
+
+ST_3: exitcond3 [1/1] 1.36ns
+:2  %exitcond3 = icmp eq i2 %j, -1
+
+ST_3: empty_40 [1/1] 0.00ns
+:3  %empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind
+
+ST_3: j_1 [1/1] 0.80ns
+:4  %j_1 = add i2 %j, 1
+
+ST_3: stg_77 [1/1] 0.00ns
+:5  br i1 %exitcond3, label %.loopexit, label %2
+
+ST_3: tmp3 [1/1] 0.00ns
+:0  %tmp3 = call i9 @_ssdm_op_BitConcatenate.i9.i7.i2(i7 -64, i2 %j)
+
+ST_3: tmp_8 [1/1] 1.84ns
+:1  %tmp_8 = add i9 %tmp3, %tmp_cast
+
+ST_3: tmp_9 [1/1] 0.00ns
+:2  %tmp_9 = zext i9 %tmp_8 to i64
+
+ST_3: sub_in_addr [1/1] 0.00ns
+:3  %sub_in_addr = getelementptr [274 x i32]* %sub_in, i64 0, i64 %tmp_9
+
+ST_3: sub_in_load [2/2] 2.39ns
+:4  %sub_in_load = load i32* %sub_in_addr, align 4
+
+ST_3: tmp_trn_cast [1/1] 0.00ns
+:5  %tmp_trn_cast = zext i2 %j to i6
+
+ST_3: p_addr_cast [1/1] 0.00ns
+:6  %p_addr_cast = sext i5 %tmp to i6
+
+ST_3: p_addr1 [1/1] 1.72ns
+:7  %p_addr1 = add i6 %p_addr_cast, %tmp_trn_cast
+
+ST_3: tmp4 [1/1] 1.84ns
+:12  %tmp4 = add i9 %j_cast, -247
+
+ST_3: tmp_7 [1/1] 1.84ns
+:13  %tmp_7 = add i9 %tmp4, %tmp_cast
+
+
+ <State 4>: 2.39ns
+ST_4: sub_in_load [1/2] 2.39ns
+:4  %sub_in_load = load i32* %sub_in_addr, align 4
+
+ST_4: tmp_10 [1/1] 0.00ns
+:14  %tmp_10 = zext i9 %tmp_7 to i64
+
+ST_4: sub_in_addr_1 [1/1] 0.00ns
+:15  %sub_in_addr_1 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %tmp_10
+
+ST_4: sub_in_load_1 [2/2] 2.39ns
+:16  %sub_in_load_1 = load i32* %sub_in_addr_1, align 4
+
+
+ <State 5>: 4.78ns
+ST_5: p_addr1_cast [1/1] 0.00ns
+:8  %p_addr1_cast = sext i6 %p_addr1 to i32
+
+ST_5: tmp_47 [1/1] 0.00ns
+:9  %tmp_47 = zext i32 %p_addr1_cast to i64
+
+ST_5: Gx_addr [1/1] 0.00ns
+:10  %Gx_addr = getelementptr [9 x i32]* %Gx, i64 0, i64 %tmp_47
+
+ST_5: stg_95 [1/1] 2.39ns
+:11  store i32 %sub_in_load, i32* %Gx_addr, align 4
+
+ST_5: sub_in_load_1 [1/2] 2.39ns
+:16  %sub_in_load_1 = load i32* %sub_in_addr_1, align 4
+
+ST_5: Gy_addr [1/1] 0.00ns
+:17  %Gy_addr = getelementptr [9 x i32]* %Gy, i64 0, i64 %tmp_47
+
+ST_5: stg_98 [1/1] 2.39ns
+:18  store i32 %sub_in_load_1, i32* %Gy_addr, align 4
+
+ST_5: stg_99 [1/1] 0.00ns
+:19  br label %1
+
+
+ <State 6>: 2.39ns
+ST_6: Gx_load [1/2] 2.39ns
+.preheader.preheader:1  %Gx_load = load i32* %Gx_addr_1, align 16
+
+ST_6: Gy_load [1/2] 2.39ns
+.preheader.preheader:3  %Gy_load = load i32* %Gy_addr_1, align 16
+
+ST_6: Gx_addr_2 [1/1] 0.00ns
+.preheader.preheader:4  %Gx_addr_2 = getelementptr [9 x i32]* %Gx, i64 0, i64 1
+
+ST_6: Gx_load_1 [2/2] 2.39ns
+.preheader.preheader:5  %Gx_load_1 = load i32* %Gx_addr_2, align 4
+
+ST_6: Gy_addr_2 [1/1] 0.00ns
+.preheader.preheader:6  %Gy_addr_2 = getelementptr [9 x i32]* %Gy, i64 0, i64 1
+
+ST_6: Gy_load_1 [2/2] 2.39ns
+.preheader.preheader:7  %Gy_load_1 = load i32* %Gy_addr_2, align 4
+
+ST_6: Gx_addr_3 [1/1] 0.00ns
+.preheader.preheader:8  %Gx_addr_3 = getelementptr [9 x i32]* %Gx, i64 0, i64 2
+
+ST_6: Gx_load_2 [2/2] 2.39ns
+.preheader.preheader:9  %Gx_load_2 = load i32* %Gx_addr_3, align 8
+
+ST_6: Gy_addr_3 [1/1] 0.00ns
+.preheader.preheader:10  %Gy_addr_3 = getelementptr [9 x i32]* %Gy, i64 0, i64 2
+
+ST_6: Gy_load_2 [2/2] 2.39ns
+.preheader.preheader:11  %Gy_load_2 = load i32* %Gy_addr_3, align 8
+
+
+ <State 7>: 2.39ns
+ST_7: Gx_load_1 [1/2] 2.39ns
+.preheader.preheader:5  %Gx_load_1 = load i32* %Gx_addr_2, align 4
+
+ST_7: Gy_load_1 [1/2] 2.39ns
+.preheader.preheader:7  %Gy_load_1 = load i32* %Gy_addr_2, align 4
+
+ST_7: Gx_load_2 [1/2] 2.39ns
+.preheader.preheader:9  %Gx_load_2 = load i32* %Gx_addr_3, align 8
+
+ST_7: Gy_load_2 [1/2] 2.39ns
+.preheader.preheader:11  %Gy_load_2 = load i32* %Gy_addr_3, align 8
+
+ST_7: Gx_addr_4 [1/1] 0.00ns
+.preheader.preheader:12  %Gx_addr_4 = getelementptr [9 x i32]* %Gx, i64 0, i64 3
+
+ST_7: Gx_load_3 [2/2] 2.39ns
+.preheader.preheader:13  %Gx_load_3 = load i32* %Gx_addr_4, align 4
+
+ST_7: Gy_addr_4 [1/1] 0.00ns
+.preheader.preheader:14  %Gy_addr_4 = getelementptr [9 x i32]* %Gy, i64 0, i64 3
+
+ST_7: Gy_load_3 [2/2] 2.39ns
+.preheader.preheader:15  %Gy_load_3 = load i32* %Gy_addr_4, align 4
+
+ST_7: Gx_addr_5 [1/1] 0.00ns
+.preheader.preheader:16  %Gx_addr_5 = getelementptr [9 x i32]* %Gx, i64 0, i64 4
+
+ST_7: Gx_load_4 [2/2] 2.39ns
+.preheader.preheader:17  %Gx_load_4 = load i32* %Gx_addr_5, align 4
+
+ST_7: Gy_addr_5 [1/1] 0.00ns
+.preheader.preheader:18  %Gy_addr_5 = getelementptr [9 x i32]* %Gy, i64 0, i64 4
+
+ST_7: Gy_load_4 [2/2] 2.39ns
+.preheader.preheader:19  %Gy_load_4 = load i32* %Gy_addr_5, align 4
+
+
+ <State 8>: 2.39ns
+ST_8: Gx_load_3 [1/2] 2.39ns
+.preheader.preheader:13  %Gx_load_3 = load i32* %Gx_addr_4, align 4
+
+ST_8: Gy_load_3 [1/2] 2.39ns
+.preheader.preheader:15  %Gy_load_3 = load i32* %Gy_addr_4, align 4
+
+ST_8: Gx_load_4 [1/2] 2.39ns
+.preheader.preheader:17  %Gx_load_4 = load i32* %Gx_addr_5, align 4
+
+ST_8: Gy_load_4 [1/2] 2.39ns
+.preheader.preheader:19  %Gy_load_4 = load i32* %Gy_addr_5, align 4
+
+ST_8: Gx_addr_6 [1/1] 0.00ns
+.preheader.preheader:20  %Gx_addr_6 = getelementptr [9 x i32]* %Gx, i64 0, i64 5
+
+ST_8: Gx_load_5 [2/2] 2.39ns
+.preheader.preheader:21  %Gx_load_5 = load i32* %Gx_addr_6, align 4
+
+ST_8: Gy_addr_6 [1/1] 0.00ns
+.preheader.preheader:22  %Gy_addr_6 = getelementptr [9 x i32]* %Gy, i64 0, i64 5
+
+ST_8: Gy_load_5 [2/2] 2.39ns
+.preheader.preheader:23  %Gy_load_5 = load i32* %Gy_addr_6, align 4
+
+ST_8: Gx_addr_7 [1/1] 0.00ns
+.preheader.preheader:24  %Gx_addr_7 = getelementptr [9 x i32]* %Gx, i64 0, i64 6
+
+ST_8: Gx_load_6 [2/2] 2.39ns
+.preheader.preheader:25  %Gx_load_6 = load i32* %Gx_addr_7, align 8
+
+ST_8: Gy_addr_7 [1/1] 0.00ns
+.preheader.preheader:26  %Gy_addr_7 = getelementptr [9 x i32]* %Gy, i64 0, i64 6
+
+ST_8: Gy_load_6 [2/2] 2.39ns
+.preheader.preheader:27  %Gy_load_6 = load i32* %Gy_addr_7, align 8
+
+
+ <State 9>: 2.39ns
+ST_9: Gx_load_5 [1/2] 2.39ns
+.preheader.preheader:21  %Gx_load_5 = load i32* %Gx_addr_6, align 4
+
+ST_9: Gy_load_5 [1/2] 2.39ns
+.preheader.preheader:23  %Gy_load_5 = load i32* %Gy_addr_6, align 4
+
+ST_9: Gx_load_6 [1/2] 2.39ns
+.preheader.preheader:25  %Gx_load_6 = load i32* %Gx_addr_7, align 8
+
+ST_9: Gy_load_6 [1/2] 2.39ns
+.preheader.preheader:27  %Gy_load_6 = load i32* %Gy_addr_7, align 8
+
+ST_9: Gx_addr_8 [1/1] 0.00ns
+.preheader.preheader:28  %Gx_addr_8 = getelementptr [9 x i32]* %Gx, i64 0, i64 7
+
+ST_9: Gx_load_7 [2/2] 2.39ns
+.preheader.preheader:29  %Gx_load_7 = load i32* %Gx_addr_8, align 4
+
+ST_9: Gy_addr_8 [1/1] 0.00ns
+.preheader.preheader:30  %Gy_addr_8 = getelementptr [9 x i32]* %Gy, i64 0, i64 7
+
+ST_9: Gy_load_7 [2/2] 2.39ns
+.preheader.preheader:31  %Gy_load_7 = load i32* %Gy_addr_8, align 4
+
+ST_9: Gx_addr_9 [1/1] 0.00ns
+.preheader.preheader:32  %Gx_addr_9 = getelementptr [9 x i32]* %Gx, i64 0, i64 8
+
+ST_9: Gx_load_8 [2/2] 2.39ns
+.preheader.preheader:33  %Gx_load_8 = load i32* %Gx_addr_9, align 8
+
+ST_9: Gy_addr_9 [1/1] 0.00ns
+.preheader.preheader:34  %Gy_addr_9 = getelementptr [9 x i32]* %Gy, i64 0, i64 8
+
+ST_9: Gy_load_8 [2/2] 2.39ns
+.preheader.preheader:35  %Gy_load_8 = load i32* %Gy_addr_9, align 8
+
+
+ <State 10>: 2.39ns
+ST_10: Gx_load_7 [1/2] 2.39ns
+.preheader.preheader:29  %Gx_load_7 = load i32* %Gx_addr_8, align 4
+
+ST_10: Gy_load_7 [1/2] 2.39ns
+.preheader.preheader:31  %Gy_load_7 = load i32* %Gy_addr_8, align 4
+
+ST_10: Gx_load_8 [1/2] 2.39ns
+.preheader.preheader:33  %Gx_load_8 = load i32* %Gx_addr_9, align 8
+
+ST_10: Gy_load_8 [1/2] 2.39ns
+.preheader.preheader:35  %Gy_load_8 = load i32* %Gy_addr_9, align 8
+
+ST_10: stg_150 [1/1] 1.39ns
+.preheader.preheader:36  br label %.preheader
+
+
+ <State 11>: 2.00ns
+ST_11: i_1 [1/1] 0.00ns
+.preheader:0  %i_1 = phi i8 [ %i_3, %._crit_edge.0.0.0_ifconv ], [ 0, %.preheader.preheader ]
+
+ST_11: exitcond2 [1/1] 2.00ns
+.preheader:1  %exitcond2 = icmp eq i8 %i_1, -128
+
+ST_11: i_3 [1/1] 1.72ns
+.preheader:2  %i_3 = add i8 %i_1, 1
+
+ST_11: stg_154 [1/1] 0.00ns
+.preheader:3  br i1 %exitcond2, label %3, label %._crit_edge.0.0.0_ifconv
+
+
+ <State 12>: 1.84ns
+ST_12: tmp_41 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:160  %tmp_41 = trunc i8 %i_1 to i7
+
+ST_12: tmp_38_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:165  %tmp_38_0_1 = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %tmp_41, i3 3)
+
+ST_12: tmp_38_0_1_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:166  %tmp_38_0_1_cast = zext i10 %tmp_38_0_1 to i11
+
+ST_12: tmp_60_0_1_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:282  %tmp_60_0_1_2 = add i11 %tmp_38_0_1_cast, 1
+
+ST_12: tmp_57 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:283  %tmp_57 = trunc i11 %tmp_60_0_1_2 to i2
+
+ST_12: adjSize503_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:284  %adjSize503_cast = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %tmp_60_0_1_2, i32 2, i32 10)
+
+
+ <State 13>: 7.63ns
+ST_13: mem_index_gep8 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:285  %mem_index_gep8 = add i9 %adjSize503_cast, 72
+
+ST_13: addrCmp13 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:286  %addrCmp13 = icmp ult i9 %mem_index_gep8, -166
+
+ST_13: gepindex21 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:287  %gepindex21 = select i1 %addrCmp13, i9 %adjSize503_cast, i9 -239
+
+ST_13: gepindex2687_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:288  %gepindex2687_cast = zext i9 %gepindex21 to i64
+
+ST_13: sub_in_addr_11 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:289  %sub_in_addr_11 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2687_cast
+
+ST_13: sub_in_load_11 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:290  %sub_in_load_11 = load i32* %sub_in_addr_11, align 4
+
+ST_13: tmp_34_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:588  %tmp_34_1_1 = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %tmp_41, i3 -4)
+
+ST_13: tmp_34_1_1_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:589  %tmp_34_1_1_cast = zext i10 %tmp_34_1_1 to i11
+
+ST_13: tmp_39_1_1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:594  %tmp_39_1_1 = add i11 %tmp_34_1_1_cast, -1
+
+ST_13: tmp_86 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:595  %tmp_86 = trunc i11 %tmp_39_1_1 to i2
+
+ST_13: tmp_87 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:596  %tmp_87 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %tmp_39_1_1, i32 2, i32 10)
+
+
+ <State 14>: 7.44ns
+ST_14: sel_tmp [1/1] 2.00ns
+._crit_edge.0.0.0_ifconv:34  %sel_tmp = icmp eq i8 %i_1, 127
+
+ST_14: sel_tmp1 [1/1] 2.00ns
+._crit_edge.0.0.0_ifconv:35  %sel_tmp1 = icmp eq i8 %i_1, 0
+
+ST_14: sel_tmp2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:36  %sel_tmp2 = or i1 %sel_tmp, %sel_tmp1
+
+ST_14: sub_in_load_11 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:290  %sub_in_load_11 = load i32* %sub_in_addr_11, align 4
+
+ST_14: start_pos7 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:291  %start_pos7 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_57, i3 0)
+
+ST_14: start_pos690_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:292  %start_pos690_cast = zext i5 %start_pos7 to i64
+
+ST_14: end_pos7 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:293  %end_pos7 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_57, i3 -1)
+
+ST_14: end_pos691968_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:294  %end_pos691968_cast = zext i5 %end_pos7 to i64
+
+ST_14: call_get_range7 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:295  %call_get_range7 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_11, i64 %start_pos690_cast, i64 %end_pos691968_cast)
+
+ST_14: tmp_58 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:296  %tmp_58 = trunc i32 %call_get_range7 to i8
+
+ST_14: tmp_35_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:590  %tmp_35_1_1 = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %tmp_41, i3 -3)
+
+ST_14: tmp_35_1_1_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:591  %tmp_35_1_1_cast = zext i10 %tmp_35_1_1 to i11
+
+ST_14: tmp_88 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:597  %tmp_88 = sext i9 %tmp_87 to i12
+
+ST_14: mem_index_gep16 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:598  %mem_index_gep16 = add i12 %tmp_88, 72
+
+ST_14: adjSize813_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:599  %adjSize813_cast = zext i12 %mem_index_gep16 to i13
+
+ST_14: addrCmp26 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:600  %addrCmp26 = icmp ult i9 %tmp_87, -72
+
+ST_14: gepindex40 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:601  %gepindex40 = add i13 %adjSize813_cast, -72
+
+ST_14: gepindex41 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:602  %gepindex41 = select i1 %addrCmp26, i13 %gepindex40, i13 273
+
+ST_14: gepindex2819_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:603  %gepindex2819_cast = sext i13 %gepindex41 to i64
+
+ST_14: sub_in_addr_19 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:604  %sub_in_addr_19 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2819_cast
+
+ST_14: sub_in_load_19 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:605  %sub_in_load_19 = load i32* %sub_in_addr_19, align 4
+
+ST_14: tmp_46_1_1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:619  %tmp_46_1_1 = add i11 %tmp_35_1_1_cast, -1
+
+ST_14: tmp_90 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:620  %tmp_90 = trunc i11 %tmp_46_1_1 to i2
+
+ST_14: tmp_91 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:621  %tmp_91 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %tmp_46_1_1, i32 2, i32 10)
+
+
+ <State 15>: 8.47ns
+ST_15: tmp_62_0_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:297  %tmp_62_0_1_2 = zext i8 %tmp_58 to i32
+
+ST_15: tmp_66_0_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:300  %tmp_66_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_62_0_1_2
+
+ST_15: tmp_37_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:592  %tmp_37_1_1 = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %tmp_41, i3 -2)
+
+ST_15: tmp_37_1_1_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:593  %tmp_37_1_1_cast = zext i10 %tmp_37_1_1 to i11
+
+ST_15: sub_in_load_19 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:605  %sub_in_load_19 = load i32* %sub_in_addr_19, align 4
+
+ST_15: start_pos13 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:606  %start_pos13 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_86, i3 0)
+
+ST_15: start_pos822_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:607  %start_pos822_cast = zext i5 %start_pos13 to i64
+
+ST_15: end_pos13 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:608  %end_pos13 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_86, i3 -1)
+
+ST_15: end_pos823979_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:609  %end_pos823979_cast = zext i5 %end_pos13 to i64
+
+ST_15: call_get_range13 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:610  %call_get_range13 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_19, i64 %start_pos822_cast, i64 %end_pos823979_cast)
+
+ST_15: tmp_89 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:611  %tmp_89 = trunc i32 %call_get_range13 to i8
+
+ST_15: tmp_41_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:612  %tmp_41_1_1 = zext i8 %tmp_89 to i32
+
+ST_15: tmp_44_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:613  %tmp_44_1_1 = mul nsw i32 %Gx_load_3, %tmp_41_1_1
+
+ST_15: tmp_45_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:615  %tmp_45_1_1 = mul nsw i32 %Gy_load_3, %tmp_41_1_1
+
+ST_15: tmp_92 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:622  %tmp_92 = sext i9 %tmp_91 to i12
+
+ST_15: mem_index_gep17 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:623  %mem_index_gep17 = add i12 %tmp_92, 72
+
+ST_15: adjSize825_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:624  %adjSize825_cast = zext i12 %mem_index_gep17 to i13
+
+ST_15: addrCmp27 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:625  %addrCmp27 = icmp ult i9 %tmp_91, -72
+
+ST_15: gepindex42 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:626  %gepindex42 = add i13 %adjSize825_cast, -72
+
+ST_15: gepindex43 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:627  %gepindex43 = select i1 %addrCmp27, i13 %gepindex42, i13 273
+
+ST_15: gepindex2831_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:628  %gepindex2831_cast = sext i13 %gepindex43 to i64
+
+ST_15: sub_in_addr_20 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:629  %sub_in_addr_20 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2831_cast
+
+ST_15: sub_in_load_20 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:630  %sub_in_load_20 = load i32* %sub_in_addr_20, align 4
+
+ST_15: tmp_53_1_1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:644  %tmp_53_1_1 = add i11 %tmp_37_1_1_cast, -1
+
+ST_15: tmp_94 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:645  %tmp_94 = trunc i11 %tmp_53_1_1 to i2
+
+ST_15: tmp_95 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:646  %tmp_95 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %tmp_53_1_1, i32 2, i32 10)
+
+
+ <State 16>: 8.47ns
+ST_16: tmp_66_0_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:300  %tmp_66_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_62_0_1_2
+
+ST_16: tmp_37_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:306  %tmp_37_0_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %i_3, i3 2)
+
+ST_16: tmp_37_0_2_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:307  %tmp_37_0_2_cast = zext i11 %tmp_37_0_2 to i12
+
+ST_16: tmp_53_0_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:337  %tmp_53_0_2 = add i12 %tmp_37_0_2_cast, -1
+
+ST_16: tmp_63 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:338  %tmp_63 = trunc i12 %tmp_53_0_2 to i2
+
+ST_16: tmp_64 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:339  %tmp_64 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_53_0_2, i32 2, i32 11)
+
+ST_16: tmp_65 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:340  %tmp_65 = sext i10 %tmp_64 to i12
+
+ST_16: mem_index_gep10 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:341  %mem_index_gep10 = add i12 %tmp_65, 72
+
+ST_16: addrCmp16 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:343  %addrCmp16 = icmp ult i10 %tmp_64, -72
+
+ST_16: tmp_44_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:613  %tmp_44_1_1 = mul nsw i32 %Gx_load_3, %tmp_41_1_1
+
+ST_16: tmp_45_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:615  %tmp_45_1_1 = mul nsw i32 %Gy_load_3, %tmp_41_1_1
+
+ST_16: sub_in_load_20 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:630  %sub_in_load_20 = load i32* %sub_in_addr_20, align 4
+
+ST_16: start_pos14 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:631  %start_pos14 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_90, i3 0)
+
+ST_16: start_pos834_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:632  %start_pos834_cast = zext i5 %start_pos14 to i64
+
+ST_16: end_pos14 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:633  %end_pos14 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_90, i3 -1)
+
+ST_16: end_pos835980_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:634  %end_pos835980_cast = zext i5 %end_pos14 to i64
+
+ST_16: call_get_range14 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:635  %call_get_range14 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_20, i64 %start_pos834_cast, i64 %end_pos835980_cast)
+
+ST_16: tmp_93 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:636  %tmp_93 = trunc i32 %call_get_range14 to i8
+
+ST_16: tmp_48_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:637  %tmp_48_1_1 = zext i8 %tmp_93 to i32
+
+ST_16: tmp_51_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:638  %tmp_51_1_1 = mul nsw i32 %Gx_load_3, %tmp_48_1_1
+
+ST_16: tmp_52_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:640  %tmp_52_1_1 = mul nsw i32 %Gy_load_3, %tmp_48_1_1
+
+ST_16: tmp_96 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:647  %tmp_96 = sext i9 %tmp_95 to i12
+
+ST_16: mem_index_gep18 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:648  %mem_index_gep18 = add i12 %tmp_96, 72
+
+ST_16: adjSize837_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:649  %adjSize837_cast = zext i12 %mem_index_gep18 to i13
+
+ST_16: addrCmp28 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:650  %addrCmp28 = icmp ult i9 %tmp_95, -72
+
+ST_16: gepindex44 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:651  %gepindex44 = add i13 %adjSize837_cast, -72
+
+ST_16: gepindex45 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:652  %gepindex45 = select i1 %addrCmp28, i13 %gepindex44, i13 273
+
+ST_16: gepindex2843_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:653  %gepindex2843_cast = sext i13 %gepindex45 to i64
+
+ST_16: sub_in_addr_21 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:654  %sub_in_addr_21 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2843_cast
+
+ST_16: sub_in_load_21 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:655  %sub_in_load_21 = load i32* %sub_in_addr_21, align 4
+
+
+ <State 17>: 8.47ns
+ST_17: tmp_66_0_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:300  %tmp_66_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_62_0_1_2
+
+ST_17: tmp_38_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:308  %tmp_38_0_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %i_3, i3 3)
+
+ST_17: tmp_38_0_2_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:309  %tmp_38_0_2_cast = zext i11 %tmp_38_0_2 to i12
+
+ST_17: adjSize705_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:342  %adjSize705_cast = zext i12 %mem_index_gep10 to i13
+
+ST_17: addrCmp17 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:344  %addrCmp17 = icmp ult i12 %mem_index_gep10, 346
+
+ST_17: gepindex25 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:345  %gepindex25 = add i13 %adjSize705_cast, -72
+
+ST_17: gepindex26 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:346  %gepindex26 = select i1 %addrCmp16, i13 %gepindex25, i13 273
+
+ST_17: gepindex27 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:347  %gepindex27 = select i1 %addrCmp17, i13 %gepindex26, i13 273
+
+ST_17: gepindex2711_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:348  %gepindex2711_cast = sext i13 %gepindex27 to i64
+
+ST_17: sub_in_addr_13 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:349  %sub_in_addr_13 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2711_cast
+
+ST_17: sub_in_load_13 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:350  %sub_in_load_13 = load i32* %sub_in_addr_13, align 4
+
+ST_17: tmp_60_0_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:364  %tmp_60_0_2 = add i12 %tmp_38_0_2_cast, -1
+
+ST_17: tmp_67 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:365  %tmp_67 = trunc i12 %tmp_60_0_2 to i2
+
+ST_17: tmp_68 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:366  %tmp_68 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_60_0_2, i32 2, i32 11)
+
+ST_17: tmp_69 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:367  %tmp_69 = sext i10 %tmp_68 to i12
+
+ST_17: mem_index_gep11 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:368  %mem_index_gep11 = add i12 %tmp_69, 72
+
+ST_17: addrCmp18 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:370  %addrCmp18 = icmp ult i10 %tmp_68, -72
+
+ST_17: tmp_44_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:613  %tmp_44_1_1 = mul nsw i32 %Gx_load_3, %tmp_41_1_1
+
+ST_17: tmp_45_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:615  %tmp_45_1_1 = mul nsw i32 %Gy_load_3, %tmp_41_1_1
+
+ST_17: tmp_51_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:638  %tmp_51_1_1 = mul nsw i32 %Gx_load_3, %tmp_48_1_1
+
+ST_17: tmp_52_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:640  %tmp_52_1_1 = mul nsw i32 %Gy_load_3, %tmp_48_1_1
+
+ST_17: sub_in_load_21 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:655  %sub_in_load_21 = load i32* %sub_in_addr_21, align 4
+
+ST_17: start_pos15 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:656  %start_pos15 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_94, i3 0)
+
+ST_17: start_pos846_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:657  %start_pos846_cast = zext i5 %start_pos15 to i64
+
+ST_17: end_pos15 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:658  %end_pos15 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_94, i3 -1)
+
+ST_17: end_pos847981_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:659  %end_pos847981_cast = zext i5 %end_pos15 to i64
+
+ST_17: call_get_range15 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:660  %call_get_range15 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_21, i64 %start_pos846_cast, i64 %end_pos847981_cast)
+
+ST_17: tmp_97 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:661  %tmp_97 = trunc i32 %call_get_range15 to i8
+
+ST_17: tmp_55_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:662  %tmp_55_1_1 = zext i8 %tmp_97 to i32
+
+ST_17: tmp_58_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:663  %tmp_58_1_1 = mul nsw i32 %Gx_load_3, %tmp_55_1_1
+
+ST_17: tmp_59_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:665  %tmp_59_1_1 = mul nsw i32 %Gy_load_3, %tmp_55_1_1
+
+
+ <State 18>: 8.47ns
+ST_18: sub_in_load_13 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:350  %sub_in_load_13 = load i32* %sub_in_addr_13, align 4
+
+ST_18: start_pos9 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:351  %start_pos9 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_63, i3 0)
+
+ST_18: start_pos714_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:352  %start_pos714_cast = zext i5 %start_pos9 to i64
+
+ST_18: end_pos9 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:353  %end_pos9 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_63, i3 -1)
+
+ST_18: end_pos715970_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:354  %end_pos715970_cast = zext i5 %end_pos9 to i64
+
+ST_18: call_get_range9 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:355  %call_get_range9 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_13, i64 %start_pos714_cast, i64 %end_pos715970_cast)
+
+ST_18: tmp_66 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:356  %tmp_66 = trunc i32 %call_get_range9 to i8
+
+ST_18: tmp_55_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:357  %tmp_55_0_2 = zext i8 %tmp_66 to i32
+
+ST_18: tmp_58_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:358  %tmp_58_0_2 = mul nsw i32 %Gx_load_6, %tmp_55_0_2
+
+ST_18: tmp_59_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:360  %tmp_59_0_2 = mul nsw i32 %Gy_load_6, %tmp_55_0_2
+
+ST_18: adjSize717_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:369  %adjSize717_cast = zext i12 %mem_index_gep11 to i13
+
+ST_18: addrCmp19 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:371  %addrCmp19 = icmp ult i12 %mem_index_gep11, 346
+
+ST_18: gepindex28 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:372  %gepindex28 = add i13 %adjSize717_cast, -72
+
+ST_18: gepindex29 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:373  %gepindex29 = select i1 %addrCmp18, i13 %gepindex28, i13 273
+
+ST_18: gepindex30 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:374  %gepindex30 = select i1 %addrCmp19, i13 %gepindex29, i13 273
+
+ST_18: gepindex2723_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:375  %gepindex2723_cast = sext i13 %gepindex30 to i64
+
+ST_18: sub_in_addr_14 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:376  %sub_in_addr_14 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2723_cast
+
+ST_18: sub_in_load_14 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:377  %sub_in_load_14 = load i32* %sub_in_addr_14, align 4
+
+ST_18: tmp_51_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:638  %tmp_51_1_1 = mul nsw i32 %Gx_load_3, %tmp_48_1_1
+
+ST_18: tmp_52_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:640  %tmp_52_1_1 = mul nsw i32 %Gy_load_3, %tmp_48_1_1
+
+ST_18: tmp_58_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:663  %tmp_58_1_1 = mul nsw i32 %Gx_load_3, %tmp_55_1_1
+
+ST_18: tmp_59_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:665  %tmp_59_1_1 = mul nsw i32 %Gy_load_3, %tmp_55_1_1
+
+ST_18: tmp_34_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:715  %tmp_34_1_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %i_3, i3 -4)
+
+ST_18: tmp_34_1_2_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:716  %tmp_34_1_2_cast = zext i11 %tmp_34_1_2 to i12
+
+ST_18: tmp_39_1_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:721  %tmp_39_1_2 = add i12 %tmp_34_1_2_cast, -1
+
+ST_18: tmp_98 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:722  %tmp_98 = trunc i12 %tmp_39_1_2 to i2
+
+ST_18: tmp_99 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:723  %tmp_99 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_39_1_2, i32 2, i32 11)
+
+ST_18: tmp_100 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:724  %tmp_100 = sext i10 %tmp_99 to i12
+
+ST_18: mem_index_gep19 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:725  %mem_index_gep19 = add i12 %tmp_100, 72
+
+ST_18: addrCmp29 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:727  %addrCmp29 = icmp ult i10 %tmp_99, -72
+
+
+ <State 19>: 8.47ns
+ST_19: tmp_58_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:358  %tmp_58_0_2 = mul nsw i32 %Gx_load_6, %tmp_55_0_2
+
+ST_19: tmp_59_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:360  %tmp_59_0_2 = mul nsw i32 %Gy_load_6, %tmp_55_0_2
+
+ST_19: sub_in_load_14 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:377  %sub_in_load_14 = load i32* %sub_in_addr_14, align 4
+
+ST_19: start_pos10 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:378  %start_pos10 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_67, i3 0)
+
+ST_19: start_pos726_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:379  %start_pos726_cast = zext i5 %start_pos10 to i64
+
+ST_19: end_pos10 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:380  %end_pos10 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_67, i3 -1)
+
+ST_19: end_pos727971_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:381  %end_pos727971_cast = zext i5 %end_pos10 to i64
+
+ST_19: call_get_range10 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:382  %call_get_range10 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_14, i64 %start_pos726_cast, i64 %end_pos727971_cast)
+
+ST_19: tmp_70 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:383  %tmp_70 = trunc i32 %call_get_range10 to i8
+
+ST_19: tmp_62_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:384  %tmp_62_0_2 = zext i8 %tmp_70 to i32
+
+ST_19: tmp_65_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:385  %tmp_65_0_2 = mul nsw i32 %Gx_load_6, %tmp_62_0_2
+
+ST_19: tmp_66_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:387  %tmp_66_0_2 = mul nsw i32 %Gy_load_6, %tmp_62_0_2
+
+ST_19: tmp_58_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:663  %tmp_58_1_1 = mul nsw i32 %Gx_load_3, %tmp_55_1_1
+
+ST_19: tmp_59_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:665  %tmp_59_1_1 = mul nsw i32 %Gy_load_3, %tmp_55_1_1
+
+ST_19: tmp_37_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:719  %tmp_37_1_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %i_3, i3 -2)
+
+ST_19: tmp_37_1_2_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:720  %tmp_37_1_2_cast = zext i11 %tmp_37_1_2 to i12
+
+ST_19: adjSize885_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:726  %adjSize885_cast = zext i12 %mem_index_gep19 to i13
+
+ST_19: addrCmp30 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:728  %addrCmp30 = icmp ult i12 %mem_index_gep19, 346
+
+ST_19: gepindex46 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:729  %gepindex46 = add i13 %adjSize885_cast, -72
+
+ST_19: gepindex47 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:730  %gepindex47 = select i1 %addrCmp29, i13 %gepindex46, i13 273
+
+ST_19: gepindex48 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:731  %gepindex48 = select i1 %addrCmp30, i13 %gepindex47, i13 273
+
+ST_19: gepindex2891_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:732  %gepindex2891_cast = sext i13 %gepindex48 to i64
+
+ST_19: sub_in_addr_23 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:733  %sub_in_addr_23 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2891_cast
+
+ST_19: sub_in_load_23 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:734  %sub_in_load_23 = load i32* %sub_in_addr_23, align 4
+
+ST_19: tmp_53_1_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:775  %tmp_53_1_2 = add i12 %tmp_37_1_2_cast, -1
+
+ST_19: tmp_106 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:776  %tmp_106 = trunc i12 %tmp_53_1_2 to i2
+
+ST_19: tmp_107 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:777  %tmp_107 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_53_1_2, i32 2, i32 11)
+
+ST_19: tmp_108 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:778  %tmp_108 = sext i10 %tmp_107 to i12
+
+ST_19: mem_index_gep21 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:779  %mem_index_gep21 = add i12 %tmp_108, 72
+
+ST_19: addrCmp33 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:781  %addrCmp33 = icmp ult i10 %tmp_107, -72
+
+
+ <State 20>: 8.47ns
+ST_20: tmp_35_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:304  %tmp_35_0_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %i_3, i3 1)
+
+ST_20: tmp_35_0_2_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:305  %tmp_35_0_2_cast = zext i11 %tmp_35_0_2 to i12
+
+ST_20: tmp_46_0_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:310  %tmp_46_0_2 = add i12 %tmp_35_0_2_cast, -1
+
+ST_20: tmp_59 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:311  %tmp_59 = trunc i12 %tmp_46_0_2 to i2
+
+ST_20: tmp_60 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:312  %tmp_60 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_46_0_2, i32 2, i32 11)
+
+ST_20: tmp_61 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:313  %tmp_61 = sext i10 %tmp_60 to i12
+
+ST_20: mem_index_gep9 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:314  %mem_index_gep9 = add i12 %tmp_61, 72
+
+ST_20: addrCmp14 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:316  %addrCmp14 = icmp ult i10 %tmp_60, -72
+
+ST_20: tmp_58_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:358  %tmp_58_0_2 = mul nsw i32 %Gx_load_6, %tmp_55_0_2
+
+ST_20: tmp_59_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:360  %tmp_59_0_2 = mul nsw i32 %Gy_load_6, %tmp_55_0_2
+
+ST_20: tmp_65_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:385  %tmp_65_0_2 = mul nsw i32 %Gx_load_6, %tmp_62_0_2
+
+ST_20: tmp_66_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:387  %tmp_66_0_2 = mul nsw i32 %Gy_load_6, %tmp_62_0_2
+
+ST_20: sub_in_load_23 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:734  %sub_in_load_23 = load i32* %sub_in_addr_23, align 4
+
+ST_20: start_pos16 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:735  %start_pos16 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_98, i3 0)
+
+ST_20: start_pos894_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:736  %start_pos894_cast = zext i5 %start_pos16 to i64
+
+ST_20: end_pos16 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:737  %end_pos16 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_98, i3 -1)
+
+ST_20: end_pos895985_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:738  %end_pos895985_cast = zext i5 %end_pos16 to i64
+
+ST_20: call_get_range16 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:739  %call_get_range16 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_23, i64 %start_pos894_cast, i64 %end_pos895985_cast)
+
+ST_20: tmp_101 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:740  %tmp_101 = trunc i32 %call_get_range16 to i8
+
+ST_20: tmp_41_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:741  %tmp_41_1_2 = zext i8 %tmp_101 to i32
+
+ST_20: tmp_44_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:742  %tmp_44_1_2 = mul nsw i32 %Gx_load_6, %tmp_41_1_2
+
+ST_20: tmp_45_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:744  %tmp_45_1_2 = mul nsw i32 %Gy_load_6, %tmp_41_1_2
+
+ST_20: adjSize909_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:780  %adjSize909_cast = zext i12 %mem_index_gep21 to i13
+
+ST_20: addrCmp34 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:782  %addrCmp34 = icmp ult i12 %mem_index_gep21, 346
+
+ST_20: gepindex52 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:783  %gepindex52 = add i13 %adjSize909_cast, -72
+
+ST_20: gepindex53 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:784  %gepindex53 = select i1 %addrCmp33, i13 %gepindex52, i13 273
+
+ST_20: gepindex54 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:785  %gepindex54 = select i1 %addrCmp34, i13 %gepindex53, i13 273
+
+ST_20: gepindex2915_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:786  %gepindex2915_cast = sext i13 %gepindex54 to i64
+
+ST_20: sub_in_addr_25 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:787  %sub_in_addr_25 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2915_cast
+
+ST_20: sub_in_load_25 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:788  %sub_in_load_25 = load i32* %sub_in_addr_25, align 4
+
+
+ <State 21>: 8.47ns
+ST_21: adjSize693_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:315  %adjSize693_cast = zext i12 %mem_index_gep9 to i13
+
+ST_21: addrCmp15 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:317  %addrCmp15 = icmp ult i12 %mem_index_gep9, 346
+
+ST_21: gepindex22 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:318  %gepindex22 = add i13 %adjSize693_cast, -72
+
+ST_21: gepindex23 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:319  %gepindex23 = select i1 %addrCmp14, i13 %gepindex22, i13 273
+
+ST_21: gepindex24 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:320  %gepindex24 = select i1 %addrCmp15, i13 %gepindex23, i13 273
+
+ST_21: gepindex2699_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:321  %gepindex2699_cast = sext i13 %gepindex24 to i64
+
+ST_21: sub_in_addr_12 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:322  %sub_in_addr_12 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2699_cast
+
+ST_21: sub_in_load_12 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:323  %sub_in_load_12 = load i32* %sub_in_addr_12, align 4
+
+ST_21: tmp_65_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:385  %tmp_65_0_2 = mul nsw i32 %Gx_load_6, %tmp_62_0_2
+
+ST_21: tmp_66_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:387  %tmp_66_0_2 = mul nsw i32 %Gy_load_6, %tmp_62_0_2
+
+ST_21: tmp_44_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:742  %tmp_44_1_2 = mul nsw i32 %Gx_load_6, %tmp_41_1_2
+
+ST_21: tmp_45_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:744  %tmp_45_1_2 = mul nsw i32 %Gy_load_6, %tmp_41_1_2
+
+ST_21: sub_in_load_25 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:788  %sub_in_load_25 = load i32* %sub_in_addr_25, align 4
+
+ST_21: start_pos18 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:789  %start_pos18 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_106, i3 0)
+
+ST_21: start_pos918_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:790  %start_pos918_cast = zext i5 %start_pos18 to i64
+
+ST_21: end_pos18 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:791  %end_pos18 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_106, i3 -1)
+
+ST_21: end_pos919987_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:792  %end_pos919987_cast = zext i5 %end_pos18 to i64
+
+ST_21: call_get_range18 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:793  %call_get_range18 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_25, i64 %start_pos918_cast, i64 %end_pos919987_cast)
+
+ST_21: tmp_109 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:794  %tmp_109 = trunc i32 %call_get_range18 to i8
+
+ST_21: tmp_55_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:795  %tmp_55_1_2 = zext i8 %tmp_109 to i32
+
+ST_21: tmp_58_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:796  %tmp_58_1_2 = mul nsw i32 %Gx_load_6, %tmp_55_1_2
+
+ST_21: tmp_59_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:798  %tmp_59_1_2 = mul nsw i32 %Gy_load_6, %tmp_55_1_2
+
+
+ <State 22>: 8.47ns
+ST_22: sub_in_load_12 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:323  %sub_in_load_12 = load i32* %sub_in_addr_12, align 4
+
+ST_22: start_pos8 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:324  %start_pos8 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_59, i3 0)
+
+ST_22: start_pos702_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:325  %start_pos702_cast = zext i5 %start_pos8 to i64
+
+ST_22: end_pos8 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:326  %end_pos8 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_59, i3 -1)
+
+ST_22: end_pos703969_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:327  %end_pos703969_cast = zext i5 %end_pos8 to i64
+
+ST_22: call_get_range8 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:328  %call_get_range8 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_12, i64 %start_pos702_cast, i64 %end_pos703969_cast)
+
+ST_22: tmp_62 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:329  %tmp_62 = trunc i32 %call_get_range8 to i8
+
+ST_22: tmp_48_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:330  %tmp_48_0_2 = zext i8 %tmp_62 to i32
+
+ST_22: tmp_51_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:331  %tmp_51_0_2 = mul nsw i32 %Gx_load_6, %tmp_48_0_2
+
+ST_22: tmp_52_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:333  %tmp_52_0_2 = mul nsw i32 %Gy_load_6, %tmp_48_0_2
+
+ST_22: adjSize [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:391  %adjSize = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %i_3, i1 false)
+
+ST_22: adjSize511_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:392  %adjSize511_cast = zext i9 %adjSize to i10
+
+ST_22: mem_index_gep12 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:393  %mem_index_gep12 = add i10 %adjSize511_cast, 72
+
+ST_22: tmp_71 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:394  %tmp_71 = trunc i10 %mem_index_gep12 to i9
+
+ST_22: addrCmp20 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:395  %addrCmp20 = icmp ult i10 %mem_index_gep12, 346
+
+ST_22: gepindex31 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:396  %gepindex31 = add i9 %tmp_71, -72
+
+ST_22: gepindex32 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:397  %gepindex32 = select i1 %addrCmp20, i9 %gepindex31, i9 -239
+
+ST_22: gepindex2735_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:398  %gepindex2735_cast = zext i9 %gepindex32 to i64
+
+ST_22: sub_in_addr_15 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:399  %sub_in_addr_15 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2735_cast
+
+ST_22: sub_in_load_15 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:400  %sub_in_load_15 = load i32* %sub_in_addr_15, align 4
+
+ST_22: tmp_60_0_2_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:437  %tmp_60_0_2_2 = add i12 %tmp_38_0_2_cast, 1
+
+ST_22: tmp_72 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:438  %tmp_72 = trunc i12 %tmp_60_0_2_2 to i2
+
+ST_22: cast_gep_index242_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:439  %cast_gep_index242_cast = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_60_0_2_2, i32 2, i32 11)
+
+ST_22: tmp_44_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:742  %tmp_44_1_2 = mul nsw i32 %Gx_load_6, %tmp_41_1_2
+
+ST_22: tmp_45_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:744  %tmp_45_1_2 = mul nsw i32 %Gy_load_6, %tmp_41_1_2
+
+ST_22: tmp_58_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:796  %tmp_58_1_2 = mul nsw i32 %Gx_load_6, %tmp_55_1_2
+
+ST_22: tmp_59_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:798  %tmp_59_1_2 = mul nsw i32 %Gy_load_6, %tmp_55_1_2
+
+
+ <State 23>: 8.47ns
+ST_23: tmp_51_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:331  %tmp_51_0_2 = mul nsw i32 %Gx_load_6, %tmp_48_0_2
+
+ST_23: tmp_52_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:333  %tmp_52_0_2 = mul nsw i32 %Gy_load_6, %tmp_48_0_2
+
+ST_23: sub_in_load_15 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:400  %sub_in_load_15 = load i32* %sub_in_addr_15, align 4
+
+ST_23: call_get_range740_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:401  %call_get_range740_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_15, i64 8, i64 15)
+
+ST_23: tmp_48_0_2_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:402  %tmp_48_0_2_1 = zext i8 %call_get_range740_part to i32
+
+ST_23: tmp_51_0_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:403  %tmp_51_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_48_0_2_1
+
+ST_23: tmp_52_0_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:405  %tmp_52_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_48_0_2_1
+
+ST_23: call_get_range752_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:409  %call_get_range752_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_15, i64 16, i64 23)
+
+ST_23: tmp_55_0_2_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:410  %tmp_55_0_2_1 = zext i8 %call_get_range752_part to i32
+
+ST_23: tmp_58_0_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:411  %tmp_58_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_55_0_2_1
+
+ST_23: tmp_59_0_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:413  %tmp_59_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_55_0_2_1
+
+ST_23: call_get_range764_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:417  %call_get_range764_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_15, i64 24, i64 31)
+
+ST_23: tmp_62_0_2_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:418  %tmp_62_0_2_1 = zext i8 %call_get_range764_part to i32
+
+ST_23: tmp_65_0_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:419  %tmp_65_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_62_0_2_1
+
+ST_23: mem_index_gep13 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:440  %mem_index_gep13 = add i10 %cast_gep_index242_cast, 72
+
+ST_23: addrCmp21 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:441  %addrCmp21 = icmp ult i10 %mem_index_gep13, 346
+
+ST_23: gepindex769_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:442  %gepindex769_cast = zext i10 %cast_gep_index242_cast to i14
+
+ST_23: gepindex33 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:443  %gepindex33 = select i1 %addrCmp21, i14 %gepindex769_cast, i14 273
+
+ST_23: gepindex2771_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:444  %gepindex2771_cast = zext i14 %gepindex33 to i64
+
+ST_23: sub_in_addr_16 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:445  %sub_in_addr_16 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2771_cast
+
+ST_23: sub_in_load_16 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:446  %sub_in_load_16 = load i32* %sub_in_addr_16, align 4
+
+ST_23: tmp_35_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:717  %tmp_35_1_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %i_3, i3 -3)
+
+ST_23: tmp_35_1_2_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:718  %tmp_35_1_2_cast = zext i11 %tmp_35_1_2 to i12
+
+ST_23: tmp_46_1_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:748  %tmp_46_1_2 = add i12 %tmp_35_1_2_cast, -1
+
+ST_23: tmp_102 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:749  %tmp_102 = trunc i12 %tmp_46_1_2 to i2
+
+ST_23: tmp_103 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:750  %tmp_103 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_46_1_2, i32 2, i32 11)
+
+ST_23: tmp_104 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:751  %tmp_104 = sext i10 %tmp_103 to i12
+
+ST_23: mem_index_gep20 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:752  %mem_index_gep20 = add i12 %tmp_104, 72
+
+ST_23: addrCmp31 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:754  %addrCmp31 = icmp ult i10 %tmp_103, -72
+
+ST_23: tmp_58_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:796  %tmp_58_1_2 = mul nsw i32 %Gx_load_6, %tmp_55_1_2
+
+ST_23: tmp_59_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:798  %tmp_59_1_2 = mul nsw i32 %Gy_load_6, %tmp_55_1_2
+
+
+ <State 24>: 8.47ns
+ST_24: tmp_51_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:331  %tmp_51_0_2 = mul nsw i32 %Gx_load_6, %tmp_48_0_2
+
+ST_24: tmp_52_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:333  %tmp_52_0_2 = mul nsw i32 %Gy_load_6, %tmp_48_0_2
+
+ST_24: tmp_51_0_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:403  %tmp_51_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_48_0_2_1
+
+ST_24: tmp_52_0_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:405  %tmp_52_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_48_0_2_1
+
+ST_24: tmp_58_0_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:411  %tmp_58_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_55_0_2_1
+
+ST_24: tmp_59_0_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:413  %tmp_59_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_55_0_2_1
+
+ST_24: tmp_65_0_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:419  %tmp_65_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_62_0_2_1
+
+ST_24: tmp_66_0_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:421  %tmp_66_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_62_0_2_1
+
+ST_24: tmp_58_0_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:431  %tmp_58_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_62_0_2_1
+
+ST_24: tmp_59_0_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:433  %tmp_59_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_62_0_2_1
+
+ST_24: sub_in_load_16 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:446  %sub_in_load_16 = load i32* %sub_in_addr_16, align 4
+
+ST_24: start_pos11 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:447  %start_pos11 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_72, i3 0)
+
+ST_24: start_pos774_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:448  %start_pos774_cast = zext i5 %start_pos11 to i64
+
+ST_24: end_pos11 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:449  %end_pos11 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_72, i3 -1)
+
+ST_24: end_pos775975_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:450  %end_pos775975_cast = zext i5 %end_pos11 to i64
+
+ST_24: call_get_range11 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:451  %call_get_range11 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_16, i64 %start_pos774_cast, i64 %end_pos775975_cast)
+
+ST_24: tmp_73 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:452  %tmp_73 = trunc i32 %call_get_range11 to i8
+
+ST_24: tmp_62_0_2_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:453  %tmp_62_0_2_2 = zext i8 %tmp_73 to i32
+
+ST_24: tmp_65_0_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:454  %tmp_65_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_62_0_2_2
+
+ST_24: tmp_66_0_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:456  %tmp_66_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_62_0_2_2
+
+ST_24: adjSize897_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:753  %adjSize897_cast = zext i12 %mem_index_gep20 to i13
+
+ST_24: addrCmp32 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:755  %addrCmp32 = icmp ult i12 %mem_index_gep20, 346
+
+ST_24: gepindex49 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:756  %gepindex49 = add i13 %adjSize897_cast, -72
+
+ST_24: gepindex50 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:757  %gepindex50 = select i1 %addrCmp31, i13 %gepindex49, i13 273
+
+ST_24: gepindex51 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:758  %gepindex51 = select i1 %addrCmp32, i13 %gepindex50, i13 273
+
+ST_24: gepindex2903_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:759  %gepindex2903_cast = sext i13 %gepindex51 to i64
+
+ST_24: sub_in_addr_24 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:760  %sub_in_addr_24 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2903_cast
+
+ST_24: sub_in_load_24 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:761  %sub_in_load_24 = load i32* %sub_in_addr_24, align 4
+
+
+ <State 25>: 8.47ns
+ST_25: tmp_1 [1/1] 1.72ns
+._crit_edge.0.0.0_ifconv:4  %tmp_1 = add i8 %i_1, -1
+
+ST_25: tmp_56 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:242  %tmp_56 = shl i8 %i_1, 1
+
+ST_25: tmp_51_0_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:403  %tmp_51_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_48_0_2_1
+
+ST_25: tmp_52_0_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:405  %tmp_52_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_48_0_2_1
+
+ST_25: tmp_58_0_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:411  %tmp_58_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_55_0_2_1
+
+ST_25: tmp_59_0_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:413  %tmp_59_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_55_0_2_1
+
+ST_25: tmp_65_0_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:419  %tmp_65_0_2_1 = mul nsw i32 %Gx_load_7, %tmp_62_0_2_1
+
+ST_25: tmp_66_0_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:421  %tmp_66_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_62_0_2_1
+
+ST_25: tmp_51_0_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:425  %tmp_51_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_0_2_1
+
+ST_25: tmp_58_0_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:431  %tmp_58_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_62_0_2_1
+
+ST_25: tmp_59_0_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:433  %tmp_59_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_62_0_2_1
+
+ST_25: tmp_65_0_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:454  %tmp_65_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_62_0_2_2
+
+ST_25: tmp_66_0_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:456  %tmp_66_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_62_0_2_2
+
+ST_25: sub_in_load_24 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:761  %sub_in_load_24 = load i32* %sub_in_addr_24, align 4
+
+ST_25: start_pos17 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:762  %start_pos17 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_102, i3 0)
+
+ST_25: start_pos906_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:763  %start_pos906_cast = zext i5 %start_pos17 to i64
+
+ST_25: end_pos17 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:764  %end_pos17 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_102, i3 -1)
+
+ST_25: end_pos907986_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:765  %end_pos907986_cast = zext i5 %end_pos17 to i64
+
+ST_25: call_get_range17 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:766  %call_get_range17 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_24, i64 %start_pos906_cast, i64 %end_pos907986_cast)
+
+ST_25: tmp_105 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:767  %tmp_105 = trunc i32 %call_get_range17 to i8
+
+ST_25: tmp_48_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:768  %tmp_48_1_2 = zext i8 %tmp_105 to i32
+
+ST_25: tmp_51_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:769  %tmp_51_1_2 = mul nsw i32 %Gx_load_6, %tmp_48_1_2
+
+ST_25: tmp_52_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:771  %tmp_52_1_2 = mul nsw i32 %Gy_load_6, %tmp_48_1_2
+
+ST_25: tmp_44_1_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:802  %tmp_44_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_62_0_2_2
+
+ST_25: tmp_45_1_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:804  %tmp_45_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_62_0_2_2
+
+ST_25: adjSize2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:808  %adjSize2 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %i_3, i1 true)
+
+ST_25: adjSize548_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:809  %adjSize548_cast = zext i9 %adjSize2 to i10
+
+ST_25: mem_index_gep22 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:810  %mem_index_gep22 = add i10 %adjSize548_cast, 72
+
+ST_25: tmp_110 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:811  %tmp_110 = trunc i10 %mem_index_gep22 to i9
+
+ST_25: addrCmp35 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:812  %addrCmp35 = icmp ult i10 %mem_index_gep22, 346
+
+ST_25: gepindex55 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:813  %gepindex55 = add i9 %tmp_110, -72
+
+ST_25: gepindex56 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:814  %gepindex56 = select i1 %addrCmp35, i9 %gepindex55, i9 -239
+
+ST_25: gepindex2927_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:815  %gepindex2927_cast = zext i9 %gepindex56 to i64
+
+ST_25: sub_in_addr_26 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:816  %sub_in_addr_26 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2927_cast
+
+ST_25: sub_in_load_26 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:817  %sub_in_load_26 = load i32* %sub_in_addr_26, align 4
+
+
+ <State 26>: 8.47ns
+ST_26: tmp_3 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:7  %tmp_3 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_1, i3 2)
+
+ST_26: tmp_cast_42 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:8  %tmp_cast_42 = sext i11 %tmp_3 to i12
+
+ST_26: tmp_17 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:39  %tmp_17 = add i12 %tmp_cast_42, -1
+
+ST_26: tmp_18 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:40  %tmp_18 = trunc i12 %tmp_17 to i2
+
+ST_26: tmp_19 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:41  %tmp_19 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_17, i32 2, i32 11)
+
+ST_26: tmp_22 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:42  %tmp_22 = sext i10 %tmp_19 to i12
+
+ST_26: mem_index_gep1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:43  %mem_index_gep1 = add i12 %tmp_22, 72
+
+ST_26: addrCmp2 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:45  %addrCmp2 = icmp ult i10 %tmp_19, -72
+
+ST_26: gepindex2651_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:243  %gepindex2651_cast = zext i8 %tmp_56 to i64
+
+ST_26: sub_in_addr_10 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:244  %sub_in_addr_10 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2651_cast
+
+ST_26: sub_in_load_10 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:245  %sub_in_load_10 = load i32* %sub_in_addr_10, align 4
+
+ST_26: tmp_66_0_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:421  %tmp_66_0_2_1 = mul nsw i32 %Gy_load_7, %tmp_62_0_2_1
+
+ST_26: tmp_51_0_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:425  %tmp_51_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_0_2_1
+
+ST_26: tmp_58_0_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:431  %tmp_58_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_62_0_2_1
+
+ST_26: tmp_59_0_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:433  %tmp_59_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_62_0_2_1
+
+ST_26: tmp_65_0_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:454  %tmp_65_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_62_0_2_2
+
+ST_26: tmp_66_0_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:456  %tmp_66_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_62_0_2_2
+
+ST_26: tmp_51_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:769  %tmp_51_1_2 = mul nsw i32 %Gx_load_6, %tmp_48_1_2
+
+ST_26: tmp_52_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:771  %tmp_52_1_2 = mul nsw i32 %Gy_load_6, %tmp_48_1_2
+
+ST_26: tmp_44_1_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:802  %tmp_44_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_62_0_2_2
+
+ST_26: tmp_45_1_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:804  %tmp_45_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_62_0_2_2
+
+ST_26: sub_in_load_26 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:817  %sub_in_load_26 = load i32* %sub_in_addr_26, align 4
+
+ST_26: call_get_range932_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:818  %call_get_range932_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_26, i64 8, i64 15)
+
+ST_26: tmp_48_1_2_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:819  %tmp_48_1_2_1 = zext i8 %call_get_range932_part to i32
+
+ST_26: tmp_51_1_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:820  %tmp_51_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_48_1_2_1
+
+ST_26: tmp_52_1_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:822  %tmp_52_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_48_1_2_1
+
+ST_26: call_get_range944_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:826  %call_get_range944_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_26, i64 16, i64 23)
+
+ST_26: tmp_55_1_2_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:827  %tmp_55_1_2_1 = zext i8 %call_get_range944_part to i32
+
+ST_26: tmp_58_1_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:828  %tmp_58_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_55_1_2_1
+
+ST_26: tmp_59_1_2_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:830  %tmp_59_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_55_1_2_1
+
+ST_26: tmp_44_1_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:834  %tmp_44_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_48_1_2_1
+
+ST_26: call_get_range956_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:846  %call_get_range956_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_26, i64 24, i64 31)
+
+
+ <State 27>: 8.47ns
+ST_27: tmp_5 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:9  %tmp_5 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_1, i3 3)
+
+ST_27: tmp_11_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:10  %tmp_11_cast = sext i11 %tmp_5 to i12
+
+ST_27: adjSize561_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:44  %adjSize561_cast = zext i12 %mem_index_gep1 to i13
+
+ST_27: addrCmp3 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:46  %addrCmp3 = icmp ult i12 %mem_index_gep1, 346
+
+ST_27: gepindex3 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:47  %gepindex3 = add i13 %adjSize561_cast, -72
+
+ST_27: gepindex4 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:48  %gepindex4 = select i1 %addrCmp2, i13 %gepindex3, i13 273
+
+ST_27: gepindex5 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:49  %gepindex5 = select i1 %addrCmp3, i13 %gepindex4, i13 273
+
+ST_27: gepindex2567_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:50  %gepindex2567_cast = sext i13 %gepindex5 to i64
+
+ST_27: sub_in_addr_3 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:51  %sub_in_addr_3 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2567_cast
+
+ST_27: sub_in_load_3 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:52  %sub_in_load_3 = load i32* %sub_in_addr_3, align 4
+
+ST_27: tmp_27 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:64  %tmp_27 = add i12 %tmp_11_cast, -1
+
+ST_27: tmp_28 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:65  %tmp_28 = trunc i12 %tmp_27 to i2
+
+ST_27: tmp_29 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:66  %tmp_29 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_27, i32 2, i32 11)
+
+ST_27: tmp_30 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:67  %tmp_30 = sext i10 %tmp_29 to i12
+
+ST_27: mem_index_gep2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:68  %mem_index_gep2 = add i12 %tmp_30, 72
+
+ST_27: addrCmp4 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:70  %addrCmp4 = icmp ult i10 %tmp_29, -72
+
+ST_27: sub_in_load_10 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:245  %sub_in_load_10 = load i32* %sub_in_addr_10, align 4
+
+ST_27: call_get_range656_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:246  %call_get_range656_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_10, i64 8, i64 15)
+
+ST_27: tmp_48_0_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:247  %tmp_48_0_1_1 = zext i8 %call_get_range656_part to i32
+
+ST_27: tmp_51_0_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:248  %tmp_51_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_48_0_1_1
+
+ST_27: call_get_range668_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:254  %call_get_range668_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_10, i64 16, i64 23)
+
+ST_27: tmp_55_0_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:255  %tmp_55_0_1_1 = zext i8 %call_get_range668_part to i32
+
+ST_27: tmp_58_0_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:256  %tmp_58_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_55_0_1_1
+
+ST_27: tmp_59_0_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:258  %tmp_59_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_55_0_1_1
+
+ST_27: call_get_range680_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:262  %call_get_range680_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_10, i64 24, i64 31)
+
+ST_27: tmp_62_0_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:263  %tmp_62_0_1_1 = zext i8 %call_get_range680_part to i32
+
+ST_27: tmp_65_0_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:264  %tmp_65_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_62_0_1_1
+
+ST_27: tmp_66_0_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:266  %tmp_66_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_62_0_1_1
+
+ST_27: tmp_51_0_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:425  %tmp_51_0_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_0_2_1
+
+ST_27: tmp_51_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:769  %tmp_51_1_2 = mul nsw i32 %Gx_load_6, %tmp_48_1_2
+
+ST_27: tmp_52_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:771  %tmp_52_1_2 = mul nsw i32 %Gy_load_6, %tmp_48_1_2
+
+ST_27: tmp_44_1_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:802  %tmp_44_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_62_0_2_2
+
+ST_27: tmp_45_1_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:804  %tmp_45_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_62_0_2_2
+
+ST_27: tmp_51_1_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:820  %tmp_51_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_48_1_2_1
+
+ST_27: tmp_52_1_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:822  %tmp_52_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_48_1_2_1
+
+ST_27: tmp_58_1_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:828  %tmp_58_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_55_1_2_1
+
+ST_27: tmp_59_1_2_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:830  %tmp_59_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_55_1_2_1
+
+ST_27: tmp_44_1_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:834  %tmp_44_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_48_1_2_1
+
+
+ <State 28>: 8.47ns
+ST_28: sub_in_load_3 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:52  %sub_in_load_3 = load i32* %sub_in_addr_3, align 4
+
+ST_28: start_pos1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:53  %start_pos1 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_18, i3 0)
+
+ST_28: start_pos570_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:54  %start_pos570_cast = zext i5 %start_pos1 to i64
+
+ST_28: end_pos1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:55  %end_pos1 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_18, i3 -1)
+
+ST_28: end_pos571958_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:56  %end_pos571958_cast = zext i5 %end_pos1 to i64
+
+ST_28: call_get_range1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:57  %call_get_range1 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_3, i64 %start_pos570_cast, i64 %end_pos571958_cast)
+
+ST_28: tmp_23 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:58  %tmp_23 = trunc i32 %call_get_range1 to i8
+
+ST_28: tmp_24 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:59  %tmp_24 = zext i8 %tmp_23 to i32
+
+ST_28: tmp_25 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:60  %tmp_25 = mul nsw i32 %Gx_load, %tmp_24
+
+ST_28: tmp_26 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:61  %tmp_26 = mul nsw i32 %Gy_load, %tmp_24
+
+ST_28: adjSize573_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:69  %adjSize573_cast = zext i12 %mem_index_gep2 to i13
+
+ST_28: addrCmp5 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:71  %addrCmp5 = icmp ult i12 %mem_index_gep2, 346
+
+ST_28: gepindex6 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:72  %gepindex6 = add i13 %adjSize573_cast, -72
+
+ST_28: gepindex7 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:73  %gepindex7 = select i1 %addrCmp4, i13 %gepindex6, i13 273
+
+ST_28: gepindex8 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:74  %gepindex8 = select i1 %addrCmp5, i13 %gepindex7, i13 273
+
+ST_28: gepindex2579_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:75  %gepindex2579_cast = sext i13 %gepindex8 to i64
+
+ST_28: sub_in_addr_4 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:76  %sub_in_addr_4 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2579_cast
+
+ST_28: sub_in_load_4 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:77  %sub_in_load_4 = load i32* %sub_in_addr_4, align 4
+
+ST_28: tmp_51_0_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:89  %tmp_51_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_24
+
+ST_28: tmp_52_0_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:91  %tmp_52_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_24
+
+ST_28: tmp_35 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:101  %tmp_35 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %tmp_1, i1 false)
+
+ST_28: tmp_36 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:102  %tmp_36 = sext i9 %tmp_35 to i12
+
+ST_28: mem_index_gep3 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:103  %mem_index_gep3 = add i12 %tmp_36, 72
+
+ST_28: addrCmp6 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:105  %addrCmp6 = icmp ult i9 %tmp_35, -72
+
+ST_28: tmp_51_0_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:248  %tmp_51_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_48_0_1_1
+
+ST_28: tmp_52_0_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:250  %tmp_52_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_48_0_1_1
+
+ST_28: tmp_58_0_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:256  %tmp_58_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_55_0_1_1
+
+ST_28: tmp_59_0_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:258  %tmp_59_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_55_0_1_1
+
+ST_28: tmp_65_0_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:264  %tmp_65_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_62_0_1_1
+
+ST_28: tmp_66_0_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:266  %tmp_66_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_62_0_1_1
+
+ST_28: tmp_51_1_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:820  %tmp_51_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_48_1_2_1
+
+ST_28: tmp_52_1_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:822  %tmp_52_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_48_1_2_1
+
+ST_28: tmp_58_1_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:828  %tmp_58_1_2_1 = mul nsw i32 %Gx_load_7, %tmp_55_1_2_1
+
+ST_28: tmp_59_1_2_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:830  %tmp_59_1_2_1 = mul nsw i32 %Gy_load_7, %tmp_55_1_2_1
+
+ST_28: tmp_44_1_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:834  %tmp_44_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_48_1_2_1
+
+
+ <State 29>: 8.47ns
+ST_29: tmp_25 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:60  %tmp_25 = mul nsw i32 %Gx_load, %tmp_24
+
+ST_29: tmp_26 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:61  %tmp_26 = mul nsw i32 %Gy_load, %tmp_24
+
+ST_29: sub_in_load_4 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:77  %sub_in_load_4 = load i32* %sub_in_addr_4, align 4
+
+ST_29: start_pos2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:78  %start_pos2 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_28, i3 0)
+
+ST_29: start_pos582_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:79  %start_pos582_cast = zext i5 %start_pos2 to i64
+
+ST_29: end_pos2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:80  %end_pos2 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_28, i3 -1)
+
+ST_29: end_pos583959_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:81  %end_pos583959_cast = zext i5 %end_pos2 to i64
+
+ST_29: call_get_range2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:82  %call_get_range2 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_4, i64 %start_pos582_cast, i64 %end_pos583959_cast)
+
+ST_29: tmp_31 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:83  %tmp_31 = trunc i32 %call_get_range2 to i8
+
+ST_29: tmp_32 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:84  %tmp_32 = zext i8 %tmp_31 to i32
+
+ST_29: tmp_33 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:85  %tmp_33 = mul nsw i32 %Gx_load, %tmp_32
+
+ST_29: tmp_34 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:86  %tmp_34 = mul nsw i32 %Gy_load, %tmp_32
+
+ST_29: tmp_51_0_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:89  %tmp_51_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_24
+
+ST_29: tmp_52_0_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:91  %tmp_52_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_24
+
+ST_29: tmp_58_0_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:95  %tmp_58_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_32
+
+ST_29: tmp_59_0_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:97  %tmp_59_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_32
+
+ST_29: adjSize585_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:104  %adjSize585_cast = zext i12 %mem_index_gep3 to i13
+
+ST_29: addrCmp7 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:106  %addrCmp7 = icmp ult i12 %mem_index_gep3, 346
+
+ST_29: gepindex9 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:107  %gepindex9 = add i13 %adjSize585_cast, -72
+
+ST_29: gepindex10 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:108  %gepindex10 = select i1 %addrCmp6, i13 %gepindex9, i13 273
+
+ST_29: gepindex11 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:109  %gepindex11 = select i1 %addrCmp7, i13 %gepindex10, i13 273
+
+ST_29: gepindex2591_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:110  %gepindex2591_cast = sext i13 %gepindex11 to i64
+
+ST_29: sub_in_addr_5 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:111  %sub_in_addr_5 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2591_cast
+
+ST_29: sub_in_load_5 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:112  %sub_in_load_5 = load i32* %sub_in_addr_5, align 4
+
+ST_29: tmp_51_0_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:121  %tmp_51_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_32
+
+ST_29: tmp_51_0_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:248  %tmp_51_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_48_0_1_1
+
+ST_29: tmp_52_0_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:250  %tmp_52_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_48_0_1_1
+
+ST_29: tmp_58_0_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:256  %tmp_58_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_55_0_1_1
+
+ST_29: tmp_59_0_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:258  %tmp_59_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_55_0_1_1
+
+ST_29: tmp_65_0_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:264  %tmp_65_0_1_1 = mul nsw i32 %Gx_load_4, %tmp_62_0_1_1
+
+ST_29: tmp_66_0_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:266  %tmp_66_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_62_0_1_1
+
+ST_29: tmp_42 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:501  %tmp_42 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_1, i3 -2)
+
+ST_29: tmp_37_1_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:502  %tmp_37_1_cast = sext i11 %tmp_42 to i12
+
+ST_29: tmp_53_1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:511  %tmp_53_1 = add i12 %tmp_37_1_cast, -1
+
+ST_29: tmp_80 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:512  %tmp_80 = trunc i12 %tmp_53_1 to i2
+
+ST_29: tmp_81 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:513  %tmp_81 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_53_1, i32 2, i32 11)
+
+ST_29: tmp_82 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:514  %tmp_82 = sext i10 %tmp_81 to i12
+
+ST_29: mem_index_gep14 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:515  %mem_index_gep14 = add i12 %tmp_82, 72
+
+ST_29: addrCmp22 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:517  %addrCmp22 = icmp ult i10 %tmp_81, -72
+
+
+ <State 30>: 8.47ns
+ST_30: tmp_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:5  %tmp_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_1, i3 1)
+
+ST_30: tmp_6_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:6  %tmp_6_cast = sext i11 %tmp_2 to i12
+
+ST_30: tmp_s [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:11  %tmp_s = add i12 %tmp_6_cast, -1
+
+ST_30: tmp_6 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:12  %tmp_6 = trunc i12 %tmp_s to i2
+
+ST_30: tmp_11 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:13  %tmp_11 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_s, i32 2, i32 11)
+
+ST_30: tmp_12 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:14  %tmp_12 = sext i10 %tmp_11 to i12
+
+ST_30: mem_index_gep [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:15  %mem_index_gep = add i12 %tmp_12, 72
+
+ST_30: addrCmp [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:17  %addrCmp = icmp ult i10 %tmp_11, -72
+
+ST_30: tmp_25 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:60  %tmp_25 = mul nsw i32 %Gx_load, %tmp_24
+
+ST_30: tmp_26 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:61  %tmp_26 = mul nsw i32 %Gy_load, %tmp_24
+
+ST_30: tmp_33 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:85  %tmp_33 = mul nsw i32 %Gx_load, %tmp_32
+
+ST_30: tmp_34 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:86  %tmp_34 = mul nsw i32 %Gy_load, %tmp_32
+
+ST_30: tmp_51_0_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:89  %tmp_51_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_24
+
+ST_30: tmp_52_0_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:91  %tmp_52_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_24
+
+ST_30: tmp_58_0_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:95  %tmp_58_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_32
+
+ST_30: tmp_59_0_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:97  %tmp_59_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_32
+
+ST_30: sub_in_load_5 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:112  %sub_in_load_5 = load i32* %sub_in_addr_5, align 4
+
+ST_30: call_get_range596_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:113  %call_get_range596_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_5, i64 24, i64 31)
+
+ST_30: tmp_62_0_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:114  %tmp_62_0_0_1 = zext i8 %call_get_range596_part to i32
+
+ST_30: tmp_65_0_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:115  %tmp_65_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_62_0_0_1
+
+ST_30: tmp_66_0_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:117  %tmp_66_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_62_0_0_1
+
+ST_30: tmp_51_0_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:121  %tmp_51_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_32
+
+ST_30: tmp_58_0_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:127  %tmp_58_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_62_0_0_1
+
+ST_30: tmp_52_0_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:250  %tmp_52_0_1_1 = mul nsw i32 %Gy_load_4, %tmp_48_0_1_1
+
+ST_30: tmp_44_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:503  %tmp_44_1 = mul nsw i32 %Gx_load, %tmp_62_0_0_1
+
+ST_30: tmp_45_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:504  %tmp_45_1 = mul nsw i32 %Gy_load, %tmp_62_0_0_1
+
+ST_30: adjSize777_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:516  %adjSize777_cast = zext i12 %mem_index_gep14 to i13
+
+ST_30: addrCmp23 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:518  %addrCmp23 = icmp ult i12 %mem_index_gep14, 346
+
+ST_30: gepindex34 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:519  %gepindex34 = add i13 %adjSize777_cast, -72
+
+ST_30: gepindex35 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:520  %gepindex35 = select i1 %addrCmp22, i13 %gepindex34, i13 273
+
+ST_30: gepindex36 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:521  %gepindex36 = select i1 %addrCmp23, i13 %gepindex35, i13 273
+
+ST_30: gepindex2783_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:522  %gepindex2783_cast = sext i13 %gepindex36 to i64
+
+ST_30: sub_in_addr_17 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:523  %sub_in_addr_17 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2783_cast
+
+ST_30: sub_in_load_17 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:524  %sub_in_load_17 = load i32* %sub_in_addr_17, align 4
+
+
+ <State 31>: 8.52ns
+ST_31: adjSize558_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:16  %adjSize558_cast = zext i12 %mem_index_gep to i13
+
+ST_31: addrCmp1 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:18  %addrCmp1 = icmp ult i12 %mem_index_gep, 346
+
+ST_31: gepindex [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:19  %gepindex = add i13 %adjSize558_cast, -72
+
+ST_31: gepindex1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:20  %gepindex1 = select i1 %addrCmp, i13 %gepindex, i13 273
+
+ST_31: gepindex2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:21  %gepindex2 = select i1 %addrCmp1, i13 %gepindex1, i13 273
+
+ST_31: gepindex2_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:22  %gepindex2_cast = sext i13 %gepindex2 to i64
+
+ST_31: sub_in_addr_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:23  %sub_in_addr_2 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2_cast
+
+ST_31: sub_in_load_2 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:24  %sub_in_load_2 = load i32* %sub_in_addr_2, align 4
+
+ST_31: sumy2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:62  %sumy2_2 = select i1 %sel_tmp2, i32 255, i32 %tmp_26
+
+ST_31: sumx2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:63  %sumx2_2 = select i1 %sel_tmp2, i32 255, i32 %tmp_25
+
+ST_31: tmp_33 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:85  %tmp_33 = mul nsw i32 %Gx_load, %tmp_32
+
+ST_31: tmp_34 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:86  %tmp_34 = mul nsw i32 %Gy_load, %tmp_32
+
+ST_31: tmp_58_0_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:95  %tmp_58_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_32
+
+ST_31: sumx2_3_0_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:96  %sumx2_3_0_0_1 = add nsw i32 %tmp_58_0_0_1, %sumx2_2
+
+ST_31: tmp_59_0_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:97  %tmp_59_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_32
+
+ST_31: sumy2_3_0_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:98  %sumy2_3_0_0_1 = add nsw i32 %tmp_59_0_0_1, %sumy2_2
+
+ST_31: tmp_65_0_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:115  %tmp_65_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_62_0_0_1
+
+ST_31: tmp_66_0_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:117  %tmp_66_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_62_0_0_1
+
+ST_31: tmp_51_0_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:121  %tmp_51_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_32
+
+ST_31: tmp_58_0_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:127  %tmp_58_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_62_0_0_1
+
+ST_31: tmp_59_0_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:129  %tmp_59_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_62_0_0_1
+
+ST_31: tmp_60_0_0_2 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:133  %tmp_60_0_0_2 = add i12 %tmp_11_cast, 1
+
+ST_31: tmp_37 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:134  %tmp_37 = trunc i12 %tmp_60_0_0_2 to i2
+
+ST_31: tmp_38 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:135  %tmp_38 = call i10 @_ssdm_op_PartSelect.i10.i12.i32.i32(i12 %tmp_60_0_0_2, i32 2, i32 11)
+
+ST_31: tmp_39 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:136  %tmp_39 = sext i10 %tmp_38 to i12
+
+ST_31: mem_index_gep4 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:137  %mem_index_gep4 = add i12 %tmp_39, 72
+
+ST_31: addrCmp8 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:139  %addrCmp8 = icmp ult i10 %tmp_38, -72
+
+ST_31: tmp_44_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:503  %tmp_44_1 = mul nsw i32 %Gx_load, %tmp_62_0_0_1
+
+ST_31: tmp_45_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:504  %tmp_45_1 = mul nsw i32 %Gy_load, %tmp_62_0_0_1
+
+ST_31: sub_in_load_17 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:524  %sub_in_load_17 = load i32* %sub_in_addr_17, align 4
+
+ST_31: start_pos12 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:525  %start_pos12 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_80, i3 0)
+
+ST_31: start_pos786_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:526  %start_pos786_cast = zext i5 %start_pos12 to i64
+
+ST_31: end_pos12 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:527  %end_pos12 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_80, i3 -1)
+
+ST_31: end_pos787976_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:528  %end_pos787976_cast = zext i5 %end_pos12 to i64
+
+ST_31: call_get_range12 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:529  %call_get_range12 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_17, i64 %start_pos786_cast, i64 %end_pos787976_cast)
+
+ST_31: tmp_83 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:530  %tmp_83 = trunc i32 %call_get_range12 to i8
+
+ST_31: tmp_55_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:531  %tmp_55_1 = zext i8 %tmp_83 to i32
+
+ST_31: tmp_58_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:532  %tmp_58_1 = mul nsw i32 %Gx_load, %tmp_55_1
+
+ST_31: tmp_59_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:533  %tmp_59_1 = mul nsw i32 %Gy_load, %tmp_55_1
+
+ST_31: tmp_51_1_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:542  %tmp_51_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_55_1
+
+ST_31: tmp_52_1_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:544  %tmp_52_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_55_1
+
+
+ <State 32>: 8.52ns
+ST_32: sub_in_load_2 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:24  %sub_in_load_2 = load i32* %sub_in_addr_2, align 4
+
+ST_32: start_pos [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:25  %start_pos = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_6, i3 0)
+
+ST_32: start_pos_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:26  %start_pos_cast = zext i5 %start_pos to i64
+
+ST_32: end_pos [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:27  %end_pos = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_6, i3 -1)
+
+ST_32: end_pos957_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:28  %end_pos957_cast = zext i5 %end_pos to i64
+
+ST_32: call_get_range [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:29  %call_get_range = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_2, i64 %start_pos_cast, i64 %end_pos957_cast)
+
+ST_32: tmp_13 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:30  %tmp_13 = trunc i32 %call_get_range to i8
+
+ST_32: tmp_14 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:31  %tmp_14 = zext i8 %tmp_13 to i32
+
+ST_32: tmp_15 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:32  %tmp_15 = mul nsw i32 %Gx_load, %tmp_14
+
+ST_32: tmp_16 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:33  %tmp_16 = mul nsw i32 %Gy_load, %tmp_14
+
+ST_32: sumx3_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:87  %sumx3_2 = select i1 %sel_tmp2, i32 255, i32 %tmp_33
+
+ST_32: sumy3_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:88  %sumy3_2 = select i1 %sel_tmp2, i32 255, i32 %tmp_34
+
+ST_32: sumx2_2_0_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:100  %sumx2_2_0_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_0_1
+
+ST_32: tmp_65_0_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:115  %tmp_65_0_0_1 = mul nsw i32 %Gx_load_1, %tmp_62_0_0_1
+
+ST_32: sumx3_3_0_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:116  %sumx3_3_0_0_1 = add nsw i32 %tmp_65_0_0_1, %sumx3_2
+
+ST_32: tmp_66_0_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:117  %tmp_66_0_0_1 = mul nsw i32 %Gy_load_1, %tmp_62_0_0_1
+
+ST_32: sumy3_3_0_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:118  %sumy3_3_0_0_1 = add nsw i32 %tmp_66_0_0_1, %sumy3_2
+
+ST_32: tmp_52_0_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:123  %tmp_52_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_32
+
+ST_32: tmp_58_0_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:127  %tmp_58_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_62_0_0_1
+
+ST_32: sumx2_3_0_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:128  %sumx2_3_0_0_2 = add nsw i32 %tmp_58_0_0_2, %sumx2_2_0_0_1
+
+ST_32: tmp_59_0_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:129  %tmp_59_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_62_0_0_1
+
+ST_32: adjSize597_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:138  %adjSize597_cast = zext i12 %mem_index_gep4 to i13
+
+ST_32: addrCmp9 [1/1] 2.11ns
+._crit_edge.0.0.0_ifconv:140  %addrCmp9 = icmp ult i12 %mem_index_gep4, 346
+
+ST_32: gepindex12 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:141  %gepindex12 = add i13 %adjSize597_cast, -72
+
+ST_32: gepindex13 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:142  %gepindex13 = select i1 %addrCmp8, i13 %gepindex12, i13 273
+
+ST_32: gepindex14 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:143  %gepindex14 = select i1 %addrCmp9, i13 %gepindex13, i13 273
+
+ST_32: gepindex2603_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:144  %gepindex2603_cast = sext i13 %gepindex14 to i64
+
+ST_32: sub_in_addr_6 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:145  %sub_in_addr_6 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2603_cast
+
+ST_32: sub_in_load_6 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:146  %sub_in_load_6 = load i32* %sub_in_addr_6, align 4
+
+ST_32: tmp_44_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:503  %tmp_44_1 = mul nsw i32 %Gx_load, %tmp_62_0_0_1
+
+ST_32: tmp_45_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:504  %tmp_45_1 = mul nsw i32 %Gy_load, %tmp_62_0_0_1
+
+ST_32: tmp_58_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:532  %tmp_58_1 = mul nsw i32 %Gx_load, %tmp_55_1
+
+ST_32: tmp_59_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:533  %tmp_59_1 = mul nsw i32 %Gy_load, %tmp_55_1
+
+ST_32: tmp_51_1_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:542  %tmp_51_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_55_1
+
+ST_32: tmp_52_1_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:544  %tmp_52_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_55_1
+
+ST_32: tmp_84 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:548  %tmp_84 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %tmp_1, i1 true)
+
+ST_32: tmp_85 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:549  %tmp_85 = sext i9 %tmp_84 to i12
+
+ST_32: mem_index_gep15 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:550  %mem_index_gep15 = add i12 %tmp_85, 72
+
+ST_32: addrCmp24 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:552  %addrCmp24 = icmp ult i9 %tmp_84, -72
+
+ST_32: tmp_44_1_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:568  %tmp_44_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1
+
+ST_32: tmp_45_1_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:570  %tmp_45_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1
+
+
+ <State 33>: 8.52ns
+ST_33: tmp_15 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:32  %tmp_15 = mul nsw i32 %Gx_load, %tmp_14
+
+ST_33: tmp_16 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:33  %tmp_16 = mul nsw i32 %Gy_load, %tmp_14
+
+ST_33: sumy2_2_0_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:99  %sumy2_2_0_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_0_1
+
+ST_33: tmp_52_0_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:123  %tmp_52_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_32
+
+ST_33: tmp_59_0_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:129  %tmp_59_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_62_0_0_1
+
+ST_33: sumy2_3_0_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:130  %sumy2_3_0_0_2 = add nsw i32 %tmp_59_0_0_2, %sumy2_2_0_0_1
+
+ST_33: sub_in_load_6 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:146  %sub_in_load_6 = load i32* %sub_in_addr_6, align 4
+
+ST_33: start_pos3 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:147  %start_pos3 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_37, i3 0)
+
+ST_33: start_pos606_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:148  %start_pos606_cast = zext i5 %start_pos3 to i64
+
+ST_33: end_pos3 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:149  %end_pos3 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_37, i3 -1)
+
+ST_33: end_pos607961_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:150  %end_pos607961_cast = zext i5 %end_pos3 to i64
+
+ST_33: call_get_range3 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:151  %call_get_range3 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_6, i64 %start_pos606_cast, i64 %end_pos607961_cast)
+
+ST_33: tmp_40 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:152  %tmp_40 = trunc i32 %call_get_range3 to i8
+
+ST_33: tmp_62_0_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:153  %tmp_62_0_0_2 = zext i8 %tmp_40 to i32
+
+ST_33: tmp_65_0_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:154  %tmp_65_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_62_0_0_2
+
+ST_33: tmp_66_0_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:156  %tmp_66_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_62_0_0_2
+
+ST_33: tmp_51_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:507  %tmp_51_1 = mul nsw i32 %Gx_load, %tmp_62_0_0_2
+
+ST_33: tmp_52_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:508  %tmp_52_1 = mul nsw i32 %Gy_load, %tmp_62_0_0_2
+
+ST_33: tmp_58_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:532  %tmp_58_1 = mul nsw i32 %Gx_load, %tmp_55_1
+
+ST_33: tmp_59_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:533  %tmp_59_1 = mul nsw i32 %Gy_load, %tmp_55_1
+
+ST_33: tmp_44_1_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:536  %tmp_44_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_62_0_0_2
+
+ST_33: tmp_51_1_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:542  %tmp_51_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_55_1
+
+ST_33: tmp_52_1_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:544  %tmp_52_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_55_1
+
+ST_33: adjSize789_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:551  %adjSize789_cast = zext i12 %mem_index_gep15 to i13
+
+ST_33: addrCmp25 [1/1] 2.07ns
+._crit_edge.0.0.0_ifconv:553  %addrCmp25 = icmp ult i12 %mem_index_gep15, 346
+
+ST_33: gepindex37 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:554  %gepindex37 = add i13 %adjSize789_cast, -72
+
+ST_33: gepindex38 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:555  %gepindex38 = select i1 %addrCmp24, i13 %gepindex37, i13 273
+
+ST_33: gepindex39 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:556  %gepindex39 = select i1 %addrCmp25, i13 %gepindex38, i13 273
+
+ST_33: gepindex2795_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:557  %gepindex2795_cast = sext i13 %gepindex39 to i64
+
+ST_33: sub_in_addr_18 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:558  %sub_in_addr_18 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2795_cast
+
+ST_33: sub_in_load_18 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:559  %sub_in_load_18 = load i32* %sub_in_addr_18, align 4
+
+ST_33: tmp_44_1_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:568  %tmp_44_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1
+
+ST_33: tmp_45_1_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:570  %tmp_45_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1
+
+
+ <State 34>: 8.47ns
+ST_34: tmp_15 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:32  %tmp_15 = mul nsw i32 %Gx_load, %tmp_14
+
+ST_34: tmp_16 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:33  %tmp_16 = mul nsw i32 %Gy_load, %tmp_14
+
+ST_34: tmp_52_0_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:123  %tmp_52_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_32
+
+ST_34: tmp_65_0_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:154  %tmp_65_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_62_0_0_2
+
+ST_34: tmp_66_0_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:156  %tmp_66_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_62_0_0_2
+
+ST_34: tmp_35_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:161  %tmp_35_0_1 = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %tmp_41, i3 1)
+
+ST_34: tmp_35_0_1_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:162  %tmp_35_0_1_cast = zext i10 %tmp_35_0_1 to i11
+
+ST_34: tmp_46_0_1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:167  %tmp_46_0_1 = add i11 %tmp_35_0_1_cast, -1
+
+ST_34: tmp_43 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:168  %tmp_43 = trunc i11 %tmp_46_0_1 to i2
+
+ST_34: tmp_44 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:169  %tmp_44 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %tmp_46_0_1, i32 2, i32 10)
+
+ST_34: tmp_51_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:507  %tmp_51_1 = mul nsw i32 %Gx_load, %tmp_62_0_0_2
+
+ST_34: tmp_52_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:508  %tmp_52_1 = mul nsw i32 %Gy_load, %tmp_62_0_0_2
+
+ST_34: tmp_44_1_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:536  %tmp_44_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_62_0_0_2
+
+ST_34: tmp_45_1_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:538  %tmp_45_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_62_0_0_2
+
+ST_34: sub_in_load_18 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:559  %sub_in_load_18 = load i32* %sub_in_addr_18, align 4
+
+ST_34: call_get_range800_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:560  %call_get_range800_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_18, i64 16, i64 23)
+
+ST_34: tmp_55_1_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:561  %tmp_55_1_0_1 = zext i8 %call_get_range800_part to i32
+
+ST_34: tmp_58_1_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:562  %tmp_58_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_55_1_0_1
+
+ST_34: tmp_59_1_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:564  %tmp_59_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_55_1_0_1
+
+ST_34: tmp_44_1_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:568  %tmp_44_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1
+
+ST_34: tmp_45_1_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:570  %tmp_45_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1
+
+ST_34: call_get_range812_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:580  %call_get_range812_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_18, i64 24, i64 31)
+
+ST_34: tmp_55_1_0_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:581  %tmp_55_1_0_2 = zext i8 %call_get_range812_part to i32
+
+ST_34: tmp_58_1_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:582  %tmp_58_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1_0_2
+
+ST_34: tmp_59_1_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:584  %tmp_59_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1_0_2
+
+ST_34: adjSize1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:675  %adjSize1 = call i8 @_ssdm_op_BitConcatenate.i8.i7.i1(i7 %tmp_41, i1 true)
+
+ST_34: gepindex2855_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:676  %gepindex2855_cast = zext i8 %adjSize1 to i64
+
+ST_34: sub_in_addr_22 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:677  %sub_in_addr_22 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2855_cast
+
+ST_34: sub_in_load_22 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:678  %sub_in_load_22 = load i32* %sub_in_addr_22, align 4
+
+
+ <State 35>: 8.52ns
+ST_35: sumy1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:37  %sumy1_2 = select i1 %sel_tmp2, i32 255, i32 %tmp_16
+
+ST_35: sumx1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:38  %sumx1_2 = select i1 %sel_tmp2, i32 255, i32 %tmp_15
+
+ST_35: sumx1_3_0_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:90  %sumx1_3_0_0_1 = add nsw i32 %tmp_51_0_0_1, %sumx1_2
+
+ST_35: sumy1_3_0_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:92  %sumy1_3_0_0_1 = add nsw i32 %tmp_52_0_0_1, %sumy1_2
+
+ST_35: sumy1_2_0_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:93  %sumy1_2_0_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_0_1
+
+ST_35: sumx1_2_0_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:94  %sumx1_2_0_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_0_1
+
+ST_35: sumx3_2_0_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:119  %sumx3_2_0_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_0_1
+
+ST_35: sumy3_2_0_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:120  %sumy3_2_0_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_0_1
+
+ST_35: sumx1_3_0_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:122  %sumx1_3_0_0_2 = add nsw i32 %tmp_51_0_0_2, %sumx1_2_0_0_1
+
+ST_35: sumy1_3_0_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:124  %sumy1_3_0_0_2 = add nsw i32 %tmp_52_0_0_2, %sumy1_2_0_0_1
+
+ST_35: tmp_65_0_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:154  %tmp_65_0_0_2 = mul nsw i32 %Gx_load_2, %tmp_62_0_0_2
+
+ST_35: sumx3_3_0_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:155  %sumx3_3_0_0_2 = add nsw i32 %tmp_65_0_0_2, %sumx3_2_0_0_1
+
+ST_35: tmp_66_0_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:156  %tmp_66_0_0_2 = mul nsw i32 %Gy_load_2, %tmp_62_0_0_2
+
+ST_35: sumy3_3_0_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:157  %sumy3_3_0_0_2 = add nsw i32 %tmp_66_0_0_2, %sumy3_2_0_0_1
+
+ST_35: tmp_37_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:163  %tmp_37_0_1 = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %tmp_41, i3 2)
+
+ST_35: tmp_37_0_1_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:164  %tmp_37_0_1_cast = zext i10 %tmp_37_0_1 to i11
+
+ST_35: tmp_45 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:170  %tmp_45 = sext i9 %tmp_44 to i12
+
+ST_35: mem_index_gep5 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:171  %mem_index_gep5 = add i12 %tmp_45, 72
+
+ST_35: adjSize609_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:172  %adjSize609_cast = zext i12 %mem_index_gep5 to i13
+
+ST_35: addrCmp10 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:173  %addrCmp10 = icmp ult i9 %tmp_44, -72
+
+ST_35: gepindex15 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:174  %gepindex15 = add i13 %adjSize609_cast, -72
+
+ST_35: gepindex16 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:175  %gepindex16 = select i1 %addrCmp10, i13 %gepindex15, i13 273
+
+ST_35: gepindex2615_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:176  %gepindex2615_cast = sext i13 %gepindex16 to i64
+
+ST_35: sub_in_addr_7 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:177  %sub_in_addr_7 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2615_cast
+
+ST_35: sub_in_load_7 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:178  %sub_in_load_7 = load i32* %sub_in_addr_7, align 4
+
+ST_35: tmp_53_0_1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:192  %tmp_53_0_1 = add i11 %tmp_37_0_1_cast, -1
+
+ST_35: tmp_48 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:193  %tmp_48 = trunc i11 %tmp_53_0_1 to i2
+
+ST_35: tmp_49 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:194  %tmp_49 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %tmp_53_0_1, i32 2, i32 10)
+
+ST_35: tmp_51_0_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:270  %tmp_51_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_0_1_1
+
+ST_35: sumx0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:506  %sumx0_2_1 = select i1 %sel_tmp2, i32 255, i32 %tmp_44_1
+
+ST_35: tmp_51_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:507  %tmp_51_1 = mul nsw i32 %Gx_load, %tmp_62_0_0_2
+
+ST_35: tmp_52_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:508  %tmp_52_1 = mul nsw i32 %Gy_load, %tmp_62_0_0_2
+
+ST_35: tmp_44_1_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:536  %tmp_44_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_62_0_0_2
+
+ST_35: sumx0_3_1_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:537  %sumx0_3_1_0_1 = add nsw i32 %tmp_44_1_0_1, %sumx0_2_1
+
+ST_35: tmp_45_1_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:538  %tmp_45_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_62_0_0_2
+
+ST_35: tmp_58_1_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:562  %tmp_58_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_55_1_0_1
+
+ST_35: tmp_59_1_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:564  %tmp_59_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_55_1_0_1
+
+ST_35: tmp_51_1_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:574  %tmp_51_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1_0_1
+
+ST_35: tmp_52_1_0_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:576  %tmp_52_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1_0_1
+
+ST_35: tmp_58_1_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:582  %tmp_58_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1_0_2
+
+ST_35: tmp_59_1_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:584  %tmp_59_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1_0_2
+
+ST_35: sub_in_load_22 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:678  %sub_in_load_22 = load i32* %sub_in_addr_22, align 4
+
+ST_35: call_get_range860_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:679  %call_get_range860_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_22, i64 8, i64 15)
+
+ST_35: call_get_range872_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:687  %call_get_range872_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_22, i64 16, i64 23)
+
+ST_35: tmp_55_1_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:688  %tmp_55_1_1_1 = zext i8 %call_get_range872_part to i32
+
+ST_35: tmp_58_1_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:689  %tmp_58_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_55_1_1_1
+
+ST_35: tmp_59_1_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:691  %tmp_59_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_55_1_1_1
+
+ST_35: call_get_range884_part [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:707  %call_get_range884_part = call i8 @_ssdm_op_PartSelect.i8.i32.i64.i64(i32 %sub_in_load_22, i64 24, i64 31)
+
+
+ <State 36>: 8.52ns
+ST_36: sub_in_load_7 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:178  %sub_in_load_7 = load i32* %sub_in_addr_7, align 4
+
+ST_36: start_pos4 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:179  %start_pos4 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_43, i3 0)
+
+ST_36: start_pos618_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:180  %start_pos618_cast = zext i5 %start_pos4 to i64
+
+ST_36: end_pos4 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:181  %end_pos4 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_43, i3 -1)
+
+ST_36: end_pos619962_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:182  %end_pos619962_cast = zext i5 %end_pos4 to i64
+
+ST_36: call_get_range4 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:183  %call_get_range4 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_7, i64 %start_pos618_cast, i64 %end_pos619962_cast)
+
+ST_36: tmp_46 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:184  %tmp_46 = trunc i32 %call_get_range4 to i8
+
+ST_36: tmp_48_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:185  %tmp_48_0_1 = zext i8 %tmp_46 to i32
+
+ST_36: tmp_51_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:186  %tmp_51_0_1 = mul nsw i32 %Gx_load_3, %tmp_48_0_1
+
+ST_36: tmp_52_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:188  %tmp_52_0_1 = mul nsw i32 %Gy_load_3, %tmp_48_0_1
+
+ST_36: tmp_50 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:195  %tmp_50 = sext i9 %tmp_49 to i12
+
+ST_36: mem_index_gep6 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:196  %mem_index_gep6 = add i12 %tmp_50, 72
+
+ST_36: adjSize621_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:197  %adjSize621_cast = zext i12 %mem_index_gep6 to i13
+
+ST_36: addrCmp11 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:198  %addrCmp11 = icmp ult i9 %tmp_49, -72
+
+ST_36: gepindex17 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:199  %gepindex17 = add i13 %adjSize621_cast, -72
+
+ST_36: gepindex18 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:200  %gepindex18 = select i1 %addrCmp11, i13 %gepindex17, i13 273
+
+ST_36: gepindex2627_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:201  %gepindex2627_cast = sext i13 %gepindex18 to i64
+
+ST_36: sub_in_addr_8 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:202  %sub_in_addr_8 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2627_cast
+
+ST_36: sub_in_load_8 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:203  %sub_in_load_8 = load i32* %sub_in_addr_8, align 4
+
+ST_36: tmp_60_0_1 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:217  %tmp_60_0_1 = add i11 %tmp_38_0_1_cast, -1
+
+ST_36: tmp_52 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:218  %tmp_52 = trunc i11 %tmp_60_0_1 to i2
+
+ST_36: tmp_53 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:219  %tmp_53 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %tmp_60_0_1, i32 2, i32 10)
+
+ST_36: tmp_51_0_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:270  %tmp_51_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_0_1_1
+
+ST_36: tmp_52_0_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:272  %tmp_52_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_0_1_1
+
+ST_36: tmp_58_0_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:276  %tmp_58_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_62_0_1_1
+
+ST_36: tmp_59_0_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:278  %tmp_59_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_62_0_1_1
+
+ST_36: sumy0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:505  %sumy0_2_1 = select i1 %sel_tmp2, i32 255, i32 %tmp_45_1
+
+ST_36: sumy1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:509  %sumy1_2_1 = select i1 %sel_tmp2, i32 255, i32 %tmp_52_1
+
+ST_36: sumx1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:510  %sumx1_2_1 = select i1 %sel_tmp2, i32 255, i32 %tmp_51_1
+
+ST_36: sumy2_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:534  %sumy2_2_1 = select i1 %sel_tmp2, i32 255, i32 %tmp_59_1
+
+ST_36: sumx2_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:535  %sumx2_2_1 = select i1 %sel_tmp2, i32 255, i32 %tmp_58_1
+
+ST_36: tmp_45_1_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:538  %tmp_45_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_62_0_0_2
+
+ST_36: sumy0_3_1_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:539  %sumy0_3_1_0_1 = add nsw i32 %tmp_45_1_0_1, %sumy0_2_1
+
+ST_36: sumx0_2_1_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:541  %sumx0_2_1_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_0_1
+
+ST_36: sumx1_3_1_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:543  %sumx1_3_1_0_1 = add nsw i32 %tmp_51_1_0_1, %sumx1_2_1
+
+ST_36: sumy1_3_1_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:545  %sumy1_3_1_0_1 = add nsw i32 %tmp_52_1_0_1, %sumy1_2_1
+
+ST_36: tmp_58_1_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:562  %tmp_58_1_0_1 = mul nsw i32 %Gx_load_1, %tmp_55_1_0_1
+
+ST_36: sumx2_3_1_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:563  %sumx2_3_1_0_1 = add nsw i32 %tmp_58_1_0_1, %sumx2_2_1
+
+ST_36: tmp_59_1_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:564  %tmp_59_1_0_1 = mul nsw i32 %Gy_load_1, %tmp_55_1_0_1
+
+ST_36: sumy2_3_1_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:565  %sumy2_3_1_0_1 = add nsw i32 %tmp_59_1_0_1, %sumy2_2_1
+
+ST_36: sumx0_3_1_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:569  %sumx0_3_1_0_2 = add nsw i32 %tmp_44_1_0_2, %sumx0_2_1_0_1
+
+ST_36: sumx0_2_1_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:573  %sumx0_2_1_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_0_2
+
+ST_36: tmp_51_1_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:574  %tmp_51_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1_0_1
+
+ST_36: tmp_52_1_0_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:576  %tmp_52_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1_0_1
+
+ST_36: tmp_58_1_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:582  %tmp_58_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1_0_2
+
+ST_36: tmp_59_1_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:584  %tmp_59_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1_0_2
+
+ST_36: sumx0_3_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:614  %sumx0_3_1_1 = add nsw i32 %tmp_44_1_1, %sumx0_2_1_0_2
+
+ST_36: tmp_58_1_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:689  %tmp_58_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_55_1_1_1
+
+ST_36: tmp_59_1_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:691  %tmp_59_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_55_1_1_1
+
+
+ <State 37>: 8.52ns
+ST_37: tmp_51_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:186  %tmp_51_0_1 = mul nsw i32 %Gx_load_3, %tmp_48_0_1
+
+ST_37: tmp_52_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:188  %tmp_52_0_1 = mul nsw i32 %Gy_load_3, %tmp_48_0_1
+
+ST_37: sub_in_load_8 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:203  %sub_in_load_8 = load i32* %sub_in_addr_8, align 4
+
+ST_37: start_pos5 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:204  %start_pos5 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_48, i3 0)
+
+ST_37: start_pos630_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:205  %start_pos630_cast = zext i5 %start_pos5 to i64
+
+ST_37: end_pos5 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:206  %end_pos5 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_48, i3 -1)
+
+ST_37: end_pos631963_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:207  %end_pos631963_cast = zext i5 %end_pos5 to i64
+
+ST_37: call_get_range5 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:208  %call_get_range5 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_8, i64 %start_pos630_cast, i64 %end_pos631963_cast)
+
+ST_37: tmp_51 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:209  %tmp_51 = trunc i32 %call_get_range5 to i8
+
+ST_37: tmp_55_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:210  %tmp_55_0_1 = zext i8 %tmp_51 to i32
+
+ST_37: tmp_58_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:211  %tmp_58_0_1 = mul nsw i32 %Gx_load_3, %tmp_55_0_1
+
+ST_37: tmp_59_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:213  %tmp_59_0_1 = mul nsw i32 %Gy_load_3, %tmp_55_0_1
+
+ST_37: tmp_54 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:220  %tmp_54 = sext i9 %tmp_53 to i12
+
+ST_37: mem_index_gep7 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:221  %mem_index_gep7 = add i12 %tmp_54, 72
+
+ST_37: adjSize633_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:222  %adjSize633_cast = zext i12 %mem_index_gep7 to i13
+
+ST_37: addrCmp12 [1/1] 2.03ns
+._crit_edge.0.0.0_ifconv:223  %addrCmp12 = icmp ult i9 %tmp_53, -72
+
+ST_37: gepindex19 [1/1] 1.84ns
+._crit_edge.0.0.0_ifconv:224  %gepindex19 = add i13 %adjSize633_cast, -72
+
+ST_37: gepindex20 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:225  %gepindex20 = select i1 %addrCmp12, i13 %gepindex19, i13 273
+
+ST_37: gepindex2639_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:226  %gepindex2639_cast = sext i13 %gepindex20 to i64
+
+ST_37: sub_in_addr_9 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:227  %sub_in_addr_9 = getelementptr [274 x i32]* %sub_in, i64 0, i64 %gepindex2639_cast
+
+ST_37: sub_in_load_9 [2/2] 2.39ns
+._crit_edge.0.0.0_ifconv:228  %sub_in_load_9 = load i32* %sub_in_addr_9, align 4
+
+ST_37: tmp_51_0_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:270  %tmp_51_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_0_1_1
+
+ST_37: tmp_52_0_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:272  %tmp_52_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_0_1_1
+
+ST_37: tmp_58_0_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:276  %tmp_58_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_62_0_1_1
+
+ST_37: tmp_59_0_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:278  %tmp_59_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_62_0_1_1
+
+ST_37: sumy0_2_1_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:540  %sumy0_2_1_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_0_1
+
+ST_37: sumy1_2_1_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:546  %sumy1_2_1_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_0_1
+
+ST_37: sumx1_2_1_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:547  %sumx1_2_1_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_0_1
+
+ST_37: sumy2_2_1_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:566  %sumy2_2_1_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_0_1
+
+ST_37: sumx2_2_1_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:567  %sumx2_2_1_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_0_1
+
+ST_37: sumy0_3_1_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:571  %sumy0_3_1_0_2 = add nsw i32 %tmp_45_1_0_2, %sumy0_2_1_0_1
+
+ST_37: sumy0_2_1_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:572  %sumy0_2_1_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_0_2
+
+ST_37: tmp_51_1_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:574  %tmp_51_1_0_2 = mul nsw i32 %Gx_load_2, %tmp_55_1_0_1
+
+ST_37: sumx1_3_1_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:575  %sumx1_3_1_0_2 = add nsw i32 %tmp_51_1_0_2, %sumx1_2_1_0_1
+
+ST_37: tmp_52_1_0_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:576  %tmp_52_1_0_2 = mul nsw i32 %Gy_load_2, %tmp_55_1_0_1
+
+ST_37: sumy1_3_1_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:577  %sumy1_3_1_0_2 = add nsw i32 %tmp_52_1_0_2, %sumy1_2_1_0_1
+
+ST_37: sumx2_3_1_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:583  %sumx2_3_1_0_2 = add nsw i32 %tmp_58_1_0_2, %sumx2_2_1_0_1
+
+ST_37: sumy2_3_1_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:585  %sumy2_3_1_0_2 = add nsw i32 %tmp_59_1_0_2, %sumy2_2_1_0_1
+
+ST_37: sumy2_2_1_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:586  %sumy2_2_1_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_0_2
+
+ST_37: sumx2_2_1_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:587  %sumx2_2_1_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_0_2
+
+ST_37: sumy0_3_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:616  %sumy0_3_1_1 = add nsw i32 %tmp_45_1_1, %sumy0_2_1_0_2
+
+ST_37: sumx2_3_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:664  %sumx2_3_1_1 = add nsw i32 %tmp_58_1_1, %sumx2_2_1_0_2
+
+ST_37: sumy2_3_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:666  %sumy2_3_1_1 = add nsw i32 %tmp_59_1_1, %sumy2_2_1_0_2
+
+ST_37: tmp_48_1_1_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:680  %tmp_48_1_1_1 = zext i8 %call_get_range860_part to i32
+
+ST_37: tmp_51_1_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:681  %tmp_51_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_48_1_1_1
+
+ST_37: tmp_52_1_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:683  %tmp_52_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_48_1_1_1
+
+ST_37: tmp_58_1_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:689  %tmp_58_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_55_1_1_1
+
+ST_37: tmp_59_1_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:691  %tmp_59_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_55_1_1_1
+
+ST_37: tmp_44_1_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:695  %tmp_44_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_48_1_1_1
+
+
+ <State 38>: 8.52ns
+ST_38: sumy1_2_0_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:125  %sumy1_2_0_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_0_2
+
+ST_38: sumx1_2_0_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:126  %sumx1_2_0_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_0_2
+
+ST_38: tmp_51_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:186  %tmp_51_0_1 = mul nsw i32 %Gx_load_3, %tmp_48_0_1
+
+ST_38: sumx1_3_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:187  %sumx1_3_0_1 = add nsw i32 %tmp_51_0_1, %sumx1_2_0_0_2
+
+ST_38: tmp_52_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:188  %tmp_52_0_1 = mul nsw i32 %Gy_load_3, %tmp_48_0_1
+
+ST_38: sumy1_3_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:189  %sumy1_3_0_1 = add nsw i32 %tmp_52_0_1, %sumy1_2_0_0_2
+
+ST_38: tmp_58_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:211  %tmp_58_0_1 = mul nsw i32 %Gx_load_3, %tmp_55_0_1
+
+ST_38: tmp_59_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:213  %tmp_59_0_1 = mul nsw i32 %Gy_load_3, %tmp_55_0_1
+
+ST_38: sub_in_load_9 [1/2] 2.39ns
+._crit_edge.0.0.0_ifconv:228  %sub_in_load_9 = load i32* %sub_in_addr_9, align 4
+
+ST_38: start_pos6 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:229  %start_pos6 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_52, i3 0)
+
+ST_38: start_pos642_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:230  %start_pos642_cast = zext i5 %start_pos6 to i64
+
+ST_38: end_pos6 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:231  %end_pos6 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_52, i3 -1)
+
+ST_38: end_pos643964_cast [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:232  %end_pos643964_cast = zext i5 %end_pos6 to i64
+
+ST_38: call_get_range6 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:233  %call_get_range6 = call i32 @_ssdm_op_PartSelect.i32.i32.i64.i64(i32 %sub_in_load_9, i64 %start_pos642_cast, i64 %end_pos643964_cast)
+
+ST_38: tmp_55 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:234  %tmp_55 = trunc i32 %call_get_range6 to i8
+
+ST_38: tmp_62_0_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:235  %tmp_62_0_1 = zext i8 %tmp_55 to i32
+
+ST_38: tmp_65_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:236  %tmp_65_0_1 = mul nsw i32 %Gx_load_3, %tmp_62_0_1
+
+ST_38: tmp_66_0_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:238  %tmp_66_0_1 = mul nsw i32 %Gy_load_3, %tmp_62_0_1
+
+ST_38: tmp_52_0_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:272  %tmp_52_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_0_1_1
+
+ST_38: tmp_58_0_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:276  %tmp_58_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_62_0_1_1
+
+ST_38: tmp_59_0_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:278  %tmp_59_0_1_2 = mul nsw i32 %Gy_load_5, %tmp_62_0_1_1
+
+ST_38: sumy1_2_1_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:578  %sumy1_2_1_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_0_2
+
+ST_38: sumx1_2_1_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:579  %sumx1_2_1_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_0_2
+
+ST_38: sumx1_3_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:639  %sumx1_3_1_1 = add nsw i32 %tmp_51_1_1, %sumx1_2_1_0_2
+
+ST_38: sumy1_3_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:641  %sumy1_3_1_1 = add nsw i32 %tmp_52_1_1, %sumy1_2_1_0_2
+
+ST_38: sumy2_2_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:667  %sumy2_2_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_1
+
+ST_38: sumx2_2_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:668  %sumx2_2_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_1
+
+ST_38: tmp_51_1_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:681  %tmp_51_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_48_1_1_1
+
+ST_38: tmp_52_1_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:683  %tmp_52_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_48_1_1_1
+
+ST_38: sumx2_3_1_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:690  %sumx2_3_1_1_1 = add nsw i32 %tmp_58_1_1_1, %sumx2_2_1_1
+
+ST_38: sumy2_3_1_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:692  %sumy2_3_1_1_1 = add nsw i32 %tmp_59_1_1_1, %sumy2_2_1_1
+
+ST_38: tmp_44_1_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:695  %tmp_44_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_48_1_1_1
+
+ST_38: tmp_45_1_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:697  %tmp_45_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_48_1_1_1
+
+ST_38: tmp_51_1_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:701  %tmp_51_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_1_1_1
+
+ST_38: tmp_52_1_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:703  %tmp_52_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_1_1_1
+
+
+ <State 39>: 8.52ns
+ST_39: sumy2_2_0_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:131  %sumy2_2_0_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_0_2
+
+ST_39: sumx2_2_0_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:132  %sumx2_2_0_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_0_2
+
+ST_39: sumy1_2_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:190  %sumy1_2_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_1
+
+ST_39: sumx1_2_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:191  %sumx1_2_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_1
+
+ST_39: tmp_58_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:211  %tmp_58_0_1 = mul nsw i32 %Gx_load_3, %tmp_55_0_1
+
+ST_39: sumx2_3_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:212  %sumx2_3_0_1 = add nsw i32 %tmp_58_0_1, %sumx2_2_0_0_2
+
+ST_39: tmp_59_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:213  %tmp_59_0_1 = mul nsw i32 %Gy_load_3, %tmp_55_0_1
+
+ST_39: sumy2_3_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:214  %sumy2_3_0_1 = add nsw i32 %tmp_59_0_1, %sumy2_2_0_0_2
+
+ST_39: tmp_65_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:236  %tmp_65_0_1 = mul nsw i32 %Gx_load_3, %tmp_62_0_1
+
+ST_39: tmp_66_0_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:238  %tmp_66_0_1 = mul nsw i32 %Gy_load_3, %tmp_62_0_1
+
+ST_39: sumx1_3_0_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:249  %sumx1_3_0_1_1 = add nsw i32 %tmp_51_0_1_1, %sumx1_2_0_1
+
+ST_39: sumy1_3_0_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:251  %sumy1_3_0_1_1 = add nsw i32 %tmp_52_0_1_1, %sumy1_2_0_1
+
+ST_39: sumy1_2_0_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:252  %sumy1_2_0_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_1_1
+
+ST_39: sumx1_2_0_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:253  %sumx1_2_0_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_1_1
+
+ST_39: sumx1_3_0_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:271  %sumx1_3_0_1_2 = add nsw i32 %tmp_51_0_1_2, %sumx1_2_0_1_1
+
+ST_39: sumy1_3_0_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:273  %sumy1_3_0_1_2 = add nsw i32 %tmp_52_0_1_2, %sumy1_2_0_1_1
+
+ST_39: tmp_65_0_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:298  %tmp_65_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_62_0_1_2
+
+ST_39: sumy1_2_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:642  %sumy1_2_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_1
+
+ST_39: sumx1_2_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:643  %sumx1_2_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_1
+
+ST_39: tmp_44_1_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:669  %tmp_44_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_62_0_1_2
+
+ST_39: tmp_45_1_1_1 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:671  %tmp_45_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_62_0_1_2
+
+ST_39: tmp_51_1_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:681  %tmp_51_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_48_1_1_1
+
+ST_39: sumx1_3_1_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:682  %sumx1_3_1_1_1 = add nsw i32 %tmp_51_1_1_1, %sumx1_2_1_1
+
+ST_39: tmp_52_1_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:683  %tmp_52_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_48_1_1_1
+
+ST_39: sumy1_3_1_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:684  %sumy1_3_1_1_1 = add nsw i32 %tmp_52_1_1_1, %sumy1_2_1_1
+
+ST_39: tmp_44_1_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:695  %tmp_44_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_48_1_1_1
+
+ST_39: tmp_45_1_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:697  %tmp_45_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_48_1_1_1
+
+ST_39: tmp_51_1_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:701  %tmp_51_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_1_1_1
+
+ST_39: tmp_52_1_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:703  %tmp_52_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_1_1_1
+
+ST_39: tmp_55_1_1_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:708  %tmp_55_1_1_2 = zext i8 %call_get_range884_part to i32
+
+ST_39: tmp_58_1_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:709  %tmp_58_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_1_1_2
+
+ST_39: tmp_59_1_1_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:711  %tmp_59_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_1_1_2
+
+
+ <State 40>: 8.52ns
+ST_40: sumx3_2_0_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:158  %sumx3_2_0_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_0_2
+
+ST_40: sumy3_2_0_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:159  %sumy3_2_0_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_0_2
+
+ST_40: sumy2_2_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:215  %sumy2_2_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_1
+
+ST_40: sumx2_2_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:216  %sumx2_2_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_1
+
+ST_40: tmp_65_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:236  %tmp_65_0_1 = mul nsw i32 %Gx_load_3, %tmp_62_0_1
+
+ST_40: sumx3_3_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:237  %sumx3_3_0_1 = add nsw i32 %tmp_65_0_1, %sumx3_2_0_0_2
+
+ST_40: tmp_66_0_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:238  %tmp_66_0_1 = mul nsw i32 %Gy_load_3, %tmp_62_0_1
+
+ST_40: sumy3_3_0_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:239  %sumy3_3_0_1 = add nsw i32 %tmp_66_0_1, %sumy3_2_0_0_2
+
+ST_40: sumx2_3_0_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:257  %sumx2_3_0_1_1 = add nsw i32 %tmp_58_0_1_1, %sumx2_2_0_1
+
+ST_40: sumy2_3_0_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:259  %sumy2_3_0_1_1 = add nsw i32 %tmp_59_0_1_1, %sumy2_2_0_1
+
+ST_40: sumy2_2_0_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:260  %sumy2_2_0_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_1_1
+
+ST_40: sumx2_2_0_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:261  %sumx2_2_0_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_1_1
+
+ST_40: sumy1_2_0_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:274  %sumy1_2_0_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_1_2
+
+ST_40: sumx1_2_0_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:275  %sumx1_2_0_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_1_2
+
+ST_40: sumx2_3_0_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:277  %sumx2_3_0_1_2 = add nsw i32 %tmp_58_0_1_2, %sumx2_2_0_1_1
+
+ST_40: sumy2_3_0_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:279  %sumy2_3_0_1_2 = add nsw i32 %tmp_59_0_1_2, %sumy2_2_0_1_1
+
+ST_40: tmp_65_0_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:298  %tmp_65_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_62_0_1_2
+
+ST_40: sumx1_3_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:332  %sumx1_3_0_2 = add nsw i32 %tmp_51_0_2, %sumx1_2_0_1_2
+
+ST_40: sumy1_3_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:334  %sumy1_3_0_2 = add nsw i32 %tmp_52_0_2, %sumy1_2_0_1_2
+
+ST_40: sumy1_2_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:335  %sumy1_2_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_2
+
+ST_40: sumx1_2_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:336  %sumx1_2_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_2
+
+ST_40: sumx1_3_0_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:404  %sumx1_3_0_2_1 = add nsw i32 %tmp_51_0_2_1, %sumx1_2_0_2
+
+ST_40: sumy1_3_0_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:406  %sumy1_3_0_2_1 = add nsw i32 %tmp_52_0_2_1, %sumy1_2_0_2
+
+ST_40: tmp_44_1_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:669  %tmp_44_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_62_0_1_2
+
+ST_40: tmp_45_1_1_1 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:671  %tmp_45_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_62_0_1_2
+
+ST_40: sumy1_2_1_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:685  %sumy1_2_1_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_1_1
+
+ST_40: sumx1_2_1_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:686  %sumx1_2_1_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_1_1
+
+ST_40: tmp_45_1_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:697  %tmp_45_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_48_1_1_1
+
+ST_40: tmp_51_1_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:701  %tmp_51_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_1_1_1
+
+ST_40: sumx1_3_1_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:702  %sumx1_3_1_1_2 = add nsw i32 %tmp_51_1_1_2, %sumx1_2_1_1_1
+
+ST_40: tmp_52_1_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:703  %tmp_52_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_1_1_1
+
+ST_40: sumy1_3_1_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:704  %sumy1_3_1_1_2 = add nsw i32 %tmp_52_1_1_2, %sumy1_2_1_1_1
+
+ST_40: tmp_58_1_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:709  %tmp_58_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_1_1_2
+
+ST_40: tmp_59_1_1_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:711  %tmp_59_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_1_1_2
+
+ST_40: tmp_45_1_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:836  %tmp_45_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_48_1_2_1
+
+ST_40: tmp_55_1_2_2 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:847  %tmp_55_1_2_2 = zext i8 %call_get_range956_part to i32
+
+ST_40: tmp_58_1_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:848  %tmp_58_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_1_2_2
+
+
+ <State 41>: 8.52ns
+ST_41: sumx3_2_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:240  %sumx3_2_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_1
+
+ST_41: sumy3_2_0_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:241  %sumy3_2_0_1 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_1
+
+ST_41: sumx3_3_0_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:265  %sumx3_3_0_1_1 = add nsw i32 %tmp_65_0_1_1, %sumx3_2_0_1
+
+ST_41: sumy3_3_0_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:267  %sumy3_3_0_1_1 = add nsw i32 %tmp_66_0_1_1, %sumy3_2_0_1
+
+ST_41: sumx3_2_0_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:268  %sumx3_2_0_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_1_1
+
+ST_41: sumy3_2_0_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:269  %sumy3_2_0_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_1_1
+
+ST_41: sumy2_2_0_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:280  %sumy2_2_0_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_1_2
+
+ST_41: sumx2_2_0_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:281  %sumx2_2_0_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_1_2
+
+ST_41: tmp_65_0_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:298  %tmp_65_0_1_2 = mul nsw i32 %Gx_load_5, %tmp_62_0_1_2
+
+ST_41: sumx3_3_0_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:299  %sumx3_3_0_1_2 = add nsw i32 %tmp_65_0_1_2, %sumx3_2_0_1_1
+
+ST_41: sumy3_3_0_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:301  %sumy3_3_0_1_2 = add nsw i32 %tmp_66_0_1_2, %sumy3_2_0_1_1
+
+ST_41: sumx2_3_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:359  %sumx2_3_0_2 = add nsw i32 %tmp_58_0_2, %sumx2_2_0_1_2
+
+ST_41: sumy2_3_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:361  %sumy2_3_0_2 = add nsw i32 %tmp_59_0_2, %sumy2_2_0_1_2
+
+ST_41: sumy2_2_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:362  %sumy2_2_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_2
+
+ST_41: sumx2_2_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:363  %sumx2_2_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_2
+
+ST_41: sumx1_2_0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:408  %sumx1_2_0_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_2_1
+
+ST_41: sumx2_3_0_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:412  %sumx2_3_0_2_1 = add nsw i32 %tmp_58_0_2_1, %sumx2_2_0_2
+
+ST_41: sumy2_3_0_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:414  %sumy2_3_0_2_1 = add nsw i32 %tmp_59_0_2_1, %sumy2_2_0_2
+
+ST_41: sumx1_3_0_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:426  %sumx1_3_0_2_2 = add nsw i32 %tmp_51_0_2_2, %sumx1_2_0_2_1
+
+ST_41: tmp_52_0_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:427  %tmp_52_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_0_2_1
+
+ST_41: sumy0_2_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:617  %sumy0_2_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_1
+
+ST_41: sumx0_2_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:618  %sumx0_2_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_1
+
+ST_41: tmp_44_1_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:669  %tmp_44_1_1_1 = mul nsw i32 %Gx_load_4, %tmp_62_0_1_2
+
+ST_41: sumx0_3_1_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:670  %sumx0_3_1_1_1 = add nsw i32 %tmp_44_1_1_1, %sumx0_2_1_1
+
+ST_41: tmp_45_1_1_1 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:671  %tmp_45_1_1_1 = mul nsw i32 %Gy_load_4, %tmp_62_0_1_2
+
+ST_41: sumy0_3_1_1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:672  %sumy0_3_1_1_1 = add nsw i32 %tmp_45_1_1_1, %sumy0_2_1_1
+
+ST_41: sumy2_2_1_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:693  %sumy2_2_1_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_1_1
+
+ST_41: sumx2_2_1_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:694  %sumx2_2_1_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_1_1
+
+ST_41: sumy1_2_1_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:705  %sumy1_2_1_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_1_2
+
+ST_41: sumx1_2_1_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:706  %sumx1_2_1_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_1_2
+
+ST_41: tmp_58_1_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:709  %tmp_58_1_1_2 = mul nsw i32 %Gx_load_5, %tmp_55_1_1_2
+
+ST_41: sumx2_3_1_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:710  %sumx2_3_1_1_2 = add nsw i32 %tmp_58_1_1_2, %sumx2_2_1_1_1
+
+ST_41: tmp_59_1_1_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:711  %tmp_59_1_1_2 = mul nsw i32 %Gy_load_5, %tmp_55_1_1_2
+
+ST_41: sumy2_3_1_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:712  %sumy2_3_1_1_2 = add nsw i32 %tmp_59_1_1_2, %sumy2_2_1_1_1
+
+ST_41: sumx1_3_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:770  %sumx1_3_1_2 = add nsw i32 %tmp_51_1_2, %sumx1_2_1_1_2
+
+ST_41: sumy1_3_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:772  %sumy1_3_1_2 = add nsw i32 %tmp_52_1_2, %sumy1_2_1_1_2
+
+ST_41: sumy1_2_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:773  %sumy1_2_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_2
+
+ST_41: sumx1_2_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:774  %sumx1_2_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_2
+
+ST_41: sumx1_3_1_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:821  %sumx1_3_1_2_1 = add nsw i32 %tmp_51_1_2_1, %sumx1_2_1_2
+
+ST_41: sumy1_3_1_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:823  %sumy1_3_1_2_1 = add nsw i32 %tmp_52_1_2_1, %sumy1_2_1_2
+
+ST_41: tmp_45_1_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:836  %tmp_45_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_48_1_2_1
+
+ST_41: tmp_51_1_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:840  %tmp_51_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_1_2_1
+
+ST_41: tmp_58_1_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:848  %tmp_58_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_1_2_2
+
+ST_41: tmp_59_1_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:850  %tmp_59_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_1_2_2
+
+
+ <State 42>: 7.62ns
+ST_42: sumx3_2_0_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:302  %sumx3_2_0_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_1_2
+
+ST_42: sumy3_2_0_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:303  %sumy3_2_0_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_1_2
+
+ST_42: sumx3_3_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:386  %sumx3_3_0_2 = add nsw i32 %tmp_65_0_2, %sumx3_2_0_1_2
+
+ST_42: sumy3_3_0_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:388  %sumy3_3_0_2 = add nsw i32 %tmp_66_0_2, %sumy3_2_0_1_2
+
+ST_42: sumx3_2_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:389  %sumx3_2_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_2
+
+ST_42: sumy3_2_0_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:390  %sumy3_2_0_2 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_2
+
+ST_42: sumy2_2_0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:415  %sumy2_2_0_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_2_1
+
+ST_42: sumx2_2_0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:416  %sumx2_2_0_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_2_1
+
+ST_42: sumx3_3_0_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:420  %sumx3_3_0_2_1 = add nsw i32 %tmp_65_0_2_1, %sumx3_2_0_2
+
+ST_42: sumy3_3_0_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:422  %sumy3_3_0_2_1 = add nsw i32 %tmp_66_0_2_1, %sumy3_2_0_2
+
+ST_42: tmp_52_0_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:427  %tmp_52_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_0_2_1
+
+ST_42: sumx2_3_0_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:432  %sumx2_3_0_2_2 = add nsw i32 %tmp_58_0_2_2, %sumx2_2_0_2_1
+
+ST_42: sumy2_3_0_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:434  %sumy2_3_0_2_2 = add nsw i32 %tmp_59_0_2_2, %sumy2_2_0_2_1
+
+ST_42: sumy2_2_0_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:435  %sumy2_2_0_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_0_2_2
+
+ST_42: sumx2_2_0_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:436  %sumx2_2_0_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_0_2_2
+
+ST_42: sumy0_2_1_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:673  %sumy0_2_1_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_1_1
+
+ST_42: sumx0_2_1_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:674  %sumx0_2_1_1_1 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_1_1
+
+ST_42: sumx0_3_1_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:696  %sumx0_3_1_1_2 = add nsw i32 %tmp_44_1_1_2, %sumx0_2_1_1_1
+
+ST_42: sumy0_3_1_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:698  %sumy0_3_1_1_2 = add nsw i32 %tmp_45_1_1_2, %sumy0_2_1_1_1
+
+ST_42: sumy0_2_1_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:699  %sumy0_2_1_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_1_2
+
+ST_42: sumx0_2_1_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:700  %sumx0_2_1_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_1_2
+
+ST_42: sumy2_2_1_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:713  %sumy2_2_1_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_1_2
+
+ST_42: sumx2_2_1_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:714  %sumx2_2_1_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_1_2
+
+ST_42: sumx0_3_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:743  %sumx0_3_1_2 = add nsw i32 %tmp_44_1_2, %sumx0_2_1_1_2
+
+ST_42: sumy0_3_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:745  %sumy0_3_1_2 = add nsw i32 %tmp_45_1_2, %sumy0_2_1_1_2
+
+ST_42: sumx2_3_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:797  %sumx2_3_1_2 = add nsw i32 %tmp_58_1_2, %sumx2_2_1_1_2
+
+ST_42: sumy2_3_1_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:799  %sumy2_3_1_2 = add nsw i32 %tmp_59_1_2, %sumy2_2_1_1_2
+
+ST_42: sumy2_2_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:800  %sumy2_2_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_2
+
+ST_42: sumx2_2_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:801  %sumx2_2_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_2
+
+ST_42: sumx2_3_1_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:829  %sumx2_3_1_2_1 = add nsw i32 %tmp_58_1_2_1, %sumx2_2_1_2
+
+ST_42: sumy2_3_1_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:831  %sumy2_3_1_2_1 = add nsw i32 %tmp_59_1_2_1, %sumy2_2_1_2
+
+ST_42: tmp_45_1_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:836  %tmp_45_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_48_1_2_1
+
+ST_42: tmp_51_1_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:840  %tmp_51_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_1_2_1
+
+ST_42: tmp_52_1_2_2 [3/3] 6.08ns
+._crit_edge.0.0.0_ifconv:842  %tmp_52_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_1_2_1
+
+ST_42: tmp_58_1_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:848  %tmp_58_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_1_2_2
+
+ST_42: tmp_59_1_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:850  %tmp_59_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_1_2_2
+
+
+ <State 43>: 8.73ns
+ST_43: sumy1_2_0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:407  %sumy1_2_0_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_2_1
+
+ST_43: sumx3_2_0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:423  %sumx3_2_0_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_2_1
+
+ST_43: sumy3_2_0_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:424  %sumy3_2_0_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_2_1
+
+ST_43: tmp_52_0_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:427  %tmp_52_0_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_0_2_1
+
+ST_43: sumy1_3_0_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:428  %sumy1_3_0_2_2 = add nsw i32 %tmp_52_0_2_2, %sumy1_2_0_2_1
+
+ST_43: sumx3_3_0_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:455  %sumx3_3_0_2_2 = add nsw i32 %tmp_65_0_2_2, %sumx3_2_0_2_1
+
+ST_43: sumy3_3_0_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:457  %sumy3_3_0_2_2 = add nsw i32 %tmp_66_0_2_2, %sumy3_2_0_2_1
+
+ST_43: sumx3_2_0_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:458  %sumx3_2_0_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumx3_3_0_2_2
+
+ST_43: sumy3_2_0_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:459  %sumy3_2_0_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumy3_3_0_2_2
+
+ST_43: neg4 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:467  %neg4 = sub i32 0, %sumx2_2_0_2_2
+
+ST_43: abscond4 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:468  %abscond4 = icmp sgt i32 %sumx2_2_0_2_2, 0
+
+ST_43: abs4 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:469  %abs4 = select i1 %abscond4, i32 %sumx2_2_0_2_2, i32 %neg4
+
+ST_43: neg5 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:470  %neg5 = sub i32 0, %sumy2_2_0_2_2
+
+ST_43: abscond5 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:471  %abscond5 = icmp sgt i32 %sumy2_2_0_2_2, 0
+
+ST_43: abs5 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:472  %abs5 = select i1 %abscond5, i32 %sumy2_2_0_2_2, i32 %neg5
+
+ST_43: sum2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:473  %sum2 = add nsw i32 %abs5, %abs4
+
+ST_43: abscond6 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:475  %abscond6 = icmp sgt i32 %sumx3_2_0_2_2, 0
+
+ST_43: abscond7 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:478  %abscond7 = icmp sgt i32 %sumy3_2_0_2_2, 0
+
+ST_43: tmp_75 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:485  %tmp_75 = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %sum2, i32 8, i32 31)
+
+ST_43: icmp1 [1/1] 2.40ns
+._crit_edge.0.0.0_ifconv:486  %icmp1 = icmp sgt i24 %tmp_75, 0
+
+ST_43: sumy0_2_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:746  %sumy0_2_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_2
+
+ST_43: sumx0_2_1_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:747  %sumx0_2_1_2 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_2
+
+ST_43: sumx0_3_1_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:803  %sumx0_3_1_2_1 = add nsw i32 %tmp_44_1_2_1, %sumx0_2_1_2
+
+ST_43: sumy0_3_1_2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:805  %sumy0_3_1_2_1 = add nsw i32 %tmp_45_1_2_1, %sumy0_2_1_2
+
+ST_43: sumy0_2_1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:806  %sumy0_2_1_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_2_1
+
+ST_43: sumx0_2_1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:807  %sumx0_2_1_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_2_1
+
+ST_43: sumx1_2_1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:825  %sumx1_2_1_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_2_1
+
+ST_43: sumy2_2_1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:832  %sumy2_2_1_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_2_1
+
+ST_43: sumx2_2_1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:833  %sumx2_2_1_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_2_1
+
+ST_43: sumx0_3_1_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:835  %sumx0_3_1_2_2 = add nsw i32 %tmp_44_1_2_2, %sumx0_2_1_2_1
+
+ST_43: sumy0_3_1_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:837  %sumy0_3_1_2_2 = add nsw i32 %tmp_45_1_2_2, %sumy0_2_1_2_1
+
+ST_43: tmp_51_1_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:840  %tmp_51_1_2_2 = mul nsw i32 %Gx_load_8, %tmp_55_1_2_1
+
+ST_43: sumx1_3_1_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:841  %sumx1_3_1_2_2 = add nsw i32 %tmp_51_1_2_2, %sumx1_2_1_2_1
+
+ST_43: tmp_52_1_2_2 [2/3] 6.08ns
+._crit_edge.0.0.0_ifconv:842  %tmp_52_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_1_2_1
+
+ST_43: sumx2_3_1_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:849  %sumx2_3_1_2_2 = add nsw i32 %tmp_58_1_2_2, %sumx2_2_1_2_1
+
+ST_43: tmp_59_1_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:850  %tmp_59_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_1_2_2
+
+ST_43: sumy2_3_1_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:851  %sumy2_3_1_2_2 = add nsw i32 %tmp_59_1_2_2, %sumy2_2_1_2_1
+
+
+ <State 44>: 8.69ns
+ST_44: sumy1_2_0_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:429  %sumy1_2_0_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_0_2_2
+
+ST_44: sumx1_2_0_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:430  %sumx1_2_0_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_0_2_2
+
+ST_44: neg2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:460  %neg2 = sub i32 0, %sumx1_2_0_2_2
+
+ST_44: abscond2 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:461  %abscond2 = icmp sgt i32 %sumx1_2_0_2_2, 0
+
+ST_44: abs2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:462  %abs2 = select i1 %abscond2, i32 %sumx1_2_0_2_2, i32 %neg2
+
+ST_44: neg3 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:463  %neg3 = sub i32 0, %sumy1_2_0_2_2
+
+ST_44: abscond3 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:464  %abscond3 = icmp sgt i32 %sumy1_2_0_2_2, 0
+
+ST_44: abs3 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:465  %abs3 = select i1 %abscond3, i32 %sumy1_2_0_2_2, i32 %neg3
+
+ST_44: sum1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:466  %sum1 = add nsw i32 %abs3, %abs2
+
+ST_44: neg6 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:474  %neg6 = sub i32 0, %sumx3_2_0_2_2
+
+ST_44: abs6 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:476  %abs6 = select i1 %abscond6, i32 %sumx3_2_0_2_2, i32 %neg6
+
+ST_44: neg7 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:477  %neg7 = sub i32 0, %sumy3_2_0_2_2
+
+ST_44: abs7 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:479  %abs7 = select i1 %abscond7, i32 %sumy3_2_0_2_2, i32 %neg7
+
+ST_44: sum3 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:480  %sum3 = add nsw i32 %abs7, %abs6
+
+ST_44: tmp_74 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:481  %tmp_74 = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %sum1, i32 8, i32 31)
+
+ST_44: p_op8 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:487  %p_op8 = sub i32 255, %sum2
+
+ST_44: sum2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:488  %sum2_1 = select i1 %icmp1, i32 0, i32 %p_op8
+
+ST_44: tmp_76 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:489  %tmp_76 = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %sum3, i32 8, i32 31)
+
+ST_44: icmp2 [1/1] 2.40ns
+._crit_edge.0.0.0_ifconv:490  %icmp2 = icmp sgt i24 %tmp_76, 0
+
+ST_44: p_op9 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:491  %p_op9 = sub i32 255, %sum3
+
+ST_44: sumy1_2_1_2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:824  %sumy1_2_1_2_1 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_2_1
+
+ST_44: sumy0_2_1_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:838  %sumy0_2_1_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumy0_3_1_2_2
+
+ST_44: sumx0_2_1_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:839  %sumx0_2_1_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumx0_3_1_2_2
+
+ST_44: tmp_52_1_2_2 [1/3] 6.08ns
+._crit_edge.0.0.0_ifconv:842  %tmp_52_1_2_2 = mul nsw i32 %Gy_load_8, %tmp_55_1_2_1
+
+ST_44: sumy1_3_1_2_2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:843  %sumy1_3_1_2_2 = add nsw i32 %tmp_52_1_2_2, %sumy1_2_1_2_1
+
+ST_44: sumy2_2_1_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:852  %sumy2_2_1_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumy2_3_1_2_2
+
+ST_44: sumx2_2_1_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:853  %sumx2_2_1_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumx2_3_1_2_2
+
+ST_44: neg_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:854  %neg_1 = sub i32 0, %sumx0_2_1_2_2
+
+ST_44: abscond_1 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:855  %abscond_1 = icmp sgt i32 %sumx0_2_1_2_2, 0
+
+ST_44: abs_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:856  %abs_1 = select i1 %abscond_1, i32 %sumx0_2_1_2_2, i32 %neg_1
+
+ST_44: neg1_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:857  %neg1_1 = sub i32 0, %sumy0_2_1_2_2
+
+ST_44: abscond1_1 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:858  %abscond1_1 = icmp sgt i32 %sumy0_2_1_2_2, 0
+
+ST_44: abs1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:859  %abs1_1 = select i1 %abscond1_1, i32 %sumy0_2_1_2_2, i32 %neg1_1
+
+ST_44: sum0_s [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:860  %sum0_s = add nsw i32 %abs1_1, %abs_1
+
+ST_44: neg4_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:868  %neg4_1 = sub i32 0, %sumx2_2_1_2_2
+
+ST_44: abscond4_1 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:869  %abscond4_1 = icmp sgt i32 %sumx2_2_1_2_2, 0
+
+ST_44: abs4_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:870  %abs4_1 = select i1 %abscond4_1, i32 %sumx2_2_1_2_2, i32 %neg4_1
+
+ST_44: neg5_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:871  %neg5_1 = sub i32 0, %sumy2_2_1_2_2
+
+ST_44: abscond5_1 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:872  %abscond5_1 = icmp sgt i32 %sumy2_2_1_2_2, 0
+
+ST_44: abs5_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:873  %abs5_1 = select i1 %abscond5_1, i32 %sumy2_2_1_2_2, i32 %neg5_1
+
+ST_44: sum2_s [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:874  %sum2_s = add nsw i32 %abs5_1, %abs4_1
+
+ST_44: tmp_111 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:875  %tmp_111 = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %sum0_s, i32 8, i32 31)
+
+ST_44: tmp_113 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:883  %tmp_113 = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %sum2_s, i32 8, i32 31)
+
+
+ <State 45>: 8.64ns
+ST_45: icmp [1/1] 2.40ns
+._crit_edge.0.0.0_ifconv:482  %icmp = icmp sgt i24 %tmp_74, 0
+
+ST_45: p_op7 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:483  %p_op7 = sub i32 255, %sum1
+
+ST_45: sum1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:484  %sum1_1 = select i1 %icmp, i32 0, i32 %p_op7
+
+ST_45: sum3_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:492  %sum3_1 = select i1 %icmp2, i32 0, i32 %p_op9
+
+ST_45: tmp_77 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:493  %tmp_77 = shl i32 %sum1_1, 8
+
+ST_45: tmp_78 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:494  %tmp_78 = shl i32 %sum2_1, 16
+
+ST_45: tmp_79 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:495  %tmp_79 = shl i32 %sum3_1, 24
+
+ST_45: tmp1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:496  %tmp1 = add i32 %tmp_78, %tmp_79
+
+ST_45: tmp_20 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:497  %tmp_20 = add i32 %tmp1, %tmp_77
+
+ST_45: tmp_21 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:498  %tmp_21 = zext i8 %tmp_56 to i64
+
+ST_45: sub_out_addr [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:499  %sub_out_addr = getelementptr [256 x i32]* %sub_out, i64 0, i64 %tmp_21
+
+ST_45: stg_1259 [1/1] 2.39ns
+._crit_edge.0.0.0_ifconv:500  store i32 %tmp_20, i32* %sub_out_addr, align 4
+
+ST_45: sumy1_2_1_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:844  %sumy1_2_1_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumy1_3_1_2_2
+
+ST_45: sumx1_2_1_2_2 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:845  %sumx1_2_1_2_2 = select i1 %sel_tmp2, i32 255, i32 %sumx1_3_1_2_2
+
+ST_45: neg2_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:861  %neg2_1 = sub i32 0, %sumx1_2_1_2_2
+
+ST_45: abscond2_1 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:862  %abscond2_1 = icmp sgt i32 %sumx1_2_1_2_2, 0
+
+ST_45: abs2_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:863  %abs2_1 = select i1 %abscond2_1, i32 %sumx1_2_1_2_2, i32 %neg2_1
+
+ST_45: neg3_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:864  %neg3_1 = sub i32 0, %sumy1_2_1_2_2
+
+ST_45: abscond3_1 [1/1] 2.52ns
+._crit_edge.0.0.0_ifconv:865  %abscond3_1 = icmp sgt i32 %sumy1_2_1_2_2, 0
+
+ST_45: abs3_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:866  %abs3_1 = select i1 %abscond3_1, i32 %sumy1_2_1_2_2, i32 %neg3_1
+
+ST_45: sum1_s [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:867  %sum1_s = add nsw i32 %abs3_1, %abs2_1
+
+ST_45: icmp3 [1/1] 2.40ns
+._crit_edge.0.0.0_ifconv:876  %icmp3 = icmp sgt i24 %tmp_111, 0
+
+ST_45: p_op_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:877  %p_op_1 = sub i32 255, %sum0_s
+
+ST_45: sum0_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:878  %sum0_1_1 = select i1 %icmp3, i32 0, i32 %p_op_1
+
+ST_45: tmp_112 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:879  %tmp_112 = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %sum1_s, i32 8, i32 31)
+
+ST_45: icmp5 [1/1] 2.40ns
+._crit_edge.0.0.0_ifconv:884  %icmp5 = icmp sgt i24 %tmp_113, 0
+
+ST_45: p_op8_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:885  %p_op8_1 = sub i32 255, %sum2_s
+
+ST_45: sum2_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:886  %sum2_1_1 = select i1 %icmp5, i32 0, i32 %p_op8_1
+
+ST_45: tmp_115 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:888  %tmp_115 = shl i32 %sum2_1_1, 16
+
+ST_45: tmp2 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:889  %tmp2 = add i32 %sum0_1_1, %tmp_115
+
+
+ <State 46>: 8.64ns
+ST_46: empty_41 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:0  %empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 128, i64 128, i64 128) nounwind
+
+ST_46: stg_1279 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:1  call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str4) nounwind
+
+ST_46: tmp_4 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:2  %tmp_4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str4) nounwind
+
+ST_46: stg_1281 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:3  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str) nounwind
+
+ST_46: icmp4 [1/1] 2.40ns
+._crit_edge.0.0.0_ifconv:880  %icmp4 = icmp sgt i24 %tmp_112, 0
+
+ST_46: p_op7_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:881  %p_op7_1 = sub i32 255, %sum1_s
+
+ST_46: sum1_1_1 [1/1] 1.37ns
+._crit_edge.0.0.0_ifconv:882  %sum1_1_1 = select i1 %icmp4, i32 0, i32 %p_op7_1
+
+ST_46: tmp_114 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:887  %tmp_114 = shl i32 %sum1_1_1, 8
+
+ST_46: tmp_30_1 [1/1] 2.44ns
+._crit_edge.0.0.0_ifconv:890  %tmp_30_1 = add i32 %tmp2, %tmp_114
+
+ST_46: tmp_31_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:891  %tmp_31_1 = zext i8 %adjSize1 to i64
+
+ST_46: sub_out_addr_1 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:892  %sub_out_addr_1 = getelementptr [256 x i32]* %sub_out, i64 0, i64 %tmp_31_1
+
+ST_46: stg_1289 [1/1] 2.39ns
+._crit_edge.0.0.0_ifconv:893  store i32 %tmp_30_1, i32* %sub_out_addr_1, align 4
+
+ST_46: empty_43 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:894  %empty_43 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str4, i32 %tmp_4) nounwind
+
+ST_46: stg_1291 [1/1] 0.00ns
+._crit_edge.0.0.0_ifconv:895  br label %.preheader
+
+
+ <State 47>: 0.00ns
+ST_47: stg_1292 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 48>: 0.00ns
+
+ <State 49>: 0.00ns
+
+ <State 50>: 0.00ns
+
+ <State 51>: 0.00ns
+
+ <State 52>: 0.00ns
+
+ <State 53>: 0.00ns
+
+ <State 54>: 0.00ns
+
+ <State 55>: 0.00ns
+
+ <State 56>: 0.00ns
+
+ <State 57>: 0.00ns
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

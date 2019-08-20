@@ -1,0 +1,6 @@
+11:29:48 **** Auto Build of project mm-small_bsp ****
+make -k all 
+'Finished building libraries'
+
+11:29:48 Build Finished (took 146ms)
+

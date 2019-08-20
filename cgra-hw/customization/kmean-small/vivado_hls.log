@@ -1,0 +1,210 @@
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:51:08 +0800 2015
+            in directory 'D:/minibench/customization/kmean-small'
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+@E [LIC-104] License feature [HLS_BETA] is not available.
+command 'license_checkout' returned error code
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/kmean-sma@I [LIC-101] Checked in feature [VIVADO_HLS]
+out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:53:45 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/kmean-small'.
+@I [HLS-10] Adding design file 'kmean-small/src/kmean_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'kmean-small/src/kmean.h' to the project.
+@I [HLS-10] Adding test bench file 'kmean-small/src/main.c' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/kmean-small/unroll-20'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'kmean-small/src/main.c' ... 
+@I [HLS-10] Importing test bench file 'kmean-small/src/kmean.h' ... 
+@I [HLS-10] Analyzing design file 'kmean-small/src/kmean_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'kmean_ip_label0' (kmean-small/src/kmean_ip.c:20) in function 'kmean_ip' partially with a factor of 16.
+@I [HLS-111] Elapsed time: 14.385 seconds; current memory usage: 55.3 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'kmean_ip' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'kmean_ip_label0'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_1' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_1' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 4, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_2' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 10, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_5' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 22, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_10' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-69] Unable to schedule 'load' operation ('sub_in_load_4', kmean-small/src/kmean_ip.c:24) on array 'sub_in' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 384, Depth: 401.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 124.751 seconds; current memory usage: 78.5 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 2.035 seconds; current memory usage: 84.9 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'kmean_ip/sub_in' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'kmean_ip/sub_out' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'kmean_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'kmean_ip_mul_32s_32s_32_6': 128 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'kmean_ip'.
+@I [HLS-111] Elapsed time: 3.123 seconds; current memory usage: 97.3 MB.
+@I [RTMG-282] Generating pipelined core: 'kmean_ip_mul_32s_32s_32_6_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'kmean_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'kmean_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'kmean_ip'.
+@I [HLS-112] Total elapsed time: 149.926 seconds; peak memory usage: 97.5 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/kmean-small/unroll-20/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 15:56:34 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/kmean-small'.
+@I [HLS-10] Adding design file 'kmean-small/src/kmean_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'kmean-small/src/main.c' to the project.
+@I [HLS-10] Adding test bench file 'kmean-small/src/kmean.h' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/kmean-small/unroll-20'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'kmean-small/src/kmean.h' ... 
+@I [HLS-10] Importing test bench file 'kmean-small/src/main.c' ... 
+@I [HLS-10] Analyzing design file 'kmean-small/src/kmean_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'kmean_ip_label0' (kmean-small/src/kmean_ip.c:20) in function 'kmean_ip' partially with a factor of 8.
+@I [HLS-111] Elapsed time: 12.219 seconds; current memory usage: 45.7 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'kmean_ip' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'kmean_ip_label0'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_1' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_1' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 4, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_2' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 10, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_5' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-69] Unable to schedule 'store' operation (kmean-small/src/kmean_ip.c:53) of variable 'tmp_37' on array 'sub_out' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 192, Depth: 209.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 16.602 seconds; current memory usage: 55.3 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.744 seconds; current memory usage: 58 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'kmean_ip/sub_in' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'kmean_ip/sub_out' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'kmean_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'kmean_ip_mul_32s_32s_32_6': 64 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'kmean_ip'.
+@I [HLS-111] Elapsed time: 1.429 seconds; current memory usage: 65.1 MB.
+@I [RTMG-282] Generating pipelined core: 'kmean_ip_mul_32s_32s_32_6_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'kmean_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'kmean_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'kmean_ip'.
+@I [HLS-112] Total elapsed time: 34.144 seconds; peak memory usage: 65.1 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/kmean-small/unroll-20/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 16:00:52 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/kmean-small'.
+@I [HLS-10] Adding design file 'kmean-small/src/kmean_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'kmean-small/src/kmean.h' to the project.
+@I [HLS-10] Adding test bench file 'kmean-small/src/main.c' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/kmean-small/unroll-20'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'kmean-small/src/main.c' ... 
+@I [HLS-10] Importing test bench file 'kmean-small/src/kmean.h' ... 
+@I [HLS-10] Analyzing design file 'kmean-small/src/kmean_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-501] Unrolling loop 'kmean_ip_label0' (kmean-small/src/kmean_ip.c:20) in function 'kmean_ip' partially with a factor of 4.
+@I [HLS-111] Elapsed time: 7.613 seconds; current memory usage: 41.2 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'kmean_ip' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'kmean_ip_label0'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_1' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_1' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 4, distance = 1)
+   between 'store' operation (kmean-small/src/kmean_ip.c:34) of variable 'tmp_23_2' on array 'sub_out' and 'load' operation ('sub_out_load', kmean-small/src/kmean_ip.c:34) on array 'sub_out'.
+@W [SCHED-69] Unable to schedule 'load' operation ('sub_in_load_10', kmean-small/src/kmean_ip.c:21) on array 'sub_in' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 96, Depth: 113.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 3.599 seconds; current memory usage: 45.8 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.302 seconds; current memory usage: 47.1 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'kmean_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'kmean_ip/sub_in' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'kmean_ip/sub_out' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'kmean_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'kmean_ip_mul_32s_32s_32_6': 32 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'kmean_ip'.
+@I [HLS-111] Elapsed time: 0.6 seconds; current memory usage: 51.1 MB.
+@I [RTMG-282] Generating pipelined core: 'kmean_ip_mul_32s_32s_32_6_MulnS_0'
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'kmean_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'kmean_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'kmean_ip'.
+@I [HLS-112] Total elapsed time: 13.748 seconds; peak memory usage: 51.1 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]

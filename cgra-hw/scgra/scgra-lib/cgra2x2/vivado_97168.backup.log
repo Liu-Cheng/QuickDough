@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2013.3 (64-bit)
+# SW Build 329390 on Wed Oct 16 18:37:02 MDT 2013
+# IP Build 192953 on Wed Oct 16 08:44:02 MDT 2013
+# Start of session at: Mon Jul 21 19:36:03 2014
+# Process ID: 91080
+# Log file: D:/minibench/scgra/scgra-lib/cgra2x2/vivado.log
+# Journal file: D:/minibench/scgra/scgra-lib/cgra2x2\vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/Xilinx/Vivado/2013.3/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/Xilinx/Vivado/2013.3/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+open_project {D:\minibench\scgra\scgra-lib\cgra2x2\cgra2x2.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado repository 'C:/EDA/Xilinx/Vivado/2013.3/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 726.313 ; gain = 67.711
+ipx::open_core -upgrade true {D:/minibench/scgra/scgra-lib/cgra2x2/component.xml}
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Boolean (See D:/minibench/scgra/scgra-lib/cgra2x2/vivado_pid91080.debug)
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 21 21:07:19 2014...

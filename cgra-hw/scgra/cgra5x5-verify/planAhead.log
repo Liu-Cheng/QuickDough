@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Mon Sep 22 18:36:07 2014
+# Process ID: 19876
+# Log file: D:/minibench/scgra/cgra5x5-verify/planAhead.log
+# Journal file: D:/minibench/scgra/cgra5x5-verify\planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+open_project {D:\minibench\scgra\cgra5x5-verify\cgra5x5-verify.ppr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user repositories specified
+INFO: [IP_Flow 19-816] Loaded Xilinx IP repository 'C:/EDA/14.7/ISE_DS/ISE/'
+open_project: Time (s): elapsed = 00:00:25 . Memory (MB): peak = 517.148 ; gain = 172.316
+update_compile_order -fileset sources_1
+INFO:coreutil:838 - Index Map File set to
+   'D:\minibench\scgra\cgra5x5-verify\cgra5x5-verify.srcs\sources_1\ip\cg_nt_ind
+   ex_map.xml'.
+INFO:coreutil:879 - Reloading repositories because of a changed repository
+   configuration.
+INFO:coreutil:877 - Reloaded all repositories after a full directory search.
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+Cancelled executing Tcl generator.
+Saved CGP file for project 'coregen'.
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Mon Sep 22 18:39:43 2014...
+INFO: [Common 17-83] Releasing license: PlanAhead

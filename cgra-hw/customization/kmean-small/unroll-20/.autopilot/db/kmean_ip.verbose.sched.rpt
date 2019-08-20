@@ -1,0 +1,2686 @@
+
+
+================================================================
+== Vivado HLS Report for 'kmean_ip'
+================================================================
+* Date:           Tue Mar 24 16:00:58 2015
+
+* Version:        2013.3 (build date: Wed Oct 16 18:12:55 PM 2013)
+* Project:        kmean-small
+* Solution:       unroll-20
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.52|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  24607|  24607|  24608|  24608|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |                   |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1           |     12|     12|         1|          -|          -|    12|    no    |
+        |- kmean_ip_label0  |  24592|  24592|       113|         96|          1|   256|    yes   |
+        +-------------------+-------+-------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 96, depth = 113
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 116
+* Pipeline: 1
+  Pipeline-0: II = 96, D = 113, States = { 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!exitcond8)
+	3  / (exitcond8)
+3 --> 
+	116  / (exitcond)
+	4  / (!exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+	102  / true
+102 --> 
+	103  / true
+103 --> 
+	104  / true
+104 --> 
+	105  / true
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	3  / true
+116 --> 
+* FSM state operations: 
+
+ <State 1>: 1.21ns
+ST_1: stg_117 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([2056 x i32]* %sub_in) nounwind, !map !0
+
+ST_1: stg_118 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap([12 x i32]* %sub_out) nounwind, !map !6
+
+ST_1: sub_out_addr [1/1] 0.00ns
+:2  %sub_out_addr = getelementptr [12 x i32]* %sub_out, i64 0, i64 0
+
+ST_1: stg_120 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @str) nounwind
+
+ST_1: stg_121 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecMemCore([12 x i32]* %sub_out, [1 x i8]* @p_str, [12 x i8]* @p_str1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
+
+ST_1: stg_122 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecMemCore([2056 x i32]* %sub_in, [1 x i8]* @p_str, [12 x i8]* @p_str1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
+
+ST_1: stg_123 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecIFCore(i32 0, [1 x i8]* @p_str, [10 x i8]* @p_str2, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [17 x i8]* @p_str3) nounwind
+
+ST_1: stg_124 [1/1] 1.21ns
+:7  br label %1
+
+
+ <State 2>: 2.39ns
+ST_2: i [1/1] 0.00ns
+:0  %i = phi i4 [ 0, %0 ], [ %i_1, %2 ]
+
+ST_2: exitcond8 [1/1] 1.88ns
+:1  %exitcond8 = icmp eq i4 %i, -4
+
+ST_2: empty [1/1] 0.00ns
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12) nounwind
+
+ST_2: i_1 [1/1] 0.80ns
+:3  %i_1 = add i4 %i, 1
+
+ST_2: stg_129 [1/1] 0.00ns
+:4  br i1 %exitcond8, label %.preheader, label %2
+
+ST_2: tmp [1/1] 0.00ns
+:0  %tmp = zext i4 %i to i64
+
+ST_2: sub_out_addr_12 [1/1] 0.00ns
+:1  %sub_out_addr_12 = getelementptr [12 x i32]* %sub_out, i64 0, i64 %tmp
+
+ST_2: stg_132 [1/1] 2.39ns
+:2  store i32 0, i32* %sub_out_addr_12, align 4
+
+ST_2: stg_133 [1/1] 0.00ns
+:3  br label %1
+
+ST_2: sub_in_addr [1/1] 0.00ns
+.preheader:0  %sub_in_addr = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2048
+
+ST_2: sub_in_addr_1 [1/1] 0.00ns
+.preheader:1  %sub_in_addr_1 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2049
+
+ST_2: sub_in_addr_2 [1/1] 0.00ns
+.preheader:2  %sub_in_addr_2 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2050
+
+ST_2: sub_in_addr_3 [1/1] 0.00ns
+.preheader:3  %sub_in_addr_3 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2051
+
+ST_2: sub_in_addr_4 [1/1] 0.00ns
+.preheader:4  %sub_in_addr_4 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2052
+
+ST_2: sub_in_addr_5 [1/1] 0.00ns
+.preheader:5  %sub_in_addr_5 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2053
+
+ST_2: sub_in_addr_6 [1/1] 0.00ns
+.preheader:6  %sub_in_addr_6 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2054
+
+ST_2: sub_in_addr_7 [1/1] 0.00ns
+.preheader:7  %sub_in_addr_7 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 2055
+
+ST_2: sub_out_addr_1 [1/1] 0.00ns
+.preheader:8  %sub_out_addr_1 = getelementptr [12 x i32]* %sub_out, i64 0, i64 11
+
+ST_2: sub_out_addr_2 [1/1] 0.00ns
+.preheader:9  %sub_out_addr_2 = getelementptr [12 x i32]* %sub_out, i64 0, i64 6
+
+ST_2: sub_out_addr_3 [1/1] 0.00ns
+.preheader:10  %sub_out_addr_3 = getelementptr [12 x i32]* %sub_out, i64 0, i64 7
+
+ST_2: sub_out_addr_4 [1/1] 0.00ns
+.preheader:11  %sub_out_addr_4 = getelementptr [12 x i32]* %sub_out, i64 0, i64 10
+
+ST_2: sub_out_addr_5 [1/1] 0.00ns
+.preheader:12  %sub_out_addr_5 = getelementptr [12 x i32]* %sub_out, i64 0, i64 4
+
+ST_2: sub_out_addr_6 [1/1] 0.00ns
+.preheader:13  %sub_out_addr_6 = getelementptr [12 x i32]* %sub_out, i64 0, i64 5
+
+ST_2: sub_out_addr_7 [1/1] 0.00ns
+.preheader:14  %sub_out_addr_7 = getelementptr [12 x i32]* %sub_out, i64 0, i64 9
+
+ST_2: sub_out_addr_8 [1/1] 0.00ns
+.preheader:15  %sub_out_addr_8 = getelementptr [12 x i32]* %sub_out, i64 0, i64 2
+
+ST_2: sub_out_addr_9 [1/1] 0.00ns
+.preheader:16  %sub_out_addr_9 = getelementptr [12 x i32]* %sub_out, i64 0, i64 3
+
+ST_2: sub_out_addr_10 [1/1] 0.00ns
+.preheader:17  %sub_out_addr_10 = getelementptr [12 x i32]* %sub_out, i64 0, i64 8
+
+ST_2: sub_out_addr_11 [1/1] 0.00ns
+.preheader:18  %sub_out_addr_11 = getelementptr [12 x i32]* %sub_out, i64 0, i64 1
+
+ST_2: stg_153 [1/1] 1.39ns
+.preheader:19  br label %3
+
+
+ <State 3>: 2.39ns
+ST_3: i_s [1/1] 0.00ns
+:0  %i_s = phi i11 [ %i_3_3, %._crit_edge11.3 ], [ 0, %.preheader ]
+
+ST_3: exitcond [1/1] 2.11ns
+:1  %exitcond = icmp eq i11 %i_s, -1024
+
+ST_3: stg_156 [1/1] 0.00ns
+:2  br i1 %exitcond, label %21, label %4
+
+ST_3: tmp_26 [1/1] 0.00ns
+:5  %tmp_26 = shl i11 %i_s, 1
+
+ST_3: tmp_3 [1/1] 0.00ns
+:6  %tmp_3 = zext i11 %tmp_26 to i64
+
+ST_3: sub_in_addr_8 [1/1] 0.00ns
+:7  %sub_in_addr_8 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_3
+
+ST_3: sub_in_load [2/2] 2.39ns
+:8  %sub_in_load = load i32* %sub_in_addr_8, align 4
+
+
+ <State 4>: 2.39ns
+ST_4: sub_in_load [1/2] 2.39ns
+:8  %sub_in_load = load i32* %sub_in_addr_8, align 4
+
+ST_4: sub_in_load_1 [2/2] 2.39ns
+:9  %sub_in_load_1 = load i32* %sub_in_addr, align 4
+
+
+ <State 5>: 2.39ns
+ST_5: tmp_2 [1/1] 0.00ns
+:4  %tmp_2 = trunc i11 %i_s to i10
+
+ST_5: sub_in_load_1 [1/2] 2.39ns
+:9  %sub_in_load_1 = load i32* %sub_in_addr, align 4
+
+ST_5: tmp_6 [1/1] 0.00ns
+:12  %tmp_6 = call i11 @_ssdm_op_BitConcatenate.i11.i10.i1(i10 %tmp_2, i1 true)
+
+ST_5: tmp_7 [1/1] 0.00ns
+:13  %tmp_7 = zext i11 %tmp_6 to i64
+
+ST_5: sub_in_addr_9 [1/1] 0.00ns
+:14  %sub_in_addr_9 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_7
+
+ST_5: sub_in_load_2 [2/2] 2.39ns
+:15  %sub_in_load_2 = load i32* %sub_in_addr_9, align 4
+
+
+ <State 6>: 8.52ns
+ST_6: tmp_4 [1/1] 2.44ns
+:10  %tmp_4 = sub nsw i32 %sub_in_load, %sub_in_load_1
+
+ST_6: tmp_5 [6/6] 6.08ns
+:11  %tmp_5 = mul nsw i32 %tmp_4, %tmp_4
+
+ST_6: sub_in_load_2 [1/2] 2.39ns
+:15  %sub_in_load_2 = load i32* %sub_in_addr_9, align 4
+
+ST_6: sub_in_load_3 [2/2] 2.39ns
+:16  %sub_in_load_3 = load i32* %sub_in_addr_1, align 4
+
+
+ <State 7>: 6.08ns
+ST_7: tmp_5 [5/6] 6.08ns
+:11  %tmp_5 = mul nsw i32 %tmp_4, %tmp_4
+
+ST_7: sub_in_load_3 [1/2] 2.39ns
+:16  %sub_in_load_3 = load i32* %sub_in_addr_1, align 4
+
+ST_7: sub_in_load_4 [2/2] 2.39ns
+:20  %sub_in_load_4 = load i32* %sub_in_addr_2, align 4
+
+
+ <State 8>: 8.52ns
+ST_8: tmp_5 [4/6] 6.08ns
+:11  %tmp_5 = mul nsw i32 %tmp_4, %tmp_4
+
+ST_8: tmp_8 [1/1] 2.44ns
+:17  %tmp_8 = sub nsw i32 %sub_in_load_2, %sub_in_load_3
+
+ST_8: tmp_9 [6/6] 6.08ns
+:18  %tmp_9 = mul nsw i32 %tmp_8, %tmp_8
+
+ST_8: sub_in_load_4 [1/2] 2.39ns
+:20  %sub_in_load_4 = load i32* %sub_in_addr_2, align 4
+
+ST_8: sub_in_load_5 [2/2] 2.39ns
+:23  %sub_in_load_5 = load i32* %sub_in_addr_3, align 4
+
+
+ <State 9>: 8.52ns
+ST_9: tmp_5 [3/6] 6.08ns
+:11  %tmp_5 = mul nsw i32 %tmp_4, %tmp_4
+
+ST_9: tmp_9 [5/6] 6.08ns
+:18  %tmp_9 = mul nsw i32 %tmp_8, %tmp_8
+
+ST_9: tmp_s [1/1] 2.44ns
+:21  %tmp_s = sub nsw i32 %sub_in_load, %sub_in_load_4
+
+ST_9: tmp_11 [6/6] 6.08ns
+:22  %tmp_11 = mul nsw i32 %tmp_s, %tmp_s
+
+ST_9: sub_in_load_5 [1/2] 2.39ns
+:23  %sub_in_load_5 = load i32* %sub_in_addr_3, align 4
+
+ST_9: sub_in_load_6 [2/2] 2.39ns
+:27  %sub_in_load_6 = load i32* %sub_in_addr_4, align 4
+
+
+ <State 10>: 8.52ns
+ST_10: tmp_5 [2/6] 6.08ns
+:11  %tmp_5 = mul nsw i32 %tmp_4, %tmp_4
+
+ST_10: tmp_9 [4/6] 6.08ns
+:18  %tmp_9 = mul nsw i32 %tmp_8, %tmp_8
+
+ST_10: tmp_11 [5/6] 6.08ns
+:22  %tmp_11 = mul nsw i32 %tmp_s, %tmp_s
+
+ST_10: tmp_10 [1/1] 2.44ns
+:24  %tmp_10 = sub nsw i32 %sub_in_load_2, %sub_in_load_5
+
+ST_10: tmp_39 [6/6] 6.08ns
+:25  %tmp_39 = mul nsw i32 %tmp_10, %tmp_10
+
+ST_10: sub_in_load_6 [1/2] 2.39ns
+:27  %sub_in_load_6 = load i32* %sub_in_addr_4, align 4
+
+ST_10: sub_in_load_7 [2/2] 2.39ns
+:30  %sub_in_load_7 = load i32* %sub_in_addr_5, align 4
+
+
+ <State 11>: 8.52ns
+ST_11: tmp_5 [1/6] 6.08ns
+:11  %tmp_5 = mul nsw i32 %tmp_4, %tmp_4
+
+ST_11: tmp_9 [3/6] 6.08ns
+:18  %tmp_9 = mul nsw i32 %tmp_8, %tmp_8
+
+ST_11: tmp_11 [4/6] 6.08ns
+:22  %tmp_11 = mul nsw i32 %tmp_s, %tmp_s
+
+ST_11: tmp_39 [5/6] 6.08ns
+:25  %tmp_39 = mul nsw i32 %tmp_10, %tmp_10
+
+ST_11: tmp_12 [1/1] 2.44ns
+:28  %tmp_12 = sub nsw i32 %sub_in_load, %sub_in_load_6
+
+ST_11: tmp_13 [6/6] 6.08ns
+:29  %tmp_13 = mul nsw i32 %tmp_12, %tmp_12
+
+ST_11: sub_in_load_7 [1/2] 2.39ns
+:30  %sub_in_load_7 = load i32* %sub_in_addr_5, align 4
+
+ST_11: sub_in_load_8 [2/2] 2.39ns
+:34  %sub_in_load_8 = load i32* %sub_in_addr_6, align 4
+
+
+ <State 12>: 8.52ns
+ST_12: tmp_9 [2/6] 6.08ns
+:18  %tmp_9 = mul nsw i32 %tmp_8, %tmp_8
+
+ST_12: tmp_11 [3/6] 6.08ns
+:22  %tmp_11 = mul nsw i32 %tmp_s, %tmp_s
+
+ST_12: tmp_39 [4/6] 6.08ns
+:25  %tmp_39 = mul nsw i32 %tmp_10, %tmp_10
+
+ST_12: tmp_13 [5/6] 6.08ns
+:29  %tmp_13 = mul nsw i32 %tmp_12, %tmp_12
+
+ST_12: tmp_14 [1/1] 2.44ns
+:31  %tmp_14 = sub nsw i32 %sub_in_load_2, %sub_in_load_7
+
+ST_12: tmp_15 [6/6] 6.08ns
+:32  %tmp_15 = mul nsw i32 %tmp_14, %tmp_14
+
+ST_12: sub_in_load_8 [1/2] 2.39ns
+:34  %sub_in_load_8 = load i32* %sub_in_addr_6, align 4
+
+ST_12: sub_in_load_9 [2/2] 2.39ns
+:37  %sub_in_load_9 = load i32* %sub_in_addr_7, align 4
+
+
+ <State 13>: 8.52ns
+ST_13: tmp_9 [1/6] 6.08ns
+:18  %tmp_9 = mul nsw i32 %tmp_8, %tmp_8
+
+ST_13: dist0 [1/1] 2.44ns
+:19  %dist0 = add nsw i32 %tmp_9, %tmp_5
+
+ST_13: tmp_11 [2/6] 6.08ns
+:22  %tmp_11 = mul nsw i32 %tmp_s, %tmp_s
+
+ST_13: tmp_39 [3/6] 6.08ns
+:25  %tmp_39 = mul nsw i32 %tmp_10, %tmp_10
+
+ST_13: tmp_13 [4/6] 6.08ns
+:29  %tmp_13 = mul nsw i32 %tmp_12, %tmp_12
+
+ST_13: tmp_15 [5/6] 6.08ns
+:32  %tmp_15 = mul nsw i32 %tmp_14, %tmp_14
+
+ST_13: tmp_16 [1/1] 2.44ns
+:35  %tmp_16 = sub nsw i32 %sub_in_load, %sub_in_load_8
+
+ST_13: tmp_17 [6/6] 6.08ns
+:36  %tmp_17 = mul nsw i32 %tmp_16, %tmp_16
+
+ST_13: sub_in_load_9 [1/2] 2.39ns
+:37  %sub_in_load_9 = load i32* %sub_in_addr_7, align 4
+
+ST_13: tmp_40 [1/1] 0.00ns
+._crit_edge11.0:1  %tmp_40 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %i_s, i32 1, i32 9)
+
+ST_13: tmp_2_1 [1/1] 0.00ns
+._crit_edge11.0:2  %tmp_2_1 = call i11 @_ssdm_op_BitConcatenate.i11.i9.i2(i9 %tmp_40, i2 -2)
+
+ST_13: tmp_3_1 [1/1] 0.00ns
+._crit_edge11.0:3  %tmp_3_1 = zext i11 %tmp_2_1 to i64
+
+ST_13: sub_in_addr_10 [1/1] 0.00ns
+._crit_edge11.0:4  %sub_in_addr_10 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_3_1
+
+ST_13: sub_in_load_10 [2/2] 2.39ns
+._crit_edge11.0:5  %sub_in_load_10 = load i32* %sub_in_addr_10, align 4
+
+ST_13: tmp_41 [1/1] 0.00ns
+._crit_edge11.1:0  %tmp_41 = call i8 @_ssdm_op_PartSelect.i8.i11.i32.i32(i11 %i_s, i32 2, i32 9)
+
+ST_13: i_3_3 [1/1] 1.84ns
+._crit_edge11.3:0  %i_3_3 = add i11 %i_s, 4
+
+ST_13: stg_226 [1/1] 0.00ns
+._crit_edge11.3:1  br label %3
+
+
+ <State 14>: 8.52ns
+ST_14: tmp_11 [1/6] 6.08ns
+:22  %tmp_11 = mul nsw i32 %tmp_s, %tmp_s
+
+ST_14: tmp_39 [2/6] 6.08ns
+:25  %tmp_39 = mul nsw i32 %tmp_10, %tmp_10
+
+ST_14: tmp_13 [3/6] 6.08ns
+:29  %tmp_13 = mul nsw i32 %tmp_12, %tmp_12
+
+ST_14: tmp_15 [4/6] 6.08ns
+:32  %tmp_15 = mul nsw i32 %tmp_14, %tmp_14
+
+ST_14: tmp_17 [5/6] 6.08ns
+:36  %tmp_17 = mul nsw i32 %tmp_16, %tmp_16
+
+ST_14: tmp_18 [1/1] 2.44ns
+:38  %tmp_18 = sub nsw i32 %sub_in_load_2, %sub_in_load_9
+
+ST_14: tmp_19 [6/6] 6.08ns
+:39  %tmp_19 = mul nsw i32 %tmp_18, %tmp_18
+
+ST_14: sub_in_load_10 [1/2] 2.39ns
+._crit_edge11.0:5  %sub_in_load_10 = load i32* %sub_in_addr_10, align 4
+
+ST_14: tmp_6_1 [1/1] 0.00ns
+._crit_edge11.0:8  %tmp_6_1 = call i11 @_ssdm_op_BitConcatenate.i11.i9.i2(i9 %tmp_40, i2 -1)
+
+ST_14: tmp_7_1 [1/1] 0.00ns
+._crit_edge11.0:9  %tmp_7_1 = zext i11 %tmp_6_1 to i64
+
+ST_14: sub_in_addr_11 [1/1] 0.00ns
+._crit_edge11.0:10  %sub_in_addr_11 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_7_1
+
+ST_14: sub_in_load_11 [2/2] 2.39ns
+._crit_edge11.0:11  %sub_in_load_11 = load i32* %sub_in_addr_11, align 4
+
+
+ <State 15>: 8.52ns
+ST_15: tmp_39 [1/6] 6.08ns
+:25  %tmp_39 = mul nsw i32 %tmp_10, %tmp_10
+
+ST_15: dist1 [1/1] 2.44ns
+:26  %dist1 = add nsw i32 %tmp_39, %tmp_11
+
+ST_15: tmp_13 [2/6] 6.08ns
+:29  %tmp_13 = mul nsw i32 %tmp_12, %tmp_12
+
+ST_15: tmp_15 [3/6] 6.08ns
+:32  %tmp_15 = mul nsw i32 %tmp_14, %tmp_14
+
+ST_15: tmp_17 [4/6] 6.08ns
+:36  %tmp_17 = mul nsw i32 %tmp_16, %tmp_16
+
+ST_15: tmp_19 [5/6] 6.08ns
+:39  %tmp_19 = mul nsw i32 %tmp_18, %tmp_18
+
+ST_15: tmp_4_1 [1/1] 2.44ns
+._crit_edge11.0:6  %tmp_4_1 = sub nsw i32 %sub_in_load_10, %sub_in_load_1
+
+ST_15: tmp_5_1 [6/6] 6.08ns
+._crit_edge11.0:7  %tmp_5_1 = mul nsw i32 %tmp_4_1, %tmp_4_1
+
+ST_15: sub_in_load_11 [1/2] 2.39ns
+._crit_edge11.0:11  %sub_in_load_11 = load i32* %sub_in_addr_11, align 4
+
+ST_15: tmp_2_2 [1/1] 0.00ns
+._crit_edge11.1:1  %tmp_2_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_41, i3 -4)
+
+ST_15: tmp_3_2 [1/1] 0.00ns
+._crit_edge11.1:2  %tmp_3_2 = zext i11 %tmp_2_2 to i64
+
+ST_15: sub_in_addr_12 [1/1] 0.00ns
+._crit_edge11.1:3  %sub_in_addr_12 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_3_2
+
+ST_15: sub_in_load_12 [2/2] 2.39ns
+._crit_edge11.1:4  %sub_in_load_12 = load i32* %sub_in_addr_12, align 4
+
+
+ <State 16>: 8.52ns
+ST_16: tmp_13 [1/6] 6.08ns
+:29  %tmp_13 = mul nsw i32 %tmp_12, %tmp_12
+
+ST_16: tmp_15 [2/6] 6.08ns
+:32  %tmp_15 = mul nsw i32 %tmp_14, %tmp_14
+
+ST_16: tmp_17 [3/6] 6.08ns
+:36  %tmp_17 = mul nsw i32 %tmp_16, %tmp_16
+
+ST_16: tmp_19 [4/6] 6.08ns
+:39  %tmp_19 = mul nsw i32 %tmp_18, %tmp_18
+
+ST_16: tmp_5_1 [5/6] 6.08ns
+._crit_edge11.0:7  %tmp_5_1 = mul nsw i32 %tmp_4_1, %tmp_4_1
+
+ST_16: tmp_8_1 [1/1] 2.44ns
+._crit_edge11.0:12  %tmp_8_1 = sub nsw i32 %sub_in_load_11, %sub_in_load_3
+
+ST_16: tmp_9_1 [6/6] 6.08ns
+._crit_edge11.0:13  %tmp_9_1 = mul nsw i32 %tmp_8_1, %tmp_8_1
+
+ST_16: sub_in_load_12 [1/2] 2.39ns
+._crit_edge11.1:4  %sub_in_load_12 = load i32* %sub_in_addr_12, align 4
+
+ST_16: tmp_6_2 [1/1] 0.00ns
+._crit_edge11.1:7  %tmp_6_2 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_41, i3 -3)
+
+ST_16: tmp_7_2 [1/1] 0.00ns
+._crit_edge11.1:8  %tmp_7_2 = zext i11 %tmp_6_2 to i64
+
+ST_16: sub_in_addr_13 [1/1] 0.00ns
+._crit_edge11.1:9  %sub_in_addr_13 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_7_2
+
+ST_16: sub_in_load_13 [2/2] 2.39ns
+._crit_edge11.1:10  %sub_in_load_13 = load i32* %sub_in_addr_13, align 4
+
+
+ <State 17>: 8.52ns
+ST_17: tmp_15 [1/6] 6.08ns
+:32  %tmp_15 = mul nsw i32 %tmp_14, %tmp_14
+
+ST_17: dist2 [1/1] 2.44ns
+:33  %dist2 = add nsw i32 %tmp_15, %tmp_13
+
+ST_17: tmp_17 [2/6] 6.08ns
+:36  %tmp_17 = mul nsw i32 %tmp_16, %tmp_16
+
+ST_17: tmp_19 [3/6] 6.08ns
+:39  %tmp_19 = mul nsw i32 %tmp_18, %tmp_18
+
+ST_17: tmp_5_1 [4/6] 6.08ns
+._crit_edge11.0:7  %tmp_5_1 = mul nsw i32 %tmp_4_1, %tmp_4_1
+
+ST_17: tmp_9_1 [5/6] 6.08ns
+._crit_edge11.0:13  %tmp_9_1 = mul nsw i32 %tmp_8_1, %tmp_8_1
+
+ST_17: tmp_1 [1/1] 2.44ns
+._crit_edge11.0:15  %tmp_1 = sub nsw i32 %sub_in_load_10, %sub_in_load_4
+
+ST_17: tmp_1_1 [6/6] 6.08ns
+._crit_edge11.0:16  %tmp_1_1 = mul nsw i32 %tmp_1, %tmp_1
+
+ST_17: sub_in_load_13 [1/2] 2.39ns
+._crit_edge11.1:10  %sub_in_load_13 = load i32* %sub_in_addr_13, align 4
+
+ST_17: tmp_2_3 [1/1] 0.00ns
+._crit_edge11.2:0  %tmp_2_3 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_41, i3 -2)
+
+ST_17: tmp_3_3 [1/1] 0.00ns
+._crit_edge11.2:1  %tmp_3_3 = zext i11 %tmp_2_3 to i64
+
+ST_17: sub_in_addr_14 [1/1] 0.00ns
+._crit_edge11.2:2  %sub_in_addr_14 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_3_3
+
+ST_17: sub_in_load_14 [2/2] 2.39ns
+._crit_edge11.2:3  %sub_in_load_14 = load i32* %sub_in_addr_14, align 4
+
+
+ <State 18>: 8.52ns
+ST_18: tmp_17 [1/6] 6.08ns
+:36  %tmp_17 = mul nsw i32 %tmp_16, %tmp_16
+
+ST_18: tmp_19 [2/6] 6.08ns
+:39  %tmp_19 = mul nsw i32 %tmp_18, %tmp_18
+
+ST_18: tmp_5_1 [3/6] 6.08ns
+._crit_edge11.0:7  %tmp_5_1 = mul nsw i32 %tmp_4_1, %tmp_4_1
+
+ST_18: tmp_9_1 [4/6] 6.08ns
+._crit_edge11.0:13  %tmp_9_1 = mul nsw i32 %tmp_8_1, %tmp_8_1
+
+ST_18: tmp_1_1 [5/6] 6.08ns
+._crit_edge11.0:16  %tmp_1_1 = mul nsw i32 %tmp_1, %tmp_1
+
+ST_18: tmp_10_1 [1/1] 2.44ns
+._crit_edge11.0:17  %tmp_10_1 = sub nsw i32 %sub_in_load_11, %sub_in_load_5
+
+ST_18: tmp_11_1 [6/6] 6.08ns
+._crit_edge11.0:18  %tmp_11_1 = mul nsw i32 %tmp_10_1, %tmp_10_1
+
+ST_18: sub_in_load_14 [1/2] 2.39ns
+._crit_edge11.2:3  %sub_in_load_14 = load i32* %sub_in_addr_14, align 4
+
+ST_18: tmp_6_3 [1/1] 0.00ns
+._crit_edge11.2:6  %tmp_6_3 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %tmp_41, i3 -1)
+
+ST_18: tmp_7_3 [1/1] 0.00ns
+._crit_edge11.2:7  %tmp_7_3 = zext i11 %tmp_6_3 to i64
+
+ST_18: sub_in_addr_15 [1/1] 0.00ns
+._crit_edge11.2:8  %sub_in_addr_15 = getelementptr [2056 x i32]* %sub_in, i64 0, i64 %tmp_7_3
+
+ST_18: sub_in_load_15 [2/2] 2.39ns
+._crit_edge11.2:9  %sub_in_load_15 = load i32* %sub_in_addr_15, align 4
+
+
+ <State 19>: 8.52ns
+ST_19: tmp_19 [1/6] 6.08ns
+:39  %tmp_19 = mul nsw i32 %tmp_18, %tmp_18
+
+ST_19: dist3 [1/1] 2.44ns
+:40  %dist3 = add nsw i32 %tmp_19, %tmp_17
+
+ST_19: tmp_5_1 [2/6] 6.08ns
+._crit_edge11.0:7  %tmp_5_1 = mul nsw i32 %tmp_4_1, %tmp_4_1
+
+ST_19: tmp_9_1 [3/6] 6.08ns
+._crit_edge11.0:13  %tmp_9_1 = mul nsw i32 %tmp_8_1, %tmp_8_1
+
+ST_19: tmp_1_1 [4/6] 6.08ns
+._crit_edge11.0:16  %tmp_1_1 = mul nsw i32 %tmp_1, %tmp_1
+
+ST_19: tmp_11_1 [5/6] 6.08ns
+._crit_edge11.0:18  %tmp_11_1 = mul nsw i32 %tmp_10_1, %tmp_10_1
+
+ST_19: tmp_12_1 [1/1] 2.44ns
+._crit_edge11.0:20  %tmp_12_1 = sub nsw i32 %sub_in_load_10, %sub_in_load_6
+
+ST_19: tmp_13_1 [6/6] 6.08ns
+._crit_edge11.0:21  %tmp_13_1 = mul nsw i32 %tmp_12_1, %tmp_12_1
+
+ST_19: sub_in_load_15 [1/2] 2.39ns
+._crit_edge11.2:9  %sub_in_load_15 = load i32* %sub_in_addr_15, align 4
+
+
+ <State 20>: 8.52ns
+ST_20: empty_20 [1/1] 0.00ns
+:0  %empty_20 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind
+
+ST_20: stg_299 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str4) nounwind
+
+ST_20: tmp_1_21 [1/1] 0.00ns
+:2  %tmp_1_21 = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str4) nounwind
+
+ST_20: stg_301 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str) nounwind
+
+ST_20: tmp_20 [1/1] 2.52ns
+:41  %tmp_20 = icmp sgt i32 %dist0, %dist1
+
+ST_20: tmp_21 [1/1] 2.52ns
+:42  %tmp_21 = icmp sgt i32 %dist0, %dist2
+
+ST_20: tmp_22 [1/1] 2.52ns
+:43  %tmp_22 = icmp sgt i32 %dist0, %dist3
+
+ST_20: tmp5 [1/1] 1.37ns
+:44  %tmp5 = or i1 %tmp_21, %tmp_22
+
+ST_20: or_cond1 [1/1] 1.37ns
+:45  %or_cond1 = or i1 %tmp5, %tmp_20
+
+ST_20: stg_307 [1/1] 0.00ns
+:46  br i1 %or_cond1, label %._crit_edge.0, label %5
+
+ST_20: sub_out_load [2/2] 2.39ns
+:0  %sub_out_load = load i32* %sub_out_addr_10, align 4
+
+ST_20: slt1 [1/1] 2.52ns
+._crit_edge.0:0  %slt1 = icmp slt i32 %dist1, %dist0
+
+ST_20: rev1 [1/1] 1.37ns
+._crit_edge.0:1  %rev1 = xor i1 %slt1, true
+
+ST_20: tmp_27 [1/1] 2.52ns
+._crit_edge.0:2  %tmp_27 = icmp sgt i32 %dist1, %dist2
+
+ST_20: tmp_28 [1/1] 2.52ns
+._crit_edge.0:3  %tmp_28 = icmp sgt i32 %dist1, %dist3
+
+ST_20: tmp4 [1/1] 1.37ns
+._crit_edge.0:4  %tmp4 = or i1 %tmp_27, %tmp_28
+
+ST_20: or_cond3 [1/1] 1.37ns
+._crit_edge.0:5  %or_cond3 = or i1 %tmp4, %rev1
+
+ST_20: stg_315 [1/1] 0.00ns
+._crit_edge.0:6  br i1 %or_cond3, label %._crit_edge9.0, label %6
+
+ST_20: slt [1/1] 2.52ns
+._crit_edge9.0:0  %slt = icmp slt i32 %dist2, %dist0
+
+ST_20: rev2 [1/1] 1.37ns
+._crit_edge9.0:1  %rev2 = xor i1 %slt, true
+
+ST_20: slt2 [1/1] 2.52ns
+._crit_edge9.0:2  %slt2 = icmp slt i32 %dist2, %dist1
+
+ST_20: rev [1/1] 1.37ns
+._crit_edge9.0:3  %rev = xor i1 %slt2, true
+
+ST_20: tmp_32 [1/1] 2.52ns
+._crit_edge9.0:4  %tmp_32 = icmp sgt i32 %dist2, %dist3
+
+ST_20: tmp3 [1/1] 1.37ns
+._crit_edge9.0:5  %tmp3 = or i1 %rev2, %tmp_32
+
+ST_20: or_cond5 [1/1] 1.37ns
+._crit_edge9.0:6  %or_cond5 = or i1 %tmp3, %rev
+
+ST_20: stg_323 [1/1] 0.00ns
+._crit_edge9.0:7  br i1 %or_cond5, label %._crit_edge10.0, label %7
+
+ST_20: tmp2 [1/1] 1.37ns
+._crit_edge10.0:0  %tmp2 = and i1 %tmp_28, %tmp_32
+
+ST_20: or_cond7 [1/1] 1.37ns
+._crit_edge10.0:1  %or_cond7 = and i1 %tmp2, %tmp_22
+
+ST_20: stg_326 [1/1] 0.00ns
+._crit_edge10.0:2  br i1 %or_cond7, label %8, label %._crit_edge11.0
+
+ST_20: tmp_5_1 [1/6] 6.08ns
+._crit_edge11.0:7  %tmp_5_1 = mul nsw i32 %tmp_4_1, %tmp_4_1
+
+ST_20: tmp_9_1 [2/6] 6.08ns
+._crit_edge11.0:13  %tmp_9_1 = mul nsw i32 %tmp_8_1, %tmp_8_1
+
+ST_20: tmp_1_1 [3/6] 6.08ns
+._crit_edge11.0:16  %tmp_1_1 = mul nsw i32 %tmp_1, %tmp_1
+
+ST_20: tmp_11_1 [4/6] 6.08ns
+._crit_edge11.0:18  %tmp_11_1 = mul nsw i32 %tmp_10_1, %tmp_10_1
+
+ST_20: tmp_13_1 [5/6] 6.08ns
+._crit_edge11.0:21  %tmp_13_1 = mul nsw i32 %tmp_12_1, %tmp_12_1
+
+ST_20: tmp_14_1 [1/1] 2.44ns
+._crit_edge11.0:22  %tmp_14_1 = sub nsw i32 %sub_in_load_11, %sub_in_load_7
+
+ST_20: tmp_15_1 [6/6] 6.08ns
+._crit_edge11.0:23  %tmp_15_1 = mul nsw i32 %tmp_14_1, %tmp_14_1
+
+
+ <State 21>: 8.52ns
+ST_21: sub_out_load [1/2] 2.39ns
+:0  %sub_out_load = load i32* %sub_out_addr_10, align 4
+
+ST_21: sub_out_load_1 [2/2] 2.39ns
+:3  %sub_out_load_1 = load i32* %sub_out_addr, align 4
+
+ST_21: tmp_9_1 [1/6] 6.08ns
+._crit_edge11.0:13  %tmp_9_1 = mul nsw i32 %tmp_8_1, %tmp_8_1
+
+ST_21: dist0_1 [1/1] 2.44ns
+._crit_edge11.0:14  %dist0_1 = add nsw i32 %tmp_9_1, %tmp_5_1
+
+ST_21: tmp_1_1 [2/6] 6.08ns
+._crit_edge11.0:16  %tmp_1_1 = mul nsw i32 %tmp_1, %tmp_1
+
+ST_21: tmp_11_1 [3/6] 6.08ns
+._crit_edge11.0:18  %tmp_11_1 = mul nsw i32 %tmp_10_1, %tmp_10_1
+
+ST_21: tmp_13_1 [4/6] 6.08ns
+._crit_edge11.0:21  %tmp_13_1 = mul nsw i32 %tmp_12_1, %tmp_12_1
+
+ST_21: tmp_15_1 [5/6] 6.08ns
+._crit_edge11.0:23  %tmp_15_1 = mul nsw i32 %tmp_14_1, %tmp_14_1
+
+ST_21: tmp_16_1 [1/1] 2.44ns
+._crit_edge11.0:25  %tmp_16_1 = sub nsw i32 %sub_in_load_10, %sub_in_load_8
+
+ST_21: tmp_17_1 [6/6] 6.08ns
+._crit_edge11.0:26  %tmp_17_1 = mul nsw i32 %tmp_16_1, %tmp_16_1
+
+
+ <State 22>: 8.52ns
+ST_22: sub_out_load_1 [1/2] 2.39ns
+:3  %sub_out_load_1 = load i32* %sub_out_addr, align 4
+
+ST_22: sub_out_load_2 [2/2] 2.39ns
+:6  %sub_out_load_2 = load i32* %sub_out_addr_11, align 4
+
+ST_22: tmp_1_1 [1/6] 6.08ns
+._crit_edge11.0:16  %tmp_1_1 = mul nsw i32 %tmp_1, %tmp_1
+
+ST_22: tmp_11_1 [2/6] 6.08ns
+._crit_edge11.0:18  %tmp_11_1 = mul nsw i32 %tmp_10_1, %tmp_10_1
+
+ST_22: tmp_13_1 [3/6] 6.08ns
+._crit_edge11.0:21  %tmp_13_1 = mul nsw i32 %tmp_12_1, %tmp_12_1
+
+ST_22: tmp_15_1 [4/6] 6.08ns
+._crit_edge11.0:23  %tmp_15_1 = mul nsw i32 %tmp_14_1, %tmp_14_1
+
+ST_22: tmp_17_1 [5/6] 6.08ns
+._crit_edge11.0:26  %tmp_17_1 = mul nsw i32 %tmp_16_1, %tmp_16_1
+
+ST_22: tmp_18_1 [1/1] 2.44ns
+._crit_edge11.0:27  %tmp_18_1 = sub nsw i32 %sub_in_load_11, %sub_in_load_9
+
+ST_22: tmp_19_1 [6/6] 6.08ns
+._crit_edge11.0:28  %tmp_19_1 = mul nsw i32 %tmp_18_1, %tmp_18_1
+
+
+ <State 23>: 8.52ns
+ST_23: sub_out_load_2 [1/2] 2.39ns
+:6  %sub_out_load_2 = load i32* %sub_out_addr_11, align 4
+
+ST_23: sub_out_load_3 [2/2] 2.39ns
+:0  %sub_out_load_3 = load i32* %sub_out_addr_7, align 4
+
+ST_23: tmp_11_1 [1/6] 6.08ns
+._crit_edge11.0:18  %tmp_11_1 = mul nsw i32 %tmp_10_1, %tmp_10_1
+
+ST_23: dist1_1 [1/1] 2.44ns
+._crit_edge11.0:19  %dist1_1 = add nsw i32 %tmp_11_1, %tmp_1_1
+
+ST_23: tmp_13_1 [2/6] 6.08ns
+._crit_edge11.0:21  %tmp_13_1 = mul nsw i32 %tmp_12_1, %tmp_12_1
+
+ST_23: tmp_15_1 [3/6] 6.08ns
+._crit_edge11.0:23  %tmp_15_1 = mul nsw i32 %tmp_14_1, %tmp_14_1
+
+ST_23: tmp_17_1 [4/6] 6.08ns
+._crit_edge11.0:26  %tmp_17_1 = mul nsw i32 %tmp_16_1, %tmp_16_1
+
+ST_23: tmp_19_1 [5/6] 6.08ns
+._crit_edge11.0:28  %tmp_19_1 = mul nsw i32 %tmp_18_1, %tmp_18_1
+
+ST_23: tmp_4_2 [1/1] 2.44ns
+._crit_edge11.1:5  %tmp_4_2 = sub nsw i32 %sub_in_load_12, %sub_in_load_1
+
+ST_23: tmp_5_2 [6/6] 6.08ns
+._crit_edge11.1:6  %tmp_5_2 = mul nsw i32 %tmp_4_2, %tmp_4_2
+
+
+ <State 24>: 8.52ns
+ST_24: sub_out_load_3 [1/2] 2.39ns
+:0  %sub_out_load_3 = load i32* %sub_out_addr_7, align 4
+
+ST_24: sub_out_load_4 [2/2] 2.39ns
+:3  %sub_out_load_4 = load i32* %sub_out_addr_8, align 4
+
+ST_24: tmp_13_1 [1/6] 6.08ns
+._crit_edge11.0:21  %tmp_13_1 = mul nsw i32 %tmp_12_1, %tmp_12_1
+
+ST_24: tmp_15_1 [2/6] 6.08ns
+._crit_edge11.0:23  %tmp_15_1 = mul nsw i32 %tmp_14_1, %tmp_14_1
+
+ST_24: tmp_17_1 [3/6] 6.08ns
+._crit_edge11.0:26  %tmp_17_1 = mul nsw i32 %tmp_16_1, %tmp_16_1
+
+ST_24: tmp_19_1 [4/6] 6.08ns
+._crit_edge11.0:28  %tmp_19_1 = mul nsw i32 %tmp_18_1, %tmp_18_1
+
+ST_24: tmp_5_2 [5/6] 6.08ns
+._crit_edge11.1:6  %tmp_5_2 = mul nsw i32 %tmp_4_2, %tmp_4_2
+
+ST_24: tmp_8_2 [1/1] 2.44ns
+._crit_edge11.1:11  %tmp_8_2 = sub nsw i32 %sub_in_load_13, %sub_in_load_3
+
+ST_24: tmp_9_2 [6/6] 6.08ns
+._crit_edge11.1:12  %tmp_9_2 = mul nsw i32 %tmp_8_2, %tmp_8_2
+
+
+ <State 25>: 8.52ns
+ST_25: sub_out_load_4 [1/2] 2.39ns
+:3  %sub_out_load_4 = load i32* %sub_out_addr_8, align 4
+
+ST_25: sub_out_load_5 [2/2] 2.39ns
+:6  %sub_out_load_5 = load i32* %sub_out_addr_9, align 4
+
+ST_25: tmp_15_1 [1/6] 6.08ns
+._crit_edge11.0:23  %tmp_15_1 = mul nsw i32 %tmp_14_1, %tmp_14_1
+
+ST_25: dist2_1 [1/1] 2.44ns
+._crit_edge11.0:24  %dist2_1 = add nsw i32 %tmp_15_1, %tmp_13_1
+
+ST_25: tmp_17_1 [2/6] 6.08ns
+._crit_edge11.0:26  %tmp_17_1 = mul nsw i32 %tmp_16_1, %tmp_16_1
+
+ST_25: tmp_19_1 [3/6] 6.08ns
+._crit_edge11.0:28  %tmp_19_1 = mul nsw i32 %tmp_18_1, %tmp_18_1
+
+ST_25: tmp_5_2 [4/6] 6.08ns
+._crit_edge11.1:6  %tmp_5_2 = mul nsw i32 %tmp_4_2, %tmp_4_2
+
+ST_25: tmp_9_2 [5/6] 6.08ns
+._crit_edge11.1:12  %tmp_9_2 = mul nsw i32 %tmp_8_2, %tmp_8_2
+
+ST_25: tmp_2_22 [1/1] 2.44ns
+._crit_edge11.1:14  %tmp_2_22 = sub nsw i32 %sub_in_load_12, %sub_in_load_4
+
+ST_25: tmp_1_2 [6/6] 6.08ns
+._crit_edge11.1:15  %tmp_1_2 = mul nsw i32 %tmp_2_22, %tmp_2_22
+
+
+ <State 26>: 8.52ns
+ST_26: sub_out_load_5 [1/2] 2.39ns
+:6  %sub_out_load_5 = load i32* %sub_out_addr_9, align 4
+
+ST_26: sub_out_load_6 [2/2] 2.39ns
+:0  %sub_out_load_6 = load i32* %sub_out_addr_4, align 4
+
+ST_26: tmp_17_1 [1/6] 6.08ns
+._crit_edge11.0:26  %tmp_17_1 = mul nsw i32 %tmp_16_1, %tmp_16_1
+
+ST_26: tmp_19_1 [2/6] 6.08ns
+._crit_edge11.0:28  %tmp_19_1 = mul nsw i32 %tmp_18_1, %tmp_18_1
+
+ST_26: tmp_5_2 [3/6] 6.08ns
+._crit_edge11.1:6  %tmp_5_2 = mul nsw i32 %tmp_4_2, %tmp_4_2
+
+ST_26: tmp_9_2 [4/6] 6.08ns
+._crit_edge11.1:12  %tmp_9_2 = mul nsw i32 %tmp_8_2, %tmp_8_2
+
+ST_26: tmp_1_2 [5/6] 6.08ns
+._crit_edge11.1:15  %tmp_1_2 = mul nsw i32 %tmp_2_22, %tmp_2_22
+
+ST_26: tmp_10_2 [1/1] 2.44ns
+._crit_edge11.1:16  %tmp_10_2 = sub nsw i32 %sub_in_load_13, %sub_in_load_5
+
+ST_26: tmp_11_2 [6/6] 6.08ns
+._crit_edge11.1:17  %tmp_11_2 = mul nsw i32 %tmp_10_2, %tmp_10_2
+
+
+ <State 27>: 8.52ns
+ST_27: sub_out_load_6 [1/2] 2.39ns
+:0  %sub_out_load_6 = load i32* %sub_out_addr_4, align 4
+
+ST_27: sub_out_load_7 [2/2] 2.39ns
+:3  %sub_out_load_7 = load i32* %sub_out_addr_5, align 4
+
+ST_27: tmp_19_1 [1/6] 6.08ns
+._crit_edge11.0:28  %tmp_19_1 = mul nsw i32 %tmp_18_1, %tmp_18_1
+
+ST_27: dist3_1 [1/1] 2.44ns
+._crit_edge11.0:29  %dist3_1 = add nsw i32 %tmp_19_1, %tmp_17_1
+
+ST_27: tmp_5_2 [2/6] 6.08ns
+._crit_edge11.1:6  %tmp_5_2 = mul nsw i32 %tmp_4_2, %tmp_4_2
+
+ST_27: tmp_9_2 [3/6] 6.08ns
+._crit_edge11.1:12  %tmp_9_2 = mul nsw i32 %tmp_8_2, %tmp_8_2
+
+ST_27: tmp_1_2 [4/6] 6.08ns
+._crit_edge11.1:15  %tmp_1_2 = mul nsw i32 %tmp_2_22, %tmp_2_22
+
+ST_27: tmp_11_2 [5/6] 6.08ns
+._crit_edge11.1:17  %tmp_11_2 = mul nsw i32 %tmp_10_2, %tmp_10_2
+
+ST_27: tmp_12_2 [1/1] 2.44ns
+._crit_edge11.1:19  %tmp_12_2 = sub nsw i32 %sub_in_load_12, %sub_in_load_6
+
+ST_27: tmp_13_2 [6/6] 6.08ns
+._crit_edge11.1:20  %tmp_13_2 = mul nsw i32 %tmp_12_2, %tmp_12_2
+
+
+ <State 28>: 8.52ns
+ST_28: sub_out_load_7 [1/2] 2.39ns
+:3  %sub_out_load_7 = load i32* %sub_out_addr_5, align 4
+
+ST_28: sub_out_load_8 [2/2] 2.39ns
+:6  %sub_out_load_8 = load i32* %sub_out_addr_6, align 4
+
+ST_28: empty_19 [1/1] 0.00ns
+._crit_edge11.0:0  %empty_19 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str4, i32 %tmp_1_21) nounwind
+
+ST_28: tmp_20_1 [1/1] 2.52ns
+._crit_edge11.0:30  %tmp_20_1 = icmp sgt i32 %dist0_1, %dist1_1
+
+ST_28: tmp_21_1 [1/1] 2.52ns
+._crit_edge11.0:31  %tmp_21_1 = icmp sgt i32 %dist0_1, %dist2_1
+
+ST_28: tmp_22_1 [1/1] 2.52ns
+._crit_edge11.0:32  %tmp_22_1 = icmp sgt i32 %dist0_1, %dist3_1
+
+ST_28: tmp1 [1/1] 1.37ns
+._crit_edge11.0:33  %tmp1 = or i1 %tmp_21_1, %tmp_22_1
+
+ST_28: or_cond1_1 [1/1] 1.37ns
+._crit_edge11.0:34  %or_cond1_1 = or i1 %tmp1, %tmp_20_1
+
+ST_28: stg_409 [1/1] 0.00ns
+._crit_edge11.0:35  br i1 %or_cond1_1, label %._crit_edge.1, label %9
+
+ST_28: slt3 [1/1] 2.52ns
+._crit_edge.1:0  %slt3 = icmp slt i32 %dist1_1, %dist0_1
+
+ST_28: rev3 [1/1] 1.37ns
+._crit_edge.1:1  %rev3 = xor i1 %slt3, true
+
+ST_28: tmp_27_1 [1/1] 2.52ns
+._crit_edge.1:2  %tmp_27_1 = icmp sgt i32 %dist1_1, %dist2_1
+
+ST_28: tmp_28_1 [1/1] 2.52ns
+._crit_edge.1:3  %tmp_28_1 = icmp sgt i32 %dist1_1, %dist3_1
+
+ST_28: tmp9 [1/1] 1.37ns
+._crit_edge.1:4  %tmp9 = or i1 %tmp_27_1, %tmp_28_1
+
+ST_28: or_cond3_1 [1/1] 1.37ns
+._crit_edge.1:5  %or_cond3_1 = or i1 %tmp9, %rev3
+
+ST_28: stg_416 [1/1] 0.00ns
+._crit_edge.1:6  br i1 %or_cond3_1, label %._crit_edge9.1, label %10
+
+ST_28: slt4 [1/1] 2.52ns
+._crit_edge9.1:0  %slt4 = icmp slt i32 %dist2_1, %dist0_1
+
+ST_28: rev4 [1/1] 1.37ns
+._crit_edge9.1:1  %rev4 = xor i1 %slt4, true
+
+ST_28: slt5 [1/1] 2.52ns
+._crit_edge9.1:2  %slt5 = icmp slt i32 %dist2_1, %dist1_1
+
+ST_28: rev5 [1/1] 1.37ns
+._crit_edge9.1:3  %rev5 = xor i1 %slt5, true
+
+ST_28: tmp_32_1 [1/1] 2.52ns
+._crit_edge9.1:4  %tmp_32_1 = icmp sgt i32 %dist2_1, %dist3_1
+
+ST_28: tmp8 [1/1] 1.37ns
+._crit_edge9.1:5  %tmp8 = or i1 %rev4, %tmp_32_1
+
+ST_28: or_cond5_1 [1/1] 1.37ns
+._crit_edge9.1:6  %or_cond5_1 = or i1 %tmp8, %rev5
+
+ST_28: stg_424 [1/1] 0.00ns
+._crit_edge9.1:7  br i1 %or_cond5_1, label %._crit_edge10.1, label %11
+
+ST_28: tmp7 [1/1] 1.37ns
+._crit_edge10.1:0  %tmp7 = and i1 %tmp_28_1, %tmp_32_1
+
+ST_28: or_cond7_1 [1/1] 1.37ns
+._crit_edge10.1:1  %or_cond7_1 = and i1 %tmp7, %tmp_22_1
+
+ST_28: stg_427 [1/1] 0.00ns
+._crit_edge10.1:2  br i1 %or_cond7_1, label %12, label %._crit_edge11.1
+
+ST_28: tmp_5_2 [1/6] 6.08ns
+._crit_edge11.1:6  %tmp_5_2 = mul nsw i32 %tmp_4_2, %tmp_4_2
+
+ST_28: tmp_9_2 [2/6] 6.08ns
+._crit_edge11.1:12  %tmp_9_2 = mul nsw i32 %tmp_8_2, %tmp_8_2
+
+ST_28: tmp_1_2 [3/6] 6.08ns
+._crit_edge11.1:15  %tmp_1_2 = mul nsw i32 %tmp_2_22, %tmp_2_22
+
+ST_28: tmp_11_2 [4/6] 6.08ns
+._crit_edge11.1:17  %tmp_11_2 = mul nsw i32 %tmp_10_2, %tmp_10_2
+
+ST_28: tmp_13_2 [5/6] 6.08ns
+._crit_edge11.1:20  %tmp_13_2 = mul nsw i32 %tmp_12_2, %tmp_12_2
+
+ST_28: tmp_14_2 [1/1] 2.44ns
+._crit_edge11.1:21  %tmp_14_2 = sub nsw i32 %sub_in_load_13, %sub_in_load_7
+
+ST_28: tmp_15_2 [6/6] 6.08ns
+._crit_edge11.1:22  %tmp_15_2 = mul nsw i32 %tmp_14_2, %tmp_14_2
+
+
+ <State 29>: 8.52ns
+ST_29: sub_out_load_8 [1/2] 2.39ns
+:6  %sub_out_load_8 = load i32* %sub_out_addr_6, align 4
+
+ST_29: sub_out_load_9 [2/2] 2.39ns
+:0  %sub_out_load_9 = load i32* %sub_out_addr_1, align 4
+
+ST_29: tmp_9_2 [1/6] 6.08ns
+._crit_edge11.1:12  %tmp_9_2 = mul nsw i32 %tmp_8_2, %tmp_8_2
+
+ST_29: dist0_2 [1/1] 2.44ns
+._crit_edge11.1:13  %dist0_2 = add nsw i32 %tmp_9_2, %tmp_5_2
+
+ST_29: tmp_1_2 [2/6] 6.08ns
+._crit_edge11.1:15  %tmp_1_2 = mul nsw i32 %tmp_2_22, %tmp_2_22
+
+ST_29: tmp_11_2 [3/6] 6.08ns
+._crit_edge11.1:17  %tmp_11_2 = mul nsw i32 %tmp_10_2, %tmp_10_2
+
+ST_29: tmp_13_2 [4/6] 6.08ns
+._crit_edge11.1:20  %tmp_13_2 = mul nsw i32 %tmp_12_2, %tmp_12_2
+
+ST_29: tmp_15_2 [5/6] 6.08ns
+._crit_edge11.1:22  %tmp_15_2 = mul nsw i32 %tmp_14_2, %tmp_14_2
+
+ST_29: tmp_16_2 [1/1] 2.44ns
+._crit_edge11.1:24  %tmp_16_2 = sub nsw i32 %sub_in_load_12, %sub_in_load_8
+
+ST_29: tmp_17_2 [6/6] 6.08ns
+._crit_edge11.1:25  %tmp_17_2 = mul nsw i32 %tmp_16_2, %tmp_16_2
+
+
+ <State 30>: 8.52ns
+ST_30: sub_out_load_9 [1/2] 2.39ns
+:0  %sub_out_load_9 = load i32* %sub_out_addr_1, align 4
+
+ST_30: sub_out_load_10 [2/2] 2.39ns
+:3  %sub_out_load_10 = load i32* %sub_out_addr_2, align 4
+
+ST_30: tmp_1_2 [1/6] 6.08ns
+._crit_edge11.1:15  %tmp_1_2 = mul nsw i32 %tmp_2_22, %tmp_2_22
+
+ST_30: tmp_11_2 [2/6] 6.08ns
+._crit_edge11.1:17  %tmp_11_2 = mul nsw i32 %tmp_10_2, %tmp_10_2
+
+ST_30: tmp_13_2 [3/6] 6.08ns
+._crit_edge11.1:20  %tmp_13_2 = mul nsw i32 %tmp_12_2, %tmp_12_2
+
+ST_30: tmp_15_2 [4/6] 6.08ns
+._crit_edge11.1:22  %tmp_15_2 = mul nsw i32 %tmp_14_2, %tmp_14_2
+
+ST_30: tmp_17_2 [5/6] 6.08ns
+._crit_edge11.1:25  %tmp_17_2 = mul nsw i32 %tmp_16_2, %tmp_16_2
+
+ST_30: tmp_18_2 [1/1] 2.44ns
+._crit_edge11.1:26  %tmp_18_2 = sub nsw i32 %sub_in_load_13, %sub_in_load_9
+
+ST_30: tmp_19_2 [6/6] 6.08ns
+._crit_edge11.1:27  %tmp_19_2 = mul nsw i32 %tmp_18_2, %tmp_18_2
+
+
+ <State 31>: 8.52ns
+ST_31: tmp_24 [1/1] 2.44ns
+:4  %tmp_24 = add nsw i32 %sub_out_load_1, %sub_in_load
+
+ST_31: tmp_30 [1/1] 2.44ns
+:4  %tmp_30 = add nsw i32 %sub_out_load_4, %sub_in_load
+
+ST_31: tmp_34 [1/1] 2.44ns
+:4  %tmp_34 = add nsw i32 %sub_out_load_7, %sub_in_load
+
+ST_31: sub_out_load_10 [1/2] 2.39ns
+:3  %sub_out_load_10 = load i32* %sub_out_addr_2, align 4
+
+ST_31: tmp_37 [1/1] 2.44ns
+:4  %tmp_37 = add nsw i32 %sub_out_load_10, %sub_in_load
+
+ST_31: sub_out_load_11 [2/2] 2.39ns
+:6  %sub_out_load_11 = load i32* %sub_out_addr_3, align 4
+
+ST_31: tmp_11_2 [1/6] 6.08ns
+._crit_edge11.1:17  %tmp_11_2 = mul nsw i32 %tmp_10_2, %tmp_10_2
+
+ST_31: dist1_2 [1/1] 2.44ns
+._crit_edge11.1:18  %dist1_2 = add nsw i32 %tmp_11_2, %tmp_1_2
+
+ST_31: tmp_13_2 [2/6] 6.08ns
+._crit_edge11.1:20  %tmp_13_2 = mul nsw i32 %tmp_12_2, %tmp_12_2
+
+ST_31: tmp_15_2 [3/6] 6.08ns
+._crit_edge11.1:22  %tmp_15_2 = mul nsw i32 %tmp_14_2, %tmp_14_2
+
+ST_31: tmp_17_2 [4/6] 6.08ns
+._crit_edge11.1:25  %tmp_17_2 = mul nsw i32 %tmp_16_2, %tmp_16_2
+
+ST_31: tmp_19_2 [5/6] 6.08ns
+._crit_edge11.1:27  %tmp_19_2 = mul nsw i32 %tmp_18_2, %tmp_18_2
+
+ST_31: tmp_4_3 [1/1] 2.44ns
+._crit_edge11.2:4  %tmp_4_3 = sub nsw i32 %sub_in_load_14, %sub_in_load_1
+
+ST_31: tmp_5_3 [6/6] 6.08ns
+._crit_edge11.2:5  %tmp_5_3 = mul nsw i32 %tmp_4_3, %tmp_4_3
+
+
+ <State 32>: 8.52ns
+ST_32: tmp_23 [1/1] 2.44ns
+:1  %tmp_23 = add nsw i32 %sub_out_load, 1
+
+ST_32: stg_469 [1/1] 2.39ns
+:2  store i32 %tmp_23, i32* %sub_out_addr_10, align 4
+
+ST_32: tmp_25 [1/1] 2.44ns
+:7  %tmp_25 = add nsw i32 %sub_out_load_2, %sub_in_load_2
+
+ST_32: tmp_31 [1/1] 2.44ns
+:7  %tmp_31 = add nsw i32 %sub_out_load_5, %sub_in_load_2
+
+ST_32: tmp_35 [1/1] 2.44ns
+:7  %tmp_35 = add nsw i32 %sub_out_load_8, %sub_in_load_2
+
+ST_32: sub_out_load_11 [1/2] 2.39ns
+:6  %sub_out_load_11 = load i32* %sub_out_addr_3, align 4
+
+ST_32: tmp_38 [1/1] 2.44ns
+:7  %tmp_38 = add nsw i32 %sub_out_load_11, %sub_in_load_2
+
+ST_32: tmp_13_2 [1/6] 6.08ns
+._crit_edge11.1:20  %tmp_13_2 = mul nsw i32 %tmp_12_2, %tmp_12_2
+
+ST_32: tmp_15_2 [2/6] 6.08ns
+._crit_edge11.1:22  %tmp_15_2 = mul nsw i32 %tmp_14_2, %tmp_14_2
+
+ST_32: tmp_17_2 [3/6] 6.08ns
+._crit_edge11.1:25  %tmp_17_2 = mul nsw i32 %tmp_16_2, %tmp_16_2
+
+ST_32: tmp_19_2 [4/6] 6.08ns
+._crit_edge11.1:27  %tmp_19_2 = mul nsw i32 %tmp_18_2, %tmp_18_2
+
+ST_32: tmp_5_3 [5/6] 6.08ns
+._crit_edge11.2:5  %tmp_5_3 = mul nsw i32 %tmp_4_3, %tmp_4_3
+
+ST_32: tmp_8_3 [1/1] 2.44ns
+._crit_edge11.2:10  %tmp_8_3 = sub nsw i32 %sub_in_load_15, %sub_in_load_3
+
+ST_32: tmp_9_3 [6/6] 6.08ns
+._crit_edge11.2:11  %tmp_9_3 = mul nsw i32 %tmp_8_3, %tmp_8_3
+
+
+ <State 33>: 8.52ns
+ST_33: stg_482 [1/1] 2.39ns
+:5  store i32 %tmp_24, i32* %sub_out_addr, align 4
+
+ST_33: tmp_15_2 [1/6] 6.08ns
+._crit_edge11.1:22  %tmp_15_2 = mul nsw i32 %tmp_14_2, %tmp_14_2
+
+ST_33: dist2_2 [1/1] 2.44ns
+._crit_edge11.1:23  %dist2_2 = add nsw i32 %tmp_15_2, %tmp_13_2
+
+ST_33: tmp_17_2 [2/6] 6.08ns
+._crit_edge11.1:25  %tmp_17_2 = mul nsw i32 %tmp_16_2, %tmp_16_2
+
+ST_33: tmp_19_2 [3/6] 6.08ns
+._crit_edge11.1:27  %tmp_19_2 = mul nsw i32 %tmp_18_2, %tmp_18_2
+
+ST_33: tmp_5_3 [4/6] 6.08ns
+._crit_edge11.2:5  %tmp_5_3 = mul nsw i32 %tmp_4_3, %tmp_4_3
+
+ST_33: tmp_9_3 [5/6] 6.08ns
+._crit_edge11.2:11  %tmp_9_3 = mul nsw i32 %tmp_8_3, %tmp_8_3
+
+ST_33: tmp_3_23 [1/1] 2.44ns
+._crit_edge11.2:13  %tmp_3_23 = sub nsw i32 %sub_in_load_14, %sub_in_load_4
+
+ST_33: tmp_1_3 [6/6] 6.08ns
+._crit_edge11.2:14  %tmp_1_3 = mul nsw i32 %tmp_3_23, %tmp_3_23
+
+
+ <State 34>: 8.52ns
+ST_34: stg_491 [1/1] 2.39ns
+:8  store i32 %tmp_25, i32* %sub_out_addr_11, align 4
+
+ST_34: stg_492 [1/1] 0.00ns
+:9  br label %._crit_edge.0
+
+ST_34: tmp_17_2 [1/6] 6.08ns
+._crit_edge11.1:25  %tmp_17_2 = mul nsw i32 %tmp_16_2, %tmp_16_2
+
+ST_34: tmp_19_2 [2/6] 6.08ns
+._crit_edge11.1:27  %tmp_19_2 = mul nsw i32 %tmp_18_2, %tmp_18_2
+
+ST_34: tmp_5_3 [3/6] 6.08ns
+._crit_edge11.2:5  %tmp_5_3 = mul nsw i32 %tmp_4_3, %tmp_4_3
+
+ST_34: tmp_9_3 [4/6] 6.08ns
+._crit_edge11.2:11  %tmp_9_3 = mul nsw i32 %tmp_8_3, %tmp_8_3
+
+ST_34: tmp_1_3 [5/6] 6.08ns
+._crit_edge11.2:14  %tmp_1_3 = mul nsw i32 %tmp_3_23, %tmp_3_23
+
+ST_34: tmp_10_3 [1/1] 2.44ns
+._crit_edge11.2:15  %tmp_10_3 = sub nsw i32 %sub_in_load_15, %sub_in_load_5
+
+ST_34: tmp_11_3 [6/6] 6.08ns
+._crit_edge11.2:16  %tmp_11_3 = mul nsw i32 %tmp_10_3, %tmp_10_3
+
+
+ <State 35>: 8.52ns
+ST_35: tmp_29 [1/1] 2.44ns
+:1  %tmp_29 = add nsw i32 %sub_out_load_3, 1
+
+ST_35: stg_501 [1/1] 2.39ns
+:2  store i32 %tmp_29, i32* %sub_out_addr_7, align 4
+
+ST_35: tmp_19_2 [1/6] 6.08ns
+._crit_edge11.1:27  %tmp_19_2 = mul nsw i32 %tmp_18_2, %tmp_18_2
+
+ST_35: dist3_2 [1/1] 2.44ns
+._crit_edge11.1:28  %dist3_2 = add nsw i32 %tmp_19_2, %tmp_17_2
+
+ST_35: tmp_5_3 [2/6] 6.08ns
+._crit_edge11.2:5  %tmp_5_3 = mul nsw i32 %tmp_4_3, %tmp_4_3
+
+ST_35: tmp_9_3 [3/6] 6.08ns
+._crit_edge11.2:11  %tmp_9_3 = mul nsw i32 %tmp_8_3, %tmp_8_3
+
+ST_35: tmp_1_3 [4/6] 6.08ns
+._crit_edge11.2:14  %tmp_1_3 = mul nsw i32 %tmp_3_23, %tmp_3_23
+
+ST_35: tmp_11_3 [5/6] 6.08ns
+._crit_edge11.2:16  %tmp_11_3 = mul nsw i32 %tmp_10_3, %tmp_10_3
+
+ST_35: tmp_12_3 [1/1] 2.44ns
+._crit_edge11.2:18  %tmp_12_3 = sub nsw i32 %sub_in_load_14, %sub_in_load_6
+
+ST_35: tmp_13_3 [6/6] 6.08ns
+._crit_edge11.2:19  %tmp_13_3 = mul nsw i32 %tmp_12_3, %tmp_12_3
+
+
+ <State 36>: 8.52ns
+ST_36: stg_510 [1/1] 2.39ns
+:5  store i32 %tmp_30, i32* %sub_out_addr_8, align 4
+
+ST_36: tmp_20_2 [1/1] 2.52ns
+._crit_edge11.1:29  %tmp_20_2 = icmp sgt i32 %dist0_2, %dist1_2
+
+ST_36: tmp_21_2 [1/1] 2.52ns
+._crit_edge11.1:30  %tmp_21_2 = icmp sgt i32 %dist0_2, %dist2_2
+
+ST_36: tmp_22_2 [1/1] 2.52ns
+._crit_edge11.1:31  %tmp_22_2 = icmp sgt i32 %dist0_2, %dist3_2
+
+ST_36: tmp6 [1/1] 1.37ns
+._crit_edge11.1:32  %tmp6 = or i1 %tmp_21_2, %tmp_22_2
+
+ST_36: or_cond1_2 [1/1] 1.37ns
+._crit_edge11.1:33  %or_cond1_2 = or i1 %tmp6, %tmp_20_2
+
+ST_36: stg_516 [1/1] 0.00ns
+._crit_edge11.1:34  br i1 %or_cond1_2, label %._crit_edge.2, label %13
+
+ST_36: slt6 [1/1] 2.52ns
+._crit_edge.2:0  %slt6 = icmp slt i32 %dist1_2, %dist0_2
+
+ST_36: rev6 [1/1] 1.37ns
+._crit_edge.2:1  %rev6 = xor i1 %slt6, true
+
+ST_36: tmp_27_2 [1/1] 2.52ns
+._crit_edge.2:2  %tmp_27_2 = icmp sgt i32 %dist1_2, %dist2_2
+
+ST_36: tmp_28_2 [1/1] 2.52ns
+._crit_edge.2:3  %tmp_28_2 = icmp sgt i32 %dist1_2, %dist3_2
+
+ST_36: tmp13 [1/1] 1.37ns
+._crit_edge.2:4  %tmp13 = or i1 %tmp_27_2, %tmp_28_2
+
+ST_36: or_cond3_2 [1/1] 1.37ns
+._crit_edge.2:5  %or_cond3_2 = or i1 %tmp13, %rev6
+
+ST_36: stg_523 [1/1] 0.00ns
+._crit_edge.2:6  br i1 %or_cond3_2, label %._crit_edge9.2, label %14
+
+ST_36: slt7 [1/1] 2.52ns
+._crit_edge9.2:0  %slt7 = icmp slt i32 %dist2_2, %dist0_2
+
+ST_36: rev7 [1/1] 1.37ns
+._crit_edge9.2:1  %rev7 = xor i1 %slt7, true
+
+ST_36: slt8 [1/1] 2.52ns
+._crit_edge9.2:2  %slt8 = icmp slt i32 %dist2_2, %dist1_2
+
+ST_36: rev8 [1/1] 1.37ns
+._crit_edge9.2:3  %rev8 = xor i1 %slt8, true
+
+ST_36: tmp_32_2 [1/1] 2.52ns
+._crit_edge9.2:4  %tmp_32_2 = icmp sgt i32 %dist2_2, %dist3_2
+
+ST_36: tmp12 [1/1] 1.37ns
+._crit_edge9.2:5  %tmp12 = or i1 %rev7, %tmp_32_2
+
+ST_36: or_cond5_2 [1/1] 1.37ns
+._crit_edge9.2:6  %or_cond5_2 = or i1 %tmp12, %rev8
+
+ST_36: stg_531 [1/1] 0.00ns
+._crit_edge9.2:7  br i1 %or_cond5_2, label %._crit_edge10.2, label %15
+
+ST_36: tmp11 [1/1] 1.37ns
+._crit_edge10.2:0  %tmp11 = and i1 %tmp_28_2, %tmp_32_2
+
+ST_36: or_cond7_2 [1/1] 1.37ns
+._crit_edge10.2:1  %or_cond7_2 = and i1 %tmp11, %tmp_22_2
+
+ST_36: stg_534 [1/1] 0.00ns
+._crit_edge10.2:2  br i1 %or_cond7_2, label %16, label %._crit_edge11.2
+
+ST_36: tmp_5_3 [1/6] 6.08ns
+._crit_edge11.2:5  %tmp_5_3 = mul nsw i32 %tmp_4_3, %tmp_4_3
+
+ST_36: tmp_9_3 [2/6] 6.08ns
+._crit_edge11.2:11  %tmp_9_3 = mul nsw i32 %tmp_8_3, %tmp_8_3
+
+ST_36: tmp_1_3 [3/6] 6.08ns
+._crit_edge11.2:14  %tmp_1_3 = mul nsw i32 %tmp_3_23, %tmp_3_23
+
+ST_36: tmp_11_3 [4/6] 6.08ns
+._crit_edge11.2:16  %tmp_11_3 = mul nsw i32 %tmp_10_3, %tmp_10_3
+
+ST_36: tmp_13_3 [5/6] 6.08ns
+._crit_edge11.2:19  %tmp_13_3 = mul nsw i32 %tmp_12_3, %tmp_12_3
+
+ST_36: tmp_14_3 [1/1] 2.44ns
+._crit_edge11.2:20  %tmp_14_3 = sub nsw i32 %sub_in_load_15, %sub_in_load_7
+
+ST_36: tmp_15_3 [6/6] 6.08ns
+._crit_edge11.2:21  %tmp_15_3 = mul nsw i32 %tmp_14_3, %tmp_14_3
+
+
+ <State 37>: 8.52ns
+ST_37: stg_542 [1/1] 2.39ns
+:8  store i32 %tmp_31, i32* %sub_out_addr_9, align 4
+
+ST_37: stg_543 [1/1] 0.00ns
+:9  br label %._crit_edge9.0
+
+ST_37: tmp_9_3 [1/6] 6.08ns
+._crit_edge11.2:11  %tmp_9_3 = mul nsw i32 %tmp_8_3, %tmp_8_3
+
+ST_37: dist0_3 [1/1] 2.44ns
+._crit_edge11.2:12  %dist0_3 = add nsw i32 %tmp_9_3, %tmp_5_3
+
+ST_37: tmp_1_3 [2/6] 6.08ns
+._crit_edge11.2:14  %tmp_1_3 = mul nsw i32 %tmp_3_23, %tmp_3_23
+
+ST_37: tmp_11_3 [3/6] 6.08ns
+._crit_edge11.2:16  %tmp_11_3 = mul nsw i32 %tmp_10_3, %tmp_10_3
+
+ST_37: tmp_13_3 [4/6] 6.08ns
+._crit_edge11.2:19  %tmp_13_3 = mul nsw i32 %tmp_12_3, %tmp_12_3
+
+ST_37: tmp_15_3 [5/6] 6.08ns
+._crit_edge11.2:21  %tmp_15_3 = mul nsw i32 %tmp_14_3, %tmp_14_3
+
+ST_37: tmp_16_3 [1/1] 2.44ns
+._crit_edge11.2:23  %tmp_16_3 = sub nsw i32 %sub_in_load_14, %sub_in_load_8
+
+ST_37: tmp_17_3 [6/6] 6.08ns
+._crit_edge11.2:24  %tmp_17_3 = mul nsw i32 %tmp_16_3, %tmp_16_3
+
+
+ <State 38>: 8.52ns
+ST_38: tmp_33 [1/1] 2.44ns
+:1  %tmp_33 = add nsw i32 %sub_out_load_6, 1
+
+ST_38: stg_553 [1/1] 2.39ns
+:2  store i32 %tmp_33, i32* %sub_out_addr_4, align 4
+
+ST_38: tmp_1_3 [1/6] 6.08ns
+._crit_edge11.2:14  %tmp_1_3 = mul nsw i32 %tmp_3_23, %tmp_3_23
+
+ST_38: tmp_11_3 [2/6] 6.08ns
+._crit_edge11.2:16  %tmp_11_3 = mul nsw i32 %tmp_10_3, %tmp_10_3
+
+ST_38: tmp_13_3 [3/6] 6.08ns
+._crit_edge11.2:19  %tmp_13_3 = mul nsw i32 %tmp_12_3, %tmp_12_3
+
+ST_38: tmp_15_3 [4/6] 6.08ns
+._crit_edge11.2:21  %tmp_15_3 = mul nsw i32 %tmp_14_3, %tmp_14_3
+
+ST_38: tmp_17_3 [5/6] 6.08ns
+._crit_edge11.2:24  %tmp_17_3 = mul nsw i32 %tmp_16_3, %tmp_16_3
+
+ST_38: tmp_18_3 [1/1] 2.44ns
+._crit_edge11.2:25  %tmp_18_3 = sub nsw i32 %sub_in_load_15, %sub_in_load_9
+
+ST_38: tmp_19_3 [6/6] 6.08ns
+._crit_edge11.2:26  %tmp_19_3 = mul nsw i32 %tmp_18_3, %tmp_18_3
+
+
+ <State 39>: 8.52ns
+ST_39: stg_561 [1/1] 2.39ns
+:5  store i32 %tmp_34, i32* %sub_out_addr_5, align 4
+
+ST_39: tmp_11_3 [1/6] 6.08ns
+._crit_edge11.2:16  %tmp_11_3 = mul nsw i32 %tmp_10_3, %tmp_10_3
+
+ST_39: dist1_3 [1/1] 2.44ns
+._crit_edge11.2:17  %dist1_3 = add nsw i32 %tmp_11_3, %tmp_1_3
+
+ST_39: tmp_13_3 [2/6] 6.08ns
+._crit_edge11.2:19  %tmp_13_3 = mul nsw i32 %tmp_12_3, %tmp_12_3
+
+ST_39: tmp_15_3 [3/6] 6.08ns
+._crit_edge11.2:21  %tmp_15_3 = mul nsw i32 %tmp_14_3, %tmp_14_3
+
+ST_39: tmp_17_3 [4/6] 6.08ns
+._crit_edge11.2:24  %tmp_17_3 = mul nsw i32 %tmp_16_3, %tmp_16_3
+
+ST_39: tmp_19_3 [5/6] 6.08ns
+._crit_edge11.2:26  %tmp_19_3 = mul nsw i32 %tmp_18_3, %tmp_18_3
+
+
+ <State 40>: 6.08ns
+ST_40: stg_568 [1/1] 2.39ns
+:8  store i32 %tmp_35, i32* %sub_out_addr_6, align 4
+
+ST_40: stg_569 [1/1] 0.00ns
+:9  br label %._crit_edge10.0
+
+ST_40: tmp_13_3 [1/6] 6.08ns
+._crit_edge11.2:19  %tmp_13_3 = mul nsw i32 %tmp_12_3, %tmp_12_3
+
+ST_40: tmp_15_3 [2/6] 6.08ns
+._crit_edge11.2:21  %tmp_15_3 = mul nsw i32 %tmp_14_3, %tmp_14_3
+
+ST_40: tmp_17_3 [3/6] 6.08ns
+._crit_edge11.2:24  %tmp_17_3 = mul nsw i32 %tmp_16_3, %tmp_16_3
+
+ST_40: tmp_19_3 [4/6] 6.08ns
+._crit_edge11.2:26  %tmp_19_3 = mul nsw i32 %tmp_18_3, %tmp_18_3
+
+
+ <State 41>: 8.52ns
+ST_41: tmp_36 [1/1] 2.44ns
+:1  %tmp_36 = add nsw i32 %sub_out_load_9, 1
+
+ST_41: stg_575 [1/1] 2.39ns
+:2  store i32 %tmp_36, i32* %sub_out_addr_1, align 4
+
+ST_41: tmp_15_3 [1/6] 6.08ns
+._crit_edge11.2:21  %tmp_15_3 = mul nsw i32 %tmp_14_3, %tmp_14_3
+
+ST_41: dist2_3 [1/1] 2.44ns
+._crit_edge11.2:22  %dist2_3 = add nsw i32 %tmp_15_3, %tmp_13_3
+
+ST_41: tmp_17_3 [2/6] 6.08ns
+._crit_edge11.2:24  %tmp_17_3 = mul nsw i32 %tmp_16_3, %tmp_16_3
+
+ST_41: tmp_19_3 [3/6] 6.08ns
+._crit_edge11.2:26  %tmp_19_3 = mul nsw i32 %tmp_18_3, %tmp_18_3
+
+
+ <State 42>: 6.08ns
+ST_42: stg_580 [1/1] 2.39ns
+:5  store i32 %tmp_37, i32* %sub_out_addr_2, align 4
+
+ST_42: tmp_17_3 [1/6] 6.08ns
+._crit_edge11.2:24  %tmp_17_3 = mul nsw i32 %tmp_16_3, %tmp_16_3
+
+ST_42: tmp_19_3 [2/6] 6.08ns
+._crit_edge11.2:26  %tmp_19_3 = mul nsw i32 %tmp_18_3, %tmp_18_3
+
+
+ <State 43>: 8.52ns
+ST_43: stg_583 [1/1] 2.39ns
+:8  store i32 %tmp_38, i32* %sub_out_addr_3, align 4
+
+ST_43: stg_584 [1/1] 0.00ns
+:9  br label %._crit_edge11.0
+
+ST_43: tmp_19_3 [1/6] 6.08ns
+._crit_edge11.2:26  %tmp_19_3 = mul nsw i32 %tmp_18_3, %tmp_18_3
+
+ST_43: dist3_3 [1/1] 2.44ns
+._crit_edge11.2:27  %dist3_3 = add nsw i32 %tmp_19_3, %tmp_17_3
+
+
+ <State 44>: 6.63ns
+ST_44: sub_out_load_12 [2/2] 2.39ns
+:0  %sub_out_load_12 = load i32* %sub_out_addr_10, align 4
+
+ST_44: tmp_20_3 [1/1] 2.52ns
+._crit_edge11.2:28  %tmp_20_3 = icmp sgt i32 %dist0_3, %dist1_3
+
+ST_44: tmp_21_3 [1/1] 2.52ns
+._crit_edge11.2:29  %tmp_21_3 = icmp sgt i32 %dist0_3, %dist2_3
+
+ST_44: tmp_22_3 [1/1] 2.52ns
+._crit_edge11.2:30  %tmp_22_3 = icmp sgt i32 %dist0_3, %dist3_3
+
+ST_44: tmp10 [1/1] 1.37ns
+._crit_edge11.2:31  %tmp10 = or i1 %tmp_21_3, %tmp_22_3
+
+ST_44: or_cond1_3 [1/1] 1.37ns
+._crit_edge11.2:32  %or_cond1_3 = or i1 %tmp10, %tmp_20_3
+
+ST_44: stg_593 [1/1] 0.00ns
+._crit_edge11.2:33  br i1 %or_cond1_3, label %._crit_edge.3, label %17
+
+ST_44: slt9 [1/1] 2.52ns
+._crit_edge.3:0  %slt9 = icmp slt i32 %dist1_3, %dist0_3
+
+ST_44: rev9 [1/1] 1.37ns
+._crit_edge.3:1  %rev9 = xor i1 %slt9, true
+
+ST_44: tmp_27_3 [1/1] 2.52ns
+._crit_edge.3:2  %tmp_27_3 = icmp sgt i32 %dist1_3, %dist2_3
+
+ST_44: tmp_28_3 [1/1] 2.52ns
+._crit_edge.3:3  %tmp_28_3 = icmp sgt i32 %dist1_3, %dist3_3
+
+ST_44: tmp16 [1/1] 1.37ns
+._crit_edge.3:4  %tmp16 = or i1 %tmp_27_3, %tmp_28_3
+
+ST_44: or_cond3_3 [1/1] 1.37ns
+._crit_edge.3:5  %or_cond3_3 = or i1 %tmp16, %rev9
+
+ST_44: stg_600 [1/1] 0.00ns
+._crit_edge.3:6  br i1 %or_cond3_3, label %._crit_edge9.3, label %18
+
+ST_44: slt10 [1/1] 2.52ns
+._crit_edge9.3:0  %slt10 = icmp slt i32 %dist2_3, %dist0_3
+
+ST_44: rev10 [1/1] 1.37ns
+._crit_edge9.3:1  %rev10 = xor i1 %slt10, true
+
+ST_44: slt11 [1/1] 2.52ns
+._crit_edge9.3:2  %slt11 = icmp slt i32 %dist2_3, %dist1_3
+
+ST_44: rev11 [1/1] 1.37ns
+._crit_edge9.3:3  %rev11 = xor i1 %slt11, true
+
+ST_44: tmp_32_3 [1/1] 2.52ns
+._crit_edge9.3:4  %tmp_32_3 = icmp sgt i32 %dist2_3, %dist3_3
+
+ST_44: tmp15 [1/1] 1.37ns
+._crit_edge9.3:5  %tmp15 = or i1 %rev10, %tmp_32_3
+
+ST_44: or_cond5_3 [1/1] 1.37ns
+._crit_edge9.3:6  %or_cond5_3 = or i1 %tmp15, %rev11
+
+ST_44: stg_608 [1/1] 0.00ns
+._crit_edge9.3:7  br i1 %or_cond5_3, label %._crit_edge10.3, label %19
+
+ST_44: tmp14 [1/1] 1.37ns
+._crit_edge10.3:0  %tmp14 = and i1 %tmp_28_3, %tmp_32_3
+
+ST_44: or_cond7_3 [1/1] 1.37ns
+._crit_edge10.3:1  %or_cond7_3 = and i1 %tmp14, %tmp_22_3
+
+ST_44: stg_611 [1/1] 0.00ns
+._crit_edge10.3:2  br i1 %or_cond7_3, label %20, label %._crit_edge11.3
+
+
+ <State 45>: 2.39ns
+ST_45: sub_out_load_12 [1/2] 2.39ns
+:0  %sub_out_load_12 = load i32* %sub_out_addr_10, align 4
+
+ST_45: sub_out_load_13 [2/2] 2.39ns
+:3  %sub_out_load_13 = load i32* %sub_out_addr, align 4
+
+
+ <State 46>: 2.39ns
+ST_46: sub_out_load_13 [1/2] 2.39ns
+:3  %sub_out_load_13 = load i32* %sub_out_addr, align 4
+
+ST_46: sub_out_load_14 [2/2] 2.39ns
+:6  %sub_out_load_14 = load i32* %sub_out_addr_11, align 4
+
+
+ <State 47>: 2.39ns
+ST_47: sub_out_load_14 [1/2] 2.39ns
+:6  %sub_out_load_14 = load i32* %sub_out_addr_11, align 4
+
+ST_47: sub_out_load_15 [2/2] 2.39ns
+:0  %sub_out_load_15 = load i32* %sub_out_addr_7, align 4
+
+
+ <State 48>: 2.39ns
+ST_48: sub_out_load_15 [1/2] 2.39ns
+:0  %sub_out_load_15 = load i32* %sub_out_addr_7, align 4
+
+ST_48: sub_out_load_16 [2/2] 2.39ns
+:3  %sub_out_load_16 = load i32* %sub_out_addr_8, align 4
+
+
+ <State 49>: 2.39ns
+ST_49: sub_out_load_16 [1/2] 2.39ns
+:3  %sub_out_load_16 = load i32* %sub_out_addr_8, align 4
+
+ST_49: sub_out_load_17 [2/2] 2.39ns
+:6  %sub_out_load_17 = load i32* %sub_out_addr_9, align 4
+
+
+ <State 50>: 2.39ns
+ST_50: sub_out_load_17 [1/2] 2.39ns
+:6  %sub_out_load_17 = load i32* %sub_out_addr_9, align 4
+
+ST_50: sub_out_load_18 [2/2] 2.39ns
+:0  %sub_out_load_18 = load i32* %sub_out_addr_4, align 4
+
+
+ <State 51>: 2.39ns
+ST_51: sub_out_load_18 [1/2] 2.39ns
+:0  %sub_out_load_18 = load i32* %sub_out_addr_4, align 4
+
+ST_51: sub_out_load_19 [2/2] 2.39ns
+:3  %sub_out_load_19 = load i32* %sub_out_addr_5, align 4
+
+
+ <State 52>: 2.39ns
+ST_52: sub_out_load_19 [1/2] 2.39ns
+:3  %sub_out_load_19 = load i32* %sub_out_addr_5, align 4
+
+ST_52: sub_out_load_20 [2/2] 2.39ns
+:6  %sub_out_load_20 = load i32* %sub_out_addr_6, align 4
+
+
+ <State 53>: 2.39ns
+ST_53: sub_out_load_20 [1/2] 2.39ns
+:6  %sub_out_load_20 = load i32* %sub_out_addr_6, align 4
+
+ST_53: sub_out_load_21 [2/2] 2.39ns
+:0  %sub_out_load_21 = load i32* %sub_out_addr_1, align 4
+
+
+ <State 54>: 2.39ns
+ST_54: sub_out_load_21 [1/2] 2.39ns
+:0  %sub_out_load_21 = load i32* %sub_out_addr_1, align 4
+
+ST_54: sub_out_load_22 [2/2] 2.39ns
+:3  %sub_out_load_22 = load i32* %sub_out_addr_2, align 4
+
+
+ <State 55>: 4.83ns
+ST_55: tmp_24_1 [1/1] 2.44ns
+:4  %tmp_24_1 = add nsw i32 %sub_out_load_13, %sub_in_load_10
+
+ST_55: tmp_30_1 [1/1] 2.44ns
+:4  %tmp_30_1 = add nsw i32 %sub_out_load_16, %sub_in_load_10
+
+ST_55: tmp_34_1 [1/1] 2.44ns
+:4  %tmp_34_1 = add nsw i32 %sub_out_load_19, %sub_in_load_10
+
+ST_55: sub_out_load_22 [1/2] 2.39ns
+:3  %sub_out_load_22 = load i32* %sub_out_addr_2, align 4
+
+ST_55: tmp_37_1 [1/1] 2.44ns
+:4  %tmp_37_1 = add nsw i32 %sub_out_load_22, %sub_in_load_10
+
+ST_55: sub_out_load_23 [2/2] 2.39ns
+:6  %sub_out_load_23 = load i32* %sub_out_addr_3, align 4
+
+
+ <State 56>: 4.83ns
+ST_56: tmp_23_1 [1/1] 2.44ns
+:1  %tmp_23_1 = add nsw i32 %sub_out_load_12, 1
+
+ST_56: stg_639 [1/1] 2.39ns
+:2  store i32 %tmp_23_1, i32* %sub_out_addr_10, align 4
+
+ST_56: tmp_25_1 [1/1] 2.44ns
+:7  %tmp_25_1 = add nsw i32 %sub_out_load_14, %sub_in_load_11
+
+ST_56: tmp_31_1 [1/1] 2.44ns
+:7  %tmp_31_1 = add nsw i32 %sub_out_load_17, %sub_in_load_11
+
+ST_56: tmp_35_1 [1/1] 2.44ns
+:7  %tmp_35_1 = add nsw i32 %sub_out_load_20, %sub_in_load_11
+
+ST_56: sub_out_load_23 [1/2] 2.39ns
+:6  %sub_out_load_23 = load i32* %sub_out_addr_3, align 4
+
+ST_56: tmp_38_1 [1/1] 2.44ns
+:7  %tmp_38_1 = add nsw i32 %sub_out_load_23, %sub_in_load_11
+
+
+ <State 57>: 2.39ns
+ST_57: stg_645 [1/1] 2.39ns
+:5  store i32 %tmp_24_1, i32* %sub_out_addr, align 4
+
+
+ <State 58>: 2.39ns
+ST_58: stg_646 [1/1] 2.39ns
+:8  store i32 %tmp_25_1, i32* %sub_out_addr_11, align 4
+
+ST_58: stg_647 [1/1] 0.00ns
+:9  br label %._crit_edge.1
+
+
+ <State 59>: 4.83ns
+ST_59: tmp_29_1 [1/1] 2.44ns
+:1  %tmp_29_1 = add nsw i32 %sub_out_load_15, 1
+
+ST_59: stg_649 [1/1] 2.39ns
+:2  store i32 %tmp_29_1, i32* %sub_out_addr_7, align 4
+
+
+ <State 60>: 2.39ns
+ST_60: stg_650 [1/1] 2.39ns
+:5  store i32 %tmp_30_1, i32* %sub_out_addr_8, align 4
+
+
+ <State 61>: 2.39ns
+ST_61: stg_651 [1/1] 2.39ns
+:8  store i32 %tmp_31_1, i32* %sub_out_addr_9, align 4
+
+ST_61: stg_652 [1/1] 0.00ns
+:9  br label %._crit_edge9.1
+
+
+ <State 62>: 4.83ns
+ST_62: tmp_33_1 [1/1] 2.44ns
+:1  %tmp_33_1 = add nsw i32 %sub_out_load_18, 1
+
+ST_62: stg_654 [1/1] 2.39ns
+:2  store i32 %tmp_33_1, i32* %sub_out_addr_4, align 4
+
+
+ <State 63>: 2.39ns
+ST_63: stg_655 [1/1] 2.39ns
+:5  store i32 %tmp_34_1, i32* %sub_out_addr_5, align 4
+
+
+ <State 64>: 2.39ns
+ST_64: stg_656 [1/1] 2.39ns
+:8  store i32 %tmp_35_1, i32* %sub_out_addr_6, align 4
+
+ST_64: stg_657 [1/1] 0.00ns
+:9  br label %._crit_edge10.1
+
+
+ <State 65>: 4.83ns
+ST_65: tmp_36_1 [1/1] 2.44ns
+:1  %tmp_36_1 = add nsw i32 %sub_out_load_21, 1
+
+ST_65: stg_659 [1/1] 2.39ns
+:2  store i32 %tmp_36_1, i32* %sub_out_addr_1, align 4
+
+
+ <State 66>: 2.39ns
+ST_66: stg_660 [1/1] 2.39ns
+:5  store i32 %tmp_37_1, i32* %sub_out_addr_2, align 4
+
+
+ <State 67>: 2.39ns
+ST_67: stg_661 [1/1] 2.39ns
+:8  store i32 %tmp_38_1, i32* %sub_out_addr_3, align 4
+
+ST_67: stg_662 [1/1] 0.00ns
+:9  br label %._crit_edge11.1
+
+
+ <State 68>: 2.39ns
+ST_68: sub_out_load_24 [2/2] 2.39ns
+:0  %sub_out_load_24 = load i32* %sub_out_addr_10, align 4
+
+
+ <State 69>: 2.39ns
+ST_69: sub_out_load_24 [1/2] 2.39ns
+:0  %sub_out_load_24 = load i32* %sub_out_addr_10, align 4
+
+ST_69: sub_out_load_25 [2/2] 2.39ns
+:3  %sub_out_load_25 = load i32* %sub_out_addr, align 4
+
+
+ <State 70>: 2.39ns
+ST_70: sub_out_load_25 [1/2] 2.39ns
+:3  %sub_out_load_25 = load i32* %sub_out_addr, align 4
+
+ST_70: sub_out_load_26 [2/2] 2.39ns
+:6  %sub_out_load_26 = load i32* %sub_out_addr_11, align 4
+
+
+ <State 71>: 2.39ns
+ST_71: sub_out_load_26 [1/2] 2.39ns
+:6  %sub_out_load_26 = load i32* %sub_out_addr_11, align 4
+
+ST_71: sub_out_load_27 [2/2] 2.39ns
+:0  %sub_out_load_27 = load i32* %sub_out_addr_7, align 4
+
+
+ <State 72>: 2.39ns
+ST_72: sub_out_load_27 [1/2] 2.39ns
+:0  %sub_out_load_27 = load i32* %sub_out_addr_7, align 4
+
+ST_72: sub_out_load_28 [2/2] 2.39ns
+:3  %sub_out_load_28 = load i32* %sub_out_addr_8, align 4
+
+
+ <State 73>: 2.39ns
+ST_73: sub_out_load_28 [1/2] 2.39ns
+:3  %sub_out_load_28 = load i32* %sub_out_addr_8, align 4
+
+ST_73: sub_out_load_29 [2/2] 2.39ns
+:6  %sub_out_load_29 = load i32* %sub_out_addr_9, align 4
+
+
+ <State 74>: 2.39ns
+ST_74: sub_out_load_29 [1/2] 2.39ns
+:6  %sub_out_load_29 = load i32* %sub_out_addr_9, align 4
+
+ST_74: sub_out_load_30 [2/2] 2.39ns
+:0  %sub_out_load_30 = load i32* %sub_out_addr_4, align 4
+
+
+ <State 75>: 2.39ns
+ST_75: sub_out_load_30 [1/2] 2.39ns
+:0  %sub_out_load_30 = load i32* %sub_out_addr_4, align 4
+
+ST_75: sub_out_load_31 [2/2] 2.39ns
+:3  %sub_out_load_31 = load i32* %sub_out_addr_5, align 4
+
+
+ <State 76>: 2.39ns
+ST_76: sub_out_load_31 [1/2] 2.39ns
+:3  %sub_out_load_31 = load i32* %sub_out_addr_5, align 4
+
+ST_76: sub_out_load_32 [2/2] 2.39ns
+:6  %sub_out_load_32 = load i32* %sub_out_addr_6, align 4
+
+
+ <State 77>: 2.39ns
+ST_77: sub_out_load_32 [1/2] 2.39ns
+:6  %sub_out_load_32 = load i32* %sub_out_addr_6, align 4
+
+ST_77: sub_out_load_33 [2/2] 2.39ns
+:0  %sub_out_load_33 = load i32* %sub_out_addr_1, align 4
+
+
+ <State 78>: 2.39ns
+ST_78: sub_out_load_33 [1/2] 2.39ns
+:0  %sub_out_load_33 = load i32* %sub_out_addr_1, align 4
+
+ST_78: sub_out_load_34 [2/2] 2.39ns
+:3  %sub_out_load_34 = load i32* %sub_out_addr_2, align 4
+
+
+ <State 79>: 4.83ns
+ST_79: tmp_24_2 [1/1] 2.44ns
+:4  %tmp_24_2 = add nsw i32 %sub_out_load_25, %sub_in_load_12
+
+ST_79: tmp_30_2 [1/1] 2.44ns
+:4  %tmp_30_2 = add nsw i32 %sub_out_load_28, %sub_in_load_12
+
+ST_79: tmp_34_2 [1/1] 2.44ns
+:4  %tmp_34_2 = add nsw i32 %sub_out_load_31, %sub_in_load_12
+
+ST_79: sub_out_load_34 [1/2] 2.39ns
+:3  %sub_out_load_34 = load i32* %sub_out_addr_2, align 4
+
+ST_79: tmp_37_2 [1/1] 2.44ns
+:4  %tmp_37_2 = add nsw i32 %sub_out_load_34, %sub_in_load_12
+
+ST_79: sub_out_load_35 [2/2] 2.39ns
+:6  %sub_out_load_35 = load i32* %sub_out_addr_3, align 4
+
+
+ <State 80>: 4.83ns
+ST_80: tmp_23_2 [1/1] 2.44ns
+:1  %tmp_23_2 = add nsw i32 %sub_out_load_24, 1
+
+ST_80: stg_691 [1/1] 2.39ns
+:2  store i32 %tmp_23_2, i32* %sub_out_addr_10, align 4
+
+ST_80: tmp_25_2 [1/1] 2.44ns
+:7  %tmp_25_2 = add nsw i32 %sub_out_load_26, %sub_in_load_13
+
+ST_80: tmp_31_2 [1/1] 2.44ns
+:7  %tmp_31_2 = add nsw i32 %sub_out_load_29, %sub_in_load_13
+
+ST_80: tmp_35_2 [1/1] 2.44ns
+:7  %tmp_35_2 = add nsw i32 %sub_out_load_32, %sub_in_load_13
+
+ST_80: sub_out_load_35 [1/2] 2.39ns
+:6  %sub_out_load_35 = load i32* %sub_out_addr_3, align 4
+
+ST_80: tmp_38_2 [1/1] 2.44ns
+:7  %tmp_38_2 = add nsw i32 %sub_out_load_35, %sub_in_load_13
+
+
+ <State 81>: 2.39ns
+ST_81: stg_697 [1/1] 2.39ns
+:5  store i32 %tmp_24_2, i32* %sub_out_addr, align 4
+
+
+ <State 82>: 2.39ns
+ST_82: stg_698 [1/1] 2.39ns
+:8  store i32 %tmp_25_2, i32* %sub_out_addr_11, align 4
+
+ST_82: stg_699 [1/1] 0.00ns
+:9  br label %._crit_edge.2
+
+
+ <State 83>: 4.83ns
+ST_83: tmp_29_2 [1/1] 2.44ns
+:1  %tmp_29_2 = add nsw i32 %sub_out_load_27, 1
+
+ST_83: stg_701 [1/1] 2.39ns
+:2  store i32 %tmp_29_2, i32* %sub_out_addr_7, align 4
+
+
+ <State 84>: 2.39ns
+ST_84: stg_702 [1/1] 2.39ns
+:5  store i32 %tmp_30_2, i32* %sub_out_addr_8, align 4
+
+
+ <State 85>: 2.39ns
+ST_85: stg_703 [1/1] 2.39ns
+:8  store i32 %tmp_31_2, i32* %sub_out_addr_9, align 4
+
+ST_85: stg_704 [1/1] 0.00ns
+:9  br label %._crit_edge9.2
+
+
+ <State 86>: 4.83ns
+ST_86: tmp_33_2 [1/1] 2.44ns
+:1  %tmp_33_2 = add nsw i32 %sub_out_load_30, 1
+
+ST_86: stg_706 [1/1] 2.39ns
+:2  store i32 %tmp_33_2, i32* %sub_out_addr_4, align 4
+
+
+ <State 87>: 2.39ns
+ST_87: stg_707 [1/1] 2.39ns
+:5  store i32 %tmp_34_2, i32* %sub_out_addr_5, align 4
+
+
+ <State 88>: 2.39ns
+ST_88: stg_708 [1/1] 2.39ns
+:8  store i32 %tmp_35_2, i32* %sub_out_addr_6, align 4
+
+ST_88: stg_709 [1/1] 0.00ns
+:9  br label %._crit_edge10.2
+
+
+ <State 89>: 4.83ns
+ST_89: tmp_36_2 [1/1] 2.44ns
+:1  %tmp_36_2 = add nsw i32 %sub_out_load_33, 1
+
+ST_89: stg_711 [1/1] 2.39ns
+:2  store i32 %tmp_36_2, i32* %sub_out_addr_1, align 4
+
+
+ <State 90>: 2.39ns
+ST_90: stg_712 [1/1] 2.39ns
+:5  store i32 %tmp_37_2, i32* %sub_out_addr_2, align 4
+
+
+ <State 91>: 2.39ns
+ST_91: stg_713 [1/1] 2.39ns
+:8  store i32 %tmp_38_2, i32* %sub_out_addr_3, align 4
+
+ST_91: stg_714 [1/1] 0.00ns
+:9  br label %._crit_edge11.2
+
+
+ <State 92>: 2.39ns
+ST_92: sub_out_load_36 [2/2] 2.39ns
+:0  %sub_out_load_36 = load i32* %sub_out_addr_10, align 4
+
+
+ <State 93>: 2.39ns
+ST_93: sub_out_load_36 [1/2] 2.39ns
+:0  %sub_out_load_36 = load i32* %sub_out_addr_10, align 4
+
+ST_93: sub_out_load_37 [2/2] 2.39ns
+:3  %sub_out_load_37 = load i32* %sub_out_addr, align 4
+
+
+ <State 94>: 2.39ns
+ST_94: sub_out_load_37 [1/2] 2.39ns
+:3  %sub_out_load_37 = load i32* %sub_out_addr, align 4
+
+ST_94: sub_out_load_38 [2/2] 2.39ns
+:6  %sub_out_load_38 = load i32* %sub_out_addr_11, align 4
+
+
+ <State 95>: 2.39ns
+ST_95: sub_out_load_38 [1/2] 2.39ns
+:6  %sub_out_load_38 = load i32* %sub_out_addr_11, align 4
+
+ST_95: sub_out_load_39 [2/2] 2.39ns
+:0  %sub_out_load_39 = load i32* %sub_out_addr_7, align 4
+
+
+ <State 96>: 2.39ns
+ST_96: sub_out_load_39 [1/2] 2.39ns
+:0  %sub_out_load_39 = load i32* %sub_out_addr_7, align 4
+
+ST_96: sub_out_load_40 [2/2] 2.39ns
+:3  %sub_out_load_40 = load i32* %sub_out_addr_8, align 4
+
+
+ <State 97>: 2.39ns
+ST_97: sub_out_load_40 [1/2] 2.39ns
+:3  %sub_out_load_40 = load i32* %sub_out_addr_8, align 4
+
+ST_97: sub_out_load_41 [2/2] 2.39ns
+:6  %sub_out_load_41 = load i32* %sub_out_addr_9, align 4
+
+
+ <State 98>: 2.39ns
+ST_98: sub_out_load_41 [1/2] 2.39ns
+:6  %sub_out_load_41 = load i32* %sub_out_addr_9, align 4
+
+ST_98: sub_out_load_42 [2/2] 2.39ns
+:0  %sub_out_load_42 = load i32* %sub_out_addr_4, align 4
+
+
+ <State 99>: 2.39ns
+ST_99: sub_out_load_42 [1/2] 2.39ns
+:0  %sub_out_load_42 = load i32* %sub_out_addr_4, align 4
+
+ST_99: sub_out_load_43 [2/2] 2.39ns
+:3  %sub_out_load_43 = load i32* %sub_out_addr_5, align 4
+
+
+ <State 100>: 2.39ns
+ST_100: sub_out_load_43 [1/2] 2.39ns
+:3  %sub_out_load_43 = load i32* %sub_out_addr_5, align 4
+
+ST_100: sub_out_load_44 [2/2] 2.39ns
+:6  %sub_out_load_44 = load i32* %sub_out_addr_6, align 4
+
+
+ <State 101>: 2.39ns
+ST_101: sub_out_load_44 [1/2] 2.39ns
+:6  %sub_out_load_44 = load i32* %sub_out_addr_6, align 4
+
+ST_101: sub_out_load_45 [2/2] 2.39ns
+:0  %sub_out_load_45 = load i32* %sub_out_addr_1, align 4
+
+
+ <State 102>: 2.39ns
+ST_102: sub_out_load_45 [1/2] 2.39ns
+:0  %sub_out_load_45 = load i32* %sub_out_addr_1, align 4
+
+ST_102: sub_out_load_46 [2/2] 2.39ns
+:3  %sub_out_load_46 = load i32* %sub_out_addr_2, align 4
+
+
+ <State 103>: 4.83ns
+ST_103: tmp_24_3 [1/1] 2.44ns
+:4  %tmp_24_3 = add nsw i32 %sub_out_load_37, %sub_in_load_14
+
+ST_103: tmp_30_3 [1/1] 2.44ns
+:4  %tmp_30_3 = add nsw i32 %sub_out_load_40, %sub_in_load_14
+
+ST_103: tmp_34_3 [1/1] 2.44ns
+:4  %tmp_34_3 = add nsw i32 %sub_out_load_43, %sub_in_load_14
+
+ST_103: sub_out_load_46 [1/2] 2.39ns
+:3  %sub_out_load_46 = load i32* %sub_out_addr_2, align 4
+
+ST_103: tmp_37_3 [1/1] 2.44ns
+:4  %tmp_37_3 = add nsw i32 %sub_out_load_46, %sub_in_load_14
+
+ST_103: sub_out_load_47 [2/2] 2.39ns
+:6  %sub_out_load_47 = load i32* %sub_out_addr_3, align 4
+
+
+ <State 104>: 4.83ns
+ST_104: tmp_23_3 [1/1] 2.44ns
+:1  %tmp_23_3 = add nsw i32 %sub_out_load_36, 1
+
+ST_104: stg_743 [1/1] 2.39ns
+:2  store i32 %tmp_23_3, i32* %sub_out_addr_10, align 4
+
+ST_104: tmp_25_3 [1/1] 2.44ns
+:7  %tmp_25_3 = add nsw i32 %sub_out_load_38, %sub_in_load_15
+
+ST_104: tmp_31_3 [1/1] 2.44ns
+:7  %tmp_31_3 = add nsw i32 %sub_out_load_41, %sub_in_load_15
+
+ST_104: tmp_35_3 [1/1] 2.44ns
+:7  %tmp_35_3 = add nsw i32 %sub_out_load_44, %sub_in_load_15
+
+ST_104: sub_out_load_47 [1/2] 2.39ns
+:6  %sub_out_load_47 = load i32* %sub_out_addr_3, align 4
+
+ST_104: tmp_38_3 [1/1] 2.44ns
+:7  %tmp_38_3 = add nsw i32 %sub_out_load_47, %sub_in_load_15
+
+
+ <State 105>: 2.39ns
+ST_105: stg_749 [1/1] 2.39ns
+:5  store i32 %tmp_24_3, i32* %sub_out_addr, align 4
+
+
+ <State 106>: 2.39ns
+ST_106: stg_750 [1/1] 2.39ns
+:8  store i32 %tmp_25_3, i32* %sub_out_addr_11, align 4
+
+ST_106: stg_751 [1/1] 0.00ns
+:9  br label %._crit_edge.3
+
+
+ <State 107>: 4.83ns
+ST_107: tmp_29_3 [1/1] 2.44ns
+:1  %tmp_29_3 = add nsw i32 %sub_out_load_39, 1
+
+ST_107: stg_753 [1/1] 2.39ns
+:2  store i32 %tmp_29_3, i32* %sub_out_addr_7, align 4
+
+
+ <State 108>: 2.39ns
+ST_108: stg_754 [1/1] 2.39ns
+:5  store i32 %tmp_30_3, i32* %sub_out_addr_8, align 4
+
+
+ <State 109>: 2.39ns
+ST_109: stg_755 [1/1] 2.39ns
+:8  store i32 %tmp_31_3, i32* %sub_out_addr_9, align 4
+
+ST_109: stg_756 [1/1] 0.00ns
+:9  br label %._crit_edge9.3
+
+
+ <State 110>: 4.83ns
+ST_110: tmp_33_3 [1/1] 2.44ns
+:1  %tmp_33_3 = add nsw i32 %sub_out_load_42, 1
+
+ST_110: stg_758 [1/1] 2.39ns
+:2  store i32 %tmp_33_3, i32* %sub_out_addr_4, align 4
+
+
+ <State 111>: 2.39ns
+ST_111: stg_759 [1/1] 2.39ns
+:5  store i32 %tmp_34_3, i32* %sub_out_addr_5, align 4
+
+
+ <State 112>: 2.39ns
+ST_112: stg_760 [1/1] 2.39ns
+:8  store i32 %tmp_35_3, i32* %sub_out_addr_6, align 4
+
+ST_112: stg_761 [1/1] 0.00ns
+:9  br label %._crit_edge10.3
+
+
+ <State 113>: 4.83ns
+ST_113: tmp_36_3 [1/1] 2.44ns
+:1  %tmp_36_3 = add nsw i32 %sub_out_load_45, 1
+
+ST_113: stg_763 [1/1] 2.39ns
+:2  store i32 %tmp_36_3, i32* %sub_out_addr_1, align 4
+
+
+ <State 114>: 2.39ns
+ST_114: stg_764 [1/1] 2.39ns
+:5  store i32 %tmp_37_3, i32* %sub_out_addr_2, align 4
+
+
+ <State 115>: 2.39ns
+ST_115: stg_765 [1/1] 2.39ns
+:8  store i32 %tmp_38_3, i32* %sub_out_addr_3, align 4
+
+ST_115: stg_766 [1/1] 0.00ns
+:9  br label %._crit_edge11.3
+
+
+ <State 116>: 0.00ns
+ST_116: stg_767 [1/1] 0.00ns
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

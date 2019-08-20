@@ -1,0 +1,6 @@
+23:44:35 **** Auto Build of project fir-medium_bsp ****
+make -k all 
+'Finished building libraries'
+
+23:44:36 Build Finished (took 158ms)
+

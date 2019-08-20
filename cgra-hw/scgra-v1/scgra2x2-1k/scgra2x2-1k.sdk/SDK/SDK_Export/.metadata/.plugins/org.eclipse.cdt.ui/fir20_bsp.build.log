@@ -1,0 +1,6 @@
+19:59:47 **** Build of project fir20_bsp ****
+make -k all 
+'Finished building libraries'
+
+19:59:48 Build Finished (took 477ms)
+

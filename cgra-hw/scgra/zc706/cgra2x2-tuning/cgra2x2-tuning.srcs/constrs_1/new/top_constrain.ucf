@@ -1,0 +1,12 @@
+NET "Clk" TNM_NET = "Clk";
+TIMESPEC TS_Clk = PERIOD "Clk" 200000 KHz;
+
+NET "LowClk" TNM_NET = "LowClk";
+TIMESPEC TS_LowClk = PERIOD "LowClk" 100000 KHz;
+
+NET "Clk" TNM_NET = FFS "Clk_Grp";
+NET "LowClk" TNM_NET = FFS "LowClk_Grp";
+TIMESPEC TS_Clk_To_LowClk = FROM "Clk_Grp" TO "LowClk_Grp" TIG;
+TIMESPEC TS_LowClk_To_Clk = FROM "LowClk_Grp" TO "Clk_Grp" TIG;
+
+			

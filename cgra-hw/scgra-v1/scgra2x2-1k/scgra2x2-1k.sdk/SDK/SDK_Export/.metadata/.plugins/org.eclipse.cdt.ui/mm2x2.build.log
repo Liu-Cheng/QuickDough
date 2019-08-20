@@ -1,0 +1,13 @@
+16:46:45 **** Auto Build of configuration Debug for project mm2x2 ****
+make all 
+'Building file: ../src/mm2x2.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../mm2x2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/mm2x2.d" -MT"src/mm2x2.d" -o "src/mm2x2.o" "../src/mm2x2.c"
+../src/mm2x2.c: In function 'CPU_Compute':
+../src/mm2x2.c:486:18: error: subscripted value is neither array nor pointer nor vector
+../src/mm2x2.c:486:31: error: subscripted value is neither array nor pointer nor vector
+../src/mm2x2.c:486:43: error: subscripted value is neither array nor pointer nor vector
+make: *** [src/mm2x2.o] Error 1
+
+16:46:45 Build Finished (took 219ms)
+

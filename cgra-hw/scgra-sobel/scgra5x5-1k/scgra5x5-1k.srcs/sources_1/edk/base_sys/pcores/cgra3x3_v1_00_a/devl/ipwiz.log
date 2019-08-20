@@ -1,0 +1,154 @@
+Mapping logical library work (line 1) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 2) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 3) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 4) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 5) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 6) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 7) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 8) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 9) to current logical library cgra3x3_v1_00_a
+...
+Mapping logical library work (line 10) to current logical library
+cgra3x3_v1_00_a ...
+Mapping logical library work (line 11) to current logical library
+cgra3x3_v1_00_a ...
+Parsing XST project file successfully ...
+Analyzing HDL source files ...
+Analyzing HDL source files successfully ...
+HDL language for the peripheral (top level) design unit cgra3x3 is verilog ...
+INFO:EDK:3391 - Create temporary xst project file:
+   D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores
+   /cgra3x3.prj
+Compiling verilog file "C:/EDA/14.7/ISE_DS/ISE/verilog/src/iSE/unisim_comp.v"
+Compiling verilog file
+"D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores\c
+gra3x3.prj"
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\MulAdd.v"
+Compiling verilog include file
+"D:\minibench\scgra\cgra3x3-1k\ipcore_dir\TDP_Data_Mem.v"
+Module <MulAdd> compiled
+Compiling verilog include file
+"D:\minibench\scgra\cgra3x3-1k\ipcore_dir\SP_Inst_Mem.v"
+Module <TDP_Data_Mem> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\Inst_Mem.v"
+Module <SP_Inst_Mem> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\Data_Mem.v"
+Module <Inst_Mem> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\ALU.v"
+Module <Data_Mem> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\PEIO.v"
+Module <ALU> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\PE.v"
+Module <PEIO> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\Torus3x3.v"
+Module <PE> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\BramIF.v"
+Module <Torus3x3> compiled
+Compiling verilog include file "D:\minibench\scgra\cgra3x3-1k\src\cgra3x3.v"
+Module <BramIF> compiled
+Module <cgra3x3> compiled
+
+
+Analyzing Verilog code ...
+INFO:EDK:1607 - IPTYPE set to value : PERIPHERAL
+INFO:EDK:1511 - IMP_NETLIST set to value : TRUE
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port0_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port0_Rst
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port1_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port1_Rst
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port2_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port2_Rst
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port3_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port3_Rst
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port0_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port0_Rst
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port1_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port1_Rst
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port2_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port2_Rst
+INFO:EDK:1951 - No SIGIS=CLK specified for probable Clock signal Port3_Clk
+INFO:EDK:1953 - No SIGIS=RST specified for probable Reset signal Port3_Rst
+Copying file MulAdd.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file TDP_Data_Mem.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file SP_Inst_Mem.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file Inst_Mem.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file Data_Mem.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file ALU.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file PEIO.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file PE.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file Torus3x3.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file BramIF.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+Copying file cgra3x3.v to
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cg
+ra3x3_v1_00_a/hdl/verilog/ ...
+
+Thank you for using Create and Import Peripheral Wizard! Please find your
+imported peripheral under
+D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores\cg
+ra3x3_v1_00_a.
+
+Summary:
+
+  Logical library     : cgra3x3_v1_00_a
+  Version             : 1.00.a
+  Bus interface(s)    : None
+
+The following sub-directories will be created:
+
+  - cgra3x3_v1_00_a\data
+  - cgra3x3_v1_00_a\doc
+  - cgra3x3_v1_00_a\hdl
+  - cgra3x3_v1_00_a\hdl\verilog
+  - cgra3x3_v1_00_a\hdl\vhdl
+  - cgra3x3_v1_00_a\netlist
+
+The following HDL source files will be copied into the
+cgra3x3_v1_00_a\hdl\verilog directory:
+
+  - MulAdd.v
+  - TDP_Data_Mem.v
+  - SP_Inst_Mem.v
+  - Inst_Mem.v
+  - Data_Mem.v
+  - ALU.v
+  - PEIO.v
+  - PE.v
+  - Torus3x3.v
+  - BramIF.v
+  - cgra3x3.v
+
+
+The following files will be created under the cgra3x3_v1_00_a\data directory:
+
+  - cgra3x3_v2_1_0.mpd
+  - cgra3x3_v2_1_0.pao
+
+

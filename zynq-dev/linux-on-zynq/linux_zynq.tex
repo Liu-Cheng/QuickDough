@@ -1,0 +1,768 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple Sectioned Essay Template
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing essay content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+\usepackage{clrscode} % Codebox
+\usepackage{listings} % Codebox
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{url}
+
+\linespread{1.2} % Line spacing
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{./figures/}} % Specifies the directory where pictures are stored
+
+\lstset{
+    frame=single,
+    breaklines=true,
+    basicstyle=\ttfamily\small
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+\textsc{Notes for Running Linux on Zynq}\\[1.5cm] % Name of your university/college
+
+\HRule \\[0.2cm]
+{ \fontsize{20pt}{20pt} \bfseries Customize Embedded Linux \\[0.2cm] System on Zynq} \\[0.2cm] % Title of your document
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \large
+\emph{Author:} Cheng Liu % Your name
+\end{center}
+\end{minipage}
+
+\vspace{1cm}
+{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Include a table of contents
+
+\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+\section{Introduction} % Major section
+This document is a summary of building linux system on Zynq using both Petalinux and the 
+conventional linux building flow which means you need to build all the linux subcomponents 
+including bootloader, fsbl, kernel and so on step by step. Petalinux is definitely more friendly 
+to new users, but there are a lot of limitations and even bugs in current release. 
+As a result, we got to move to the conventional building flow. While I still believe 
+Petalinux will be more robust in future, thus I keep it here.
+
+\section{Building Linux System Using Petalinux}
+The petalinux used in this document is petalinux 2016.2. The linux kernel used is 4.x. You may refer to 
+Xilinx linux wiki for more information. You may also refer to UG1144 for details including 
+the installing and basic usage.
+
+Step 1: Create petalinux project based on zynq template 
+\begin{lstlisting}[language=bash]
+    petalinux-create -t project -n zynq_timer --template zynq
+\end{lstlisting}
+
+Step2: Import hardware to petalinux project so that hardware information such as device 
+tree can be extracted automatically. Make sure the hardware bitstream and hardware 
+description file is put in <path-to-hw-description>.
+\begin{lstlisting}[language=bash]
+    petalinux-config --get-hw-description=<path-to-hw-descrition-dir>
+\end{lstlisting}
+
+Step3: Configure linux kernel and root file system respectively.
+You may choose what to be built in your kernel. For example, you may include some lib such as glibc, opencv etc.
+Also you may have you own applications or drivers enabled or disabled in this step.
+\begin{lstlisting}[language=bash]
+    petalinux-config -c kernel 
+    petalinux-config -c rootfs
+\end{lstlisting}
+
+Step4: Create new applications, drivers, libs and add them to the linux system.
+\begin{lstlisting}[language=bash]
+    petalinux-create -t apps -n myapp --enable
+    petalinux-create -t modules -n mymodule --enable
+    petalinux-create -t libs -n mylib --enable
+\end{lstlisting}
+
+Step5: Build the linux system
+\begin{lstlisting}[language=bash]
+    petalinux-build
+\end{lstlisting}
+
+
+Step6: Package the generated sub components of the linux system and dumps only BOOT.BIN and image.ub.
+Assume you are going to boot using SD card.
+\begin{lstlisting}[language=bash]
+    petalinux-package --boot --fsbl xxx.fsbl --fpga xxx.fpga --u-boot
+\end{lstlisting}
+
+Step7: Clean the petalinux project when the project gets messy.
+\begin{lstlisting}[language=bash]
+    petalinux-build -x distclean
+\end{lstlisting}
+
+Up to now, you have the whole linux system built and can boot linux on zynq.
+
+\section{Building Linux System Step by Step}
+Most of the materials are obtained form \cite{xilinx-linux-wiki}. Refer to the website for more information.
+
+\subsection{Preparation} 
+Donwload the source code of linux kernel, u-boot, device-tree and dtc from git from the following links.
+The Linux kernel with Xilinx patches and drivers \\
+\url{https://github.com/Xilinx/linux-xlnx.git}
+
+The u-boot bootloader with Xilinx patches and drivers \\
+\url{https://github.com/Xilinx/u-boot-xlnx.git}
+
+Device Tree generator plugin for xsdk \\
+\url{https://github.com/Xilinx/device-tree-xlnx.git}
+
+Device Tree compiler (required to build U-Boot) \\
+\url{https://git.kernel.org/pub/scm/utils/dtc/dtc.git}
+
+It is probably that you just get the master git repo using git clone. While the master git repo changes 
+with time, it is difficult for you to stick to a determined repo. Typically, it is highly recommended to use the 
+repo with a specific tag which easily ensures the whole group to work on exactly the same repo.
+
+Here is the git commands that helps to switch to a specific repo.
+\begin{lstlisting}[language=bash]
+    git fetch --tags
+    git checkout tags/tag-name
+\end{lstlisting}
+
+Afterwards, you can also check your repo status using git status command.
+\begin{lstlisting}[language=bash]
+    git status
+\end{lstlisting}
+
+When you modify the repo but then need to switch to a different git repo, the following commands will 
+discard the previous changes and checkout the new repo.
+
+\begin{lstlisting}[language=bash]
+    git clean -df
+    git checkout -- .
+    git checkout new-tags 
+\end{lstlisting}
+
+If there are untracked files or directories in the repo, you may clean them using the commands below.
+Make sure you do have useful modification backed up.
+\begin{lstlisting}[language=bash]
+    git clean -f
+    git clean -f -d
+\end{lstlisting}
+
+\subsection{Build u-boot}
+Update the configurations in \textbf{zynq-common.h} located at \textbf{u-boot/include/configs/} when necessary.
+Change to u-boot directory and build u-boot with the following commands. Make sure the configuration is set properly.
+Here suppose zedboard is the target.
+\begin{lstlisting}[language=bash]
+    make distclean
+    make ARCH=arm zynq_zed_config
+    make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- 
+\end{lstlisting}
+
+u-boot will be generated in this step as expected. Meanwhile, mkimage will be generated and it will 
+be used in the next step. Note that mkimage locates in \textbf{./tools/}. You may want to add it to your 
+path.
+
+\subsection{Build Kernel}
+Change to the kernel project directory and run the following commands.
+Note that 'Default number of RAM disks' and 'Default RAM disk size(kbytes)' 
+should be set to 8 and 32768 respectively at menuconfig stage. They are located at 
+Device Drivers--$>$Block Devices--$>$.
+
+\begin{lstlisting}[language=bash]
+    make distclean
+    make ARCH=arm xilinx_zynq_defconfig
+    make ARCH=arm menuconfig
+    make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+              UIMAGE_LOADADDR=0x8000 uImage
+\end{lstlisting}
+After the second step, a kernel configuration file \textbf{.config} will be generated.
+A shell script can be used to change this configuration file directly instead of relying on the 
+menuconfig GUI which is relatively slow and error-prone. Most importantly, the configuration 
+file can be reused and new modification can be added to it easily. 
+Any kernel related configuration should be also done in this step. 
+After the configuration, the kernel can be built. 
+uImage will be generated and put at \textbf{./arch/arm/boot/}.
+
+
+\subsection{Create fsbl} 
+You may either create the fsbl using hsi command or SDK gui.
+The use of hsi command can be found in \cite{fsbl-hsi}. It should be very useful 
+if you want to do it with a script.
+
+The use of SDK gui is also convenient and can be found in \cite{fsbl-sdk}. 
+Basically, building fsbl in SDK is similar to buidling a baremetal 
+C application. The only difference is that you need to chosse the fsbl 
+instead of a hello world template.
+
+\subsection {Create Device Tree}
+First of all, get the device tree repo as mentioned in previous step from xilinx git \cite{xilinx-dts}. 
+Then export hardware when the vivado project is implemented and launch the SDK from Vivado.
+Click the tab in \textbf{Xilinx Tools --$>$ Respositories}. Then new local respository and point it to the device 
+tree repo downloaded from xilinx git. Afterwards, click tab \textbf{File --$>$ New --$>$ Board Support Package}.
+and choose \textbf{device\_tree} for the \textbf{Board Support Package OS} option. Click \textbf{Finish} tab and 
+the device tree will be generated. The device tree directory is located at the project.sdk directory.
+A vivid description on device tree generation can be found in \cite{create-dts}. 
+
+Finally copy the generated device tree to the directory at \textbf{arch/arm/boot/dts} in linux-xlnx 
+and create the dtb using dtc.
+
+\begin{lstlisting}[language=bash]
+    dtc -I dts -O dtb -o system.dtb system.dts
+\end{lstlisting}
+
+As mentioned above, you need \textbf{dtc} to compile the dts files to produce dtb. 
+You can download dtc tools following the instructions given in the first subsection.
+When the dtc is downloaded, change to the dtc directory and make it. 
+Then add dtc to your path for convenience.
+Note that the \textbf{dtc} can also be used to transform dtb to dts so that you can explore 
+more details given just dtb file.
+
+\begin{lstlisting}[language=bash]
+    make
+\end{lstlisting}
+
+Finally, boot args can be modified on the root node of the device tree.
+Here is an example of a typical boot args.
+
+\begin{lstlisting}[language=bash]
+chosen {
+    bootargs = "console=ttyPS0,115200 earlyprintk devtmpfs.mount=1 root=/dev/mmcblk0p2 rootfstype=ext4 rw rootwait ip=dhcp";
+};
+\end{lstlisting}
+\textbf{console=ttyPS0,115200} sets the default console as the serial port. And the the baud rate is 115200 without any flow control.
+\textbf{earlyprintk} allows printing information of the kernel in ealy booting stage.
+\textbf{devtmpfs.mount=1} allows SD card mounting.
+\textbf{root=/dev/mmcblk0p2 rootfstype=ext4 rw rootwait} mounts root file system to the second part of the SD card partition 
+such that whatever you have done on the rootfs can be kept when the system is powered off. The format of the SD 
+card partition is ext4. It allows both read and write operations.
+\textbf{ip=dhcp} ensures the system to obtain IP address through DHCP.
+
+\subsection{Create BOOT.bin}
+You may create the BOOT.bin using SDK which automatically packs bitstream, fsbl and u-boot.
+You may also create it using the following command.
+\begin{lstlisting}[language=bash]
+bootgen -image boot.bif -o i BOOT.bin
+\end{lstlisting}
+
+To execute the command, you need to create boot.bif which specifies the path of the three files.
+Here is an example of boot.bif. Make sure the order of the files in boot.bif are set exactly as 
+that in the example below.
+\begin{lstlisting}[language=bash]
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]/software/BOOT/timer_fsbl.elf
+	/software/BOOT/u-boot.elf
+	/software/BOOT/system.bit.bin
+}
+\end{lstlisting}
+
+\subsection{Create the root file system}
+There are roughly two different ways to create root file system. The first one is to create rootfs from 
+scratch using either Buildroot, busybox or Yocto tools. The other one is to create root file system 
+based on a prebuilt image. You can reuse whatever that is already included and adjust it to meet your 
+own requirements. 
+
+\subsubsection{Create rootfs from scratch}
+In this subsection, we will build a root file system from scratch using busybox and dropbear. 
+Basically we use busyBox for common Unix tools, Dropbear to provide an SSH client/server, and the arm-linux 
+cross compiling Toolchain for the standard C library and helper applications such as gdb-server.
+
+The root filesystem will be built in the following order:
+\begin{enumerate}
+    \item Build BusyBox
+    \item Build glibc
+    \item Build Dropbear
+    \item Toolchain Library and Application Setup
+    \item Directory Creation and Configuration
+\end{enumerate}
+
+Step 1: Build BusyBox \\
+Get a copy of BusyBox from \textbf{git.xilinx.com} and enter the new directory.
+The build can be customized from the supplied defaults by running "make menuconfig".
+In the menu options, set the install location to "/home/devel/\_install" 
+(BusyBox Settings-$>$Installation Options-$>$BusyBox installation prefix).
+Browse the configurations, you may need to select some network configurations 
+which are not added by default.
+\begin{lstlisting}[language=bash]
+git clone git://git.busybox.net/busybox
+cd busybox
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- defconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- install
+\end{lstlisting}
+
+Step 2: Build glibc \\
+Usually glibc will be needed in your application development and it is better to 
+include glibc when you build the root file system. Here is the instructions for 
+downloading and compiling. Makesure the glibc version fits your 
+cross compiler version.
+
+\begin{lstlisting}
+wget http://ftp.gnu.org/gnu/libc/glibc-2.19.tar.xz
+tar -xJf glibc-2.19.tar.xz
+mkdir glibc-build
+cd glibc-build/
+
+../glibc-2.19/configure arm-linux-gnueabi --target=arm-linux-gnueabi --build=i686-pc-linux-gnu --prefix= --enable-add-ons
+
+make
+make install install_root=/home/export/rootfs 
+\end{lstlisting}
+
+You may also copy the compiled glibc from your cross-compiling toolchain. 
+The arm-linux cross compiling toolchain is installed though \textbf{apt-get} command.
+The default cross-toolchain library is located at \textbf{/usr/arm-linux-gnueabihf/lib/}.
+All that you need to do is to copy it to the target rootfs. Currently, 
+it is put at \textbf{/lib/}.
+
+\begin{lstlisting}[language=bash]
+cp /usr/arm-linux-gnueabihf/lib/* lib/ -r
+\end{lstlisting}
+Make sure \textbf{-r} option is used to handle the symbolic link.
+
+In order to shrink the size of the glibc, we can use strip command to remove the debugging inforation.
+\begin{lstlisting}[language=bash]
+arm-linux-gnueabihf-strip /lib/*
+\end{lstlisting}
+
+Step 3: Build Dropbear \\
+This build uses Dropbear v0.53.1.
+Get a copy from the Dropbear website, extract the tarball and enter the directory:
+
+\begin{lstlisting}[language=bash]
+wget http://matt.ucc.asn.au/dropbear/releases/dropbear-0.53.1.tar.gz
+tar xfvz dropbear-0.53.1.tar.gz
+cd dropbear-0.53.1
+
+./configure --prefix=/home/devel/_rootfs --host=arm-xilinx-linux-gnueabi --disable-zlib CC=arm-xilinx-linux-gnueabi-gcc LDFLAGS="-Wl,--gc-sections" CFLAGS="-ffunction-sections -fdata-sections -Os"
+
+make PROGRAMS="dropbear dbclient dropbearkey dropbearconvert scp" MULTI=1 strip
+
+sudo make install
+ln -s ../../sbin/dropbear /home/devel/_rootfs/usr/bin/scp
+\end{lstlisting}
+Using the instructions listed above, you may find a compilation error complaining \textbf{undefined reference to `crypt'}.
+A patch that was found on Intenet is supposed to solve this problem, but it doesn't work as expected. 
+\begin{lstlisting}[language=bash]
+patch < static_build.patch
+\end{lstlisting}
+Then I found another fix changing the 80th line of Makefile.
+The original line is \textbf{LIBS+=-lutil} and it is changed with \textbf{LIBS+=-lutil -lcrypt}.
+I didn't check if it is the combined solution fixed the problem or the second one did it, the problem is solved anyway.
+
+DropBear requires RSA and DSS (Digital Signature Standard) encryption keys to be generated. 
+I normally do this on the target, but you could generate the keys on the host if you 
+have the dropbearkey executable installed.
+To generate your keys:
+\begin{lstlisting}[language=bash]
+mkdir /etc/dropbear
+dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key  
+dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key 
+\end{lstlisting}
+When the keys are ready, dropbear can be invoked in shell or 
+in \textbf{rcS} at system booting stage.
+
+Step 4: Toolchain library and application setup \\
+Copy the required library to the rootfs. Here is an example from Xilinx cross-compiling toolchain.
+The general arm-linux toolchain may be slightly different.
+\begin{lstlisting}[language=bash]
+cd /home/devel/_rootfs
+mkdir lib
+cp /opt/14.2/ISE_DS/EDK/gnu/arm/lin64/arm-xilinx-linux-gnueabi/libc/lib/* lib -r
+cp /opt/14.2/ISE_DS/EDK/gnu/arm/lin64/arm-xilinx-linux-gnueabi/libc/sbin/* sbin/ -r
+cp /opt/14.2/ISE_DS/EDK/gnu/arm/lin64/arm-xilinx-linux-gnueabi/libc/usr/bin/* usr/bin/ -r
+\end{lstlisting}
+
+Step 5: Directory creation and configuration \\
+Add necessary directory to the rootfs.
+\begin{lstlisting}[language=bash]
+mkdir dev etc etc/dropbear etc/init.d mnt opt proc home root sys tmp var var/log var/www
+\end{lstlisting}
+
+Create "etc/fstab" containing the following:
+\begin{lstlisting}[language=bash]
+devpts    /dev/pts  devpts  gid=5,mode=620  0 0
+none      /proc     proc    defaults        0 0
+none      /sys      sysfs   defaults        0 0
+none      /tmp      tmpfs   defaults        0 0
+\end{lstlisting}
+It presents the mounting information between the file system and the storage system.
+Each filed of the fstab is listed as follows:
+\textbf{"file system" "dir" "type" "options" "dump" "pass"}
+In rcS file, execute \textbf{mount -a} to mount the file systems listed in \textbf{fstab}.
+
+Create "/etc/inittab" which defines the behavior of the system start, restart, and shutdown
+\begin{lstlisting}[language=bash]
+::sysinit:/etc/init.d/rcS
+# /bin/ash
+# 
+# Start an askfirst shell on the serial ports
+
+ttyPS0::respawn:-/bin/ash
+
+# What to do when restarting the init process
+
+::restart:/sbin/init
+
+# What to do before rebooting
+
+::shutdown:/bin/umount -a -r
+\end{lstlisting}
+
+Create "/etc/passwd" and it contains:
+\begin{lstlisting}[language=bash]
+root:$1$qC.CEbjC$SVJyqm.IG.gkElhaeM.FD0:0:0:root:/root:/bin/sh
+\end{lstlisting}
+
+Create "/etc/profile" \\
+Create "/etc/hostname" \\
+Create "/etc/hosts" \\
+Create "/etc/group" \\
+Create "/etc/dropbear" \\
+Create "/etc/init.d/rcS" which is the first bash script to be executed when the system boots.
+Platform specific initialization should be done here and user specific initialization script 
+can be included in it while the user script can be put whereever the user prefers.
+
+Here is a simple example.
+\begin{lstlisting}[language=bash]
+#!/bin/sh
+
+#echo "Starting rcS..."
+
+#echo "++ Mounting filesystem"
+mkdir -p /dev/pts
+mkdir -p /dev/i2c
+mount -a
+
+#echo "++ Setting up mdev"
+
+#echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+# the device driver is not creating this node, so for now
+# create the devcfg device node manually
+
+if [ ! -e /dev/xdevcfg ]
+then
+	mknod /dev/xdevcfg c 259 0
+fi
+
+#echo "++ Starting telnet daemon"
+telnetd -l /bin/sh
+
+#echo "++ Starting http daemon"
+httpd -h /var/www
+
+#echo "++ Starting ftp daemon"
+tcpsvd 0:21 ftpd ftpd -w /&
+
+#echo "++ Starting dropbear (ssh) daemon"
+
+mount /dev/mmcblk0p1 /mnt >/dev/null 2>&1
+mount /dev/mmcblk0p2 /root >/dev/null 2>&1
+
+#echo "++ Generate dropbearkey and invoke dropbear"
+dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key >/dev/null 2>&1
+dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key >/dev/null 2>&1
+dropbear
+
+if [ -f /mnt/init.sh ]
+then
+	echo "++ Running user script init.sh from SD Card"
+     	source /mnt/init.sh
+fi
+
+#echo "rcS Complete"
+\end{lstlisting}
+
+
+\subsubsection{Create rootfs based on existing rootfs}
+Here is a list of commands that create a root file system from an existing one. You may also check \cite{modify-rootfs} 
+for your reference. 
+
+If you have only uramdisk.image.gz, get out of the first 64 bytes in the head using the following command.
+\begin{lstlisting}[language=bash]
+    dd if=uramdisk.image.gz of=ramdisk.image.gz bs=64 skip=1
+\end{lstlisting}
+
+Otherwise, go through the following steps.
+\begin{lstlisting}[language=bash]
+    gunzip ramdisk.image.gz //unzip rootfs 
+    mkdir tmp 
+    sudo mount -o loop  ramdisk.image tmp //mount rootfs
+
+    // Create an empty rootfs 
+    dd if=/dev/zero of=ramdisknew.image bs=1024 count=32768
+
+    //format the image with ext2 
+    mke2fs -F ramdisknew.image -L "ramdisk" -b 1024 -m 0
+
+    //disable the self check of the rootfs
+    tune2fs ramdisknew.image -i 0
+    chmod a+rwx ramdisknew.image //Enable file operation
+    mkdir tmpnew
+    sudo mount -o loop  ramdisknew.image tmp //mount rootfs
+
+    // Copy the prebuilt rootfs to the new one.
+    sudo cp -R tmp/* tmpnew/ 
+
+    //Add your own stuffs to the file system
+    cp your-stuffs to tmpnew/
+    sudo umount tmp
+    sudo umount tmpnew
+    gzip ramdisknew.image
+
+    mkimage -A arm -T ramdisk -C gzip -d ramdisk.image.gz
+    uramdisk.image.gz // change ramdisk to uramdisk 
+\end{lstlisting}
+
+If you have cpio.gz file, you can check the root fs using the following commands.
+Then make necessary change to the file system and repack it to a new cpio.gz. Finally, 
+you can convert the cpio.gz to an image that can be recognized by u-boot. 
+Note that copying the root fs directly to a ramdisk may not work easily.
+
+Unzip the cpio.gz using these commands.
+\begin{lstlisting}[language=bash]
+mkdir tmp
+cp rootfs.cpio.gz ./tmp
+cd tmp
+gunzip rootfs.cpio.gz
+cpio -idmv < rootfs.cpio
+\end{lstlisting}
+
+Make your own change in the file system. Then you can repack it to new cpio.gz using this command.
+\begin{lstlisting}[language=bash]
+sh -c 'cd tmp/ && find . | cpio -H newc -o' | gzip -9 > new_initramfs.cpio.gz
+\end{lstlisting}
+
+Change the ramfs.cpio.gz to initramfs.uImage using the command below.
+\begin{lstlisting}[language=bash]
+mkimage -n 'Ramdisk Image'  -A arm -O linux -T ramdisk -C gzip -d ramfs.cpio.gz initramfs.uImage
+\end{lstlisting}
+
+Then open the u-boot configuration file which locates at \textbf{u-boot/include/configs/zynq-common.h}
+and change the original line \textbf{"ramdisk\_image=uramdisk.image.gz\textbackslash0"} to 
+\textbf{"ramdisk\_image=initramfs.uImage\textbackslash 0"}
+
+Finally, rebuild the u-boot as well as the BOOT.bin following the previous instructions.
+
+Here is some reference \cite{busybox-ref1, busybox-ref2} building your own root file system from scratch.
+In order to support hardfloat point, hardfloat glibc should be added to the root file system. Make sure 
+correct glibc is copied to the appropriate location of the root file system.
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=10cm]{loop-unrolling}
+%\caption{Loop Unrolling Influence on Performance and Instruction Memory}
+%\label{fig:loop-unrolling}
+%\end{figure}
+
+Step8: Prepare files for SD card boot
+Copy the following files to the SD card.
+\begin{itemize}
+    \item BOOT.bin // basic boot files
+    \item devicetree.dtb // device tree
+    \item uImage // kernel image
+    \item uramdisk.img.gz or initramfs.uImage // root fs
+\end{itemize}
+
+\section{Driver Module Compilation}
+Read the on-line driver document when you decide to dive into the linux driver development \cite{driver-doc}.
+There are two typical driver compilation methods.
+One of them is separate driver compilation while the other one is compiling your 
+driver together with the kernel. Apparently, the first one is usually more convenient especially for 
+driver engineers who need to compile the driver relatively frequently. This section will just stick to 
+this method for now and hopefully add the other in future.
+
+Here is an example of a driver Makefile. Make sure the linux kernel source code path is set correctly.
+\begin{lstlisting}[language=make]
+# 
+# Makefile template for out of tree kernel modules
+#
+
+ARM_LINUX_KERNEL:=/software/linux-xlnx
+
+CURRENT_PATH=$(shell pwd)
+obj-m += zynqtimer.o
+
+all:
+$(MAKE) -C $(ARM_LINUX_KERNEL) M=$(CURRENT_PATH) modules
+
+clean:
+rm -rf .*.cmd *.o *.mod.c *.ko .tmp_versions Module.symvers .Makefile.swp modules.order
+\end{lstlisting}
+
+When the module is compiled for an embedded system, you need to add additional ARCH and CROSS\_COMPILE
+options while executing the make command. 
+\begin{lstlisting}[language=bash]
+    make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+\end{lstlisting}
+
+After system boot, we can then install the compiled driver module using the following commands.\
+\begin{lstlisting}[language=bash]
+    insmod driver.ko // insert module 
+    mknod /dev/device_name c major_num device_num
+\end{lstlisting}
+Then you can manipulate the device and run applications that access the driver.
+
+Sometimes, you may want to implement a miscellaneous device driver. It can be roughly 
+considered to be as a special character driver which allows multiple misc drivers to 
+share the same major number. These misc driver can be distinguished using the minor number.
+When the misc module is inserted to the system, you may check the minor number automatically 
+allocated by the system using the following command.
+
+\begin{lstlisting}[language=bash]
+    cat /proc/misc
+\end{lstlisting}
+
+When the minor number is decided, you can then create the device node at /dev/ using 
+mknod command as demonstrated below.
+\begin{lstlisting}[language=bash]
+    mknod /dev/my_misc c 10 0
+\end{lstlisting}
+
+Here is a short shell script that automates these steps.
+\begin{lstlisting}[language=bash]
+#!/bin/sh
+
+if [ "x$1" = "x" ]; then
+   echo "usage: load_misc <module> [<mode>\
+    [<owner> [<group>]]]"
+fi
+insmod $1 || exit 1
+major=10
+minor=`grep $DEV /proc/devices |
+   awk "{print \\$1}"`
+mknod /dev/$1 c $major $minor
+if [ "x$2" != "x"]; then
+   chmod $2 /dev/$1
+fi
+if [ "x$3" != "x"]; then
+   chown $3 /dev/$1
+fi
+if [ "x$4" != "x"]; then
+   chgrp $4 /dev/$1
+fi
+exit 0
+\end{lstlisting}
+
+On top of \textbf{insmod, rmmod}, you can also use \textbf{modeprobe, modeprobe -r} to add/remove modules to/from your system.
+The latter automatically handles the dependent modules and have them installed if necessary. When there is no 
+module dependency, there is no difference between the two module installing. If there are dependent modules, the latter can be 
+considered as a sequence of the former instructions and thus is more convenient. However, the \textbf{modeprobe} command assumes 
+that the modules is put in standard location of the system (i.e. /lib/modules/'uname -r'/yourmodule.ko) while you can start 
+anywhere using \textbf{insmod}. If the module is not located in the specified system path, you may need to configure the module 
+using the following commands and execute \textbf{modeprobe} afterwards. Note that 'uname -r' should be a string of your kernel version 
+and it can be obtained using this command \textbf{uname -r}.
+
+\begin{lstlisting}[language=bash]
+sudo ln -s /path/to/module.ko /lib/modules/`uname -r`/
+sudo depmod -a
+sudo modprobe module
+\end{lstlisting}
+
+\section{Continuous Physical Memory Allocation}
+CMA is provided as a DMA api in linux kernel and official document can be found \cite{dma-api, dma-api-howto}.
+The allocated memory by CMA is set to be device memory which means that cache is disabled for data access 
+in the allocated memory region.
+
+A potential way to further improve performance of the continuous memory allocation (CMA) 
+based solution can be found on this website \cite{cma-cache}. Basically the author hacked the 
+\textbf{dma\_coherent\_alloc()} to manually control the cache coherence operation. When there is only 
+FPGA or CPU doing operation on the allocated memory, cache coherence operation is not needed. CPU can still 
+benefit from the cache system while the FPGA continues without cache. When 
+both CPU and FPGA operates on the block of memory, cache coherence operations should be used to guarantee the 
+memory consistency.
+
+\section{Statically Reserve Main Memory}
+Although CMA works great with dynamically applying and releasing 
+the main memory, it is not perfect. CMA may fail when the system consumes too much memory 
+already, which results in failure of activating the peripheral. In addition, many peripherals in 
+an embedded system requires to reserve the main memory at initialization stage and holds it until 
+the system is down. In this case, dynamic allocation will not make any difference compared to a static 
+allocation. Particularly, the allocated memory is uncached officially and the communication efficiency 
+between the hardware and the software may drop due to the absence of cache. With static main memory 
+allocation, cache can still be used as usual. With cache flush supports, the user can manipulate the 
+cache coherence whenever it is necessary and helps to improve the performance of the communication.
+Detailed static memory allocation and corresponding driver development will be presented in the rest 
+part of this section.
+
+\subsection{UIO}
+In order to develop a user space character driver, you need to have the following aspects changed.
+\begin{itemize}
+    \item Change the "compatible" field of device tree node to be uio.
+    \item Makesure the UIO framework is added to the kernel driver options.
+    \item Add UIO related module in boot args.
+\end{itemize}
+
+\subsection{mmap in user space}
+
+\subsection{How to reserve the main memory?}
+
+\subsection{Move data across user space and kernel space}
+System call: copy\_to/from\_user
+Zero copy through mmap
+
+\subsection{Cache coherence}
+
+\subsection{How to access the reserved memory block?}
+We may either access it from user space or kernel space. At the early stage of prototype
+
+\section{BOOT Setup}
+SD card partition and mounting. \cite{rootfs-mount}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{plain}
+\bibliography{refs}
+%----------------------------------------------------------------------------------------
+
+\end{document}
+
+

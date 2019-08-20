@@ -1,0 +1,458 @@
+@I [HLS-0] Workspace D:/minibench/customization/sobel_small/unroll-1x2x3x3 opened at Tue Mar 24 16:11:07 +0800 2015
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 5.906 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 5.907 sec.
+@I [HLS-100] Command "import_lib C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.908 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.908 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 5.909 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 5.909 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.909 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.909 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.909 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 5.911 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 5.913 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.913 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.917 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 5.918 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 5.918 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.918 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 5.918 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 5.919 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 5.919 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.013Total elapsed time: 5.920 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 5.925 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 5.926 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 5.930 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 5.942 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.013Total elapsed time: 5.955 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 5.955 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.145Total elapsed time: 6.100 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/tps/tcl/tcllib1.11.1/struct/list.tcl "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 6.124 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 6.125 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/tps/tcl/tcllib1.11.1/math/bignum.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 6.130 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.035Total elapsed time: 6.136 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.213Total elapsed time: 6.136 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 6.137 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.216Total elapsed time: 6.137 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.216Total elapsed time: 6.137 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 6.137 sec.
+@I [HLS-100] Command "import_lib C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 6.139 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 6.140 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.015Total elapsed time: 6.153 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 6.155 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 6.155 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 6.157 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 6.157 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 6.158 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 6.158 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 6.158 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.002Total elapsed time: 6.159 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 6.159 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 6.159 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.002Total elapsed time: 6.160 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.005Total elapsed time: 6.161 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 6.161 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 6.161 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 6.161 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.261Total elapsed time: 6.161 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 6.162 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 6.162 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 6.163 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 6.163 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 6.163 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.002Total elapsed time: 6.164 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 6.164 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 6.164 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.002Total elapsed time: 6.165 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.004Total elapsed time: 6.165 sec.
+@I [HLS-100] Command "create_clock -period 10 -name default "
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.001Total elapsed time: 6.166 sec.
+@I [HLS-100] Command "source ./sobel_small/unroll-1x2x3x3/directives.tcl "
+@I [HLS-100] Command "set_directive_resource -core AXI4LiteS -metadata -bus_bundle slv0 sobel_ip return "
+@I [HLS-100] Command 'set_directive_resource' returned 0; elapsed 0Total elapsed time: 6.168 sec.
+@I [HLS-100] Command "set_directive_resource -core RAM_1P_BRAM sobel_ip sub_in "
+@I [HLS-100] Command 'set_directive_resource' returned 0; elapsed 0Total elapsed time: 6.168 sec.
+@I [HLS-100] Command "set_directive_resource -core RAM_1P_BRAM sobel_ip sub_out "
+@I [HLS-100] Command 'set_directive_resource' returned 0; elapsed 0Total elapsed time: 6.168 sec.
+@I [HLS-100] Command "set_directive_unroll -skip_exit_check sobel_ip/sobel_ip_label0 "
+@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0Total elapsed time: 6.168 sec.
+@I [HLS-100] Command "set_directive_unroll -skip_exit_check sobel_ip/sobel_ip_label1 "
+@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0Total elapsed time: 6.168 sec.
+@I [HLS-100] Command "set_directive_unroll -skip_exit_check -factor 2 sobel_ip/sobel_ip_label2 "
+@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0Total elapsed time: 6.168 sec.
+@I [HLS-100] Command "set_directive_pipeline sobel_ip/sobel_ip_label3 "
+@I [HLS-100] Command 'set_directive_pipeline' returned 0; elapsed 0Total elapsed time: 6.168 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 6.168 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Importing test bench file 'sobel_small/src/main.c' ... 
+@0 [HLS-0] Importing test bench file 'sobel_small/src/main.c' ... 
+@I [HLS-10] Importing test bench file 'sobel_small/src/sobel.h' ... 
+@0 [HLS-0] Importing test bench file 'sobel_small/src/sobel.h' ... 
+@I [HLS-10] Analyzing design file 'sobel_small/src/sobel_ip.c' ... 
+@0 [HLS-0] Analyzing design file 'sobel_small/src/sobel_ip.c' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec clang -gcc-toolchain "C:/EDA/Xilinx/Vivado_HLS/2013.3/msys" -hls    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot" -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  "sobel_small/src/sobel_ip.c"  -o "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -gcc-toolchain "C:/EDA/Xilinx/Vivado_HLS/2013.3/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "sobel_small/src/sobel_ip.c"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot" -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl= -D "__asm__(...)="  -o "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.0.c"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] Setting directive 'RESOURCE' variable=positionBooleanTextRequiredreturn core=AXI4LiteS metadata=-bus_bundle slv0 
+@I [HLS-0] Setting directive 'RESOURCE' variable=positionBooleanTextRequiredsub_in core=RAM_1P_BRAM 
+@I [HLS-0] Setting directive 'RESOURCE' variable=positionBooleanTextRequiredsub_out core=RAM_1P_BRAM 
+@I [HLS-0] Setting directive 'UNROLL' skip_exit_check=positionBoolean1 
+@I [HLS-0] Setting directive 'UNROLL' skip_exit_check=positionBoolean1 
+@I [HLS-0] Setting directive 'UNROLL' skip_exit_check=positionBoolean1 factor=2 
+@I [HLS-0] Setting directive 'PIPELINE' 
+@I [HLS-100] Command "list_core -type functional_unit "
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0Total elapsed time: 6.250 sec.
+@I [HLS-0] Marker-Pragma convertor: D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.0.c D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.0.c.ap-line.c D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.0.c.ap-line.c.CXX 1
+@I [HLS-0] 
+Source processor: exec C:/EDA/Xilinx/Vivado_HLS/2013.3/tps/win64/jre/bin/java -Xmx512m -classpath   "C:/EDA/Xilinx/Vivado_HLS/2013.3/lib/classes/autopilot.sourceprocessor.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/lib/classes/com.ibm.icu_4.4.2.v20110208.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/lib/classes/jargs.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/win64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/win64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/win64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar;C:/EDA/Xilinx/Vivado_HLS/2013.3/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.0.c.ap-line.c"  -m "sobel_ip" -o "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.0.c.ap-cdt.c" -c --ad --pc --pp --directive D:/minibench/customization/sobel_small/unroll-1x2x3x3/unroll-1x2x3x3.directive --source D:/minibench/customization/sobel_small/src/sobel_ip.c --error D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db --funcunit "AddSub AddSubnS Mul MulnS Mul2S Mul3S Mul4S Mul5S Mul6S DivnS AddSub_DSP FDiv FSqrt DDiv DSqrt DRecip DRSqrt FAddSub_nodsp FAddSub_fulldsp FMul_nodsp FMul_meddsp FMul_fulldsp FMul_maxdsp FRSqrt_nodsp FRSqrt_fulldsp FRecip_nodsp FRecip_fulldsp FLog_nodsp FLog_meddsp FLog_fulldsp FExp_nodsp FExp_meddsp FExp_fulldsp DAddSub_nodsp DAddSub_fulldsp DMul_nodsp DMul_meddsp DMul_fulldsp DMul_maxdsp DLog_nodsp DLog_meddsp DLog_fulldsp DExp_nodsp DExp_meddsp DExp_fulldsp" --ce --tcl D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db --lp --ca --gf --nk --df --pd --p2d D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db --sd --scff D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pp.0.c.ap-cdt.c D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pragma.0.c D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pragma.0.c.ap-line.CXX 0
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 7.861 sec.
+@I [HLS-0] CDT processor time: 1 seconds per iteration
+@I [HLS-0] Pragma handling time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -gcc-toolchain "C:/EDA/Xilinx/Vivado_HLS/2013.3/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pragma.1.c"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot" -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl= -D "__asm__(...)="  -o "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pragma.2.c"
+
+@I [HLS-0] exec clang -gcc-toolchain C:/EDA/Xilinx/Vivado_HLS/2013.3/msys -hls -fno-exceptions  -D__llvm__  -w  "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.pragma.2.c"    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot" -I "C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.g.bc"
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 7.968 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.bc"  -disable-opt  -LC:/EDA/Xilinx/Vivado_HLS/2013.3/win64/lib -lm_basic -o "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.g.bc"  -disable-opt  -LC:/EDA/Xilinx/Vivado_HLS/2013.3/win64/lib -lm_basic -o "D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 8.41 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -dse -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt  -find-syn-modules -top sobel_ip  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -promote-dbg-pointer  -norm-name   D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.bc -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [HLS-0] Std xform time: 0 seconds per iteration
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg  -instcombine -dce -inst-simplify  -directive-preproc -mem2reg -dse -dce  -globaldce    D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.1.bc -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   -interface-gen -constprop -dse -dce  D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.2.prechk.bc -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@W [SYNCHK-23] sobel_small/src/sobel_ip.c:44: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.g.1.bc to D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls  -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce  -directive-preproc -mem2reg -dse -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -global-constprop -deadargelim  -instcombine -dce  -pointer-simplify -dce  -data-pack -instcombine -dce   -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -array-burst -dce  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -gvn -disable-agg-range -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -array-transform-check  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce -auto-par -array-partition -instcombine -dce  -global-constprop -deadargelim -ptrArgReplace -mem2reg  -func-legal -instcombine -dce  -array-reshape -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -directive-preproc -mem2reg -dse -dce  -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -instcombine -simplifycfg -dce -loop-simplify -simplifycfg -loop-stream -instcombine -simplifycfg -dce -globaldce  -funstream-prep -function-stream -dce -globaldce  -array-streaming -instcombine -simplifycfg -dce      -group-axi-access  -simplifycfg -dce -loop-delete  -norm-name  D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.1.bc -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-502] Unrolling all sub-loops inside loop 'sobel_ip_label3' (sobel_small/src/sobel_ip.c:22) in function 'sobel_ip' for pipelining.
+@W [XFORM-503] Ignored partial unroll directive for loop 'sobel_ip_label2' (sobel_small/src/sobel_ip.c:23) because its parent loop or function is pipelined.
+.@I [XFORM-501] Unrolling loop 'sobel_ip_label2' (sobel_small/src/sobel_ip.c:23) in function 'sobel_ip' completely.
+@I [XFORM-501] Unrolling loop 'sobel_ip_label1' (sobel_small/src/sobel_ip.c:42) in function 'sobel_ip' completely.
+@I [XFORM-501] Unrolling loop 'sobel_ip_label0' (sobel_small/src/sobel_ip.c:43) in function 'sobel_ip' completely.
+@I [HLS-0] Presyn 1 time: 0 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -indvars -loop-bound  -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.1.tmp.bc -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-401] Performing if-conversion on hyperblock from (sobel_small/src/sobel_ip.c:22:41) to (sobel_small/src/sobel_ip.c:22:34) in function 'sobel_ip'... converting 109 basic blocks.
+@I [HLS-0] Presyn 2 time: 0 seconds per iteration
+@I [HLS-0] build ssdm: transform -hls -function-uniquify -auto-function-inline  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -promote-global-argument  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce  -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify -doublePtrElim  -dce -doublePtrSimplify -promote-dbg-pointer -dce  -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -directive-preproc -inst-simplify -dce  -interface-gen -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -loop-simplify -phi-opt -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower  -loop-rewind -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.2.bc -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@I [HLS-0] Build ssdm time: 0 seconds per iteration
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 1.673Total elapsed time: 9.714 sec.
+@I [HLS-111] Elapsed time: 9.746 seconds; current memory usage: 46.3 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 3.574Total elapsed time: 9.742 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'sobel_ip' ...
+@0 [HLS-0] Synthesizing 'sobel_ip' ...
+@I [HLS-100] Command "ap_set_top_model sobel_ip "
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 9.744 sec.
+@I [HLS-100] Command "get_model_list sobel_ip -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 9.744 sec.
+@I [HLS-100] Command "preproc_iomode -model sobel_ip "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 9.744 sec.
+@I [HLS-100] Command "get_model_list sobel_ip -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 9.744 sec.
+@I [HLS-0] Model list for configure: sobel_ip
+@I [HLS-0] Configuring Module : sobel_ip ...
+@I [HLS-100] Command "set_default_model sobel_ip "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.744 sec.
+@I [HLS-100] Command "apply_spec_resource_limit sobel_ip "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0.001Total elapsed time: 9.745 sec.
+@I [HLS-0] Model list for preprocess: sobel_ip
+@I [HLS-0] Preprocessing Module: sobel_ip ...
+@I [HLS-100] Command "set_default_model sobel_ip "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.745 sec.
+@I [HLS-100] Command "cdfg_preprocess -model sobel_ip "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.005Total elapsed time: 9.750 sec.
+@I [HLS-100] Command "rtl_gen_preprocess sobel_ip "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.001Total elapsed time: 9.751 sec.
+@I [HLS-0] Model list for synthesis: sobel_ip
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'sobel_ip' 
+@0 [HLS-0] -- Scheduling module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model sobel_ip "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.751 sec.
+@I [HLS-100] Command "schedule -model sobel_ip "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'sobel_ip_label3'.
+@W [SCHED-69] Unable to schedule 'load' operation ('sub_in_load_3', sobel_small/src/sobel_ip.c:67) on array 'sub_in' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 25, Depth: 46.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 4.214Total elapsed time: 13.965 sec.
+@I [HLS-111] Elapsed time: 4.261 seconds; current memory usage: 54.4 MB.
+@I [HLS-100] Command "report -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.061Total elapsed time: 14.66 sec.
+@I [HLS-100] Command "db_write -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.206Total elapsed time: 14.271 sec.
+@I [HLS-0] Finish scheduling sobel_ip.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'sobel_ip' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model sobel_ip "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 14.274 sec.
+@I [HLS-100] Command "bind -model sobel_ip "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=sobel_ip
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 1.023Total elapsed time: 15.296 sec.
+@I [HLS-111] Elapsed time: 1.339 seconds; current memory usage: 57.2 MB.
+@I [HLS-100] Command "report -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 1.981Total elapsed time: 17.323 sec.
+@I [HLS-100] Command "db_write -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.259Total elapsed time: 17.582 sec.
+@I [HLS-0] Finish binding sobel_ip.
+@I [HLS-100] Command "get_model_list sobel_ip -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 17.582 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess sobel_ip "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 17.582 sec.
+@I [HLS-0] Model list for RTL generation: sobel_ip
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'sobel_ip' 
+@0 [HLS-0] -- Generating RTL for module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model sobel_ip -vendor xilinx -mg_file D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'sobel_ip/sub_in' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'sobel_ip/sub_out' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'sobel_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'sobel_ip_mul_32s_8ns_32_3': 108 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'sobel_ip'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.868Total elapsed time: 18.453 sec.
+@I [HLS-111] Elapsed time: 3.17 seconds; current memory usage: 68 MB.
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 18.513 sec.
+@I [HLS-100] Command "gen_rtl sobel_ip -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/syn/systemc/sobel_ip -synmodules sobel_ip "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.031Total elapsed time: 18.544 sec.
+@I [HLS-100] Command "gen_rtl sobel_ip -istop -style xilinx -f -lang vhdl -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/syn/vhdl/sobel_ip "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.676Total elapsed time: 19.220 sec.
+@I [HLS-100] Command "gen_rtl sobel_ip -istop -style xilinx -f -lang vlog -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/syn/verilog/sobel_ip "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.657Total elapsed time: 19.877 sec.
+@I [HLS-100] Command "export_constraint_db -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.001Total elapsed time: 19.878 sec.
+@I [HLS-100] Command "report -model sobel_ip -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 1.263Total elapsed time: 21.141 sec.
+@I [HLS-100] Command "gen_tb_info sobel_ip -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip -p D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.002Total elapsed time: 21.143 sec.
+@I [HLS-100] Command "report -model sobel_ip -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/syn/report/sobel_ip_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.661Total elapsed time: 21.804 sec.
+@I [HLS-100] Command "report -model sobel_ip -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/syn/report/sobel_ip_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.656Total elapsed time: 22.460 sec.
+@I [HLS-100] Command "report -model sobel_ip -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 2.717Total elapsed time: 25.177 sec.
+@I [HLS-100] Command "db_write -model sobel_ip -o D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.963Total elapsed time: 26.140 sec.
+@I [HLS-100] Command "sc_get_clocks sobel_ip "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 26.591 sec.
+@I [HLS-100] Command "sc_get_portdomain sobel_ip "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 26.591 sec.
+@I [HLS-0] Model list for RTL component generation: sobel_ip
+@I [HLS-0] Handling components in module [sobel_ip] ... 
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.compgen.tcl "
+@I [HLS-0] Found component sobel_ip_mul_32s_8ns_32_3.
+@I [HLS-0] Append model sobel_ip_mul_32s_8ns_32_3
+@I [HLS-0] Found component sobel_ip_Gx.
+@I [HLS-0] Append model sobel_ip_Gx
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.596 sec.
+@I [HLS-0] Append model sobel_ip
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: sobel_ip_mul_32s_8ns_32_3 sobel_ip_Gx sobel_ip
+@I [HLS-0] To file: write model sobel_ip_mul_32s_8ns_32_3
+@I [HLS-0] To file: write model sobel_ip_Gx
+@I [HLS-0] To file: write model sobel_ip
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-0] RTL Generation done.
+@I [HLS-0] CAS Generation done.
+@I [HLS-0] CBC Generation done.
+@I [HLS-100] Command "export_ssdm D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.002Total elapsed time: 26.604 sec.
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.608 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 26.610 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 26.610 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.611 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.612 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 26.613 sec.
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.613 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.616 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.616 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 26.619 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 26.632 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.017Total elapsed time: 26.648 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 26.649 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.138Total elapsed time: 26.786 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.039Total elapsed time: 26.825 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.211Total elapsed time: 26.825 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 26.827 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.213Total elapsed time: 26.827 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.213Total elapsed time: 26.827 sec.
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source C:/EDA/Xilinx/Vivado_HLS/2013.3/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.829 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 26.829 sec.
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 26.831 sec.
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.831 sec.
+@I [HLS-100] Command "source D:/minibench/customization/sobel_small/unroll-1x2x3x3/.autopilot/db/sobel_ip.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'sobel_ip_mul_32s_8ns_32_3_Mul3S_0'
+@I [RTMG-278] Implementing memory 'sobel_ip_Gx_ram' using block RAMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032Total elapsed time: 26.864 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'sobel_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'sobel_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'sobel_ip'.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 17.137Total elapsed time: 26.879 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 20.711Total elapsed time: 26.879 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.015Total elapsed time: 26.895 sec.

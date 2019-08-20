@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\xbip_utils_v2_0\bip_utils_pkg_v2_0.vhd" Line 1851: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\xbip_utils_v2_0\bip_utils_pkg_v2_0.vhd" Line 1852: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\mult_gen_pkg_v11_2.vhd" Line 2257: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1589: Using initial value <arg fmt="%s" index="1">&apos;0&apos;</arg> for <arg fmt="%s" index="2">ce_ctrl</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1755: Using initial value <arg fmt="%s" index="1">&apos;0&apos;</arg> for <arg fmt="%s" index="2">ce_inmode</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1756: Using initial value <arg fmt="%s" index="1">&apos;0&apos;</arg> for <arg fmt="%s" index="2">sclr_inmode</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 266: Net &lt;<arg fmt="%s" index="1">bcin[0][0][17]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 286: Net &lt;<arg fmt="%s" index="1">adel30[0][1][29]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 287: Net &lt;<arg fmt="%s" index="1">acin[0][0][29]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1580: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].cea1</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1582: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].ceb1</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1584: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].cec</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1586: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].cep</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1587: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].ce_carryin</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1588: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].ce_alumode</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1592: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].cin_dsp48e</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1755: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].use_dsp48e1.ced</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1756: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].use_dsp48e1.sclrd</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1762: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[0].use_dsp48e1.local_d[24]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1585: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[1].cem</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\mult_gen_v11_2\dsp.vhd" Line 1590: Net &lt;<arg fmt="%s" index="1">use_DSP48E.appDSP48E[0].bppDSP48E[1].carryinsel[2]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\Mul.vhd</arg>&quot; line <arg fmt="%s" index="2">110</arg>: Output port &lt;<arg fmt="%s" index="3">zero_detect</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U0</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">D:\minibench\scgra-200MHz\cgra2x2\ipcore_dir\tmp\_cg\_dbg\Mul.vhd</arg>&quot; line <arg fmt="%s" index="2">110</arg>: Output port &lt;<arg fmt="%s" index="3">pcasc</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U0</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

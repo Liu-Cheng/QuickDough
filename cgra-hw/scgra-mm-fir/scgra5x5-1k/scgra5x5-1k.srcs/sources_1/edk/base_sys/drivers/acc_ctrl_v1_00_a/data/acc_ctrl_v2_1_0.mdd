@@ -1,0 +1,15 @@
+##############################################################################
+## Filename:          C:\Users\Liucheng\Documents\scgra_high_freq\scgra2x2_high_freq\scgra2x2_high_freq.srcs\sources_1\edk\base_sys/drivers/acc_ctrl_v1_00_a/data/acc_ctrl_v2_1_0.mdd
+## Description:       Microprocessor Driver Definition
+## Date:              Fri Dec 20 15:19:27 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+OPTION psf_version = 2.1.0;
+
+BEGIN DRIVER acc_ctrl
+
+  OPTION supported_peripherals = (acc_ctrl);
+  OPTION depends = (common_v1_00_a);
+  OPTION copyfiles = all;
+
+END DRIVER

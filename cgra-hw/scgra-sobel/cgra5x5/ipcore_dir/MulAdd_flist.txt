@@ -1,0 +1,15 @@
+# Output products list for <MulAdd>
+MulAdd.asy
+MulAdd.gise
+MulAdd.ngc
+MulAdd.sym
+MulAdd.v
+MulAdd.veo
+MulAdd.xco
+MulAdd.xise
+MulAdd\doc\xbip_multadd_ds717.pdf
+MulAdd\doc\xbip_multadd_v2_0_readme.txt
+MulAdd\doc\xbip_multadd_v2_0_vinfo.html
+MulAdd_flist.txt
+MulAdd_xmdf.tcl
+_xmsgs\pn_parser.xmsgs

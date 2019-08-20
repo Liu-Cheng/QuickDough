@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+	[bootloader]/software/BOOT/zynq_fsbl.elf
+	/software/BOOT/pl.bit
+	/software/BOOT/u-boot.elf
+}

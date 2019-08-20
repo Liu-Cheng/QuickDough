@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon Oct  3 16:59:53 2016
+# Process ID: 2151
+# Current directory: /home/liucheng/research/zynq-dev/dma_demo_zed_hw
+# Command line: vivado dma_demo.xpr
+# Log file: /home/liucheng/research/zynq-dev/dma_demo_zed_hw/vivado.log
+# Journal file: /home/liucheng/research/zynq-dev/dma_demo_zed_hw/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project dma_demo.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk/base_sys_wrapper.hdf
+launch_sdk -workspace /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk -hwspec /home/liucheng/research/zynq-dev/dma_demo_zed_hw/dma_demo.sdk/base_sys_wrapper.hdf

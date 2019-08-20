@@ -1,0 +1,1198 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: cgra5x5.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cgra5x5.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cgra5x5"
+Output Format                      : NGC
+Target Device                      : xc7z020-1-clg400
+
+---- Source Options
+Top Module Name                    : cgra5x5
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\MulAdd.v" into library work
+Parsing module <MulAdd>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\ipcore_dir\TDP_Data_Mem.v" into library work
+Parsing module <TDP_Data_Mem>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\ipcore_dir\SP_Inst_Mem.v" into library work
+Parsing module <SP_Inst_Mem>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\Inst_Mem.v" into library work
+Parsing module <Inst_Mem>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\Data_Mem.v" into library work
+Parsing module <Data_Mem>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\PEIO.v" into library work
+Parsing module <PEIO>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\PE.v" into library work
+Parsing module <PE>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\Torus5x5.v" into library work
+Parsing module <Torus5x5>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\BramIF.v" into library work
+Parsing module <BramIF>.
+Analyzing Verilog file "D:\minibench\scgra\cgra5x5-1k\src\cgra5x5.v" into library work
+Parsing module <cgra5x5>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <cgra5x5>.
+
+Elaborating module <Torus5x5(DWIDTH=32,SYS_DWIDTH=32)>.
+
+Elaborating module <PEIO>.
+
+Elaborating module <ALU(DWIDTH=32)>.
+
+Elaborating module <MulAdd>.
+
+Elaborating module <Data_Mem>.
+
+Elaborating module <TDP_Data_Mem>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra\cgra5x5-1k\ipcore_dir\TDP_Data_Mem.v" Line 39: Empty module <TDP_Data_Mem> remains a black box.
+
+Elaborating module <Inst_Mem>.
+
+Elaborating module <SP_Inst_Mem>.
+WARNING:HDLCompiler:1499 - "D:\minibench\scgra\cgra5x5-1k\ipcore_dir\SP_Inst_Mem.v" Line 39: Empty module <SP_Inst_Mem> remains a black box.
+
+Elaborating module <PE>.
+
+Elaborating module <BramIF(SYS_DWIDTH=32,BYTE_LEN=4)>.
+WARNING:HDLCompiler:413 - "D:\minibench\scgra\cgra5x5-1k\src\BramIF.v" Line 214: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <cgra5x5>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\cgra5x5.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        DWIDTH = 32
+    Summary:
+	no macro.
+Unit <cgra5x5> synthesized.
+
+Synthesizing Unit <Torus5x5>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\Torus5x5.v".
+        DWIDTH = 32
+        SYS_DWIDTH = 32
+    Summary:
+	no macro.
+Unit <Torus5x5> synthesized.
+
+Synthesizing Unit <PEIO>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\PEIO.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Load_Data_Reg>.
+    Found 32-bit register for signal <Data_In_Reg1>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_Store>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 69-bit register for signal <Inst_Mem_Out_Reg1<68:0>>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 68.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 74.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 118.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 119.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 120.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 121.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Store_Wire> created at line 122.
+    Summary:
+	inferred 781 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <PEIO> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\ALU.v".
+        DWIDTH = 32
+    Found 1-bit register for signal <ADDSUB_2st_Sel_Reg>.
+    Found 1-bit register for signal <Is_LSFADD_Reg>.
+    Found 1-bit register for signal <Is_ANDAND_Reg>.
+    Found 1-bit register for signal <Is_MULADDSUB_Reg1>.
+    Found 1-bit register for signal <Is_MULADDSUB_Reg2>.
+    Found 32-bit register for signal <ALU_In1_Reg0>.
+    Found 32-bit register for signal <ALU_In2_Reg0>.
+    Found 32-bit register for signal <ALU_In2_Reg1>.
+    Found 32-bit register for signal <ADDSUB_Result>.
+    Found 32-bit register for signal <AND_Result>.
+    Found 32-bit register for signal <ABS_Result>.
+    Found 32-bit register for signal <GT_Result>.
+    Found 32-bit register for signal <LET_Result>.
+    Found 32-bit register for signal <PHI_Result>.
+    Found 32-bit register for signal <RSF_Result>.
+    Found 32-bit register for signal <LSF_Result>.
+    Found 32-bit register for signal <Custom_Result>.
+    Found 32-bit register for signal <ALU_In0_Reg0>.
+    Found 4-bit register for signal <Opcode_Reg0>.
+    Found 4-bit register for signal <Single_Cycle_OP_Sel_Reg>.
+    Found 3-bit register for signal <Custom_Out_Sel_Reg>.
+    Found 32-bit subtractor for signal <ALU_In0_Reg0[31]_ALU_In1_Reg0[31]_sub_23_OUT> created at line 165.
+    Found 32-bit subtractor for signal <ALU_In0_Reg0[31]_unary_minus_26_OUT> created at line 167.
+    Found 32-bit subtractor for signal <ADDSUB_2st_OP0[31]_ALU_In2_Reg1[31]_sub_69_OUT> created at line 233.
+    Found 32-bit adder for signal <ALU_In0_Reg0[31]_ALU_In1_Reg0[31]_add_21_OUT> created at line 165.
+    Found 32-bit adder for signal <ADDSUB_2st_OP0[31]_ALU_In2_Reg1[31]_add_67_OUT> created at line 233.
+    Found 32-bit comparator greater for signal <ALU_In1_Reg0[31]_ALU_In0_Reg0[31]_LessThan_28_o> created at line 168
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 432 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <MulAdd>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\MulAdd.v".
+        DWIDTH1 = 16
+        DWIDTH2 = 16
+        DWIDTH = 32
+    Found 16-bit register for signal <b_reg0>.
+    Found 32-bit register for signal <c_reg0>.
+    Found 1-bit register for signal <subtract_reg>.
+    Found 32-bit register for signal <c_reg1>.
+    Found 32-bit register for signal <mul_result>.
+    Found 32-bit register for signal <p>.
+    Found 16-bit register for signal <a_reg0>.
+    Found 32-bit subtractor for signal <mul_result[31]_c_reg1[31]_sub_26_OUT> created at line 135.
+    Found 32-bit adder for signal <mul_result[31]_c_reg1[31]_add_26_OUT> created at line 135.
+    Found 16x16-bit multiplier for signal <a_reg0[15]_b_reg0[15]_MuLt_20_OUT> created at line 126.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 161 D-type flip-flop(s).
+Unit <MulAdd> synthesized.
+
+Synthesizing Unit <Data_Mem>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\Data_Mem.v".
+        DWIDTH = 32
+        AWIDTH = 8
+    Summary:
+	no macro.
+Unit <Data_Mem> synthesized.
+
+Synthesizing Unit <Inst_Mem>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\Inst_Mem.v".
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 10-bit register for signal <Inst_Mem_Addr>.
+    Found 10-bit adder for signal <Inst_Mem_Addr[9]_GND_10_o_add_1_OUT> created at line 44.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Inst_Mem> synthesized.
+
+Synthesizing Unit <PE>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\PE.v".
+        DWIDTH = 32
+        AWIDTH = 8
+        INST_DWIDTH = 72
+        INST_AWIDTH = 10
+    Found 32-bit register for signal <PE_In1_Reg0>.
+    Found 32-bit register for signal <PE_In2_Reg0>.
+    Found 32-bit register for signal <PE_In3_Reg0>.
+    Found 32-bit register for signal <Data_In_Reg>.
+    Found 32-bit register for signal <Bypass_Data_Reg>.
+    Found 32-bit register for signal <ALU_Out_Reg>.
+    Found 32-bit register for signal <Data_Mem_Out0_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out1_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out2_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out3_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out4_Reg0>.
+    Found 32-bit register for signal <Data_Mem_Out5_Reg0>.
+    Found 32-bit register for signal <PE_Out0>.
+    Found 32-bit register for signal <PE_Out1>.
+    Found 32-bit register for signal <PE_Out2>.
+    Found 32-bit register for signal <PE_Out3>.
+    Found 32-bit register for signal <PE_In0_Reg0>.
+    Found 72-bit register for signal <Inst_Mem_Out_Reg0>.
+    Found 66-bit register for signal <Inst_Mem_Out_Reg1>.
+    Found 32-bit 4-to-1 multiplexer for signal <Data_In_Wire> created at line 64.
+    Found 32-bit 4-to-1 multiplexer for signal <Bypass_Data_Wire> created at line 67.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out0_Wire> created at line 111.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out1_Wire> created at line 112.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out2_Wire> created at line 113.
+    Found 32-bit 4-to-1 multiplexer for signal <PE_Out3_Wire> created at line 114.
+    Summary:
+	inferred 682 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <PE> synthesized.
+
+Synthesizing Unit <BramIF>.
+    Related source file is "D:\minibench\scgra\cgra5x5-1k\src\BramIF.v".
+        SYS_DWIDTH = 32
+        BYTE_LEN = 4
+        CTRL_WORDS_NUM = 1024
+        DBUF_ADDR_WIDTH = 16
+WARNING:Xst:647 - Input <Port2_Data_From_Bram<23:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Port3_Data_From_Bram<26:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <Computation_Start_Reg1>.
+    Found 1-bit register for signal <Computation_Start_Reg2>.
+    Found 1-bit register for signal <Computation_Start_Reg3>.
+    Found 1-bit register for signal <Computation_Done_Reg1>.
+    Found 1-bit register for signal <Computation_Done_Reg2>.
+    Found 1-bit register for signal <Computation_Done_Reg3>.
+    Found 1-bit register for signal <PE_Array_Busy>.
+    Found 1-bit register for signal <Computation_Done_Reg0>.
+    Found 1-bit register for signal <Computation_Start_Reg0>.
+    Found 3-bit register for signal <PE_Array_Status>.
+    Found 16-bit register for signal <CGRA_Cnt>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg0>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg1>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg2>.
+    Found 16-bit register for signal <CGRA_Cnt_Reg3>.
+    Found 16-bit adder for signal <CGRA_Cnt[15]_GND_13_o_add_13_OUT> created at line 214.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  92 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BramIF> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 25
+ 16x16-bit multiplier                                  : 25
+# Adders/Subtractors                                   : 126
+ 10-bit adder                                          : 25
+ 16-bit adder                                          : 1
+ 32-bit addsub                                         : 75
+ 32-bit subtractor                                     : 25
+# Registers                                            : 1221
+ 1-bit register                                        : 159
+ 10-bit register                                       : 25
+ 16-bit register                                       : 55
+ 3-bit register                                        : 26
+ 32-bit register                                       : 856
+ 4-bit register                                        : 50
+ 66-bit register                                       : 23
+ 69-bit register                                       : 2
+ 72-bit register                                       : 25
+# Comparators                                          : 25
+ 32-bit comparator greater                             : 25
+# Multiplexers                                         : 305
+ 10-bit 2-to-1 multiplexer                             : 25
+ 16-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 127
+ 32-bit 4-to-1 multiplexer                             : 152
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/TDP_Data_Mem.ngc>.
+Reading core <ipcore_dir/SP_Inst_Mem.ngc>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem0>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem1>.
+Loading core <TDP_Data_Mem> for timing and area information for instance <Mem2>.
+Loading core <SP_Inst_Mem> for timing and area information for instance <Inst_Rom>.
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+INFO:Xst:2261 - The FF/Latch <LET_Result_1> in Unit <ALU> is equivalent to the following 61 FFs/Latches, which will be removed : <LET_Result_2> <LET_Result_3> <LET_Result_4> <LET_Result_5> <LET_Result_6> <LET_Result_7> <LET_Result_8> <LET_Result_9> <LET_Result_10> <LET_Result_11> <LET_Result_12> <LET_Result_13> <LET_Result_14> <LET_Result_15> <LET_Result_16> <LET_Result_17> <LET_Result_18> <LET_Result_19> <LET_Result_20> <LET_Result_21> <LET_Result_22> <LET_Result_23> <LET_Result_24> <LET_Result_25> <LET_Result_26> <LET_Result_27> <LET_Result_28> <LET_Result_29> <LET_Result_30> <LET_Result_31> <GT_Result_1> <GT_Result_2> <GT_Result_3> <GT_Result_4> <GT_Result_5> <GT_Result_6> <GT_Result_7> <GT_Result_8> <GT_Result_9> <GT_Result_10> <GT_Result_11> <GT_Result_12> <GT_Result_13> <GT_Result_14> <GT_Result_15> <GT_Result_16> <GT_Result_17> <GT_Result_18> <GT_Result_19> <GT_Result_20> <GT_Result_21> <GT_Result_22> <GT_Result_23> <GT_Result_24> <GT_Result_25> <GT_Result_26> <GT_Result_27> <GT_Result_28>
+   <GT_Result_29> <GT_Result_30> <GT_Result_31> 
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <LET_Result_1> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE00>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE01>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE02>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE03>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE04>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE10>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE11>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE12>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE13>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE14>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE20>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE21>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE22>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE23>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE24>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE30>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE31>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE32>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE33>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE34>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE40>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE41>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE42>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE43>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE44>.
+WARNING:Xst:2404 -  FFs/Latches <GT_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+WARNING:Xst:2404 -  FFs/Latches <LET_Result<31:1>> (without init value) have a constant value of 0 in block <ALU>.
+
+Synthesizing (advanced) Unit <Inst_Mem>.
+The following registers are absorbed into counter <Inst_Mem_Addr>: 1 register on signal <Inst_Mem_Addr>.
+Unit <Inst_Mem> synthesized (advanced).
+
+Synthesizing (advanced) Unit <MulAdd>.
+	Found pipelined multiplier on signal <a_reg0[15]_b_reg0[15]_MuLt_20_OUT>:
+		- 1 pipeline level(s) found in a register connected to the multiplier macro output.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT by adding 1 register level(s).
+Unit <MulAdd> synthesized (advanced).
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PEIO>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_8> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_9> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_68> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_69> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_70> of sequential type is unconnected in block <PE>.
+WARNING:Xst:2677 - Node <Inst_Mem_Out_Reg0_71> of sequential type is unconnected in block <PE>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 25
+ 16x16-bit registered multiplier                       : 25
+# Adders/Subtractors                                   : 101
+ 16-bit adder                                          : 1
+ 32-bit addsub                                         : 75
+ 32-bit subtractor                                     : 25
+# Counters                                             : 25
+ 10-bit up counter                                     : 25
+# Registers                                            : 29671
+ Flip-Flops                                            : 29671
+# Comparators                                          : 25
+ 32-bit comparator greater                             : 25
+# Multiplexers                                         : 2605
+ 1-bit 2-to-1 multiplexer                              : 800
+ 1-bit 4-to-1 multiplexer                              : 1600
+ 16-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 102
+ 32-bit 4-to-1 multiplexer                             : 102
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <CGRA_Cnt_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg0_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg0_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg1_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg1_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg2_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg2_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg3_0> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CGRA_Cnt_Reg3_1> (without init value) has a constant value of 0 in block <BramIF>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <cgra5x5> ...
+
+Optimizing unit <Torus5x5> ...
+
+Optimizing unit <BramIF> ...
+
+Optimizing unit <PEIO> ...
+
+Optimizing unit <MulAdd> ...
+
+Optimizing unit <PE> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cgra5x5, actual ratio is 42.
+FlipFlop Torus5x5/PE00/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE01/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE02/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE03/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE04/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE10/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE11/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE12/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE13/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE14/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE20/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE21/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE22/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE23/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE24/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE30/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE31/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE32/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE33/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE34/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE40/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE41/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE42/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE43/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+FlipFlop Torus5x5/PE44/ALU/ADDSUB_2st_Sel_Reg has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <cgra5x5> :
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_15>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_14>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_13>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_12>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_11>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_10>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_9>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_8>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_7>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_6>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_5>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_4>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_3>.
+	Found 4-bit shift register for signal <BramIF/CGRA_Cnt_Reg3_2>.
+Unit <cgra5x5> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 29080
+ Flip-Flops                                            : 29080
+# Shift Registers                                      : 14
+ 4-bit shift register                                  : 14
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : cgra5x5.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 25731
+#      GND                         : 102
+#      INV                         : 853
+#      LUT1                        : 13
+#      LUT2                        : 1114
+#      LUT3                        : 5189
+#      LUT4                        : 1527
+#      LUT5                        : 2014
+#      LUT6                        : 7590
+#      MUXCY                       : 3763
+#      VCC                         : 102
+#      XORCY                       : 3464
+# FlipFlops/Latches                : 30911
+#      FDC                         : 26641
+#      FDCE                        : 31
+#      FDE                         : 14
+#      FDR                         : 2425
+#      FDRE                        : 1800
+# RAMS                             : 125
+#      RAMB36E1                    : 125
+# Shift Registers                  : 14
+#      SRLC16E                     : 14
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 397
+#      IBUF                        : 112
+#      OBUF                        : 285
+# DSPs                             : 25
+#      DSP48E1                     : 25
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg400-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:           30911  out of  106400    29%  
+ Number of Slice LUTs:                18314  out of  53200    34%  
+    Number used as Logic:             18300  out of  53200    34%  
+    Number used as Memory:               14  out of  17400     0%  
+       Number used as SRL:               14
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  36502
+   Number with an unused Flip Flop:    5591  out of  36502    15%  
+   Number with an unused LUT:         18188  out of  36502    49%  
+   Number of fully used LUT-FF pairs: 12723  out of  36502    34%  
+   Number of unique control sets:        32
+
+IO Utilization: 
+ Number of IOs:                         417
+ Number of bonded IOBs:                 398  out of    125   318% (*) 
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:              125  out of    140    89%  
+    Number using Block RAM only:        125
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
+ Number of DSP48E1s:                     25  out of    220    11%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+LowClk                             | BUFGP                  | 3     |
+Clk                                | IBUF+BUFG              | 31072 |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+FindSrcOfAsyncThruGates : 100 (1)
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                               | Buffer(FF name)                                                                                                                                                         | Load  |
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Torus5x5/PE00/Inst_Mem/Inst_Rom/N1(Torus5x5/PE00/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE00/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE01/Inst_Mem/Inst_Rom/N1(Torus5x5/PE01/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE01/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE02/Inst_Mem/Inst_Rom/N1(Torus5x5/PE02/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE02/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE03/Inst_Mem/Inst_Rom/N1(Torus5x5/PE03/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE03/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE04/Inst_Mem/Inst_Rom/N1(Torus5x5/PE04/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE04/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE10/Inst_Mem/Inst_Rom/N1(Torus5x5/PE10/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE10/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE11/Inst_Mem/Inst_Rom/N1(Torus5x5/PE11/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE11/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE12/Inst_Mem/Inst_Rom/N1(Torus5x5/PE12/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE12/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE13/Inst_Mem/Inst_Rom/N1(Torus5x5/PE13/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE13/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE14/Inst_Mem/Inst_Rom/N1(Torus5x5/PE14/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE14/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE20/Inst_Mem/Inst_Rom/N1(Torus5x5/PE20/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE20/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE21/Inst_Mem/Inst_Rom/N1(Torus5x5/PE21/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE21/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE22/Inst_Mem/Inst_Rom/N1(Torus5x5/PE22/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE22/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE23/Inst_Mem/Inst_Rom/N1(Torus5x5/PE23/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE23/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE24/Inst_Mem/Inst_Rom/N1(Torus5x5/PE24/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE24/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE30/Inst_Mem/Inst_Rom/N1(Torus5x5/PE30/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE30/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE31/Inst_Mem/Inst_Rom/N1(Torus5x5/PE31/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE31/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE32/Inst_Mem/Inst_Rom/N1(Torus5x5/PE32/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE32/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE33/Inst_Mem/Inst_Rom/N1(Torus5x5/PE33/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE33/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE34/Inst_Mem/Inst_Rom/N1(Torus5x5/PE34/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE34/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE40/Inst_Mem/Inst_Rom/N1(Torus5x5/PE40/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE40/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE41/Inst_Mem/Inst_Rom/N1(Torus5x5/PE41/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE41/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE42/Inst_Mem/Inst_Rom/N1(Torus5x5/PE42/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE42/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE43/Inst_Mem/Inst_Rom/N1(Torus5x5/PE43/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE43/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE44/Inst_Mem/Inst_Rom/N1(Torus5x5/PE44/Inst_Mem/Inst_Rom/XST_GND:G)| NONE(Torus5x5/PE44/Inst_Mem/Inst_Rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram) | 4     |
+Torus5x5/PE00/Data_Mem/Mem0/N1(Torus5x5/PE00/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE00/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE00/Data_Mem/Mem1/N1(Torus5x5/PE00/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE00/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE00/Data_Mem/Mem2/N1(Torus5x5/PE00/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE00/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE01/Data_Mem/Mem0/N1(Torus5x5/PE01/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE01/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE01/Data_Mem/Mem1/N1(Torus5x5/PE01/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE01/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE01/Data_Mem/Mem2/N1(Torus5x5/PE01/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE01/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE02/Data_Mem/Mem0/N1(Torus5x5/PE02/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE02/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE02/Data_Mem/Mem1/N1(Torus5x5/PE02/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE02/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE02/Data_Mem/Mem2/N1(Torus5x5/PE02/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE02/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE03/Data_Mem/Mem0/N1(Torus5x5/PE03/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE03/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE03/Data_Mem/Mem1/N1(Torus5x5/PE03/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE03/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE03/Data_Mem/Mem2/N1(Torus5x5/PE03/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE03/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE04/Data_Mem/Mem0/N1(Torus5x5/PE04/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE04/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE04/Data_Mem/Mem1/N1(Torus5x5/PE04/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE04/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE04/Data_Mem/Mem2/N1(Torus5x5/PE04/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE04/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE10/Data_Mem/Mem0/N1(Torus5x5/PE10/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE10/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE10/Data_Mem/Mem1/N1(Torus5x5/PE10/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE10/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE10/Data_Mem/Mem2/N1(Torus5x5/PE10/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE10/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE11/Data_Mem/Mem0/N1(Torus5x5/PE11/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE11/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE11/Data_Mem/Mem1/N1(Torus5x5/PE11/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE11/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE11/Data_Mem/Mem2/N1(Torus5x5/PE11/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE11/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE12/Data_Mem/Mem0/N1(Torus5x5/PE12/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE12/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE12/Data_Mem/Mem1/N1(Torus5x5/PE12/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE12/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE12/Data_Mem/Mem2/N1(Torus5x5/PE12/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE12/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE13/Data_Mem/Mem0/N1(Torus5x5/PE13/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE13/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE13/Data_Mem/Mem1/N1(Torus5x5/PE13/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE13/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE13/Data_Mem/Mem2/N1(Torus5x5/PE13/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE13/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE14/Data_Mem/Mem0/N1(Torus5x5/PE14/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE14/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE14/Data_Mem/Mem1/N1(Torus5x5/PE14/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE14/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE14/Data_Mem/Mem2/N1(Torus5x5/PE14/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE14/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE20/Data_Mem/Mem0/N1(Torus5x5/PE20/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE20/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE20/Data_Mem/Mem1/N1(Torus5x5/PE20/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE20/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE20/Data_Mem/Mem2/N1(Torus5x5/PE20/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE20/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE21/Data_Mem/Mem0/N1(Torus5x5/PE21/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE21/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE21/Data_Mem/Mem1/N1(Torus5x5/PE21/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE21/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE21/Data_Mem/Mem2/N1(Torus5x5/PE21/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE21/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE22/Data_Mem/Mem0/N1(Torus5x5/PE22/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE22/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE22/Data_Mem/Mem1/N1(Torus5x5/PE22/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE22/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE22/Data_Mem/Mem2/N1(Torus5x5/PE22/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE22/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE23/Data_Mem/Mem0/N1(Torus5x5/PE23/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE23/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE23/Data_Mem/Mem1/N1(Torus5x5/PE23/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE23/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE23/Data_Mem/Mem2/N1(Torus5x5/PE23/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE23/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE24/Data_Mem/Mem0/N1(Torus5x5/PE24/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE24/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE24/Data_Mem/Mem1/N1(Torus5x5/PE24/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE24/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE24/Data_Mem/Mem2/N1(Torus5x5/PE24/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE24/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE30/Data_Mem/Mem0/N1(Torus5x5/PE30/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE30/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE30/Data_Mem/Mem1/N1(Torus5x5/PE30/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE30/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE30/Data_Mem/Mem2/N1(Torus5x5/PE30/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE30/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE31/Data_Mem/Mem0/N1(Torus5x5/PE31/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE31/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE31/Data_Mem/Mem1/N1(Torus5x5/PE31/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE31/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE31/Data_Mem/Mem2/N1(Torus5x5/PE31/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE31/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE32/Data_Mem/Mem0/N1(Torus5x5/PE32/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE32/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE32/Data_Mem/Mem1/N1(Torus5x5/PE32/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE32/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE32/Data_Mem/Mem2/N1(Torus5x5/PE32/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE32/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE33/Data_Mem/Mem0/N1(Torus5x5/PE33/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE33/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE33/Data_Mem/Mem1/N1(Torus5x5/PE33/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE33/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE33/Data_Mem/Mem2/N1(Torus5x5/PE33/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE33/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE34/Data_Mem/Mem0/N1(Torus5x5/PE34/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE34/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE34/Data_Mem/Mem1/N1(Torus5x5/PE34/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE34/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE34/Data_Mem/Mem2/N1(Torus5x5/PE34/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE34/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE40/Data_Mem/Mem0/N1(Torus5x5/PE40/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE40/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE40/Data_Mem/Mem1/N1(Torus5x5/PE40/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE40/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE40/Data_Mem/Mem2/N1(Torus5x5/PE40/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE40/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE41/Data_Mem/Mem0/N1(Torus5x5/PE41/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE41/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE41/Data_Mem/Mem1/N1(Torus5x5/PE41/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE41/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE41/Data_Mem/Mem2/N1(Torus5x5/PE41/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE41/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE42/Data_Mem/Mem0/N1(Torus5x5/PE42/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE42/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE42/Data_Mem/Mem1/N1(Torus5x5/PE42/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE42/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE42/Data_Mem/Mem2/N1(Torus5x5/PE42/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE42/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE43/Data_Mem/Mem0/N1(Torus5x5/PE43/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE43/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE43/Data_Mem/Mem1/N1(Torus5x5/PE43/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE43/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE43/Data_Mem/Mem2/N1(Torus5x5/PE43/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE43/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE44/Data_Mem/Mem0/N1(Torus5x5/PE44/Data_Mem/Mem0/XST_GND:G)        | NONE(Torus5x5/PE44/Data_Mem/Mem0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE44/Data_Mem/Mem1/N1(Torus5x5/PE44/Data_Mem/Mem1/XST_GND:G)        | NONE(Torus5x5/PE44/Data_Mem/Mem1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+Torus5x5/PE44/Data_Mem/Mem2/N1(Torus5x5/PE44/Data_Mem/Mem2/XST_GND:G)        | NONE(Torus5x5/PE44/Data_Mem/Mem2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram)| 2     |
+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.604ns (Maximum Frequency: 384.025MHz)
+   Minimum input arrival time before clock: 1.576ns
+   Maximum output required time after clock: 0.687ns
+   Maximum combinational path delay: 1.027ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'LowClk'
+  Clock period: 0.692ns (frequency: 1445.087MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               0.692ns (Levels of Logic = 0)
+  Source:            BramIF/Computation_Done_Reg2 (FF)
+  Destination:       BramIF/Computation_Done_Reg3 (FF)
+  Source Clock:      LowClk rising
+  Destination Clock: LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg2 to BramIF/Computation_Done_Reg3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  BramIF/Computation_Done_Reg2 (BramIF/Computation_Done_Reg2)
+     FDC:D                     0.011          BramIF/Computation_Done_Reg3
+    ----------------------------------------
+    Total                      0.692ns (0.293ns logic, 0.399ns route)
+                                       (42.3% logic, 57.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 2.604ns (frequency: 384.025MHz)
+  Total number of paths / destination ports: 419751 / 30142
+-------------------------------------------------------------------------
+Delay:               2.604ns (Levels of Logic = 34)
+  Source:            Torus5x5/PE01/ALU/ADDSUB_Result_0 (FF)
+  Destination:       Torus5x5/PE01/ALU/Custom_Result_31 (FF)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: Torus5x5/PE01/ALU/ADDSUB_Result_0 to Torus5x5/PE01/ALU/Custom_Result_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.282   0.731  PE01/ALU/ADDSUB_Result_0 (PE01/ALU/ADDSUB_Result_0)
+     LUT5:I0->O            1   0.053   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_lut<0> (PE01/ALU/Maddsub_ADDSUB_2st_Result_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<0> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<1> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<2> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<3> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<4> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<5> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<6> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<7> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<8> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<9> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<10> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<10>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<11> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<11>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<12> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<12>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<13> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<13>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<14> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<14>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<15> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<15>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<16> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<16>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<17> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<17>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<18> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<18>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<19> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<19>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<20> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<20>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<21> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<21>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<22> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<22>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<23> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<23>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<24> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<24>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<25> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<25>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<26> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<26>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<27> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<27>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<28> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<28>)
+     MUXCY:CI->O           1   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<29> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<29>)
+     MUXCY:CI->O           0   0.015   0.000  PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<30> (PE01/ALU/Maddsub_ADDSUB_2st_Result_cy<30>)
+     XORCY:CI->O           1   0.320   0.413  PE01/ALU/Maddsub_ADDSUB_2st_Result_xor<31> (PE01/ALU/ADDSUB_2st_Result<31>)
+     LUT3:I2->O            1   0.053   0.000  PE01/ALU/Custom_Out_Sel_Reg[0]_Custom_Out_Sel_Reg[2]_or_75_OUT<31>3 (PE01/ALU/Custom_Out_Sel_Reg[0]_Custom_Out_Sel_Reg[2]_or_75_OUT<31>)
+     FDC:D                     0.011          PE01/ALU/Custom_Result_31
+    ----------------------------------------
+    Total                      2.604ns (1.460ns logic, 1.144ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'LowClk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              1.352ns (Levels of Logic = 2)
+  Source:            Resetn (PAD)
+  Destination:       BramIF/Computation_Done_Reg3 (FF)
+  Destination Clock: LowClk rising
+
+  Data Path: Resetn to BramIF/Computation_Done_Reg3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.405  Resetn_IBUF (Resetn_IBUF)
+     INV:I->O             47   0.067   0.555  BramIF/Port0_Rst1_INV_0 (Port0_Rst_OBUF)
+     FDC:CLR                   0.325          BramIF/Computation_Done_Reg2
+    ----------------------------------------
+    Total                      1.352ns (0.392ns logic, 0.960ns route)
+                                       (29.0% logic, 71.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 183 / 183
+-------------------------------------------------------------------------
+Offset:              1.576ns (Levels of Logic = 3)
+  Source:            Resetn (PAD)
+  Destination:       Torus5x5/PE00/ALU/MulAdd/Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT (DSP)
+  Destination Clock: Clk rising
+
+  Data Path: Resetn to Torus5x5/PE00/ALU/MulAdd/Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.405  Resetn_IBUF (Resetn_IBUF)
+     begin scope: 'Torus5x5:Resetn'
+     INV:I->O             75   0.067   0.561  PE44/ALU/Resetn_inv1_INV_0 (PE00/ALU/MulAdd/Resetn_inv)
+     DSP48E1:RSTB              0.543          PE00/ALU/MulAdd/Mmult_a_reg0[15]_b_reg0[15]_MuLt_20_OUT
+    ----------------------------------------
+    Total                      1.576ns (0.610ns logic, 0.966ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 92 / 92
+-------------------------------------------------------------------------
+Offset:              0.687ns (Levels of Logic = 1)
+  Source:            BramIF/CGRA_Cnt_Reg3_15 (FF)
+  Destination:       Port2_Addr<15> (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: BramIF/CGRA_Cnt_Reg3_15 to Port2_Addr<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.282   0.405  BramIF/CGRA_Cnt_Reg3_15 (BramIF/CGRA_Cnt_Reg3_15)
+     OBUF:I->O                 0.000          Port2_Addr_15_OBUF (Port2_Addr<15>)
+    ----------------------------------------
+    Total                      0.687ns (0.282ns logic, 0.405ns route)
+                                       (41.0% logic, 59.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'LowClk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.681ns (Levels of Logic = 1)
+  Source:            BramIF/Computation_Done_Reg3 (FF)
+  Destination:       Computation_Done (PAD)
+  Source Clock:      LowClk rising
+
+  Data Path: BramIF/Computation_Done_Reg3 to Computation_Done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.282   0.399  BramIF/Computation_Done_Reg3 (BramIF/Computation_Done_Reg3)
+     OBUF:I->O                 0.000          Computation_Done_OBUF (Computation_Done)
+    ----------------------------------------
+    Total                      0.681ns (0.282ns logic, 0.399ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 50 / 50
+-------------------------------------------------------------------------
+Delay:               1.027ns (Levels of Logic = 3)
+  Source:            Resetn (PAD)
+  Destination:       Port0_Rst (PAD)
+
+  Data Path: Resetn to Port0_Rst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.405  Resetn_IBUF (Resetn_IBUF)
+     INV:I->O             47   0.067   0.555  BramIF/Port0_Rst1_INV_0 (Port0_Rst_OBUF)
+     OBUF:I->O                 0.000          Port0_Rst_OBUF (Port0_Rst)
+    ----------------------------------------
+    Total                      1.027ns (0.067ns logic, 0.960ns route)
+                                       (6.5% logic, 93.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    2.604|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock LowClk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    0.698|         |         |         |
+LowClk         |    0.692|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 104.00 secs
+Total CPU time to Xst completion: 104.16 secs
+ 
+--> 
+
+Total memory usage is 616772 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  196 (   0 filtered)
+Number of infos    :   26 (   0 filtered)
+

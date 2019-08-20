@@ -1,0 +1,17 @@
+##############################################################################
+## Filename:          D:\minibench\scgra\scgra3x3-1k\scgra3x3-1k.srcs\sources_1\edk\base_sys\pcores/cgra3x3_v1_00_a/data/cgra3x3_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu May 22 03:14:50 2014 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib cgra3x3_v1_00_a MulAdd verilog
+lib cgra3x3_v1_00_a TDP_Data_Mem verilog
+lib cgra3x3_v1_00_a SP_Inst_Mem verilog
+lib cgra3x3_v1_00_a Inst_Mem verilog
+lib cgra3x3_v1_00_a Data_Mem verilog
+lib cgra3x3_v1_00_a ALU verilog
+lib cgra3x3_v1_00_a PEIO verilog
+lib cgra3x3_v1_00_a PE verilog
+lib cgra3x3_v1_00_a Torus3x3 verilog
+lib cgra3x3_v1_00_a BramIF verilog
+lib cgra3x3_v1_00_a cgra3x3 verilog

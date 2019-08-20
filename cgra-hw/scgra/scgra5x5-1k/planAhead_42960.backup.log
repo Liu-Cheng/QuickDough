@@ -1,0 +1,683 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Jul 23 20:11:33 2014
+# Process ID: 113236
+# Log file: D:/minibench/scgra/scgra5x5-1k/planAhead.log
+# Journal file: D:/minibench/scgra/scgra5x5-1k\planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/EDA/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-81] Feature available: PartialReconfiguration
+open_project {D:\minibench\scgra\scgra5x5-1k\scgra5x5-1k.ppr}
+Scanning sources...
+Finished scanning sources
+open_project: Time (s): elapsed = 00:00:13 . Memory (MB): peak = 464.063 ; gain = 95.477
+save_project_as scgra5x5-1k D:/minibench/scgra-2st-full-fun/scgra5x5-1k -force
+INFO: [Designutils 20-1107] Saved project location 'D:/minibench/scgra-2st-full-fun/scgra5x5-1k'
+INFO: [Designutils 20-1102] Composite file path 'D:/minibench/scgra/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys'
+save_project_as: Time (s): elapsed = 00:01:04 . Memory (MB): peak = 507.910 ; gain = 34.309
+INFO: [Edk 24-184] Launching XPS (Xilinx Platform Studio) for configuring XPS sub-design source 'base_sys'...
+
+Xilinx Platform Studio
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Launching XPS GUI...
+INFO:EDK - Simulation, Implementation and Device configuration flows are
+   disabled in XPS when launched from PlanAhead. All these features are
+   available in PlanAhead.
+MainWindow
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 156 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 182 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 208 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 234 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 156 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 182 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 208 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 234 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\_xps_tempmhsfilename.mhs line 147 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\_xps_tempmhsfilename.mhs line 173 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\_xps_tempmhsfilename.mhs line 199 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\_xps_tempmhsfilename.mhs line 225 
+ZynqConfig: Terminated for gui mode
+Writing filter settings....
+Done writing filter settings to:
+	D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base
+_sys\etc\base_sys.filters
+Done writing Tab View settings to:
+	D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base
+_sys\etc\base_sys.gui
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 156 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 182 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 208 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 234 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 156 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 182 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 208 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 234 
+ZynqConfig: Terminated for gui mode
+Writing filter settings....
+Done writing filter settings to:
+	D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base
+_sys\etc\base_sys.filters
+Done writing Tab View settings to:
+	D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base
+_sys\etc\base_sys.gui
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 156 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 182 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 208 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 234 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 156 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 182 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 208 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 234 
+Deleting Internal port processing_system7_0:FCLK_CLK1 
+Deleting Internal port cgra5x5_0:Clk 
+Deleting Internal port processing_system7_0:FCLK_RESET1_N 
+Deleting Internal port cgra5x5_0:Resetn 
+Deleting Internal port acc_ctrl_0:Acc_Start 
+Deleting Internal port cgra5x5_0:Computation_Start 
+Deleting Internal port acc_ctrl_0:Acc_Done 
+Deleting Internal port cgra5x5_0:Computation_Done 
+cgra5x5_0 has been deleted from the project
+cgra5x5_0 has been added to the project
+
+Running DRCs...
+
+Overriding IP level properties ...
+
+Computing clock values...
+
+Performing IP level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
+Address Map for Processor processing_system7_0
+  (0x40000000-0x40001fff) axi_bram_ctrl_0	axi_interconnect_1
+  (0x40010000-0x40011fff) axi_bram_ctrl_1	axi_interconnect_1
+  (0x40020000-0x40023fff) axi_bram_ctrl_2	axi_interconnect_1
+  (0x40030000-0x40033fff) axi_bram_ctrl_3	axi_interconnect_1
+  (0xbc400000-0xbc400fff) acc_ctrl_0	axi_interconnect_2
+
+Checking platform address map ...
+
+Checking platform configuration ...
+IPNAME: axi_interconnect, INSTANCE: axi_interconnect_1 - 1 master(s) : 4
+slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi_interconnect_2 - 1 master(s) : 1
+slave(s) 
+
+Checking port drivers...
+
+Performing Clock DRCs...
+
+Performing Reset DRCs...
+
+Overriding system level properties...
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
+   is overriding PARAMETER C_FCLK_CLK2_BUF value to FALSE -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 352 
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
+   is overriding PARAMETER C_FCLK_CLK3_BUF value to FALSE -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 353 
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi_interconnect_1.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_1 - tcl is
+   overriding PARAMETER C_RANGE_CHECK value to 1 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 149 
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi_interconnect_2.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_2 - tcl is
+   overriding PARAMETER C_RANGE_CHECK value to 1 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 149 
+
+Running system level update procedures...
+
+Running UPDATE Tcl procedures for OPTION SYSLEVEL_UPDATE_PROC...
+ZynqConfig: Terminated for tcl mode
+
+Running system level DRCs...
+
+Performing System level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
+ZynqConfig: Terminated for tcl mode
+Done!
+ZynqConfig: Terminated for gui mode
+Writing filter settings....
+Done writing filter settings to:
+	D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base
+_sys\etc\base_sys.filters
+Done writing Tab View settings to:
+	D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base
+_sys\etc\base_sys.gui
+INFO: [Edk 24-128] XPS launched
+update_compile_order -fileset sim_1
+make_wrapper -files [get_files D:/minibench/scgra-2st-full-fun/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/base_sys.xmp] -top -fileset [get_filesets sources_1] -import
+INFO: [Edk 24-182] Generating top-level verilog wrapper for the XPS sub-design source 'base_sys'...
+
+Xilinx Platform Studio
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+XPS% Evaluating file
+D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_
+sys\__xps\pa\_base_sys_top.tcl
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 155 
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 181 
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 207 
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 233 
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 155 
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 181 
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 207 
+WARNING:EDK - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 233 
+
+Overriding IP level properties ...
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP0_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 300 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP1_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 304 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP2_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 308 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP3_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 312 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_NUM_F2P_INTR_INPUTS value to 1 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 319 
+INFO:EDK - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_1 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+INFO:EDK - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_2 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+
+Computing clock values...
+INFO:EDK - Frequency for Top-Level Input Clock 'processing_system7_0_PS_CLK' is
+   not specified. Clock DRCs will not be performed for IPs connected to that
+   clock port, unless they are connected through the clock generator IP. 
+
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port0_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port1_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port2_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port3_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+
+Performing IP level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
+INFO:EDK - INFO: DDR Base and High address in current configuration is
+   0x00000000 and 0x1FFFFFFF respectively. 
+INFO:EDK - INFO: You can modify the DDR address range accessed by Programmable
+   Logic through the processing_system7 AXI slave interfaces. If MicroBlaze is a
+   master on processing_system7 AXI slave interfaces, please use the top half of
+   the address range (Base Address = 0x10000000; High Address = 0x1FFFFFFF). For
+   all other master, any subset of the DDR address can be used. See Xilinx
+   Answer 47167 for more information. 
+Address Map for Processor processing_system7_0
+  (0x40000000-0x40001fff) axi_bram_ctrl_0	axi_interconnect_1
+  (0x40010000-0x40011fff) axi_bram_ctrl_1	axi_interconnect_1
+  (0x40020000-0x40023fff) axi_bram_ctrl_2	axi_interconnect_1
+  (0x40030000-0x40033fff) axi_bram_ctrl_3	axi_interconnect_1
+  (0xbc400000-0xbc400fff) acc_ctrl_0	axi_interconnect_2
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_0_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_1_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_2_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_3_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+
+Checking platform address map ...
+
+Overriding IP level properties ...
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP0_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 300 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP1_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 304 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP2_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 308 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP3_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 312 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_NUM_F2P_INTR_INPUTS value to 1 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 319 
+INFO:EDK - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_1 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+INFO:EDK - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_2 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+
+Computing clock values...
+INFO:EDK - Frequency for Top-Level Input Clock 'processing_system7_0_PS_CLK' is
+   not specified. Clock DRCs will not be performed for IPs connected to that
+   clock port, unless they are connected through the clock generator IP. 
+
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port0_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port1_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port2_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port3_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+
+Performing IP level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
+INFO:EDK - INFO: DDR Base and High address in current configuration is
+   0x00000000 and 0x1FFFFFFF respectively. 
+INFO:EDK - INFO: You can modify the DDR address range accessed by Programmable
+   Logic through the processing_system7 AXI slave interfaces. If MicroBlaze is a
+   master on processing_system7 AXI slave interfaces, please use the top half of
+   the address range (Base Address = 0x10000000; High Address = 0x1FFFFFFF). For
+   all other master, any subset of the DDR address can be used. See Xilinx
+   Answer 47167 for more information. 
+Address Map for Processor processing_system7_0
+  (0x40000000-0x40001fff) axi_bram_ctrl_0	axi_interconnect_1
+  (0x40010000-0x40011fff) axi_bram_ctrl_1	axi_interconnect_1
+  (0x40020000-0x40023fff) axi_bram_ctrl_2	axi_interconnect_1
+  (0x40030000-0x40033fff) axi_bram_ctrl_3	axi_interconnect_1
+  (0xbc400000-0xbc400fff) acc_ctrl_0	axi_interconnect_2
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_0_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_1_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_2_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_3_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+
+Checking platform address map ...
+
+Command Line: platgen -p xc7z020clg484-1 -lang verilog -intstyle pa -stubgen
+D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_
+sys\base_sys.mhs 
+
+Parse
+D:/minibench/scgra-2st-full-fun/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_
+sys/base_sys.mhs ...
+
+Create merged mhs ...
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_0_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 155 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_1_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 181 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_2_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 207 
+WARNING:EDK:4092 - IPNAME: bram_block, INSTANCE: axi_bram_ctrl_3_bram_block_1 -
+   Pre-Production version not verified on hardware for architecture 'zynq' -
+   D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\ba
+   se_sys\base_sys.mhs line 233 
+
+Overriding IP level properties ...
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
+   is overriding PARAMETER C_S_AXI_HP0_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 300 
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
+   is overriding PARAMETER C_S_AXI_HP1_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 304 
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
+   is overriding PARAMETER C_S_AXI_HP2_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 308 
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
+   is overriding PARAMETER C_S_AXI_HP3_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 312 
+INFO:EDK:4130 - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl
+   is overriding PARAMETER C_NUM_F2P_INTR_INPUTS value to 1 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 319 
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_1 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_2 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+
+Computing clock values...
+INFO:EDK:1432 - Frequency for Top-Level Input Clock
+   'processing_system7_0_PS_CLK' is not specified. Clock DRCs will not be
+   performed for IPs connected to that clock port, unless they are connected
+   through the clock generator IP. 
+
+INFO:EDK:740 - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port0_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK:740 - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port1_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK:740 - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port2_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK:740 - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port3_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+
+Performing IP level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
+INFO:EDK - INFO: DDR Base and High address in current configuration is
+   0x00000000 and 0x1FFFFFFF respectively. 
+INFO:EDK - INFO: You can modify the DDR address range accessed by Programmable
+   Logic through the processing_system7 AXI slave interfaces. If MicroBlaze is a
+   master on processing_system7 AXI slave interfaces, please use the top half of
+   the address range (Base Address = 0x10000000; High Address = 0x1FFFFFFF). For
+   all other master, any subset of the DDR address can be used. See Xilinx
+   Answer 47167 for more information. 
+Address Map for Processor processing_system7_0
+  (0x40000000-0x40001fff) axi_bram_ctrl_0	axi_interconnect_1
+  (0x40010000-0x40011fff) axi_bram_ctrl_1	axi_interconnect_1
+  (0x40020000-0x40023fff) axi_bram_ctrl_2	axi_interconnect_1
+  (0x40030000-0x40033fff) axi_bram_ctrl_3	axi_interconnect_1
+  (0xbc400000-0xbc400fff) acc_ctrl_0	axi_interconnect_2
+INFO:EDK:4130 - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_0_bram_block_1 - tool
+   is overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK:4130 - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_1_bram_block_1 - tool
+   is overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK:4130 - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_2_bram_block_1 - tool
+   is overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK:4130 - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_3_bram_block_1 - tool
+   is overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+
+Checking platform address map ...
+
+Modify defaults ...
+
+Creating stub ...
+
+Elaborating instances ...
+IPNAME:bram_block INSTANCE:axi_bram_ctrl_0_bram_block_1 -
+D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_
+sys\base_sys.mhs line 155 - elaborating IP
+IPNAME:bram_block INSTANCE:axi_bram_ctrl_1_bram_block_1 -
+D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_
+sys\base_sys.mhs line 181 - elaborating IP
+IPNAME:bram_block INSTANCE:axi_bram_ctrl_2_bram_block_1 -
+D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_
+sys\base_sys.mhs line 207 - elaborating IP
+IPNAME:bram_block INSTANCE:axi_bram_ctrl_3_bram_block_1 -
+D:\minibench\scgra-2st-full-fun\scgra5x5-1k\scgra5x5-1k.srcs\sources_1\edk\base_
+sys\base_sys.mhs line 233 - elaborating IP
+
+Inserting wrapper level ...
+
+Writing (stub) BMM ...
+
+Writing top-level HDL ...
+
+Total run time: 9.00 seconds
+
+Overriding IP level properties ...
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP0_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 300 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP1_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 304 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP2_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 308 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_S_AXI_HP3_HIGHADDR value to 0x1FFFFFFF -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 312 
+INFO:EDK - IPNAME: processing_system7, INSTANCE:processing_system7_0 - tcl is
+   overriding PARAMETER C_NUM_F2P_INTR_INPUTS value to 1 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\processing_system7_v4_0
+   3_a\data\processing_system7_v2_1_0.mpd line 319 
+INFO:EDK - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_1 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+INFO:EDK - IPNAME: axi_interconnect, INSTANCE:axi_interconnect_2 - tcl is
+   overriding PARAMETER C_BASEFAMILY value to zynq -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect_v1_06_
+   a\data\axi_interconnect_v2_1_0.mpd line 81 
+
+Computing clock values...
+INFO:EDK - Frequency for Top-Level Input Clock 'processing_system7_0_PS_CLK' is
+   not specified. Clock DRCs will not be performed for IPs connected to that
+   clock port, unless they are connected through the clock generator IP. 
+
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port0_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port1_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port2_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+INFO:EDK - Cannot determine the input clock associated with port :
+   cgra5x5_0:Port3_Clk. Clock DRCs will not be performed on this core and cores
+   connected to it. 
+
+Performing IP level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
+INFO:EDK - INFO: DDR Base and High address in current configuration is
+   0x00000000 and 0x1FFFFFFF respectively. 
+INFO:EDK - INFO: You can modify the DDR address range accessed by Programmable
+   Logic through the processing_system7 AXI slave interfaces. If MicroBlaze is a
+   master on processing_system7 AXI slave interfaces, please use the top half of
+   the address range (Base Address = 0x10000000; High Address = 0x1FFFFFFF). For
+   all other master, any subset of the DDR address can be used. See Xilinx
+   Answer 47167 for more information. 
+Address Map for Processor processing_system7_0
+  (0x40000000-0x40001fff) axi_bram_ctrl_0	axi_interconnect_1
+  (0x40010000-0x40011fff) axi_bram_ctrl_1	axi_interconnect_1
+  (0x40020000-0x40023fff) axi_bram_ctrl_2	axi_interconnect_1
+  (0x40030000-0x40033fff) axi_bram_ctrl_3	axi_interconnect_1
+  (0xbc400000-0xbc400fff) acc_ctrl_0	axi_interconnect_2
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_0_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_1_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x2000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_2_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+INFO:EDK - IPNAME: bram_block, INSTANCE:axi_bram_ctrl_3_bram_block_1 - tool is
+   overriding PARAMETER C_MEMSIZE value to 0x4000 -
+   C:\EDA\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data
+   \bram_block_v2_1_0.mpd line 78 
+
+Checking platform address map ...
+INFO: [Edk 24-126] Wrapper generated:D:/minibench/scgra-2st-full-fun/scgra5x5-1k/scgra5x5-1k.srcs/sources_1/edk/base_sys/base_sys_stub.v
+make_wrapper: Time (s): elapsed = 00:00:25 . Memory (MB): peak = 529.293 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Wed Jul 23 20:40:34 2014...
+INFO: [Common 17-83] Releasing license: PlanAhead

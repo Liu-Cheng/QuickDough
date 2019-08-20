@@ -1,0 +1,139 @@
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 16:05:32 +0800 2015
+            in directory 'D:/minibench/customization/sobel_small'
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+@E [LIC-104] License feature [HLS_BETA] is not available.
+command 'license_checkout' returned error code
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/sobel_sma@I [LIC-101] Checked in feature [VIVADO_HLS]
+cked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 16:07:13 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/sobel_small'.
+@I [HLS-10] Adding design file 'sobel_small/src/sobel_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'sobel_small/src/main.c' to the project.
+@I [HLS-10] Adding test bench file 'sobel_small/src/sobel.h' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/sobel_small/unroll-1x2x3x3'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'sobel_small/src/sobel.h' ... 
+@I [HLS-10] Importing test bench file 'sobel_small/src/main.c' ... 
+@I [HLS-10] Analyzing design file 'sobel_small/src/sobel_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@W [SYNCHK-23] sobel_small/src/sobel_ip.c:44: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-502] Unrolling all sub-loops inside loop 'sobel_ip_label3' (sobel_small/src/sobel_ip.c:22) in function 'sobel_ip' for pipelining.
+@W [XFORM-503] Ignored partial unroll directive for loop 'sobel_ip_label2' (sobel_small/src/sobel_ip.c:23) because its parent loop or function is pipelined.
+.@I [XFORM-501] Unrolling loop 'sobel_ip_label2' (sobel_small/src/sobel_ip.c:23) in function 'sobel_ip' completely.
+@I [XFORM-501] Unrolling loop 'sobel_ip_label1' (sobel_small/src/sobel_ip.c:42) in function 'sobel_ip' completely.
+@I [XFORM-501] Unrolling loop 'sobel_ip_label0' (sobel_small/src/sobel_ip.c:43) in function 'sobel_ip' completely.
+@I [XFORM-401] Performing if-conversion on hyperblock from (sobel_small/src/sobel_ip.c:22:41) to (sobel_small/src/sobel_ip.c:22:34) in function 'sobel_ip'... converting 109 basic blocks.
+@I [HLS-111] Elapsed time: 9.187 seconds; current memory usage: 45.9 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'sobel_ip' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'sobel_ip_label3'.
+@W [SCHED-69] Unable to schedule 'load' operation ('sub_in_load_3', sobel_small/src/sobel_ip.c:67) on array 'sub_in' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 25, Depth: 46.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 4.411 seconds; current memory usage: 54 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 1.229 seconds; current memory usage: 56.8 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'sobel_ip/sub_in' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'sobel_ip/sub_out' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'sobel_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'sobel_ip_mul_32s_8ns_32_3': 108 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'sobel_ip'.
+@I [HLS-111] Elapsed time: 3.207 seconds; current memory usage: 67.7 MB.
+@I [RTMG-282] Generating pipelined core: 'sobel_ip_mul_32s_8ns_32_3_Mul3S_0'
+@I [RTMG-278] Implementing memory 'sobel_ip_Gx_ram' using block RAMs.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'sobel_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'sobel_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'sobel_ip'.
+@I [HLS-112] Total elapsed time: 26.761 seconds; peak memory usage: 67.7 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
+Starting C synthesis ...
+C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/vivado_hls.bat D:/minibench/customization/sobel_small/unroll-1x2x3x3/csynth.tcl
+@I [LIC-101] Checked out feature [VIVADO_HLS]
+@I [HLS-10] Running 'C:/EDA/Xilinx/Vivado_HLS/2013.3/bin/unwrapped/win64.o/vivado_hls.exe'
+            for user 'Liucheng' on host 'liuchengstudent' (Windows NT_amd64 version 6.1) on Tue Mar 24 16:11:07 +0800 2015
+            in directory 'D:/minibench/customization'
+@I [HLS-10] Opening project 'D:/minibench/customization/sobel_small'.
+@I [HLS-10] Adding design file 'sobel_small/src/sobel_ip.c' to the project.
+@I [HLS-10] Adding test bench file 'sobel_small/src/sobel.h' to the project.
+@I [HLS-10] Adding test bench file 'sobel_small/src/main.c' to the project.
+@I [HLS-10] Opening solution 'D:/minibench/customization/sobel_small/unroll-1x2x3x3'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Importing test bench file 'sobel_small/src/main.c' ... 
+@I [HLS-10] Importing test bench file 'sobel_small/src/sobel.h' ... 
+@I [HLS-10] Analyzing design file 'sobel_small/src/sobel_ip.c' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@W [SYNCHK-23] sobel_small/src/sobel_ip.c:44: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-502] Unrolling all sub-loops inside loop 'sobel_ip_label3' (sobel_small/src/sobel_ip.c:22) in function 'sobel_ip' for pipelining.
+@W [XFORM-503] Ignored partial unroll directive for loop 'sobel_ip_label2' (sobel_small/src/sobel_ip.c:23) because its parent loop or function is pipelined.
+.@I [XFORM-501] Unrolling loop 'sobel_ip_label2' (sobel_small/src/sobel_ip.c:23) in function 'sobel_ip' completely.
+@I [XFORM-501] Unrolling loop 'sobel_ip_label1' (sobel_small/src/sobel_ip.c:42) in function 'sobel_ip' completely.
+@I [XFORM-501] Unrolling loop 'sobel_ip_label0' (sobel_small/src/sobel_ip.c:43) in function 'sobel_ip' completely.
+@I [XFORM-401] Performing if-conversion on hyperblock from (sobel_small/src/sobel_ip.c:22:41) to (sobel_small/src/sobel_ip.c:22:34) in function 'sobel_ip'... converting 109 basic blocks.
+@I [HLS-111] Elapsed time: 9.746 seconds; current memory usage: 46.3 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'sobel_ip' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'sobel_ip_label3'.
+@W [SCHED-69] Unable to schedule 'load' operation ('sub_in_load_3', sobel_small/src/sobel_ip.c:67) on array 'sub_in' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 25, Depth: 46.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 4.261 seconds; current memory usage: 54.4 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 1.339 seconds; current memory usage: 57.2 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'sobel_ip' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'sobel_ip/sub_in' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'sobel_ip/sub_out' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'sobel_ip' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'sobel_ip_mul_32s_8ns_32_3': 108 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'sobel_ip'.
+@I [HLS-111] Elapsed time: 3.17 seconds; current memory usage: 68 MB.
+@I [RTMG-282] Generating pipelined core: 'sobel_ip_mul_32s_8ns_32_3_Mul3S_0'
+@I [RTMG-278] Implementing memory 'sobel_ip_Gx_ram' using block RAMs.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'sobel_ip'.
+@I [WVHDL-304] Generating RTL VHDL for 'sobel_ip'.
+@I [WVLOG-307] Generating RTL Verilog for 'sobel_ip'.
+@I [HLS-112] Total elapsed time: 26.948 seconds; peak memory usage: 68 MB.
+@I [LIC-101] Checked in feature [VIVADO_HLS]
